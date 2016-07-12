@@ -30,18 +30,23 @@ def permutation_array(s1, s2):
     if len(s1) != len(s2):
         return False
 
-    # implement arrays
-    s1_chars = []
-    for char in s1:
-        s1_chars.append(ord(char))
+    # count chars
+    s1_chars = [0] * 26
+    s2_chars = [0] * 26
 
-    s2_chars = []
-    for char in s2:
-        s2_chars.append(ord(char))
+    for i in range(len(s1)):
+        idx = ord(s1[i]) - ord('a')
+        s1_chars[idx] += 1
 
-    # compare
-    for char in s1_chars:
-        if char not in s2_chars:
+    for i in range(len(s2)):
+        idx = ord(s2[i]) - ord('a')
+        s2_chars[idx] += 1
+
+    count = 0
+    while count < 26:
+        if s1_chars[count] == s2_chars[count]:
+            count += 1
+        else:
             return False
 
     return True
