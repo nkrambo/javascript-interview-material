@@ -27,15 +27,15 @@ import string
 
 def palindrome_perm(str):
 
+    str = str.lower()
     alpha = dict.fromkeys(string.ascii_lowercase, False)
 
-    count = 0
     for char in str:
         if ord(char) > 96 and ord(char) < 123:
             alpha[char] = not alpha[char]
 
+    count = 0
     for key in alpha:
-
         if alpha[key] == True:
             count += 1
 
@@ -47,3 +47,6 @@ def palindrome_perm(str):
 
 # test cases
 print(palindrome_perm('Tact Coa'))
+print(palindrome_perm('aabbeccdd'))
+print(palindrome_perm('abc'))
+
