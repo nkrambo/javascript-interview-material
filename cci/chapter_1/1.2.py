@@ -52,13 +52,13 @@ def permutation_array(s1, s2):
     return True
 
 # test cases
-print(permutation_sort('dog', 'God'))
-print(permutation_sort('test', 'Test  '))
-print(permutation_sort('test', 'Testing'))
-print(permutation_sort('test', 'estt'))
-
-print(permutation_array('dog', 'God'))
-print(permutation_array('test', 'Test  '))
-print(permutation_array('test', 'Testing'))
+# print(permutation_sort('dog', 'God'))
+# print(permutation_sort('test', 'Test  '))
+# print(permutation_sort('test', 'Testing'))
+# print(permutation_sort('test', 'estt'))
+#
+# print(permutation_array('dog', 'God'))
+# print(permutation_array('test', 'Test  '))
+# print(permutation_array('test', 'Testing'))
 print(permutation_array('test', 'estt'))
 
