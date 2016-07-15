@@ -10,8 +10,7 @@
 # Naive approach using a set
 # Time: O(n^2)
 def all_unique_set(s):
-    if len(s) > 128:
-        return False
+    if len(s) > 128: return False
 
     seen = set()
     for char in s:
@@ -25,8 +24,7 @@ def all_unique_set(s):
 # Using an array of boolean values mapped to chars
 # Time: O(n)
 def all_unique_array(s):
-    if len(s) > 128:
-        return False
+    if len(s) > 128: return False
 
     char_list = [False] * 128
     for char in s:

@@ -9,6 +9,7 @@
 # output - boolean
 
 def one_away(str, str):
+    
 
 
 # test cases
@@ -16,3 +17,4 @@ print(one_away('pale', 'ple')) # true
 print(one_away('pales', 'pale')) # true
 print(one_away('pale', 'bale')) # true
 print(one_away('pale', 'bake')) # false
+
