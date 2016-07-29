@@ -37,6 +37,8 @@ Start by adding a click event listener to the parent element.  When the event li
 
 **Explain how `this` works in JavaScript?**
 
+
+
 **Explain how prototypal inheritance works?**
 
 **What do you think of AMD vs CommonJS?**
@@ -92,7 +94,40 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 ```
 **Why is it called a Ternary expression, what does the word "Ternary" indicate?**
 
+In mathematics, a ternary operation is an n-ary operation with n = 3. In computer science, a ternary operator is an operator that takes three arguments. The term springs from words like unary, binary, ternary, etc. Ternary, therefore meaning 3-ary.
+
+The arguments and result can be of different types. Many programming languages that use C-like syntax feature a ternary operator, ?:, which defines a conditional expression. Often, a simple if-else statement can be used to achieve the same result.
+
+For example:
+```
+if (fooTrue) {
+  bar();
+} else {
+  fuzz();
+}
+```
+
+Above code can be shortened with ?:
+```
+fooTrue ? bar() : fuzz();
+```
+
+In JavaScript, conditional operators can be evaluated to an Expression, not just statement.
+```
+// assigned to a variable
+var isFoo = fooTrue ? "yes" : "no";
+
+// passed as an argument in a function
+getFoo(fooTrue ? "yes" : "no");
+```
+
 **What is `"use strict";`? what are the advantages and disadvantages to using it?**
+
+"use strict;" is applied to an entire script file or to individual functions by implementing at the beginning of a file or at the beginning of inside a function before anything else.
+
+Main purpose of using strict mode is to be able to evaluate your JavaScript code and throw more errors in an effort to make your code more robust, readable, accurate and fixes compatibility issues that may arise for future JavaScript releases.
+
+ES6 classes have use strict in-built.
 
 * Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`
 
