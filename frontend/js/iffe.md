@@ -1,4 +1,10 @@
 
+**Explain why the following doesn’t work as an IIFE:**
+
+``` javascript
+function foo(){ }();
+```
+
 What does 'IIFE' even stand for?
 
 IIFE stands for Immediately Invoked Function Expressions
@@ -8,9 +14,9 @@ Great, so what are IIFEs?
 An IIFE is an anonymous function that is created and then immediately invoked. It's not called from anywhere else (hence why it's anonymous), but runs just after being created.
 
 ``` javascript
-(function () {
+(function() {
   return 5;
-} ());
+}());
 // returns 5 right away
 ```
 
@@ -179,6 +185,7 @@ var i = 0;
   };
 };
 ```
+
 3. In ```helperFunction``` is a definition for ```i...```
 
 ``` javascript
@@ -187,4 +194,55 @@ var i = 0;
 
 4. So ```get``` can return 0!
 
+With all that explanation behind us, let's go back to the original question:
 
+Explain why the following doesn’t work as an IIFE: ```function foo(){ }();```
+
+Because ```foo``` isn't being called! Here's a rewrite:
+
+``` javascript
+function foo() {
+}();
+```
+
+This is a function definition, it defines ```foo```. But it's not a function expression - that is, it's not understood by the JS parser to actually call a function.
+
+For the parser, things look like this:
+
+``` javascript
+function foo(){
+} // ok, done with that function definition
+  // (silly human left off the semicolon, how embarrassing!)
+
+(); // Are they trying to call something? What’s the function’s name?
+    // PARSE ERROR
+```
+
+In order to prep the parser that we're actually dealing with a function expression we have to wrap things up in ```()``` like so:
+
+``` javascript
+(
+  function foo(){
+  }()
+);
+```
+
+Now the parser reads this as:
+
+``` javascript
+( // oh goody, we're going to call some function expressions!
+  function foo(){ // here's the function definition
+  }() // and here's where the function is actually called
+);
+```
+
+And to finish it all off with a return statement and everything:
+
+``` javascript
+(function foo() {
+  return 'bar';
+}());
+```
+
+References:
+[immediately-invoked-function-expression](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
