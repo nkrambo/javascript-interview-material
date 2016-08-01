@@ -10,7 +10,7 @@ Attaching an event listener to each child element is inefficient and unnecessary
 
 An additional advantage is that any dynamically created elements will still be bound to the event handler, which would not be the case if we assigned to event listener to each child node.
 
-```
+```html
 <ul id="parent-list">
 	<li id="post-1">Item 1</li>
 	<li id="post-2">Item 2</li>
@@ -37,11 +37,15 @@ Start by adding a click event listener to the parent element.  When the event li
 
 **Explain how `this` works in JavaScript?**
 
+From what I understand, ‘this’ refers to itself, to its own object or global object.
 
+Using 'this' are partitioned in 3 locations of code. These are in functions, outside of functions (global scope, ex: window object), and in Javascript’s eval() function.
+
+Common pitfalls when using ‘this’ are usually relevant to scope issues in real functions, methods, and constructors.
+
+Though there are ways to fix these common issues by using ES5, bind() or ES6 arrow functions, =>
 
 **Explain how prototypal inheritance works?**
-
-**What do you think of AMD vs CommonJS?**
 
 * Explain why the following doesn't work as an IIFE: `function foo(){ }();`.
   * What needs to be changed to properly make it an IIFE?
@@ -50,6 +54,70 @@ Start by adding a click event listener to the parent element.  When the event li
 * What is a closure, and how/why would you use one?
 
 **What's a typical use case for anonymous functions?**
+
+Anonymous functions are typically used as callbacks, as in to pass them as arguments to other functions. Take the setTimeout function for example:
+
+``` javascript
+setTimeout(function() {
+  alert('hello');
+}, 1000);
+```
+
+Or the Array.prototype.map function:
+
+``` javascript
+var numbers = [2,4,6];
+var numers_half = numbers.map(function(item) {
+  return item / 2;
+});
+```
+
+Another popular use case (especially for frameworks) is to create closures with anonymous functions, such as Immediately-invoked function expression (IIFE).
+
+``` javascript
+(function() {
+  alert('foo');
+})();
+```
+
+Another callback example:
+
+``` javascript
+function takesACallback(callback) {
+    // do some interesting things here
+    return "The callback says: " + callback();
+}
+
+takesACallback(function() {
+    return "I'm the callback!";
+}); // returns "The callback says: I'm the callback!"
+```
+
+However, you can still have a reference to an anonymous function, just because it is unnamed it doesn’t mean it’s unreferenced. We can use a function expression as assign our anonymous function to a variable.
+
+The function itself is still anonymous (it doesn’t have a name directly attached to it), but you can call the function by the named reference.
+
+``` javascript
+var reference = function() {
+    return "I'm still an anonymous function";
+}
+
+reference(); // returns "I'm still an anonymous function"
+```
+
+Declared functions are not anonymous. They have a name directly attached to the function, with no need for a named reference.
+
+```
+function declared() {
+    return "I'm not anonymous function";
+}
+
+declared(); // returns "I'm not anonymous function"
+```
+
+Writing a named function like this results in a function declaration.
+
+Anonymous functions are created at runtime ... Function declarations are different. They are run before any of the other code is executed so the functions do not have to be declared before the code that calls them.
 
 **How do you organize your code? (module pattern, classical inheritance?)?**
 
@@ -129,7 +197,7 @@ http://news.company.com/dir/other.html |	Failure |	Different host
 
 There is also a work around for subdomains. The last example above http://news.company.com/dir/other.html can be a Success by setting document.domain to our parent domain company.com.
 
-```
+```javascript
 document.domain = "company.com";
 ```
 
@@ -148,7 +216,7 @@ In mathematics, a ternary operation is an n-ary operation with n = 3. In compute
 The arguments and result can be of different types. Many programming languages that use C-like syntax feature a ternary operator, ?:, which defines a conditional expression. Often, a simple if-else statement can be used to achieve the same result.
 
 For example:
-```
+```javascript
 if (fooTrue) {
   bar();
 } else {
@@ -157,12 +225,12 @@ if (fooTrue) {
 ```
 
 Above code can be shortened with ?:
-```
+```javascript
 fooTrue ? bar() : fuzz();
 ```
 
 In JavaScript, conditional operators can be evaluated to an Expression, not just statement.
-```
+```javascript
 // assigned to a variable
 var isFoo = fooTrue ? "yes" : "no";
 
@@ -189,6 +257,12 @@ ES6 classes have use strict in-built.
 **What is the extent of your experience with Promises and/or their polyfills?**
 
 **What are the pros and cons of using Promises instead of callbacks?**
+
+The main advantage a callback has over a promise is locality.  With a callback you're asking for work to be performed in one place, and a result to be given very near the same so you can operate on it.  In situations where there is no actual data being handed back (think GCD's primitives) a callback is the only appropriate way to handle such an API.  Anything more would add needless complexity to a simple interface.
+
+That said a promise's advantage is flexibility.  You have much more liberty about where, when, and how work is done because you're dealing with a proper data type rather than a function.  That freedom allows one to express  higher-order operations like batching, chaining, coalescing, etc., but it can also introduce a small amount of uncertainty into any piece of code that relies on the locality mentioned above.
+
+It all depends on what you need to do and how you need it done.  For code that relies on short local reactions to asynchronous events go with a callback.  For more complex interactions and data flows promises bring order to what could potentially be callback hell.
 
 **What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?**
 
