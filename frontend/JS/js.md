@@ -11,8 +11,6 @@
 
 **How do you organize your code? (module pattern, classical inheritance?)?**
 
-**What's the difference between host objects and native objects?**
-
 **Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?**
 
 **What's the difference between `.call` and `.apply`?**
