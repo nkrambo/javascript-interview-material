@@ -49,4 +49,92 @@ getValue(); // invokes that function
 
 What happens when the ```var getValue = helperFunction(v)``` line is called?
 
+1. ```helperFunction(v)``` gets called with the current value of ```v```, which is 1
+2. ```helperFunction``` gets executed, with the param ```x``` set to 1
+3. The anonymous function returned by ```helperFunction``` gets created, still with ```x``` set to 1
+4. ```getValue``` is set to the result of ```helperFunction```, which is
+
+``` javascript
+function() {
+  return 1;
+};
+```
+
+So now things look like this:
+
+``` javascript
+var v = 1;
+var getValue = function() {
+  return 1;
+};
+v = 2;
+
+getValue();
+```
+
+And from here it is hardly surprising that ```getValue()``` returns 1.
+
+What would have happened without the IIFE?
+
+``` javascript
+var v = 1;
+var getValue = function() {
+  return v;
+};
+v = 2;
+
+getValue(); // returns 2
+```
+
+Although the ```return v``` is written when ```v``` is 1, by the time ```getValue``` is called ```v``` has been set to 2. Thus ```getValue()``` actually returns 2.
+
+IIFEs can also be used to enforce private variables and methods:
+
+``` javascript
+var counter = (function(){
+  var i = 0;
+
+  return {
+    get: function(){
+      return i;
+    },
+    set: function( val ){
+      i = val;
+    }
+  };
+}());
+
+counter.get(); // returns 0
+counter.set( 3 );
+counter.get(); // returns 3
+counter.i; // returns undefined
+```
+
+Again with the confusing nested functions! Can I have a rewrite?
+
+``` javascript
+function helperFunction(){
+  var i = 0;
+
+  return {
+    get: function(){
+      return i;
+    },
+    set: function( val ){
+      i = val;
+    }
+  };
+};
+
+var counter = helperFunction();
+
+counter.get(); // returns 0
+counter.set( 3 );
+counter.get(); // returns 3
+counter.i; // returns undefined
+```
+
+Ok, that's a bit clearer, but what is ```counter``` actually set to?
+
+```counter``` is set to the return value of ```helperFunction```, that is just this bit:
 
