@@ -138,3 +138,53 @@ Ok, that's a bit clearer, but what is ```counter``` actually set to?
 
 ```counter``` is set to the return value of ```helperFunction```, that is just this bit:
 
+``` javascript
+{
+  get: function(){
+    return i;
+  },
+  set: function( val ){
+    i = val;
+  }
+};
+```
+
+You'll notice ```var i``` doesn't appear anywhere in there. ```i``` is defined elsewhere in the helperFunction / IIFE. Since the return value of ```helperFunction``` doesn't give explicit access to ```i```, counter doesn't have access.
+
+Fine, so if that's all that ```counter``` has access to, how does ```counter.get()``` return a value?
+
+Scopes! The scope from ```helperFunction``` has access to ```i```. The object returned by ```helperFunction``` (a.k.a counter) has access to all the variables defined in ```helperFunction```. It works like this:
+
+1. Call to ```counter.get()``` goes and looks at the get function defined in ```helperFunction...```
+
+``` javascript
+get: function() {
+  return i;
+}
+```
+
+2. The ```get``` function looks for its local scope, which is ```helperFunction ...```
+
+``` javascript
+function helperFunction() {
+var i = 0;
+
+  return {
+    get: function() {
+      return i;
+    },
+    set: function(val) {
+      i = val;
+    }
+  };
+};
+```
+3. In ```helperFunction``` is a definition for ```i...```
+
+``` javascript
+  var i = 0;
+```
+
+4. So ```get``` can return 0!
+
+
