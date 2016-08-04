@@ -4,13 +4,21 @@
 * What did you learn yesterday/this week?
 
 * What excites or interests you about coding?
+
 * What is a recent technical challenge you experienced and how did you solve it?
+
 * What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
+
 * Talk about your preferred development environment.
+
 * Which version control systems are you familiar with?
+Git and SVN a little
+
 * Can you describe your workflow when you create a web page?
 
+
 * If you have 5 different stylesheets, how would you best integrate them into the site?
+
 Depends one the context. Using media types such as 'print', 'screen' can reduce the Critial Rendering Path. But normally you would concat, minimize and cache a single resource into the header to reduce round trips. If the file is large then perhaps multiple files that can be downloaded in parallel would be best.   
 
 
@@ -18,6 +26,7 @@ Depends one the context. Using media types such as 'print', 'screen' can reduce 
 
 * How would you optimize a website's assets/resources?
 CRP
+CRP metrics, bytes, round trips and assets
 
 * How many resources will a browser download from a given domain at a time?
 Using the pre-scanner, up to 8 in Chrome.
