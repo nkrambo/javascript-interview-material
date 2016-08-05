@@ -45,6 +45,7 @@ const school = [
   { name: 'Tiffany', role: 'Student' }
 ]
 
+// using filter method, which expects a boolean return
 // returns a new array of teachers
 const teachers = school.filter(function(person) {
   return person.role === 'Teacher'; // returns true or false
@@ -56,6 +57,37 @@ const isTeacher = function(person) {
 }
 
 const teachers = school.filter(isTeacher)
+
+
+// using map method, which transforms each iteration
+// returns a new array of names
+const names = school.filter(function(person) {
+  return person.name;
+});
+
+// We could chain filter and map together to get the names of teachers, for example.
+const teacherNames = school
+   .filter(function(person) {
+     return person.role === 'Teacher';
+   })
+   .map(function(person) {
+     return person.name;
+   })
+
+
+// How to write array.filter from scratch, elequent JS
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // For example, you can have functions that create new functions.
