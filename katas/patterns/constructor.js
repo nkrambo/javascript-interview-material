@@ -14,7 +14,6 @@ const newObject = Object.create( Object.prototype );
 // Object constructor
 const newObject = new Object();
 
-
 /*
  * Getting and setting properties
  * There are then four ways in which keys and values can then be assigned to an object:
@@ -120,10 +119,10 @@ var mondeo = new Car( "Ford Mondeo", 2010, 5000 );
  */
 
 class Car {
-  constructor(opts) {
-    this.model = opts.model;
-    this.year = opts.year;
-    this.miles = opts.miles;
+  constructor(model, year, miles) {
+    this.model = model;
+    this.year = year;
+    this.miles = miles;
   }
 
   // Prototype method
@@ -132,18 +131,4 @@ class Car {
   }
 }
 
-var civic = new Car({
-  model: 'Honda',
-  year: 2001,
-  miles: 50000
-});
-
-// ES5 Example of constructor function
-function Car() {
-  this.model = opts.model;
-  ...
-  ...
-}
-Car.prototype.toString = function() {
-  ...
-}
+const civic = new Car('Honda', 2001, 50000);
