@@ -16,17 +16,16 @@ const factorial = function(n) {
   return n * factorial(n - 1);
 };
 
-// // using while loop
-// const factorial = function(n) {
-//   if (n === 1) {
-//     return 1;
-//   }
-//
-//   let result;
-//   while (n >= 1) {
-//     result *= n
-//     n -= 1;
-//   }
-//
-//   return result;
-// }
+// while loop
+const factorial = function(n) {
+  if (n <= 1) {
+    return 1;
+  }
+
+  let result = 1;
+  while (n > 1) {
+    result *= n;
+    n -= 1;
+  }
+  return result;
+}

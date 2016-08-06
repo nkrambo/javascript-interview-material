@@ -21,3 +21,22 @@ console.log(factorial( 10 )); // 3628800
 // However, this can be avoided with tail call optimisation.
 
 
+const factorial = function(x) {
+  if (x === 0) {
+    return 1;
+  }
+  return x * factorial(x-1);
+}
+
+const factorial = function(x) {
+  if (x <= 1) {
+    return 1;
+  }
+
+  let result = 1;
+  while (x > 1) {
+    result *= x;
+    x -= 1;
+  }
+  return result;
+}
