@@ -30,8 +30,6 @@
 **Have you ever used JavaScript templating?**
   * If so, what libraries have you used?
 
-**Explain "hoisting".**
-
 **Describe event bubbling.**
 
 **What's the difference between an "attribute" and a "property"?**

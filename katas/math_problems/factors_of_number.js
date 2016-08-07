@@ -43,9 +43,8 @@ const factors = function(n) {
     }
     n -= 1;
   }
-  
+
   return factors.toString();
 }
-
 
 console.log(factors(99));

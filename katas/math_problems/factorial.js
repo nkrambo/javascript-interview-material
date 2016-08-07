@@ -6,7 +6,7 @@
 // The mathematical notation for this is 5!
 
 // lower bound = 1
-// upper bound = ?
+// upper bound = (n)
 
 // using recursion
 const factorial = function(n) {
