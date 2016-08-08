@@ -26,8 +26,19 @@ document.getElementById("parent-list").addEventListener("click", function(e) {
 	// If it was a list item
 	if(e.target && e.target.nodeName == "LI") {
 		// List item found!  Output the ID!
-		console.log("List item ", e.target.id.replace("post-", ""), " was clicked!");
+		console.log(e.target.innerHTML + ' was clicked');
 	}
 });
+
+list.addEventListener('click', function(e) {
+  if(e.target && e.target.nodeName === 'LI') {
+    if(e.target.style.background === 'red') {
+      e.target.style.background = 'none';
+    } else {
+      e.target.style.background = 'red'
+    }
+  }
+});
+
 ```
 Start by adding a click event listener to the parent element.  When the event listener is triggered, check the event element to ensure it's the type of element to react to.  If it is an LI element, boom:  we have what we need!  If it's not an element that we want, the event can be ignored.
