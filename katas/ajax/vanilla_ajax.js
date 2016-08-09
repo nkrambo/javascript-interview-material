@@ -45,3 +45,21 @@ function get(url) {
   });
 }
 
+get("example/data.txt").then(function(text) {
+  console.log("data.txt: " + text);
+}, function(error) {
+  console.log("Failed to fetch data.txt: " + error);
+});
+
+get('http://jsonplaceholder.typicode.com/posts/1')
+.then(function(text) {
+  const main = document.querySelector('.js-main');
+  const user = JSON.parse(text);
+  const node = document.createElement('LI');
+  const textnode = document.createTextNode(user.title);
+  node.appendChild(textnode);
+  main.appendChild(node);
+}, function(error) {
+  console.log(error);
+});
+

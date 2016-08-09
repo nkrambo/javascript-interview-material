@@ -75,11 +75,50 @@ const teacherNames = school
    })
 
 
-// How to write array.filter from scratch, elequent JS
+// FROM SCRATCHES
+const myArray = [1, 2, 3, 7, 9];
 
+// filter from scratch
+const filter = function(array, fn) {
+  const passed = [];
 
+  for (let i = 0; i < iter.length; i++) {
+    if (fn(iter[i])) {
+      passed.push(iter[i]);
+    }
+  }
+  return passed;
+}
 
+const above5 = filter(myArray, function(item) {
+  return item > 5;
+});
 
+// map from scratch
+const map = function(array, fn) {
+  const results = [];
+  for (let i = 0; i < iter.length; i++) {
+    results.push(fn(iter[i]));
+  }
+  return results;
+}
+
+const double = map(myArray, function(item) {
+  return item * 2;
+});
+
+// reduce from scratch
+const reduce = function(array, fn, start) {
+  let current = start;
+  for (let i = 0; i < array.length; i++) {
+    current = fn(current, array[i]);
+  }
+  return current;
+}
+
+const sum = reduce(myArray, function(a, b) {
+  return a + b;
+}, 0);
 
 
 
@@ -113,5 +152,40 @@ function noisy(f) {
 noisy(Boolean)(0);
 // → calling with 0
 // → called with 0 - got false
+
+
+
+
+
+// functions taking fn as args.
+const map = function(iter, fn) {
+  const results = [];
+  for (let i = 0; i < iter.length; i++) {
+    results[i] = fn(iter[i]);
+  }
+  return results;
+}
+
+const myArray = [1, 2, 3];
+
+const doubleIt = function(item) {
+  return item * 2;
+}
+
+const tripleIt = function(item) {
+  return item * 3;
+}
+
+// passing full fn
+const doubledArray = map(myArray, function(item) {
+  return item * 2;
+});
+
+// passing referenced fn's
+const double = map(myArray, doubleIt);
+const triple = map(myArray, tripleIt);
+
+console.log(double);
+console.log(triple);
 
 // https://www.youtube.com/watch?v=BMUiFMZr7vk
