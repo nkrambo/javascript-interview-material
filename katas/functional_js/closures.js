@@ -43,4 +43,42 @@ var add10 = makeAdder(10);
 console.log(add5(2));  // 7
 console.log(add10(2)); // 12
 
+// Practical closures
+// Closures have obvious parallels to object oriented programming,
+// where objects allow us to associate some data (the object's properties) with one or more methods.
+
+// Consequently, you can use a closure anywhere that you might
+// normally use an object with only a single method.
+
+// Closures are used in the module pattern to emulate privacy
+// Factory functions and mixins from other libraries are a variation of the module pattern.
+// Now we use ES6 modules to acheive this.
+
+// https://coryrylan.com/blog/javascript-module-pattern-basics
+
+var counter = (function() {
+  var privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+  return {
+    increment: function() {
+      changeBy(1);
+    },
+    decrement: function() {
+      changeBy(-1);
+    },
+    value: function() {
+      return privateCounter;
+    }
+  };
+})();
+
+console.log(counter.value()); // logs 0
+counter.increment();
+counter.increment();
+console.log(counter.value()); // logs 2
+counter.decrement();
+console.log(counter.value()); // logs 1
+
 
