@@ -51,15 +51,39 @@ get("example/data.txt").then(function(text) {
   console.log("Failed to fetch data.txt: " + error);
 });
 
-get('http://jsonplaceholder.typicode.com/posts/1')
-.then(function(text) {
-  const main = document.querySelector('.js-main');
-  const user = JSON.parse(text);
-  const node = document.createElement('LI');
-  const textnode = document.createTextNode(user.title);
-  node.appendChild(textnode);
-  main.appendChild(node);
-}, function(error) {
-  console.log(error);
-});
+// get('http://jsonplaceholder.typicode.com/posts/1')
+// .then(function(text) {
+//   const main = document.querySelector('.js-main');
+//   const user = JSON.parse(text);
+//   const node = document.createElement('LI');
+//   const textnode = document.createTextNode(user.title);
+//   node.appendChild(textnode);
+//   main.appendChild(node);
+// }, function(error) {
+//   console.log(error);
+// });
+
+
+
+
+// const list = document.querySelector('.js-list');
+//
+// get('http://jsonplaceholder.typicode.com/posts/')
+// .then(function(data) {
+//   const posts = JSON.parse(data);
+//   const user1 = posts.filter(function(item) {
+//     return item.userId === 1;
+//   });
+//
+//   user1.forEach(function(item) {
+//     const node = document.createElement('LI');
+//     node.innerHTML = item.title;
+//     list.appendChild(node);
+//   });
+// }, function(error) {
+//   console.log(error);
+// });
+
+
+
 

@@ -1,5 +1,6 @@
 
-//
+// closures
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
 
 function birdCounter(noun) {
   const count = 0;
@@ -27,3 +28,19 @@ dogCounter(); // 3 dogs
 
 // For loops pollute global namespace with the 'var' keyword.
 // 'let' will stop this as it's block scoping
+
+
+
+function makeAdder(x) {
+  return function(y) {
+    return x + y;
+  };
+}
+
+var add5 = makeAdder(5);
+var add10 = makeAdder(10);
+
+console.log(add5(2));  // 7
+console.log(add10(2)); // 12
+
+
