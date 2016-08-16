@@ -82,3 +82,20 @@ counter.decrement();
 console.log(counter.value()); // logs 1
 
 
+// Creating a module
+// First we start using a anonymous closure. Anonymous closures are just functions
+// that wrap our code and create an enclosed scope around it. Closures help keep any
+// state or privacy within that function. Closures are one of the best and most
+// powerful features of JavaScript.
+
+(function() {
+    'use strict';
+    // Your code here
+    // All function and variables are scoped to this function
+}());
+
+// This pattern is well known as a Immediately Invoked Function Expression or IIFE.
+// The function is evaluated then immediately invoked. Its also a good practice to
+// run your modules in ES5 strict mode. Strict mode will protect you from some of
+// the more dangerous parts in JavaScript.
+
