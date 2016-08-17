@@ -9,21 +9,21 @@ const fullName = (state) => ({ // short-hand for returning an object
   }
 })
 
-const Person = function(firstName, lastName, age) {
+const Person = (firstName, lastName, age) => {
 
-  state = {
-    firstName: firstName,
-    lastName: lastName,
-    age: age
-  }
+  let state = {
+    firstName,
+    lastName,
+    age
+  };
 
   return Object.assign(
     {},
     fullName(state)
-  )
+  );
 }
 
-const nick = new Person('Nick', 'Krambo', 32);
+const nick = Person('Nick', 'Krambo', 32);
 
 nick.fullName();
 
