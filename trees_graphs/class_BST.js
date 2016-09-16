@@ -1,11 +1,24 @@
+
 class BinarySearchTree {
 
   constructor() {
     this.root = null;
   }
 
-  // find
+ /*
+  * Find
+  * @param {number | string value}
+  * @return {obect} Returns the found value object. If the tree does not contain
+  * the value returns the closest leaf value object, else returns error if the
+  * tree is empty.
+  */
+
   find(value) {
+
+    // if empty
+    if (this.isEmpty()) {
+      new Error('Tree is empty.');
+    }
 
     // start from root
     let current = this.root;
@@ -32,7 +45,11 @@ class BinarySearchTree {
 
   }
 
-  // insert
+  /*
+   * Insert
+   * @param {number | string value}
+   */
+
   insert(value) {
 
     // create node
@@ -109,12 +126,16 @@ class BinarySearchTree {
     // there's no right child, we go up until we find an ancestor with a
     // value larger than node
     } else {
-      let current = node;
-      while (current) {
-        if (current.parent.value > current.value) {
-          return current.parent;
-        }
-        current = current.parent;
+      // let current = node;
+      // while (current) {
+      //   if (current.parent.value > current.value) {
+      //     return current.parent;
+      //   }
+      //   current = current.parent;
+      // }
+      while (node) {
+        if (node.parent.value > node.value) return node;
+        node = node.parent;
       }
     }
 
@@ -188,8 +209,7 @@ class BinarySearchTree {
   // DFS
   dfs(root) {
 
-    let current = root || this.root;
-    const stack = [current];
+    const stack = [root || this.root];
 
     while (stack.length) {
 
@@ -199,11 +219,11 @@ class BinarySearchTree {
       // do work here...
       console.log(node.value);
 
+      // push frame
       if (node.right !== null) {
         stack.push(node.right);
       }
 
-      // push frame
       if (node.left !== null) {
         stack.push(node.left);
       }
@@ -214,8 +234,7 @@ class BinarySearchTree {
   // BFS
   bfs(root) {
 
-    let current = root || this.root;
-    const queue = [current];
+    const queue = [root || this.root];
 
     while (queue.length) {
 
