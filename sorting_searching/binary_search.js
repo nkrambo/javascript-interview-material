@@ -1,25 +1,23 @@
 
-//Copyright 2009 Nicholas C. Zakas. All rights reserved.
-//MIT-Licensed, see source file
-function binarySearch(items, value){
+function binarySearch(array, value) {
 
-    var startIndex  = 0,
-        stopIndex   = items.length - 1,
-        middle      = Math.floor((stopIndex + startIndex)/2);
+  let start = 0;
+  let last = array.length - 1;
+  let middle = Math.floor(array.length / 2);
 
-    while(items[middle] != value && startIndex < stopIndex){
+  while (array[middle] !== value && start < last){
 
-        //adjust search area
-        if (value < items[middle]){
-            stopIndex = middle - 1;
-        } else if (value > items[middle]){
-            startIndex = middle + 1;
-        }
-
-        //recalculate middle
-        middle = Math.floor((stopIndex + startIndex)/2);
+    // adjust search area
+    if (value < array[middle]) {
+      last = middle - 1;
+    } else if (value > array[middle]) {
+      start = middle + 1;
     }
 
-    //make sure it's the right value
-    return (items[middle] != value) ? -1 : middle;
+    // recalculate middle
+    middle = Math.floor((last + start) / 2);
+  }
+
+  // make sure it's the right value
+  return array[middle] !== value ? - 1 : middle;
 }

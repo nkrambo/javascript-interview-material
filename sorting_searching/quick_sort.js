@@ -22,7 +22,7 @@ function quickSort(array, left, right) {
   return array;
 }
 
-function partition(array, pivot, left, right ) {
+function partition(array, pivot, left, right) {
    let pivotValue = arr[pivot];
    let partitionIndex = left;
 
