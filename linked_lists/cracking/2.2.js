@@ -27,6 +27,6 @@ function printKthToLast(list, k) {
     p1 = p1.next;
     p2 = p2.next;
   }
-  
+
   return p2;
 }
