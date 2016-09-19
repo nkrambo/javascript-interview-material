@@ -45,8 +45,8 @@ class Graph {
 
   addLine(startValue, endValue) {
     // Find the nodes for each value.
-    var startNode = this.find(startValue);
-    var endNode = this.find(endValue);
+    const startNode = this.find(startValue);
+    const endNode = this.find(endValue);
 
     // Freak out if we didn't find one or the other.
     if (!startNode || !endNode) {
@@ -58,3 +58,4 @@ class Graph {
   }
 }
 
+const myGraph = new Graph();

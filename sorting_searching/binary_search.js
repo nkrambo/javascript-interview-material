@@ -1,11 +1,10 @@
 
 function binarySearch(array, value) {
-
   let start = 0;
   let last = array.length - 1;
   let middle = Math.floor(array.length / 2);
 
-  while (array[middle] !== value && start < last){
+  while (array[middle] !== value && start < last) {
 
     // adjust search area
     if (value < array[middle]) {

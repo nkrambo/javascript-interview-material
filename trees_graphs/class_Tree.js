@@ -33,7 +33,7 @@ class Tree {
    */
 
   add(value, parentValue) {
-    var newNode = {
+    const newNode = {
       value: value,
       children: []
     };
@@ -54,4 +54,4 @@ class Tree {
   }
 }
 
-
+const myTree = new Tree();
