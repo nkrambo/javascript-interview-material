@@ -1,7 +1,12 @@
 
 // Sum Lists
 
-function sumLists(list1, list2) {
+function sumListsReverse(list1, list2) {
+
+  // type check
+  if (!(list1 instanceof LinkedList) || !(list2 instanceof LinkedList)) {
+    new Error('sumListsReverse: Expects 2 parameters of [object LinkedList].');
+  }
 
   const results = new LinkedList();
 
@@ -38,7 +43,7 @@ function sumLists(list1, list2) {
     results.add(sum, results.length);
     node = node.next;
   }
-
+  // check for any remainder
   if (carry > 0) results.add(carry, results.length);
 
   return results;
