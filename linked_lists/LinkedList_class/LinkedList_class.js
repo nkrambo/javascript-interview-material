@@ -73,3 +73,11 @@ class LinkedList {
     this.length--;
   }
 }
+
+const myList = new LinkedList();
+
+myList.add(1, 0);
+myList.add(2, 1);
+myList.add(3, 2);
+myList.add(4, 3);
+myList.add(5, 4);
