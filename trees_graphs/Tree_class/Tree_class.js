@@ -1,18 +1,8 @@
 
 class Tree {
-
-  /**
-   * The tree has to start with a single parent, the "root" of the tree.
-   */
-
   constructor() {
     this.root = null;
   }
-
-  /**
-   * We need a way to traverse our tree and call a function on each node in the
-   * tree.
-   */
 
   traverse(callback) {
     // We'll define a walk function that we can call recursively on every node
@@ -28,19 +18,15 @@ class Tree {
     walk(this.root);
   }
 
-  /**
-   * Next we need a way to add nodes to our tree.
-   */
-
-  add(value, parentValue) {
-    const newNode = {
+  insert(value, parentValue) {
+    const node = {
       value: value,
       children: []
     };
 
-    // If there is no root, just set it to the new node.
+    // If there is no root, set node.
     if (this.root === null) {
-      this.root = newNode;
+      this.root = node;
       return;
     }
 
@@ -48,7 +34,7 @@ class Tree {
     // and add the new node to its children.
     this.traverse(function(node) {
       if (node.value === parentValue) {
-        node.children.push(newNode);
+        node.children.push(node);
       }
     });
   }
