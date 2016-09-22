@@ -13,7 +13,7 @@
 // Using a topological approach
 // Page 623
 
-function buildOrder(projects, deps) {
+function buildOrder(projects, dependencies) {
   const finished = [];
   const discovered = new Set();
   const path = new Set();
