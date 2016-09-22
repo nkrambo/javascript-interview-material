@@ -1,4 +1,6 @@
 
+// Binary Tree nodes may or may not have a reference to it's parent.
+
 class BinaryTree {
   constructor() {
     this.root = null;
