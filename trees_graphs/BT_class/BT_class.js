@@ -39,17 +39,15 @@ class BinaryTree {
       } else if (current.right === null) {
         current.right = node;
         return;
+      }
 
-      } else {
+      // enqueue
+      if (current.left !== null) {
+        queue.push(current.left);
+      }
 
-        // enqueue
-        if (current.left !== null) {
-          queue.push(current.left);
-        }
-
-        if (current.right !== null) {
-          queue.push(current.right);
-        }
+      if (current.right !== null) {
+        queue.push(current.right);
       }
     }
   }
