@@ -23,15 +23,39 @@
 // extractMin() or extractMax() - Time: O(log n)
 // Finding the minimum or maximum is easy, it's always the root. The trickier part is replacing it.
 // First, remove the min/max element (root) and swap it with the last (bottom, right) element.
-// Then we 'bubble down' the element until the tree is correct. Again, because this is not a BST
+// Then we 'sink down' the element until the tree is correct. Again, because this is not a BST
 // you'll have to compare both left and right children nodes when traversing.
+
+// Often it is more time and space efficient to implement a binary heap using a dynamic array.
 
 class Heap {
   constructor() {
     this.root = null;
   }
 
-  // insert
+  getLeaf() {
+    // use a BFS to find a leaf node to insert into.
+    // this way we maintain, 'complete tree' property
+    const queue = [this.root];
+
+    while (queue.length) {
+      // dequeue
+      const current = queue.shift();
+
+      // check for leaf to return
+      if (current.left === null || current.right === null) return current;
+
+      // enqueue
+      if (current.left !== null) {
+        queue.push(current.left);
+      }
+
+      if (current.right !== null) {
+        queue.push(current.right);
+      }
+    }
+  }
+
   insert(value) {
     // create node
     const node = {
@@ -47,61 +71,83 @@ class Heap {
       return;
     }
 
-    // use a BFS to find a leaf node to insert into.
-    // this way we maintain, 'complete tree' property
-    const queue = [this.root];
+    // grab leaf and attach node with parent
+    const leaf = this.getLeaf();
+    node.parent = leaf;
+    leaf.left === null ? leaf.left = node : leaf.right = node;
 
-    while (queue.length) {
-
-      // dequeue
-      const current = queue.shift();
-
-      // check for leafs to return
-      if (current.left === null) {
-        node.parent = current;
-        current.left = node;
-        break;
-
-      } else if (current.right === null) {
-        node.parent = current;
-        current.right = node;
-        break;
-      }
-
-      // enqueue
-      if (current.left !== null) {
-        queue.push(current.left);
-      }
-
-      if (current.right !== null) {
-        queue.push(current.right);
-      }
-    }
-
+    // bubble into corrent position
     this.bubbleUp(node);
     return;
   }
 }
 
 class MinHeap extends Heap {
-
   bubbleUp(node) {
+    while (node.parent && node.value < node.parent.value) {
+      // cache parent value
+      const parentValue = node.parent.value;
 
+      // swap em
+      node.parent.value = node.value;
+      node.value = parentValue;
+
+      // keep bubbling
+      node = node.parent;
+    }
   }
 
-  // extract min
-  extractMin() {
+  sink() {
+    let current = this.root;
 
+    while (current) {
+
+
+
+      // get smallest child
+      if (current.left !== null) left = current.left.value;
+      if (current.right !== null) right = current.right.value;
+
+      const child = left < right ? 'left' : 'right';
+
+      if (current[child].value < current.value) {
+        // cache parent value
+        const parentValue = current.value;
+
+        // swap em
+        current[child].value = current.value;
+        current.value = parentValue;
+
+        // keep sinking
+        current = current[child];
+      }
+    }
+  }
+
+  extractMin() {
+    const min = this.root.value;
+    let leaf = this.getLeaf();
+
+    // insert at root
+    this.root.value = leaf.value;
+
+    // remove old leaf
+    leaf = null;
+
+    // sink root value
+    this.sink();
+
+    return min;
   }
 }
 
 class MaxHeap extends Heap {
-
   bubbleUp(node) {
-
+    while (node.parent.value < node.value) {
+      node.parent.value = node.value;
+    }
   }
 
-  // extract max
   extractMax() {}
 }
 
