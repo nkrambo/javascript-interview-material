@@ -14,11 +14,17 @@
 
 https://medium.com/@alexanderv/tries-javascript-simple-implementation-e2a4e54e4330#.xbphdk4np
 
-// class Trie {
-//
-// }
-//
-// export default Trie;
+class Trie {
+  constructor() {
+    this.root = null;
+  }
+
+  insert(value) {
+
+  }
+}
+
+export default Trie;
 
 var node = {
     key : null
