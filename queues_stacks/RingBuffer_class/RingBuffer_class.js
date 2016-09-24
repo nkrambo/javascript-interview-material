@@ -33,8 +33,8 @@ class RingBuffer {
   }
 
   enqueue(value) {
-    this.end = (this.first + this.size) % this.capacity();
-    this.buffer[this.end] = value;
+    this.last = (this.first + this.size) % this.capacity();
+    this.buffer[this.last] = value;
 
     if (this.isFull()) {
       this.first = (this.first + 1) % this.capacity();
