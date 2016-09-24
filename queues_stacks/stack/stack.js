@@ -26,3 +26,5 @@ class Stack {
     return this.list[this.length - 1];
   }
 }
+
+export default Stack;
