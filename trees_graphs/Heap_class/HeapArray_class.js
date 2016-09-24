@@ -2,9 +2,8 @@
 // http://eloquentjavascript.net/1st_edition/appendix2.html
 
 class BinaryHeap {
-  constructor(scoreFunction) {
+  constructor() {
     this.items = [];
-    this.scoreFunction = scoreFunction;
   }
 
   push(value) {
@@ -22,7 +21,7 @@ class BinaryHeap {
     // place on top and sink it
     if (this.items.length > 0) {
       this.items[0] = last;
-      this.sinkDown(0);
+      this.sink(0);
     }
     return root;
   }
@@ -43,7 +42,7 @@ class BinaryHeap {
         // Otherwise, replace the removed with last and bubble or sink as appropriate
         this.items[i] = last;
         this.bubbleUp(i);
-        this.sinkDown(i);
+        this.sink(i);
         break;
       }
     }
@@ -54,30 +53,31 @@ class BinaryHeap {
   }
 
   bubbleUp(node) {
-
-    // grab item to bubble
-    const item = this.items[node]
-
     // cannot go up further than root.
     while (node > 0) {
       // Compute the parent element's index, and fetch it.
       const parentNode = Math.floor((node + 1) / 2) - 1;
-      const parent = this.items[parentNode];
 
-      // If the parent has a lesser score, we're in order and done.
-      if (score >= this.scoreFunction(parent)) break;
+      // grab values
+      const nodeValue = this.items[node];
+      const parentValue = this.items[parentNode];
 
-      // Otherwise, swap the parent with the current
-      this.items[parentNode] = node;
-      this.items[node] = parent;
-      node = parentNode;
+      // If test passes, swap node with parent
+      if (nodeValue < parentValue) {
+        this.items[parentNode] = nodeValue;
+        this.items[node] = parentValue;
+        node = parentNode;
+
+      // oterwise, we're done
+      } else {
+        break;
+      }
     }
   }
 
   sink(node) {
     // Look up node and its score.
-    const item = this.items[node];
-    const itemScore = this.scoreFunction(node);
+    const nodeValue = this.items[node];
 
     while(true) {
       // Compute the indices of children.
@@ -89,18 +89,20 @@ class BinaryHeap {
 
       // If left exists, grab score and compare it
       if (left < this.items.length) {
-        const leftScore = this.scoreFunction(this.items[left]);
+        const leftValue = this.items[left];
 
         // If score is less than item's, swap them.
-        if (leftScore < itemScore) {
+        if (leftValue < nodeValue) {
           swap = left;
         }
       }
 
       // Do the same for the right.
       if (right < this.items.length) {
-        const rightScore = this.scoreFunction(this.items[right]);
-        if (rightScore < (swap == null ? itemScore : leftScore)) {
+        const rightValue = this.items[right];
+        const leftValue = this.items[left];
+
+        if (rightValue < (swap == null ? nodeValue : leftValue)) {
           swap = right;
         }
       }
@@ -110,10 +112,30 @@ class BinaryHeap {
 
       // Otherwise, swap and continue.
       this.items[node] = this.items[swap];
-      this.items[swap] = item;
+      this.items[swap] = nodeValue;
       node = swap;
     }
   }
 }
+
+const heap = new BinaryHeap();
+
+heap.push(5);
+heap.push(15);
+heap.push(25);
+heap.push(3);
+heap.push(45);
+heap.push(1);
+heap.push(2);
+
+console.log(heap.items); // [1, 5, 2, 15, 45, 25, 3]
+
+heap.pop();
+
+console.log(heap.items); // [2, 5, 3, 15, 45, 25]
+
+heap.remove(15);
+
+console.log(heap.items); // [2, 5, 3, 25, 45]
 
 export default BinaryHeap;
