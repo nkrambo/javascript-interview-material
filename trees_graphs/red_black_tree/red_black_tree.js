@@ -32,6 +32,50 @@
 
 class RedBlackTree {
 
+  /**
+   * Red-Black Tree.
+   *
+   * @public
+   * @constructor
+   */
+  constructor() {
+    this._root = null;
+    this._colors = {
+      RED: 0,
+      BLACK: 1
+    };
+  }
+
+  /**
+   * Add value associated with a given key.
+   * Complexity: O(log N).
+   *
+   * @public
+   * @method
+   * @param {Number} key Key.
+   * @param {Object} value Value.
+   */
+
+   insert(key, value) {
+     this._root = this._put(key, value, this._root);
+     this._root.setColor(this_colors.BLACK);
+   };
+
+  /**
+   * Returns true or false depending on whether
+   * given node is red.
+   *
+   * @private
+   * @method
+   * @param {Node} node Node which sould be checked.
+   * @return Returns true if node is red.
+   */
+
+  isRed(node) {
+    if (!node) return false;
+    return node.isRed();
+  };
+
 }
 
 export default RedBlackTree;
