@@ -35,9 +35,3 @@ function merge (left, right) {
 
   return result.concat(left.length ? left : right);
 }
-
-const test = [1, 2, 9, 3, 2, 5, 14, 0];
-console.log(mergeSort(test)); // [0, 1, 2, 2, 3, 5, 9, 14]
-
-
-

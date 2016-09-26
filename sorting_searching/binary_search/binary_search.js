@@ -1,7 +1,7 @@
 
 /**
  * Searchs for specific element in a given array using
- * the binary search algorithm.<br><br>
+ * the binary search algorithm.
  * Time complexity: O(log N).
  *
  * @example
@@ -25,7 +25,7 @@ function binarySearch(array, value) {
 
     if (middleValue === value) {
       return middle;
-    else if (middleValue > value) {
+    } else if (middleValue > value) {
       right = middle + 1;
     } else {
       left = middle - 1;
