@@ -80,7 +80,7 @@ class Heap {
   changeKey(index, value) {
     const elem = this._heap[index];
     let parent = Math.floor(index / 2);
-    const temp;
+    let temp;
 
     if (elem !== undefined) {
       while (parent >= 0 && this._compare(elem, this._heap[parent]) > 0) {

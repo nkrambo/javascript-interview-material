@@ -1,5 +1,5 @@
 
-import BinarySearchTree from '../class_BST';
+import BinarySearchTree from '../bst';
 import { expect } from 'chai';
 
 describe('BinarySearchTree', function () {
