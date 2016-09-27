@@ -40,7 +40,7 @@ class Graph {
    */
 
   constructor() {
-    this.nodes = [];
+    this._nodes = [];
   }
 
   /**
@@ -52,43 +52,45 @@ class Graph {
    */
 
   add(value) {
-    this.nodes.push({
+    this._nodes.push({
       value: value,
       edges: []
     });
   }
 
   /**
-   * Next we need to be able to lookup nodes in the graph. Most of the time
-   * you'd have another data structure on top of a graph in order to make
-   * searching faster.
+   * Find node
+   * Complexity: O(n).
    *
-   * But for our case we're simply going to search through all of nodes to find
-   * the one with the matching value. This is a slower option, but it works for
-   * now.
+   * @public
+   * @param {Number|Object} value Value which we're looking for.
    */
 
   find(value) {
-    return this.nodes.find(function(node) {
+    return this._nodes.find((node) => {
       return node.value === value;
     });
   }
 
   /**
-   * Next we can connect two nodes by making a "line" from one to the other.
+   * Add edge
+   * Complexity: O(n).
+   *
+   * @public
+   * @param {Number|Object} startValue Value The value where the edge originates
+   * @param {Number|Object} endValue Value The value where the edge ends
    */
 
   addEdge(startValue, endValue) {
-    // Find the nodes for each value.
     const startNode = this.find(startValue);
     const endNode = this.find(endValue);
 
-    // Freak out if we didn't find one or the other.
+    // error if they don't exist
     if (!startNode || !endNode) {
       throw new Error('Both nodes need to exist');
     }
 
-    // And add a reference to the endNode from the startNode.
+    // push edge
     startNode.edges.push(endNode);
   }
 }

@@ -235,25 +235,3 @@ class BinarySearchTree {
 }
 
 export default BinarySearchTree;
-
-const BST = new BinarySearchTree();
-
-// BST.insert(50);
-// BST.insert(40);
-// BST.insert(45);
-// BST.insert(43);
-// BST.insert(46);
-// BST.insert(35);
-// BST.insert(30);
-// BST.insert(33);
-// BST.insert(36);
-//
-// BST.insert(75);
-// BST.insert(90);
-// BST.insert(88);
-// BST.insert(89);
-// BST.insert(84);
-// BST.insert(95);
-// BST.insert(65);
-// BST.insert(85);
-// BST.insert(86);

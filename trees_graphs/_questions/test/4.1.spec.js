@@ -20,8 +20,13 @@ describe('route between nodes', () => {
   // grab start and end nodes
   const E = myGraph.find('E');
   const A = myGraph.find('A');
+  const C = myGraph.find('C');
 
   it('should return the expect result, true', () => {
     expect(routeBetweenNodes(myGraph, E, A)).to.equal(true);
+  });
+
+  it('should return the expect result, false', () => {
+    expect(routeBetweenNodes(myGraph, C, A)).to.equal(false);
   });
 });
