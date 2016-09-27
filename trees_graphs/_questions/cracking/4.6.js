@@ -1,6 +1,26 @@
 
-// Write an algorithm to find the 'next' node (i.e, in-order successor) of a given node in a BST.
-// You may assume that each node has a reference to it's parent.
+/**
+ * Successor
+ *
+ * Write an algorithm to find the 'next' node (i.e, in-order successor) of a given node in a BST.
+ * You may assume that each node has a reference to it's parent.
+ *
+ * Solution: This solution requires composing 3 functions: findNext, findNode, findSmallest.
+ * We first need to find the node from the value passed in. If it's not there, raise exception.
+ * We know that the next node will either be the smallest of the value's right subtree, or if
+ * that doesn't exist, it will be the closest ancestor of value with a greater value. So we would
+ * traverse up to find it.
+ *
+ */
+
+/**
+ * Find next
+ *
+ * Time: O(log n)
+ *
+ * @param {object} value The value from which we want to find next of
+ * @return {object} Returns the successor node
+ */
 
 function findNext(value) {
   let node = findNode(value);
@@ -50,3 +70,5 @@ function findSmallest(root) {
     current = current.left;
   }
 }
+
+export default findNext;

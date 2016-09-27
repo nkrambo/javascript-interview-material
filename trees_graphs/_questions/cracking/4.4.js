@@ -1,6 +1,21 @@
 
-// Implement a function to check if a binary tree is balanced. A tree is unbalanced when the
-// difference in height between leaf nodes is more than 1.
+/**
+ * Check Balanced
+ *
+ * Implement a function to check if a binary tree is balanced. A tree is unbalanced when the
+ * difference in height between leaf nodes is more than 1.
+ *
+ * Solution: We do a DFS of the tree, keeping track of the different depths and checking
+ * either more than 2 heights or 2 heights with a difference of more than 1.
+ *
+ */
+
+/**
+ * Is balanced
+ *
+ * @param {object} tree Binary tree class to check
+ * @return {boolean} Returns true if the tree is balanced, otherwise returns false
+ */
 
 function isBalanced(tree) {
   const depths = []; // we short-circuit as soon as we find more than 2
@@ -31,8 +46,9 @@ function isBalanced(tree) {
         }
       }
 
-    // case: this isn't a leaf - keep stepping down
+    // push onto stack
     } else {
+
       if (node.left) {
         nodes.push([node.left, depth + 1]);
       }
@@ -45,3 +61,5 @@ function isBalanced(tree) {
 
   return true;
 }
+
+export default isBalanced;
