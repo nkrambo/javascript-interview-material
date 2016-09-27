@@ -1,10 +1,42 @@
 
+/**
+ * Graphs
+ *
+ * Looks something like this:
+ *
+ *     A –→ B ←–––– C → D ↔ E
+ *     ↑    ↕     ↙ ↑     ↘
+ *     F –→ G → H ← I ––––→ J
+ *          ↓     ↘ ↑
+ *          K       L
+ *
+ * We have a bunch of "nodes" (A, B, C, D, ...) that are connected with lines.
+ *
+ * These nodes are going to look like this:
+ *
+ *     Node {
+ *       value: ...,
+ *       edges: [(Node), (Node), ...]
+ *     }
+ *
+ * The entire graph will look like this:
+ *
+ *     Graph {
+ *       nodes: [
+ *         Node {...},
+ *         Node {...},
+ *         ...
+ *       ]
+ *     }
+ */
+
 class Graph {
 
   /**
-   * We'll hold onto all of our nodes in a regular JavaScript array. Not
-   * because there is any particular order to the nodes but because we need a
-   * way to store references to everything.
+   * Graph constructor, sets an array to keep track of nodes.
+   *
+   * @public
+   * @constructor
    */
 
   constructor() {
@@ -12,14 +44,17 @@ class Graph {
   }
 
   /**
-   * We can start to add values to our graph by creating nodes without any
-   * lines.
+   * Adds new node to the graph.
+   * Complexity: O(1).
+   *
+   * @public
+   * @param {Number|Object} value Value which will be inserted.
    */
 
-  addNode(value) {
+  add(value) {
     this.nodes.push({
       value: value,
-      lines: []
+      edges: []
     });
   }
 
@@ -43,7 +78,7 @@ class Graph {
    * Next we can connect two nodes by making a "line" from one to the other.
    */
 
-  addLine(startValue, endValue) {
+  addEdge(startValue, endValue) {
     // Find the nodes for each value.
     const startNode = this.find(startValue);
     const endNode = this.find(endValue);
@@ -54,8 +89,8 @@ class Graph {
     }
 
     // And add a reference to the endNode from the startNode.
-    startNode.lines.push(endNode);
+    startNode.edges.push(endNode);
   }
 }
 
-const myGraph = new Graph();
+export default Graph;

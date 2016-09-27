@@ -19,25 +19,31 @@
   * @return {boolean} Returns true if a route exists, otherwise returns false
   */
 
- function routeBetweenNodes(graph, start, end) {
-   const visited = new Set();
-   const queue = [start];
+  function routeBetweenNodes(graph, start, end) {
+    if (start === end) return true;
 
-   while (queue.length) {
-     const node = queue.shift();
-     for (let neighbour of graph[node]) {
-       if (!visited.has(neighbour)) {
-         if (neighbour === end) {
-           return true;
-         }
+    const visited = new Set();
+    const queue = [start];
 
-         visited.add(neighbour);
-         queue.push(neighbour);
-       }
-     }
-   }
+    while (queue.length) {
+      const node = queue.shift();
+      const edges = node.edges;
 
-   return false;
- }
+      for (let i = 0; i < edges.length; i++) {
+        const edge = edges[i];
+
+        if (!visited.has(edge)) {
+          if (edge === end) {
+            return true;
+          }
+
+          visited.add(edge);
+          queue.push(edge);
+        }
+      }
+    }
+
+    return false;
+  }
 
  export default routeBetweenNodes;
