@@ -4,9 +4,9 @@
  * Minimal Tree
  *
  * Given a sorted (increasing order) array with unique integer elements, write an
- * algorithm to create a binary search tree with minimal height
+ * algorithm to create a binary search tree with minimal height.
  *
- * As the list is already sorted the best way to create a balanced tree is by
+ * Solution: As the list is already sorted the best way to create a balanced tree is by
  * adding the middle node (parent) then the children. The algorithm is basically
  * involves adding the middle element of which split of the array so that the
  * parent is added before the left and right children of each subtree.
@@ -46,3 +46,4 @@
    }
  }
 
+export default createMinimalBST;
