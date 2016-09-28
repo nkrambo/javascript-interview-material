@@ -1,66 +1,66 @@
 
 /**
- * List of Depths
- *
- * Given a binary tree, design an algorithm which creates a linked list of all the nodes
- * at each depth (e.g, if you have a tree with depth D, you'll have D linked lists).
- *
- * Solution: We do a BFS, keeping track of depths and creating a new list for each new
- * depth we encounter and pushing it onto the results.
- *
- */
+* List of Depths
+*
+* Given a binary tree, design an algorithm which creates a linked list of all the nodes
+* at each depth (e.g, if you have a tree with depth D, you'll have D linked lists).
+*
+* Solution: We do a BFS, keeping track of depths and creating a new list for each new
+* depth we encounter and pushing it onto the results.
+*
+*/
 
- /**
-  * Create list of depths
-  *
-  * Time: O(n)
-  *
-  * @param {object} tree Takes a binary tree class
-  * @return {array} Returns an array of linked lists
-  */
+/**
+* Create list of depths
+*
+* Time: O(n)
+*
+* @param {object} tree Takes a binary tree class
+* @return {array} Returns an array of linked lists
+*/
 
-  import BinaryTree from 'BT';
-  import LinkedList from 'LinkedList';
+import BinaryTree from 'BT';
+import LinkedList from 'LinkedList';
 
-  function createDepthLinkList(tree) {
-    const result = [];
-    const depths = [];
+function createDepthLinkList(tree) {
+  const result = [];
+  const depths = [];
 
-    // queue
-    const nodes = [[tree.root, 0]];
+  // queue
+  const nodes = [[tree.root, 0]];
 
-    while (nodes.length) {
+  while (nodes.length) {
 
-      // dequeue
-      const nodePair = nodes.shift();
-      const node = nodePair[0];
-      const depth = nodePair[1];
+    // dequeue
+    const nodePair = nodes.shift();
+    const node = nodePair[0];
+    const depth = nodePair[1];
 
-      // if new depth
-      if (depths.indexOf(depth) < 0) {
-        // add depth
-        depths.push(depth);
+    // if new depth
+    if (depths.indexOf(depth) < 0) {
+      // add depth
+      depths.push(depth);
 
-        // new list
-        const level = new LinkedList();
-        level.add(node.value, 0);
-        result.push(level);
+      // new list
+      const level = new LinkedList();
+      level.add(node.value, 0);
+      result.push(level);
 
-      } else {
-        result[depth].add(node.value, 0);
-      }
-
-      // enqueue
-      if (node.right !== null) {
-        nodes.push([node.right, depth + 1]);
-      }
-
-      if (node.left !== null) {
-        nodes.push([node.left, depth + 1]);
-      }
+    } else {
+      result[depth].add(node.value, 0);
     }
 
-    return result;
+    // enqueue
+    if (node.right !== null) {
+      nodes.push([node.right, depth + 1]);
+    }
+
+    if (node.left !== null) {
+      nodes.push([node.left, depth + 1]);
+    }
   }
 
-  export default createDepthLinkList;
+  return result;
+}
+
+export default createDepthLinkList;
