@@ -29,6 +29,14 @@ function allSequences(tree) {
 
   const leftSeqs = permutations(DFS(root.left));
   const rightSeqs = permutations(DFS(root.right));
+
+  for (let left = 0; left < leftSeqs.length; left++) {
+    for (let right = 0; right < rightSeqs.length; right++) {
+      const results = weave(left, right);
+    }
+  }
+
+  return results;
 }
 
 function DFS(root) {
@@ -70,12 +78,11 @@ function permutations(array) {
 
     return results;
   }
-
   return permute(array);
 }
 
 function weave() {
-  
+
 }
 
 export default allSequences;
