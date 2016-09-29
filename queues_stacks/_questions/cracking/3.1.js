@@ -54,4 +54,4 @@ class TripleStack {
   }
 }
 
-
+export default TripleStack;
