@@ -12,7 +12,7 @@
 */
 
 /**
-* Contains tree
+* Contains tree 1
 *
 * Solution: One approach would be to compare string representations
 * of traversals of each tree. If T2 is a substring of T1, then it's a subtree.
@@ -43,7 +43,9 @@
 * @return {boolean} Returns true if the subtree exists, otherwise returns false
 */
 
-function containsTree(t1, t2) {
+function containsTree1(t1, t2) {
+  if (t2 === null) return true; // an empty tree is always a subtree.
+
   const t1String = getOrderString(t1.root);
   const t2String = getOrderString(t2.root);
 
@@ -71,4 +73,60 @@ function getOrderString(root) {
   return traversal;
 }
 
-export default containsTree;
+/**
+* Contains tree 2, alternative approach
+*
+* Solution: An alternative approach would be to traverse T1 and node match we get
+* from T1 to the root of T2, we call matchTree(). The matchTree() method will compare
+* the two trees to see if they're identical.
+*
+* Time - O(n + km)
+* Space - O(log(n) + log(m)), better memory, which can be impoertant for scalability
+* Where n and m are the nodes in T1 and T2, respectively. And k is the number of occurences
+* of T2's root in T1.
+*
+* @param {object} t1 Parent tree
+* @param {object} t2 Subtree to check for in tree1
+* @return {boolean} Returns true if the subtree exists, otherwise returns false
+*/
+
+function containsTree2(t1, t2) {
+  if (t2 === null) return true; // an empty tree is always a subtree.
+
+  const t2Root = t2.root;
+  const queue = [t1.root];
+
+  while (queue.length) {
+    const node = queue.shift();
+
+    if (node.value === t2Root.value) {
+      if(matchTree(node, t2Root)) return true;
+    }
+
+    if (node.left !== null) {
+      queue.push(node.left);
+    }
+
+    if (node.right !== null) {
+      queue.push(node.right);
+    }
+  }
+  return false;
+}
+
+function matchTree(r1, r2) {
+  if (r1 === null && r2 === null) {
+    return true; // nothing left in subtree
+
+  } else if (r1 === null || r2 === null) {
+    return false; // one tree is empty, no match
+
+  } else if (r1.value !== r2.value) {
+    return false; // values don't match
+
+  } else {
+    return matchTree(r1.left, r2.left) && matchTree(r1.right, r2.right);
+  }
+}
+
+export { containsTree1, containsTree2 };
