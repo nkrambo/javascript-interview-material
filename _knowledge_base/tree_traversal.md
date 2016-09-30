@@ -1,5 +1,4 @@
 
-
 Compared to linear data structures like linked lists and one-dimensional arrays, which have a canonical method of traversal (namely in linear order), tree structures can be traversed in many different ways.
 
 Traversing a tree involves iterating over all nodes in some manner. Because from a given node there is more than one possible next node (it is not a linear data structure), then, assuming sequential computation (not parallel), some nodes must be deferred—stored in some way for later visiting. This is often done via a stack (LIFO) or queue (FIFO).

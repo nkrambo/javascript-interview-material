@@ -9,52 +9,66 @@
 * subtree of n is identical to T2. That is, if you cut off the tree at node n,
 * the two trees would be identical.
 *
-* Solution:
-*
-*
 */
 
 /**
 * Contains tree
 *
-* @param {object} tree1 Parent tree
-* @param {object} tree2 Subtree to check for in tree1
+* Solution: One approach would be to compare string representations
+* of traversals of each tree. If T2 is a substring of T1, then it's a subtree.
+* An in-order traversal would not work. This is because BST's can print the same
+* in-order traversals even if their structure is different.
+*
+* We should use a pre-order traversal. Even here, trees with different structures could
+* still have the same pre-order traversal. We can fix that by representing NULL nodes with
+* a speacial character like 'X'. As long as we represent these nodes, the pre-order traversal
+* of a tree will be unique.
+*
+*                  1
+*               ↙     ↘
+*             2         3
+*           ↙  ↘      ↙   ↘
+*         4     X    X     X
+*       ↙  ↘
+*     X     X
+*
+* Example: 1, 2, 4, X, X, X, 3, X, X
+*
+* Time - O(n + m)
+* Space - O(n + m)
+* Where n and m are the nodes in T1 and T2, respectively.
+*
+* @param {object} t1 Parent tree
+* @param {object} t2 Subtree to check for in tree1
 * @return {boolean} Returns true if the subtree exists, otherwise returns false
 */
 
-function containsTree(tree1, tree2) {
-  if (!tree1 || !tree1.root) {
-    throw new Error('trees1 must be valid non-empty trees');
-  }
-  if (!tree2 || !tree2.root) {
-    return true;
-  }
-  return findRoot(tree1.root, tree2.root);
+function containsTree(t1, t2) {
+  const t1String = getOrderString(t1.root);
+  const t2String = getOrderString(t2.root);
+
+  return t1String.indexOf(t2String) >= 0;
 }
 
+function getOrderString(root) {
+  if (root === null) return;
 
-function findRoot(node1, node2) {
-  if (!node1 || !node2) {
-    return false;
-  }
-  else if (node1.val === node2.val && sameTree(node1, node2)) {
-    return true;
-  }
-  else {
-    return findRoot(node1.left, node2) || findRoot(node1.right, node2);
-  }
-}
+  let traversal = '';
+  const stack = [root];
 
-function sameTree(node1, node2) {
-  if (!node1 && !node2) {
-    return true;
-  } else if (!node1 && node2 || node1 && !node2) {
-    return false;
-  } else if (node1.val === node2.val) {
-    return sameTree(node1.left, node2.left) && sameTree(node1.right, node2.right);
-  } else {
-    return false;
+  while (stack.length) {
+    const node = stack.pop();
+
+    if (node === null) {
+      traversal = `${traversal}X`;
+      continue;
+    }
+
+    traversal = `${traversal}${node.value}`;
+    stack.push(node.right);
+    stack.push(node.left);
   }
+  return traversal;
 }
 
 export default containsTree;
