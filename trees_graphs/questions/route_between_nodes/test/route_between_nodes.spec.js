@@ -1,4 +1,3 @@
-
 import { expect } from 'chai';
 import Graph from '../../graph/graph';
 import routeBetweenNodes from '../cracking/4.1';

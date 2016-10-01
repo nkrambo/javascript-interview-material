@@ -1,4 +1,3 @@
-
 // const projects = ['a', 'b', 'f', 'd', 'g', 'e'];
 // const deps = [
 //   ['a', 'b'],
@@ -6,3 +5,4 @@
 // ];
 //
 // console.log(buildOrder(projects, deps));
+
