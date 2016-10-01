@@ -25,6 +25,26 @@
 * This means that, at each node, we must know the size of the left and right. We can track size
 * information on our class insert and delete methods, with a size property on each node.
 *
+* So now, we can use a type of binary search to return a random node.
+*
+* Imagine our binary tree is in-order indexed from 0 - n, that is left to right.
+* We generate a random index, from 0 to the size of the tree (from the root), then we
+* traverse the tree searching for that index and return that node.
+*
+* Zero based, in-order indexing
+*
+*                  5
+*               ↙     ↘
+*             3         7
+*           ↙  ↘      ↙   ↘
+*         1     4    6     8
+*       ↙  ↘
+*     0     2
+*
+*
+* Resources:
+* https://www.youtube.com/watch?v=nj5jFhglw8U
+*
 */
 
 class BinarySearchTree {
@@ -50,7 +70,9 @@ class BinarySearchTree {
     let current = this.root;
 
     while (current) {
-      node.size++;
+      // size bump each node in branch
+      current.size++;
+
       if (value < current.value) {
         if (current.left === null) {
           current.left = node;
@@ -80,7 +102,35 @@ class BinarySearchTree {
   * @return {object} Returns a node object
   */
 
-  getRandomNode() {}
+  getRandomNode() {
+    if (!this.root) return undefined;
+
+    // generate random index
+    let index = Math.ceil(Math.random() * this.root.size - 1); // minus 1 for zero based indexing
+
+    // traverse from root
+    let current = this.root;
+    while (current) {
+      // if we're at index
+      if (index === this.getSize(current.left)) return current.value;
+
+      // if index < current, go left
+      if (index < this.getSize(current.left)) {
+        current = current.left;
+
+      // if index > current, go right and subtract left tree and parent node from index
+      } else if (index > this.getSize(current.left)) {
+        index = (index - this.getSize(current.left)) - 1;
+        current = current.right;
+      }
+    }
+  }
+
+  // helper method to count subtree children
+  getSize(node) {
+    if (node === null) return 0;
+    return node.size;
+  }
 }
 
 export default BinarySearchTree;
