@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nkrambo/Algorithm_Probs.git"
+    "url": "git+https://github.com/nkrambo/javascript-algorithms.git"
   },
   "author": "Nicholas Krambousanos",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nkrambo/Algorithm_Probs/issues"
+    "url": "https://github.com/nkrambo/javascript-algorithms/issues"
   },
-  "homepage": "https://github.com/nkrambo/Algorithm_Probs#readme",
+  "homepage": "https://github.com/nkrambo/javascript-algorithms#readme",
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-eslint": "^6.1.2",
