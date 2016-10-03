@@ -34,6 +34,9 @@
 
 function isUnique(str) {
 
+  // type check
+  if (typeof str !== 'string') throw new TypeError('isUnique: Expects single argument of [string] type.');
+
   // assuming ASCII encoding, we can short-circuit
   if (str.length > 128) return false;
 
@@ -52,19 +55,19 @@ function isUnique(str) {
 }
 
 /**
-* isUniqueInPlace()
+* isUniqueSort()
 *
 * Solution:
 * This method uses no additional data structure.
 *
 * Again, check if we can short-circuit, using ASCII character length.
 *
-* In this approach we use the string.sort() method to sort the string.
+* In this approach we use the Array.sort() method to sort the string.
 * Then we step over the string and check to see if we have any duplicate
 * characters by comparing one iteration with the previous.
 *
-* Although the sort() method is convenient, it puts our runtime at O(n log n),
-* which is not ideal.
+* Although the split() and sort() methods are convenient, these puts our
+* runtime at O(n log n), which is not ideal.
 *
 * Time: O(n log n)
 * Space: O(1)
@@ -74,13 +77,16 @@ function isUnique(str) {
 * @return {boolean} Returns true if all characters in string are unique
 */
 
-function isUniqueInPlace(str) {
+function isUniqueSort(str) {
+
+  // type check
+  if (typeof str !== 'string') throw new TypeError('isUniqueSort: Expects single argument of [string] type.');
 
   // assuming ASCII encoding, we can short-circuit
   if (str.length > 128) return false;
 
-  // sort string alpabetically
-  str.sort();
+  // split and sort string alpabetically
+  str.split('').sort();
 
   // check each character against the previous
   for (let i = 1; i < str.length; i += 1) {
@@ -92,4 +98,4 @@ function isUniqueInPlace(str) {
   return true;
 }
 
-export { isUnique, isUniqueInPlace };
+export { isUnique, isUniqueSort };
