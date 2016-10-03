@@ -1,24 +1,95 @@
+
 /**
- * Keep track of seen characters with a Set data structure, fail when
- * a repeated character is found.
- *
- * Time: O(N)
- * Additional space: O(N)
- *
- * @param  {string[]} str String to check, passed in as a character array
- * @return {boolean}      True if unique characters, otherwise false
- */
-function hasUniqueCharactersSet(str) {
+* Is Unique
+*
+* Implement an algorithm to determine if a string has all unique characters.
+* What if you cannot use additional data structures.
+*
+*/
 
-  // could check length is less than 128 chars, ASCII
+/**
+* isUnique()
+*
+* Solution:
+* This method uses a Set data strucutre.
+*
+* First, if we assume that the input will be in ASCII encoding, we can check
+* the length of the input to see if it's greater than 128. This is the size of
+* the ASCII character set. Therefore, if the string is longer than this all
+* characters cannot be unique.
+*
+* Otherwise, we create a Set instance to track the characters we encounter as
+* we iterate over the string, using a for-loop.
+*
+* As soon as we encounter a character twice, we return false, otherwise we
+* keep going.
+*
+* Time: O(n)
+* Space: O(n)
+* Where n is the length of the string input.
+*
+* @param {string} str String of (n) length
+* @return {boolean} Returns true if all characters in string are unique
+*/
 
+function isUnique(str) {
+
+  // assuming ASCII encoding, we can short-circuit
+  if (str.length < 128) return false;
+
+  // store characters
   const chars = new Set();
 
-  for (let i = 0; i < str.length; ++i) {
+  // check for character in set, else add it to set
+  for (let i = 0; i < str.length; i += 1) {
     if (chars.has(str[i])) {
       return false;
     }
     chars.add(str[i]);
   }
+
   return true;
 }
+
+/**
+* isUniqueInPlace()
+*
+* Solution:
+* This method uses no additional data structure.
+*
+* Again, check if we can short-circuit, using ASCII character length.
+*
+* In this approach we use the array.sort() method to sort the string.
+* Then we step over the string and check to see if we have any duplicate
+* characters by comparing one iteration with the previous.
+*
+* Although the sort() method is convenient, it puts our runtime at O(n log n),
+* which is not ideal.
+*
+* Time: O(n log n)
+* Space: O(n)
+* Where n is the length of the string input.
+*
+* @param {string} str String of (n) length
+* @return {boolean} Returns true if all characters in string are unique
+*/
+
+function isUniqueInPlace(str) {
+
+  // assuming ASCII encoding, we can short-circuit
+  if (str.length < 128) return false;
+
+  // sort string alpabetically
+  str.sort();
+
+  // check each character against the previous
+  for (let i = 1; i < str.length; i += 1) {
+    if (str[i] === str[i - 1]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+export { isUnique, isUniqueInPlace };

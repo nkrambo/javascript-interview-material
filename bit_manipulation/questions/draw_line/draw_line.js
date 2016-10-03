@@ -25,7 +25,7 @@
 * @param {number} x1 x co-ordinate 1
 * @param {number} x2 x co-ordinate 2
 * @param {number} y y co-ordinate
-* @return {number} Returns the modified screen
+* @return {array} Returns the modified screen
 */
 
 function drawLine(screen, width, x1, x2, y) {
