@@ -35,7 +35,7 @@
 function isUnique(str) {
 
   // assuming ASCII encoding, we can short-circuit
-  if (str.length < 128) return false;
+  if (str.length > 128) return false;
 
   // store characters
   const chars = new Set();
@@ -59,7 +59,7 @@ function isUnique(str) {
 *
 * Again, check if we can short-circuit, using ASCII character length.
 *
-* In this approach we use the array.sort() method to sort the string.
+* In this approach we use the string.sort() method to sort the string.
 * Then we step over the string and check to see if we have any duplicate
 * characters by comparing one iteration with the previous.
 *
@@ -67,7 +67,7 @@ function isUnique(str) {
 * which is not ideal.
 *
 * Time: O(n log n)
-* Space: O(n)
+* Space: O(1)
 * Where n is the length of the string input.
 *
 * @param {string} str String of (n) length
@@ -77,7 +77,7 @@ function isUnique(str) {
 function isUniqueInPlace(str) {
 
   // assuming ASCII encoding, we can short-circuit
-  if (str.length < 128) return false;
+  if (str.length > 128) return false;
 
   // sort string alpabetically
   str.sort();
