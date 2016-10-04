@@ -11,3 +11,5 @@
 function sparseSearch(array) {
 
 }
+
+export default sparseSearch;

@@ -8,3 +8,5 @@
 function searchRotatedArray(array) {
 
 }
+
+export default searchRotatedArray;

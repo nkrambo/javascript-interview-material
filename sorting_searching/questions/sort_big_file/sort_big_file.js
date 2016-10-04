@@ -7,3 +7,5 @@
 function sortBigFile(file) {
 
 }
+
+export default sortBigFile;

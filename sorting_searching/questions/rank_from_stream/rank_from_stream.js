@@ -22,3 +22,5 @@ function track(x) {
 function getRankOfNumber(x) {
 
 }
+
+export default getRankOfNumber;

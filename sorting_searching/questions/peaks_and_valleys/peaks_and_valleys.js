@@ -14,3 +14,5 @@
 function peaksAndValleys(array) {
 
 }
+
+export default peaksAndValleys;

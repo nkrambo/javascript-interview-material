@@ -11,3 +11,5 @@
 function indexAtListy(x) {
 
 }
+
+export default indexAtListy;
