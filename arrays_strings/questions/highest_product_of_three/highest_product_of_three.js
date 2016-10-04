@@ -22,7 +22,7 @@ function highestProductOf3(arrayOfInts) {
   var highestProductOf3 = arrayOfInts[0] * arrayOfInts[1] * arrayOfInts[2];
 
   // walk through items, starting at index 2
-  for (var i = 2; i < arrayOfInts.length; i++) {
+  for (let i = 2; i < arrayOfInts.length; i += 1) {
       var current = arrayOfInts[i];
 
       // do we have a new highest product of 3?

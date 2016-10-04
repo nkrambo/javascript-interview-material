@@ -1,40 +1,63 @@
 
-// Zero Matrix
+/**
+* Zero Matrix
+*
+* Write an algorithm such that if an element in an MxN matrix is 0, it's entire
+* row and column are set to 0.
+*
+*/
 
-// @param {array arrays} matrix A matrix MxN
-// @return {array} Returns the same modified array
+/**
+* zeroMatrix()
+*
+* Solution:
+* At first glance, you might think that we could just iterate, looking for zeros,
+* and set columns and rows accordingly. The problem with this is that soon the entire
+* matrix will be set to zero.
+*
+* What we actually need to do, is first iterate the matrix to find all the co-ordinates
+* of zeros and then iterate a second time to mutate rows and columns, in-place.
+*
+* Time: O(n^2)
+* Space: O(z)
+* Where n is the length of the string input.
+* Where z is the number of zeros
+* This is the best runtime we can do, as we must touch each position in the matrix.
+*
+* @param {array} matrix A matrix MxN
+* @return {array} returns the same modified array
+*/
 
 function zeroMatrix(matrix) {
 
   // type check
   if (!Array.isArray(matrix) || matrix.length === 0) {
-    throw new Error('Not valid matrix');
+    throw new TypeError('zeroMatrix: Expects a single argument of array.');
   }
 
+  // find zero co-ordinates
   const positions = [];
-
-  // step through
-  for (let i = 0; i < matrix.length; i++) {
-    // puts us at O(n^2)
-    for (let j = 0; j < matrix[i].length; j++) {
+  for (let i = 0; i < matrix.length; i += 1) {
+    for (let j = 0; j < matrix[i].length; j += 1) {
       if (matrix[i][j] === 0) {
         positions.push([i, j]);
       }
     }
   }
 
+  // update matrix rows, columns
   while (positions.length) {
     const pos = positions.pop();
     const row = pos[0];
     const col = pos[1];
 
     // clear rows
-    for (let i = 0; i < matrix[row].length; i++) {
+    for (let i = 0; i < matrix[row].length; i += 1) {
       matrix[row][i] = 0;
     }
 
     // clear cols
-    for (let i = 0; i < matrix.length; i++) {
+    for (let i = 0; i < matrix.length; i += 1) {
       matrix[i][col] = 0;
     }
   }
@@ -42,56 +65,4 @@ function zeroMatrix(matrix) {
   return matrix;
 }
 
-
-
-
-
-
-/**
- * Do a first pass through the matrix to find which cells have 0's. When a 0 is
- * found then mark that row and column as needing to be zeroed out. On the second
- * pass zero out any cells that need to be zeroed out based on the row or column
- * indicators.
- *
- * N = matrix Y dimension
- * M = matrix X dimension
- * Time: O(N * M)
- * Additional space: O(N + M)
- *
- * @param  {array} matrix Matrix to be zeroed in-place
- * @return {array}        Matrix that has been zeroed, same object as input
- */
-export function zeroMatrix(matrix) {
-  if (!matrix) {
-    throw new Error('invalid matrix');
-  }
-  if (matrix.length === 0) {
-    return matrix;
-  }
-
-  let rows = new Array(matrix.length),
-    cols = new Array(matrix[0].length);
-
-  rows.fill(false);
-  cols.fill(false);
-
-  for (let y = 0; y < rows.length; ++y) {
-    for (let x = 0; x < cols.length; ++x) {
-      if (matrix[y][x] === 0) {
-        rows[y] = true;
-        cols[x] = true;
-      }
-    }
-  }
-
-  for (let y = 0; y < rows.length; ++y) {
-    for (let x = 0; x < cols.length; ++x) {
-      if (rows[y] || cols[x]) {
-        matrix[y][x] = 0;
-      }
-    }
-  }
-
-  return matrix;
-}
-
+export default zeroMatrix;
