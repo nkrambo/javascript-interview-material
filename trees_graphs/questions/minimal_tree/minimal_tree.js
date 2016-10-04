@@ -16,7 +16,7 @@
 *
 */
 
-import BinarySearchTree from 'BST';
+import BinarySearchTree from '../../classes/binary_tree/binary_tree';
 
 function createMinimalBST(array) {
   // type check

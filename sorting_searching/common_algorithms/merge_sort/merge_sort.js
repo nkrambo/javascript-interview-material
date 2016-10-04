@@ -35,3 +35,5 @@ function merge (left, right) {
 
   return result.concat(left.length ? left : right);
 }
+
+export default mergeSort;

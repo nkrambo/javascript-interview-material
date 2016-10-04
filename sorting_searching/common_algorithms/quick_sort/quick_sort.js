@@ -42,6 +42,4 @@ function swap(array, i, j) {
    array[j] = temp;
 }
 
-
-
-
+export default quickSort;

@@ -19,8 +19,7 @@
 * @return {array} Returns an array of linked lists
 */
 
-import BinaryTree from 'BT';
-import LinkedList from 'LinkedList';
+import LinkedList from '../../../linked_lists/classes/linked_list/linked_list';
 
 function createDepthLinkList(tree) {
   const result = [];

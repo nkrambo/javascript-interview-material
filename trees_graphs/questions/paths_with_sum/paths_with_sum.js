@@ -42,4 +42,4 @@ function countPathsWithSum(tree) {
 
 }
 
-export default getRandomNode;
+export default countPathsWithSum;

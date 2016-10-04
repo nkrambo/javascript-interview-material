@@ -1,3 +1,14 @@
+
+import { expect } from 'chai';
+import buildOrder from '../build_order';
+
+describe('buildOrder()', () => {
+  // it('should', () => {
+  //
+  // });
+});
+
+
 // const projects = ['a', 'b', 'f', 'd', 'g', 'e'];
 // const deps = [
 //   ['a', 'b'],
