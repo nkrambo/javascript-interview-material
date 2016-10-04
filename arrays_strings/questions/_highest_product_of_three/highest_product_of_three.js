@@ -11,6 +11,9 @@
 * highestProductOf3()
 *
 * Solution:
+*
+* Type: Greedy
+*
 * The brute force approach would iterate through array and multiply each integer by each
 * other integer, and then multiply that product by each other other integer.
 * This would probably involve nesting 3 loops. But that would be an O(n^3) runtime! Horrible!
