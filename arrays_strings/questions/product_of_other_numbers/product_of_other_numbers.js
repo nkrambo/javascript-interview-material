@@ -14,7 +14,7 @@
 // by calculating:
 //   [7*3*4, 1*3*4, 1*7*4, 1*7*3]
 
-function getProductsOfAllIntsExceptAtIndex(array) {
+function productOfOthers(array) {
 
   // type check
   if (!Array.isArray(array)) {
@@ -41,3 +41,4 @@ function getProductsOfAllIntsExceptAtIndex(array) {
   return results;
 }
 
+export default productOfOthers;

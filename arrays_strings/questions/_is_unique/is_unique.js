@@ -28,8 +28,8 @@
 * Space: O(n)
 * Where n is the length of the string input.
 *
-* @param {string} str String of (n) length
-* @return {boolean} Returns true if all characters in string are unique
+* @param {string} str string of (n) length
+* @return {boolean} returns true if all characters in string are unique
 */
 
 function isUnique(str) {

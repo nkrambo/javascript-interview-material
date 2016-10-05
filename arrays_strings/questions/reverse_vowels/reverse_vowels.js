@@ -1,28 +1,42 @@
 
-// Write a function that takes a string as input and reverse only the vowels of a string.
-
-// Example 1:
-// Given s = "hello", return "holle".
-
-// Example 2:
-// Given s = "leetcode", return "leotcede".
+/**
+* Reverse Vowels
+*
+* Write a function that takes a string as input and reverse only
+* the vowels of a string.
+*
+* Example:
+* Input: 'hello'
+* Output: 'holle'
+*
+* Example:
+* Input: 'leetcode'
+* Output: 'leotcede'
+*
+*/
 
 /**
- * @param {string} s
- * @return {string}
- */
+* reverseVowels()
+*
+* Solution:
+*
+* Time: O(n)
+* Space: O(n)
+* Where n is the length of the string input.
+*
+* @param {string} str string of (n) length
+* @return {string} returns a string with vowels reversed
+*/
 
-const reverseVowels = function(s) {
+function reverseVowels(str) {
 
   // type check
-  if (typeof s !== 'string') {
-    throw new Error('Must pass a string.');
+  if (typeof str !== 'string') {
+    throw new TypeError('reverseVowels: Expects a single argument of [string] type.');
   }
 
-  // edge cases
-  if (s.length < 1) {
-    return s;
-  }
+  // edge case
+  if (str.length < 1) return str;
 
   const vowels = ['a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U'];
   const pulledVowels = [];
@@ -51,7 +65,4 @@ const reverseVowels = function(s) {
   return result.join('');
 };
 
-// test cases
-console.log(reverseVowels('hello'));
-
-
+export default reverseVowels;

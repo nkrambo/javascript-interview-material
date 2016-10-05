@@ -92,6 +92,4 @@ function getMaxProfit(stockPricesYesterday) {
   return maxProfit;
 }
 
-
-
-
+export default getMaxProfit;
