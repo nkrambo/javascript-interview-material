@@ -1,9 +1,9 @@
-//
-// import Heap from '../heap';
-// import { expect } from 'chai';
-//
-// describe('Heap', function () {
-//   it('should return ', function () {
-//
-//   });
-// });
+
+import { expect } from 'chai';
+import Heap from '../heap';
+
+describe('Heap class', () => {
+  // it('should', () => {
+  //
+  // });
+});

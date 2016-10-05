@@ -45,3 +45,4 @@ function isEmpty(stack) {
   return stack.length === 0;
 }
 
+export default sortStack;

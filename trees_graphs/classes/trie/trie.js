@@ -24,7 +24,7 @@ class Trie {
   }
 }
 
-export default Trie;
+Trie;
 
 var node = {
     key : null
@@ -120,4 +120,4 @@ function removeH(node, key, depth) {
 	}
 }
 
-
+export default Trie;

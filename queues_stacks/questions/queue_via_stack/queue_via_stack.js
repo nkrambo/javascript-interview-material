@@ -11,7 +11,7 @@
  * Additional space: O(N) - to hold the input items
  */
 
-class MyQueue {
+class QueueViaStack {
   constructor() {
     this.eStack = [];
     this.dStack = [];
@@ -33,3 +33,5 @@ class MyQueue {
     return this.dStack.pop();
   }
 }
+
+export default QueueViaStack;

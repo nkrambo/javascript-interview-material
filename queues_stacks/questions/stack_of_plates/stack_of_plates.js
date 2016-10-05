@@ -11,7 +11,7 @@
  * Additional space: push O(1), pop O(1), popAt O(M)
  */
 
- class StackOfStacks {
+ class StackOfPlates {
   constructor(capacity) {
     if (capacity === undefined) {
       throw new Error('StackOfStacks: capcity is a required parameter.');
@@ -76,3 +76,5 @@
     return value;
   }
 }
+
+export default StackOfPlates;

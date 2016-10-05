@@ -40,4 +40,4 @@ class Tree {
   }
 }
 
-const myTree = new Tree();
+export default Tree;
