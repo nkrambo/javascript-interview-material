@@ -19,9 +19,9 @@
 * of zeros and then iterate a second time to mutate rows and columns, in-place.
 *
 * Time: O(n^2)
-* Space: O(z)
+* Space: O(m)
 * Where n is the length of the string input.
-* Where z is the number of zeros
+* Where m is the number of zeros.
 * This is the best runtime we can do, as we must touch each position in the matrix.
 *
 * @param {array} matrix A matrix MxN
