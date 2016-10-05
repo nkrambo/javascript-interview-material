@@ -2,7 +2,8 @@
 /**
 * Reverse String In-Place
 *
-* Write a function to reverse a string in-place.
+* Write a function to reverse a string in-place. There is only a single
+* word, with no spaces, in this string.
 *
 */
 

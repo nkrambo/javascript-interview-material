@@ -28,7 +28,7 @@
 *
 * There is one exemption of this. That's for a single middle character that separates the
 * first and last halfs. This does not need to balance. For example, 'dad', is a palindrome
-* where the 'd's are balanced and the 'a' is a single instance unblanced character.
+* where the 'd's are balanced and the 'a' is a single instance 'unbalanced' character.
 *
 * Because the question is asking us to recognise any permutation of a palindrome, we do not
 * have to concern ourselves with the order of characters in the string, in this case.
@@ -46,8 +46,8 @@
 * Space: O(n)
 * Where n is the length of the string input.
 *
-* @param {string} str String of n length
-* @return {boolean} Returns true if the string is a permutation of a palindrome, otherwise returns false.
+* @param {string} str string of n length
+* @return {boolean} returns true if the string is a permutation of a palindrome, otherwise returns false.
 */
 
 function isPalidromePermutation(str) {
