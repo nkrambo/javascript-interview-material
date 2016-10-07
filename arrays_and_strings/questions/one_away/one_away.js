@@ -17,7 +17,7 @@
 * oneAway()
 *
 * Solution:
-* We can possibly do a fast return by comparing the lengths of the twi strings.
+* We can possibly do a fast return by comparing the lengths of the two strings.
 * If the lengths differ by more than 1, we know that they must differ by more than 1 edit.
 *
 * Otherwise we can use a map to track the type and count of characters in str1.
