@@ -42,3 +42,5 @@ function loopDetectionRunner(list) {
 
   return fast;
 }
+
+export { loopDetectionSet, loopDetectionRunner };

@@ -38,3 +38,5 @@ function isPalindrome(list) {
 
   return true;
 }
+
+export default isPalindrome;

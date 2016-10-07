@@ -1,8 +1,8 @@
 
 import { expect } from 'chai';
-import sumLists from '../sum_lists';
+import kthToLast from '../kth_to_last';
 
-describe('sumLists()', () => {
+describe('kthToLast()', () => {
   // it('should', () => {
   //
   // });

@@ -1,7 +1,7 @@
 
 // Intersection
 
-function listIntersection(list1, list2) {
+function intersection(list1, list2) {
   if (list1 === null || list2 === null) return null;
 
   // get tails and sizes
@@ -54,3 +54,5 @@ function getTailAndSize(list) {
     tail: current
   };
 }
+
+export default intersection;

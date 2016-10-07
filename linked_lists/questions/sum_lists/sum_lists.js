@@ -1,7 +1,7 @@
 
 // Sum Lists
 
-function sumListsReverse(list1, list2) {
+function sumLists(list1, list2) {
 
   // type check
   if (!(list1 instanceof LinkedList) || !(list2 instanceof LinkedList)) {
@@ -49,4 +49,4 @@ function sumListsReverse(list1, list2) {
   return results;
 }
 
-
+export default sumLists;

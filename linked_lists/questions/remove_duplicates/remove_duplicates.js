@@ -63,3 +63,5 @@ function removeDuplicatesNoBuffer(list) {
     current = current.next;
   }
 }
+
+export default removeDuplicates;

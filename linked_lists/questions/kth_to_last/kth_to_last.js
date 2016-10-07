@@ -3,7 +3,7 @@
 // @param {Number} position - The starting position of the range
 // @return {Object} Returns a new LinkedList object
 
-function printKthToLast(list, k) {
+function kthToLast(list, k) {
 
   // type check
   if (Object.prototype.toString.call(k) !== '[object Number]') {
@@ -30,3 +30,5 @@ function printKthToLast(list, k) {
 
   return p2;
 }
+
+export default kthToLast;
