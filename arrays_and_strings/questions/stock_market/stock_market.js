@@ -1,28 +1,40 @@
 
-// Suppose we could access yesterday's stock prices as an array, where:
+/**
+* Stock Market
+*
+* Suppose we could access yesterday's stock prices as an array, where:
+*
+* The indices are the time in minutes past trade opening time, which was 9:30am local time.
+* The values are the price in dollars of Apple stock at that time.
+* So if the stock cost $500 at 10:30am, stockPricesYesterday[60] = 500.
+*
+* Write an efficient function that takes stockPricesYesterday and returns the
+* best profit I could have made from 1 purchase and 1 sale of 1 Apple stock yesterday.
+*
+* For example:
+*
+* const stockPricesYesterday = [10, 7, 5, 8, 11, 9];
+*
+* getMaxProfit(stockPricesYesterday);
+* returns 6 (buying for $5 and selling for $11)
+*
+* No 'shorting' — you must buy before you sell.
+* You may not buy and sell in the same time step (at least 1 minute must pass).
+*
+*/
 
-// The indices are the time in minutes past trade opening time, which was 9:30am local time.
-// The values are the price in dollars of Apple stock at that time.
-// So if the stock cost $500 at 10:30am, stockPricesYesterday[60] = 500.
-
-// Write an efficient function that takes stockPricesYesterday and returns the best profit I could have made from 1 purchase and 1 sale of 1 Apple stock yesterday.
-
-// For example:
-
-// var stockPricesYesterday = [10, 7, 5, 8, 11, 9];
-
-// getMaxProfit(stockPricesYesterday);
-// returns 6 (buying for $5 and selling for $11)
-
-// No "shorting"—you must buy before you sell.
-// You may not buy and sell in the same time step (at least 1 minute must pass).
-
-/*
- * @param {array} stockPricesYesterday Array of Apple stock prices at minutes past opening time.
- * @return {number} The maximum profit that could have been made.
- */
-
-// Time - O(n^2) since we loop through all possible sale points and compare to running maxProfit.
+/**
+* getMaxProfit()
+*
+* Solution:
+*
+* Time: O(n)
+* Space: O(n)
+* Where n is the length of the string input.
+*
+* @param {array} stockPricesYesterday Array of Apple stock prices at minutes past opening time.
+* @return {number} returns maximum profit that could have been made.
+*/
 
 function getMaxProfit(stockPricesYesterday) {
 
