@@ -15,27 +15,45 @@
  * @returns {Number} Index of the element or -1 if not found.
  */
 
-function binarySearch(array, value) {
-  let left = 0;
-  let right = array.length;
-  let middle = Math.floor(array.length / 2);
+ function binarySearch(target, nums) {
+   // see if target appears in nums
 
-  while (right >= left) {
-    const middleValue = array[middle];
+   // we think of floorIndex and ceilingIndex as "walls" around
+   // the possible positions of our target so by -1 below we mean
+   // to start our wall "to the left" of the 0th index
+   // (we /don't/ mean "the last index")
+   var floorIndex = -1;
+   var ceilingIndex = nums.length;
 
-    if (middleValue === value) {
-      return middle;
-    } else if (middleValue > value) {
-      right = middle + 1;
-    } else {
-      left = middle - 1;
-    }
+   // if there isn't at least 1 index between floor and ceiling,
+   // we've run out of guesses and the number must not be present
+   while (floorIndex + 1 < ceilingIndex) {
 
-    // recalculate middle
-    middle = Math.floor((left + right) / 2);
-  }
+       // find the index ~halfway between the floor and ceiling
+       // we use integer division, so we'll never get a "half index"
+       var distance = ceilingIndex - floorIndex;
+       var halfDistance = Math.floor(distance / 2);
+       var guessIndex = floorIndex + halfDistance;
 
-  return -1;
+       var guessValue = nums[guessIndex];
+
+       if (guessValue === target) return true;
+
+       if (guessValue > target) {
+
+           // target is to the left
+           // so move ceiling to the left
+           ceilingIndex = guessIndex;
+
+       } else {
+
+           // target is to the right
+           // so move floor to the right
+           floorIndex = guessIndex;
+       }
+   }
+
+   return false;
 }
 
 export default binarySearch;

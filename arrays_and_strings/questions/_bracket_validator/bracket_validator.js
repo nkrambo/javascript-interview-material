@@ -1,5 +1,4 @@
 
-
 /**
 * Bracket Validator
 *
@@ -25,7 +24,6 @@
 *
 * Input: '{ [ }'
 * Output: false
-*
 */
 
 /**
