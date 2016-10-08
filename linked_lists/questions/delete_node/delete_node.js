@@ -79,8 +79,7 @@
 * Time: O(1)
 * Space: O(1)
 *
-* @param {string} str string of (n) length
-* @return {boolean} returns true if all characters in string are unique
+* @param {object} nodeToDelete list node to be deleted
 */
 
 function deleteNode(nodeToDelete) {

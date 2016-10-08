@@ -1,4 +1,26 @@
 
+/**
+* Intersection
+*
+* Given two (singly) linked lists, determine if the two lists intersect. Return
+* the intersecting node. Note that the intersection is defined based on reference,
+* not value. That is, if the kth node of the first list is the exact same node
+* (by reference) as the jth node of the second linked list, then they are intersecting.
+*/
+
+/**
+* intersection()
+*
+* Solution:
+*
+* Time: O(1)
+* Space: O(1)
+*
+* @param {object} list1 linked list
+* @param {object} list2 linked list
+* @return {object} returns the intersecting node of list1 and list2, otherwise null.
+*/
+
 // Partition
 // @param {object} list - The LinkedList object to partitionList
 // @param {integer} pivot - The value to partition the list at
