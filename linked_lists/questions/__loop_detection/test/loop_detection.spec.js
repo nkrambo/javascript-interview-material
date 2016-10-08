@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import { loopDetectionSet, loopDetectionRunner } from '../intersection';
+import { loopDetectionSet, loopDetectionRunner } from '../loop_detection';
 
 describe('loopDetectionSet()', () => {
   // it('should', () => {
