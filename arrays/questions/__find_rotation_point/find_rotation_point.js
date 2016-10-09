@@ -39,9 +39,8 @@
 *
 *
 *
-* Time: O(n)
-* Space: O(n)
-* Where n is the length of the string input.
+* Time: O(1)
+* Space: O(1)
 *
 * @param {array} library array of words
 * @return {number} returns index of the rotation point, -1 if there's no rotation

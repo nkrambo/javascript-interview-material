@@ -19,7 +19,7 @@
 * @return {array} Returns an array of linked lists
 */
 
-import LinkedList from '../../../linked_lists/classes/linked_list/linked_list';
+import LinkedList from '../../../linked_lists/class/linked_list/linked_list';
 
 function createDepthLinkList(tree) {
   const result = [];
