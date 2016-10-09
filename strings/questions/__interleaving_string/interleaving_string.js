@@ -2,7 +2,8 @@
 /**
 * Interleaving String
 *
-* Given s1, s2, s3, find whether s3 is formed by the interleaving of s1 and s2.
+* Given str1, str2, str3, find whether str3 is formed by the interleaving
+* of str1 and str2.
 *
 * Example:
 * Input: 'aabcc', 'dbbca', 'aadbbcbcac'
@@ -14,20 +15,20 @@
 */
 
 /**
-* addStrings()
+* isInterleave()
 *
 * Solution:
 *
 * Time: O(1)
 * Space: O(1)
 *
-* @param {string} s1 string to compose s3
-* @param {string} s2 string to compose s3
-* @param {string} s3 string to check for interleaving
-* @return {boolean} returns true if s3 is an interleaved string of s1 and s2, otherwise false
+* @param {string} str1 string to compose str3
+* @param {string} str2 string to compose str3
+* @param {string} str3 string to check for interleaving
+* @return {boolean} returns true if str3 is an interleaved string of str1 and str2, otherwise false
 */
 
-function isInterleave() {
+function isInterleave(str1, str2, str3) {
 
 }
 
