@@ -35,4 +35,4 @@ function longestSubstringNoRepeats(str) {
 
 }
 
-export default longestSubstring;
+export default longestSubstringNoRepeats;
