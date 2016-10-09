@@ -1,9 +1,24 @@
 
-// Remove Dups
-// @param {object} list - Instance of LinkedList class, unsorted list
-// @return {object} Returns the same modified list with duplicate values removed
-// Time - O(n)
-// Space - O(n)
+/**
+* Remove Duplicates
+*
+* Write code to remove duplicates from an unsorted linked list.
+*
+* Follow up:
+* How would you solve this problem if a temporary buffer is not allowed.
+*/
+
+/**
+* removeDuplicates()
+*
+* Solution:
+*
+* Time: O(1)
+* Space: O(1)
+*
+* @param {object} list - unsorted linked list
+* @return {object} returns the modified list with duplicate values removed
+*/
 
 function removeDuplicates(list) {
 
@@ -35,9 +50,18 @@ function removeDuplicates(list) {
   }
 }
 
-// Without a buffer
-// Time - O(n^2) // not great
-// Space - O(1)
+/**
+* removeDuplicatesNoBuffer()
+*
+* Solution:
+*
+* Time: O(1)
+* Space: O(1)
+*
+* @param {object} list - unsorted linked list
+* @return {object} returns the modified list with duplicate values removed
+*/
+
 function removeDuplicatesNoBuffer(list) {
 
   // type check
@@ -64,4 +88,4 @@ function removeDuplicatesNoBuffer(list) {
   }
 }
 
-export default removeDuplicates;
+export { removeDuplicates, removeDuplicatesNoBuffer };

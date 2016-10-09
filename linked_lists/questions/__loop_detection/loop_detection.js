@@ -1,5 +1,30 @@
 
-// Loop detection
+/**
+* Loop Detection
+*
+* Given a circular linked list, implement an algorithm that returns the node at
+* the beginning of the loop.
+*
+* Definition:
+* Circular linked list: A (corrupt) linked list in which a node's next pointer
+* points to an earlier node, so as to make a loop in the linked list.
+*
+* Example:
+* Input: A -> B -> C -> D -> E -> C [the same C as eariler]
+* Output: C
+*/
+
+/**
+* loopDetectionSet()
+*
+* Solution:
+*
+* Time: O(1)
+* Space: O(1)
+*
+* @param {object} list linked list
+* @return {object} returns a node at beginning of loop, if one exists, else null
+*/
 
 function loopDetectionSet(list) {
   let visited = new Set();
@@ -17,6 +42,18 @@ function loopDetectionSet(list) {
 
   return null;
 }
+
+/**
+* loopDetectionRunner()
+*
+* Solution:
+*
+* Time: O(1)
+* Space: O(1)
+*
+* @param {object} list linked list
+* @return {object} returns a node at beginning of loop, if one exists, else null
+*/
 
 function loopDetectionRunner(list) {
   let slow = fast = list.head;

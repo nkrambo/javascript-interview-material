@@ -1,29 +1,30 @@
 
 /**
-* Intersection
+* Partition
 *
-* Given two (singly) linked lists, determine if the two lists intersect. Return
-* the intersecting node. Note that the intersection is defined based on reference,
-* not value. That is, if the kth node of the first list is the exact same node
-* (by reference) as the jth node of the second linked list, then they are intersecting.
+* Write code to partition a linked list around a value x, such that all nodes
+* less than x come before all nodes greater than or equal to x. If x is contained
+* within the list, the values of x only need to be after the elements less than
+* x (see below). The partition element x can appear anywhere in the 'right partition';
+* it does not need to appear between the left and right partitions.
+*
+* Example:
+* Input: 3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 [partition = 5]
+* Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
 */
 
 /**
-* intersection()
+* partitionList()
 *
 * Solution:
 *
 * Time: O(1)
 * Space: O(1)
 *
-* @param {object} list1 linked list
-* @param {object} list2 linked list
-* @return {object} returns the intersecting node of list1 and list2, otherwise null.
+* @param {object} list - linked list to partition
+* @param {integer} pivot value to partition list at
+* @return {object} returns the head node of partitioned list
 */
-
-// Partition
-// @param {object} list - The LinkedList object to partitionList
-// @param {integer} pivot - The value to partition the list at
 
 function partitionList(list, pivot) {
 

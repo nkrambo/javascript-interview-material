@@ -1,6 +1,21 @@
 
-// Palindrome
-// We know that the list must be the same forwards as it is backwards.
+/**
+* Palindrome
+*
+* Implement a function to check if a linked list is a palidrome.
+*/
+
+/**
+* isPalindrome()
+*
+* Solution:
+*
+* Time: O(1)
+* Space: O(1)
+*
+* @param {object} list linked list
+* @return {boolean} returns true if list is a palindrome, otherwise returns false
+*/
 
 // using the runner technique
 function isPalindrome(list) {
