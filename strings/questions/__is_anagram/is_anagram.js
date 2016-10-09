@@ -5,7 +5,7 @@ function isAnagram() {
 
 export default isAnagram;
 
-// 
+//
 //
 // /**
 //  * @param {string} s1
@@ -64,11 +64,5 @@ export default isAnagram;
 //     return false;
 //   }
 // }
-//
-//
-// // test cases
-// console.log(isAnagram('cat', 'tac')); // true
-// console.log(isAnagram('halley', 'leyhal')); //true
-// console.log(isAnagram('abcd', 'abc')); // false
-// console.log(isAnagram('a', 'a')); // true
+
 
