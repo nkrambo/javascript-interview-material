@@ -24,7 +24,6 @@
 * @return {number} returns the multiplication of str1 and str2
 */
 
-
 function multiplyStrings(str1, str2) {
 
 }
