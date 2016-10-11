@@ -38,7 +38,6 @@
 * @return {number} return
 */
 
-
 function minPatches(nums, n) {
 
 }
