@@ -36,9 +36,11 @@ function palindromePairs(words) {
   if (!Array.isArray(words)) {
     throw new TypeError('palindromePairs: Expects a single argument of [array] type.');
   }
+}
 
+// is palindrome
+function isPalindrome(str) {
   
-
 }
 
 export default palindromePairs;
