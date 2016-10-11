@@ -48,7 +48,7 @@
 * note, but this will not always return a true false.
 *
 * For example:
-* ransomeNote = 'a b c'; // length = 5
+* ransomNote = 'a b c'; // length = 5
 * magazine = 'abc'; // length = 3
 *
 * In this example, whitespace is account for in our magazine.length property.
@@ -61,11 +61,12 @@
 * For example:
 * ransomNote = ransomNote.replace(/\s/g, '');
 *
-* The replace method might or might not have a runtime of O(n), however, it's just as easy
-* to skip over spaces when we iterate.
+* The replace method might or might not have a runtime of O(n), however, it's
+* just as easy to skip over spaces when we iterate.
 *
-* Time: O(1)
-* Space: O(1)
+* Time: O(n + m)
+* Space: O(n)
+* Where n is the length of ransom note.
 *
 * @param {string} ransomeNote string of (n) length, lowercase
 * @param {string} magazine string of (n) length, lowercase
@@ -80,6 +81,7 @@ function ransomNote(ransomNote, magazine) {
     throw new TypeError('ransomNote: Expects 2 arguments of [string] type.');
   }
 
+  // count ransom note characters
   const chars = new Map();
   for (let i = 0; i < ransomNote.length; i += 1) {
     let char = ransomNote[i];
@@ -91,7 +93,7 @@ function ransomNote(ransomNote, magazine) {
     chars.set(char, chars.get(char) + 1 || 1); // increment by or add 1
   }
 
-  // loop over magazine
+  // iterate magazine
   for (let i = 0; i < magazine.length; i++) {
     let char = magazine[i];
     let count = chars.get(char);

@@ -30,16 +30,50 @@
 *
 * Solution:
 *
-* Time: O(1)
+* Even though the question says that both input strings will be the same length
+* we write a quick check for this and return false if they're not the same.
+*
+* We can approach this one using a Map.
+*
+* We iterate str1 and map each character as the 'key' and corresponding the str2
+* character as 'value'.
+*
+* If the character is already in the map, we compare it with str2's character.
+* If it's not the same, then we know that the strings are not isomprphic.
+*
+* Time: O(n)
 * Space: O(1)
+* Where (n) is the length of str1
 *
 * @param {string} str1 string to check
 * @param {string} str2 string to check
 * @return {boolean} returns true if the strings are isomorphic, otherwise false
 */
 
-function isIsomorphic() {
+function isIsomorphic(str1, str2) {
 
+  // type check
+  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
+    throw new TypeError('isIsomorphic: Expects 2 arguments of [string] type.');
+  }
+
+  // length check
+  if (str1.length !== str2.length) return false;
+
+  // map str1 to str2
+  const chars = new Map();
+  for (let i = 0; i < str1.length; i += 1) {
+    const c1 = str1[i];
+    const c2 = str2[i];
+
+    if (!chars.has(c1)) {
+      chars.set(c1, c2);
+    } else if (chars.get(c1) !== c2) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 export default isIsomorphic;
