@@ -30,19 +30,19 @@
 *
 * Solution:
 *
-* Even though the question says that both input strings will be the same length
-* we write a quick check for this and return false if they're not the same.
+* Even though the question says that both input strings will be the same length,
+* we write a quick check for this and return false anyways.
 *
 * We can approach this one using a Map.
 *
-* We iterate str1 and map each character as the 'key' and corresponding the str2
+* We iterate str1 and map each character as the 'key' and the corresponding str2
 * character as 'value'.
 *
 * If the character is already in the map, we compare it with str2's character.
 * If it's not the same, then we know that the strings are not isomprphic.
 *
 * Time: O(n)
-* Space: O(1)
+* Space: O(n)
 * Where (n) is the length of str1
 *
 * @param {string} str1 string to check

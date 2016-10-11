@@ -59,6 +59,16 @@
 
 function isScramble(str1, str2) {
 
+  // type check
+  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
+    throw new TypeError('isScramble: Expects 2 arguments of [string] type');
+  }
+
+  // length check
+  if (str1.length !== str2.length) return false;
+
+  // divide string and check that characters are non-leaf nodes
+
 }
 
 export default isScramble;

@@ -26,8 +26,14 @@
 * @return {number} returns sum of num1 and num2 as integer
 */
 
-function addStrings() {
+function addStrings(num1, num2) {
 
+  // type check
+  if (typeof num1 !== 'string' || typeof num2 !== 'string') {
+    throw new TypeError('addStrings: Expects 2 arguments of [string] type.');
+  }
+
+  
 }
 
 export default addStrings;
