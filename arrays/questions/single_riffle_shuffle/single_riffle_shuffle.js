@@ -2,6 +2,8 @@
 /**
 * Single Riffle Shuffle
 *
+* Types:
+*
 * I suspect the online poker game I'm playing shuffles cards by doing a single riffle.
 *
 * To prove this, let's write a function to tell us if a full deck of cards shuffledDeck

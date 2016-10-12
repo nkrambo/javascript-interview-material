@@ -2,6 +2,8 @@
 /**
 * Isomorphic Strings
 *
+* Types: Hash Map
+*
 * Given two strings str1 and str2, determine if they are isomorphic.
 *
 * Two strings are isomorphic if the characters in str1 can be replaced to get str2.
