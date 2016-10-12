@@ -35,6 +35,25 @@
 *
 * Let's start with the simplest case first.
 *
+* If we only had one house to rob, then the maximum would be whatever is in the
+* house. That's simple.
+*
+* const homes = [100];
+*
+* If we had two homes, then the maximum would be the highest of the two.
+* Also, simple.
+*
+* const homes = [10, 100];
+* let maximum = Math.max(homes[0], homes[1]);
+*
+* If we have 3 homes, things get harder. We have two options.
+*
+* 1. Rob the 3rd house and add it's amount to the first house.
+* 2. Do not rob the 3rd house and stick to the maximum of the first 2.
+*
+* Clearly, you want to choose the largest of the two options at each step.
+* This can be done by keeping track of the two previous maximum values.
+*
 * Time: O(n)
 * Space: O(1)
 * Where (n) is the number of houses.
