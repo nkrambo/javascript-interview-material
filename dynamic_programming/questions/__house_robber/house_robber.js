@@ -18,6 +18,17 @@
 *
 * Solution:
 *
+* At first glance, you might think that you could just return the maximum profit
+* for all even indexed homes or odd indexed homes, this would be wrong.
+*
+* Consider an array of homes, [10, 1200, 15, 20, 1000];
+*
+* The maximum profit from all the even indexed homes is $1220.
+* The profit from all the odds is $1035.
+*
+* But the actual maximum profit is $2200, by breaking into non-adjacent homes[1]
+* and homes[3].
+*
 * Time: O(1)
 * Space: O(1)
 *
@@ -26,6 +37,11 @@
 */
 
 function robHomes(homes) {
+
+  // type check
+  if (!Array.isArray(homes)) {
+    throw new TypeError('homes: Expects single argument of [array] type.');
+  }
 
 }
 
