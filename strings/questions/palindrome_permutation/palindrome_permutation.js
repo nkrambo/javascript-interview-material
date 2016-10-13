@@ -2,6 +2,8 @@
 /**
 * Palindrome Permutation
 *
+* Types: Hash Map/Set
+*
 * Given a string, write a function to check if it is a permutation of a
 * palindrome. A palindrome is a word or phrase that is the same forwards
 * as it is backwards. A permutation is a rearrangement of letters. The
