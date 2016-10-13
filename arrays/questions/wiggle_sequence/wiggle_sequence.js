@@ -113,4 +113,57 @@ function maxWiggle(nums) {
   return Math.max(down, up);
 }
 
-export default maxWiggle;
+/**
+* maxWiggleGreedy()
+*
+* Solution:
+*
+* As an alternative approach, we can do away with dynamic programming.
+*
+* We maintain a variable 'prevdiff', which is used to indicate whether the current
+* subsequence of numbers lies in an increasing or decreasing wiggle.
+*
+* If prevdiff > 0, it indicates that we have found the increasing wiggle and are
+* looking for a decreasing wiggle now. Thus, we update the length of the found
+* subsequence when diff (nums[i] - nums[i - 1]) becomes negative. Similarly, if
+* prevdiff < 0, we will update the count when diff (nums[i] - nums[i - 1]) becomes
+* positive.
+*
+* When the complete array has been traversed, we get the required count, which
+* represents the length of the longest wiggle subsequence.
+*
+* Time: O(n), traverse array once.
+* Space: O(1)
+* Where (n) is the number of elements in nums.
+*
+* @param {array} nums array of integers
+* @return {number} returns length of longest wiggle sequence
+*/
+
+function maxWiggleGreedy(nums) {
+
+  // type check
+  if (!Array.isArray(nums)) {
+    throw new TypeError('maxWiggle: Expects single argument of [array] type.');
+  }
+
+  // short-cicuit, return trivial wiggle
+  if (nums.length < 2) return nums.length;
+
+  // diff the first 2 elements
+  let prevdiff = nums[1] - nums[0];
+  let count = prevdiff !== 0 ? 2 : 1;
+
+  // iterate from 3rd
+  for (let i = 2; i < nums.length; i += 1) {
+    let diff = nums[i] - nums[i - 1];
+    if ((diff > 0 && prevdiff <= 0) || (diff < 0 && prevdiff >= 0)) {
+      count += 1;
+      prevdiff = diff;
+    }
+  }
+
+  return count;
+}
+
+export { maxWiggle, maxWiggleGreedy };
