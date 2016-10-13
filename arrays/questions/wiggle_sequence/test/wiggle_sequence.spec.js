@@ -11,6 +11,12 @@ describe('maxWiggle()', () => {
     expect(maxWiggle([1, 2, 1])).to.equal(3);
     expect(maxWiggle([100])).to.equal(1);
   });
+
+  it('should throw a type error', () => {
+    expect(function(){ maxWiggle (null); }).to.throw (TypeError);
+    expect(function(){ maxWiggle (undefined); }).to.throw (TypeError);
+    expect(function(){ maxWiggle (5); }).to.throw (TypeError);
+  });
 });
 
 describe('maxWiggleGreedy()', () => {
@@ -21,5 +27,11 @@ describe('maxWiggleGreedy()', () => {
     expect(maxWiggleGreedy([1, 1, 1])).to.equal(1);
     expect(maxWiggleGreedy([1, 2, 1])).to.equal(3);
     expect(maxWiggleGreedy([100])).to.equal(1);
+  });
+
+  it('should throw a type error', () => {
+    expect(function(){ maxWiggleGreedy (null); }).to.throw (TypeError);
+    expect(function(){ maxWiggleGreedy (undefined); }).to.throw (TypeError);
+    expect(function(){ maxWiggleGreedy (5); }).to.throw (TypeError);
   });
 });
