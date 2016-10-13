@@ -78,9 +78,9 @@
 * Not in this case. The outer loop runs once for each unique number in the array.
 * The inner loop runs once for each time that number occurred.
 *
-* So in essence we're just looping through the nn numbers from our input array,
+* So in essence we're just looping through the n numbers from our input array,
 * except we're splitting it into two steps: (1) each unique number, and (2) each
-* time that number appeared. So it's O(n) runtime.
+* time that number appeared. So it's still a O(n) runtime.
 *
 * If we didn't treat highestPossibleScore as a constant, we could call it k and
 * say we have O(n + k) time and O(n + k) space.
