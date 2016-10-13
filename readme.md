@@ -18,10 +18,10 @@ a question thoroughly first.
 
 I highly recommend these resources for interview preparation.
 
-https://www.interviewcake.com
-https://www.careercup.com/book
-https://leetcode.com/
-https://www.hackerrank.com/
+* [Interview Cake](https://www.interviewcake.com)
+* [Cracking the Coding Interview, 6th Edition](https://www.careercup.com/book)
+* [LeetCode](https://leetcode.com/)
+* [Hacker Rank](https://www.hackerrank.com/)
 
 Practice makes perfect, and wine, plenty of wine.
 
