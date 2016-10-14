@@ -2,6 +2,8 @@
 /**
 * Stock Market
 *
+* Types: Greedy
+*
 * Suppose we could access yesterday's stock prices as an array, where:
 *
 * The indices are the time in minutes past trade opening time, which was 9:30am local time.
