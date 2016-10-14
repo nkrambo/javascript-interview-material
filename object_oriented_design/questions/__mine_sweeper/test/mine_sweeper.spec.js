@@ -1,8 +1,8 @@
 
 import { expect } from 'chai';
-import CallCenter from '../call_center';
+import MineSweeper from '../mine_sweeper';
 
-describe('CallCenter', () => {
+describe('MineSweeper', () => {
   // it('should', () => {
   //
   // });
