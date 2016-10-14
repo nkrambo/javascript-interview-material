@@ -59,7 +59,7 @@
 *
 * @param {array} cakeTypes array of cake type objects
 * @param {number} capacity weight capacity
-* @return {returns} returns the maximum monetary value the duffel bag can hold
+* @return {number} returns the maximum monetary value the duffel bag can hold
 */
 
 function maxDuffelBagValue(cakeTypes, capacity) {
