@@ -6,7 +6,7 @@ questions, written in JavaScript.
 
 It's a running collection made up from several resources. It was meant as a personal
 learning reference, for material I had covered, but it might be valuable for others
-working in JavaScript heavy roles or preparing for a technical interview in a Javascript
+working in JavaScript heavy roles or preparing for a technical interview in a JavaScript
 role.
 
 Contributions are more than welcome, if you have anything to add. Please read the
