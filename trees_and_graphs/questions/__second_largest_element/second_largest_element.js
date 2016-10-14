@@ -37,7 +37,7 @@ function findSecondLargest(root) {
     // case: current is largest and has a left subtree
     // 2nd largest is the largest in that subtree
     if (current.left && !current.right) {
-        return findLargest(current.left);
+      return findLargest(current.left);
     }
 
     // case: current is parent of largest, and
