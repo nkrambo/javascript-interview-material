@@ -1,16 +1,21 @@
 
-// Ring Buffer
-
-// A ring buffer uses a single, fixed-size buffer, often an array, as if it were connected end-to-end.
-// This structure lends itself easily to buffering data streams, like keyboard strokes.
-
-// It's useful because it does not need to have its elements shuffled around when one is consumed,
-// like a non-circular buffer. In other words, the circular buffer is well-suited as a FIFO.
-
-// Ring buffering makes a good implementation strategy for a queue that has fixed maximum size.
-
-// https://en.wikipedia.org/wiki/Circular_buffer
-// https://github.com/janogonzalez/ringbufferjs/blob/master/index.js
+/**
+* Ring Buffer
+*
+* A ring buffer uses a single, fixed-size buffer, often an array, as if it were
+* connected end-to-end.
+*
+* This structure lends itself easily to buffering data streams, like keyboard strokes.
+*
+* It's useful because it does not need to have its elements shuffled around when
+* one is consumed, like a non-circular buffer. In other words, the circular buffer
+* is well-suited as a FIFO.
+*
+* Ring buffering makes a good implementation strategy for a queue that has fixed
+* maximum size.
+*
+* Implment a RingBuffer class.
+*/
 
 class RingBuffer {
   constructor(capacity) {
