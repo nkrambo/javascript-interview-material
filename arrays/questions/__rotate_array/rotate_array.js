@@ -29,4 +29,4 @@ function rotateArray(nums, k) {
 
 }
 
-export rotateArray;
+export default rotateArray;
