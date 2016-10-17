@@ -82,6 +82,22 @@
 *
 * Solution:
 *
+* Taking a brute force approach, to see if a given meeting can be merged, we have
+* to look at all the other meetings! That's because the order of the meetings is random.
+* Trying to solve this in one pass will cost us O(n^2).
+*
+* So to do better, first we sort our input array of meetings by start time so any
+* meetings that might need to be merged are now next to each other.
+*
+* Then we walk through our sorted meetings from left to right. At each step, either:
+*
+* 1. We can merge the current meeting with the previous one, so we do.
+* 2. We can't merge the current meeting with the previous one, so we know the
+*    previous meeting can't be merged with any future meetings and we throw the
+*    current meeting into mergedMeetings.
+*
+* This one arguably uses a greedy approach, except we had to sort the array first.
+*
 * Time: O(n log n)
 * Space: O(n)
 *
