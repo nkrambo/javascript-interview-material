@@ -4,9 +4,13 @@
 *
 * Implement a function to check if a binary tree is balanced. A tree is unbalanced when the
 * difference in height between leaf nodes is more than 1.
+*/
+
+/**
+* Is balanced
 *
 * Solution:
-* We do a depth-first walk ↴ through our tree, keeping track of the depth as we go.
+* We do a depth-first walk through our tree, keeping track of the depth as we go.
 * When we find a leaf, we throw its depth into an array of depths if we haven't
 * seen that depth already.
 *
@@ -19,10 +23,26 @@
 * Why are we doing a depth-first walk and not a breadth-first one? You could make
 * a case for either. We chose depth-first because it reaches leaves faster, which
 * allows us to short-circuit earlier in some cases.
-*/
-
-/**
-* Is balanced
+*
+* Time: O(n)
+* Space: O(n)
+*
+* For time, the worst case is the tree is balanced and we have to iterate over all
+* n nodes to make sure.
+*
+* For the space cost, we have two data structures to watch: depths and nodes.
+* depths will never hold more than three elements, so we can write that off as O(1).
+*
+* nodes will hold at most dd nodes where dd is the depth of the tree (the number
+* of levels in the tree from the root node down to the lowest node). So we could
+* say our space cost is O(d).
+*
+* The more unbalanced the tree gets, the closer d gets to n. In the worst case,
+* the tree is a straight line of right children from the root where every node in
+* that line also has a left child. The traversal will walk down the line of right
+* children, adding a new left child to nodes at each step. When the traversal hits
+* the rightmost node, nodes will hold half of the nn total nodes in the tree.
+* Half n is O(n), so our worst case space cost is O(n).
 *
 * @param {object} tree Binary tree class to check
 * @return {boolean} Returns true if the tree is balanced, otherwise returns false
