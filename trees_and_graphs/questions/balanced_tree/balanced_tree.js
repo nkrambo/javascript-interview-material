@@ -2,6 +2,8 @@
 /**
 * Check Balanced
 *
+* Types: tree, greedy, divide and conquer
+*
 * Implement a function to check if a binary tree is balanced. A tree is unbalanced when the
 * difference in height between leaf nodes is more than 1.
 */

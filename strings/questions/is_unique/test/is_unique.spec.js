@@ -35,6 +35,6 @@ describe('isUniqueSort()', () => {
   });
 
   it('should throw a type error', () => {
-    expect(function(){ isUniqueSort ([]); }).to.throw (TypeError);
+    expect(function(){ isUniqueSort([]); }).to.throw (TypeError);
   });
 });
