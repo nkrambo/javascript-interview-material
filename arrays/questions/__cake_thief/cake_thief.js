@@ -1,6 +1,9 @@
 
 /**
-* Cake Theif
+* Cake Thief
+*
+* Types: Dynamic Programming, Unbounded Knapsack Problem, Combinatorial Optimization,
+*        Classic Problems
 *
 * You are a renowned thief who has recently switched from stealing precious
 * metals to stealing cakes because of the insane profit margins. You end up
@@ -54,8 +57,9 @@
 *
 * Solution:
 *
-* Time: O(1)
-* Space: O(1)
+* Time: O(n * k)
+* Space: O(k)
+* Where n is the number of types of cakes and k is the duffel bag's capacity.
 *
 * @param {array} cakeTypes array of cake type objects
 * @param {number} capacity weight capacity
