@@ -2,8 +2,8 @@
 /**
 * Cake Thief
 *
-* Types: Dynamic Programming, Unbounded Knapsack Problem, Combinatorial Optimization,
-*        Classic Problems
+* Types: Dynamic Programming, Bottom Up, Unbounded Knapsack Problem,
+* Combinatorial Optimization, Classic Problems
 *
 * You are a renowned thief who has recently switched from stealing precious
 * metals to stealing cakes because of the insane profit margins. You end up
@@ -57,9 +57,16 @@
 *
 * Solution:
 *
+* This is a classic computer science puzzle called 'the unbounded knapsack problem'.
+*
+* 
+*
 * Time: O(n * k)
 * Space: O(k)
 * Where n is the number of types of cakes and k is the duffel bag's capacity.
+*
+* We loop through each cake (n cakes) for every capacity (k capacities), so our
+* runtime is O(n * k), and maintaining the array of k+1 capacities gives us the O(k) space.
 *
 * @param {array} cakeTypes array of cake type objects
 * @param {number} capacity weight capacity
@@ -67,7 +74,52 @@
 */
 
 function maxDuffelBagValue(cakeTypes, capacity) {
+  // we make an array to hold the maximum possible value at every duffel bag weight
+  // capacity from 0 to capacity starting each index with value 0
+  const maxValuesAtCapacities = [];
+  for (let i = 0; i <= capacity; i += 1) {
+    maxValuesAtCapacities[i] = 0;
+  }
 
+  for (let currentCapacity = 0; currentCapacity <= capacity; currentCapacity += 1) {
+
+    // set a variable to hold the max monetary value so far for currentCapacity
+    let currentMaxValue = 0;
+
+    // we use a for loop here instead of forEach because we return infinity
+    // if we get a cakeType that weighs nothing and has a value. but forEach
+    // loops always return undefined and you can't break out of them without
+    // throwing an exception
+    for (let j = 0; j < cakeTypes.length; j += 1) {
+      const cakeType = cakeTypes[j];
+
+      // if a cake weighs 0 and has a positive value the value of our duffel bag is infinite!
+      if (cakeType.weight === 0 && cakeType.value !== 0) {
+        return Infinity;
+      }
+
+      // if the current cake weighs as much or less than the current weight capacity
+      // it's possible taking the cake would give get a better value
+      if (cakeType.weight <= currentCapacity) {
+
+        // so we check: should we use the cake or not?
+        // if we use the cake, the most kilograms we can include in addition to the cake
+        // we're adding is the current capacity minus the cake's weight. we find the max
+        // value at that integer capacity in our array maxValuesAtCapacities
+        const maxValueUsingCake = cakeType.value + maxValuesAtCapacities[currentCapacity - cakeType.weight];
+
+        // now we see if it's worth taking the cake. how does the
+        // value with the cake compare to the currentMaxValue?
+        currentMaxValue = Math.max(maxValueUsingCake, currentMaxValue);
+      }
+    }
+
+    // add each capacity's max value to our array so we can use them
+    // when calculating all the remaining capacities
+    maxValuesAtCapacities[currentCapacity] = currentMaxValue;
+  }
+
+  return maxValuesAtCapacities[capacity];
 }
 
 export default maxDuffelBagValue;
