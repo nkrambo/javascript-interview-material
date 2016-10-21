@@ -2,7 +2,7 @@
 /**
 * Max Stack
 *
-* Types: Stack, Eager Approach
+* Types: Stack
 *
 * You want to be able to access the largest element in a stack.
 *
@@ -43,11 +43,61 @@
 *
 * 2. Whenever we pop(), we also pop() from the top of maxsStack if the item equals
 *    the top item in maxsStack.
+*
+* Time: O(1)
+* Space: O(m)
+* Where m is the number of operations performed on the stack.
+*
+* Notice that our time-efficient approach takes some additional space, while a lazy
+* approach (simply walking through the stack to find the max integer whenever getMax()
+* is called) took no additional space. We've traded some space efficiency for time
+* efficiency.
+*
+* Notice how in the solution we're spending time on push() and pop() so we can save
+* time on getMax(). That's because we chose to optimize for the time cost of calls
+* to getMax().
+*
+* But we could've chosen to optimize for something else. For example, if we expected
+* we'd be running push() and pop() frequently and running getMax() rarely, we could
+* have optimized for faster push() and pop() functions.
 */
 
+import Stack from '../../class/stack/stack';
 
 class MaxStack {
+  constructor() {
+    this.stack = new Stack();
+    this.maxStack = new Stack();
+  }
 
+  // Add a new item to the top of our stack. If the item is greater
+  // than or equal to the the last item in maxsStack, it's
+  // the new max! So we'll add it to maxsStack.
+  push(item) {
+    this.stack.push(item);
+    if (!this.maxStack.peek() || item >= this.maxStack.peek()) {
+      this.maxStack.push(item);
+    }
+
+    return item;
+  }
+
+  // Remove and return the top item from our stack. If it equals
+  // the top item in maxsStack, they must have been pushed in together.
+  // So we'll pop it out of maxsStack too.
+  pop() {
+    const item = this.stack.pop();
+    if (item === this.maxStack.peek()) {
+      this.maxStack.pop();
+    }
+
+    return item;
+  }
+
+  // The last item in maxsStack is the max item in our stack.
+  getMax() {
+    return this.maxStack.peek();
+  }
 }
 
 export default MaxStack;
