@@ -26,10 +26,20 @@ Some mathematicians argue that base-12 is a better system than our base-10, beca
 12 has more factors (1, 2, 3, 4, 6) than 10 does (1, 2, 5). We probably use decimal
 numbers because we have 10 fingers.
 
+###Base-2
+
 **Binary numbers** (or **base-2**) only use two values, 0 and 1. So binary digit
 columns increase by 2 times (1s, 2s, 4s).
 
 Let's look at the same digits 101:
+
+| Value         | 4s            | 2s            | 1s    |
+| ------------- | ------------- |:-------------:| -----:|
+| Digits        | 1             | 0             | 1     |
+
+```javascript
+4 + 0 + 1 = 5
+```
 
 Binary numbers are nice for computers because they can easily be expressed as series
 of bits, which only have two states (think of them as "on" or "off", "open" or "closed",
@@ -53,6 +63,8 @@ Here are the base-10 numbers 0 through 10 in binary:
 10       1010
 ```
 
+###Two's Complement
+
 **Negative numbers** are typically represented in binary using two's complement
 encoding. In two's complement, the leftmost digit is negative, and the rest of
 the digits are positive.
@@ -63,6 +75,14 @@ is double the value of the digit to the left.
 
 To make this clearer, let's look at what happens when we interpret that 101 as
 two's complement:
+
+| Value         | -1 * 4s       | 2s            | 1s    |
+| ------------- | ------------- |:-------------:| -----:|
+| Digits        | 1             | 0             | 1     |
+
+```javascript
+-4 + 0 + 1 = -3
+```
 
 Here are the base-10 numbers -5 through 5 in two's complement, along with how we'd
 interpret each bit:
