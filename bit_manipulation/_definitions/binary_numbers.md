@@ -1,13 +1,13 @@
 
 ##Binary Numbers
 
+###Base-10
+
 When we use numbers, we usually use **decimal numbers** (or **base-10**), which
 are expressed using 10 values, 0-9.
 
 So our digit columns increase by 10 times (1s, 10s, 100s). For example, let's take
 the digits 101:
-
-###Base-10
 
 | Value         | 100s          | 10s           | 1s    |
 | ------------- | ------------- |:-------------:| -----:|
