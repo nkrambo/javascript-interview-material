@@ -28,7 +28,12 @@
 *
 * Solution:
 *
-* Time: O(1)
+* A brute force approach would use two nested loops to go through every ID and
+* check every other ID to see if there's a duplicate.
+*
+* This would take O(n^2) time and O(1) space. Pretty bad.
+*
+* Time: O(n)
 * Space: O(1)
 *
 * @param {array} deliveryIds array of ids
