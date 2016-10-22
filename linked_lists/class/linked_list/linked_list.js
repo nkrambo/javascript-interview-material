@@ -1,9 +1,68 @@
 
+/**
+* Linked List
+*
+* Linked lists are a very common data structure that is often used to
+* implement other data structures because of its ability to efficiently add
+* items to the start, middle, and end.
+*
+* The basic idea of a linked list is similar to a graph. You have nodes that
+* point to other nodes. They look sorta like this:
+*
+*     1 -> 2 -> 3 -> 4 -> 5
+*
+* Visualizing them as a JSON-like structure looks like this:
+*
+*     {
+*       value: 1,
+*       next: {
+*         value: 2,
+*         next: {
+*           value: 3,
+*           next: {...}
+*         }
+*       }
+*     }
+*
+*
+*                      Access       Search       Insert       Delete
+* -----------------------------------------------------------------------------
+*       Linked List     O(N)         O(N)         O(1)         O(1)
+*
+*
+*      _______________________
+*  ()=(_______________________)=()              ,-----------------,_
+*      |                     |               ,"                      ",
+*      |   ~ ~~~~~~~~~~~~~   |             ,'    ,---------------,     `,
+*      |               ,----------------------------,          ,-----------
+*      |   ~ ~~~~~~~~ |                              |        |
+*      |               `----------------------------'          `-----------
+*      |   ~ ~~~~~~~~~~~~~   |            `,    `----------------'     ,'
+*      |                     |              `,                      ,'
+*      |_____________________|                 `------------------'
+*  ()=(_______________________)=()
+
+*/
+
 class LinkedList {
+  /**
+  * Unlike a graph, a linked list has a single node that starts off the entire
+  * chain. This is known as the "head" of the linked list.
+  *
+  * We're also going to track the length.
+  */
+
   constructor() {
     this.head = null;
     this.length = 0;
   }
+
+  /**
+  * First we need a way to retrieve a value in a given position.
+  *
+  * This works differently than normal lists as we can't just jump to the
+  * correct position. Instead we need to move through the individual nodes.
+  */
 
   get(position) {
 
@@ -13,11 +72,11 @@ class LinkedList {
     }
 
     // Start with the head of the list.
-    var current = this.head;
+    let current = this.head;
 
     // Slide through all of the items using node.next until we reach the
     // specified position.
-    for (var index = 0; index < position; index++) {
+    for (let index = 0; index < position; index += 1) {
       current = current.next;
     }
 
@@ -25,9 +84,15 @@ class LinkedList {
     return current;
   }
 
+  /**
+  * Next we need a way to add nodes to the specified position.
+  *
+  * We're going for a generic add method that accepts a value and a position.
+  */
+
   add(value, position) {
     // First create a node to hold our value.
-    var node = {
+    const node = {
       value: value,
       next: null
     };
@@ -43,8 +108,8 @@ class LinkedList {
     // between the current node and the previous node.
     } else {
       // First, find the previous node and the current node.
-      var prev = this.get(position - 1);
-      var current = prev.next;
+      let prev = this.get(position - 1);
+      let current = prev.next;
       // Then insert the new node in between them by setting its "next" field
       // to the current node and updating the previous node's "next" field to
       // the new one.
@@ -53,8 +118,13 @@ class LinkedList {
     }
 
     // Finally just increment the length.
-    this.length++;
+    this.length += 1;
   }
+
+  /**
+  * The last method we need is a remove method. We're just going to look up a
+  * node by its position and splice it out of the chain.
+  */
 
   remove(position) {
     // If we're removing the first node we simply need to set the head to the
@@ -65,12 +135,12 @@ class LinkedList {
     // For any other position we need to look up the previous node and set it
     // to the node after the current position.
     } else {
-      var prev = this.get(position - 1);
+      const prev = this.get(position - 1);
       prev.next = prev.next.next;
     }
 
     // Then we just decrement the length.
-    this.length--;
+    this.length -= 1;
   }
 }
 
