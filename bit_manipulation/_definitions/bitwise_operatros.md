@@ -153,3 +153,13 @@ Two left shifts multiplies by 4. Three left shifts multiplies by 8.
 
 And similarly, shifting right divides by 2, throwing out any remainders.
 
+###Using
+
+How do you know when bit manipulation might be the key to solving a problem?
+
+Here are some signs to watch out for:
+
+1. You want to multiply or divide by 2 (use a left shift to multiply by 2, right
+shift to divide by 2).
+2. You want to "cancel out" matching numbers (use XOR).
+

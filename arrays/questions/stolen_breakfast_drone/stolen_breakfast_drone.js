@@ -33,6 +33,25 @@
 *
 * This would take O(n^2) time and O(1) space. Pretty bad.
 *
+* The only data we have is integers.
+*
+* Our machine stores integers as binary numbers using bits. So maybe we can use
+* a bitwise operator to help us solve this.
+*
+* We’re seeing every integer twice, except one. We need a bitwise operation that
+* would let the second occurrence of an integer cancel out the first.
+*
+* If so, we could start with a variable uniqueDeliveryId set to 0 and run some
+* bitwise operation with that variable and each number in our array. If duplicate
+* integers cancel each other out, then we’d only be left with the unique integer
+* at the end!
+*
+* We can XOR all the integers in the array. We start with a variable uniqueDeliveryId
+* set to 0. Every time we XOR with a new ID, it will change the bits. When we XOR
+* with the same ID again, it will cancel out the earlier change.
+*
+* In the end, we'll be left with the ID that appeared once!
+*
 * Time: O(n)
 * Space: O(1)
 *
@@ -41,7 +60,13 @@
 */
 
 function findUniqueDeliveryId(deliveryIds) {
+  let uniqueId = 0;
 
+  deliveryIds.forEach(function(id) {
+    uniqueId ^= id;
+  });
+
+  return uniqueId;
 }
 
 export default findUniqueDeliveryId;
