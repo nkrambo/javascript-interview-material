@@ -15,6 +15,7 @@ Having said that, it is increasingly true that problem authors try to set the in
 We have to remark that it is quite challenging to come up with new 'non-classical' Greedy problems. Therefore, the number of such novel Greedy problems used in technical interviews is lower than that of Complete Search or Dynamic Programming problems. For this reason it may be helpful to memorize classical 'greedy' problems.
 
 There are a few classical examples of Greedy algorithms:
+
 1. Kruskal's (and Prim's) algorithm for the Minimum Spanning Tree (MST) problem
 2. Dijkstra's algorithm for the Single-Source Shortest Paths (SSSP) problem
 3. Interval Covering
