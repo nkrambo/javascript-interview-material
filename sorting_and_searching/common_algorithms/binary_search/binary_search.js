@@ -2,7 +2,7 @@
 /**
 * Binary Search
 *
-* Types: Common Algorithm, Search
+* Types: Common Algorithm, Search, Divide and Conquer
 *
 * A binary search algorithm finds an item in a sorted array in O(log n) time.
 *
