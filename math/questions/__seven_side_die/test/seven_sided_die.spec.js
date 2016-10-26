@@ -12,12 +12,12 @@ describe('rand5()', () => {
   });
 });
 
-describe('rand7()', () => {
-  it('should be above 0', () => {
-    expect(rand7()).to.be.above(0);
-  });
-
-  it('should be below 8', () => {
-    expect(rand7()).to.be.below(8);
-  });
-});
+// describe('rand7()', () => {
+//   it('should be above 0', () => {
+//     expect(rand7()).to.be.above(0);
+//   });
+//
+//   it('should be below 8', () => {
+//     expect(rand7()).to.be.below(8);
+//   });
+// });
