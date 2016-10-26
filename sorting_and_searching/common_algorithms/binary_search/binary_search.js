@@ -2,7 +2,7 @@
 /**
 * Binary Search
 *
-* Types: Common Algorithm
+* Types: Common Algorithm, Search
 *
 * A binary search algorithm finds an item in a sorted array in O(log n) time.
 *
@@ -28,6 +28,46 @@
 * The only non-constant part of our time cost is the number of times our while
 * loop runs. Each step of our while loop cuts the range (dictated by floor and ceiling)
 * in half, until our range has just one element left.
+*
+* So how many times must we divide our original array size (n) in half until we
+* get down to 1?
+*
+* n * 1/2 * 1/2 * 1/2 ... = 1
+*
+* How many 1/2's are there, we don't know but we'll call it (x).
+*
+* Now we solve for x:
+*
+*    n * (1/2)^x = 1
+*
+* >> n * (1^x/2^x) = 1
+*
+* >> n * (1/2^x) = 1
+*
+* >> n/2^x = 1
+*
+* >> n = 2^x
+*
+* Now to get the x out of the exponent we use logarithms.
+*
+* Recall that log(10)100 means, 'what power must we raise 10 to, to get 100'?
+* The answer is 2.
+*
+* So in this case, if we take the log(2) of both sides...
+*
+* >> log(2)n = log(2)^2x
+*
+* The right hand side asks, 'what power must we raise 2 to, to get 2^x'?
+* Well, that's just x!
+*
+* >> log(2)n​​ = x
+*
+* So there it is. The number of times we must divide n in half to get down to 1
+* is log(2) n
+*
+* So our total time cost is O(log n).
+*
+* Careful: we can only use binary search if the input array is already sorted.
 *
 * @param {array} arr array of integers
 * @param {number} value integer to find
