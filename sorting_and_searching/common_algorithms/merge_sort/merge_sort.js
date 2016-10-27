@@ -34,7 +34,7 @@
 * Time: O(n log n)
 * Space: O(n)
 *
-* @param {array} array array of integerss
+* @param {array} array array of integers
 * @returns {array} returns a new sorted, ascending array
 */
 
