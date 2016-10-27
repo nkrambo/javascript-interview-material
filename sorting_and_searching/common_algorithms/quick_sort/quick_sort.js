@@ -31,57 +31,57 @@
 * competitors, merge sort and heapsort.
 *
 * Merge sort has a guaranteed upper limit of O(n log n), while Quick sort has
-* such limit, too, but it is much higher - it is O(N^2). When you need a guaranteed
+* such limit, too, but it is much higher - it is O(n^2). When you need a guaranteed
 * upper bound on the timing of your code, use merge sort over quick sort.
 *
 * Time: O(n log n)
 * Space: O(n)
 *
-* @param {array} array array of integers
-* @param {array} lo index of left pointer
-* @param {array} hi index of right pointer
+* @param {array} arr array of integers
+* @param {number} left index of the left-most element
+* @param {number} right index of the right-most element
 * @returns {array} returns a new sorted, ascending array
 */
 
-function quickSort(array, lo, hi) {
+function quickSort(arr, left, right) {
   let pivot;
   let partIndex;
 
-  if (lo < hi) {
-    pivot = hi;
-    partIndex = partition(array, pivot, lo, hi);
+  if (left < right) {
+    pivot = right;
+    partIndex = partition(arr, pivot, left, right);
+
+    // sort left and right
+    quickSort(arr, left, partIndex - 1);
+    quickSort(arr, partIndex + 1, right);
   }
 
-  // sort left and right
-  quickSort(array, lo, partIndex - 1);
-  quickSort(array, partIndex + 1, hi);
-
-  return array;
+  return arr;
 }
 
 /**
 * partition()
 *
-* @param {array} array array of integers
+* @param {array} arr array of integers
 * @param {number} pivot
-* @param {number} lo index
-* @param {number} hi index
+* @param {number} left index
+* @param {number} right index
 * @returns {number} returns
 */
 
-function partition(array, pivot, lo, hi) {
-   let pivotValue = array[pivot];
-   let partIndex = lo;
+function partition(arr, pivot, left, right) {
+   let pivotValue = arr[pivot];
+   let partIndex = left;
 
-   for (let i = lo; i < hi; i += 1) {
-    if(array[i] < pivotValue) {
-      swap(array, i, partIndex);
+   for (let i = left; i < right; i += 1) {
+    if(arr[i] < pivotValue) {
+      swap(arr, i, partIndex);
       partIndex += 1;
     }
   }
 
   // swap values
-  swap(array, hi, partIndex);
+  swap(arr, right, partIndex);
 
   return partIndex;
 }
@@ -89,16 +89,16 @@ function partition(array, pivot, lo, hi) {
 /**
 * swap()
 *
-* @param {array} array array of integers
+* @param {array} arr array of integers
 * @param {number} i index
 * @param {number} j index
 * @returns {void} modifies array in-place by swapping values at indexes i, j
 */
 
-function swap(array, i, j) {
-   const temp = array[i];
-   array[i] = array[j];
-   array[j] = temp;
+function swap(arr, i, j) {
+   const temp = arr[i];
+   arr[i] = arr[j];
+   arr[j] = temp;
 }
 
 export default quickSort;
