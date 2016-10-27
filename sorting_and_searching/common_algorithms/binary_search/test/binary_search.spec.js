@@ -2,7 +2,7 @@
 import { expect } from 'chai';
 import binarySearch from '../binary_search';
 
-describe('binary search', () => {
+describe('binarySearch()', () => {
   it('should return the correct index of searched integer if found', () => {
     const test = [1, 2, 3, 4, 5];
     expect(binarySearch(test, 4)).to.be.true;
