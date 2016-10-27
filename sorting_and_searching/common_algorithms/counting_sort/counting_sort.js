@@ -23,8 +23,21 @@
 * 4. In one in-order pass of nums_to_counts put each number, the correct number
 *    of times, into sortedArray.
 *
-* Time: O()
+* Time: O(n)
 * Space: O(n)
+* Additional space for the new array that we end up returning.
+*
+* You might think because we have nested loops that the runtime would be O(n^2).
+* Notice what those loops iterate over. The outer loop runs once for each unique
+* number in the array. The inner loop runs once for each time that number occurred.
+*
+* So in essence we're just looping through the nn numbers from our input array,
+* except we're splitting it into two steps: (1) each unique number, and (2) each
+* time that number appeared.
+*
+* Here's another way to think about it: in each iteration of our two nested loops,
+* we append one item to sortedArray. How many numbers end up in sortedArray in
+* the end? Exactly how many were in our input array! n!
 *
 * @param {array} arr array of integers
 * @param {number} maxValue upper bound
