@@ -92,7 +92,7 @@ function partition(arr, pivot, left, right) {
 * @param {array} arr array of integers
 * @param {number} i index
 * @param {number} j index
-* @returns {void} modifies array in-place by swapping values at indexes i, j
+* @returns {void} modifies arr by swapping values at indices i, j
 */
 
 function swap(arr, i, j) {

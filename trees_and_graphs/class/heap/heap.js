@@ -1,23 +1,23 @@
 
 /**
- * Binary Heaps
- * Min-Heaps and Max-Heaps
- *
- * Definition: A binary heap is a complete binary tree (that is, totally filled other
- * than the rightmost elements on the last level).
- *
- * A min-heap is where each node is smaller than it's children, with the
- * root always being the smallest.
- *
- * A max-heap is where each node is larger than it's children, with the root always
- * being the largest. Other than that, there are no other special rules for inserting,
- * like we have with a BST, for example.
- *
- * Heaps are commonly used in priority queues.
- *
- * Often it is more time and space efficient to implement a binary heap
- * using a dynamic array instead of objects.
- */
+* Binary Heaps
+* Min-Heaps and Max-Heaps
+*
+* Definition: A binary heap is a complete binary tree (that is, totally filled other
+* than the rightmost elements on the last level).
+*
+* A min-heap is where each node is smaller than it's children, with the
+* root always being the smallest.
+*
+* A max-heap is where each node is larger than it's children, with the root always
+* being the largest. Other than that, there are no other special rules for inserting,
+* like we have with a BST, for example.
+*
+* Heaps are commonly used in priority queues.
+*
+* Often it is more time and space efficient to implement a binary heap
+* using a dynamic array instead of objects.
+*/
 
 class Heap {
 
