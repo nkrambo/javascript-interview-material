@@ -4,16 +4,14 @@
 *
 * I like parentheticals (a lot).
 *
-* "Sometimes (when I nest them (my parentheticals) too much
-* (like this (and this))) they get confusing."
+* 'Sometimes (when I nest them (my parentheticals) too much (like this (and this)))
+* they get confusing.'
 *
-* Write a function that, given a str like the one above, along with the
-* i of an opening parenthesis, finds the corresponding closing parenthesis.
+* Write a function that, given a str like the one above, along with the i of an
+* opening parenthesis, finds the corresponding closing parenthesis.
 *
-* Example: if the example string above is input with the number 10
-* (i of the first parenthesis), the output should be 79
-* (i of the last parenthesis).
-*
+* For example, if the example string above is input with the number 10 (i of the
+* first parenthesis), the output should be 79 (i of the last parenthesis).
 */
 
 /**
@@ -55,7 +53,7 @@ function parenthesisMatching(str, pos) {
   if (str[pos] !== '(') {
     throw new Error('parenthesisMatching: [Pos] does not reference opening parenthesis index.');
   }
-  
+
   let openParens = 0;
   for (let i = pos + 1; i < str.length; i += 1) {
     const char = str[i];

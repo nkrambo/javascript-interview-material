@@ -84,21 +84,18 @@ function findRotationPoint(words) {
     // guess a point halfway between floor and ceiling
     let guess = Math.floor(floor + ((ceiling - floor) / 2));
 
-    // if guess comes after first word
+    // if guess comes after first word, go right
     if (words[guess] > first) {
-      // go right
       floor = guess;
+
+    // otherwise, go left
     } else {
-      // go left
       ceiling = guess;
     }
 
-    // if floor and ceiling have converged
-    if (floor + 1 === ceiling) {
-      // between floor and ceiling is where we flipped to the beginning
-      // so ceiling is alphabetically first
-      break;
-    }
+    // if floor and ceiling have converged, between floor and ceiling is where we
+    // flipped to the beginning... so ceiling is alphabetically first
+    if (floor + 1 === ceiling) break;
   }
 
   return ceiling;
