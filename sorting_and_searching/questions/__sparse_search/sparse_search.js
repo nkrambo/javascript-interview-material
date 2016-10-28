@@ -1,14 +1,29 @@
 
-// Sparse Search
+/**
+* Sparse Search
+*
+* Given a sorted array of strings that is interspersed with empty strings,
+* write a method to find the location of a given string.
+*
+* Example:
+* Input: {'at', '', '', '', 'ball', '', '', 'car', '', '', 'dad', '', ''}, 'ball'
+* Output: 4
+*/
 
-// Given a sorted array of strings that is interspersed with empty strings,
-// write a method to find the location of a given string.
+/**
+* sparseSearch()
+*
+* Solution:
+*
+* Time: O(n)
+* Space: O(n)
+*
+* @param {array} arr sorted array of strings, also containing empty strings
+* @param {string} string string to find in arr
+* @return {integer} returns the index of string if in arr
+*/
 
-// EXAMPLE:
-// Input: {'at', '', '', '', 'ball', '', '', 'car', '', '', 'dad', '', ''}
-// Output: 4
-
-function sparseSearch(array) {
+function sparseSearch(arr, string) {
 
 }
 
