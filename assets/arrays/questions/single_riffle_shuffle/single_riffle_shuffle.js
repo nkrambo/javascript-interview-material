@@ -24,7 +24,6 @@
 *    than or equal to the number of cards left in h2) and throw them into the shuffledDeck.
 *
 * 4. Repeat steps 2-3 until h1 and h2 are empty.
-*
 */
 
 /**

@@ -2,7 +2,7 @@
 /**
 * Check Balanced
 *
-* Types: tree, greedy, divide and conquer
+* Types: Tree, Greedy, Divide and Conquer
 *
 * Implement a function to check if a binary tree is balanced. A tree is unbalanced when the
 * difference in height between leaf nodes is more than 1.
@@ -12,6 +12,7 @@
 * Is balanced
 *
 * Solution:
+*
 * We do a depth-first walk through our tree, keeping track of the depth as we go.
 * When we find a leaf, we throw its depth into an array of depths if we haven't
 * seen that depth already.
@@ -51,7 +52,8 @@
 */
 
 function isBalanced(tree) {
-  const depths = []; // we short-circuit as soon as we find more than 2
+  // we short-circuit as soon as we find more than 2
+  const depths = [];
 
   // stack, DFS
   const nodes = [];
@@ -72,8 +74,8 @@ function isBalanced(tree) {
         depths.push(depth);
 
         // two ways we might now have an unbalanced tree:
-        //   1) more than 2 different leaf depths
-        //   2) 2 leaf depths that are more than 1 apart
+        // 1) more than 2 different leaf depths
+        // 2) 2 leaf depths that are more than 1 apart
         if ((depths.length > 2) || (depths.length === 2 && Math.abs(depths[0] - depths[1]) > 1)) {
           return false;
         }
