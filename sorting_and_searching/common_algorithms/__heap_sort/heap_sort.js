@@ -77,7 +77,7 @@
 * 2. Swap the first element of the array with the final element. Decrease the
 *    considered range of the array by one.
 *
-* 3. Call the siftDown() function on the array to sift the new first element to
+* 3. Call the sink() function on the array to sift the new first element to
 *    its appropriate index in the heap.
 *
 * 4. Go to step (2) unless the considered range of the array is one element.
@@ -94,13 +94,17 @@
 */
 
 function heapSort(arr) {
+
+  // grab the last index
   let end = arr.length - 1;
 
-  heapify(arr, arr.length);
+  // build our max-heap
+  heapify(arr, end);
 
-  while(end > 0) {
-    swap(arr, end - 1, 0);
-    siftDown(arr, 0, end);
+  //
+  while (end > 0) {
+    swap(arr, end--, 0);
+    sink(arr, 0, end);
   }
 
   return arr;
@@ -112,20 +116,24 @@ function heapSort(arr) {
 * Builds a max-heap from a list in O(n) operations.
 *
 * @param {array} arr array of integers
-* @param {number} len length of array
 * @returns {void} modifies arr into heap data structure
 */
 
-function heapify(arr, len) {
+function heapify(arr, end) {
+
   // break the array into root + two sides, to create tree (heap)
-  let mid = Math.floor((len - 2) / 2);
-  while(mid >= 0) {
-    shiftDown(arr, mid--, len - 1);
+  let mid = Math.floor((end - 1) / 2);
+
+  while (mid >= 0) {
+    sink(arr, mid, end);
+    mid -= 1;
   }
 }
 
 /**
-* shiftDown()
+* sink()
+*
+* Sink the new first element to its appropriate index in the heap.
 *
 * @param {array} arr array of integers
 * @param {number} i index
@@ -133,22 +141,22 @@ function heapify(arr, len) {
 * @returns {void} modifies arr by swapping values at indices i, j
 */
 
-function shiftDown(arr, start, end) {
-   let root = start;
-   let child = (root * 2) + 1;
+function sink(arr, start, end) {
+   let root = start; // n
+   let child = (root * 2) + 1; // 2n + 1
    let toSwap = root;
 
-   while(child <= end) {
+   while (child <= end) {
 
-    if(arr[toSwap] < arr[child]) {
+    if (arr[toSwap] < arr[child]) {
       swap(arr, toSwap, child);
     }
 
-    if(child+1 <= end && arr[toSwap] < arr[child+1]) {
-      swap(arr, toSwap, child+1)
+    if (child + 1 <= end && arr[toSwap] < arr[child + 1]) {
+      swap(arr, toSwap, child + 1)
     }
 
-    if(toSwap !== root) {
+    if (toSwap !== root) {
       swap(arr, root, toSwap);
       root = toSwap;
     } else {
