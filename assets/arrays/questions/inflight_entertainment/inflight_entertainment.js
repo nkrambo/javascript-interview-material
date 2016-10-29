@@ -2,7 +2,7 @@
 /**
 * In-Flight Entertainment
 *
-* Types: Hash Map
+* Types: Hash Map, Two Sum, Classic Problems
 *
 * You've built an in-flight entertainment system with on-demand movie streaming.
 *
@@ -58,6 +58,7 @@
 */
 
 function twoMovies(flightLength, movieLengths) {
+  
   // movie lengths we've seen so far
   const moviesSeen = new Set();
 

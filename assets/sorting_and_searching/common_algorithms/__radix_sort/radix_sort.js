@@ -18,8 +18,11 @@
 * of elements and k is the number of passes of the sorting algorithm.
 *
 * There are two types of radix sort:
+*
 * 1. Least significant digit (LSD)
 * 2. Most significant digit (MSD)
+*
+* LSD
 *
 * Time: O(kn)
 * Space: O(1)
