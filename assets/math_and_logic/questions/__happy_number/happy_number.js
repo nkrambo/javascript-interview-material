@@ -21,7 +21,7 @@
 *
 * Solution:
 *
-* 
+* We can approach this one with a hash map. 
 *
 * Time: O(1)
 * Space: O(1)
