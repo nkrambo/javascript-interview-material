@@ -2,7 +2,7 @@
 /**
 * Happy Number
 *
-* Types: Hash Map
+* Types: Hash Map, Math
 *
 * Write an algorithm to determine if a number is 'happy'.
 *
@@ -18,6 +18,10 @@
 * 8^2 + 2^2 = 68
 * 6^2 + 8^2 = 100
 * 1^2 + 0^2 + 0^2 = 1
+*
+* Solution:
+*
+* 
 *
 * Time: O(1)
 * Space: O(1)
