@@ -2,7 +2,7 @@
 /**
 * Happy Number
 *
-* Types:
+* Types: Hash Map
 *
 * Write an algorithm to determine if a number is 'happy'.
 *
@@ -27,7 +27,33 @@
 */
 
 function isHappy(num) {
+  let current = num;
+  const hash = new Map();
 
+  // type check
+  if (typeof num !== 'number') {
+    throw new TypeError('isHappy: Expects single argument of [number] type.');
+  }
+
+  while (!hash.has(current)) {
+    // if we hit 1, num must be happy
+    if(current === 1) return true;
+
+    // otherwise, place current into map
+    hash.set(current, true);
+
+    // calculate sum of the squares of current its digits
+    const x = current.toString();
+    let total = 0;
+    for (let i = 0; i < x.length; i += 1) {
+      total += Math.pow(parseInt(x[i]), 2);
+    }
+
+    // update current
+    current = total;
+  }
+
+  return false;
 }
 
 export default isHappy;
