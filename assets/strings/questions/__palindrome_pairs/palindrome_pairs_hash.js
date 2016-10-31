@@ -22,7 +22,17 @@
 *
 * Solution:
 *
-* This approach makes use  of a hash map.
+* If two concatenated words form a plaindrome then there are 3 cases to consider:
+*
+*   +---s1---+---s2--+     +---s1----+--s2---+    +--s1-+---s2----+
+*   |  abc   |  cba  |     |  abcdd  |  cba  |    | abc |  ddcba  |
+*
+* 1. When string S2 is a mirror of string S1.
+* 2. S1 is longer than S2, has the (prefix) mirror of S2 and a palindrome (suffix)
+* 3. The mirror of case 2.
+*
+* Note: Case 1 could be considered a special sub-case of either case 2 or case 3,
+* with an empty palindrome suffix/prefix. But we'll make the distinction.
 *
 * Time: O(1)
 * Space: O(1)
@@ -39,6 +49,11 @@ function palindromePairsHash(words) {
     throw new TypeError('palindromePairs: Expects a single argument of [array] type.');
   }
 
+  // edge case
+  if (words.length < 2) {
+    throw new Error('palindromePairsHash: Words[] must have a minimum length of 2.');
+  }
+
   // place all words into a hash map for constant lookups, indices as values
   const map = new Map();
   for (let i = 0; i < words.length; i += 1) {
@@ -49,6 +64,7 @@ function palindromePairsHash(words) {
   for (let i = 0; i < words.length; i += 1) {
     const word = words[i];
 
+    // step over characters
     for (let j = 0; j < word.length; j += 1) {
       const str1 = word.substring(0, j);
       const str2 = word.substring(j);
@@ -73,24 +89,6 @@ function palindromePairsHash(words) {
 }
 
 /**
-* palindromePairsTrie()
-*
-* Solution:
-*
-* This approach makes use  of a trie data structure.
-*
-* Time: O(1)
-* Space: O(1)
-*
-* @param {array} words array of unique strings
-* @return {array} returns an array of distinct indices, representing valid palindromes
-*/
-
-function palindromePairsTrie(words) {
-
-}
-
-/**
 * isPalindrome()
 *
 * Solution:
@@ -105,7 +103,8 @@ function palindromePairsTrie(words) {
 *
 * This is quite easy to check. We start by grabbing the 'start' and 'end' of the
 * string and check characters for matching, moving towwards the middle, returning
-* false if we encounter a mis-match, otherwise true.
+* false if we encounter a mis-match, otherwise true. It's a simple two pointer
+* solution.
 *
 * Time: O(n)
 * Space: O(n)
@@ -155,4 +154,4 @@ function reverse(str) {
   return reversed;
 }
 
-export { palindromePairsHash, palindromePairsTrie };
+export default palindromePairsHash;
