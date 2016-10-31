@@ -18,10 +18,11 @@
 */
 
 /**
-* palindromePairs()
+* palindromePairsHash()
 *
 * Solution:
 *
+* This approach makes use  of a hash map.
 *
 * Time: O(1)
 * Space: O(1)
@@ -30,15 +31,15 @@
 * @return {array} returns an array of distinct indices, representing valid palindromes
 */
 
-function palindromePairs(words) {
-  const results = [];
+function palindromePairsHash(words) {
+  const pairs = [];
 
   // type check
   if (!Array.isArray(words)) {
     throw new TypeError('palindromePairs: Expects a single argument of [array] type.');
   }
 
-  // place all words into a hash map for constant lookups
+  // place all words into a hash map for constant lookups, indices as values
   const map = new Map();
   for (let i = 0; i < words.length; i += 1) {
     map.set(words[i], i);
@@ -48,32 +49,45 @@ function palindromePairs(words) {
   for (let i = 0; i < words.length; i += 1) {
     const word = words[i];
 
-    // if the word is a palindrome, get the index of
-    if (isPalindrome(word)) {
-      if (map.has()) {}
+    for (let j = 0; j < word.length; j += 1) {
+      const str1 = word.substring(0, j);
+      const str2 = word.substring(j);
+
+      if (isPalindrome(str1)) {
+        const reversed = reverse(str2);
+        if (map.get(reversed) !== undefined && map.get(reversed) !== i) {
+          pairs.push([map.get(reversed), i]);
+        }
+      }
+
+      if (isPalindrome(str2)) {
+        const reversed = reverse(str1);
+        if (str2.length && map.get(reversed) !== undefined && map.get(reversed) !== i) {
+          pairs.push([i, map.get(reversed)]);
+        }
+      }
     }
   }
+
+  return pairs;
 }
 
+/**
+* palindromePairsTrie()
+*
+* Solution:
+*
+* This approach makes use  of a trie data structure.
+*
+* Time: O(1)
+* Space: O(1)
+*
+* @param {array} words array of unique strings
+* @return {array} returns an array of distinct indices, representing valid palindromes
+*/
 
+function palindromePairsTrie(words) {
 
-//if the word is a palindrome, get index of ""
-if(isPalindrome(s)){
-    if(map.containsKey("")){
-        if(map.get("")!=i){
-            ArrayList<Integer> l = new ArrayList<Integer>();
-            l.add(i);
-            l.add(map.get(""));
-            result.add(l);
-
-            l = new ArrayList<Integer>();
-
-            l.add(map.get(""));
-            l.add(i);
-            result.add(l);
-        }
-
-    }
 }
 
 /**
@@ -92,6 +106,10 @@ if(isPalindrome(s)){
 * This is quite easy to check. We start by grabbing the 'start' and 'end' of the
 * string and check characters for matching, moving towwards the middle, returning
 * false if we encounter a mis-match, otherwise true.
+*
+* Time: O(n)
+* Space: O(n)
+* Where n is the length of str
 *
 * @param {string} str string to check for palidrome properties
 * @return {boolean} returns true if str is a valid palindrome, otherwise false
@@ -112,4 +130,29 @@ function isPalindrome(str) {
   return true;
 }
 
-export default palindromePairs;
+/**
+* reverse()
+*
+* Solution:
+*
+* Simple helper to reverse a string. We could use the split('').reverse().join()
+* approach, but we get a slightly better runtime writing our own method.
+*
+* Time: O(n)
+* Space: O(n)
+* Where n is the length of str
+*
+* @param {string} str string to check for palidrome properties
+* @return {boolean} returns true if str is a valid palindrome, otherwise false
+*/
+
+function reverse(str) {
+  let reversed = '';
+  for (let i = str.length - 1; i >= 0; i -= 1) {
+    reversed += str[i];
+  }
+
+  return reversed;
+}
+
+export { palindromePairsHash, palindromePairsTrie };
