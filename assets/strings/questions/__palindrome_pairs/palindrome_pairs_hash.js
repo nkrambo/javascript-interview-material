@@ -22,17 +22,33 @@
 *
 * Solution:
 *
-* If two concatenated words form a plaindrome then there are 3 cases to consider:
+* There are several cases to be considered when determining if two concatenated
+* strings form a palindrome. Let's call them s1 and s2.
 *
-*   +---s1---+---s2--+     +---s1----+--s2---+    +--s1-+---s2----+
-*   |  abc   |  cba  |     |  abcdd  |  cba  |    | abc |  ddcba  |
+* 1. If s1 is an empty string (e.g, ''). Then for any s2 that is a valid palidrome,
+*    (s1 + s2) and (s2 + s1) are also valid palindromes.
 *
-* 1. When string S2 is a mirror of string S1.
-* 2. S1 is longer than S2, has the (prefix) mirror of S2 and a palindrome (suffix)
-* 3. The mirror of case 2.
+*   +---s1---+---s2---+
+*   |        |   aba  |
 *
-* Note: Case 1 could be considered a special sub-case of either case 2 or case 3,
-* with an empty palindrome suffix/prefix. But we'll make the distinction.
+* 2. If s2 is the reverse of s1. Then (s1 + s2) is a plaindrome.
+*
+*   +---s1---+---s2---+
+*   |   abc  |   cba  |
+*
+*
+* 3. If s1 is longer than s2, has the (prefix) reverse of s2 and a palindrome (suffix).
+*
+*   +----s1---+---s2---+
+*   |  abcdd  |  cba   |
+*
+* 4. s2 is longer than s1, has a (prefix) palindrome and the (suffix) reverse of s1.
+*
+*   +---s1---+----s2---+
+*   |  abc   |  ddcba  |
+*
+* To make accessing our words faster and easier, we start by building a hash map
+* from them, with indices as values. This will give us constant access.
 *
 * Time: O(1)
 * Space: O(1)
@@ -58,6 +74,18 @@ function palindromePairsHash(words) {
   const map = new Map();
   for (let i = 0; i < words.length; i += 1) {
     map.set(words[i], i);
+  }
+
+  // handle special case of empty string
+  if (map.has('')) {
+    const blank = map.get('');
+    for (let i = 0; i < words.length; i += 1) {
+      if (isPalindrome(words[i])) {
+        if(i === blank) continue;
+        pairs.push(blank, i);
+        pairs.push(i, blank);
+      }
+    }
   }
 
   // iterate words again
