@@ -13,7 +13,7 @@
 *
 * Example:
 * Input: ['abcd', 'dcba', 'lls', 's', 'sssll']
-* Output: [[0, 1], [1, 0], [3, 2], [2, 4]]
+* Output: [[1, 0], [0, 1], [3, 2], [2, 4]]
 * The palindromes are ['dcbaabcd', 'abcddcba', 'slls', 'llssssll']
 *
 * Assumption: No duplicated strings in the 'words' array.
@@ -82,6 +82,8 @@
 * of another string in the words array. And.. also if we have a single occurance
 * of a space, '', and have a string that is a valid palindrome by itself.
 *
+* Notice we also check that we don't pull out the reverse of our current index.
+*
 * Then simply return results.
 *
 * Time: O(n * k^2)
@@ -129,7 +131,7 @@ function palindromePairsHash(words) {
       //   |   abcdd  |    cba    |
 
       if (map.has(left) && isPalindrome(right) && map.get(left) !== i) {
-        pairs.push([map.get(left), i]);
+        pairs.push([i, map.get(left)]);
       }
 
       // case 4:
@@ -140,7 +142,7 @@ function palindromePairsHash(words) {
       //   |    abc   |   ddcba   |
 
       if (map.has(right) && isPalindrome(left) && map.get(right) !== i) {
-        pairs.push([i, map.get(right)]);
+        pairs.push([map.get(right), i]);
       }
 
       // We also check against the current index i, to make sure we do not include
