@@ -15,6 +15,8 @@
 * Input: ['abcd', 'dcba', 'lls', 's', 'sssll']
 * Output: [[0, 1], [1, 0], [3, 2], [2, 4]]
 * The palindromes are ['dcbaabcd', 'abcddcba', 'slls', 'llssssll']
+*
+* Assumption: No duplicated strings in the 'words' array.
 */
 
 /**
@@ -25,32 +27,40 @@
 * There are several cases to be considered when determining if two concatenated
 * strings form a palindrome. Let's call them s1 and s2.
 *
-* 1. If s1 is an empty string (e.g, ''). Then for any s2 that is a valid palidrome,
+* 1. If s1 is an empty string (e.g, ''). Then for any s2 that is a valid palindrome,
 *    (s1 + s2) and (s2 + s1) are also valid palindromes.
 *
 *   +---s1---+---s2---+
 *   |        |   aba  |
 *
-* 2. If s2 is the reverse of s1. Then (s1 + s2) is a plaindrome.
+* 2. If s2 is the reverse of s1. Then (s1 + s2) is a palindrome.
 *
 *   +---s1---+---s2---+
 *   |   abc  |   cba  |
-*
 *
 * 3. If s1 is longer than s2, has the (prefix) reverse of s2 and a palindrome (suffix).
 *
 *   +----s1---+---s2---+
 *   |  abcdd  |  cba   |
 *
-* 4. s2 is longer than s1, has a (prefix) palindrome and the (suffix) reverse of s1.
+* 4. If s2 is longer than s1, has a (prefix) palindrome and the (suffix) reverse of s1.
 *
 *   +---s1---+----s2---+
 *   |  abc   |  ddcba  |
 *
+*
+*
+* To start with, if we analyse the above cases, we can see a common requirement.
+* In all cases, except 1, which is really an edge case anyways,
+
+Partition the word into left and right, and see 1) if there exists a candidate in map equals the left side of current word, and right side of current word is palindrome, so concatenate(current word, candidate) forms a pair: left | right | candidate. 2) same for checking the right side of current word: candidate | left | right.
+
 * To make accessing our words faster and easier, we start by building a hash map
 * from them, with indices as values. This will give us constant access.
 *
-* Time: O(1)
+* We then step over our input again, handling each word.
+*
+* Time: O(n * k^2)
 * Space: O(1)
 *
 * @param {array} words array of unique strings
@@ -70,46 +80,47 @@ function palindromePairsHash(words) {
     throw new Error('palindromePairsHash: Words[] must have a minimum length of 2.');
   }
 
-  // place all words into a hash map for constant lookups, indices as values
+  // build a map of reversed words as keys and indices as values
   const map = new Map();
   for (let i = 0; i < words.length; i += 1) {
-    map.set(words[i], i);
+    map.set(reverse(words[i]), i);
   }
 
-  // handle special case of empty string
-  if (map.has('')) {
-    const blank = map.get('');
-    for (let i = 0; i < words.length; i += 1) {
-      if (isPalindrome(words[i])) {
-        if(i === blank) continue;
-        pairs.push(blank, i);
-        pairs.push(i, blank);
-      }
-    }
-  }
-
-  // iterate words again
+  // handle each word
   for (let i = 0; i < words.length; i += 1) {
     const word = words[i];
 
     // step over characters
     for (let j = 0; j < word.length; j += 1) {
-      const str1 = word.substring(0, j);
-      const str2 = word.substring(j);
 
-      if (isPalindrome(str1)) {
-        const reversed = reverse(str2);
-        if (map.get(reversed) !== undefined && map.get(reversed) !== i) {
-          pairs.push([map.get(reversed), i]);
-        }
+      // partition string at index j, left and right
+      const left = word.substring(0, j);
+      const right = word.substring(j);
+
+      // case 3:
+      // Our current word has the (prefix) reverse of another word in our map,
+      // and a valid palindrome (suffix).
+      //
+      //   +---left---+---right---+
+      //   |   abcdd  |    cba    |
+
+      if (map.has(left) && isPalindrome(right) && map.get(left) !== i) {
+        pairs.push([map.get(left), i]);
       }
 
-      if (isPalindrome(str2)) {
-        const reversed = reverse(str1);
-        if (str2.length && map.get(reversed) !== undefined && map.get(reversed) !== i) {
-          pairs.push([i, map.get(reversed)]);
-        }
+      // case 4:
+      // Our current word is the (suffix) reverse of another word in our map,
+      // which has a valid palindrome (prefix)
+      //
+      //   +---left---+---right---+
+      //   |    abc   |   ddcba   |
+
+      if (map.has(right) && isPalindrome(left) && map.get(right) !== i) {
+        pairs.push([i, map.get(right)]);
       }
+
+      // We also check against the current index i, to make sure we do not include
+      // that. The above logic also covers us for cases 1 and 2.
     }
   }
 
