@@ -48,17 +48,41 @@
 *   +---s1---+----s2---+
 *   |  abc   |  ddcba  |
 *
+* To start with, if we analyse the above cases, we can see a common requirement
+* occurring. In all cases, except 1 which is really an edge case anyways, we
+* need to check the reverse of either s1 or s2 entirely or in part.
 *
+* This means it would be great to have quick access to these reverse values, and
+* also the indices of these, so we can actually compose our results.
 *
-* To start with, if we analyse the above cases, we can see a common requirement.
-* In all cases, except 1, which is really an edge case anyways,
-
-Partition the word into left and right, and see 1) if there exists a candidate in map equals the left side of current word, and right side of current word is palindrome, so concatenate(current word, candidate) forms a pair: left | right | candidate. 2) same for checking the right side of current word: candidate | left | right.
-
-* To make accessing our words faster and easier, we start by building a hash map
-* from them, with indices as values. This will give us constant access.
+* We can use a hash map with a little helper function to achieve this. We compose
+* reverse() function to reverse a string, then we iterate over our input 'words'
+* array and build a map with reversed values as keys and indices as values.
 *
-* We then step over our input again, handling each word.
+* Now we have constant access to all these goodies to help us.
+*
+* Next, we'll iterate 'words' array again to handle each word separately.
+*
+* To actually handle our cases we need to consider each word character. We step
+* over each character and partition it into 'left' and 'right' and index j.
+*
+* Now we can check for 2 cases.
+*
+* 1. If our map contains a value equal to the 'left', and the 'right' is a valid
+*    palindrome. So, word = map.has(left) + isPalindrome(right), then we push the
+*    indices of the 'left' and our current 'i' to results. This covers case 3.
+*
+* 2. Same for checking the 'right' side of our current word. If the map contains
+*    a value equal to the 'right' and the 'left' is a valid palindrome.
+*    So, word = isPalindrome(left) + map.has(right). Then we push a result in the
+*    same fashion. This covers case 4.
+*
+* Because a single character, like 'a' and a space, '', are considered valid palindromes,
+* we cover our cases 1 and 2. That is, 'left' or 'right' is the complete reverse
+* of another string in the words array. And.. also if we have a single occurance
+* of a space, '', and have a string that is a valid palindrome by itself.
+*
+* Then simply return results.
 *
 * Time: O(n * k^2)
 * Space: O(1)
@@ -86,7 +110,7 @@ function palindromePairsHash(words) {
     map.set(reverse(words[i]), i);
   }
 
-  // handle each word
+  // iterate and handle each word
   for (let i = 0; i < words.length; i += 1) {
     const word = words[i];
 
