@@ -52,4 +52,68 @@ function rotateArrayBrute(nums, k) {
   }
 }
 
-export { rotateArrayBrute };
+/**
+* rotateArrayExtra()
+*
+* Solution:
+*
+* We use an extra array in which we place every element of the array at its correct
+* position i.e. the number at index i in the original array is placed at the index
+* (i + k).
+*
+* We are using the modulo operand to help calculate our desired indices. That is,
+* (i + k) % nums.length. This is a little tricky, so if we break it down...
+*
+* We know that:
+*
+* 1. i % i = 0
+* 2. i % (i + n) = i
+* 3. (i + n) % i = n
+*
+* Let's take an array [1, 2, 3], for example. And let's say that k = 1. So we
+* want a result of [3, 1, 2]. A rotation of 1 step.
+*
+* Using our formula to build a temp array...
+*
+* Iteration 1:
+* (0 + 1) % 3 = 1, case 2
+* temp[1] = array[0]            temp[undefined, 1, undefined]
+*
+* Iteration 2:
+* (0 + 2) % 3 = 2, case 2
+* temp[2] = array[1]            temp[undefined, 1, 2]
+*
+* Iteration 3:
+* (0 + 3) % 3 = 0, case 1
+* temp[0] = array[2]            temp[3, 1, 2]
+*
+* It's quite simple really.
+*
+* Then we do is copy the temp array to the original one to modify.
+*
+* Time: O(n)
+* Space: O(n)
+*
+* One pass is used to put the numbers in the new array. And another pass to copy
+* the new array to the original one. Another array of the same size is used.
+*
+* @param {array} nums array of integers
+* @param {number} k number of steps to rotate
+* @return {void} modify nums in-place
+*/
+
+function rotateArrayExtra(nums, k) {
+  const temp = new Array(nums.length);
+
+  // use modulo operand to place correctly
+  for (let i = 0; i < nums.length; i += 1) {
+    temp[(i + k) % nums.length] = nums[i];
+  }
+
+  // copy results into original array from temp
+  for (let i = 0; i < nums.length; i += 1) {
+    nums[i] = temp[i];
+  }
+}
+
+export { rotateArrayBrute, rotateArrayExtra };
