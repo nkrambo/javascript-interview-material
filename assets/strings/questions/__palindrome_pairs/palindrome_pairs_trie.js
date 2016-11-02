@@ -22,18 +22,37 @@
 */
 
 class palindromePairsTrie {
-  constructor() {
+  constructor(words) {
     this.root = {};
+    this.pairs = [];
+
+    // add in words on construction
+    words.forEach(word => {
+      this.addWord(word);
+    });
+
+    // check for palindromes
+    
   }
 
-  addNode(word) {
+  /**
+  * addWord()
+  * Time: O(n)
+  * Space: O(n)
+  * Where n is the length of word
+  *
+  * @param {string} str string to check for palidrome properties
+  * @return {boolean} returns true if str is a valid palindrome, otherwise false
+  */
+
+  addWord(word) {
     let current = this.root;
     let newWord = false;
 
     // Work downwards through the trie, adding nodes as needed, and keeping track
     // of whether we add any nodes.
     for (let i = 0; i < word.length; i += 1) {
-      const char = url[i];
+      const char = word[i];
 
       // if we don't have current char
       if (!current.hasOwnProperty(char)) {
@@ -58,7 +77,7 @@ class palindromePairsTrie {
   /**
   * isPalindrome()
   * Time: O(n)
-  * Space: O(n)
+  * Space: O(1)
   * Where n is the length of str
   *
   * @param {string} str string to check for palidrome properties

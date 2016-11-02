@@ -64,21 +64,21 @@
 * Next, we'll iterate 'words' array again to handle each word separately.
 *
 * To actually handle our cases we need to consider each word character. We step
-* over each character and partition it into 'left' and 'right' and index j.
+* over each character and partition it into 'prefix' and 'suffix' and index j.
 *
 * Now we can check for 2 cases.
 *
-* 1. If our map contains a value equal to the 'left', and the 'right' is a valid
-*    palindrome. So, word = map.has(left) + isPalindrome(right), then we push the
-*    indices of the 'left' and our current 'i' to results. This covers case 3.
+* 1. If our map contains a value equal to the 'prefix', and the 'suffix' is a valid
+*    palindrome. So, word = map.has(prefix) + isPalindrome(suffix), then we push the
+*    indices of the 'prefix' and our current 'i' to results. This covers case 3.
 *
-* 2. Same for checking the 'right' side of our current word. If the map contains
-*    a value equal to the 'right' and the 'left' is a valid palindrome.
-*    So, word = isPalindrome(left) + map.has(right). Then we push a result in the
+* 2. Same for checking the 'suffix' side of our current word. If the map contains
+*    a value equal to the 'suffix' and the 'prefix' is a valid palindrome.
+*    So, word = isPalindrome(prefix) + map.has(suffix). Then we push a result in the
 *    same fashion. This covers case 4.
 *
 * Because a single character, like 'a' and a space, '', are considered valid palindromes,
-* we cover our cases 1 and 2. That is, 'left' or 'right' is the complete reverse
+* we cover our cases 1 and 2. That is, 'prefix' or 'suffix' is the complete reverse
 * of another string in the words array. And.. also if we have a single occurance
 * of a space, '', and have a string that is a valid palindrome by itself.
 *
@@ -128,29 +128,29 @@ function palindromePairsHash(words) {
     for (let j = 0; j < word.length; j += 1) {
 
       // partition string at index j, left and right
-      const left = word.substring(0, j);
-      const right = word.substring(j);
+      const prefix = word.substring(0, j);
+      const suffix = word.substring(j);
 
       // case 3:
-      // Our current word has the (prefix) reverse of another word in our map,
-      // and a valid palindrome (suffix).
+      // Our current word has the prefix reverse ('abc') of another word in our map,
+      // and a valid palindrome suffix, ('dd').
       //
-      //   +---left---+---right---+
+      //   +----s1----+-----s2----+
       //   |   abcdd  |    cba    |
 
-      if (map.has(left) && isPalindrome(right) && map.get(left) !== i) {
-        pairs.push([i, map.get(left)]);
+      if (map.has(prefix) && isPalindrome(suffix) && map.get(prefix) !== i) {
+        pairs.push([i, map.get(prefix)]);
       }
 
       // case 4:
-      // Our current word is the (suffix) reverse of another word in our map,
-      // which has a valid palindrome (prefix)
+      // Our current word is the suffix ('abc') reverse of another word in our map,
+      // which has a valid palindrome prefix, ('dd').
       //
-      //   +---left---+---right---+
+      //   +----s1----+-----s2----+
       //   |    abc   |   ddcba   |
 
-      if (map.has(right) && isPalindrome(left) && map.get(right) !== i) {
-        pairs.push([map.get(right), i]);
+      if (map.has(suffix) && isPalindrome(prefix) && map.get(suffix) !== i) {
+        pairs.push([map.get(suffix), i]);
       }
 
       // We also check against the current index i, to make sure we do not include
@@ -180,7 +180,7 @@ function palindromePairsHash(words) {
 * solution.
 *
 * Time: O(n)
-* Space: O(n)
+* Space: O(1)
 * Where n is the length of str
 *
 * @param {string} str string to check for palidrome properties
