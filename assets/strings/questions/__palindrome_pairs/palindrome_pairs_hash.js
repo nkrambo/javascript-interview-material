@@ -137,8 +137,8 @@ function palindromePairsHash(words) {
       const suffix = word.substring(j);
 
       // case 3:
-      // Our current word has the prefix reverse ('abc') of another word in our map,
-      // and a valid palindrome suffix, ('dd').
+      // Our current word has the prefix reverse (s1 - 'abc') of another word in our map,
+      // and a valid palindrome suffix, (s1 - 'dd').
       //
       //   +----s1----+-----s2----+
       //   |   abcdd  |    cba    |
@@ -148,8 +148,8 @@ function palindromePairsHash(words) {
       }
 
       // case 4:
-      // Our current word is the suffix ('abc') reverse of another word in our map,
-      // which has a valid palindrome prefix, ('dd').
+      // Our current word is the suffix (s1 - 'abc') reverse of another word in our map,
+      // which has a valid palindrome prefix, (s2 - 'dd').
       //
       //   +----s1----+-----s2----+
       //   |    abc   |   ddcba   |

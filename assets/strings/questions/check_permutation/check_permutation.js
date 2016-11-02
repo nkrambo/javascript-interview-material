@@ -1,10 +1,11 @@
 
 /**
-* Check Permutation
+* Check Permutation, also known as Is Valid Anagram
+*
+* Types: Hash Map
 *
 * Given two strings, write a method to check if one is a permutation of
 * the other.
-*
 */
 
 /**
@@ -73,6 +74,7 @@ function isPermutation(str1, str2) {
 * isPermutationSort()
 *
 * Solution:
+*
 * This is a simple solution that compares the strings by sorting them.
 * Permutations will be always identical sorted strings. We have to chain a
 * few methods together to acheive this, which places our runtime higher than

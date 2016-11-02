@@ -16,6 +16,8 @@
 * Output: [[1, 0], [0, 1], [3, 2], [2, 4]]
 * The palindromes are ['dcbaabcd', 'abcddcba', 'slls', 'llssssll']
 *
+* Assumptions: All words are lowercase.
+*
 * Solution:
 *
 * This approach makes use of a trie data structure.
@@ -25,14 +27,28 @@ class palindromePairsTrie {
   constructor(words) {
     this.root = {};
     this.pairs = [];
+    this.words = [];
 
     // add in words on construction
     words.forEach(word => {
       this.addWord(word);
     });
 
-    // check for palindromes
-    
+    // check for palindromes pairs
+    this.palindromePairs();
+  }
+
+  palindromePairs() {
+
+    for (let i = 0; i < this.words.length; i += 1) {
+      const word = this.words[i];
+
+      for (let j = 0; j < word.length; j += 1) {
+        if (root.index >= 0 && root.index !== i && this.isPalindrome(word)) {
+          this.pairs.push(i, root.index);
+        }
+      }
+    }
   }
 
   /**
@@ -48,6 +64,9 @@ class palindromePairsTrie {
   addWord(word) {
     let current = this.root;
     let newWord = false;
+
+    // push onto our words array
+    this.words.push(word);
 
     // Work downwards through the trie, adding nodes as needed, and keeping track
     // of whether we add any nodes.

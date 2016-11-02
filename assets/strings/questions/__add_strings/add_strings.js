@@ -33,7 +33,7 @@ function addStrings(num1, num2) {
     throw new TypeError('addStrings: Expects 2 arguments of [string] type.');
   }
 
-  
+
 }
 
 export default addStrings;
