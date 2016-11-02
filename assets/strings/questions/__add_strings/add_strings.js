@@ -23,7 +23,7 @@
 *
 * @param {string} num1 string representation of number < 5100, containing only 0-9
 * @param {string} num2 string representation of number < 5100, containing only 0-9
-* @return {number} returns sum of num1 and num2 as integer
+* @return {string} returns sum of num1 and num2 as a string
 */
 
 function addStrings(num1, num2) {
@@ -33,7 +33,20 @@ function addStrings(num1, num2) {
     throw new TypeError('addStrings: Expects 2 arguments of [string] type.');
   }
 
+  let sum = '';
+  let carry = 0;
+  let i = num1.length - 1;
+  let j = num2.length - 1;
 
+  while (i >= 0 || j >= 0) {
+    if (i >= 0) carry += num1[i--] - '0';
+    if (j >= 0) carry += num2[j--] - '0';
+
+    sum = `${carry % 10}${sum}`;
+    carry = carry / 10;
+  }
+
+  return carry > 0 ? '1' + sum : sum;
 }
 
 export default addStrings;
