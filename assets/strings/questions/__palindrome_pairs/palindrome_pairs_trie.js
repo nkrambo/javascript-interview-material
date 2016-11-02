@@ -18,13 +18,52 @@
 *
 * Solution:
 *
-* This approach makes use  of a trie data structure.
+* This approach makes use of a trie data structure.
 */
 
 class palindromePairsTrie {
-  constructor(words) {
-    this.pairs = [];
+  constructor() {
+    this.root = {};
   }
+
+  addNode(word) {
+    let current = this.root;
+    let newWord = false;
+
+    // Work downwards through the trie, adding nodes as needed, and keeping track
+    // of whether we add any nodes.
+    for (let i = 0; i < word.length; i += 1) {
+      const char = url[i];
+
+      // if we don't have current char
+      if (!current.hasOwnProperty(char)) {
+        newWord = true;
+        current[char] = {};
+      }
+
+      // traverse
+      current = current[char];
+    }
+
+    // Explicitly mark the end of a word. Otherwise, we might say a word is present
+    // if it is a prefix of a different, longer word that was added earlier.
+    if (!current.hasOwnProperty('*')) {
+      newWord = true;
+      current['*'] = {};
+    }
+
+    return newWord;
+  }
+
+  /**
+  * isPalindrome()
+  * Time: O(n)
+  * Space: O(n)
+  * Where n is the length of str
+  *
+  * @param {string} str string to check for palidrome properties
+  * @return {boolean} returns true if str is a valid palindrome, otherwise false
+  */
 
   isPalindrome(str) {
     let start = 0;

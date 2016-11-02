@@ -91,8 +91,8 @@
 * Time: O(n * k^2)
 * Space: O(n)
 *
-* Where (n) is the length of the 'words' array input, and (k) is the length of
-* the word.
+* Where (n) is the length of the 'words' array input, and (k) is the average
+* length of each word.
 *
 * It can be further optimized to O(n * k) if we use a modified version of Manacher's
 * algorithm to find the longest palindromic sub-string up to a certain index.
