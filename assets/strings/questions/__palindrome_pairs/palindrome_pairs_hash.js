@@ -80,11 +80,16 @@
 * Because a single character, like 'a' and a space, '', are considered valid palindromes,
 * we cover our cases 1 and 2. That is, 'prefix' or 'suffix' is the complete reverse
 * of another string in the words array. And.. also if we have a single occurance
-* of a space, '', and have a string that is a valid palindrome by itself.
+* of a space, '', and have a string that is a valid palindrome by itself. We compose
+* a simple helper function to check if a string is valid palindrome.
+*
+* Also notice that we track the position of each word, i.e, index 'i'.
+* This is to avoid the situation like ['c'], i.e. the word itself is a palindrome.
+* We don't want to concatenate 'cc' as a palindrome. So we check:
+* 1. The key in the map is different from the current word.
+* 2. If they are the same, they must have different indices.
 *
 * Notice we also check that we don't pull out the reverse of our current index.
-*
-* We also composed a simple helper function to check if a string is valid palindrome.
 *
 * Then simply return results.
 *
@@ -127,7 +132,7 @@ function palindromePairsHash(words) {
     // step over characters
     for (let j = 0; j < word.length; j += 1) {
 
-      // partition string at index j, left and right
+      // partition string at index j, prefix and suffix
       const prefix = word.substring(0, j);
       const suffix = word.substring(j);
 
