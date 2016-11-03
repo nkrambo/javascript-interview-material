@@ -10,7 +10,7 @@ So our digit columns increase by 10 times (1s, 10s, 100s). For example, let's ta
 the digits 101:
 
 <p align="center">
-![alt text](images/binary_numbers__base_10.svg)
+![alt text](images/binary_numbers_base_10.svg)
 </p>
 
 ```javascript
