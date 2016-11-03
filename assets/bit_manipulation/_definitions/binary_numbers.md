@@ -13,10 +13,6 @@ the digits 101:
 <img src="images/base10.png" width="250" style="padding: 50px 0;" />
 </p>
 
-```javascript
-100 + 0 + 1 = 101
-```
-
 But using 10 values is arbitrary. We could multiply our columns by any number and
 numbers would still work. Some languages spoken in Nigeria and India use **duodecimal**
 numbers, or **base 12**. So "eleven" and "twelve" aren't built using 1s and 2s,
@@ -33,13 +29,9 @@ columns increase by 2 times (1s, 2s, 4s).
 
 Let's look at the same digits 101:
 
-| Value         | 4s            | 2s            | 1s    |
-| ------------- | ------------- |:-------------:| -----:|
-| Digits        | 1             | 0             | 1     |
-
-```javascript
-4 + 0 + 1 = 5
-```
+<p align="center">
+<img src="images/base2.png" width="250" style="padding: 50px 0;" />
+</p>
 
 Binary numbers are nice for computers because they can easily be expressed as series
 of bits, which only have two states (think of them as "on" or "off", "open" or "closed",
@@ -76,13 +68,9 @@ is double the value of the digit to the left.
 To make this clearer, let's look at what happens when we interpret that 101 as
 two's complement:
 
-| Value         | -1 * 4s       | 2s            | 1s    |
-| ------------- | ------------- |:-------------:| -----:|
-| Digits        | 1             | 0             | 1     |
-
-```javascript
--4 + 0 + 1 = -3
-```
+<p align="center">
+<img src="images/2complement.png" width="250" style="padding: 50px 0;" />
+</p>
 
 Here are the base 10 numbers -5 through 5 in two's complement, along with how we'd
 interpret each bit:
