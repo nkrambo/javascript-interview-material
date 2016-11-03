@@ -9,11 +9,9 @@ are expressed using 10 values, 0-9.
 So our digit columns increase by 10 times (1s, 10s, 100s). For example, let's take
 the digits 101:
 
-![alt text](/images/binary_numbers_base_10.svg)
-
-| Value         | 100s          | 10s           | 1s    |
-| ------------- | ------------- |:-------------:| -----:|
-| Digits        | 1             | 0             | 1     |
+<p align="center">
+![alt text](images/binary_numbers__base_10.svg)
+</p>
 
 ```javascript
 100 + 0 + 1 = 101
