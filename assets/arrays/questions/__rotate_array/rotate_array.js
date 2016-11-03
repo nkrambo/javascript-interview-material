@@ -126,7 +126,38 @@ function rotateArrayExtra(nums, k) {
 * Time: O(n)
 * Space: O(1)
 *
+* We can directly place every number of the array at its required correct position.
+* But if we do that, we will destroy the original element. Thus, we need to store
+* the number being replaced in a temptemp variable. Then, we can place the replaced
+* number(temp) at its correct position and so on, n times, where n is the length
+* of array. We have chosen nn to be the number of replacements since we have to
+* shift all the elements of the array(which is n). But, there could be a problem
+* with this method, if n where k = k (since a value of k larger than nn eventually
+* leads to a k equivalent to k). In this case, while picking up numbers to be placed
+* at the correct position, we will eventually reach the number from which we
+* originally started. Thus, in such a case, when we hit the original number's index
+* again, we start the same process with the number following it.
 *
+* Now let's look at the proof of how the above method works. Suppose, we have n
+* as the number of elements in the array and k is the number of shifts required.
+* Further, assume n.Now, when we start placing the elements at their correct
+* position, in the first cycle all the numbers with their index ii satisfying i
+* get placed at their required position. This happens because when we jump k steps
+* every time, we will only hit the numbers k steps apart. We start with index i = 0,
+* having i. Thus, we hit all the numbers satisfying the above condition in the
+* first cycle. When we reach back the original index, we have placed n/k​​ elements
+* at their correct position, since we hit only that many elements in the first cycle.
+*
+* Now, we increment the index for replacing the numbers. This time, we place other n/k
+* elements at their correct position, different from the ones placed correctly in
+* the first cycle, because this time we hit all the numbers satisfy the condition i.
+* When we hit the starting number again, we increment the index and repeat the
+* same process from i = 1 for all the indices satisfying i. This happens till we
+* reach the number with the index i again, which occurs for i = k. We will reach
+* such a number after a total of k cycles. Now, the total count of numbers exclusive
+* numbers placed at their correct position will be (k * n/k) = n.
+*
+* Thus, all the numbers will be placed at their correct position.
 *
 * @param {array} nums array of integers
 * @param {number} k number of steps to rotate
@@ -134,7 +165,22 @@ function rotateArrayExtra(nums, k) {
 */
 
 function rotateArrayCyclic(nums, k) {
+  k = k % nums.length;
+  let count = 0;
 
+  for (let start = 0; count < nums.length; start += 1) {
+    let current = start;
+    let prev = nums[start];
+
+    do {
+        let next = (current + k) % nums.length;
+        let temp = nums[next];
+        nums[next] = prev;
+        prev = temp;
+        current = next;
+        count += 1;
+    } while (start !== current);
+  }
 }
 
 /**
@@ -147,7 +193,7 @@ function rotateArrayCyclic(nums, k) {
 * the front shift backwards.
 *
 * In this approach, we firstly reverse all the elements of the array. Then, reversing
-* the first k elements followed by reversing the rest n-k elements gives us the
+* the first k elements followed by reversing the rest (n - k) elements gives us the
 * required result.
 *
 * Let n = 7 and k = 3.
@@ -178,6 +224,8 @@ function rotateArrayReverse(nums, k) {
 * reverse()
 *
 * Helper method to reverse an array.
+*
+* We simply iterate inward from the start and end indices and swap values.
 *
 * Time: O(n)
 * Space: O(1)
