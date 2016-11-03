@@ -1,16 +1,16 @@
 
 ##Binary Numbers
 
-###Base-10
+###Base 10
 
-When we use numbers, we usually use **decimal numbers** (or **base-10**), which
+When we use numbers, we usually use **decimal numbers** (or **base 10**), which
 are expressed using 10 values, 0-9.
 
 So our digit columns increase by 10 times (1s, 10s, 100s). For example, let's take
 the digits 101:
 
 <p align="center">
-<img src="images/binary_numbers_base_10.png" />
+<img src="images/base10.png" />
 </p>
 
 ```javascript
@@ -19,16 +19,16 @@ the digits 101:
 
 But using 10 values is arbitrary. We could multiply our columns by any number and
 numbers would still work. Some languages spoken in Nigeria and India use **duodecimal**
-numbers, or **base-12**. So "eleven" and "twelve" aren't built using 1s and 2s,
+numbers, or **base 12**. So "eleven" and "twelve" aren't built using 1s and 2s,
 they're entirely different digits.
 
 Some mathematicians argue that base-12 is a better system than our base-10, because
 12 has more factors (1, 2, 3, 4, 6) than 10 does (1, 2, 5). We probably use decimal
 numbers because we have 10 fingers.
 
-###Base-2
+###Base 2
 
-**Binary numbers** (or **base-2**) only use two values, 0 and 1. So binary digit
+**Binary numbers** (or **base 2**) only use two values, 0 and 1. So binary digit
 columns increase by 2 times (1s, 2s, 4s).
 
 Let's look at the same digits 101:
@@ -45,7 +45,7 @@ Binary numbers are nice for computers because they can easily be expressed as se
 of bits, which only have two states (think of them as "on" or "off", "open" or "closed",
 or 0 or 1).
 
-Here are the base-10 numbers 0 through 10 in binary:
+Here are the base 10 numbers 0 through 10 in binary:
 
 ```javascript
 # decimal  binary
@@ -84,7 +84,7 @@ two's complement:
 -4 + 0 + 1 = -3
 ```
 
-Here are the base-10 numbers -5 through 5 in two's complement, along with how we'd
+Here are the base 10 numbers -5 through 5 in two's complement, along with how we'd
 interpret each bit:
 
 ```javascript
