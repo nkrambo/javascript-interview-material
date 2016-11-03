@@ -25,4 +25,4 @@ I highly recommend these resources for interview preparation.
 
 Practice makes perfect, and wine, plenty of wine.
 
-![alt tag](/ballmer_peak.png)
+![alt tag](/images/ballmer_peak.png)
