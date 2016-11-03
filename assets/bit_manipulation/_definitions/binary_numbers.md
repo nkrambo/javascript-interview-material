@@ -9,8 +9,8 @@ are expressed using 10 values, 0-9.
 So our digit columns increase by 10 times (1s, 10s, 100s). For example, let's take
 the digits 101:
 
-<p style="text-align: center; padding: 50px 0;">
-<img src="images/base10.png" width="250" />
+<p align="center">
+<img src="images/base10.png" width="250" style="padding: 50px 0;" />
 </p>
 
 ```javascript
