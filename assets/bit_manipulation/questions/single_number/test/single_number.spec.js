@@ -8,9 +8,6 @@ describe('singleNumber()', () => {
     expect(singleNumber([1, 1, 2, 3, 3, 4, 4])).to.equal(2);
     expect(singleNumber([-1, -1, -2, 3, 3, 4, 4])).to.equal(-2);
     expect(singleNumber([15, 63, 9, 63, 1, 15, 1])).to.equal(9);
-  });
-
-  it('should return null if there is no unique value', () => {
-    expect(singleNumber([1, 1, 2, 2, 3, 3, 4, 4])).to.equal(null);
+    expect(singleNumber([1, 0, 1])).to.equal(0);
   });
 });

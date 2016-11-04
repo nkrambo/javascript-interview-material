@@ -54,6 +54,12 @@
 * If a number only appears once in a sequence, then it's binary representation will
 * be kept 'in-tact' as it only appeared an odd number of times.
 *
+* Some notes on this implementation. This will return a 0, if there is no unique
+* value in the nums array, but also if the unique number in nums is actually 0 too.
+*
+* Also, the returned result will not be correct if the nums array holds more than
+* 1 unique value.
+*
 * Time: O(n)
 * Space: O(1)
 *
@@ -72,9 +78,7 @@ function singleNumber(nums) {
     unique ^= nums[i];
   }
 
-  // if there are no unique values, unique will be set to 0
-  // 1 speacial case here is if the only actual unique number is 0
-  return unique !== 0 ? unique : null;
+  return unique;
 }
 
 export default singleNumber;
