@@ -1,20 +1,9 @@
 
-/**
-* Update Bit
-*
-*
-*
-* Time: O(1)
-* Space: O(1)
-*
-* @param {number} num 32-bit number
-* @param {number} i 32-bit number
-* @param {boolean} bitIs1
-* @return {number} Returns a 32-bit number
-*/
+import { expect } from 'chai';
+import updateBit from '../update_bit';
 
-function updateBit(num, i, bitIs1) {
-
-}
-
-export default updateBit;
+describe('updateBit()', () => {
+  // it('should updateBit the bit at index i', () => {
+  //   expect(updateBit(, )).to.equal();
+  // });
+});

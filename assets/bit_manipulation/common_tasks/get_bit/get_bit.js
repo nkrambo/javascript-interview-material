@@ -16,7 +16,7 @@
 */
 
 function getBit(num, i) {
-
+  return ((num & (1 << i)) != 0);
 }
 
 export default getBit;
