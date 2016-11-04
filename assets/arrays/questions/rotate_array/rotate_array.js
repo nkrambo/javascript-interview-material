@@ -173,12 +173,12 @@ function rotateArrayCyclic(nums, k) {
     let prev = nums[start];
 
     do {
-        let next = (current + k) % nums.length;
-        let temp = nums[next];
-        nums[next] = prev;
-        prev = temp;
-        current = next;
-        count += 1;
+      let next = (current + k) % nums.length;
+      let temp = nums[next];
+      nums[next] = prev;
+      prev = temp;
+      current = next;
+      count += 1;
     } while (start !== current);
   }
 }
