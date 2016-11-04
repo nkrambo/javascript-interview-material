@@ -23,6 +23,7 @@
 * because 0 OR 0 = 0; 0 OR 1 = 1.
 *
 * 00000110   num (6)
+*    OR
 * 00100000   mask (1 << i)
 *
 * This gives us our result...
