@@ -15,6 +15,19 @@
 *
 * Solution:
 *
+* This problem can be approached in three key steps:
+*
+* 1. Clear the bits j though i in n.
+* 2. Shift m so that it lines up with bits j though i.
+* 3. Merge m and n.
+*
+* The trickiest part is step 1. That is, clearning the bits in n.
+*
+* We can do this with a mask. This mask will have all 1s, except for 0s in the bits
+* j through i. We create this mask by creating the left half of the mask first, and
+* then the right half.
+*
+* For example, if i = 2, j = 4. Then our mask should be 11100011.
 */
 
 /**
