@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import generateAbbreviations from '../generalised_abbreviations';
+import generateAbbreviations from '../generalised_abbreviation';
 
 describe('generateAbbreviations()', () => {
   // it('should return the genera; abbreviations of a word', () => {
