@@ -60,6 +60,8 @@
 * Also, the returned result will not be correct if the nums array holds more than
 * 1 unique value.
 *
+* (^=) is short-hand for unique = unique ^ nums[i]
+*
 * Time: O(n)
 * Space: O(1)
 *
