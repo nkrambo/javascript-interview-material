@@ -6,6 +6,10 @@
 *
 * Given an integer, write a function to determine if it is a power of two.
 *
+* Solution:
+*
+*
+*
 * Time: O(1)
 * Space: O(1)
 *
@@ -14,7 +18,7 @@
 */
 
 function powerOfTwo(num) {
-
+  return num <= 0 ? false : (num & (num - 1)) === 0;
 }
 
 export default powerOfTwo;
