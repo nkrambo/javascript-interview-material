@@ -18,6 +18,10 @@
 * Follow up:
 * Could you solve it without loops/recursion?
 *
+* Solution:
+*
+* // return (Math.log(num) / Math.log(4)) % 1 === 0;
+*
 * Time: O(1)
 * Space: O(1)
 *
@@ -26,7 +30,8 @@
 */
 
 function powerOfFour(num) {
-
+  // return num > 0 && (num & (num - 1)) === 0 && (num & 0x55555555) !== 0;
+  return num <= 0 ? false : (num & (num - 1)) === 0 && (num - 1) % 3 === 0;
 }
 
 export default powerOfFour;

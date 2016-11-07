@@ -44,7 +44,7 @@
 *
 * and so on...
 *
-* We know that a & b = 1, only if a and b are both 1s. That is,
+* We know that, (a & b) = 1, only if a and b are both 1s. That is,
 *
 * 1 & 1 = 1
 * 1 & 0 = 0
