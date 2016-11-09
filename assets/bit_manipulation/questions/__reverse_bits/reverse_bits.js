@@ -23,7 +23,8 @@
 *
 * 1. Shift result to the left by 1 bit. Essentially, pad a 0 in.
 * 2. If the last bit of num is a 1, we add 1 to our result.
-* 3. Update num by shifting to the right by 1.
+* 3. Update num by shifting to the right by 1, so we can handle the next end bit.
+*
 *
 * Let's look at how step 2 works: result |= num & 1
 *
@@ -50,6 +51,19 @@
 * 1011_0000_0000_0000_0000_0000_0000_0000
 *
 * We intitialise result to 0; which  0000_0000_0000_0000_0000_0000_0000_0000
+*
+* We loop 32 bits, starting at index 0.
+* result = result << 1 = 0000_0000_0000_0000_0000_0000_0000_0000.
+* num & 1: ...1101 & ...0001 = ...0001, which is 1. Therefore, result = result + 1
+*
+* We right shift num by 1 (num >>= 1) to get: ...0110
+*
+* Then we move on to the next iteration and repeat the process. Eventually, we will
+* cover all the bits that may vary in value, that is, the first 4 in this example.
+* Then we will only be iterating over 0 values only, which will remain 0 when we
+* (n & 1) them. Since there we have i = 4 to i = 31 iterations left, this will
+* result in padding 28 0s to the right of result. i.e at the end, we get
+* result = 1011_0000_0000_0000_0000_0000_0000_0000
 *
 * Time: O(1)
 * Space: O(1)
