@@ -21,12 +21,11 @@
 *
 * We then iterate over our num, 32 bits. In each iteration:
 *
-* 1. Shift result to the left by 1 bit. Essentially, pad a 0 in.
+* 1. Multiply our result by 2.
 * 2. If the last bit of num is a 1, we add 1 to our result.
 * 3. Update num by shifting to the right by 1, so we can handle the next end bit.
 *
-*
-* Let's look at how step 2 works: result |= num & 1
+* Let's look at how step 2 works: result += num & 1
 *
 * (num & 1) will always return true if the last bit in num is a 1 bit, otherwise
 * it will return false.
@@ -36,8 +35,6 @@
 *
 * However, if n = 2, which has a least significant bit of 0.
 * '010' & '001' = '000'
-*
-* Then we just bitwise OR the end bit onto our result.
 *
 * Let's walk through an entire example.
 *
@@ -53,7 +50,7 @@
 * We intitialise result to 0; which  0000_0000_0000_0000_0000_0000_0000_0000
 *
 * We loop 32 bits, starting at index 0.
-* result = result << 1 = 0000_0000_0000_0000_0000_0000_0000_0000.
+* result = result * 2 = 0000_0000_0000_0000_0000_0000_0000_0000.
 * num & 1: ...1101 & ...0001 = ...0001, which is 1. Therefore, result = result + 1
 *
 * We right shift num by 1 (num >>= 1) to get: ...0110
@@ -76,12 +73,12 @@ function reverseBits(num) {
   let result =  0;
 
   for (let i = 0; i < 32; i += 1) {
-    result <<= 1;
-    result |= num & 1;
-    num >>= 1;
+    result *= 2;
+    result += num & 1;
+    num = num >> 1;
   }
 
-  return Math.abs(result);
+  return result;
 }
 
 export default reverseBits;
