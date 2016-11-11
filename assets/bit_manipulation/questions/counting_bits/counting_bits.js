@@ -69,6 +69,15 @@
 * 7 & 1 // 01001 & 00001 // 1
 * 8 & 1 // 10000 & 00001 // 0
 *
+* Putting it all together... We are really dividing each number into 2 parts then.
+*
+* We shift 'off' the lowbit of the binary, or the bit that represents if it is
+* odd or even (1 or 0). This isolates all the other bits for
+* us, result[i >> 1], which is equivalent to result[i / 2].
+*
+* Then we simply add the lowbit back to calculate the correct hamming weight, which
+* will add 1 if odd, or zero if even. This (i & 1), equivalent to (i % 2).
+*
 * Time: O(1)
 * Space: O(1)
 *
