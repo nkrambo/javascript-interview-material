@@ -42,7 +42,16 @@
 */
 
 function readBinaryWatch(num) {
+  const times = [];
+  for (let h = 0; h < 12; h += 1) {
+    for (let m = 0; m < 60; m += 1) {
+      if ((h * 64 + m) === num) {
+        times.push(`${h}:${m}`);
+      }
+    }
+  }
 
+  return times;
 }
 
 export default readBinaryWatch;
