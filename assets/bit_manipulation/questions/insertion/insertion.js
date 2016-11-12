@@ -2,17 +2,16 @@
 /**
 * Insertion
 *
-* You are given two 32-bit numbers. N and M, and two bit positions, i and j.
-* Write a method to insert M into N such that M starts at bit j and ends at bit i.
+* You are given two 32-bit numbers. n and m, and two bit positions, i and j.
+* Write a method to insert m into n such that M starts at bit j and ends at bit i.
 *
-* You can assume that the bits j through i have enough space to fit all of M. That is,
-* if M = 10011, you can assume that there at least 5 bits between j and i. You would not,
-* for example, have j = 3 and i = 2, because M could not fully fit between bit 3 and bit 2.
+* You can assume that the bits j through i have enough space to fit all of m. That is,
+* if m = 10011, you can assume that there at least 5 bits between j and i. You would not,
+* for example, have j = 3 and i = 2, because m could not fully fit between bit 3 and bit 2.
 *
 * Example:
-*
-* Input: N = 10000000000, M = 10011, i = 2, j = 6
-* Output: N = 10001001100
+* Input: 2048, 19, 2, 6 (in binaray: n = 10000000000; m = 10011)
+* Output: 2124 (in binaray: 10001001100)
 *
 * Solution:
 *
