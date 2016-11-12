@@ -23,7 +23,7 @@
 *
 * In this solution, 00, 01 and 10 are chosen. Let 'ones' represents the first bit,
 * 'twos' represents the second bit. Then we need to set rules for 'ones' and 'twos'
-* so that they act as we hopes.
+* so that they act as we intend.
 *
 * The complete loop is 00 -> 10 -> 01 -> 00 (0 -> 1 -> 2 -> 3/0).
 *
