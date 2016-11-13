@@ -10,8 +10,8 @@
 * for example, have j = 3 and i = 2, because m could not fully fit between bit 3 and bit 2.
 *
 * Example:
-* Input: 2048, 19, 2, 6 (in binaray: n = 10000000000; m = 10011)
-* Output: 2124 (in binaray: 10001001100)
+* Input: 2048, 19, 2, 6 (in binary: n = 10000000000; m = 10011)
+* Output: 2124 (in binary: 10001001100)
 *
 * Solution:
 *
@@ -28,12 +28,13 @@
 * then the right half.
 *
 * For example, if i = 2, j = 4. Then our mask should be 11100011.
+*
+* Time: O(1)
+* Space: O(1)
 */
 
 /**
-* Insertion
-*
-* Time:
+* insertion()
 *
 * @param {number} n 32-bit number
 * @param {number} m 32-bit number
