@@ -27,13 +27,25 @@
 * This is pretty good. It's O(b) time and O(b) space, where b is the length of the
 * sequence. We can do better though...
 *
-* 
-*/
-
-/**
-* Flip bit to win
+* To reduce the space usage, note that we don't need to hang onto the length of
+* each sequence the entire time. We only need it long enough to compare each 1s
+* sequence to the immediately preceding 1s sequence.
 *
-* Time:
+* Therefore, we can just walk through the integer doing this, tracking the current
+* 1s sequence length and the previous 1s sequence length.
+*
+* When we see a zero, update previousLength:
+*
+* - If the next bit is a 1, previousLength should be set to the currentLength
+* - If the next bit is a 0, then we can't merge these sequences together. So, set
+*   previousLength to 0.
+*
+* Finally, update maxLength as we go.
+*
+* Time: O(b)
+* Space: O(1)
+*
+* Where b is the length of the sequence.
 *
 * @param {number} num integer
 * @return {number} Returns length of the longest sequence
@@ -42,6 +54,7 @@
 function flipBitToWin(num) {
   // if all 1s, this is already the longest sequence
   // if (~num === 0) return num;
+
   let currentLength = 0;
   let previousLength = 0;
   let maxLength = 1; // we can always have a sequence of at least one 1
