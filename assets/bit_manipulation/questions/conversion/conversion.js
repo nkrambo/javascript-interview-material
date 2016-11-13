@@ -6,12 +6,18 @@
 * to convert integer A to integer B.
 *
 * Example:
-*
 * Input: 29 (or: 11101), 15 (or: 01111)
 * Output: 2
 *
 * Solution:
 *
+* This seemingly complex problem is actually rather straightforward. To approach
+* this, we need to know which bits in two numbers are different. Simple, we can
+* XOR them.
+*
+* Each 1 in the XOR represents a bit that is different between a and b. Therefore,
+* to check the number of bits that are different between a and b, we simply need
+* to count the number of bits in a ^ b that are 1.
 *
 * Time: O(1)
 * Space: O(1)
@@ -24,8 +30,8 @@
 function conversion(a, b) {
   let count = 0;
 
-  for (let c = a ^ b; c !== 0; c = c & (c - 1)) {
-    count += 1;
+  for (let c = a ^ b; c !== 0; c = c >> 1) {
+    count += c & 1;
   }
 
   return count;
