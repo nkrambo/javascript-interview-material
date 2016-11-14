@@ -50,7 +50,7 @@ class Employee {
     this.firstName = firstName;
     this.lastName = lastName;
     this.age = age;
-    this.gener = gender;
+    this.gender = gender;
     this.phone = phone;
     this.status = status;
     this.currentCall = null;
