@@ -13,6 +13,82 @@
 */
 
 class CallCenter {
+  constructor() {
+    this.levels = 3;
+    this.numRespondents = 10;
+    this.numManagers = 4;
+    this.numDirectors = 2;
+  }
+
+  getHandlerForCall(call) {}
+}
+
+class Call {
+  constructor(caller) {
+    this.caller = caller;   // person calling
+    this.rank = null;       // minimal rank
+    this.handler = null;
+  }
+
+  setHandler(employee) {
+    this.hander = employee;
+  }
+
+  reply(message) {}
+
+  getRank() {
+    return this.rank;
+  }
+
+
+
+  disconnect() {}
+}
+
+class Employee {
+  constructor(firstName, lastName, age, gender, phone, status) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.gener = gender;
+    this.phone = phone;
+    this.status = status;
+    this.currentCall = null;
+    this.rank = null;
+  }
+
+  // start conversation
+  receiveCall(call) {}
+
+  // issue resolved, finish call
+  callCompleted() {}
+
+  // issue not resolved, escalate and reassign new call
+  escalateAndReassign() {}
+
+  // assign new call if employee is free
+  assignNewCall() {}
+
+  // is employee free
+  isFree() {
+    return this.currentCall === null;
+  }
+
+  // get rank
+  getRank() {
+    return this.rank;
+  }
+}
+
+class Director extends Employee {
+
+}
+
+class Manager extends Employee {
+
+}
+
+class Respondent extends Employee {
 
 }
 
