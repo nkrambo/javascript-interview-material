@@ -23,7 +23,7 @@ class Card {
 }
 
 class Deck {
-  constructor() {
+  constructor(jokers) {
     this.cards = [];
     this.suits = ['Diamonds', 'Spades', 'Clubs', 'Hearts'];
     this.ranks = ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2'];
@@ -34,6 +34,12 @@ class Deck {
         const card = new Card(this.ranks[j], this.suits[i]);
         this.cards.push(card);
       }
+    }
+
+    // add jokers if option passed in at construction
+    if (jokers) {
+      this.cards.push('Joker');
+      this.cards.push('Joker');
     }
 
     // shuffle on construction
@@ -53,15 +59,30 @@ class Deck {
   }
 
   draw() {
-    if (this.cards.length > 0) {
-      return this.cards.pop();
-    } else {
-      throw new Error('Out of cards!');
-    }
+    // out of cards
+    if (this.cards.length === 0) throw new Error('Out of cards!');
+
+    return this.cards.pop();
   }
 
-  dealHand(number) {
+  drawHand(number) {
+    const hand = [];
 
+    // type check
+    if (typeof number !== 'number') {
+      throw new TypeError('drawHand: Expects single argument of [Number] type.');
+    }
+
+    // not enough cards
+    if (number > this.cards.length) {
+      throw new Error('Not enough cards left in deck');
+    }
+
+    for (let i = 0; i < number; i += 1) {
+      hand.push(this.cards.pop());
+    }
+
+    return hand;
   }
 }
 
