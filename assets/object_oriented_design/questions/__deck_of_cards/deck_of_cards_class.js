@@ -78,6 +78,7 @@ class Deck {
       throw new Error('Not enough cards left in deck');
     }
 
+    // build hand
     for (let i = 0; i < number; i += 1) {
       hand.push(this.cards.pop());
     }
@@ -92,4 +93,4 @@ class BlackJack {
   }
 }
 
-export { Deck, BlackJack };
+export { Deck, Card, BlackJack };
