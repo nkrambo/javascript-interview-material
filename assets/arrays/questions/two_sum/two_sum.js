@@ -31,7 +31,7 @@
 *
 * @param {array} nums array of positve and negative integers
 * @param {integer} target to sum pairs of nums to.
-* @return {array} returns a matrix set of integers resulting in target
+* @return {array} returns an array set of integers resulting in target, otherwise null
 */
 
 function twoSumBrute(nums, target) {
@@ -46,6 +46,7 @@ function twoSumBrute(nums, target) {
     throw new Error('twoSum: nums[] must be a minimum length of 2.');
   }
 
+  // for each num, check every other num for complement
   for (let i = 0; i < nums.length; i += 1) {
     for (let j = i + 1; j < nums.length; j += 1) {
       if (nums[j] === target - nums[i]) {
@@ -87,16 +88,18 @@ function twoSumBrute(nums, target) {
 *
 * @param {array} nums array of positve and negative integers
 * @param {integer} target to sum pairs of nums to.
-* @return {array} returns a matrix set of integers resulting in target
+* @return {array} returns an array set of integers resulting in target, otherwise null
 */
 
 function twoSumHash(nums, target) {
   const map = new Map();
 
+  // build hash
   for (let i = 0; i < nums.length; i += 1) {
     map.set(nums[i], i);
   }
 
+  // check for complement
   for (let i = 0; i < nums.length; i += 1) {
     const complement = target - nums[i];
     if (map.has(complement) && map.get(complement) !== i) {
