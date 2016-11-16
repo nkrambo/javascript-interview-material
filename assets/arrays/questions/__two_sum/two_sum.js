@@ -25,8 +25,7 @@
 * @return {array} returns a matrix set of integers resulting in target
 */
 
-function twoSum(nums, target) {
-  const results = [];
+function twoSumBrute(nums, target) {
 
   // type check
   if (!Array.isArray(nums)) {
@@ -38,7 +37,15 @@ function twoSum(nums, target) {
     throw new Error('twoSum: nums[] must be a minimum length of 2.');
   }
 
-  return results;
+  for (let i = 0; i < nums.length; i += 1) {
+    for (let j = i + 1; j < nums.length; j += 1) {
+      if (nums[j] === target - nums[i]) {
+        return [i, j];
+      }
+    }
+  }
+
+  return null;
 }
 
-export default twoSum;
+export { twoSumBrute, };

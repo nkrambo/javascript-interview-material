@@ -89,8 +89,43 @@ class Deck {
 
 class BlackJack {
   constructor() {
-
+    this.player = {
+      hand: null,
+      score: null
+    };
+    this.dealer = {
+      hand: null,
+      score: null
+    };
+    this.shoe = new Deck();
+    this.deal();
   }
+
+  // // deal
+  // deal() {
+  //   this.player.hand = this.shoe.drawHand(2);
+  //   this.dealer.hand = this.shoe.draw();
+  //   this.calculateScore();
+  // }
+  //
+  // calculateScore(hand) {
+  //   if ()
+  // }
+  //
+  // // hit
+  // hit() {
+  //
+  // }
+  //
+  // // stay
+  // stay() {
+  //
+  // }
+  //
+  // // deal
+  // // player plays out blackjack, hit, stay or bust
+  // // dealer plays out blackjack, hit, bust
+
 }
 
 export { Deck, Card, BlackJack };
