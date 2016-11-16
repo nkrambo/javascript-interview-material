@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import { twoSumBrute } from '../two_sum';
+import { twoSumBrute, twoSumHash } from '../two_sum';
 
 describe('twoSumBrute()', () => {
   it('should find all unique pairs which sum to target', () => {
@@ -15,5 +15,11 @@ describe('twoSumBrute()', () => {
     expect(function(){ twoSumBrute(null); }).to.throw(TypeError);
     expect(function(){ twoSumBrute(undefined); }).to.throw(TypeError);
     expect(function(){ twoSumBrute('string'); }).to.throw(TypeError);
+  });
+});
+
+describe('twoSumHash()', () => {
+  it('should find all unique pairs which sum to target', () => {
+    expect(twoSumHash([2, 7, 11, 15], 9)).to.deep.equal([0, 1]);
   });
 });
