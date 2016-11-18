@@ -29,7 +29,19 @@
 *
 * Solution:
 *
-* 
+* This is not an easy problem to solve. To tackle it, we need to build out a graph
+* and then perform a BFS.
+*
+* In graph theory, the degree of a vertex (or node) is the number of edges incident
+* to that vertex, with loops counted twice.
+*
+*                 1 ---- 3 ------ 3
+*                        |        |
+*                        |        |
+*                0       |        |
+*                        2 ------ 4 --
+*                                 |   | (loop)
+*                                  ---
 *
 * Time: O(1)
 * Space: O(1)
@@ -49,10 +61,19 @@ function alienOrder(words) {
   // if empty
   if (words.length === 0) return result;
 
+  // build degree map
+  const degree = new Map();
+  for (let i = 0; i < words.length; i += 1) {
+    const word = words[i];
+    for (let j = 0; j < word.length; j += 1) {
+      degree.set(word[j], 0);
+    }
+  }
+
   // build graph
   const graph = new Map();
 
-  for (let i = 0; i < words.length-1; i += 1) {
+  for (let i = 0; i < words.length - 1; i += 1) {
     const current = words[i];
     const next = words[i + 1];
     const length = Math.min(current.length, next.length);
