@@ -188,10 +188,10 @@ function alienOrder(words) {
   // BFS (Karn's aglorithm) to find lexicographical order
   const queue = [];
 
-  // grab a starting point by finding node with no degree, or 0 edges
+  // grab a starting point by finding all nodes with no degree, or 0 edges
   // this should come first lexicographically
-  for (let char of degree) {
-    if (degree.get(char) === 0) queue.push(char);
+  for (let [key, value] of degree) {
+    if (value === 0) queue.push(key);
   }
 
   while (queue.length > 0) {
@@ -199,8 +199,8 @@ function alienOrder(words) {
     const char = queue.shift();
     result += char;
 
-    if (map.has(char)) {
-      const entries = map.get(char);
+    if (graph.has(char)) {
+      const entries = graph.get(char);
 
       for (let c2 of entries) {
         // decrement degree
