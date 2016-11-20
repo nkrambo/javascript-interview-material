@@ -205,8 +205,9 @@ function alienOrder(words) {
     result += char;
 
     if (map.has(char)) {
-      const entries = char
-      for () {
+      const entries = map.get(char);
+
+      for (let c2 of entries) {
         // decrement degree
         degree.set(c2, degree.get(c2) - 1);
 
@@ -216,19 +217,7 @@ function alienOrder(words) {
     }
   }
 
-  while(!q.isEmpty()){
-      char c=q.remove();
-      result+=c;
-      if(map.containsKey(c)){
-          for(char c2: map.get(c)){
-              degree.put(c2,degree.get(c2)-1);
-              if(degree.get(c2)==0) q.add(c2);
-          }
-      }
-  }
-
-  if(result.length()!=degree.size()) return "";
-  return result;
+  return result.length !== degree.size() ? '' : result;
 }
 
 
