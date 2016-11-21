@@ -215,5 +215,4 @@ function alienOrder(words) {
   return result.length !== degree.size ? '' : result;
 }
 
-
 export default alienOrder;
