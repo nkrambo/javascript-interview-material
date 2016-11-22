@@ -87,9 +87,9 @@
 * Have you ever worked with retina graphics? If so, when and what techniques did you use?
 * Is there any reason you'd want to use `translate()` instead of *absolute positioning*, or vice-versa? And why?
 
-#### JS Questions:
+### JS Questions:
 
-#####Explain event delegation
+####Explain event delegation
 
 Event delegation allows you to avoid adding event listeners to specific nodes; instead, the event listener is added to one parent. That event listener analyzes bubbled events to find a match on child elements.
 
@@ -132,87 +132,87 @@ list.addEventListener('click', function(e) {
 
 Start by adding a click event listener to the parent element. When the event listener is triggered, check the event element to ensure it's the type of element to react to. If it is an LI element, boom: we have what we need! If it's not an element that we want, the event can be ignored.
 
-#####Explain how `this` works in JavaScript
+####Explain how `this` works in JavaScript
 
-#####Explain how prototypal inheritance works
+####Explain how prototypal inheritance works
 
-#####What is a closure, and how/why would you use one?
+####What is a closure, and how/why would you use one?
 
-#####What's a typical use case for anonymous functions?
+####What's a typical use case for anonymous functions?
 
-#####How do you organize your code? (module pattern, classical inheritance?)
+####How do you organize your code? (module pattern, classical inheritance?)
 
-#####What's the difference between host objects and native objects?
+####What's the difference between host objects and native objects?
 
-#####Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
+####Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 
-#####What's the difference between `.call` and `.apply`?
+####What's the difference between `.call` and `.apply`?
 
-#####Explain `Function.prototype.bind`.
+####Explain `Function.prototype.bind`.
 
-#####When would you use `document.write()`?
+####When would you use `document.write()`?
 
-#####What's the difference between feature detection, feature inference, and using the UA string?
+####What's the difference between feature detection, feature inference, and using the UA string?
 
-#####Explain Ajax in as much detail as possible.
+####Explain Ajax in as much detail as possible.
 
-#####What are the advantages and disadvantages of using Ajax?
+####What are the advantages and disadvantages of using Ajax?
 
-#####Explain how JSONP works (and how it's not really Ajax).
+####Explain how JSONP works (and how it's not really Ajax).
 
-#####Explain 'hoisting'.
+####Explain 'hoisting'.
 
-#####Describe event bubbling.
+####Describe event bubbling.
 
-#####What's the difference between an 'attribute' and a 'property'?.
+####What's the difference between an 'attribute' and a 'property'?.
 
-#####Why is extending built-in JavaScript objects not a good idea?
+####Why is extending built-in JavaScript objects not a good idea?
 
-#####Difference between document load event and document DOMContentLoaded event?
+####Difference between document load event and document DOMContentLoaded event?
 
-#####Why is it called a Ternary expression, what does the word 'Ternary' indicate?
+####Why is it called a Ternary expression, what does the word 'Ternary' indicate?
 
-#####What is `"use strict";`? what are the advantages and disadvantages to using it?
+####What is `"use strict";`? what are the advantages and disadvantages to using it?
 
-#####Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+####Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
 
-#####Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
+####Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
 
-#####Explain what a single page app is and how to make one SEO-friendly.
+####Explain what a single page app is and how to make one SEO-friendly.
 
-#####What is the extent of your experience with Promises and/or their polyfills?
+####What is the extent of your experience with Promises and/or their polyfills?
 
-#####What are the pros and cons of using Promises instead of callbacks?
+####What are the pros and cons of using Promises instead of callbacks?
 
-#####What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+####What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
 
-#####What tools and techniques do you use debugging JavaScript code?
+####What tools and techniques do you use debugging JavaScript code?
 
-#####What language constructions do you use for iterating over object properties and array items?
+####What language constructions do you use for iterating over object properties and array items?
 
-#####Explain the difference between synchronous and asynchronous functions.
+####Explain the difference between synchronous and asynchronous functions.
 
-#####Explain the difference between mutable and immutable objects.
+####Explain the difference between mutable and immutable objects.
 
-#####What is an example of an immutable object in JavaScript?
+####What is an example of an immutable object in JavaScript?
 
-#####What are the pros and cons of immutability?
+####What are the pros and cons of immutability?
 
-#####How can you achieve immutability in your own code?
+####How can you achieve immutability in your own code?
 
-#####What is event loop?
+####What is event loop?
 
-#####What is the difference between call stack and task queue?
+####What is the difference between call stack and task queue?
 
-#####Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
+####Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
 
-#####Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
+####Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
 
-#####What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?
+####What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?
 
-#####Have you ever used JavaScript templating? If so, what libraries have you used?
+####Have you ever used JavaScript templating? If so, what libraries have you used?
 
-#####What is the difference between `==` and `===`?
+####What is the difference between `==` and `===`?
 
 JavaScript has two sets of equality operators archived under comparison operators:
 
