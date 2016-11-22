@@ -268,6 +268,15 @@ Anonymous functions are created at runtime ... Function declarations are differe
 
 #### What's the difference between host objects and native objects?
 
+Host Objects are objects supplied by a certain environment. They are not always the same because each environment differs and contains host objects that accommodates execution of ECMAScript. For example, the browser environment supplies objects such as window, XMLHttpRequest, document, setTimeout, location. While a node.js environment supplies objects such as NodeList and Global.
+
+Native Objects or Built-in Objects are standard built-in objects provided by Javascript. Native objects is sometimes referred to as 'Global Objects' since they are objects Javascript has provided natively available for use. Native objects: Object (constructor), Date, Math, parseInt, eval, string methods like indexOf and replace, array methods etc...
+
+User objects are anything the user defines. When you create a new object that is not directly a native object, you've made a user object. So if you create a new string ("Hello world") you created a native object, but if you create an instance of an object you've defined (new Cat()) then it’s a user object.
+
+References:
+* [Mozilla Docs - Global Objects] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
+
 #### Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 
 #### What's the difference between `.call` and `.apply`?
@@ -307,6 +316,12 @@ Anonymous functions are created at runtime ... Function declarations are differe
 #### What is the extent of your experience with Promises and/or their polyfills?
 
 #### What are the pros and cons of using Promises instead of callbacks?
+
+The main advantage a callback has over a promise is locality. With a callback you're asking for work to be performed in one place, and a result to be given very near the same so you can operate on it. In situations where there is no actual data being handed back (think GCD's primitives) a callback is the only appropriate way to handle such an API. Anything more would add needless complexity to a simple interface.
+
+That said a promise's advantage is flexibility. You have much more liberty about where, when, and how work is done because you're dealing with a proper data type rather than a function. That freedom allows one to express higher-order operations like batching, chaining, coalescing, etc., but it can also introduce a small amount of uncertainty into any piece of code that relies on the locality mentioned above.
+
+It all depends on what you need to do and how you need it done. For code that relies on short local reactions to asynchronous events go with a callback. For more complex interactions and data flows promises bring order to what could potentially be callback hell.
 
 #### What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
 
@@ -361,6 +376,32 @@ References:
  * [Comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
 
 #### Explain the same-origin policy with regards to JavaScript.
+
+Same-origin policy restricts scripts from other websites to be executed on your website. It is an important security measure as it isolates known malicious attacks such as Cross Site Scripting.
+
+In two pages with url, an origin is defined if its protocol, host, and port are the same for both pages.
+
+An example via MDN - Same-origin policy:
+Compare http://store.company.com/dir/page.html to the table below.
+
+URL | Outcome | Reason
+--- | --- | ---
+http://store.company.com/dir2/other.html |	Success |	-
+http://store.company.com/dir/inner/another.html |	Success |	-
+https://store.company.com/secure.html |	Failure |	Different protocol
+http://store.company.com:81/dir/etc.html |	Failure |	Different port
+http://news.company.com/dir/other.html |	Failure |	Different host
+
+There is also a work around for subdomains. The last example above http://news.company.com/dir/other.html can be a Success by setting document.domain to our parent domain company.com.
+
+```javascript
+document.domain = "company.com";
+```
+
+References:
+* [MDN - Same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
+[Same-origin Policy in layman terms](http://stackoverflow.com/questions/11474336/same-origin-policy-in-layman-terms)
+
 #### Make this work:
 ```javascript
 duplicate([1, 2, 3, 4, 5]); // [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
