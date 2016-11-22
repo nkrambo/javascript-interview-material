@@ -159,12 +159,12 @@ An additional advantage is that any dynamically created elements will still be b
 
 ```html
 <ul id="parent-list">
-    <li id="post-1">Item 1</li>
-    <li id="post-2">Item 2</li>
-    <li id="post-3">Item 3</li>
-    <li id="post-4">Item 4</li>
-    <li id="post-5">Item 5</li>
-    <li id="post-6">Item 6</li>
+  <li id="post-1">Item 1</li>
+  <li id="post-2">Item 2</li>
+  <li id="post-3">Item 3</li>
+  <li id="post-4">Item 4</li>
+  <li id="post-5">Item 5</li>
+  <li id="post-6">Item 6</li>
 </ul>
 ```
 
@@ -180,8 +180,8 @@ document.getElementById("parent-list").addEventListener("click", function(e) {
 });
 
 list.addEventListener('click', function(e) {
-  if(e.target && e.target.nodeName === 'LI') {
-    if(e.target.style.background === 'red') {
+  if (e.target && e.target.nodeName === 'LI') {
+    if (e.target.style.background === 'red') {
       e.target.style.background = 'none';
     } else {
       e.target.style.background = 'red'
@@ -199,6 +199,70 @@ Start by adding a click event listener to the parent element. When the event lis
 #### What is a closure, and how/why would you use one?
 
 #### What's a typical use case for anonymous functions?
+
+Anonymous functions are typically used as callbacks, as in to pass them as arguments to other functions. Take the setTimeout function for example:
+
+```javascript
+setTimeout(function() {
+  alert('hello');
+}, 1000);
+```
+
+Or the Array.prototype.map function:
+
+```javascript
+const numbers = [2, 4, 6];
+const numbersHalf = numbers.map((item) => {
+  return item / 2;
+});
+```
+
+Another popular use case (especially for frameworks) is to create closures with anonymous functions, such as Immediately-invoked function expression (IIFE).
+
+```javascript
+(function() {
+  alert('foo');
+})();
+```
+
+Another callback example:
+
+```javascript
+function takesACallback(callback) {
+  // do some interesting things here
+  return 'The callback says: ' + callback();
+}
+
+// returns 'The callback says: I'm the callback!'
+takesACallback(function() {
+  return 'I\'m the callback!';
+});
+```
+
+However, you can still have a reference to an anonymous function, just because it is unnamed it doesn't mean it's unreferenced. We can use a function expression as assign our anonymous function to a variable.
+
+The function itself is still anonymous (it doesn't have a name directly attached to it), but you can call the function by the named reference.
+
+```javascript
+const reference = function() {
+  return 'I\'m still an anonymous function';
+}
+
+reference(); // returns "I'm still an anonymous function"
+```
+Declared functions are not anonymous. They have a name directly attached to the function, with no need for a named reference.
+
+```javascript
+function declared() {
+  return "I'm not anonymous function";
+}
+
+declared(); // returns "I'm not anonymous function"
+```
+
+Writing a named function like this results in a function declaration.
+
+Anonymous functions are created at runtime ... Function declarations are different. They are run before any of the other code is executed so the functions do not have to be declared before the code that calls them.
 
 #### How do you organize your code? (module pattern, classical inheritance?)
 
@@ -281,14 +345,14 @@ equality == & inequality != strict equality === & strict inequality !== We use t
 For example, equality == or inequality != signs compares 2 values without type conversion. While strict equality === or strict inequality !== signs compares 2 values with type conversion.
 
 ```javascript
-'1' == 1 // true < all it matters is the value
-'1' === 1 // false < they are not the same type
+'1' == 1      // true < all it matters is the value
+'1' === 1     // false < they are not the same type
 
-1 == true // true
-'1' == true // true
+1 == true     // true
+'1' == true   // true
 
-1 === true // false
-'1' === true // false
+1 === true    // false
+'1' === true  // false
 ```
 
 References:
