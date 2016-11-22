@@ -13,17 +13,6 @@
 
 ### General Questions:
 
-#### What did you learn yesterday/this week?
-
----
-
-#### What excites or interests you about coding?
-
----
-
-#### What is a recent technical challenge you experienced and how did you solve it?
-
----
 
 #### What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
 
@@ -39,9 +28,6 @@
 
 #### Can you describe your workflow when you create a web page?
 
----
-
-#### Can you describe your workflow when you create a web page?
 
 ---
 
@@ -182,6 +168,22 @@
 ---
 
 #### What are your favourite image replacement techniques and which do you use when?
+
+In this modern age, if you are still looking to do so, there are many image replacement techniques that still work today. It is important to note that these usually come with SEO complications, even being
+penalised by Google. So, you should use sparingly and look for alternatives first.
+
+**Negative Text Indent**
+
+This is the most common technique that most web developers have used at one point or another. The idea here is to move the text far outside the browser window by setting a large negative text-indent:
+
+```css
+.replace-indent {
+  width: 264px;
+  height: 106px;
+  background: url("assets/logo.png");
+  text-indent: -9999px;
+}
+``
 
 ---
 
@@ -556,11 +558,7 @@ References:
 
   ---
 
-#### What's the difference between `.call` and `.apply`?
-
----
-
-#### Explain `Function.prototype.bind`.
+#### What's the difference between `.call`, `.bind` and `.apply`?
 
 ---
 
@@ -585,6 +583,32 @@ References:
 ---
 
 #### Explain 'hoisting'.
+
+In javascript there is only function scoping. Variable declarations in a function are moved to the top of the function at run-time.
+
+``` javascript
+function() {
+  // some code
+  // some code
+
+  var myVariable = 0; // this will get hoisted to the top of the function.
+}
+```
+
+However, if you don't declare your variables correctly. You can declare global variables by accident.
+
+```javascript
+function() {
+  // some code
+  // some code
+
+  myVariable = 0; // this will get hoisted to global!!
+}
+```
+This is one of the reasons that we use 'use strict'. It will throw an error if your code globally hoists a variable.
+
+References:
+* https://www.youtube.com/watch?v=sjyJBL5fkp8
 
 ---
 
