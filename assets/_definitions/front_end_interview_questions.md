@@ -279,7 +279,7 @@
 
 ### JS Questions:
 
-####Explain event delegation
+#### Explain event delegation
 
 Event delegation allows you to avoid adding event listeners to specific nodes; instead, the event listener is added to one parent. That event listener analyzes bubbled events to find a match on child elements.
 
@@ -333,6 +333,137 @@ Start by adding a click event listener to the parent element. When the event lis
 ---
 
 #### What is a closure, and how/why would you use one?
+
+Closures are functions that refer to independent (free) variables (variables that are used locally, but defined in an enclosing scope). In other words, these functions 'remember' the environment in which they were created.
+
+**Lexical Scoping**
+
+```javascript
+function init() {
+  const name = "Mozilla"; // name is a local variable created by init
+  function displayName() { // displayName() is the inner function, a closure
+    alert(name); // use variable declared in the parent function    
+  }
+  displayName();    
+}
+
+init();
+```
+
+The function ```init()``` creates a local variable name and then a function called ```displayName(). displayName()``` is an inner function that is defined inside ```init()``` and is only available within the body of that function. ```displayName()``` has no local variables of its own, however it has access to the variables of outer functions and so can use the variable name declared in the parent function.
+
+This is an example of lexical scoping: in JavaScript, the scope of a variable is defined by its location within the source code (it is apparent lexically) and nested functions have access to variables declared in their outer scope.
+
+**Closure**
+
+Now consider the following example:
+
+```javascript
+function makeFunc() {
+  const name = "Mozilla";
+  function displayName() {
+    alert(name);
+  }
+
+  return displayName;
+}
+
+const myFunc = makeFunc();
+myFunc();
+```
+
+If you run this code it will have exactly the same effect as the previous init() example: the string "Mozilla" will be displayed in a JavaScript alert box. What's different — and interesting — is that the displayName() inner function was returned from the outer function before being executed.
+
+That the code still works may seem unintuitive. Normally, the local variables within a function only exist for the duration of that function's execution. Once makeFunc() has finished executing, it is reasonable to expect that the name variable will no longer be accessible. Since the code still works as expected, this is obviously not the case.
+
+The solution to this puzzle is that myFunc has become a closure. A closure is a special kind of object that combines two things: a function, and the environment in which that function was created. The environment consists of any local variables that were in-scope at the time that the closure was created. In this case, myFunc is a closure that incorporates both the displayName function and the "Mozilla" string that existed when the closure was created.
+
+Here's a slightly more interesting example — a makeAdder function:
+
+```javascript
+function makeAdder(x) {
+  return function(y) {
+    return x + y;
+  };
+}
+
+const add5 = makeAdder(5);
+const add10 = makeAdder(10);
+
+console.log(add5(2));  // 7
+console.log(add10(2)); // 12
+```
+
+In this example, we have defined a function makeAdder(x) which takes a single argument x and returns a new function. The function it returns takes a single argument y, and returns the sum of x and y.
+
+In essence, makeAdder is a function factory — it creates functions which can add a specific value to their argument. In the above example we use our function factory to create two new functions — one that adds 5 to its argument, and one that adds 10.
+
+add5 and add10 are both closures. They share the same function body definition, but store different environments. In add5's environment, x is 5. As far as add10 is concerned, x is 10.
+
+**Practical Closures**
+
+That's the theory of closures — but are closures actually useful? Let's consider their practical implications. A closure lets you associate some data (the environment) with a function that operates on that data. This has obvious parallels to object oriented programming, where objects allow us to associate some data (the object's properties) with one or more methods.
+
+Consequently, you can use a closure anywhere that you might normally use an object with only a single method.
+
+Situations where you might want to do this are particularly common on the web. Much of the code we write in web JavaScript is event-based — we define some behavior, then attach it to an event that is triggered by the user (such as a click or a keypress). Our code is generally attached as a callback: a single function which is executed in response to the event.
+
+**Emulating private methods with closures**
+
+Languages such as Java provide the ability to declare methods private, meaning that they can only be called by other methods in the same class.
+
+JavaScript does not provide a native way of doing this, but it is possible to emulate private methods using closures. Private methods aren't just useful for restricting access to code: they also provide a powerful way of managing your global namespace, keeping non-essential methods from cluttering up the public interface to your code.
+
+Here's how to define some public functions that can access private functions and variables, using closures which is also known as the module pattern:
+
+```javascript
+const counter = (function() {
+  let privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+
+  return {
+    increment: function() {
+      changeBy(1);
+    },
+    decrement: function() {
+      changeBy(-1);
+    },
+    value: function() {
+      return privateCounter;
+    }
+  };
+})();
+```
+
+console.log(counter.value()); // logs 0
+counter.increment();
+counter.increment();
+console.log(counter.value()); // logs 2
+counter.decrement();
+console.log(counter.value()); // logs 1
+
+
+// Creating a module
+// First we start using a anonymous closure. Anonymous closures are just functions
+// that wrap our code and create an enclosed scope around it. Closures help keep any
+// state or privacy within that function. Closures are one of the best and most
+// powerful features of JavaScript.
+
+(function() {
+    'use strict';
+    // Your code here
+    // All function and variables are scoped to this function
+}());
+
+// This pattern is well known as a Immediately Invoked Function Expression or IIFE.
+// The function is evaluated then immediately invoked. Its also a good practice to
+// run your modules in ES5 strict mode. Strict mode will protect you from some of
+// the more dangerous parts in JavaScript.
+
+References:
+* [Mozilla - Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 
 ---
 
@@ -474,6 +605,34 @@ References:
 ---
 
 #### Why is it called a Ternary expression, what does the word 'Ternary' indicate?
+
+In mathematics, a ternary operation is an n-ary operation with n = 3. In computer science, a ternary operator is an operator that takes three arguments. The term springs from words like unary, binary, ternary, etc. Ternary, therefore meaning 3-ary.
+
+The arguments and result can be of different types. Many programming languages that use C-like syntax feature a ternary operator, ?:, which defines a conditional expression. Often, a simple if-else statement can be used to achieve the same result.
+
+For example:
+
+```javascript
+if (fooTrue) {
+  bar();
+} else {
+  fuzz();
+}
+```
+
+Above code can be shortened with ?:
+```javascript
+fooTrue ? bar() : fuzz();
+```
+
+In JavaScript, conditional operators can be evaluated to an Expression, not just statement.
+```javascript
+// assigned to a variable
+const isFoo = fooTrue ? "yes" : "no";
+
+// passed as an argument in a function
+getFoo(fooTrue ? "yes" : "no");
+```
 
 ---
 
