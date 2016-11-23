@@ -316,14 +316,16 @@ The display CSS property specifies the type of rendering box used for an element
 In addition to the many different display box types, the value none lets you turn off the display of an element; when you use none, all descendant elements also have their display turned off. The document is rendered as though the element doesn't exist in the document tree.
 
 ```html
-display: none;
 
+// basic values
+display: none;
 display: inline;
 display: block;
 display: inline-block;
 display: contents;
 display: list-item;
-display: inline-list-item;
+
+// table values
 display: table;
 display: inline-table;
 display: table-cell;
@@ -334,6 +336,9 @@ display: table-header-group;
 display: table-row;
 display: table-row-group;
 display: table-caption;
+
+// css 3 values
+display: inline-list-item;
 display: flex;
 display: inline-flex;
 display: grid;
@@ -344,9 +349,11 @@ display: ruby-base;
 display: ruby-text;
 display: ruby-base-container;
 display: ruby-text-container;
+
+// experimental
 display: run-in;
 
-/* Global values */
+// global values
 display: inherit;
 display: initial;
 display: unset;
