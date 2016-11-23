@@ -37,7 +37,7 @@
 
 **_Can you describe the difference between progressive enhancement and graceful degradation?_**
 
-**`Can you describe the difference between progressive enhancement and graceful degradation?`**
+####`Can you describe the difference between progressive enhancement and graceful degradation?`
 
 `Can you describe the difference between progressive enhancement and graceful degradation?`
 
