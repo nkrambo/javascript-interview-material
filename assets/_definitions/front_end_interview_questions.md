@@ -14,28 +14,28 @@
 ## General Questions:
 
 
-### What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
+## What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
 
 ---
 
-### Talk about your preferred development environment.
+## Talk about your preferred development environment.
 
 ---
 
-### Which version control systems are you familiar with?
+## Which version control systems are you familiar with?
 
 ---
 
-### Can you describe your workflow when you create a web page?
+## Can you describe your workflow when you create a web page?
 
 
 ---
 
-### If you have 5 different stylesheets, how would you best integrate them into the site?
+## If you have 5 different stylesheets, how would you best integrate them into the site?
 
 ---
 
-### Can you describe the difference between progressive enhancement and graceful degradation?
+## Can you describe the difference between progressive enhancement and graceful degradation?
 
 Graceful degradation and progressive enhancement are two often confused concepts. Many people (developers, designers, other web professionals and not so savvy people) either fail to understand or decline to acknowledge the difference between the two.
 
@@ -53,135 +53,135 @@ This approach encourages designers and developers to produce a product that func
 
 ---
 
-#### How would you optimize a website's assets/resources?
+### How would you optimize a website's assets/resources?
 
 ---
 
-#### How many resources will a browser download from a given domain at a time? What are the exceptions?
+### How many resources will a browser download from a given domain at a time? What are the exceptions?
 
 ---
 
-#### Name 3 ways to decrease page load (perceived or actual load time).
+### Name 3 ways to decrease page load (perceived or actual load time).
 
 ---
 
-#### If you jumped on a project and they used tabs and you used spaces, what would you do?
+### If you jumped on a project and they used tabs and you used spaces, what would you do?
 
 ---
 
-#### Describe how you would create a simple slideshow page.
+### Describe how you would create a simple slideshow page.
 
 ---
 
-#### If you could master one technology this year, what would it be?
+### If you could master one technology this year, what would it be?
 
 ---
 
-#### Explain the importance of standards and standards bodies.
+### Explain the importance of standards and standards bodies.
 
 ---
 
-#### What is Flash of Unstyled Content? How do you avoid FOUC?
+### What is Flash of Unstyled Content? How do you avoid FOUC?
 
 ---
 
-#### Explain what ARIA and screenreaders are, and how to make a website accessible.
+### Explain what ARIA and screenreaders are, and how to make a website accessible.
 
 ---
 
-#### Explain some of the pros and cons for CSS animations versus JavaScript animations.
+### Explain some of the pros and cons for CSS animations versus JavaScript animations.
 
 ---
 
-#### What does CORS stand for and what issue does it address?
+### What does CORS stand for and what issue does it address?
 
 ---
 
-### HTML Questions:
+## HTML Questions:
 
-#### What does a `doctype` do?
-
----
-
-#### What's the difference between full standards mode, almost standards mode and quirks mode?
+### What does a `doctype` do?
 
 ---
 
-#### What's the difference between HTML and XHTML?
+### What's the difference between full standards mode, almost standards mode and quirks mode?
 
 ---
 
-#### Are there any problems with serving pages as `application/xhtml+xml`?
+### What's the difference between HTML and XHTML?
 
 ---
 
-#### How do you serve a page with content in multiple languages?
+### Are there any problems with serving pages as `application/xhtml+xml`?
 
 ---
 
-#### What kind of things must you be wary of when design or developing for multilingual sites?
+### How do you serve a page with content in multiple languages?
 
 ---
 
-#### What are `data-` attributes good for?
+### What kind of things must you be wary of when design or developing for multilingual sites?
 
 ---
 
-#### Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+### What are `data-` attributes good for?
 
 ---
 
-#### Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
+### Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 
 ---
 
-#### Describe the difference between `<script>`, `<script async>` and `<script defer>`.
+### Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
 
 ---
 
-#### Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
+### Describe the difference between `<script>`, `<script async>` and `<script defer>`.
 
 ---
 
-#### What is progressive rendering?
+### Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
 
 ---
 
-#### Have you used different HTML templating languages before?
+### What is progressive rendering?
 
 ---
 
-### CSS Questions:
-
-#### What is the difference between classes and IDs in CSS?
+### Have you used different HTML templating languages before?
 
 ---
 
-#### What's the difference between 'resetting' and 'normalizing' CSS? Which would you choose, and why?
+## CSS Questions:
+
+### What is the difference between classes and IDs in CSS?
 
 ---
 
-#### Describe Floats and how they work.
+### What's the difference between 'resetting' and 'normalizing' CSS? Which would you choose, and why?
 
 ---
 
-#### Describe z-index and how stacking context is formed.
+### Describe Floats and how they work.
 
 ---
 
-#### Describe BFC(Block Formatting Context) and how it works.
+### Describe z-index and how stacking context is formed.
 
 ---
 
-#### What are the various clearing techniques and which is appropriate for what context?
+### Describe BFC(Block Formatting Context) and how it works.
 
 ---
 
-#### Explain CSS sprites, and how you would implement them on a page or site.
+### What are the various clearing techniques and which is appropriate for what context?
 
 ---
 
-#### What are your favourite image replacement techniques and which do you use when?
+### Explain CSS sprites, and how you would implement them on a page or site.
+
+---
+
+### What are your favourite image replacement techniques and which do you use when?
 
 In this modern age, if you are still looking to do so, there are many image replacement techniques that still work today. It is important to note that these usually come with SEO complications, even being
 penalised by Google. So, you should use sparingly and look for alternatives first.
@@ -267,63 +267,63 @@ This technique uses a pseudo element to push the text aside.  The text then over
 
 ---
 
-#### How would you approach fixing browser-specific styling issues?
+### How would you approach fixing browser-specific styling issues?
 
 ---
 
-#### How do you serve your pages for feature-constrained browsers? What techniques/processes do you use?
+### How do you serve your pages for feature-constrained browsers? What techniques/processes do you use?
 
 ---
 
-#### What are the different ways to visually hide content (and make it available only for screen readers)?
+### What are the different ways to visually hide content (and make it available only for screen readers)?
 
 ---
 
-#### Have you ever used a grid system, and if so, what do you prefer?
+### Have you ever used a grid system, and if so, what do you prefer?
 
 ---
 
-#### Have you used or implemented media queries or mobile specific layouts/CSS?
+### Have you used or implemented media queries or mobile specific layouts/CSS?
 
 ---
 
-#### Are you familiar with styling SVG?
+### Are you familiar with styling SVG?
 
 ---
 
-#### How do you optimize your webpages for print?
+### How do you optimize your webpages for print?
 
 ---
 
-#### What are some of the 'gotchas' for writing efficient CSS?
+### What are some of the 'gotchas' for writing efficient CSS?
 
 ---
 
-#### What are the advantages/disadvantages of using CSS preprocessors? Describe what you like and dislike about the CSS preprocessors you have used.
+### What are the advantages/disadvantages of using CSS preprocessors? Describe what you like and dislike about the CSS preprocessors you have used.
 
 ---
 
-#### How would you implement a web design comp that uses non-standard fonts?
+### How would you implement a web design comp that uses non-standard fonts?
 
 ---
 
-#### Explain how a browser determines what elements match a CSS selector.
+### Explain how a browser determines what elements match a CSS selector.
 
 ---
 
-#### Describe pseudo-elements and discuss what they are used for.
+### Describe pseudo-elements and discuss what they are used for.
 
 ---
 
-#### Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
+### Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
 
 ---
 
-#### What does ```#### { box-sizing: border-box; }``` do? What are its advantages?
+### What does ```### { box-sizing: border-box; }``` do? What are its advantages?
 
 ---
 
-#### List as many values for the display property that you can remember.
+### List as many values for the display property that you can remember.
 
 The display CSS property specifies the type of rendering box used for an element. In HTML, default display property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet.
 
@@ -374,7 +374,7 @@ display: unset;
 ```
 ---
 
-#### What's the difference between inline and inline-block?
+### What's the difference between inline and inline-block?
 
 Inline elements:
 
@@ -395,19 +395,19 @@ Inline-block elements:
 
 ---
 
-#### What's the difference between a relative, fixed, absolute and statically positioned element?
+### What's the difference between a relative, fixed, absolute and statically positioned element?
 
 ---
 
-#### The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?
+### The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?
 
 ---
 
-#### What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
+### What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
 
 ---
 
-#### Have you played around with the new CSS Flexbox or Grid specs?
+### Have you played around with the new CSS Flexbox or Grid specs?
 
 **Flexbox**
 
@@ -623,21 +623,21 @@ References:
 
 ---
 
-#### How is responsive design different from adaptive design?
+### How is responsive design different from adaptive design?
 
 ---
 
-#### Have you ever worked with retina graphics? If so, when and what techniques did you use?
+### Have you ever worked with retina graphics? If so, when and what techniques did you use?
 
 ---
 
-#### Is there any reason you'd want to use `translate()` instead of ####absolute positioning####, or vice-versa? And why?
+### Is there any reason you'd want to use `translate()` instead of ###absolute positioning###, or vice-versa? And why?
 
 ---
 
-### JS Questions:
+## JS Questions:
 
-#### Explain event delegation
+### Explain event delegation
 
 Event delegation allows you to avoid adding event listeners to specific nodes; instead, the event listener is added to one parent. That event listener analyzes bubbled events to find a match on child elements.
 
@@ -682,15 +682,15 @@ Start by adding a click event listener to the parent element. When the event lis
 
 ---
 
-#### Explain how `this` works in JavaScript
+### Explain how `this` works in JavaScript
 
 ---
 
-#### Explain how prototypal inheritance works
+### Explain how prototypal inheritance works
 
 ---
 
-#### What is a closure, and how/why would you use one?
+### What is a closure, and how/why would you use one?
 
 Closures are functions that refer to independent (free) variables (variables that are used locally, but defined in an enclosing scope). In other words, these functions 'remember' the environment in which they were created.
 
@@ -825,7 +825,7 @@ References:
 
 ---
 
-#### What's a typical use case for anonymous functions?
+### What's a typical use case for anonymous functions?
 
 Anonymous functions are typically used as callbacks, as in to pass them as arguments to other functions. Take the setTimeout function for example:
 
@@ -893,11 +893,11 @@ Anonymous functions are created at runtime ... Function declarations are differe
 
 ---
 
-#### How do you organize your code? (module pattern, classical inheritance?)
+### How do you organize your code? (module pattern, classical inheritance?)
 
 ---
 
-#### What's the difference between host objects and native objects?
+### What's the difference between host objects and native objects?
 
 Host Objects are objects supplied by a certain environment. They are not always the same because each environment differs and contains host objects that accommodates execution of ECMAScript. For example, the browser environment supplies objects such as window, XMLHttpRequest, document, setTimeout, location. While a node.js environment supplies objects such as NodeList and Global.
 
@@ -910,35 +910,35 @@ References:
 
 ---
 
-#### Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
+### Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 
   ---
 
-#### What's the difference between `.call`, `.bind` and `.apply`?
+### What's the difference between `.call`, `.bind` and `.apply`?
 
 ---
 
-#### When would you use `document.write()`?
+### When would you use `document.write()`?
 
 ---
 
-#### What's the difference between feature detection, feature inference, and using the UA string?
+### What's the difference between feature detection, feature inference, and using the UA string?
 
 ---
 
-#### Explain Ajax in as much detail as possible.
+### Explain Ajax in as much detail as possible.
 
 ---
 
-#### What are the advantages and disadvantages of using Ajax?
+### What are the advantages and disadvantages of using Ajax?
 
 ---
 
-#### Explain how JSONP works (and how it's not really Ajax).
+### Explain how JSONP works (and how it's not really Ajax).
 
 ---
 
-#### Explain 'hoisting'.
+### Explain 'hoisting'.
 
 In javascript there is only function scoping. Variable declarations in a function are moved to the top of the function at run-time.
 
@@ -968,23 +968,23 @@ References:
 
 ---
 
-#### Describe event bubbling.
+### Describe event bubbling.
 
 ---
 
-#### What's the difference between an 'attribute' and a 'property'?.
+### What's the difference between an 'attribute' and a 'property'?.
 
 ---
 
-#### Why is extending built-in JavaScript objects not a good idea?
+### Why is extending built-in JavaScript objects not a good idea?
 
 ---
 
-#### Difference between document load event and document DOMContentLoaded event?
+### Difference between document load event and document DOMContentLoaded event?
 
 ---
 
-#### Why is it called a Ternary expression, what does the word 'Ternary' indicate?
+### Why is it called a Ternary expression, what does the word 'Ternary' indicate?
 
 In mathematics, a ternary operation is an n-ary operation with n = 3. In computer science, a ternary operator is an operator that takes three arguments. The term springs from words like unary, binary, ternary, etc. Ternary, therefore meaning 3-ary.
 
@@ -1016,27 +1016,27 @@ getFoo(fooTrue ? "yes" : "no");
 
 ---
 
-#### What is `"use strict";`? what are the advantages and disadvantages to using it?
+### What is `"use strict";`? what are the advantages and disadvantages to using it?
 
 ---
 
-#### Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+### Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
 
 ---
 
-#### Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
+### Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
 
 ---
 
-#### Explain what a single page app is and how to make one SEO-friendly.
+### Explain what a single page app is and how to make one SEO-friendly.
 
 ---
 
-#### What is the extent of your experience with Promises and/or their polyfills?
+### What is the extent of your experience with Promises and/or their polyfills?
 
 ---
 
-#### What are the pros and cons of using Promises instead of callbacks?
+### What are the pros and cons of using Promises instead of callbacks?
 
 The main advantage a callback has over a promise is locality. With a callback you're asking for work to be performed in one place, and a result to be given very near the same so you can operate on it. In situations where there is no actual data being handed back (think GCD's primitives) a callback is the only appropriate way to handle such an API. Anything more would add needless complexity to a simple interface.
 
@@ -1046,51 +1046,51 @@ It all depends on what you need to do and how you need it done. For code that re
 
 ---
 
-#### What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+### What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
 
 ---
 
-#### What tools and techniques do you use debugging JavaScript code?
+### What tools and techniques do you use debugging JavaScript code?
 
 ---
 
-#### What language constructions do you use for iterating over object properties and array items?
+### What language constructions do you use for iterating over object properties and array items?
 
 ---
 
-#### Explain the difference between synchronous and asynchronous functions.
+### Explain the difference between synchronous and asynchronous functions.
 
 ---
 
-#### Explain the difference between mutable and immutable objects.
+### Explain the difference between mutable and immutable objects.
 
 ---
 
-#### What is an example of an immutable object in JavaScript?
+### What is an example of an immutable object in JavaScript?
 
 ---
 
-#### What are the pros and cons of immutability?
+### What are the pros and cons of immutability?
 
 ---
 
-#### How can you achieve immutability in your own code?
+### How can you achieve immutability in your own code?
 
 ---
 
-#### What is event loop?
+### What is event loop?
 
 ---
 
-#### What is the difference between call stack and task queue?
+### What is the difference between call stack and task queue?
 
 ---
 
-#### Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
+### Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
 
 ---
 
-#### Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
+### Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
 
 ``` javascript
 function foo(){ }();
@@ -1343,15 +1343,15 @@ References:
 
 ---
 
-#### What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?
+### What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?
 
 ---
 
-#### Have you ever used JavaScript templating? If so, what libraries have you used?
+### Have you ever used JavaScript templating? If so, what libraries have you used?
 
 ---
 
-#### What is the difference between `==` and `===`?
+### What is the difference between `==` and `===`?
 
 JavaScript has two sets of equality operators archived under comparison operators:
 
@@ -1377,7 +1377,7 @@ References:
 
 ---
 
-#### Explain the same-origin policy with regards to JavaScript.
+### Explain the same-origin policy with regards to JavaScript.
 
 Same-origin policy restricts scripts from other websites to be executed on your website. It is an important security measure as it isolates known malicious attacks such as Cross Site Scripting.
 
@@ -1406,60 +1406,60 @@ References:
 
 ---
 
-#### Make this work:
+### Make this work:
 ```javascript
 duplicate([1, 2, 3, 4, 5]); // [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
 ```
 
 ---
 
-### Testing Questions:
+## Testing Questions:
 
-#### What are some advantages/disadvantages to testing your code?
-
----
-
-#### What tools would you use to test your code's functionality?
+### What are some advantages/disadvantages to testing your code?
 
 ---
 
-#### What is the difference between a unit test and a functional/integration test?
+### What tools would you use to test your code's functionality?
 
 ---
 
-#### What is the purpose of a code style linting tool?
+### What is the difference between a unit test and a functional/integration test?
 
 ---
 
-### Performance Questions:
-
-#### What tools would you use to find a performance bug in your code?
+### What is the purpose of a code style linting tool?
 
 ---
 
-#### What are some ways you may improve your website's scrolling performance?
+## Performance Questions:
+
+### What tools would you use to find a performance bug in your code?
 
 ---
 
-#### Explain the difference between layout, painting and compositing.
+### What are some ways you may improve your website's scrolling performance?
 
 ---
 
-### Network Questions:
-
-#### Traditionally, why has it been better to serve site assets from multiple domains?
+### Explain the difference between layout, painting and compositing.
 
 ---
 
-#### Do your best to describe the process from the time you type in a website's URL to it finishing loading on your screen.
+## Network Questions:
+
+### Traditionally, why has it been better to serve site assets from multiple domains?
 
 ---
 
-#### What are the differences between Long-Polling, Websockets and Server-Sent Events?
+### Do your best to describe the process from the time you type in a website's URL to it finishing loading on your screen.
 
 ---
 
-#### Explain the following request and response headers:
+### What are the differences between Long-Polling, Websockets and Server-Sent Events?
+
+---
+
+### Explain the following request and response headers:
 
 * Diff. between Expires, Date, Age and If-Modified-...
 * Do Not Track
@@ -1470,13 +1470,13 @@ duplicate([1, 2, 3, 4, 5]); // [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
 
 ---
 
-#### What are HTTP methods? List all HTTP methods that you know, and explain them.
+### What are HTTP methods? List all HTTP methods that you know, and explain them.
 
 ---
 
-### Coding Questions:
+## Coding Questions:
 
-#### Question: What is the value of `foo`?
+### Question: What is the value of `foo`?
 
 ```javascript
 var foo = 10 + '20';
@@ -1484,7 +1484,7 @@ var foo = 10 + '20';
 
 ---
 
-#### Question: How would you make this work?
+### Question: How would you make this work?
 
 ```javascript
 add(2, 5); // 7
@@ -1493,7 +1493,7 @@ add(2)(5); // 7
 
 ---
 
-#### Question: What value is returned from the following statement?
+### Question: What value is returned from the following statement?
 
 ```javascript
 "i'm a lasagna hog".split("").reverse().join("");
@@ -1501,7 +1501,7 @@ add(2)(5); // 7
 
 ---
 
-#### Question: What is the value of `window.foo`?
+### Question: What is the value of `window.foo`?
 
 ```javascript
 ( window.foo || ( window.foo = "bar" ) );
@@ -1509,7 +1509,7 @@ add(2)(5); // 7
 
 ---
 
-#### Question: What is the outcome of the two alerts below?
+### Question: What is the outcome of the two alerts below?
 
 ```javascript
 var foo = "Hello";
@@ -1522,7 +1522,7 @@ alert(foo + bar);
 
 ---
 
-#### Question: What is the value of `foo.length`?
+### Question: What is the value of `foo.length`?
 
 ```javascript
 var foo = [];
@@ -1532,7 +1532,7 @@ foo.push(2);
 
 ---
 
-#### Question: What is the value of `foo.x`?
+### Question: What is the value of `foo.x`?
 
 ```javascript
 var foo = {n: 1};
@@ -1542,7 +1542,7 @@ foo.x = foo = {n: 2};
 
 ---
 
-#### Question: What does the following code print?
+### Question: What does the following code print?
 
 ```javascript
 console.log('one');
@@ -1554,22 +1554,22 @@ console.log('three');
 
 ---
 
-### Fun Questions:
+## Fun Questions:
 
-#### What's a cool project that you've recently worked on?
-
----
-
-#### What are some things you like about the developer tools you use?
+### What's a cool project that you've recently worked on?
 
 ---
 
-#### Who inspires you in the front-end community?
+### What are some things you like about the developer tools you use?
 
 ---
 
-#### Do you have any pet projects? What kind?
+### Who inspires you in the front-end community?
 
 ---
 
-#### What's your favorite feature of Internet Explorer?
+### Do you have any pet projects? What kind?
+
+---
+
+### What's your favorite feature of Internet Explorer?
