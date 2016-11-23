@@ -14,28 +14,28 @@
 ## General Questions:
 
 
-## What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
+### What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
 
 ---
 
-## Talk about your preferred development environment.
+### Talk about your preferred development environment.
 
 ---
 
-## Which version control systems are you familiar with?
+### Which version control systems are you familiar with?
 
 ---
 
-## Can you describe your workflow when you create a web page?
+### Can you describe your workflow when you create a web page?
 
 
 ---
 
-## If you have 5 different stylesheets, how would you best integrate them into the site?
+### If you have 5 different stylesheets, how would you best integrate them into the site?
 
 ---
 
-## Can you describe the difference between progressive enhancement and graceful degradation?
+### Can you describe the difference between progressive enhancement and graceful degradation?
 
 Graceful degradation and progressive enhancement are two often confused concepts. Many people (developers, designers, other web professionals and not so savvy people) either fail to understand or decline to acknowledge the difference between the two.
 
@@ -376,18 +376,18 @@ display: unset;
 
 ### What's the difference between inline and inline-block?
 
-Inline elements:
+**Inline elements**
 
 1. respect left & right margins and padding, but **not** top and bottom
 2. **cannot** have a width and height set
 3. allow other elements to sit to their left and right.
 
-Block elements:
+**Block elements**
 
 1. respect all of those
 2. force a line break after the block element
 
-Inline-block elements:
+**Inline-block elements**
 
 1. allow other elements to sit to their left and right
 2. respect top and bottom margins and padding
