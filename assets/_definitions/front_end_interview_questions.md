@@ -337,7 +337,7 @@ display: table-row;
 display: table-row-group;
 display: table-caption;
 
-// css 3 values
+// css3 values
 display: inline-list-item;
 display: flex;
 display: inline-flex;
@@ -361,6 +361,23 @@ display: unset;
 ---
 
 #### What's the difference between inline and inline-block?
+
+Inline elements:
+
+1. respect left & right margins and padding, but **not** top & bottom
+2. **cannot** have a width and height set
+3. allow other elements to sit to their left and right.
+
+Block elements:
+
+1. respect all of those
+2. force a line break after the block element
+
+Inline-block elements:
+
+1. allow other elements to sit to their left and right
+2. respect top & bottom margins and padding
+3. respect height and width
 
 ---
 
