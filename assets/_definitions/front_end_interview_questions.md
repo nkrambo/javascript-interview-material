@@ -1,5 +1,5 @@
 
-## Table of Contents
+# Table of Contents
 
   1. [General Questions](#general-questions)
   1. [HTML Questions](#html-questions)
@@ -11,41 +11,41 @@
   1. [Coding Questions](#coding-questions)
   1. [Fun Questions](#fun-questions)
 
-### General Questions:
+## General Questions:
 
 
-#### What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
-
----
-
-#### Talk about your preferred development environment.
+### What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
 
 ---
 
-#### Which version control systems are you familiar with?
+### Talk about your preferred development environment.
 
 ---
 
-#### Can you describe your workflow when you create a web page?
+### Which version control systems are you familiar with?
+
+---
+
+### Can you describe your workflow when you create a web page?
 
 
 ---
 
-#### If you have 5 different stylesheets, how would you best integrate them into the site?
+### If you have 5 different stylesheets, how would you best integrate them into the site?
 
 ---
 
-####Can you describe the difference between progressive enhancement and graceful degradation?
+### Can you describe the difference between progressive enhancement and graceful degradation?
 
 Graceful degradation and progressive enhancement are two often confused concepts. Many people (developers, designers, other web professionals and not so savvy people) either fail to understand or decline to acknowledge the difference between the two.
 
 Both concepts are useful. Both are good practice. The subtle differences that people often ignore between these two concepts are also the reasons why progressive enhancement is a superior concept and a superior practice.
 
-**_Graceful Degradation_**
+**Graceful Degradation**
 
 Graceful degradation states that we should implement our new tricky features and then provide a graceful degradation for less sophisticated browsers/clients. The concept comes from computer science originally and states that a system or network should be able to remain functional even when a large portion of it is destroyed.
 
-**_Progressive Enhancement_**
+**Progressive Enhancement**
 
 Progressive enhancement is a concept that essentially works as the reverse of graceful degradation. Rather than modifying our system to degrade for older browsers, we build it initially for those older browsers and then progressively enhance the experience to make use of newer technology.
 
