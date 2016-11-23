@@ -35,7 +35,7 @@
 
 ---
 
-> **Can you describe the difference between progressive enhancement and graceful degradation?**
+**_Can you describe the difference between progressive enhancement and graceful degradation?_**
 
 Graceful degradation and progressive enhancement are two often confused concepts. Many people (developers, designers, other web professionals and not so savvy people) either fail to understand or decline to acknowledge the difference between the two.
 
