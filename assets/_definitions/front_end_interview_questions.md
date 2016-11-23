@@ -230,7 +230,7 @@ This is the CSS that you need to apply:
   background: url("assets/logo.png");
 }
 
-.replace-clip-path span{
+.replace-clip-path span {
   clip-path: polygon(0px 0px, 0px 0px, 0px 0px, 0px 0px);
 }
 ```
@@ -246,7 +246,7 @@ This technique uses a pseudo element to push the text aside.  The text then over
   overflow: hidden;
 }
 
-.replace-pseudo:before{
+.replace-pseudo:before {
   content: url("assets/logo.png");
 }
 ```
@@ -311,6 +311,46 @@ This technique uses a pseudo element to push the text aside.  The text then over
 
 #### List as many values for the display property that you can remember.
 
+The display CSS property specifies the type of rendering box used for an element. In HTML, default display property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet.
+
+In addition to the many different display box types, the value none lets you turn off the display of an element; when you use none, all descendant elements also have their display turned off. The document is rendered as though the element doesn't exist in the document tree.
+
+```html
+display: none;
+
+display: inline;
+display: block;
+display: inline-block;
+display: contents;
+display: list-item;
+display: inline-list-item;
+display: table;
+display: inline-table;
+display: table-cell;
+display: table-column;
+display: table-column-group;
+display: table-footer-group;
+display: table-header-group;
+display: table-row;
+display: table-row-group;
+display: table-caption;
+display: flex;
+display: inline-flex;
+display: grid;
+display: inline-grid;
+display: subgrid;
+display: ruby;
+display: ruby-base;
+display: ruby-text;
+display: ruby-base-container;
+display: ruby-text-container;
+display: run-in;
+
+/* Global values */
+display: inherit;
+display: initial;
+display: unset;
+```
 ---
 
 #### What's the difference between inline and inline-block?
