@@ -674,7 +674,7 @@ Getting started with Grid is easy. You just define a container element as a grid
 
 An important thing to understand about Grid is that it's not ready to be used in production yet. It's currently a W3C Working Draft and isn't supported correctly in any browsers yet by default. Internet Explorer 10 and 11 support it, but it's an old implementation with an outdated syntax. In order to experiment with Grid today, your best bet is to use Chrome, Opera or Firefox with special flags enabled. In Chrome, navigate to chrome://flags and enable "experimental web platform features". That method also works in Opera (opera://flags). In Firefox, enable the layout.css.grid.enabled flag.
 
-References:
+**References**
 * [CSS Tricks - Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * [CSS Tricks - Grid Layout](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
@@ -877,7 +877,7 @@ console.log(counter.value()); // logs 1
 // run your modules in ES5 strict mode. Strict mode will protect you from some of
 // the more dangerous parts in JavaScript.
 
-References:
+**References**
 * [Mozilla - Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 
 ---
@@ -962,7 +962,7 @@ Native Objects or Built-in Objects are standard built-in objects provided by Jav
 
 User objects are anything the user defines. When you create a new object that is not directly a native object, you've made a user object. So if you create a new string ("Hello world") you created a native object, but if you create an instance of an object you've defined (new Cat()) then it’s a user object.
 
-References:
+**References**
 * [Mozilla Docs - Global Objects] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
 
 ---
@@ -1087,7 +1087,7 @@ function() {
 ```
 This is one of the reasons that we use 'use strict'. It will throw an error if your code globally hoists a variable.
 
-References:
+**References**
 * https://www.youtube.com/watch?v=sjyJBL5fkp8
 
 ---
@@ -1150,15 +1150,53 @@ const elementClass = element.className;
 
 ### Why is extending built-in JavaScript objects not a good idea?
 
+**How to Extend a Built-In Object**
+
+Extending built-in JavaScript objects is easily done through attaching functionality to an object's `prototype`. For example:
+
+```javascript
+Array.prototype.first = function() {
+  return this[0];
+}
+
+const temp = [1, 2, 3];
+temp.first(); // returns 1
+```
+
+At first glance, this might seem like a great feature, but it is not a recommended practice.
+
+**Why Extending is a Bad Practice**
+
+It depends on who you ask. This is one of those "JS standards" - unlike most of the questions that have a clear answer, this one has a bit more opinion.
+
+The main argument against doing this is: if, in future, a browser decides to implement its own version of your method, your method might get overridden (silently) and the browser’s implementation (which is probably different from yours) would take over. So not extending in the first place is future proofing your code.
+
+On the flip side, if you decide to overwrite the browsers definition, any future developer working on your code won’t know about the change. They'll have a harder time getting up to speed.
+
+Generally it’s safer to move your particular changes into a library (as with underscore.js). That way your particular methods are clearly marked and there’s no chance of conflict.
+
+**But...**
+
+It might be a good idea to add an extension for functionality that became available in later versions, but isn’t guaranteed to be available in your particular browser. You can read more about this kind of polyfill on [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter#Polyfill).
+
+**References**
+* [Perfection Kills](http://perfectionkills.com/extending-native-builtins/)
+* [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter#Polyfill)
+* [More on what extending objects is](https://www.kirupa.com/html5/extending_built_in_objects_javascript.htm)
+
+---
+
+### Explain the critical rendering path.
+
 ---
 
 ### Difference between document load event and document DOMContentLoaded event?
 
-Both load and DOMContentLoaded are native events recognized by Javascript that allow the developer to throw a hook into the loading of a web page to attach callbacks or other logic. The difference between the two is related to at what stage of page load they are called. It is an incredibly popular mistake to use load where DOMContentLoaded would be much more appropriate, so be cautious.
+Both `load` and `DOMContentLoaded` are native events recognized by Javascript that allow the developer to throw a hook into the loading of a web page to attach callbacks or other logic. The difference between the two is related to at what stage of page load they are called. It is an incredibly popular mistake to use `load` where `DOMContentLoaded` would be much more appropriate, so be cautious.
 
 **DOMContentLoaded**
 
-The DOMContentLoaded event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
+The `DOMContentLoaded` event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
 
 That is, it marks the point when both the DOM and CSSOM is ready and there are no stylesheets that are blocking JavaScript execution - meaning we can now (potentially) construct the render tree.
 
@@ -1166,7 +1204,7 @@ This event is useful in optimizing the critical rendering path by measuring the 
 
 Many JavaScript frameworks wait for this event before they start executing their own logic.
 
-Adding hooks to the DOMContentLoaded event can improve user experience by showing messages or content dynamically and much sooner than it would take for the entire page to load.
+Adding hooks to the `DOMContentLoaded` event can improve user experience by showing messages or content dynamically and much sooner than it would take for the entire page to load.
 
 ```javascript
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -1176,7 +1214,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 **load**
 
-The load event as distinct from DOMContentLoaded only fires once the DOM and all associated resources (like CSS files, JS files, images, external resources, etc.) have all finished loading. This would be the measure of your apps page speed when using Google Insights for example.
+The `load` event, as distinct from `DOMContentLoaded`, only fires once the DOM and all associated resources (like CSS files, JS files, images, external resources, etc.) have all finished loading. This would be the measure of your apps page speed when using Google Insights for example.
 
 ```javascript
 window.addEventListener("load", function(event) {
@@ -1540,7 +1578,7 @@ And to finish it all off with a return statement and everything:
 } ());
 ```
 
-References:
+**References**
 * [immediately-invoked-function-expression](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
 
 ---
@@ -1572,8 +1610,7 @@ For example, equality == or inequality != signs compares 2 values without type c
 '1' === true  // false
 ```
 
-References:
-
+**References**
  * [Does it matter which equals operator (== vs ===) I use in JavaScript comparisons?](http://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons)
  * [Comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
 
@@ -1602,7 +1639,7 @@ There is also a work around for subdomains. The last example above http://news.c
 document.domain = "company.com";
 ```
 
-References:
+**References**
 * [MDN - Same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
 [Same-origin Policy in layman terms](http://stackoverflow.com/questions/11474336/same-origin-policy-in-layman-terms)
 
