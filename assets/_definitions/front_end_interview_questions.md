@@ -28,7 +28,6 @@
 
 ### Can you describe your workflow when you create a web page?
 
-
 ---
 
 ### If you have 5 different stylesheets, how would you best integrate them into the site?
@@ -315,11 +314,7 @@ This technique uses a pseudo element to push the text aside.  The text then over
 
 ---
 
-### Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
-
----
-
-### What does ```### { box-sizing: border-box; }``` do? What are its advantages?
+### Explain your understanding of the box model. What does ```### { box-sizing: border-box; }``` do? What are its advantages?
 
 **Strange Default Behaviour For The Box Model**
 
@@ -445,18 +440,19 @@ This is the default for every single page element. Different elements don't have
 
 **Relative**
 
-This type of positioning is probably the most confusing and misused. What it really means is "relative to itself". If you set position: relative; on an element but no other positioning attributes (top, left, bottom or right), it will no effect on it's positioning at all, it will be exactly as it would be if you left it as position: static; But if you DO give it some other positioning attribute, say, top: 10px;, it will shift it's position 10 pixels DOWN from where it would NORMALLY be. I'm sure you can imagine, the ability to shift an element around based on it's regular position is pretty useful. I find myself using this to line up form elements many times that have a tendency to not want to line up how I want them to.
+This type of positioning is probably the most confusing and misused. What it really means is "relative to itself". If you set position: relative; on an element but no other positioning attributes (top, left, bottom or right), it will no effect on it's positioning at all, it will be exactly as it would be if you left it as position: static; But if you DO give it some other positioning attribute, say, top: 10px;, it will shift it's position 10 pixels DOWN from where it would NORMALLY be. The ability to shift an element around based on it's regular position is pretty useful.
 
-There are two other things that happen when you set position: relative; on an element that you should be aware of. One is that it introduces the ability to use z-index on that element, which doesn't really work with statically positioned elements. Even if you don't set a z-index value, this element will now appear on top of any other statically positioned element. You can't fight it by setting a higher z-index value on a statically positioned element. The other thing that happens is it limits the scope of absolutely positioned child elements. Any element that is a child of the relatively positioned element can be absolutely positioned within that block. This brings up some powerful opportunities which I talk about here.
+There are two other things that happen when you set position: relative; on an element that you should be aware of. One is that it introduces the ability to use z-index on that element, which doesn't really work with statically positioned elements. Even if you don't set a z-index value, this element will now appear on top of any other statically positioned element. You can't fight it by setting a higher z-index value on a statically positioned element. The other thing that happens is it limits the scope of absolutely positioned child elements. Any element that is a child of the relatively positioned element can be absolutely positioned within that block.
 
 **Absolute**
 
 This is a very powerful type of positioning that allows you to literally place any page element exactly where you want it. You use the positioning attributes top, left bottom and right to set the location. Remember that these values will be relative to the next parent element with relative (or absolute) positioning. If there is no such parent, it will default all the way back up to the <html> element itself meaning it will be placed relatively to the page itself.
+
 The trade-off, and most important thing to remember, about absolute positioning is that these elements are removed from the flow of elements on the page. An element with this type of positioning is not affected by other elements and it doesn't affect other elements. This is a serious thing to consider every time you use absolute positioning. It's overuse or improper use can limit the flexibility of your site.
 
 **Fixed**
 
-This type of positioning is fairly rare but certainly has its uses. A fixed position element is positioned relative to the viewport, or the browser window itself. The viewport doesn't change when the window is scrolled, so a fixed positioned element will stay right where it is when the page is scrolled, creating an effect a bit like the old school "frames" days. Take a look at this site (update: dead link, sorry), where the left sidebar is fixed. This site is a perfect example for since it exhibits both good and bad traits of fixed positioning. The good is that it keeps the navigation present at all times on the page and it creates and interested effect on the page. The bad is that there are some usability concerns. On my smallish laptop, the content in the sidebar is cut off and there is no way from me to scroll down to see the rest of that content. Also if I scroll all the way down to the footer, it overlaps the footer content not allowing me to see all of that. Cool effect, can be useful, but needs to be thoroughly tested.
+This type of positioning is fairly rare but certainly has its uses. A fixed position element is positioned relative to the viewport, or the browser window itself. The viewport doesn't change when the window is scrolled, so a fixed positioned element will stay right where it is when the page is scrolled, creating an effect a bit like the old school "frames" days. It's often used in fixed sidebars and footers that keeps desired elements present at all times to the user.
 
 ---
 
@@ -980,6 +976,23 @@ References:
 ---
 
 ### When would you use `document.write()`?
+
+`document.write()` writes to the document. It takes the content you want to write as a parameter. An invocation could look like this:
+
+```javascript
+document.write("<h1>JS is awesome!</h1>");
+```
+
+**Possible situations to use `document.write()`**
+
+It seems that the only "approved" time to use `document.write()` is for third party code to be included (such as ads or Google Analytics). Since `document.write()` is always available (mostly) it is a good choice for third party vendors to use it to add their scripts. They don't know what environment you're using, if jQuery is or isn't available, or what your onload events are. And with `document.write()` they don't have to.
+
+It can also be used as a fallback to include a local script file if a CDN inclusion or some other type of inclusion fails. For example, you see this in practice with the HTML5 Boilerplate. It checks for a global `jQuery` object, if it's
+not there then jQuery has not been successfully included so it writes a local script inclusion and grabs a copy from the 'vendor' directory.
+
+```html
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
+```
 
 ---
 
