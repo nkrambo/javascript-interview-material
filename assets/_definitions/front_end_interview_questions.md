@@ -983,7 +983,15 @@ References:
 document.write("<h1>JS is awesome!</h1>");
 ```
 
-**Possible situations to use `document.write()`**
+**Problems With `document.write()`**
+
+document.write() shouldn't be used after the page has loaded to change the content as it will overwrite the entire page (probably not what you wanted to happen...).
+
+document.write() doesn't work for XHTML pages. I've only been concerned with HTML so far, so I'm not too fussed about this one. But it might be more relevant in your case.
+
+Some people think document.write() is a good solution for loading more files (JS or CSS) into the dom after the initial load. Turns out this is not the case, as this is slower than creating a new element (script or a css link) and inserting it into the page.
+
+**Possible Situations to Use `document.write()`**
 
 It seems that the only "approved" time to use `document.write()` is for third party code to be included (such as ads or Google Analytics). Since `document.write()` is always available (mostly) it is a good choice for third party vendors to use it to add their scripts. They don't know what environment you're using, if jQuery is or isn't available, or what your onload events are. And with `document.write()` they don't have to.
 
@@ -1010,6 +1018,48 @@ not there then jQuery has not been successfully included so it writes a local sc
 
 ### Explain how JSONP works (and how it's not really Ajax).
 
+JSONP (JSON with Padding or JSON-P) is a JSON extension used by web developers to overcome the cross-domain restrictions imposed by browsers' same-origin policy that limits access to resources retrieved from origins other than the one the page was served by. In layman's terms, one website cannot just simply access the data from another website.
+
+It was developed because handling a browsers' same origin policy can be difficult, so using JSONP abstracts the difficulties and makes it easier.
+
+Say you're on domain example.com, and you want to make a request to domain example.net. To do so, you need to cross domain boundaries, a no-no in most of browserland.
+
+The one item that bypasses this limitation is <script> tags. When you use a script tag, the domain limitation is ignored, but under normal circumstances, you can't really do anything with the results, the script just gets evaluated.
+
+Enter JSONP. When you make your request to a server that is JSONP enabled, you pass a special parameter that tells the server a little bit about your page. That way, the server is able to nicely wrap up its response in a way that your page can handle.
+
+For example, say the server expects a parameter called "callback" to enable its JSONP capabilities. Then your request would look like:
+
+```html
+http://www.example.net/sample.aspx?callback=mycallback
+```
+
+Without JSONP, this might return some basic JavaScript object, like so:
+
+```javascript
+{ foo: 'bar' }
+```
+
+However, with JSONP, when the server receives the "callback" parameter, it wraps up the result a little differently, returning something like this:
+
+```javascript
+mycallback({ foo: 'bar' });
+```
+
+As you can see, it will now invoke the method you specified. So, in your page, you define the callback function:
+
+```javascript
+mycallback = function(data){
+  alert(data.foo);
+};
+```
+
+And now, when the script is loaded, it'll be evaluated, and your function will be executed. Voila, cross-domain requests!
+
+It's also worth noting the one major issue with JSONP: you lose a lot of control of the request. For example, there is no "nice" way to get proper failure codes back. As a result, you end up using timers to monitor the request, etc, which is always a bit suspect. The proposition for JSONRequest is a great solution to allowing cross domain scripting, maintaining security, and allowing proper control of the request.
+
+These days (2016), CORS is the recommended approach vs. JSONRequest. JSONP is still useful for older browser support, but given the security implications, unless you have no choice CORS is the better choice.
+
 ---
 
 ### Explain 'hoisting'.
@@ -1021,7 +1071,7 @@ function() {
   // some code
   // some code
 
-  var myVariable = 0; // this will get hoisted to the top of the function.
+  let myVariable = 0; // this will get hoisted to the top of the function.
 }
 ```
 
