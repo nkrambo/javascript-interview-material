@@ -514,7 +514,13 @@ Styles may also be set in rule sets in a <style> tag. The <style> tag can be pla
 
 And if you want to completely separate style from markup, then you could always link to an external style sheet from the SVG file, using the `<?xml-stylesheet>` tag, as shown below:
 
-HERE
+```html
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width=".." height=".." viewBox="..">
+  <!-- SVG content -->
+</svg>
+```
 
 **Selectors**
 
@@ -549,14 +555,14 @@ Suppose we have an HTML `<div>` and an SVG `<rect>` element:
 
 <img src="images/svg_1.png" />
 
-<!-- ```html
+```html
 <!DOCTYPE html>
 …
 <div style="width: 100px; height: 100px; background-color: orange"> </div>
 <svg style="width: 150px; height: 150px; background-color: #eee">
   <rect width="100" height="100" x="25" y="25" fill="orange" />
 </svg>
-``` -->
+```
 
 If were were to rotate both of them by 45 degrees, without changing the default transform origin, we would get the following result (the red circle indicates the position of the transform origin):
 
@@ -568,14 +574,14 @@ In SVG, the transform origin can be set using either a percentage value or an ab
 
 If we were to set the transform origin of the `<div>` and `<rect>` from the previous example to the center using percentage values, we would do this:
 
-<!-- ```html
+```html
 <!DOCTYPE html>
 <style>
   div, rect {
   transform-origin: 50% 50%;
 }
 </style>
-``` -->
+```
 
 The resulting transformation would look like so:
 
@@ -597,7 +603,19 @@ An SVG embedded with an `<img>`, `<object>` or `<iframe>` will respond to the vi
 
 The following example includes a set of media queries inside an SVG that is then referenced using an `<img>` tag:
 
-HERE
+```html
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 194 186">
+  <style>
+    @media all and (max-width: 50em) {
+      /* select SVG elements and style them */
+    }
+    @media all and (max-width: 30em) {
+      /* styles  */
+    }
+  </style>
+  <!-- SVG elements here -->
+</svg>
+```
 
 When the SVG is referenced, it will get the styles specified in the media queries above when the `<img>` has a max-width of 50em or 30em, respectively.
 
