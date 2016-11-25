@@ -518,7 +518,6 @@ And if you want to completely separate style from markup, then you could always 
 <?xml version="1.0" standalone="no"?>
 <?xml-stylesheet type="text/css" href="style.css"?>
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width=".." height=".." viewBox="..">
-  <!-- SVG content -->
 </svg>
 ```
 
@@ -613,7 +612,6 @@ The following example includes a set of media queries inside an SVG that is then
       /* styles  */
     }
   </style>
-  <!-- SVG elements here -->
 </svg>
 ```
 
