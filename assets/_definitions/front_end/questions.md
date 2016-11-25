@@ -491,7 +491,41 @@ In SVG 2, this list will include x, y, width, height, cx, cy and a few other pre
 
 Another way to set the styles of an SVG element is to use CSS properties. Just like in HTML, styles may be set on an element using inline style attributes:
 
+**Making SVGs Responsive**
 
+After embedding an SVG, you need to make sure it is responsive.
+
+Depending on the embedding technique you choose, you might need to apply certain hacks and fixes to get your SVG to be cross-browser responsive. The reason for this is that the way browsers determine the dimensions of an SVG differs for some embedding techniques, and SVG implementations among browsers also differ. Therefore, the way SVG is handled is different and requires some style tweaking to make it behave consistently across all browsers.
+
+**Using CSS Media Queries**
+
+SVG accepts and responds to CSS media queries as well. You can use media queries to change the styles of an SVG at different viewport sizes.
+
+However, one important note here is that the viewport that the SVG responds to is the viewport of the SVG itself, not the page's viewport, unless you are embedding the SVG inline in the document (using <svg>).
+
+An SVG embedded with an <img>, <object> or <iframe> will respond to the viewport established by these elements. That is, the dimensions of these elements will form the viewport inside of which the SVG is to be drawn and, hence, will form the viewport to which the CSS media-query conditions will be applied. This is very similar in concept to element queries.
+
+The following example includes a set of media queries inside an SVG that is then referenced using an <img> tag:
+
+```html
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 194 186">
+  <style>
+    @media all and (max-width: 50em) {
+      /* select SVG elements and style them */
+    }
+    @media all and (max-width: 30em) {
+      /* styles  */
+    }
+  </style>
+  <!-- SVG elements here -->
+</svg>
+```
+
+When the SVG is referenced, it will get the styles specified in the media queries above when the <img> has a max-width of 50em or 30em, respectively.
+
+```html
+<img src="my-logo.svg" alt="Page Logo." />
+```
 
 ---
 
