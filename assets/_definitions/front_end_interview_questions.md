@@ -152,6 +152,8 @@ This approach encourages designers and developers to produce a product that func
 
 ## CSS Questions:
 
+http://cssreference.io/
+
 ### What is the difference between classes and IDs in CSS?
 
 ---
@@ -168,7 +170,42 @@ This approach encourages designers and developers to produce a product that func
 
 ---
 
-### Describe BFC(Block Formatting Context) and how it works.
+### Describe BFC (Block Formatting Context) and how it works.
+
+MDN definition - A block formatting context is a part of a visual CSS rendering of a Web page. It is the region in which the layout of block boxes occurs and in which floats interact with each other.
+
+In other words, a block formatting context is an area where block boxes and floats go. It's a containing element that has flow rules (so the block boxes are, well, block-y) and hard boundaries (so the floats don't leave the container). Ultimately the page is a block formatting context, but you can have a bunch in a page. Actually, you can have BFCs in BFCs and that's what most of HTML and CSS is (divs within divs).
+
+BFCs are essentially normal CSS but they have some handy features that are worth understanding at a deeper level.
+
+Block formatting contexts:
+* stops margins from collapsing
+* restrains floats
+* contains floats
+
+**Stops margins from collapsing**
+
+<div style="background-color: #FF7400; color: #FFFFFF;">
+  <div style="margin: 20px; background-color: #F55585;">
+    This div has a 20px margin around it.
+  </div>
+  <div style="margin: 20px; background-color: #00CFCF;">
+    So does this one.
+  </div>
+</div>
+
+Since both of those divs have 20px of margin around them you'd expect to see 20px of margin at the top and bottom as well. But actually there's no margin there, that’s because CSS automatically collapses margins.
+
+Now let's check it in a block formatting context:
+
+Now, all that extra margin at the top and bottom. That's because of the block formatting context.
+
+Now, in case you don't feel like looking at the source, I made the containing div a BFC by giving it overflow: hidden;. Simple :)
+
+**References**
+* [MDN](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context)
+* [VG Tech](http://tech.vg.no/2013/09/26/css-block-formatting-context/)
+* [Max Design](http://maxdesign.com.au/jobs/sample-block-formatting-context/index.htm)
 
 ---
 
@@ -189,7 +226,7 @@ In general, these aren’t likely to be good for SEO in the near future and if y
 
 Along with this, the use of image replacement has slowly evaporated too: in fact, HTML5 Boilerplate dropped their image replacement support altogether two years ago, citing that there weren't "enough use cases within modern web development."
 
-Even though we no longer use img tags for text, it's not as if we stopped representing text with images: instead of using JPEGs for our logos, we’ve moved onto using SVGs. Instead of using GIFs for our button icons, we use icon fonts.
+Even though we no longer use img tags for text, it's not as if we stopped representing text with images: instead of using JPEGs for our logos, we've moved onto using SVGs. Instead of using GIFs for our button icons, we use icon fonts.
 
 All in all, it looks like there is still a place, albeit a minor one, for image replacement techniques in the modern web landscape: specifically, SVGs standing in place for text can still benefit from the use of image replacement.
 
@@ -878,7 +915,7 @@ console.log(counter.value()); // logs 1
 // the more dangerous parts in JavaScript.
 
 **References**
-* [Mozilla - Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+* [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 
 ---
 
@@ -963,7 +1000,7 @@ Native Objects or Built-in Objects are standard built-in objects provided by Jav
 User objects are anything the user defines. When you create a new object that is not directly a native object, you've made a user object. So if you create a new string ("Hello world") you created a native object, but if you create an instance of an object you've defined (new Cat()) then it’s a user object.
 
 **References**
-* [Mozilla Docs - Global Objects] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
+* [MDN] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
 
 ---
 
@@ -1177,11 +1214,11 @@ Generally it’s safer to move your particular changes into a library (as with u
 
 **But...**
 
-It might be a good idea to add an extension for functionality that became available in later versions, but isn’t guaranteed to be available in your particular browser. You can read more about this kind of polyfill on [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter#Polyfill).
+It might be a good idea to add an extension for functionality that became available in later versions, but isn’t guaranteed to be available in your particular browser. You can read more about this kind of polyfill on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter#Polyfill).
 
 **References**
 * [Perfection Kills](http://perfectionkills.com/extending-native-builtins/)
-* [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter#Polyfill)
+* [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter#Polyfill)
 * [More on what extending objects is](https://www.kirupa.com/html5/extending_built_in_objects_javascript.htm)
 
 ---
