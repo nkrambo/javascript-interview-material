@@ -181,7 +181,7 @@ normalize.css is usually preferred for the following reasons.
 
 ---
 
-### Describe Floats and how they work.
+### Describe floats and how they work.
 
 The float rule not only affects your target element, but also it's surrounding elements; such as it's parent, siblings, and children.
 
@@ -204,7 +204,7 @@ A side effect of floating elements within a non-floated container is called a 'c
 
 This is easily fixed in a few different way.
 
-1. Use a utility `.clearfix` class.
+**Easy clearfix**
 
 This is the most common and recommended approach. This solution is usually implemented within CSS frameworks for easy layout or at the least as a utility class.
 
@@ -224,9 +224,9 @@ This is the most common and recommended approach. This solution is usually imple
 }
 ```
 
-2. Append a "clearing" element inside the parent element.
+**Clearing div**
 
-This is not semantic markup and really adds unnecessary markup. This was quite common practice years ago.
+Append a "clearing" element inside the parent element This is not semantic markup and really adds unnecessary markup. This was quite common practice years ago.
 
 ```html
 <div>
@@ -236,11 +236,15 @@ This is not semantic markup and really adds unnecessary markup. This was quite c
 </div>​
 ```
 
-3. Float the parent. This is obviously not always desirable or possible.
+**Float the parent**
 
-4. Give the parent an explicit height. Again, not always desirable or possible.
+This is obviously not always desirable or possible.
 
-5. Setting the overflow CSS property on a parent element to auto or hidden, the parent will expand to contain the floats, effectively clearing it for succeeding elements.
+**Set height on parent**
+
+Give the parent an explicit height. Again, not always desirable or possible.
+
+Setting the overflow CSS property on a parent element to auto or hidden, the parent will expand to contain the floats, effectively clearing it for succeeding elements.
 
 ---
 
@@ -497,17 +501,6 @@ Another way to set the styles of an SVG element is to use CSS properties. Just l
 
 Styles may also be set in rule sets in a <style> tag. The <style> tag can be placed in the <svg> tag:
 
-```html
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300px" height="300px" viewBox="0 0 300 300">
-  <style type="text/css">
-  <![CDATA[
-  selector {/* styles */}
-  ]]>
-  </style>
-  <g id=".."> … </g>
-</svg>
-```
-
 And if you want to completely separate style from markup, then you could always link to an external style sheet from the SVG file, using the <?xml-stylesheet> tag, as shown below:
 
 ```html
@@ -593,7 +586,7 @@ Depending on the embedding technique you choose, you might need to apply certain
 
 SVG accepts and responds to CSS media queries as well. You can use media queries to change the styles of an SVG at different viewport sizes.
 
-However, one important note here is that the viewport that the SVG responds to is the viewport of the SVG itself, not the page’s viewport, unless you are embedding the SVG inline in the document (using <svg>).
+However, one important note here is that the viewport that the SVG responds to is the viewport of the SVG itself, not the page's viewport, unless you are embedding the SVG inline in the document (using <svg>).
 
 An SVG embedded with an <img>, <object> or <iframe> will respond to the viewport established by these elements. That is, the dimensions of these elements will form the viewport inside of which the SVG is to be drawn and, hence, will form the viewport to which the CSS media-query conditions will be applied. This is very similar in concept to element queries.
 
