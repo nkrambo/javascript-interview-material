@@ -185,22 +185,41 @@ Block formatting contexts:
 
 **Stops margins from collapsing**
 
-<div style="background-color: #FF7400; color: #FFFFFF;">
-  <div style="margin: 20px; background-color: #F55585;">
-    This div has a 20px margin around it.
-  </div>
-  <div style="margin: 20px; background-color: #00CFCF;">
-    So does this one.
-  </div>
-</div>
+<img src="images/bfc_1.png" />
 
-Since both of those divs have 20px of margin around them you'd expect to see 20px of margin at the top and bottom as well. But actually there's no margin there, that’s because CSS automatically collapses margins.
+Since both of those divs have 20px of margin around them you'd expect to see 20px of margin at the top and bottom as well. But actually there's no margin there, that's because CSS automatically collapses margins.
 
 Now let's check it in a block formatting context:
 
-Now, all that extra margin at the top and bottom. That's because of the block formatting context.
+<img src="images/bfc_2.png" />
 
-Now, in case you don't feel like looking at the source, I made the containing div a BFC by giving it overflow: hidden;. Simple :)
+Now, all that extra margin at the top and bottom. That's because of the block formatting context, by setting `overflow: hidden;`.
+
+**Restrains Floats**
+
+Here's what it looks like normally:
+
+<img src="images/bfc_3.png" />
+
+That's probably not what you want your two column layout to look like.
+
+Here it is with block formatting context properly enabled. As you an see, this ability makes BFCs really handy for doing column layouts. Again, by setting `overflow: hidden;`.
+
+<img src="images/bfc_4.png" />
+
+**Contains Floats**
+
+Here's what it looks like normally:
+
+<img src="images/bfc_5.png" />
+
+This time we're trying to wrap two floated elements in a border. Obviously it didn't work as expected. It's actually worse than that. I had to add an invisible `div` with `clear: both;` (typically called a "clearfix") before this paragraph to make sure the line breaks work properly. We shouldn't need to do that!
+
+Now we'll add block formatting context:
+
+<img src="images/bfc_6.png" />
+
+Two boxes floating next to each other with a border around them and without using a clearfix. Again, by setting `overflow: hidden;`.
 
 **References**
 * [MDN](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context)
