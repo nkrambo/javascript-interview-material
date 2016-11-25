@@ -597,25 +597,15 @@ An SVG embedded with an <img>, <object> or <iframe> will respond to the viewport
 
 The following example includes a set of media queries inside an SVG that is then referenced using an <img> tag:
 
-```html
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 194 186">
-  <style>
-    @media all and (max-width: 50em) {
-      /* select SVG elements and style them */
-    }
-    @media all and (max-width: 30em) {
-      /* styles  */
-    }
-  </style>
-  <!-- SVG elements here -->
-</svg>
-```
+HERE
+
+
 
 When the SVG is referenced, it will get the styles specified in the media queries above when the <img> has a max-width of 50em or 30em, respectively.
 
-```html
+<!-- ```html
 <img src="my-logo.svg" alt="Page Logo." />
-```
+``` -->
 
 ---
 
