@@ -348,6 +348,31 @@ This technique uses a pseudo element to push the text aside.  The text then over
 
 ### How do you optimize your webpages for print?
 
+**Create A Stylesheet For Print**
+
+Adding a print style sheet, with the media attribute set to "print", at the end of the list of stylesheets in the header is the best way to approach this. This will allow you to create custom CSS classes applied only at the time of print.
+
+```html
+<!-- main -->
+<link rel="stylesheet" type="text/css" href="/global.css" media="all" />
+
+<!-- print -->
+<link rel="stylesheet" type="text/css" href="/print.css" media="print" />
+```
+
+**General Tips**
+
+Mostly, you will want to hide parts of a page that don't add any print value to the user. Things like, the header, footer, sidebars, ads etc... A user is really only after the essential content of a page. You could create a class called `.no-print` and add that class declaration to DIVS, images, and other elements. Or you can select individual elements to hide, if you don't want to include the `.no-print` class to your markup.
+
+```css
+.no-print { display:none; }
+
+.sidebar,
+.footer { display: none; }
+```
+
+You may also want to remove link colors, change to font sizes to be more 'print friendly' or even restructure colums etc...
+
 ---
 
 ### What are some of the 'gotchas' for writing efficient CSS?
