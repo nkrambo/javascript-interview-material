@@ -473,7 +473,7 @@ Presentation attributes are a shorthand for setting a CSS property on an element
 
 The following example shows an SVG snippet that uses presentation attributes to style the "border" (stroke) and "background color" (fill) of a star-shaped polygon:
 
-<!-- ```html
+```html
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300px" height="300px" viewBox="0 0 300 300">
   <polygon
 fill = "#FF931E"
@@ -481,7 +481,7 @@ stroke = "#ED1C24"
 stroke-width = "5"
 points = "279.1,160.8 195.2,193.3 174.4,280.8   117.6,211.1 27.9,218.3 76.7,142.7 42.1,59.6 129.1,82.7 197.4,24.1 202.3,114 "/>
 </svg>
-``` -->
+```
 
 The fill, stroke and stroke-width attributes are presentation attributes.
 
@@ -491,17 +491,17 @@ In SVG 2, this list will include x, y, width, height, cx, cy and a few other pre
 
 Another way to set the styles of an SVG element is to use CSS properties. Just like in HTML, styles may be set on an element using inline style attributes:
 
-<!-- ```html
+```html
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="width: 300px; height: 300px;" viewBox="0 0 300 300">
 <polygon
   style = "fill: #FF931E; stroke: #ED1C24; stroke-width: 5;"
   points = "279.1,160.8 195.2,193.3 174.4,280.8   117.6,211.1 27.9,218.3 76.7,142.7 42.1,59.6 129.1,82.7 197.4,24.1 202.3,114 "/>
 </svg>
-``` -->
+```
 
 Styles may also be set in rule sets in a <style> tag. The <style> tag can be placed in the <svg> tag:
 
-<!-- ```html
+```html
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300px" height="300px" viewBox="0 0 300 300">
   <style type="text/css">
   <![CDATA[
@@ -510,15 +510,15 @@ Styles may also be set in rule sets in a <style> tag. The <style> tag can be pla
   </style>
   <g id=".."> </g>
 </svg>
-``` -->
+```
 
-And if you want to completely separate style from markup, then you could always link to an external style sheet from the SVG file, using the <?xml-stylesheet> tag, as shown below:
+And if you want to completely separate style from markup, then you could always link to an external style sheet from the SVG file, using the `<?xml-stylesheet>` tag, as shown below:
 
 HERE
 
 **Selectors**
 
-Most CSS selectors can be used to select SVG elements. In addition to the general type, class and ID selectors, SVGs can be styled using CSS2’s dynamic pseudo-classes (:hover, :active and :focus) and pseudo-classes (:first-child, :visited, :link and :lang. The remaining CSS2 pseudo-classes, including those having to do with generated content (such as ::before and ::after), are not part of the SVG language definition and, hence, have no effect on the style of SVGs.
+Most CSS selectors can be used to select SVG elements. In addition to the general type, class and ID selectors, SVGs can be styled using CSS2's dynamic pseudo-classes (:hover, :active and :focus) and pseudo-classes (:first-child, :visited, :link and :lang. The remaining CSS2 pseudo-classes, including those having to do with generated content (such as ::before and ::after), are not part of the SVG language definition and, hence, have no effect on the style of SVGs.
 
 The following is a simple animation of the fill color of a circle from deep pink to green when it is hovered over using the tag selector and the :hover pseudo-class:
 
@@ -543,9 +543,9 @@ In most cases, complex animations will usually contain some kind of transformati
 
 In most respects, SVG elements respond to transform and transform-origin in the same way that HTML elements do. However, a few inevitable differences result from the fact that, unlike HTML elements, SVG elements aren't governed by a box model and, hence, have no margin, border, padding or content boxes.
 
-By default, the transform origin of an HTML element is at (50%, 50%), which is the element’s center. By contrast, an SVG element's transform origin is positioned at the origin of the user’s current coordinate system, which is the (0, 0) point, in the top-left corner of the canvas.
+By default, the transform origin of an HTML element is at (50%, 50%), which is the element's center. By contrast, an SVG element's transform origin is positioned at the origin of the user’s current coordinate system, which is the (0, 0) point, in the top-left corner of the canvas.
 
-Suppose we have an HTML <div> and an SVG <rect> element:
+Suppose we have an HTML `<div>` and an SVG `<rect>` element:
 
 <img src="images/svg_1.png" />
 
@@ -564,9 +564,9 @@ What if we wanted to rotate the SVG element around its own center, rather than t
 
 Setting the transform origin on an HTML element is straightforward: Any value you specify will be set relative to the element's border box.
 
-In SVG, the transform origin can be set using either a percentage value or an absolute value (for example, pixels). If you specify a transform-origin value in percentages, then the value will be set relative to the element’s bounding box, which includes the stroke used to draw its border. If you specify the transform origin in absolute values, then it will be set relative to the SVG canvas’ current coordinate system of the user.
+In SVG, the transform origin can be set using either a percentage value or an absolute value (for example, pixels). If you specify a transform-origin value in percentages, then the value will be set relative to the element’s bounding box, which includes the stroke used to draw its border. If you specify the transform origin in absolute values, then it will be set relative to the SVG canvas' current coordinate system of the user.
 
-If we were to set the transform origin of the <div> and <rect> from the previous example to the center using percentage values, we would do this:
+If we were to set the transform origin of the `<div>` and `<rect>` from the previous example to the center using percentage values, we would do this:
 
 <!-- ```html
 <!DOCTYPE html>
@@ -593,19 +593,17 @@ SVG accepts and responds to CSS media queries as well. You can use media queries
 
 However, one important note here is that the viewport that the SVG responds to is the viewport of the SVG itself, not the page's viewport, unless you are embedding the SVG inline in the document (using <svg>).
 
-An SVG embedded with an <img>, <object> or <iframe> will respond to the viewport established by these elements. That is, the dimensions of these elements will form the viewport inside of which the SVG is to be drawn and, hence, will form the viewport to which the CSS media-query conditions will be applied. This is very similar in concept to element queries.
+An SVG embedded with an `<img>`, `<object>` or `<iframe>` will respond to the viewport established by these elements. That is, the dimensions of these elements will form the viewport inside of which the SVG is to be drawn and, hence, will form the viewport to which the CSS media-query conditions will be applied. This is very similar in concept to element queries.
 
-The following example includes a set of media queries inside an SVG that is then referenced using an <img> tag:
+The following example includes a set of media queries inside an SVG that is then referenced using an `<img>` tag:
 
 HERE
 
+When the SVG is referenced, it will get the styles specified in the media queries above when the `<img>` has a max-width of 50em or 30em, respectively.
 
-
-When the SVG is referenced, it will get the styles specified in the media queries above when the <img> has a max-width of 50em or 30em, respectively.
-
-<!-- ```html
+```html
 <img src="my-logo.svg" alt="Page Logo." />
-``` -->
+```
 
 ---
 
