@@ -499,7 +499,7 @@ Another way to set the styles of an SVG element is to use CSS properties. Just l
 </svg>
 ```
 
-Styles may also be set in rule sets in a <style> tag. The <style> tag can be placed in the <svg> tag:
+Styles may also be set in rule sets in a `<style>` tag. The `<style>` tag can be placed in the `<svg>` tag:
 
 ```html
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300px" height="300px" viewBox="0 0 300 300">
@@ -518,6 +518,7 @@ And if you want to completely separate style from markup, then you could always 
 <?xml version="1.0" standalone="no"?>
 <?xml-stylesheet type="text/css" href="style.css"?>
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width=".." height=".." viewBox="..">
+  <!-- SVG content -->
 </svg>
 ```
 
@@ -612,6 +613,7 @@ The following example includes a set of media queries inside an SVG that is then
       /* styles  */
     }
   </style>
+  <!-- SVG elements here -->
 </svg>
 ```
 
