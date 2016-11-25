@@ -160,13 +160,106 @@ http://cssreference.io/
 
 ### What's the difference between 'resetting' and 'normalizing' CSS? Which would you choose, and why?
 
+They are both used for cross-browser consistency.
+
+Basically, each browser provides its own user-agent stylesheet that acts as the default one if no stylesheet is present. So you have default font-sizes, margins, colors, padding... They're all slightly different for each browser. So instead of fighting with these differences when writing your own CSS, you can "reset" or normalize them. Both will give you a solid foundation on which you can define your own styles, however they are different.
+
+
+In short, a reset.css will remove all the default styling applied by the browser to give you a blank canvas where as normalize.css is a base stylesheet meaning its the starting point for your website styles and it styles the default elements to be consistent across the browsers.
+
+normalize.css is usually preferred for the following reasons.
+
+* Normalize.css preserves useful defaults rather than "unstyling" everything. For example, elements like sup or sub "just work" after including normalize.css (and are actually made more robust) whereas they are visually indistinguishable from normal text after including reset.css. So, normalize.css does not impose a visual starting point (homogeny) upon you. This may not be to everyone's taste. The best thing to do is experiment with both and see which gels with your preferences.
+
+* Normalize.css corrects some common bugs that are out of scope for reset.css. It has a wider scope than reset.css, and also provides bug fixes for common problems like: display settings for HTML5 elements, the lack of font inheritance by form elements, correcting font-size rendering for pre, SVG overflow in IE9, and the button styling bug in iOS.
+
+* Normalize.css doesn't clutter your dev tools. A common irritation when using reset.css is the large inheritance chain that is displayed in browser CSS debugging tools. This is not such an issue with normalize.css because of the targeted stylings.
+
+* Normalize.css is more modular. The project is broken down into relatively independent sections, making it easy for you to potentially remove sections (like the form normalizations) if you know they will never be needed by your website.
+
+* Normalize.css has better documentation. The normalize.css code is documented inline as well as more comprehensively in the GitHub Wiki. This means you can find out what each line of code is doing, why it was included, what the differences are between browsers, and more easily run your own tests. The project aims to help educate people on how browsers render elements by default, and make it easier for them to be involved in submitting improvements.
+
 ---
 
 ### Describe Floats and how they work.
 
+The float rule not only affects your target element, but also it's surrounding elements; such as it's parent, siblings, and children.
+
+There are basically 3 commonly used, self explanatory, float values: left, right and none.
+
+**Positioning**
+When an element is floated it is taken out of the normal flow of the document. It is shifted to the left or right until it touches the edge of its containing box or another floated element, pretty simple.
+
+Additional floated elements continue to stack to the right or left until they filled the containing box, after which they would wrap to the next line. Therefore, the width of floated elements play a role in how they, and other elements, are positioned.
+
+This includes text, which wraps around a floated element.
+
+**Clearing**
+
+Float's sister property is clear. An element that has the clear property set on it will not move up adjacent to the float like the float desires, but will move itself down past the float.
+
+Regular divs in HTML normally grow to fit their contents.
+
+A side effect of floating elements within a non-floated container is called a 'collapsed container'. As the name suggests, the containing parent element collapses with a height set to 0, and will not expand to fit the contents of it's children.
+
+This is easily fixed in a few different way.
+
+1. Use a utility `.clearfix` class.
+
+This is the most common and recommended approach. This solution is usually implemented within CSS frameworks for easy layout or at the least as a utility class.
+
+```html
+<div class="clearfix">
+  <div style="float: left;">Div 1</div>
+  <div style="float: left;">Div 2</div>
+</div>​
+```
+
+```css
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+}
+```
+
+2. Append a "clearing" element inside the parent element.
+
+This is not semantic markup and really adds unnecessary markup. This was quite common practice years ago.
+
+```html
+<div>
+  <div style="float: left;">Div 1</div>
+  <div style="float: left;">Div 2</div>
+  <div class="spacer" style="clear: both;"></div>
+</div>​
+```
+
+3. Float the parent. This is obviously not always desirable or possible.
+
+4. Give the parent an explicit height. Again, not always desirable or possible.
+
+5. Setting the overflow CSS property on a parent element to auto or hidden, the parent will expand to contain the floats, effectively clearing it for succeeding elements.
+
 ---
 
 ### Describe z-index and how stacking context is formed.
+
+z-index is for visual depth. Some elements overlap and some are nested within each other, so there's a natural visual depth that builds, where you can see some elements on top or behind other ones. They stack on top of each other.
+
+The natural depth depends upon a couple of things:
+
+* if an element is nested within another one, then it shows up on top of its parent
+* if a sibling comes after another sibling, it's on top as well
+
+Position 'absolute' or position 'fixed' will place elements on top of their stacks.
+
+You can use the z-index property to implicitly ensure how elements should 'stack' upon each other. By the way, you need an element to be positioned (relative, absolute, fixed) for the z-index to work.
+
+The z-index value is relative. So you can have one element with z-index: 1 and another with 2, and the latter will show up on top. Same thing would happen with values of 1000 and 4875.
+
+I like to keep a z-index master reference and use variable names that indicate the level z-index it represents. This way it's easy to keep track of what z-index variables you have and where you want a particular element to appear. I also separate values by increments of 100 so not to get cluttered.
 
 ---
 
@@ -233,6 +326,14 @@ Two boxes floating next to each other with a border around them and without usin
 ---
 
 ### Explain CSS sprites, and how you would implement them on a page or site.
+
+A CSS sprite is a single image containing several background images separated by white space. It's a collection of images combined in one big image. You can then expose different parts of the sprite using background position on certain elements, which acts like a viewport.
+
+This is an old technique that helps you reduce the number of HTTP requests for fetching many images by combining them all into one image (and one request) that is often lighter than separate images combined. As soon as the sprite is called and displayed once (and even cached), you can re-use it with other elements, rendering immediately.
+
+For example, changing the color of an icon on hover can be achieved with a sprite. You have different icon states 'stacked' horizontally or vertically within the sprite, with a 'default' and a 'hover' state. You expose the 'default' state with background positioning, by default, and when the icon is hovered you update the background position to expose the hover state. This is done with a :hover pseudo css selector.
+
+This technique is used less and less and we've now got superior techniques that have replaced its need in many use cases, such as icon fonts etc...
 
 ---
 
@@ -365,13 +466,33 @@ Adding a print style sheet, with the media attribute set to "print", at the end 
 Mostly, you will want to hide parts of a page that don't add any print value to the user. Things like, the header, footer, sidebars, ads etc... A user is really only after the essential content of a page. You could create a class called `.no-print` and add that class declaration to DIVS, images, and other elements. Or you can select individual elements to hide, if you don't want to include the `.no-print` class to your markup.
 
 ```css
-.no-print { display:none; }
+.no-print {
+  display: none;
+}
 
-.sidebar,
-.footer { display: none; }
+header nav, footer {
+  display: none;
+}
+```
+Other things...
+
+Links obviously do not work on paper so it may be useful to remove their styles for print all together. Alternatively,
+to put the links to use, you could display the URL after each string of anchor text. But text littered with URLs can be distracting and can impair the reading experience; and sparing the reader excessive information where possible is advisable.
+
+The best solution is the :after pseudo-element. It displays the URL after each anchor text, surrounded by brackets. And the font size is reduced to make it less intrusive. You will probably still want to hide internal links and look at formatting really long external links.
+
+To define page margins, you can use `@page` rule to simply apply a margin all the way around the page. For example:
+
+```css
+@page {
+  margin: 0.5cm;
+}
 ```
 
-You may also want to remove link colors, change to font sizes to be more 'print friendly' or even restructure colums etc...
+Finally, text font sizes and images may need to be reduced so that they're more print friendly.
+
+**References**
+* [Smashing Magazine](https://www.smashingmagazine.com/2011/11/how-to-set-up-a-print-style-sheet/)
 
 ---
 
