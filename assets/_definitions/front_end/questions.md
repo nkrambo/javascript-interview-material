@@ -186,20 +186,20 @@ Cross-origin requests come in two flavors:
 
 Simple requests are requests that meet the following criteria:
 
-* HTTP Method matches (case-sensitive) one of:
-..* HEAD
-..* GET
-..* POST
+1. HTTP Method matches (case-sensitive) one of:
+  * HEAD
+  * GET
+  * POST
 
-* HTTP Headers matches (case-insensitive):
-..* Accept
-..* Accept-Language
-..* Content-Language
-..* Last-Event-ID
-..* Content-Type, but only if the value is one of:
-....* application/x-www-form-urlencoded
-....* multipart/form-data
-....* text/plain
+2. HTTP Headers matches (case-insensitive):
+  * Accept
+  * Accept-Language
+  * Content-Language
+  * Last-Event-ID
+  * Content-Type, but only if the value is one of:
+    * application/x-www-form-urlencoded
+    * multipart/form-data
+    * text/plain
 
 Simple requests are characterized as such because they can already be made from a browser without using CORS. For example, a JSON-P request can issue a cross-domain GET request. Or HTML could be used to do a form POST.
 
