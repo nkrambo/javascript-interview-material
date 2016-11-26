@@ -155,7 +155,7 @@ ARIA provides a bridge between the world of the DOM and the desktop. Browsers ex
 
 * Clear and logical UI design, such as consistent navigation, typography, text clarity, color contrast, explanatory links and text
 * Meet web standards and validate your code
-* Keyboard access, focus order, form labels, alt tags, page titles and so on
+* Keyboard access and navigation, focus order, form labels, alt tags, page titles and so on
 
 **References**
 * [Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb)
@@ -168,6 +168,49 @@ ARIA provides a bridge between the world of the DOM and the desktop. Browsers ex
 ---
 
 ### What does CORS stand for and what issue does it address?
+
+APIs are the threads that let you stitch together a rich web experience. But this experience has a hard time translating to the browser, where the options for cross-domain requests are limited to techniques like JSON-P (which has limited use due to security concerns) or setting up a custom proxy (which can be a pain to set up and maintain).
+
+Cross-Origin Resource Sharing (CORS) is a W3C spec that allows cross-domain communication from the browser. By building on top of the XMLHttpRequest object, CORS allows developers to work with the same idioms as same-domain requests.
+
+The use-case for CORS is simple. Imagine the site alice.com has some data that the site bob.com wants to access. This type of request traditionally wouldn’t be allowed under the browser's same origin policy. However, by supporting CORS requests, alice.com can add a few special response headers that allows bob.com to access the data.
+
+As you can see from this example, CORS support requires coordination between both the server and client. Luckily, if you are a client-side developer you are shielded from most of these details. The rest of this article shows how clients can make cross-origin requests, and how servers can configure themselves to support CORS.
+
+**Types of CORS requests**
+
+Cross-origin requests come in two flavors:
+
+1. simple requests
+2. "not-so-simple requests" (a term I just made up)
+
+Simple requests are requests that meet the following criteria:
+
+* HTTP Method matches (case-sensitive) one of:
+..* HEAD
+..* GET
+..* POST
+
+* HTTP Headers matches (case-insensitive):
+..* Accept
+..* Accept-Language
+..* Content-Language
+..* Last-Event-ID
+..* Content-Type, but only if the value is one of:
+....* application/x-www-form-urlencoded
+....* multipart/form-data
+....* text/plain
+
+Simple requests are characterized as such because they can already be made from a browser without using CORS. For example, a JSON-P request can issue a cross-domain GET request. Or HTML could be used to do a form POST.
+
+Any request that does not meet the criteria above is a not-so-simple request, and requires a little extra communication between the browser and the server (called a preflight request), which we’ll get into below.
+
+**CORS vs JSONP**
+
+CORS can be used as a modern alternative to the JSONP pattern. While JSONP supports only the GET request method, CORS also supports other types of HTTP requests. CORS is supported by most modern web browsers. Also, while JSONP can cause cross-site scripting (XSS) issues where the external site is compromised, CORS allows websites to manually parse responses to ensure security.
+
+**References**
+* [HTML5 Rocks](https://www.html5rocks.com/en/tutorials/cors/)
 
 ---
 
