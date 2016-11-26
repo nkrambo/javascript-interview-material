@@ -95,9 +95,11 @@ FOUC is more prevalent now that HTML pages are more apt to reference multiple st
 **Techniques to Minimize FOUC**
 
 **Hide Content Until Loaded**
+
 A simple method for minimizing FOUC is to hide all or part of the web page until all styles and JavaScript are finished by applying a class name "js" as the selector that hides all content within a container that has an `id="fouc"`. The "fouc" element is unhidden using a JavaScript getElementById function setting the display value to "block" level.
 
 **no-js**
+
 Another solution is to add a `class="no-js"` to the html tag, and a `<script>` within the `<head>` that changes it back to 'js'. The no-js class is provided in order to easily and explicitly add custom styles based on whether JavaScript is disabled (.no-js) or enabled (.js) all with a single hook.
 
 ```html
@@ -113,6 +115,7 @@ document.documentElement.className = document.documentElement.className.replace(
 ```
 
 **Header Style Tags**
+
 A technique that is a no-brainer for most web developers is that you must include your link tag(s) to stylesheets within the <head> of your web page documents.
 
 ---
@@ -130,6 +133,7 @@ ARIA provides additional semantics to describe the role, state, and functionalit
 ARIA is implemented in most popular browsers and screen readers.
 
 **Where is it Supported**
+
 ARIA is a relatively new specification, but support for it is growing. A wide variety of commonly-used browsers, assistive technologies, JavaScript toolkits, and applications now support ARIA. However, many users may still be using older versions of these technologies. You may want to consider implementing ARIA using progressive enhancement techniques—such as adding ARIA using JavaScript, not directly to your markup—in order to more gracefully support older browsers and assistive technologies.
 
 **ARIA in Action**
@@ -140,7 +144,7 @@ Here's the markup for a progress bar widget:
 <div id="percent-loaded" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" />
 ```
 
-This progress bar is built using a <div>, which is not very descriptive. Unfortunately, there isn't a more semantic tag available to developers in HTML 4, so we need to include ARIA roles and properties. These are specified by adding attributes to the element. In this example, the `role="progressbar"` attribute informs the browser that this element is actually a JavaScript-powered progress bar widget. The `aria-valuemin` and `aria-valuemax` attributes specify the minimum and maximum values for the progress bar, and the `aria-valuenow` describes the current state of it.
+This progress bar is built using a `<div>`, which is not very descriptive. Unfortunately, there isn't a more semantic tag available to developers in HTML 4, so we need to include ARIA roles and properties. These are specified by adding attributes to the element. In this example, the `role="progressbar"` attribute informs the browser that this element is actually a JavaScript-powered progress bar widget. The `aria-valuemin` and `aria-valuemax` attributes specify the minimum and maximum values for the progress bar, and the `aria-valuenow` describes the current state of it.
 
 **ARIA is Non-Obtrusive**
 
@@ -158,6 +162,7 @@ ARIA provides a bridge between the world of the DOM and the desktop. Browsers ex
 * Keyboard access and navigation, focus order, form labels, alt tags, page titles and so on
 
 **References**
+
 * [Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb)
 * [Accessibility Checklist](https://www.webaccessibility.com/best_practices.php)
 
@@ -381,6 +386,7 @@ The float rule not only affects your target element, but also it's surrounding e
 There are basically 3 commonly used, self explanatory, float values: left, right and none.
 
 **Positioning**
+
 When an element is floated it is taken out of the normal flow of the document. It is shifted to the left or right until it touches the edge of its containing box or another floated element, pretty simple.
 
 Additional floated elements continue to stack to the right or left until they filled the containing box, after which they would wrap to the next line. Therefore, the width of floated elements play a role in how they, and other elements, are positioned.
@@ -580,6 +586,7 @@ Another way to hide text is make it very small and set its color to the backgrou
 ```
 
 **Using Clip-path**
+
 The clip-path property hides everything that is outside the path specified by you. We can use it to clip our text and hide it. The text will still be accessible to screen readers but would be hidden visually. The only problem with this technique is that browser support is not good enough just yet. Here is the markup:
 
 ```html
