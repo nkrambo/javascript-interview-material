@@ -2,17 +2,17 @@
 # Table of Contents
 
   1. [General Questions](#general-questions)
-  1. [HTML Questions](#html-questions)
-  1. [CSS Questions](#css-questions)
-  1. [JS Questions](#js-questions)
-  1. [Testing Questions](#testing-questions)
-  1. [Performance Questions](#performance-questions)
-  1. [Network Questions](#network-questions)
-  1. [Coding Questions](#coding-questions)
-  1. [Fun Questions](#fun-questions)
+    * [Progressive enhancement and graceful degradation](#can-you-describe-the-difference-between-progressive-enhancement-and-graceful-degradation)
+  2. [HTML Questions](#html-questions)
+  3. [CSS Questions](#css-questions)
+  4. [JS Questions](#js-questions)
+  5. [Testing Questions](#testing-questions)
+  6. [Performance Questions](#performance-questions)
+  7. [Network Questions](#network-questions)
+  8. [Coding Questions](#coding-questions)
+  9. [Fun Questions](#fun-questions)
 
 ## General Questions:
-
 
 ### What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
 
