@@ -441,7 +441,9 @@ As you may have realized, XML parsing rules are more persnickety. It's much easi
 
 ## CSS Questions:
 
-http://cssreference.io/
+**References**
+
+* http://cssreference.io/
 
 ### What is the difference between classes and IDs in CSS?
 
