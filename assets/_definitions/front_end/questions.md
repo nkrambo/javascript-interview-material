@@ -412,6 +412,12 @@ As you may have realized, XML parsing rules are more persnickety. It's much easi
 
 ### How do you serve a page with content in multiple languages? What kind of things must you be wary of when designing or developing for multilingual sites?
 
+Internationalization is a big problem. If you want your application to make a worldwide impact, you have to deal with language barriers.
+
+Before your application can succeed outside the English-speaking world, you'll have to adapt all your strings, dates, and numbers to the conventions of different cultures.
+
+Developers call this practice internationalization (which is often abbreviated to "i18n", because there are 18 letters between the 'I' and the 'n' in the word Internationalization.)
+
 **Getting Translated**
 
 When you offer content in several languages, it's best not to rely on translation software, such as Google Translate. Accuracy of these tools varies quite a bit. For this reason it's best to get a human translator to ensure high quality and reliable translations.
@@ -523,9 +529,216 @@ When designing multilingual websites, there are several other things to consider
 
 * **Phone Numbers** - Help your visitors with phone numbers on your website by including the country code
 
+**React Intl**
+
+React Intl is an open-source project from Yahoo, and part of Format.js, a collection of JavaScript libraries for internationalization that builds on Javascript's built-in Intl API.
+
+The React Intl library makes internalization in React straightforward, with off-the-shelf components and an API that can handle everything from formatting strings, dates, and numbers, to pluralization.
+
+JavaScript has an Internationalization API specification which defines the Intl object as a standard built-in global object.
+
+React Intl essentially uses and builds on this API. As long as the browser supports these APIs, React Intl will continue to work its magic.
+
+React Intl distributes its package via ES6, CommonJS, and UMD modules. Hence, it works really well with bundlers like Webpack, Browserify and Rollup.
+
+**Setting Up**
+
+First, you'll need to install the React Intl package.
+
+```
+npm install —-save react-intl
+```
+
+Next, we'll need to install the babel plugin for React Intl:
+
+```
+npm install --save-dev babel-plugin-react-intl
+```
+
+To actually have the babel plugin do its magic, we need to set up our .babelrc file to include this plugin. Here's what my .babelrc looks like with the react-intl plugin added.
+
+```json
+{
+  "presets": ["es2015", "react", "stage-0"],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-runtime",
+    [
+      "react-intl", {
+        "messagesDir": "./build/messages",
+        "enforceDescriptions": false
+      }
+    ]
+  ],
+  "env": {
+     "development": {
+      "presets": ["react-hmre"]
+     }
+  }
+}
+```
+
+What this babel plugin does is it extract all the string messages in your application that are defined using either defineMessages, <FormattedMessage>, or <FormattedHTMLMessage>.
+
+Once extracted, it generates JSON files which contain the string messages and places them in the directory you defined in the messagesDir path above.
+
+**Loading data**
+
+Next, let's load the appropriate locale data for the languages that we need to support.
+
+In the root component file, we add the locale data using the addLocaleData API. The data will then be passed the contents of the locale data module, which will then be registered in its locale data registry.
+
+For this sample project, I'm going to assume we’re supporting 4 languages: English, Spanish, French and Italian.
+
+```javascript
+import { addLocaleData } from 'react-intl';
+import en from 'react-intl/locale-data/en';
+import es from 'react-intl/locale-data/es';
+import fr from 'react-intl/locale-data/fr';
+import it from 'react-intl/locale-data/it';
+
+addLocaleData([...en, ...es, ...fr, ...it]);
+```
+
+**Create the i18n context**
+
+So far, we've installed the React Intl package, set up our .babelrc plugin, and loaded the appropriate locale data.
+
+One final step is to create an i18n context for all our React components so that the current user's locale and translated message (based on the user’s locale) can be loaded into the React Intl Components that you define in your app.
+
+One final step is to create an i18n context for all our React components so that the current user's locale and translated message (based on the user’s locale) can be loaded into the React Intl Components that you define in your app.
+
+To do this, we first define the messages to pass to IntlProvider based on the user's locale. Then we wrap the root React component with IntlProvider, which is a named export provided by React-Intl:
+
+```javascript
+import React from 'react';
+import { render } from 'react-dom';
+import App from './components/App/index';
+import { IntlProvider, addLocaleData } from 'react-intl';
+import en from 'react-intl/locale-data/en';
+import es from 'react-intl/locale-data/es';
+import fr from 'react-intl/locale-data/fr';
+import it from 'react-intl/locale-data/it';
+
+// Our translated strings
+import localeData from './../../build/locales/data.json';
+
+addLocaleData([...en, ...es, ...fr, ...it]);
+
+// Define user's language. Different browsers have the user locale defined
+// on different fields on the `navigator` object, so we make sure to account
+// for these different by checking all of them
+const language = (navigator.languages && navigator.languages[0]) ||
+                     navigator.language ||
+                     navigator.userLanguage;
+
+// Split locales with a region code
+const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
+
+// Try full locale, try locale without region code, fallback to 'en'
+const messages = localeData[languageWithoutRegionCode] || localeData[language] || localeData.en;
+
+// Render our root component into the div with id "root"
+// We select the messages to pass to IntlProvider based on the user's locale
+render(
+  <IntlProvider locale={language} messages={messages}>
+    <App />
+  </IntlProvider>,
+  document.getElementById('root')
+);
+```
+
+In this setup, we're assuming that our translated data will live in build/locales/data.json and that the data is grouped by language, like so:
+
+```json
+{
+  "en": {
+    "...English version of strings"
+  },
+  "fr": {
+    "...French version of strings"
+  },
+  "es": {
+    "...Spanish version of strings"
+  },
+}
+```
+
+**Formatted Message Component Example**
+
+First, we'll look at the header which says: "Welcome to your dashboard, Nick!"
+
+To convert this, we'll use the FormattedMessage component:
+
+```javascript
+<FormattedMessage
+  id={ 'Header.greeting' }
+  defaultMessage={ 'Welcome to your dashboard, {name}!' }
+  values={{ name: this.props.name }}
+/>
+```
+
+The FormattedMessage component has props that correspond something called a "Message Descriptor" in React Intl. The Message Descriptor is the format used to define default messages/strings, and is useful for providing the data necessary for having the strings/messages translated. It contains the following properties:
+
+* **id:** A unique, stable identifier for the message
+* **description:** Context for the translator about how it's used in the UI (optional)
+* **defaultMessage:** The default message (in English)
+
+The id prop must be unique for every message defined in your app. What's awesome is that the defaultMessage can be passed data from the props, as is the case in name above. (Note that the values that are passed as data won't get translated — they’re simply inserted into the final translated string as-is.)
+
+That's how to use the Formatted* Components to define strings, numbers, dates, and pluralization. However, there are plenty of instances where it’s necessary to pass formatted strings as props or use formatted strings to name an HTML component. The FormattedMessage component doesn't well work in cases like this.
+
+Luckily, React Intl's defineMessages API lets us imperatively define all of a component's strings, then pass them as props to the component.
+
+Let's try this approach for the widget headers and body. First, we use defineMessages to define our strings:
+
+```javascript
+const messages = defineMessages({
+  widget1Header: {
+    id: 'Widgets.widget1.header',
+    defaultMessage: 'Creative header',
+  },
+  widget1Body: {
+    id: 'Widgets.widget1.body',
+    defaultMessage: 'Mark todays date: {date}',
+  },
+  widget2Header: {
+    id: 'Widgets.widget2.header',
+    defaultMessage: 'Here is another widget',
+  },
+  widget2Body: {
+    id: 'Widgets.widget2.body',
+    defaultMessage: 'Hello. How is your day going?',
+  }
+});
+```
+
+Then, assuming we have a Widget component that expects header and body props, we can continue like so:
+
+```javascript
+<Widget
+  header={ formatMessage(messages.widget1Header) }
+  body={ formatMessage(messages.widget1Body, {
+    date: formatDate(this.props.currentDate, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }),
+  }) }
+/>
+
+<Widget
+  header={ formatMessage(messages.widget2Header) }
+  body={ formatMessage(messages.widget2Body) }
+/>
+```
+
 References:
 
 * [W3C](https://w3c.github.io/bp-i18n-specdev/)
+* [React Internationalization](https://medium.freecodecamp.com/internationalization-in-react-7264738274a0#.ptr11hilz)
+* [React Intl](https://github.com/yahoo/react-intl)
+* [Javascript Intl API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
 
 ---
 
