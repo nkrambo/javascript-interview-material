@@ -921,11 +921,28 @@ Again, this approach could be used for scripts not in the CRP of a documents, su
 
 ### Why is it generally a good idea to position CSS `<link>`s between `<head></head>`?
 
-According to the WC3 Spec, placing `<style>` and `<link>` tags within the `<body>` is not allowed in valid HTML. Inline styles such as, `<div style="color: red">` are allowed but are considered bad practice.
+According to the WC3 Spec, placing `<style>` and `<link>` tags within the `<body>` is not allowed in valid HTML. Inline styles such as, `<div style="color: red;">` are allowed but are considered bad practice.
+
+In addition, once the DOM has been built the next step toward rendering a page is to build the CSS object model(CSSOM). The browser can then move onto the render tree, where the browser combines the DOM and CSSOM.
+
+This allows users to see the content on your site load fast. Users won't find themselves staring at a blank white page.
+
+If you put your JavaScript at the top of the page and CSS at the bottom, users will have to stare at a blank white page until the JavaScript finishes loading because `<script>` tags block parallel downloads. This means the visual elements of your site won't show up until the JavaScript finishes downloading first. When it does finish, users will experience a brief flash of styleless content and a shifting of elements on the screen.
 
 References:
 
 * [Medium](https://medium.com/@schizdazzle/whats-with-putting-the-css-in-the-head-24888fbbd2e2#.tvuweqq8x)
+* [UX Movement](http://uxmovement.com/content/why-you-should-place-style-sheets-before-scripts/)
+
+---
+
+### Explain the critical rendering path (CRP).
+
+References:
+
+* [Web Fundamentals](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
+* [Varvy](https://varvy.com/pagespeed/critical-render-path.html)
+* [Medium](https://medium.com/@luisvieira_gmr/understanding-the-critical-rendering-path-rendering-pages-in-1-second-735c6e45b47a#.6pkbwmb6w)
 
 ---
 
@@ -2402,10 +2419,6 @@ It might be a good idea to add an extension for functionality that became availa
 * [Perfection Kills](http://perfectionkills.com/extending-native-builtins/)
 * [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter#Polyfill)
 * [More on what extending objects is](https://www.kirupa.com/html5/extending_built_in_objects_javascript.htm)
-
----
-
-### Explain the critical rendering path.
 
 ---
 

@@ -59,13 +59,13 @@ Since then, travel has been a major part of life and I have spent more of my adu
 
 ### What would your peers/ex-coworkers say is the biggest misconception about you?
 
-### If you had to teach me a certain skill, what would it be?
-
 ### What food that you recently had made you emotional?
 
 Vegemite... Missing home.
 
 ### How do you feel about monotonous, boring tasks?
+
+If they can be automated then they should be. Are they wasting time? If they need to get done to work toward the completion of a project then they've got to be done by someone, even if they're boring.
 
 ### What was your worst travel moment? What happened?
 
@@ -76,6 +76,8 @@ Vegemite... Missing home.
 Sailing knots?
 
 ### When you walk into a room, what would be your theme song?
+
+Either the theme song from 'Beverly Hills Cop' or 'Danger Zone' by Kenny Loggins.
 
 ### How would you prefer to explain a situation: With words or a picture?
 
@@ -89,7 +91,11 @@ Why do divers fall backwards out of a boat?... Because if they fell forwards the
 
 ### What is the craziest idea you've ever had?
 
+One day I plan to sail the world while working remotely from my boat.
+
 ### What spice would you be and why?
+
+
 
 ### How do you cut a round cake into 8 equal pieces using just 3 strokes of a knife?
 
