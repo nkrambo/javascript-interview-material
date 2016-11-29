@@ -20,6 +20,13 @@
 
 ### Talk about your preferred development environment.
 
+Node.js with Express
+Sequelize ORM
+PostGres SQL
+React with Redux, React Router, CSS Modules
+Webpack, Mocha and Chai
+Git for version control
+
 ---
 
 ### Which version control systems are you familiar with?
@@ -403,11 +410,122 @@ As you may have realized, XML parsing rules are more persnickety. It's much easi
 
 ---
 
-### How do you serve a page with content in multiple languages?
+### How do you serve a page with content in multiple languages? What kind of things must you be wary of when designing or developing for multilingual sites?
 
----
+**Getting Translated**
 
-### What kind of things must you be wary of when design or developing for multilingual sites?
+When you offer content in several languages, it's best not to rely on translation software, such as Google Translate. Accuracy of these tools varies quite a bit. For this reason it's best to get a human translator to ensure high quality and reliable translations.
+
+**Presenting Language Options**
+
+A multilingual website is useless without the ability to change languages. Oftentimes you'll find multilingual websites use a dropdown, placed top-right or in the footer. Whichever pattern you go for, make sure that the dropdown is easy to see and access.
+
+**Flags**
+
+Flags are very often used to indicate a language. Using flags for language switchers has a few downsides. Consider the following reasons:
+
+* Flags represent countries, not languages.
+* A country can have more than one official language.
+* A language can be spoken in more than one country.
+* Visitors might not recognize a flag (because of the icon size) or they might be confused by similar flags.
+
+It's best to refer to a language in its own language, for example 'Deutsch' instead of 'German'. Ordering languages alphabetically will also help, so users can easily find the right version.
+
+**Redirecting**
+
+Certain websites redirect users to the homepage when they switch languages. This can be confusing, because users then have to find the page again. To keep your visitors happy, wherever possible make sure that they’re presented with the same (translated) page when they switch languages.
+
+**Detecting Default Language**
+
+It's possible to detect the user's default language and automatically show the page in the user's preferred language. However, don't hide the other options, in case the user wants to switch.
+
+The best way to detect a user's preferred language is to analyze the `Accept-Language` header, which is based on the preferred languages set in the user's browser settings or their operating system.
+
+Here's a simple JavaScript function for parsing the Accept-Language header. It uses a regular expression to return an ordered array of the user's preferred languages.
+
+```javascript
+const acceptLanguage = 'Accept-Language: en;q=0.8,es;q=0.6,fr;q=0.4';
+
+const languages = acceptLanguage.split(':')[1].match(/[a-zA-z\-]{2,10}/g) || [];
+console.log(languages); // ['en', 'es', 'fr']
+```
+The language identifier is also set in the base HTML template in order to tell the browser and search engines what language the document is in. This is simply defined in the "lang" attribute of the opening HTML tag in the document:
+
+```html
+<html lang="en">
+```
+
+**Encoding and Fonts**
+
+Your content needs to be readable, so make sure the character encoding in the head of the page is set correctly:
+
+```html
+<meta charset="utf-8">
+```
+
+From the W3C:
+
+"A Unicode-based encoding such as UTF-8 can support many languages and can accommodate pages and forms in any mixture of those languages."
+
+Then consider the actual fonts: your web font needs to be compatible with all the languages you support, especially for non-Latin based languages. This means that the font used must contain all the characters and glyphs you commonly need. Some languages comprise hundreds of characters, making the font files themselves very heavy. Consider therefore refining the character groups that you include in the files.
+
+**Left to Right and Right to Left**
+
+Most languages use scripts which are written and read from left to right, but where that’s not the case it's helpful to mirror the layout of the whole web page. Yes, the entire layout. Text, images, navigation, sidebars, buttons, dropdowns, scroll bars etc... should all be mirrored.
+
+For content, specify the direction of the text via the `dir="rtl"` attribute. This attribute is supported by all major browsers. Here’s an HTML example:
+
+```html
+<body dir="rtl">
+```
+
+```css
+.content {
+  direction: rtl;  /* Right to Left */
+}
+```
+
+**URL Structure**
+
+There are several ways to structure the URLs of multilingual websites. Each option has advantages and disadvantages.
+
+**ccTLD**
+
+A country code top-level domain (ccTLD) is linked to a specific country, such as .fr for France and .es for Spain.
+
+ccTLDs are a clear signal for search engines that a website is targeting users in that country. The server location is irrelevant and it’s easy to separate websites. The biggest disadvantages are the availability of domains and the extra costs.
+
+**Subdomain + gTLD**
+
+Certain domain extensions are not tied to a country or region. The most popular is .com, but there are other frequently-used generic top-level domains, such as .net and .org.
+
+These gTLDs can be used in combination with a subdomain, for example fr.website.com. It's easy to set up and most search engines understand this type of geotargeting. However, users might not always recognize the language of the content based on the URL.
+
+**Subdirectory + gTLD**
+
+Subdirectories are subdomains' counterpart. They are often used to structure content (for example website.com/blog or website.com/tshirts), but can also be used for geotargeting purposes. In this case we use website.com/fr to structure our URLs.
+
+With this technique, everything can be hosted on the same server. Set-up is very easy and you can use Google Search Console to identify the different languages. One disadvantage is that users might not recognize the geotargeting from the URL alone (e.g. is webshop.com/de/ in German or not?)
+
+**URL parameters**
+
+Finally, there are URL parameters, for example website.com?country=it. URL parameters are not recommended, because they are difficult for search engines to interpret.
+
+Personally, I like to use subdirectories in combination with a gTLD. Subdomains are mostly used to separate out content that is completely different. Because multilingual websites are basically translations of the same content (most of the time), subdirectories are an obvious solution.
+
+**Other Considerations**
+
+When designing multilingual websites, there are several other things to consider, such as:
+
+* **Dates** - Not every country uses the same date format. Sometimes you'll have to convert dates from the Gregorian calendar to, for example, the Persian calendar.
+
+* **Captchas** - If you using a captcha on your website make sure that it's in the same language as the page content. As a UK visitor, it's unlikely you'll want to solve a Russian captcha.
+
+* **Phone Numbers** - Help your visitors with phone numbers on your website by including the country code
+
+References:
+
+* [W3C](https://w3c.github.io/bp-i18n-specdev/)
 
 ---
 
