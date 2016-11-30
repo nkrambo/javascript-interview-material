@@ -2226,7 +2226,7 @@ It was developed because handling a browsers' same origin policy can be difficul
 
 Say you're on domain example.com, and you want to make a request to domain example.net. To do so, you need to cross domain boundaries, a no-no in most of browserland.
 
-The one item that bypasses this limitation is <script> tags. When you use a script tag, the domain limitation is ignored, but under normal circumstances, you can't really do anything with the results, the script just gets evaluated.
+The one item that bypasses this limitation is `<script>` tags. When you use a script tag, the domain limitation is ignored, but under normal circumstances, you can't really do anything with the results, the script just gets evaluated.
 
 Enter JSONP. When you make your request to a server that is JSONP enabled, you pass a special parameter that tells the server a little bit about your page. That way, the server is able to nicely wrap up its response in a way that your page can handle.
 
@@ -2302,7 +2302,7 @@ This is one of the reasons that we use 'use strict'. It will throw an error if y
 
 In short... Attributes are defined by HTML. Properties are defined by the DOM.
 
-Everything in JavaScript is an object. These objects are categorized in different types (functions, boolean, string, number, etc) and can also contain properties and methods. Objects dont just exist in the language itself (JavaScript), but in Browser Object Model (BOM) and Document Object Model (DOM) as well.
+Everything in JavaScript is an object. These objects are categorized in different types (functions, boolean, string, number, etc) and can also contain properties and methods. Objects don't just exist in the language itself (JavaScript), but in Browser Object Model (BOM) and Document Object Model (DOM) as well.
 
 Every element in the DOM is an object and these objects have properties as well. These properties are mapped to a set of attributes from html markup. An attribute is just a string in an element (usually a, `label='value'` pair).
 
