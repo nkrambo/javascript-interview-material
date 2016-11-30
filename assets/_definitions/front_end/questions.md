@@ -20,16 +20,27 @@
 
 ### Talk about your preferred development environment.
 
+Atom editor, with only some basic plugins
 Node.js with Express
-Sequelize ORM
-PostGres SQL
+Sequelize ORM and PostGres
+Webpack, Nodemon, Babel, NPM, NPM scripts
 React with Redux, React Router, CSS Modules
-Webpack, Mocha and Chai
+RXJS (Observables) for side effects
+Mocha, Chai, Enzyme
 Git for version control
+eslint with Airbnb config
+Flow
+Passport for Authentication, usually a local (bcrypt) and OAuth strategy
 
 ---
 
 ### Which version control systems are you familiar with?
+
+Git with Git Flow
+
+References:
+
+* [Make School](https://www.youtube.com/watch?v=cgDRpayIsYo)
 
 ---
 
@@ -64,6 +75,12 @@ This approach encourages designers and developers to produce a product that func
 ---
 
 ### How many resources will a browser download from a given domain at a time? What are the exceptions?
+
+This depends on the browser. On average, browsers can handle about **6 connections** per hostname, but range from 2-24. Maximum connections vary a lot more, anywhere from 1-60. More modern browsers are more likely to support more concurrent downloads.
+
+References:
+
+[Browser Scope](http://www.browserscope.org/?category=network&v=1)
 
 ---
 
@@ -1078,6 +1095,9 @@ Examples of such techniques :
 ---
 
 ### Have you used different HTML templating languages before?
+
+* Handle bars
+* Jade
 
 ---
 
@@ -3547,6 +3567,9 @@ console.log('three');
 
 ### Who inspires you in the front-end community?
 
+* Paul Irish
+* Addy Osmani
+
 ---
 
 ### Do you have any pet projects? What kind?
@@ -3554,3 +3577,4 @@ console.log('three');
 ---
 
 ### What's your favorite feature of Internet Explorer?
+

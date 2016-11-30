@@ -3,14 +3,13 @@
 // without writing a class like the following.
 
 class Queue {
-
   constructor() {
     this.list = [];
     this.length = 0;
   }
 
   enqueue(value) {
-    this.length++;
+    this.length += 1;
     this.list.push(value);
   }
 
@@ -20,7 +19,7 @@ class Queue {
     if (this.length === 0) return;
 
     // Shift the first item off the start of the list and return the value.
-    this.length--;
+    this.length -= 1;
     return this.list.shift();
   }
 

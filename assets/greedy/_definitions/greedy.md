@@ -6,6 +6,7 @@ An algorithm is said to be greedy if it makes the locally optimal choice at each
 A problem must exhibit these two properties in order for a greedy algorithm to work:
 
 1. It has optimal sub-structures. Optimal solution to the problem contains optimal solutions to the sub-problems.
+
 2. It has the greedy property. If we make a choice that seems like the best at the moment and proceed to solve the remaining subproblem, we reach the optimal solution. We will never have to reconsider our previous choices.
 
 If the input size is 'small enough' to accommodate the time complexity of either Complete Search or Dynamic Programming approaches, then use these approaches as both will ensure a correct answer. Only use a Greedy algorithm if the input size given in the problem statement are too large even for the best Complete Search or DP algorithm.
@@ -21,6 +22,8 @@ There are a few classical examples of Greedy algorithms:
 3. Interval Covering
 4. Load Balancing
 5. Sort the Input First
+6. Knapsack Problem
+7. Classroom Scheduling Problem
 
 ###Sort the Input First
 An important problem solving strategy usually applicable to greedy problems: Sorting the input data to elucidate hidden greedy strategies.
