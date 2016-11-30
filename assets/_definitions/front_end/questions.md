@@ -3159,7 +3159,7 @@ For illustration purposes, let's say that we actually only need a print styleshe
 
  Our "network waterfall" will look like this:
 
-<img src="images/analysis-dom-css-js-async" />
+<img src="images/analysis-dom-css-js-async.png" />
 
 An asynchronous script has several advantages:
 
