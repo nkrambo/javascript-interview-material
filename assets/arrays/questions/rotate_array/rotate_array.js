@@ -121,11 +121,6 @@ function rotateArrayExtra(nums, k) {
 *
 * Solution:
 *
-*
-*
-* Time: O(n)
-* Space: O(1)
-*
 * We can directly place every number of the array at its required correct position.
 * But if we do that, we will destroy the original element. Thus, we need to store
 * the number being replaced in a temptemp variable. Then, we can place the replaced
@@ -158,6 +153,9 @@ function rotateArrayExtra(nums, k) {
 * numbers placed at their correct position will be (k * n/k) = n.
 *
 * Thus, all the numbers will be placed at their correct position.
+*
+* Time: O(n)
+* Space: O(1)
 *
 * @param {array} nums array of integers
 * @param {number} k number of steps to rotate
