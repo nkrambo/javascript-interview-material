@@ -870,7 +870,7 @@ References:
 ### Describe the difference between `<script>`, `<script async>` and `<script defer>`. Why is it good practice to place JS `<script>`s just before `</body>`? Do you know any exceptions?
 
 **Normal Execution** `<script>`
-This is the default behavior of the <script> element. Parsing of the HTML code pauses while the script is executing. For slow servers and heavy scripts this means that displaying the webpage will be delayed. Here the procession the browser takes:
+This is the default behavior of the `<script>` element. Parsing of the HTML code pauses while the script is executing. For slow servers and heavy scripts this means that displaying the webpage will be delayed. Here the procession the browser takes:
 
 1. Pause pars­ing the document.
 2. Make a request to fetch the file.
