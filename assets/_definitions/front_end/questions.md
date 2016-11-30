@@ -964,7 +964,7 @@ Examples of such techniques :
 
 **ID's and Classes are "hooks"**
 
-We need ways to describe content in an HTML document. The basic elements like <h1>, <p>, and <ul> will often do the job, but our basic set of tags doesn't cover every possible type of page element or layout choice. For this we need ID's and Classes. These ID's and Classes the "hooks" we need to build into markup to get our hands on them. CSS obviously needs these so that we may build selectors and do our styling, but other web languages like Javascript depend on them too.
+We need ways to describe content in an HTML document. The basic elements like `<h1>`, `<p>`, and `<ul>` will often do the job, but our basic set of tags doesn't cover every possible type of page element or layout choice. For this we need ID's and Classes. These ID's and Classes the "hooks" we need to build into markup to get our hands on them. CSS obviously needs these so that we may build selectors and do our styling, but other web languages like Javascript depend on them too.
 
 There is nothing stopping you from having both an ID and a Class on a single element. Adding a class name or ID to an element does nothing to that element by default. Classes and ID's don't have any styling information to them all by themselves. They require CSS to target them and apply styling.
 
