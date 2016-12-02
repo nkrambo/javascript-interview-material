@@ -18,15 +18,15 @@ describe('isPalindrome()', () => {
 
     // 'a' -> 'b' -> 'a'
     const l2 = new LinkedList();
-    l1.add('a', 0);
-    l1.add('b', 0);
-    l1.add('a', 0);
+    l2.add('a', 0);
+    l2.add('b', 0);
+    l2.add('a', 0);
 
     expect(isPalindrome(l2)).to.be.true;
 
     // 'a' -> 'b' -> 'a'
     const l3 = new LinkedList();
-    l1.add('a', 0);
+    l3.add('a', 0);
 
     expect(isPalindrome(l3)).to.be.true;
   });
@@ -41,7 +41,7 @@ describe('isPalindrome()', () => {
     l4.add(1, 0);
     l4.add(1, 0);
 
-    expect(isPalindrome(l3)).to.be.false;
+    expect(isPalindrome(l4)).to.be.false;
 
     // 'f' -> 'o' -> 'o'
     const l5 = new LinkedList();
@@ -49,6 +49,6 @@ describe('isPalindrome()', () => {
     l5.add('o', 0);
     l5.add('o', 0);
 
-    expect(isPalindrome(l2)).to.be.false;
+    expect(isPalindrome(l5)).to.be.false;
   });
 });

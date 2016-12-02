@@ -21,8 +21,9 @@
 *
 * Solution:
 *
-* Time: O(1)
-* Space: O(1)
+* Time: O(n)
+* Space: O(n)
+*
 *
 * @param {object} list linked list
 * @return {object} returns a node at beginning of loop, if one exists, else null
@@ -32,13 +33,13 @@ function loopDetectionSet(list) {
   let visited = new Set();
   let current = list.head;
 
-  while (current) {
-    if (visited.has(node)) {
-      return node;
+  while (current.next !== null) {
+    if (visited.has(current)) {
+      return current;
 
     } else {
-      visited.add(node);
-      node = node.next;
+      visited.add(current);
+      current = current.next;
     }
   }
 
