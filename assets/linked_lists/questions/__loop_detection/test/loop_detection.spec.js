@@ -7,25 +7,40 @@ describe('loopDetectionSet()', () => {
   it('should return the node at the beginning of a loop if a loop exists', () => {
     // A -> B -> C -> D -> E -> C [the same C as eariler, so loop exists]
     const l1 = new LinkedList();
-    let a = 'a';
-    let b = 'b';
-    let c = 'c';
-    let d = 'd';
-    let e = 'e';
+    l1.add('A', 0);
+    l1.add('B', 1);
+    l1.add('C', 2);
+    l1.add('D', 3);
+    l1.add('E', 4);
 
-    l1.add(c, 0);
-    l1.add(e, 0);
-    l1.add(d, 0);
-    l1.add(c, 0);
-    l1.add(b, 0);
-    l1.add(a, 0);
+    // point E -> C
+    const E = l1.get(4);
+    E.next = l1.get(2);
 
-    const loopNode = loopDetectionSet(l1);
-    expect(loopNode.value).to.equal('c');
+    const test1 = loopDetectionSet(l1);
+    expect(test1.value).to.equal('C');
+
+    // F -> O -> F [the same F as eariler, so loop exists]
+    const l2 = new LinkedList();
+    l2.add('F', 0);
+    l2.add('O', 1);
+
+    // point O -> F
+    const O = l2.get(1);
+    O.next = l2.get(0);
+
+    const test2 = loopDetectionSet(l2);
+    expect(test2.value).to.equal('F');
   });
 
   it('should return null if there is no loop', () => {
+    // X -> Y -> Z [no loop]
+    const l3 = new LinkedList();
+    l3.add('X', 0);
+    l3.add('Y', 1);
+    l3.add('Z', 2);
 
+    expect(loopDetectionSet(l3)).to.equal(null);
   });
 });
 

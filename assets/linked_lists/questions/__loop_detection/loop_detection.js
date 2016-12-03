@@ -7,6 +7,9 @@
 * Given a circular linked list, implement an algorithm that returns the node at
 * the beginning of the loop.
 *
+* Careful, a cycle can occur in the middle of a list, or it can simply mean the
+* last node links back to the first node. Does your function work for both?
+*
 * Definition:
 * Circular linked list: A (corrupt) linked list in which a node's next pointer
 * points to an earlier node, so as to make a loop in the linked list.
@@ -21,28 +24,42 @@
 *
 * Solution:
 *
+* Because a cycle could result from the last node linking to the first node, we
+* probably need to look at every node before we even see the start of our cycle
+* again. So it seems like we can't do better than O(n) runtime.
+*
+* Using a set, we could store all the nodes we've seen so far. The algorithm is simple:
+*
+* 1. If the current node is already in our set, we have a cycle. Return current node.
+* 2. If the current node is null we've hit the end of the list. Return null.
+* 3. Else throw the current node in our set and keep going.
+*
 * Time: O(n)
 * Space: O(n)
 *
+* Where (n) is the number if elements in our list. We can do better by getting a
+* constant space complexity in our next solution.
 *
 * @param {object} list linked list
 * @return {object} returns a node at beginning of loop, if one exists, else null
 */
 
 function loopDetectionSet(list) {
-  let visited = new Set();
+  const seen = new Set();
   let current = list.head;
 
-  while (current.next !== null) {
-    if (visited.has(current)) {
+  while (current) {
+    // found loop
+    if (seen.has(current)) {
       return current;
-
-    } else {
-      visited.add(current);
-      current = current.next;
     }
+
+    // otherwise, keep traversing
+    seen.add(current);
+    current = current.next;
   }
 
+  // no loop found
   return null;
 }
 
