@@ -125,7 +125,29 @@ function loopDetectionSet(list) {
 * Time: O(n)
 * Space: O(1)
 *
-* Our runtime is still O(n) but now we have a constant space complexity.
+* The runtime analysis is a little tricky. The worst case is when we do have a cycle,
+* so we don't return until fastRunner equals slowRunner. But how long will that take?
+*
+* First, we notice that when both runners are circling around the cycle fastRunner
+* can never skip over slowRunner. Why is this true?
+*
+* Suppose fastRunner had just skipped over slowRunner. fastRunner would only be
+* 1 node ahead of slowRunner, since their speeds differ by only 1. So we would have
+* something like this:
+*
+* [ ] -> [s] -> [f]
+*
+* What would the step right before this "skipping step" look like? fastRunner would
+* be 2 nodes back, and slowRunner would be 1 node back. But wait, that means they
+* would be at the same node! So fastRunner didn't skip over slowRunner! (This is
+* a proof by contradiction.)
+*
+* Since fastRunner can't skip over slowRunner, at most slowRunner will run around
+* the cycle once and fastRunner will run around twice. This gives us a runtime of
+* O(n).
+*
+* For space, we store two variables no matter how long the linked list is, which
+* gives us a space cost of O(1).
 *
 * @param {object} list linked list
 * @return {object} returns a node at beginning of loop, if one exists, else null
