@@ -44,8 +44,31 @@ describe('loopDetectionSet()', () => {
   });
 });
 
-// describe('loopDetectionRunner()', () => {
-//   it('should return the node at the beginning of a loop if a loop exists', () => {
-//
-//   });
-// });
+describe('loopDetectionRunner()', () => {
+  it('should return the node at the beginning of a loop if a loop exists', () => {
+    // A -> B -> C -> D -> E -> C [the same C as eariler, so loop exists]
+    const l4 = new LinkedList();
+    l4.add('A', 0);
+    l4.add('B', 1);
+    l4.add('C', 2);
+    l4.add('D', 3);
+    l4.add('E', 4);
+
+    // point E -> C
+    const E = l4.get(4);
+    E.next = l4.get(2);
+
+    const test3 = loopDetectionSet(l4);
+    expect(test3.value).to.equal('C');
+  });
+
+  it('should return null if there is no loop', () => {
+    // X -> Y -> Z [no loop]
+    const l5 = new LinkedList();
+    l5.add('X', 0);
+    l5.add('Y', 1);
+    l5.add('Z', 2);
+
+    expect(loopDetectionRunner(l5)).to.equal(null);
+  });
+});
