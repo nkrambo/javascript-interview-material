@@ -13,6 +13,28 @@
 *
 * Solution:
 *
+* Let's draw a picture of intersecting linked lists to get a better feel for what's
+* going on.
+*
+* Here's a picture of intersecting linked lists:
+*
+*     3 -> 1 -> 5 -> 9
+*                    |
+*                    7 -> 2 -> 1
+*                    |
+*               4 -> 6
+*
+* And here is are non-intersecting linked lists:
+*
+*     3 -> 1 -> 5 -> 9 -> 7 -> 2 -> 1
+*
+*               4 -> 6 -> 7 -> 2 -> 1
+*
+* We should be careful here not to inadvertently draw a special case by making
+* the linked lists the same length.
+*
+* How would we detect if two lists intersect
+*
 * Time: O(1)
 * Space: O(1)
 *
