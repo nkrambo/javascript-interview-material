@@ -10,31 +10,60 @@
 *
 * Your algorithm should use only constant space. You may not modify the values
 * in the list, only nodes itself can be changed.
-*
-* // Definition for singly-linked list.
-*
-* function ListNode(val) {
-*   this.val = val;
-*   this.next = null;
-* }
-*
 */
 
+/**
+* swapPairsRecursive()
+*
+* Solution:
+*
+* We can solve this one recusively
+*
+* Time: O(n)
+* Space: O(1)
+*
+* @param {object} head linked list head node
+* @return {object} returns the same modified list head node
+*/
+
+function swapPairsRecursive(head) {
+  if (head === null || head.next === null) return head;
+
+  const newHead = head.next;
+  head.next = swapPairsRecursive(head.next.next);
+  newHead.next = head;
+  return newHead;
+}
 
 /**
 * swapPairs()
 *
 * Solution:
 *
-* Time: O(1)
+* This is the iterative solution to this problem.
+*
+* Time: O(n)
 * Space: O(1)
 *
-* @param {object} list linked list
-* @return {object} returns the same modified list with pairs swapped
+* @param {object} head linked list head node
+* @return {object} returns the same modified list head node
 */
 
-function swapPairs(list) {
+function swapPairs(head) {
+  if (head == null || head.next == null) return head;
 
+  let cur = head;
+  let newHead = head.next;
+  while (cur !== null && cur.next !== null) {
+    let tmp = cur;
+    cur = cur.next;
+    tmp.next = cur.next;
+    cur.next = tmp;
+    cur = tmp.next;
+    if (cur !== null && cur.next !== null) tmp.next = cur.next;
+  }
+
+  return newHead;
 }
 
-export default swapPairs;
+export {swapPairsRecursive, swapPairs};
