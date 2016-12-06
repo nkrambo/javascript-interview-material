@@ -29,7 +29,9 @@
 function swapPairsRecursive(head) {
   if (head === null || head.next === null) return head;
 
+  // cache new head
   const newHead = head.next;
+
   head.next = swapPairsRecursive(head.next.next);
   newHead.next = head;
   return newHead;

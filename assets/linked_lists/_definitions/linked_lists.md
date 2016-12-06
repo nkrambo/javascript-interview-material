@@ -6,7 +6,7 @@ A linked list is a low-level data structure. It stores an ordered list of items 
 In a **singly linked list**, the nodes each have one pointer to the next node.
 
 <p align="center">
-<img src="images/singly_linked_list.png" width="250" />
+<img src="images/singly_linked_list.png" width="500" />
 </p>
 
 ```javascript
@@ -87,7 +87,7 @@ Like linked lists, **arrays** also store ordered lists of items, so you usually 
 Another type of linked list is a **doubly linked list**, which has pointers to the next and the previous nodes.
 
 <p align="center">
-<img scr="images/doubly_linked_list.png" width="250" />
+<img scr="images/doubly_linked_list.png" width="500" />
 </p>
 
 ```javascript
