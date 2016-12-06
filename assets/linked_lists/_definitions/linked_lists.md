@@ -87,7 +87,7 @@ Like linked lists, **arrays** also store ordered lists of items, so you usually 
 Another type of linked list is a **doubly linked list**, which has pointers to the next and the previous nodes.
 
 <p align="center">
-<img scr="images/doubly_linked_list.png" width="500" />
+<img src="images/doubly_linked_list.png" width="500" />
 </p>
 
 ```javascript

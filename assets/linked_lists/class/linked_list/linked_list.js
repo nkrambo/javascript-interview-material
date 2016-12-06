@@ -45,7 +45,10 @@
 */
 
 class LinkedList {
+
   /**
+  * @constructor
+  *
   * Unlike a graph, a linked list has a single node that starts off the entire
   * chain. This is known as the "head" of the linked list.
   *
@@ -58,14 +61,18 @@ class LinkedList {
   }
 
   /**
+  * get()
+  *
   * First we need a way to retrieve a value in a given position.
   *
   * This works differently than normal lists as we can't just jump to the
   * correct position. Instead we need to move through the individual nodes.
+  *
+  * @param {number} position the position of the node we want
+  * @return {object} returns the node at position, otherwise returns error
   */
 
   get(position) {
-
     // Throw an error if less items than the requested position are available
     if (position >= this.length) {
       throw new Error('Position outside of list range');
@@ -85,9 +92,14 @@ class LinkedList {
   }
 
   /**
-  * Next we need a way to add nodes to the specified position.
+  * add()
   *
+  * Next we need a way to add nodes to the specified position.
   * We're going for a generic add method that accepts a value and a position.
+  *
+  * @param {*} value the value to add to list
+  * @param {number} position the position in which to add value
+  * @return {void}
   */
 
   add(value, position) {
@@ -110,6 +122,7 @@ class LinkedList {
       // First, find the previous node and the current node.
       let prev = this.get(position - 1);
       let current = prev.next;
+
       // Then insert the new node in between them by setting its "next" field
       // to the current node and updating the previous node's "next" field to
       // the new one.
@@ -122,8 +135,13 @@ class LinkedList {
   }
 
   /**
+  * remove()
+  *
   * The last method we need is a remove method. We're just going to look up a
   * node by its position and splice it out of the chain.
+  *
+  * @param {number} position the position of the node to remove
+  * @return {void}
   */
 
   remove(position) {

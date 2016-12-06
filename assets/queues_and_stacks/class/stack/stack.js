@@ -33,21 +33,56 @@
 */
 
 class Stack {
+
+  /**
+  * @constructor
+  *
+  * We use an array to store our frames. We're also going to track the length.
+  */
+
   constructor() {
     this.items = [];
     this.length = 0;
   }
+
+  /**
+  * push()
+  *
+  * Simple method to push a frame onto our stack. We use the Array.push() method
+  * and increment our length.
+  *
+  * @param {*} value the value to push
+  * @return {void}
+  */
 
   push(value) {
     this.length += 1;
     this.items.push(value);
   }
 
+  /**
+  * pop()
+  *
+  * Use the Array.pop() method to pop the top frame from our stack. We also decrement
+  * our length by 1.
+  *
+  * @return {*} the top frame from our stack
+  */
+
   pop() {
     if (this.length === 0) return;
     this.length -= 1;
     return this.items.pop();
   }
+
+  /**
+  * peek()
+  *
+  * Similar to pop(), except we do not remove the frame, we simply 'peek' at its
+  * value
+  *
+  * @return {*} returns the top frame
+  */
 
   peek() {
     return this.items[this.length - 1];
