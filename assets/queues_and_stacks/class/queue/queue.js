@@ -1,29 +1,89 @@
 
-// We almost always can just use a normal JS array to implement this
-// without writing a class like the following.
+/**
+* Queues
+*
+* A queue implements FIFO (first-in first-out) ordering. As in a line or a queue
+* at a ticket stand, items are removed from the data structure in the same order
+* that they were added.
+*
+* A queue can also be implemented with a linked list. In fact, they are essentially
+* the same thing, as long as items can are added and removed from opposite sides.
+* As in a doubly-linked list only.
+*
+*
+*                         Enqueue      Dequeue        Peek
+* -----------------------------------------------------------------------------
+*                 Queue     O(1)         O(n)         O(1)
+*
+*
+*                   /:""|                     ,@@@@@@.
+*                  |: oo|_                   ,@@@@@`oo
+*                  C     _)                  @@@@C   _)
+*                    ) /                     "@@@@ '=
+*                   /`\\                      ```)/
+*                  || | |                       /`\\
+*                  || | |                      || | \
+*                  ||_| |                      || | /
+*                  \( ) |                      ||_| |
+*               |~~~`-`~~~|                    |))) |
+*         (_)   |         |         (_)        |~~~/          (_)
+*         | |`""....__     __....""`| |`""...._|| /  __....""`| |
+*         | |`""....__`````__....""`| |`""....__`````__....""`| |
+*         | |       | ||```         | |        ||`|``         | |
+*         | |       |_||__          | |        ||_|__         | |
+*        ,| |, jgs  (____))        ,| |,       ((;:;:)       ,| |,
+*        `---`                     `---`                     `---`
+*/
 
 class Queue {
+
+  /**
+  * @constructor
+  *
+  * Our queue is using a JavaScript array as a list rather than memory.
+  */
+
   constructor() {
-    this.list = [];
+    this.items = [];
     this.length = 0;
   }
 
+  /**
+  * enqueue()
+  *
+  * This will push values to the end of the queue.
+  *
+  * @param {*} value the value to enqueue
+  * @return {void}
+  */
+
   enqueue(value) {
     this.length += 1;
-    this.list.push(value);
+    this.items.push(value);
   }
+
+  /**
+  * dequeue()
+  *
+  * @return {*} returns the first item in the queue and removes that item
+  */
 
   dequeue() {
-
-    // Don't do anything if we don't have any items.
     if (this.length === 0) return;
 
-    // Shift the first item off the start of the list and return the value.
     this.length -= 1;
-    return this.list.shift();
+    return this.items.shift();
   }
 
+  /**
+  * peek()
+  *
+  * @return {*} returns the value of the first item in the queue but does not remove item
+  */
+
   peek() {
-    return this.list[0];
+    return this.items[0];
   }
 }
+
+export default Queue;

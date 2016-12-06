@@ -2,12 +2,12 @@
 /**
 * Stacks
 *
-* Stacks are similar to lists in that they have an order, but they limit you
-* to only pushing and popping values at the end of the list, which as we saw
-* before are very fast operations when mapping directly to memory.
+* The stack data structure is precisely what it sounds like: a stack of data. In
+* certain types of problems, it can be favourable to store data in a stack rather
+* than an array.
 *
-* However, Stacks can also be implemented with other data structures in order
-* to add functionality to them.
+* A stack uses LIFO (last-in first out) ordering. That is, as in a stack of dinner
+* plates, the most recent item added to the stack is the first item to be removed.
 *
 * The most common usage of stacks is places where you have one process adding
 * items to the stack and another process removing them from the end–
