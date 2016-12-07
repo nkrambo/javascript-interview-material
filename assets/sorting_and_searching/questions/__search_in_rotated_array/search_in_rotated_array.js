@@ -46,7 +46,10 @@
 * Time: O(log n)
 * Space: O(n)
 *
-*
+* This code will run in O(log n) if all the elements are unique. However, with
+* many duplicates, the algorithm actually takes O(n). This is because with many
+* duplicates, we will often have to search both the left and right sides of the
+* array (or subarrays).
 *
 * @param {array} arr array of integers
 * @param {number} target the integer to find
@@ -54,8 +57,8 @@
 */
 
 function searchRotatedArray(arr, target) {
-  let mid = ()
-  return -1;
+  // let mid = ()
+  // return -1;
 }
 
 export default searchRotatedArray;
