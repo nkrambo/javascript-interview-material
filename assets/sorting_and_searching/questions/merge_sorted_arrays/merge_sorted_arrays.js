@@ -16,7 +16,7 @@
 * const alicesArray = [1, 5, 8, 12, 14, 19];
 *
 * console.log(mergeSorted(myArray, alicesArray));
-* // logs [1, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 19]
+* logs [1, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 19]
 */
 
 /**
