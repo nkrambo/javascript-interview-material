@@ -51,14 +51,75 @@
 * duplicates, we will often have to search both the left and right sides of the
 * array (or subarrays).
 *
-* @param {array} arr array of integers
+* @param {array} nums array of integers
 * @param {number} target the integer to find
 * @return {number} returns the index of the target if it exists, else -1
 */
 
-function searchRotatedArray(arr, target) {
-  // let mid = ()
-  // return -1;
+function searchRotatedArray(nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left <= right) {
+    // calculate mid index
+    const mid = Math.floor((left + right) / 2);
+
+    // found element
+    if (nums[mid] === target) return mid;
+
+    if (nums[mid] >= nums[left]) { // correct order
+      if (nums[left] <= target && target < nums[mid]) {
+        // target is within the correct order part
+        right = mid - 1;
+      } else {
+        // target is not within the correct order part
+        left = mid + 1;
+      }
+    } else { // incorrect order
+      if(nums[mid] < target && target <= nums[right]) {
+        // target is within the correct order part
+        left = mid + 1;
+      } else {
+        // target is not within the correct order part
+        right = mid - 1;
+      }
+    }
+  }
+
+  // fell through without finding
+  return -1;
+}
+
+function search(arr, left, right, x) {
+
+  // either the left or right must be normally ordered. Find out which side is
+  // normally ordered, and then use the normally ordered half to figure out which
+  // side to search to find x.
+  if (arr[left] < arr[mid]) { // left is normally ordered
+    if (x >= arr[left] && x < arr[mid]) {
+      return search(arr, left, mid - 1, x) // search left
+    } else {
+      return search(arr, mid + 1, right, x) // search right
+    }
+  } else if (arr[mid] < arr[left]) { // right is normally ordered
+    if (x > arr[mid] && x <= arr[right]) {
+      return search(arr, mid + 1, right, x) // search right
+    } else {
+      return search(arr, left, mid - 1, x) // search left
+    }
+  } else if (arr[left] === arr[mid]) { // left half is all repeats
+    if (arr[mid] !== arr[right]) { // if right is different, search it
+      return search(arr, mid + 1, right, x);
+    } else { // else, we have to search both halves
+      const result = search(arr, left, mid - 1, x); // search left
+      if (result === -1) {
+        return search(arr, mid + 1, right, x); // search right
+      } else {
+        return result;
+      }
+    }
+  }
+  return -1;
 }
 
 export default searchRotatedArray;

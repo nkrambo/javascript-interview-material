@@ -26,7 +26,7 @@
 * Space: O(1)
 *
 * The only non-constant part of our time cost is the number of times our while
-* loop runs. Each step of our while loop cuts the range (dictated by floor and ceiling)
+* loop runs. Each step of our while loop cuts the range (dictated by left and right)
 * in half, until our range has just one element left.
 *
 * So how many times must we divide our original array size (n) in half until we
@@ -69,38 +69,32 @@
 *
 * Careful: we can only use binary search if the input array is already sorted.
 *
-* @param {array} arr array of integers
-* @param {number} value integer to find
+* @param {array} nums array of integers
+* @param {number} target integer to find
 * @returns {boolean} returns true if the value is present, otherwise false
 */
 
-function binarySearch(arr, value) {
+function binarySearch(nums, target) {
+  // we create index 'range' around possible positions of our target
+  let left = 0;
+  let right = nums.length - 1;
 
-  // we create 'walls' around possible positions of our value, starting with the
-  // last index (ceiling) and the -1 (floor), being to the left of 0th index.
-  let floor = -1;
-  let ceiling = arr.length;
+  // while there are unchecked positions in our 'range', keep checking midpoint
+  while (left <= right) {
 
-  // if there isn't at least 1 index between floor and ceiling, we've run out of
-  // guesses and the number must not be present.
-  while (floor + 1 < ceiling) {
+    // calculate midpoint, favour left if we need to
+    const mid = Math.floor((left + right) / 2);
 
-    // find the index ~halfway between the floor and ceiling we use integer division,
-    // so we'll favour left if we need to
-    const half = Math.floor((ceiling - floor) / 2);
-    let currentIndex = floor + half;
-    const current = arr[currentIndex];
+    // we found our target
+    if (nums[mid] === target) return true;
 
-    // we found our value
-    if (current === value) return true;
+    // target is to the left
+    if (nums[mid] > target) {
+      right = mid - 1;
 
-    // value is to the left
-    if (current > value) {
-      ceiling = currentIndex;
-
-    // value is to the right
+    // target is to the right
     } else {
-      floor = currentIndex;
+      left = mid + 1;
     }
   }
 
