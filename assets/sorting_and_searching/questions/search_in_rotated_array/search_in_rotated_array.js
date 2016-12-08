@@ -57,68 +57,46 @@
 */
 
 function searchRotatedArray(nums, target) {
+  // we create index 'range' around possible positions of our target
   let left = 0;
   let right = nums.length - 1;
 
+  // while there are unchecked positions in our 'range', keep checking midpoint
   while (left <= right) {
-    // calculate mid index
+
+    // calculate midpoint, favour left if we need to
     const mid = Math.floor((left + right) / 2);
 
-    // found element
+    // found element, return index
     if (nums[mid] === target) return mid;
 
-    if (nums[mid] >= nums[left]) { // correct order
+    // left is normally ordered
+    if (nums[mid] >= nums[left]) {
+
+      // target is within the normally ordered half, move right side of 'range' inward
       if (nums[left] <= target && target < nums[mid]) {
-        // target is within the correct order part
         right = mid - 1;
+
+      // target is not within the normally order half, move left side of 'range' inward
       } else {
-        // target is not within the correct order part
         left = mid + 1;
       }
-    } else { // incorrect order
-      if(nums[mid] < target && target <= nums[right]) {
-        // target is within the correct order part
+
+    // the left half is not in normal order, the right half MUST be normally ordered
+    } else {
+
+      // target is within the normally order half, move left side of 'range' inward
+      if (nums[mid] < target && target <= nums[right]) {
         left = mid + 1;
+
+      // target is not within the normally order half, move right side of 'range' inward
       } else {
-        // target is not within the correct order part
         right = mid - 1;
       }
     }
   }
 
-  // fell through without finding
-  return -1;
-}
-
-function search(arr, left, right, x) {
-
-  // either the left or right must be normally ordered. Find out which side is
-  // normally ordered, and then use the normally ordered half to figure out which
-  // side to search to find x.
-  if (arr[left] < arr[mid]) { // left is normally ordered
-    if (x >= arr[left] && x < arr[mid]) {
-      return search(arr, left, mid - 1, x) // search left
-    } else {
-      return search(arr, mid + 1, right, x) // search right
-    }
-  } else if (arr[mid] < arr[left]) { // right is normally ordered
-    if (x > arr[mid] && x <= arr[right]) {
-      return search(arr, mid + 1, right, x) // search right
-    } else {
-      return search(arr, left, mid - 1, x) // search left
-    }
-  } else if (arr[left] === arr[mid]) { // left half is all repeats
-    if (arr[mid] !== arr[right]) { // if right is different, search it
-      return search(arr, mid + 1, right, x);
-    } else { // else, we have to search both halves
-      const result = search(arr, left, mid - 1, x); // search left
-      if (result === -1) {
-        return search(arr, mid + 1, right, x); // search right
-      } else {
-        return result;
-      }
-    }
-  }
+  // fell through, target doesn't exist
   return -1;
 }
 

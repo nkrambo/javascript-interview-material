@@ -88,16 +88,17 @@ function binarySearch(nums, target) {
     // we found our target
     if (nums[mid] === target) return true;
 
-    // target is to the left
+    // target is to the left, move right side of 'range' inward
     if (nums[mid] > target) {
       right = mid - 1;
 
-    // target is to the right
+    // target is to the right, move left side of 'range' inward
     } else {
       left = mid + 1;
     }
   }
 
+  // fell through, target doesn't exist
   return false;
 }
 
