@@ -1,27 +1,93 @@
 
+/**
+* Binary Seaarch Tree (BST)
+*
+* Binary search trees are a fairly common form of tree for their ability to
+* efficiently access, search, insert, and delete values all while keeping them
+* in a sorted order.
+*
+* Imagine taking a sequence of numbers:
+*
+*     1  2  3  4  5  6  7
+*
+* And turning it into a tree starting from the center.
+*
+*              4
+*           /     \
+*        2           6
+*      /   \       /  \
+*     1     3     5    7
+*    -^--^--^--^--^--^--^-
+*     1  2  3  4  5  6  7
+*
+* This is how a binary tree works. Each node can have two children:
+*
+*     - Left: Less than parent node's value.
+*     - Right: Greater than parent node's value.
+*
+* > Note: In order to make this work all values must be unique in the tree.
+*
+* This makes the traversal to find a value very efficient. Say we're trying to
+* find the number 5 in our tree:
+*
+*             (4)         <--- 5 > 4, so move right.
+*           /     \
+*        2         (6)    <--- 5 < 6, so move left.
+*      /   \       /  \
+*     1     3    (5)   7 <--- We've reached 5!
+*
+* Notice how we only had to do 3 checks to reach the number 5. If we were to
+* expand this tree to 1000 items. We'd go:
+*
+*   500 -> 250 -> 125 -> 62 -> 31 -> 15 -> 7 -> 3 -> 4 -> 5
+*
+* Only 10 checks for 1000 items!
+*
+* The other important thing about binary search trees is that they are similar
+* to linked lists in the sense that you only need to update the immediately
+* surrounding items when adding or removing a value.
+*
+*
+*                      Access       Search       Insert       Delete
+* -----------------------------------------------------------------------------
+*       Linked List   O(log N)     O(log N)     O(log N)     O(log N)
+*
+*
+* 0 0 1 0 1 0 0 1 0 1 1 1 0 1  ,@@@@@@@@@@@@@@,   0 0 1 0 1 0 0 1 0 1 1 1 0 1 0
+* 0 1 0 1 0 1 0 1 1 0 1 1 0  @@`              '@@   0 1 0 1 0 1 1 0 1 0 1 0 0 1
+* 1 1 0 0 0 1 0 0 1 1 1 0  @@`   8O8PoOb o8o    '@@   0 0 1 0 0 1 0 0 1 1 1 1 0
+* 0 0 1 1 0 1 0 1 0 0 0  @@   dOB69QO8PdUgoO9bD    @@   1 0 1 1 0 1 0 1 0 0 0 1
+* ===================== @@   CgbU8OU qOp qOdOdcb    @@  0 1 1 0 1 0 1 0 1 0 1 0
+*                       @@      6OU /p u gcoUpP     @@  1 0 1 1 0 1 0 0 1 1 0 1
+* ===================== @@         \\// /doP        @@  0 1 1 0 0 1 0 0 1 0 1 0
+* 1 1 0 0 1 1 0 1 1 0 0  @@         \\//           @@   1 0 1 0 0 1 1 0 1 1 0 1
+* 0 1 1 0 1 0 1 1 0 1 1 0  @@,      |||          ,@@  0 1 1 0 1 1 0 0 1 0 1 1 0
+* 1 0 1 0 1 1 0 0 1 0 0 1 0  @@,   //|\       ,@@   0 1 0 1 0 1 1 0 0 1 1 0 0 1
+* 1 0 1 0 0 1 1 0 1 0 1 0 1  `@@@@@@@@@@@@@@'   0 1 1 1 0 0 1 0 1 0 1 1 0 1 1 0
+*/
+
 class BinarySearchTree {
 
   constructor() {
     this.root = null;
   }
 
- /*
-  * Find
-  * @param {number | string value}
-  * @return {obect} Returns the found value object. If the tree does not contain
-  * the value returns the closest leaf value object, else returns error if the
-  * tree is empty.
+  /**
+  * find()
+  *
+  * @param {*} value to find
+  * @return {object} returns the node with value if it exists, otherwise null
   */
 
   find(value) {
+
     // if empty
     if (this.isEmpty()) {
       new Error('Tree is empty.');
     }
 
-    // start from root
+    // start from root and traverse
     let current = this.root;
-
     while (current) {
 
       // if value is less than current, traverse left
@@ -44,12 +110,15 @@ class BinarySearchTree {
 
   }
 
-  /*
-   * Insert
-   * @param {number | string value}
-   */
+  /**
+  * insert()
+  *
+  * @param {*} value to insert
+  * @return {void}
+  */
 
   insert(value) {
+
     // create node
     const node = {
       value,
@@ -58,7 +127,7 @@ class BinarySearchTree {
       parent: null
     };
 
-    // check root
+    // check if root is empty
     if (this.root === null) {
       this.root = node;
       return;
@@ -85,12 +154,26 @@ class BinarySearchTree {
     }
   }
 
-  // isEmpty
+  /**
+  * isEmpty()
+  *
+  * @return {boolean} returns true if the tree is empty, otherwise false
+  */
+
   isEmpty() {
     return this.root ? false : true;
   }
 
-  // largest
+  /**
+  * largest()
+  *
+  * The largest value in a BST will always be the furthest right value. So, we
+  * simply traverse as far right as we can.
+  *
+  * @param {object} root node of BST
+  * @return {object} returns the node with largest value
+  */
+
   largest(root) {
     let current = root || this.root;
 
@@ -100,7 +183,16 @@ class BinarySearchTree {
     }
   }
 
-  // smallest
+  /**
+  * smallest()
+  *
+  * The smallest value in a BST will always be the furthest left value. So, we
+  * simply traverse as far left as we can.
+  *
+  * @param {object} root node of BST
+  * @return {object} returns the node with smallest value
+  */
+
   smallest(root) {
     let current = root || this.root;
 
@@ -110,7 +202,21 @@ class BinarySearchTree {
     }
   }
 
-  // next
+  /**
+  * next()
+  *
+  * If our precessor value has a right child, then the 'next' value will always
+  * be the smallest value of that sub-tree, the furthest left.
+  *
+  * If our precessor value has no right child we traverse upward until we find
+  * the first ancestor with a larger value.
+  *
+  * This is where having access to 'parent' nodes is handy.
+  *
+  * @param {*} value of precessor
+  * @return {object} returns object of successor node if exists, otherwise null
+  */
+
   next(value) {
     let node = this.find(value);
 
@@ -128,8 +234,15 @@ class BinarySearchTree {
     }
   }
 
-  // delete
+  /**
+  * delete()
+  *
+  * @param {*} value to delete
+  * @return {string} returns a delete confirmation
+  */
+
   delete(value) {
+
     // grab node
     let node = this.find(value);
 
@@ -140,6 +253,7 @@ class BinarySearchTree {
 
     // if no right node
     if (node.right === null) {
+
       // promote node.left if it exists
       if (node.left) {
         node.left.parent = node.parent;
@@ -166,11 +280,21 @@ class BinarySearchTree {
     return 'Node removed';
   }
 
-  // range
+  /**
+  * range()
+  *
+  * Gets a range of values in the BST and returns them in an array.
+  *
+  * @param {*} start value of range
+  * @param {*} end value of range
+  * @return {array} returns an array of nodes within range of start - end
+  */
+
   range(start, end) {
+
+    // check for range error
     const smallest = this.smallest();
     const largest = this.largest();
-
     if (start < smallest.value || end > largest.value) {
       throw new Error('Parameters outside of tree range.');
     }
@@ -189,7 +313,15 @@ class BinarySearchTree {
     return results;
   }
 
-  // DFS
+  /**
+  * dfs()
+  *
+  * Depth first search, uses a stack to process nodes.
+  *
+  * @param {object} root node of BST
+  * @return {void} traverse BST depth first
+  */
+
   dfs(root) {
     const stack = [root || this.root];
 
@@ -211,11 +343,20 @@ class BinarySearchTree {
     }
   }
 
-  // BFS
+  /**
+  * bfs()
+  *
+  * Breadth first search, level search, uses a queue to process nodes.
+  *
+  * @param {object} root node of BST
+  * @return {void} traverse BST breadth first
+  */
+
   bfs(root) {
     const queue = [root || this.root];
 
     while (queue.length) {
+
       // dequeue
       let node = queue.shift();
 
