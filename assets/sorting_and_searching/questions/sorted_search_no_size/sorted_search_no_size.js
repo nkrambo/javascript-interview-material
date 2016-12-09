@@ -10,6 +10,20 @@
 * Given a 'Listy' which contains sorted, positive integers, find the index at which
 * an element x occurs. If x occurs multiple times, you may return any index.
 *
+* class Listy {
+*   constructor() {
+*     this.items = [];
+*   }
+*
+*   elementAt(index) {
+*     return this.items[index] ? this.items[index] : -1;
+*   }
+* }
+*/
+
+/**
+* indexAtListy()
+*
 * Solution:
 *
 * The list is sorted, so our first thought here should be binary search. The problem
@@ -38,12 +52,50 @@
 * is bigger than the value x (the one we're searching for), we'll jump over to the
 * binary search part early.
 *
-* Time: O(1)
+* Time: O(log n)
 * Space: O(1)
+*
+* It turns out that not knowing the length didn't impact the runtime of our search
+* algorithm. We find the length in O(log n) time then complete the search in O(lon n)
+* time as well.
+*
+* @param {object} listy list
+* @param {object} target the element to search for
 */
 
-function indexAtListy(x) {
+function indexAtListy(listy, target) {
 
+  // calculate our list length
+  let length = 1;
+  while (listy.elementAt(length) !== -1 && listy.elementAt(length) < target) {
+    length *= 2;
+  }
+
+  // we create index 'range' around possible positions of our target
+  let left = 0;
+  let right = length;
+
+  // while there are unchecked positions in our 'range', keep checking midpoint
+  while (left <= right) {
+
+    // calculate midpoint, favour left if we need to
+    const mid = Math.floor((left + right) / 2);
+
+    // we found our target
+    if (listy.items[mid] === target) return mid;
+
+    // target is to the left, move right side of 'range' inward
+    if (listy.items[mid] > target || listy.items[mid] === -1) {
+      right = mid - 1;
+
+    // target is to the right, move left side of 'range' inward
+    } else {
+      left = mid + 1;
+    }
+  }
+
+  // fell through, target doesn't exist
+  return -1;
 }
 
 export default indexAtListy;
