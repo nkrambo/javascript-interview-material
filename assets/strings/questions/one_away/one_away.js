@@ -17,32 +17,29 @@
 * oneAway()
 *
 * Solution:
+*
 * We can possibly do a fast return by comparing the lengths of the two strings.
-* If the lengths differ by more than 1, we know that they must differ by more than 1 edit.
+* If the lengths differ by more than 1, we know that they must differ by more than
+* 1 edit.
 *
 * Otherwise we can use a map to track the type and count of characters in str1.
-* We then also interate over str2 and compare the occurence of characters, removing and
-* decremting as needed.
+* We then also interate over str2 and compare the occurence of characters, removing
+* and decremting as needed.
 *
-* If the strings are only 1 edit (or less) apart, then the size of the map should be
-* less than or equal to 1, representing the 1 edit allowed.
+* If the strings are only 1 edit (or less) apart, then the size of the map should
+* be less than or equal to 1, representing the 1 edit allowed.
 *
 * Time: O(n)
 * Space: O(n)
+*
 * Where n is the length of the string input.
 *
-* @param {string} str1 String of (n) length
-* @param {string} str2 String of (n) length
-* @return {boolean} Returns true if the difference between the two strings in 1 or less edits,
-* otherwise returns false;
+* @param {string} str1 string of (n) length
+* @param {string} str2 string of (n) length
+* @return {boolean} returns true if difference is 1 or less edits, otherwise returns false
 */
 
 function oneAway(str1, str2) {
-
-  // type check
-  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
-    throw new TypeError('function oneAway(): Expects 2 arguments of [string] type.');
-  }
 
   // if lengths differ by more than 1, must be false
   if (Math.abs(str1.length - str2.length) > 1) return false;
@@ -50,7 +47,9 @@ function oneAway(str1, str2) {
   // count characters in str1
   const chars = new Map();
   for (let i = 0; i < str1.length; i += 1) {
-    chars.set(str1[i], chars.get(str1[i]) + 1 || 1); // increment by or set to 1
+
+    // increment by or set to 1
+    chars.set(str1[i], chars.get(str1[i]) + 1 || 1);
   }
 
   // compare str2 against str1

@@ -15,10 +15,4 @@ describe('isIsomorphic()', () => {
   it('should return false if str1 and str2 are different lengths', () => {
     expect(isIsomorphic('foo', 'barrr')).to.be.false;
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ isIsomorphic (null, null); }).to.throw (TypeError);
-    expect(function(){ isIsomorphic (undefined, undefined); }).to.throw (TypeError);
-    expect(function(){ isIsomorphic (5, 5); }).to.throw (TypeError);
-  });
 });

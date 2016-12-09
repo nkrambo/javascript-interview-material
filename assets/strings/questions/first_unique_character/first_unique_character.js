@@ -37,12 +37,6 @@
 */
 
 function firstUniqueChar(str) {
-
-  // type check
-  if (typeof str !== 'string') {
-    throw new TypeError('firstUniqueChar: Expects single argument of [string] type.');
-  }
-
   // count chars
   const chars = new Map();
   for (let i = 0; i < str.length; i += 1) {

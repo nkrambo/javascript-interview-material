@@ -6,13 +6,13 @@
 *
 * Implement an algorithm to determine if a string has all unique characters.
 * What if you cannot use additional data structures.
-*
 */
 
 /**
 * isUnique()
 *
 * Solution:
+*
 * This method uses a Set data strucutre.
 *
 * First, if we assume that the input will be in ASCII encoding, we can check
@@ -28,6 +28,7 @@
 *
 * Time: O(n)
 * Space: O(n)
+*
 * Where n is the length of the string input.
 *
 * @param {string} str string of (n) length
@@ -35,9 +36,6 @@
 */
 
 function isUnique(str) {
-
-  // type check
-  if (typeof str !== 'string') throw new TypeError('isUnique: Expects single argument of [string] type.');
 
   // assuming ASCII encoding, we can short-circuit
   if (str.length > 128) return false;
@@ -60,6 +58,7 @@ function isUnique(str) {
 * isUniqueSort()
 *
 * Solution:
+*
 * This method uses no additional data structure.
 *
 * Again, check if we can short-circuit, using ASCII character length.
@@ -73,6 +72,7 @@ function isUnique(str) {
 *
 * Time: O(n log n)
 * Space: O(1)
+*
 * Where n is the length of the string input.
 *
 * @param {string} str String of (n) length
@@ -80,9 +80,6 @@ function isUnique(str) {
 */
 
 function isUniqueSort(str) {
-
-  // type check
-  if (typeof str !== 'string') throw new TypeError('isUniqueSort: Expects single argument of [string] type.');
 
   // assuming ASCII encoding, we can short-circuit
   if (str.length > 128) return false;

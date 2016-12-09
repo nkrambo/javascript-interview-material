@@ -17,11 +17,6 @@ describe('isPermutation()', () => {
     expect(isPermutation('abcd', 'zqwe')).to.be.false;
     expect(isPermutation('a', 'b')).to.be.false;
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ isPermutation ([]); }).to.throw (TypeError);
-  });
-
 });
 
 describe('isPermutationSort()', () => {
@@ -39,9 +34,4 @@ describe('isPermutationSort()', () => {
     expect(isPermutationSort('abcd', 'zqwe')).to.be.false;
     expect(isPermutationSort('a', 'b')).to.be.false;
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ isPermutationSort ([]); }).to.throw (TypeError);
-  });
-
 });

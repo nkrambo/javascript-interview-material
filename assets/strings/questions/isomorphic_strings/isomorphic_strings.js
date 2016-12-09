@@ -45,6 +45,7 @@
 *
 * Time: O(n)
 * Space: O(n)
+*
 * Where (n) is the length of str1
 *
 * @param {string} str1 string to check
@@ -53,11 +54,6 @@
 */
 
 function isIsomorphic(str1, str2) {
-
-  // type check
-  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
-    throw new TypeError('isIsomorphic: Expects 2 arguments of [string] type.');
-  }
 
   // length check
   if (str1.length !== str2.length) return false;

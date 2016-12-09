@@ -55,6 +55,7 @@
 *
 * Time: O(n)
 * Space: O(n)
+*
 * Where n is the length of the string input.
 *
 * @param {string} str string of (n) length
@@ -63,11 +64,7 @@
 
 function bracketValidator(str) {
 
-  // type check
-  if (typeof str !== 'string') {
-    throw new TypeError('bracketValidator: Expects a single argument of [string] type.');
-  }
-
+  // map brackets
   const openersToClosers = {
     '(' : ')',
     '[' : ']',

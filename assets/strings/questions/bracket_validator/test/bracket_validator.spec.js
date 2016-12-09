@@ -11,10 +11,4 @@ describe('bracketValidator()', () => {
     expect(bracketValidator('{ [ ( ] ) }')).to.be.false;
     expect(bracketValidator('{ [ }')).to.be.false;
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ bracketValidator (null); }).to.throw (TypeError);
-    expect(function(){ bracketValidator (undefined); }).to.throw (TypeError);
-    expect(function(){ bracketValidator (5); }).to.throw (TypeError);
-  });
 });

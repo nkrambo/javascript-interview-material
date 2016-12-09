@@ -12,9 +12,4 @@ describe('oneAway()', () => {
   it('should return false for edits more than 1', () => {
     expect(oneAway('pale', 'bae')).to.be.false;
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ oneAway (5, 5); }).to.throw (TypeError);
-  });
-
 });

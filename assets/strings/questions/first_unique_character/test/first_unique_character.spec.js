@@ -12,10 +12,4 @@ describe('firstUniqueChar()', () => {
     expect(firstUniqueChar('aabb')).to.equal(-1);
     expect(firstUniqueChar('cdcd')).to.equal(-1);
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ firstUniqueChar (null); }).to.throw (TypeError);
-    expect(function(){ firstUniqueChar (undefined); }).to.throw (TypeError);
-    expect(function(){ firstUniqueChar ([]); }).to.throw (TypeError);
-  });
 });

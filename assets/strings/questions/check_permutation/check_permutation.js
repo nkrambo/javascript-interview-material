@@ -12,6 +12,7 @@
 * isPermutation()
 *
 * Solution:
+*
 * As a quick first step to solving this would be to compare the lengths of each
 * string. If they are different, then they cannot possibly be permutations and we
 * return false.
@@ -29,6 +30,7 @@
 *
 * Time: O(n + m)
 * Space: O(n)
+*
 * Where n is the length of str1, m is the length of str2
 *
 * @param  {string} str2 First string of (n) length
@@ -37,11 +39,6 @@
 */
 
 function isPermutation(str1, str2) {
-
-  // type check
-  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
-    throw new TypeError('isPermutation: Expects 2 arguments of [string] type.');
-  }
 
   // length check, short-circuit
   if (str1.length !== str2.length) return false;
@@ -82,6 +79,7 @@ function isPermutation(str1, str2) {
 *
 * Time: O((n log n) + (m log m))
 * Space: O(1)
+*
 * Where n is the length of str1, m is the length of str2
 *
 * @param  {string} str2 First string of (n) length
@@ -90,11 +88,6 @@ function isPermutation(str1, str2) {
 */
 
 function isPermutationSort(str1, str2) {
-
-  // type check
-  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
-    throw new TypeError('isPermutation: Expects 2 arguments of [string] type.');
-  }
 
   // length check, short-circuit
   if (str1.length !== str2.length) return false;

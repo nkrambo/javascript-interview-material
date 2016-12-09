@@ -14,11 +14,6 @@ describe('isUnique()', () => {
     expect(isUnique('abcc')).to.be.false;
     expect(isUnique('11')).to.be.false;
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ isUnique ([]); }).to.throw (TypeError);
-  });
-
 });
 
 describe('isUniqueSort()', () => {
@@ -32,9 +27,5 @@ describe('isUniqueSort()', () => {
   it('should return false for a non-unique string', () => {
     expect(isUniqueSort('abcc')).to.be.false;
     expect(isUniqueSort('11')).to.be.false;
-  });
-
-  it('should throw a type error', () => {
-    expect(function(){ isUniqueSort([]); }).to.throw (TypeError);
   });
 });
