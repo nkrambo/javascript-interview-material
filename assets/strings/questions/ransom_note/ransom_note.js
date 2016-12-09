@@ -66,6 +66,7 @@
 *
 * Time: O(n + m)
 * Space: O(n)
+*
 * Where n is the length of ransom note.
 *
 * @param {string} ransomeNote string of (n) length, lowercase
@@ -75,11 +76,6 @@
 */
 
 function ransomNote(ransomNote, magazine) {
-
-  // type check
-  if (typeof ransomNote !== 'string' || typeof magazine !== 'string') {
-    throw new TypeError('ransomNote: Expects 2 arguments of [string] type.');
-  }
 
   // count ransom note characters
   const chars = new Map();

@@ -18,6 +18,7 @@
 * isPalidromePermutation()
 *
 * Solution:
+()
 * To solve this, we have to consider some of the properties of a valid palindrome.
 * For a word to be written the same ways forward as backwards, there needs
 * to be the same characters in the first half as there are in the last half.
@@ -38,11 +39,11 @@
 *
 * We can do this with a set().
 *
-* We iterate over the string and for each character, either add to the set, representing 'unbalanced',
-* or we delete from the set, representing 'balanced'.
+* We iterate over the string and for each character, either add to the set,
+* representing 'unbalanced', or we delete from the set, representing 'balanced'.
 *
-* After iteration, the size of the set should not be larger than 1, which represents the 1 unbalanced
-* middle character that may, or may not, be present.
+* After iteration, the size of the set should not be larger than 1, which represents
+* the 1 unbalanced middle character that may, or may not, be present.
 *
 * Time: O(n)
 * Space: O(n)
@@ -53,11 +54,6 @@
 */
 
 function isPalidromePermutation(str) {
-
-  // type check
-  if (typeof str !== 'string') {
-    throw new TypeError('isPalidromePermutation: Expects single argument of [string] type');
-  }
 
   // use a set to balance characters
   const chars = new Set();

@@ -4,7 +4,6 @@
 *
 * Write a function to reverse a string in-place. There is only a single
 * word, with no spaces, in this string.
-*
 */
 
 /**
@@ -27,6 +26,7 @@
 *
 * Time: O(n)
 * Space: O(1)
+*
 * Where n is the length of the string input.
 *
 * @param {string} str String of (n) length
@@ -34,11 +34,6 @@
 */
 
 function reverseString(str) {
-
-  // type check
-  if (typeof str !== 'string') {
-    throw new TypeError('reverseString: Expects a single argument of [string] type.');
-  }
 
   // edge case
   if (str.length <= 1) return str;

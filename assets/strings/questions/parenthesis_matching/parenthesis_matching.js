@@ -44,11 +44,6 @@
 
 function parenthesisMatching(str, pos) {
 
-  // type check
-  if (typeof str !== 'string' || typeof pos !== 'number') {
-    throw new TypeError('parenthesisMatching: Expects 2 arguments of [string, number] types.');
-  }
-
   // check pos actually references opening parenthesis
   if (str[pos] !== '(') {
     throw new Error('parenthesisMatching: [Pos] does not reference opening parenthesis index.');

@@ -17,11 +17,4 @@ describe('parenthesisMatching()', () => {
   it('should throw an error if there is no closing parenthesis.', () => {
     expect(function(){ parenthesisMatching ('(this will throw error', 0); }).to.throw (Error);
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ parenthesisMatching (null, null); }).to.throw (TypeError);
-    expect(function(){ parenthesisMatching (undefined, undefined); }).to.throw (TypeError);
-    expect(function(){ parenthesisMatching ('abc', 'abc'); }).to.throw (TypeError);
-    expect(function(){ parenthesisMatching (5, 5); }).to.throw (TypeError);
-  });
 });

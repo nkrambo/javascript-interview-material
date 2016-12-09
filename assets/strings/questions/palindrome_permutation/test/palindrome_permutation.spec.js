@@ -14,9 +14,4 @@ describe('isPalidromePermutation', () => {
     expect(isPalidromePermutation('abcdefg')).to.be.false;
     expect(isPalidromePermutation('ad')).to.be.false;
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ isPalidromePermutation ([]); }).to.throw (TypeError);
-  });
-
 });
