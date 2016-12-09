@@ -75,6 +75,7 @@
 */
 
 function binarySearch(nums, target) {
+  
   // we create index 'range' around possible positions of our target
   let left = 0;
   let right = nums.length - 1;
