@@ -3,17 +3,20 @@
 * String Compression
 *
 * Implement a method to perform a basic string compression using the counts
-* of repeated characters. For example, the string 'aabcccccaaa' would become
-* 'a2b1c5a3'. If the 'compressed' string would not become smaller than the
-* original string, your method should return the original string. You can
-* assume the string only has uppercase and lowercase letters (a-z).
+* of repeated characters.
 *
+* For example, the string 'aabcccccaaa' would become 'a2b1c5a3'. If the 'compressed'
+* string would not become smaller than the original string, your method should
+* return the original string.
+*
+* You can assume the string only has uppercase and lowercase letters (a-z).
 */
 
 /**
 * stringCompress()
 *
 * Solution:
+*
 * We can catch an obvious edge case here. If the string input has a length less than
 * or equal to 2, then we can't compress this any further.
 *
@@ -30,6 +33,7 @@
 *
 * Time: O(n)
 * Space: O(n)
+*
 * Where n is the length of the string input.
 *
 * @param {string} str string of (n) length
@@ -37,21 +41,15 @@
 */
 
 function stringCompress(str) {
-
-  // type check
-  if (typeof str !== 'string') {
-    throw new TypeError('stringCompress: Expects a single argument of [string] type.');
-  }
+  let compressed = '';
+  let charCount = 1;
 
   // cannot compress a string of length 2
   if (str.length <= 2) return str;
 
-  let compressed = '';
-  let charCount = 1;
-
   for (let i = 0; i < str.length; i += 1) {
     if (str[i] === str[i + 1]) {
-      charCount++;
+      charCount += 1;
 
     } else {
       // concat to running result

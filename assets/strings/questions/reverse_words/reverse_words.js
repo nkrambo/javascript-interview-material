@@ -20,7 +20,7 @@
 * const message = 'find you will pain only go you recordings security the into if';
 *
 * reverseWords(message);
-* // returns: 'if into the security recordings you go only pain will you find'
+* returns: 'if into the security recordings you go only pain will you find'
 */
 
 /**
@@ -61,6 +61,7 @@
 *
 * Time: O(n)
 * Space: O(n)
+*
 * Where n is the length of the string input.
 * Our space cost comes from converting the message string to an array.
 * If our input was an array, our space cost would be O(1) because we'd
@@ -71,11 +72,6 @@
 */
 
 function reverseWords(str) {
-
-  // type check
-  if (typeof str !== 'string') {
-    throw new TypeError('reverseWords: Expects single argument of [string] type.');
-  }
 
   // first we reverse all the characters in the entire message
   const msg = str.split('');
@@ -91,6 +87,7 @@ function reverseWords(str) {
   // as we look for the /end/ of the current word
   let wordStart = 0;
   for (let i = 0; i <= msg.length; i += 1) {
+
     // found the end of the current word!
     if (i === msg.length || msg[i] === ' ') {
       // if we haven't exhausted the string our

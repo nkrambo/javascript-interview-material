@@ -18,9 +18,4 @@ describe('stringCompress()', () => {
     expect(stringCompress('aabbcc')).to.equal('aabbcc');
     expect(stringCompress('gghhadwhjk')).to.equal('gghhadwhjk');
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ stringCompress (5); }).to.throw (TypeError);
-  });
-
 });

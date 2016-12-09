@@ -14,7 +14,6 @@
 * Output: 'leotcede'
 *
 * You can assume that the string will contain letters [a-z], all lowercase.
-*
 */
 
 /**
@@ -37,6 +36,7 @@
 *
 * Time: O(n + m)
 * Space: O(n)
+*
 * Where n is the length of the string input and m is the number of vowels.
 *
 * @param {string} str string of (n) length
@@ -44,11 +44,6 @@
 */
 
 function reverseVowels(str) {
-
-  // type check
-  if (typeof str !== 'string') {
-    throw new TypeError('reverseVowels: Expects a single argument of [string] type.');
-  }
 
   // edge case
   if (str.length < 1) return str;

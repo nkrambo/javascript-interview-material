@@ -12,10 +12,4 @@ describe('reverseVowels()', () => {
     expect(reverseVowels('be')).to.equal('be');
     expect(reverseVowels('a')).to.equal('a');
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ reverseVowels (null); }).to.throw (TypeError);
-    expect(function(){ reverseVowels (undefined); }).to.throw (TypeError);
-    expect(function(){ reverseVowels (5); }).to.throw (TypeError);
-  });
 });

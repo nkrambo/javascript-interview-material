@@ -7,13 +7,13 @@
 * if s2 is a rotation of s1 using only one call to isSubstring().
 *
 * Example: 'watterbottle' is a rotation of 'erbottlewat'
-*
 */
 
 /**
 * isRotation()
 *
 * Solution:
+*
 * As in the example, if we rotate 'waterbottle' after 'wat', you get 'erbottlewat'.
 * In a rotation, we cut s1 into two parts, x and y, and rearrange them to get s2.
 *
@@ -29,21 +29,18 @@
 * And that's how we solve this. We check isSubstring(s1s1, s2).
 *
 * Time: O(n)
+* Space: O(1)
+*
 * The runtime of this depends on the runtime of isSubstring(). But if we assume that
 * isSubstring() runs at O(a + b), of strings length (a) and (b), then the runtime of
 * isRotation() would be O(n).
 *
-* @param {string} str1 - Base string
-* @param {string} str2 - String to check is rotation of str1
+* @param {string} str1 base string
+* @param {string} str2 string to check is rotation of str1
 * @return {boolean} returns true if str2 is a rotation of str1, otherwise returns false.
 */
 
 function isRotation(str1, str2) {
-
-  // type check
-  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
-    throw new TypeError('isRotation: Expects 2 params of "string" type.');
-  }
 
   // length check, short-circuit
   if (str1.length !== str2.length) return false;

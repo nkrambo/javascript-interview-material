@@ -5,7 +5,9 @@
  * Write an algorithm to find the 'next' node (i.e, in-order successor) of a given node in a BST.
  * You may assume that each node has a reference to it's parent.
  *
- * Solution: This solution requires composing 3 functions: findNext, findNode, findSmallest.
+ * Solution:
+ *
+ * This solution requires composing 3 functions: findNext, findNode, findSmallest.
  * We first need to find the node from the value passed in. If it's not there, raise exception.
  * We know that the next node will either be the smallest of the value's right subtree, or if
  * that doesn't exist, it will be the closest ancestor of value with a greater value. So we would
@@ -14,7 +16,7 @@
  */
 
 /**
- * Find next
+ * findNext()
  *
  * Time: O(log n)
  *

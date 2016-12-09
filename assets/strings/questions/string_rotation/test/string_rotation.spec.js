@@ -18,13 +18,4 @@ describe('isRotation()', () => {
   it('should return false for s1 length <= 1', () => {
     expect(isRotation('b', 'abcd')).to.be.false;
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ isRotation (null, null); }).to.throw (TypeError);
-    expect(function(){ isRotation (undefined, undefined); }).to.throw (TypeError);
-    expect(function(){ isRotation ('testing', undefined); }).to.throw (TypeError);
-    expect(function(){ isRotation (undefined, 'testing'); }).to.throw (TypeError);
-    expect(function(){ isRotation (5, 5); }).to.throw (TypeError);
-  });
-
 });

@@ -9,6 +9,7 @@
 * Check BST
 *
 * Solution:
+*
 * We use the min/max solution here. Consider the condition we must meet to have
 * a valid BST. That is, all left nodes must be less than the current node, which must be
 * less than all the right nodes. We can use this to iterate through the tree and pass down

@@ -4,16 +4,18 @@
 *
 * Given a binary tree, design an algorithm which creates a linked list of all the nodes
 * at each depth (e.g, if you have a tree with depth D, you'll have D linked lists).
-*
-* Solution: We do a BFS, keeping track of depths and creating a new list for each new
-* depth we encounter and pushing it onto the results.
-*
 */
 
 /**
-* Create list of depths
+* createDepthLinkList()
+*
+* Solution:
+*
+* We do a BFS, keeping track of depths and creating a new list for each new depth
+* we encounter and pushing it onto the results.
 *
 * Time: O(n)
+* Space: O(1)
 *
 * @param {object} tree Takes a binary tree class
 * @return {array} Returns an array of linked lists

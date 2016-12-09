@@ -6,6 +6,7 @@
 * search tree class. All nodes should be equally likely to be chosen.
 *
 * Solution:
+*
 * We could do something like keep an array of nodes and randomly select
 * from here. However, then we have to track inserts, deletes etc... in O(n) time.
 * We can do better.
