@@ -58,7 +58,7 @@ computing fibRecursive(2)
 
 We can imagine the recursive calls of this function as a tree, where the two children of a node are the two recursive calls it makes. We can see that the tree quickly branches out of control:
 
-<p style="align: center;">
+<p align="center">
 <img src="images/fib_tree.png" width="500" />
 <p>
 
@@ -120,7 +120,7 @@ grabbing memo[6]
 
 Now in our recurrence tree, no node appears more than twice:
 
-<p style="align: center;">
+<p align="center">
 <img src="images/fib_tree_2.png" width="500" />
 <p>
 
