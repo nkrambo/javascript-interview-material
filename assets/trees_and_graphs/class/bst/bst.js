@@ -282,6 +282,7 @@ class BinarySearchTree {
 
   /**
   * range()
+  * @todo failing test cases...
   *
   * Gets a range of values in the BST and returns them in an array.
   *
@@ -319,10 +320,11 @@ class BinarySearchTree {
   * Depth first search, uses a stack to process nodes.
   *
   * @param {object} root node of BST
+  * @param {function} fn callback
   * @return {void} traverse BST depth first
   */
 
-  dfs(root) {
+  dfs(root, fn) {
     const stack = [root || this.root];
 
     while (stack.length) {
@@ -330,7 +332,7 @@ class BinarySearchTree {
       let node = stack.pop();
 
       // do work here...
-      console.log(node.value);
+      fn(node);
 
       // push frame
       if (node.right !== null) {
@@ -349,10 +351,11 @@ class BinarySearchTree {
   * Breadth first search, level search, uses a queue to process nodes.
   *
   * @param {object} root node of BST
+  * @param {function} fn callback
   * @return {void} traverse BST breadth first
   */
 
-  bfs(root) {
+  bfs(root, fn) {
     const queue = [root || this.root];
 
     while (queue.length) {
@@ -361,7 +364,7 @@ class BinarySearchTree {
       let node = queue.shift();
 
       // do work here...
-      console.log(node.value);
+      fn(node);
 
       // enqueue
       if (node.left !== null) {
