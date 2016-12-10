@@ -1,89 +1,118 @@
 
 /**
- * Graphs
- *
- * Looks something like this:
- *
- *     A –→ B ←–––– C → D ↔ E
- *     ↑    ↕     ↙ ↑     ↘
- *     F –→ G → H ← I ––––→ J
- *          ↓     ↘ ↑
- *          K       L
- *
- * We have a bunch of "nodes" (A, B, C, D, ...) that are connected with lines.
- *
- * These nodes are going to look like this:
- *
- *     Node {
- *       value: ...,
- *       edges: [(Node), (Node), ...]
- *     }
- *
- * The entire graph will look like this:
- *
- *     Graph {
- *       nodes: [
- *         Node {...},
- *         Node {...},
- *         ...
- *       ]
- *     }
- */
+* Graphs
+*
+* Looks something like this:
+*
+*     A –→ B ←–––– C → D ↔ E
+*     ↑    ↕     ↙ ↑     ↘
+*     F –→ G → H ← I ––––→ J
+*          ↓     ↘ ↑
+*          K       L
+*
+* We have a bunch of "nodes" (A, B, C, D, ...) that are connected with lines.
+*
+* These nodes are going to look like this:
+*
+*     Node {
+*       value: ...,
+*       edges: [(Node), (Node), ...]
+*     }
+*
+* The entire graph will look like this:
+*
+*     Graph {
+*       nodes: [
+*         Node {...},
+*         Node {...},
+*         ...
+*       ]
+*     }
+*
+* We can use a graph like this:
+*
+* const graph = new Graph();
+* graph.insert(1);
+* graph.insert(2);
+* graph.insertEdge(1, 2);
+*
+* const two = graph.find(1).lines[0];
+*
+* This might seem like a lot of work to do very little, but it's actually a
+* quite powerful pattern, especially for finding sanity in complex programs.
+*
+* They do this by optimizing for the connections between data rather than
+* operating on the data itself. Once you have one node in the graph, it's
+* extremely simple to find all the related items in the graph.
+*
+* Tons of things can be represented this way, users with friends, the 800
+* transitive dependencies in a node_modules folder, the internet itself is a
+* graph of webpages connected together by links.
+*
+*
+*
+*                      Access       Search       Insert
+* -----------------------------------------------------------------------------
+*          Graph        O(N)         O(N)         O(1)
+*
+*
+*
+*   |                                 RICK ASTLEY'S NEVER GONNA...
+*   |       +-+
+*   |  +-+  |-|                          [^] - GIVE YOU UP
+*   |  |^|  |-|                 +-+      [-] - LET YOU DOWN
+*   |  |^|  |-|       +-+       |*|      [/] - RUN AROUND AND DESERT YOU
+*   |  |^|  |-|  +-+  |\|       |*|      [\] - MAKE YOU CRY
+*   |  |^|  |-|  |/|  |\|  +-+  |*|      [.] - SAY GOODBYE
+*   |  |^|  |-|  |/|  |\|  |.|  |*|      [*] - TELL A LIE AND HURT YOU
+*   |  |^|  |-|  |/|  |\|  |.|  |*|
+*   +--------------------------------
+*/
 
 class Graph {
 
-  /**
-   * Graph constructor, sets an array to keep track of nodes.
-   *
-   * @public
-   * @constructor
-   */
-
   constructor() {
-    this._nodes = [];
+    this.nodes = [];
   }
 
   /**
-   * Adds new node to the graph.
-   * Complexity: O(1).
-   *
-   * @public
-   * @param {Number|Object} value Value which will be inserted.
-   */
+  * insert()
+  *
+  * @param {*} value to add
+  * @return {void}
+  */
 
-  add(value) {
-    this._nodes.push({
-      value: value,
+  insert(value) {
+    this.nodes.push({
+      value,
       edges: []
     });
   }
 
   /**
-   * Find node
-   * Complexity: O(n).
-   *
-   * @public
-   * @param {Number|Object} value Value which we're looking for.
-   */
+  * find()
+  *
+  * @param {*} value to find
+  * @return {object}
+  */
 
   find(value) {
-    return this._nodes.find((node) => {
+    return this.nodes.find((node) => {
       return node.value === value;
     });
   }
 
   /**
-   * Add edge
-   * Complexity: O(n).
-   *
-   * @public
-   * @param {Number|Object} startValue Value The value where the edge originates
-   * @param {Number|Object} endValue Value The value where the edge ends
-   */
+  * insertEdge()
+  *
+  * @param {*} start value of edge
+  * @param {*} end value of edge
+  * @return {void}
+  */
 
-  addEdge(startValue, endValue) {
-    const startNode = this.find(startValue);
-    const endNode = this.find(endValue);
+  insertEdge(start, end) {
+    const startNode = this.find(start);
+    const endNode = this.find(end);
 
     // error if they don't exist
     if (!startNode || !endNode) {

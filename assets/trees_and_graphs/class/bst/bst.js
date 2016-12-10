@@ -50,7 +50,7 @@
 *
 *                      Access       Search       Insert       Delete
 * -----------------------------------------------------------------------------
-*       Linked List   O(log N)     O(log N)     O(log N)     O(log N)
+*            BST      O(log N)     O(log N)     O(log N)     O(log N)
 *
 *
 * 0 0 1 0 1 0 0 1 0 1 1 1 0 1  ,@@@@@@@@@@@@@@,   0 0 1 0 1 0 0 1 0 1 1 1 0 1 0
