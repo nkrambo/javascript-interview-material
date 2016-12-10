@@ -2,7 +2,7 @@
 /**
 * Zero Matrix
 *
-* Types:
+* Types: Matrix
 *
 * Write an algorithm such that if an element in an MxN matrix is 0, it's entire
 * row and column are set to 0.
@@ -13,6 +13,7 @@
 * zeroMatrix()
 *
 * Solution:
+*
 * At first glance, you might think that we could just iterate, looking for zeros,
 * and set columns and rows accordingly. The problem with this is that soon the entire
 * matrix will be set to zero.

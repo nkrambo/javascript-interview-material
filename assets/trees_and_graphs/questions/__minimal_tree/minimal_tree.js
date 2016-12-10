@@ -1,28 +1,31 @@
 
+import BinarySearchTree from '../../class/binary_tree/binary_tree';
+
 /**
-*
 * Minimal Tree
 *
 * Given a sorted (increasing order) array with unique integer elements, write an
 * algorithm to create a binary search tree with minimal height.
+*/
+
+/**
+* Minimal Tree
 *
-* Solution: As the list is already sorted the best way to create a balanced tree is by
+* Solution:
+*
+* As the list is already sorted the best way to create a balanced tree is by
 * adding the middle node (parent) then the children. The algorithm is basically
 * involves adding the middle element of which split of the array so that the
 * parent is added before the left and right children of each subtree.
 *
-* Time: O(N log N)
-* Additional space: O(N)
+* Time: O(n log n)
+* Space: O(n)
 *
+* @param {array} nums sorted (increasing) unique integers
+* @return {object} returns a minimal binary search tree created from nums
 */
 
-import BinarySearchTree from '../../class/binary_tree/binary_tree';
-
 function createMinimalBST(array) {
-  // type check
-  if (!Array.isArray(array)) {
-   throw new Error('createMinimalBST: Expects single parameter of [Array] type.');
-  }
 
   // check length
   if (array.length === 0) return null;
