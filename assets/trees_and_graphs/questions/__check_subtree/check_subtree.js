@@ -8,21 +8,22 @@
 * A tree T2 is a subtree of T1 if there exists a node n in T1 such that the
 * subtree of n is identical to T2. That is, if you cut off the tree at node n,
 * the two trees would be identical.
-*
 */
 
 /**
 * Contains tree 1
 *
-* Solution: One approach would be to compare string representations
-* of traversals of each tree. If T2 is a substring of T1, then it's a subtree.
-* An in-order traversal would not work. This is because BST's can print the same
-* in-order traversals even if their structure is different.
+* Solution:
 *
-* We should use a pre-order traversal. Even here, trees with different structures could
-* still have the same pre-order traversal. We can fix that by representing NULL nodes with
-* a speacial character like 'X'. As long as we represent these nodes, the pre-order traversal
-* of a tree will be unique.
+* One approach would be to compare string representations of traversals of each
+* tree. If T2 is a substring of T1, then it's a subtree. An in-order traversal
+* would not work. This is because BST's can print the same in-order traversals
+* even if their structure is different.
+*
+* We should use a pre-order traversal. Even here, trees with different structures
+* could still have the same pre-order traversal. We can fix that by representing
+* NULL nodes with a speacial character like 'X'. As long as we represent these
+* nodes, the pre-order traversal of a tree will be unique.
 *
 *                  1
 *               ↙     ↘
@@ -36,6 +37,7 @@
 *
 * Time - O(n + m)
 * Space - O(n + m)
+*
 * Where n and m are the nodes in T1 and T2, respectively.
 *
 * @param {object} t1 Parent tree
@@ -76,14 +78,17 @@ function getOrderString(root) {
 /**
 * Contains tree 2, alternative approach
 *
-* Solution: An alternative approach would be to traverse T1 and node match we get
-* from T1 to the root of T2, we call matchTree(). The matchTree() method will compare
-* the two trees to see if they're identical.
+* Solution:
+*
+* An alternative approach would be to traverse T1 and node match we get from T1
+* to the root of T2, we call matchTree(). The matchTree() method will compare the
+* two trees to see if they're identical.
 *
 * Time - O(n + km)
 * Space - O(log(n) + log(m)), better memory, which can be impoertant for scalability
-* Where n and m are the nodes in T1 and T2, respectively. And k is the number of occurences
-* of T2's root in T1.
+*
+* Where n and m are the nodes in T1 and T2, respectively. And k is the number of
+* occurences of T2's root in T1.
 *
 * @param {object} t1 Parent tree
 * @param {object} t2 Subtree to check for in tree1
@@ -115,14 +120,18 @@ function containsTree2(t1, t2) {
 }
 
 function matchTree(r1, r2) {
+
+  // nothing left in subtree
   if (r1 === null && r2 === null) {
-    return true; // nothing left in subtree
+    return true;
 
+  // one tree is empty, no match
   } else if (r1 === null || r2 === null) {
-    return false; // one tree is empty, no match
+    return false;
 
+  // values don't match
   } else if (r1.value !== r2.value) {
-    return false; // values don't match
+    return false;
 
   } else {
     return matchTree(r1.left, r2.left) && matchTree(r1.right, r2.right);
