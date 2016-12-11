@@ -11,14 +11,18 @@
 *
 * Solution:
 *
-* We do a BFS, keeping track of depths and creating a new list for each new depth
-* we encounter and pushing it onto the results.
+* At first glance we might think that this problem requires a level-by-level traversal
+* (BFS), this isn't actually necessary. We can traverse the graph in any way we like,
+* provided we know which level we're on as do so.
+*
+* We will use a BFS however, keeping track of depths and creating a new list for
+* each new depth we encounter and pushing it onto the results.
 *
 * Time: O(n)
-* Space: O(1)
+* Space: O(n)
 *
-* @param {object} tree Takes a binary tree class
-* @return {array} Returns an array of linked lists
+* @param {object} tree object
+* @return {array} returns an array of linked lists representing nodes at each depth
 */
 
 import LinkedList from '../../../linked_lists/class/linked_list/linked_list';
