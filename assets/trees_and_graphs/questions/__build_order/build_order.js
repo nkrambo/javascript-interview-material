@@ -2,7 +2,7 @@
 /**
 * Build Order
 *
-* Types: Topological Sort
+* Types: Topological Sort, Directed Acyclic Graph (DAG), Kahn's Algorithm
 *
 * You are given a list of projects and a list of dependencies (which is a
 * list of pairs of projects, where the first project is dependent on the second
@@ -74,12 +74,33 @@ function buildOrder(projects, deps) {
   while (queue.length) {
 
     // dequeue
-    const project = queue.shift();
+    const current = queue.shift();
 
     // add to build order
-    build.push(project);
+    build.push(current.value);
 
+    // remove any edges incoming from current project
+    // push non-dependant projects onto queue
+    graph.nodes.forEach((project) => {
+
+      // remove edges
+      project.edges.forEach((edge, index) => {
+        if (edge[1] === current.value) {
+          project.edges.splice(index, 1);
+        }
+      });
+
+      // no incoming edges, push
+      if (project.edges.length === 0) {
+        queue.push(project);
+      }
+    });
   }
+
+  // check for cycle, not a DAG
+  // if () {
+  //   throw new Error('Build Error: Cannot build with cyclic dependencies.');
+  // }
 
   return build;
 }
