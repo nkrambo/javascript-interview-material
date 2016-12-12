@@ -128,11 +128,6 @@
 function alienOrder(words) {
   let result = '';
 
-  // type check
-  if (!Array.isArray(words)) {
-    throw new TypeError('alienOrder: Expects single argument of [array] type.');
-  }
-
   // if empty
   if (words.length === 0) return result;
 

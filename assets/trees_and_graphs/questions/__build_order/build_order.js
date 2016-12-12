@@ -32,8 +32,8 @@
 * We keep track of nodes we've visited so we don't repeat ourselves. We also track
 * of paths and check for cyclic dependencies.
 *
-* Time - O(P + D)
-* Space: O(1)
+* Time: O(P + D)
+* Space: O(P)
 *
 * Where P is the number of projects and D is the number of dependencies.
 *
@@ -42,41 +42,46 @@
 * @return {array} Returns a new array with the project build order, or an error if no valid order exists.
 */
 
+import Graph from '../../class/graph/graph';
+
 function buildOrder(projects, deps) {
   const build = [];
-  const visited = new Set();
-  const path = new Set();
 
   // create graph of projects with edges representing deps
-  const graph = {};
+  const graph = new Graph();
+
+  // nodes (projects)
   projects.forEach((project) => {
-    graph[project] = [];
+    graph.insert(project);
   });
 
-  deps.forEach((edge) => {
-   graph[edge[1]].push(edge[0]);
+  // edges (deps)
+  deps.forEach((dep) => {
+    graph.insertEdge(dep[0], dep[1]);
   });
 
-  // run topological sort helper
-  projects.forEach((project) => {
-    topologicalSort(project, graph, visited, path, build);
+  // topological sort (Kahn's algorithm)
+  const queue = [];
+
+  // grab starting projects (nodes) that have no deps (0 degree)
+  graph.nodes.forEach((project) => {
+    if (project.edges.length === 0) {
+      queue.push(project);
+    }
   });
 
-  return build.reverse();
-}
+  // process projects
+  while (queue.length) {
 
-function topologicalSort(project, graph, visited, path, build) {
-  if (visited.has(project)) return;
-  visited.add(project);
-  path.add(project);
+    // dequeue
+    const project = queue.shift();
 
-  for (let adjacent of graph[project]) {
-    if (path.has(adjacent)) throw new Error('dependencies are cyclic');
-    topologicalSort(adjacent, graph, visited, path, build);
+    // add to build order
+    build.push(project);
+
   }
 
-  path.delete(project);
-  build.push(project);
+  return build;
 }
 
 export default buildOrder;
