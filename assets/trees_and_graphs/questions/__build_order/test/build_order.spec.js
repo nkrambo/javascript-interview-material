@@ -3,9 +3,9 @@ import { expect } from 'chai';
 import buildOrder from '../build_order';
 
 describe('buildOrder()', () => {
-  // it('should', () => {
-  //
-  // });
+  it('should return ', () => {
+
+  });
 });
 
 
