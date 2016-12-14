@@ -48,7 +48,7 @@
 * find this relatively quickly.
 */
 
-/*
+/**
 * DFS
 *
 * Using our above example. In DFS, we visit node 0 and then iterate through each
@@ -60,6 +60,14 @@
 * difference is that when implementing this algorithm for a graph, we must check
 * if the node has been visited. If we don't we risk getting stuck in an infinite
 * loop, or cycle.
+*
+* Time: O(V * E)
+* Space: O(V)
+*
+* Where V is the number of vertices (nodes) and E is the number of edges (relationships)
+*
+* @param {*} root node of graph
+* @return {array} returns the order of node values from DFS
 */
 
 function DFS(root) {
@@ -70,9 +78,21 @@ function DFS(root) {
 
 }
 
-/*
+/**
 * BFS
 *
+* BFS is less intuitive. BFS is not recursive, it uses a queue. In BFS, node 0
+* visits each of it's neighbours before visiting any of their neighbours. You can
+* think of this as searching level by level out from 0. An iterative solution using
+* a queue usually works best.
+*
+* Time: O(V * E)
+* Space: O(V)
+*
+* Where V is the number of vertices (nodes) and E is the number of edges (relationships)
+*
+* @param {*} root node of graph
+* @return {array} returns the order of node values from BFS
 */
 
 function BFS(root) {
