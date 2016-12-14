@@ -23,6 +23,76 @@
 *                             Node 4          Node 3
 *                       Node 5                Node 2
 *
+*
+* DFS and BFS tend to be used in different scenarios. DFS is often preferred if
+* you want to visit every node. Both will work fine, but DFS is a little simpler.
+*
+* However, if you want to find the shortest path (or just any path) between nodes,
+* BFS is generally better.
+*
+* Consider representing all the friendships in the entire world in a graph and
+* trying to find a path of friendship between 'Ash' and 'Vanessa'.
+*
+* In a DFS, we would take a path like:
+*
+* Ash -> Brian -> Carleton -> Davis -> Eric -> Farah -> Gayle -> Harry...
+*
+* Only find ourselves very far away. We could go through most of the world without
+* realising that, in fact, Vanessa is Ash's friend afterall. We will eventually
+* find the path, but using this approach may take a very long time. It also won't
+* find us the shortest path.
+*
+* In BFS, we would stay close to Ash as long as possible. We might iterate through
+* many of Ash's friends, but we wouldn't go to his more distant connections until
+* absolutely necessary. If Vanessa is Ash's friend, or his friend-of-a-friend, we'll
+* find this relatively quickly.
 */
 
+/*
+* DFS
+*
+* Using our above example. In DFS, we visit node 0 and then iterate through each
+* of 0's neighbours. When visiting node 1, that is a neighbour of 0, we visit all
+* of 1's neighbours before going onto 0's other neighbours. That is, 0 exhaustively
+* search's 1's branches before any of it's other neighbours.
+*
+* Note that pre-order and other forms of tree traversal are a form of DFS. The key
+* difference is that when implementing this algorithm for a graph, we must check
+* if the node has been visited. If we don't we risk getting stuck in an infinite
+* loop, or cycle.
+*/
 
+function DFS(root) {
+  const order = [];
+
+  if (root === null) return;
+
+
+}
+
+/*
+* BFS
+*
+*/
+
+function BFS(root) {
+  root.marked = true;
+  const queue = [root];
+  const order = [];
+
+  while (queue.length) {
+    const node = queue.shift();
+    order.push(node.value);
+
+    node.edges.forEach((edge) => {
+      if (!edge.marked) {
+        edge.marked = true;
+        queue.push(edge);
+      }
+    });
+  }
+
+  return order;
+}
+
+export { DFS, BFS };
