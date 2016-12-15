@@ -44,8 +44,8 @@
 *
 * In BFS, we would stay close to Ash as long as possible. We might iterate through
 * many of Ash's friends, but we wouldn't go to his more distant connections until
-* absolutely necessary. If Vanessa is Ash's friend, or his friend-of-a-friend, we'll
-* find this relatively quickly.
+* absolutely necessary. If Vanessa is Ash's friend, or his friend-of-a-friend,
+* we'll find this relatively quickly.
 */
 
 /**
@@ -61,6 +61,9 @@
 * if the node has been visited. If we don't we risk getting stuck in an infinite
 * loop, or cycle.
 *
+* Although you can do a recursive DFS, you can also easily achieve this iteratively
+* using a stack.
+*
 * Time: O(V * E)
 * Space: O(V)
 *
@@ -71,11 +74,23 @@
 */
 
 function DFS(root) {
+  root.marked = true;
+  const stack = [root];
   const order = [];
 
-  if (root === null) return;
+  while (stack.length) {
+    const node = stack.pop();
+    order.push(node.value);
 
+    node.edges.forEach((edge) => {
+      if (!edge.marked) {
+        edge.marked = true;
+        stack.push(edge);
+      }
+    });
+  }
 
+  return order;
 }
 
 /**
