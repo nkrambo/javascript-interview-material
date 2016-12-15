@@ -1,34 +1,13 @@
 
 /**
-* Graph Search
-*
-* The two most common ways to search a graph are depth-first search (DFS) and
-* breadth-first search (BFS).
+* DFS
 *
 * In DFS, we start at the root (or another arbitraily selected node) and explore
 * each branch completely before moving onto the next branch. That is, we go deep
 * first (hence the name) before we go wide.
 *
-* In BFS, we start at the root (or another arbitraily selected node) and explore
-* each neighbour before going to any of their children. That is, we go wide
-* (hence the name) before we go deep.
-*
-* Let's take the following graph, for example.
-*
-*     0 → 1 ← 2         DFS                   BFS
-*     ↓ ↘ ↓ ↘ ↑         Node 0                Node 0
-*     5   4 ← 3           Node 1              Node 1
-*                           Node 3            Node 4
-*                             Node 2          Node 5
-*                             Node 4          Node 3
-*                       Node 5                Node 2
-*
-*
-* DFS and BFS tend to be used in different scenarios. DFS is often preferred if
-* you want to visit every node. Both will work fine, but DFS is a little simpler.
-*
-* However, if you want to find the shortest path (or just any path) between nodes,
-* BFS is generally better.
+* DFS is often preferred if you want to visit every node. Both BFS and DFS will
+* work fine for this, but DFS is a little simpler.
 *
 * Consider representing all the friendships in the entire world in a graph and
 * trying to find a path of friendship between 'Ash' and 'Vanessa'.
@@ -46,10 +25,17 @@
 * many of Ash's friends, but we wouldn't go to his more distant connections until
 * absolutely necessary. If Vanessa is Ash's friend, or his friend-of-a-friend,
 * we'll find this relatively quickly.
-*/
-
-/**
-* DFS
+*
+* Let's take the following graph, for example.
+*
+*     0 → 1 ← 2         DFS
+*     ↓ ↘ ↓ ↘ ↑         Node 0
+*     5   4 ← 3           Node 1
+*                           Node 3
+*                             Node 2
+*                             Node 4
+*                       Node 5
+*
 *
 * Using our above example. In DFS, we visit node 0 and then iterate through each
 * of 0's neighbours. When visiting node 1, that is a neighbour of 0, we visit all
@@ -73,7 +59,7 @@
 * @return {array} returns the order of node values from DFS
 */
 
-function DFS(root) {
+function dfs(root) {
   root.marked = true;
   const stack = [root];
   const order = [];
@@ -93,41 +79,4 @@ function DFS(root) {
   return order;
 }
 
-/**
-* BFS
-*
-* BFS is less intuitive. BFS is not recursive, it uses a queue. In BFS, node 0
-* visits each of it's neighbours before visiting any of their neighbours. You can
-* think of this as searching level by level out from 0. An iterative solution using
-* a queue usually works best.
-*
-* Time: O(V * E)
-* Space: O(V)
-*
-* Where V is the number of vertices (nodes) and E is the number of edges (relationships)
-*
-* @param {*} root node of graph
-* @return {array} returns the order of node values from BFS
-*/
-
-function BFS(root) {
-  root.marked = true;
-  const queue = [root];
-  const order = [];
-
-  while (queue.length) {
-    const node = queue.shift();
-    order.push(node.value);
-
-    node.edges.forEach((edge) => {
-      if (!edge.marked) {
-        edge.marked = true;
-        queue.push(edge);
-      }
-    });
-  }
-
-  return order;
-}
-
-export { DFS, BFS };
+export default dfs;
