@@ -11,8 +11,18 @@
 * build order, return an error.
 *
 * Example:
-* Input: [a, b, c, d, e, f], [[d, a], [b, f], [d, b], [a, f], [c, d]]
-* Output: [f, e, a, b, d, c]
+* const projects = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+* const deps = [['C', 'F'],
+*               ['B', 'F'],
+*               ['A', 'F'],
+*               ['A', 'C'],
+*               ['A', 'B'],
+*               ['E', 'B'],
+*               ['E', 'A'],
+*               ['G', 'D']];
+*
+* Input: projects, deps
+* Output: ['F', 'C', 'B', 'A', 'E', 'D', 'G']
 */
 
 /**
@@ -20,14 +30,23 @@
 *
 * Solution:
 *
-* Visualising the problem as a directed graph is the best approach.
-* So we can start by building a graph where each node represets a project with
-* it's outgoing edges representing the projects that depend on it. That is, if A
-* has an edge to B (A -> B), it means B has a dependency on A and A must be built
-* before B.
+* This is a classic topological sort problem.
 *
-* The we use a topological soring helper to recursively process every node and
-* update the build order.
+* Visualising the problem as a directed graph is the best approach. Let's take
+* our example input.
+*
+*          F        D
+*        ↙ | ↘      ↓
+*      C   |   B    G
+*        ↘ ↓ ↙ |
+*          A   |
+*          ↓  ↙
+*          E
+*
+* So we can start by building a graph where each node represets a project with
+* it's outgoing edges representing the projects that depend on it. That is, if F
+* has an edge to B (F -> B), it means B has a dependency on F and F must be built
+* before B.
 *
 * We keep track of nodes we've visited so we don't repeat ourselves. We also track
 * of paths and check for cyclic dependencies.
@@ -37,8 +56,8 @@
 *
 * Where P is the number of projects and D is the number of dependencies.
 *
-* @param {array} projects - Array of projects
-* @param {array} deps - A matrix of project dependencies
+* @param {array} projects
+* @param {array} deps
 * @return {array} Returns a new array with the project build order, or an error if no valid order exists.
 */
 
@@ -57,7 +76,7 @@ function buildOrder(projects, deps) {
 
   // edges (deps)
   deps.forEach((dep) => {
-    graph.insertEdge(dep[0], dep[1]);
+    graph.insertEdge(dep[1], dep[0]);
   });
 
   // topological sort (Kahn's algorithm)

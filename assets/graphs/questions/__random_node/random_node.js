@@ -98,7 +98,7 @@ class BinarySearchTree {
 
   /**
   * Get random node
-  * Time - O(log n)
+  * Time: O(log n)
   *
   * @return {object} Returns a node object
   */

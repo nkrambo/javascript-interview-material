@@ -34,13 +34,13 @@ describe('dijkstra()', () => {
   weighted.insert('D');
 
   // edges with weights
-  graph.insertEdge('A', 'B', 6);
-  graph.insertEdge('A', 'C', 2);
-  graph.insertEdge('C', 'B', 3);
-  graph.insertEdge('B', 'D', 1);
-  graph.insertEdge('C', 'D', 5);
+  weighted.insertEdge('A', 'B', 6);
+  weighted.insertEdge('A', 'C', 2);
+  weighted.insertEdge('C', 'B', 3);
+  weighted.insertEdge('B', 'D', 1);
+  weighted.insertEdge('C', 'D', 5);
 
   it('should return the shortest path of a weighted DAG', () => {
-
+    
   });
 });
