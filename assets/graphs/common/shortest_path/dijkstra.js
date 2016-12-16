@@ -5,23 +5,23 @@
 * With a BFS you can determine the shortest route between nodes A and C, 3 edges
 * in this case. A -> B -> G -> C
 *
-*    (A) ––→ (B) –→ (G)
-*     ↑               ↘
-*     F → D → E → H → (C)
+*    (A)  →  (B)  → (G)
+*     ↓               ↘
+*     F  →  D →  E  → (C)
 *
 * But what if those edges have travel times associated with them. That is,
 * each edge is weighted. Now the least amount of edges may not be the 'fastest'
 * route between two nodes. This is where Dijkstra's algorithm comes in.
 *
 * With weighted edges we can see that our previous route (3 edges, weight 14) is
-* now not the fastest. Our fastest route now is F -> D -> E -> H -> C, which is a
-* total of 4 edges but a weight of 5, almost 3 times faster.
+* now not the fastest. Our fastest route now is A-> F -> D -> E -> H -> C, which
+* is a total of 4 edges but a weight of 5, almost 3 times faster.
 *
-*           8         6
-*     A –––––––→ B ––––––→ G
-*     ↑                      ↘
-*    (F) → (D) → (E) → (H) → (C)
-*        1     1     2     1
+*         8       6
+*    (A)  →   B   →  G
+*  1  ↓                ↘
+*    (F) → (D) → (E) → (C)
+*        1     1     2
 *
 * Dijkstra's is used therefore for finding the shortest paths between nodes
 * in directed graphs with unbounded non-negative weights. Note, that the weights
