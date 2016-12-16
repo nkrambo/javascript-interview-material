@@ -1,9 +1,8 @@
 
 /**
-* Binary Heaps
 * Min-Heaps and Max-Heaps
 *
-* Definition: A binary heap is a complete binary tree (that is, totally filled other
+* A binary heap is a complete binary tree (that is, totally filled other
 * than the rightmost elements on the last level).
 *
 * A min-heap is where each node is smaller than it's children, with the
@@ -30,24 +29,23 @@ class Heap {
    */
 
   constructor(fn) {
-    this._heap = [];
+    this.heap = [];
     if (typeof fn === 'function') {
-      this._compare = fn;
+      this.compare = fn;
     } else {
-      this._compare = (a, b) => a - b;
+      this.compare = (a, b) => b - a;
     }
   }
 
   /**
    * Returns current value which is on the top of the heap.
-   * Complexity: O(1).
    *
    * @public
    * @return {Number|Object} Current top value.
    */
 
   top() {
-    return this._heap[0];
+    return this.heap[0];
   }
 
   /**
@@ -63,8 +61,8 @@ class Heap {
    */
 
    add(value) {
-     this._heap.push(value);
-     this.changeKey(this._heap.length - 1, value);
+     this.heap.push(value);
+     this.changeKey(this.heap.length - 1, value);
    }
 
  /**
@@ -78,19 +76,20 @@ class Heap {
   */
 
   changeKey(index, value) {
-    const elem = this._heap[index];
+    const elem = this.heap[index];
     let parent = Math.floor(index / 2);
     let temp;
 
     if (elem !== undefined) {
-      while (parent >= 0 && this._compare(elem, this._heap[parent]) > 0) {
-        temp = this._heap[parent];
-        this._heap[parent] = elem;
-        this._heap[index] = temp;
+      while (parent >= 0 && this.compare(elem, this.heap[parent]) > 0) {
+        temp = this.heap[parent];
+        this.heap[parent] = elem;
+        this.heap[index] = temp;
         index = parent;
         parent = Math.floor(parent / 2);
       }
     }
+
     return parent;
   };
 
@@ -109,27 +108,25 @@ class Heap {
    * @param {Number} index The parent.
    */
 
-  _heapify(index) {
+  heapify(index) {
     let extr = index;
     let temp;
     const left = 2 * index + 1;
     const right = 2 * index + 2;
 
-    if (left < this._heap.length &&
-        this._compare(this._heap[left], this._heap[index]) > 0) {
+    if (left < this.heap.length && this.compare(this.heap[left], this.heap[index]) > 0) {
       extr = left;
     }
 
-    if (right < this._heap.length &&
-        this._compare(this._heap[right], this._heap[index]) > 0) {
+    if (right < this.heap.length && this.compare(this.heap[right], this.heap[index]) > 0) {
       extr = right;
     }
 
     if (index !== extr) {
-      temp = this._heap[index];
-      this._heap[index] = this._heap[extr];
-      this._heap[extr] = temp;
-      this._heapify(extr);
+      temp = this.heap[index];
+      this.heap[index] = this.heap[extr];
+      this.heap[extr] = temp;
+      this.heapify(extr);
     }
   };
 
@@ -146,20 +143,20 @@ class Heap {
     if (this.isEmpty()) {
       throw 'The heap is already empty!';
     }
-    const root = this._heap.shift();
-    this._heapify(0);
+    const root = this.heap.shift();
+    this.heapify(0);
     return root;
   };
 
   /**
-   * Returs collection
+   * Returns collection
    *
    * @public
    * @returns {Array} Array of all the values in the heap
    */
 
   getCollection() {
-    return this._heap;
+    return this.heap;
   }
 
   /**
@@ -170,7 +167,7 @@ class Heap {
    */
 
   isEmpty() {
-    return this._heap.length === 0;
+    return this.heap.length === 0;
   }
 }
 

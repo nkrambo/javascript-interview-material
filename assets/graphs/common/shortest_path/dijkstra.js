@@ -14,7 +14,7 @@
 * route between two nodes. This is where Dijkstra's algorithm comes in.
 *
 * With weighted edges we can see that our previous route (3 edges, weight 14) is
-* now not the fastest. Our fastest route now is A -> F -> D -> E -> H -> C, which
+* now not the fastest. Our fastest route now is A -> F -> D -> E -> C, which
 * is a total of 4 edges but a weight of 5, almost 3 times faster.
 *
 *         8       6
@@ -29,7 +29,7 @@
 * an algorithm for that too, Bellman-Ford's algorithm.
 *
 * Dijkstra's algorithm exists in many variants, but the min-priority queue (with a
-* fibonnaci heap) implementation is the fastest known. However, specialized cases
+* minimum heap) implementation is the fastest known. However, specialized cases
 * (such as bounded/integer weights, directed acyclic graphs etc.) can indeed be
 * improved further as detailed specialized variants.
 *
@@ -49,9 +49,9 @@
 *
 *    (6)   A   (2)            A -> B: 6 mins
 *        ↙  ↘                 A -> C: 2 mins
-*       B  →  C   (3)         B -> C: 3 mins
-*        ↘   ↙                B -> D: 5 mins
-*    (5)   D   (1)            C -> D: 1 mins
+*       B  ←  C   (3)         C -> B: 3 mins
+*        ↘   ↙                B -> D: 1 mins
+*    (1)   D   (5)            C -> D: 5 mins
 *
 * Step 1: Find the cheapest node.
 *
@@ -70,22 +70,64 @@
 *
 * Step 2: Update the costs of the neighbors of the cheapest node we picked.
 *
-* 
+* Calculate how long it takes to get to all of node C's neighbors by following an
+* edge from C. If we follow C -> B, we find a shorter path to node B than what we
+* used to have. Previously, our route to B was 6 minutes, now it's 5 minutes if
+* we go A -> C -> B. So we'll update B's cost to 5 minutes.
 *
-* Step 3: Repeat Step 1 and 2 for every node is the graph.
+* We also found a shorter time to D, our destination node. Following the neighbors
+* of C we can see that it takes 7 minutes to get to D. So we update this cost from
+* Infinity too.
+*
+* Node | Time
+* -------------
+*   B  |  5
+*   C  |  2
+*   D  |  7
+*
+* Step 3: Repeat!
+*
+* We find the node that takes the least amount of time to get to again. We're done
+* with node C, so node B has the next smallest time estimate. We update the costs
+* for B's neighbours and we can see that B -> D is 1 minutes. So we can update
+* our cost to D to 6 minutes!
+*
+* Node | Time
+* -------------
+*   B  |  5
+*   C  |  2
+*   D  |  6
 *
 * Step 4: Calculate the final path.
+*
+* Our final path will be A -> C -> B -> D
+*                          2    3    1     = 6 minutes.
 *
 * Time: O(1)
 * Space: O(1)
 *
 * @param {object} graph
-* @param {object} source node to start with
-* @return {void}
+* @param {object} start node
+* @param {object} finish node
+* @return {object} returns an object containing path array and total cost
 */
 
-function dijkstra(graph, source) {
+import Heap from '../../class/heap/heap';
 
+function dijkstra(graph, start, finish) {
+  const seen = new Set();
+  const heap = new Heap();
+  const previous = new Map();
+  let path = [];
+  let totalCost = 0;
+
+  // Add the starting point to the heap, it will be the first node visited
+  heap.set(start, 0);
+
+  return {
+    path,
+    cost: totalCost,
+  };
 }
 
 export default dijkstra;
