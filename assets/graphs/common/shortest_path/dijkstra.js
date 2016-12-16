@@ -4,9 +4,10 @@
 *
 * Dijkstra's algorithm is an algorithm for finding the shortest paths between nodes
 * in directed graphs with unbounded non-negative weights. The algorithm exists in
-* many variants, but the min-priority queue implementation is the fastest known.
-* However, specialized cases (such as bounded/integer weights, directed acyclic
-* graphs etc.) can indeed be improved further as detailed specialized variants.
+* many variants, but the min-priority queue (with a fibonnaci heap) implementation
+* is the fastest known. However, specialized cases (such as bounded/integer weights,
+* directed acyclic graphs etc.) can indeed be improved further as detailed specialized
+* variants.
 *
 * For a given source node in the graph, the algorithm finds the shortest path
 * between that node and every other. It can also be used for finding the shortest
@@ -20,8 +21,8 @@
 * in a weighted directed graph where all weights are positive values. The graph
 * might also have cycles.
 *
-*
-*
+* Time: O(1)
+* Space: O(1)
 */
 
 function dijkstra() {
