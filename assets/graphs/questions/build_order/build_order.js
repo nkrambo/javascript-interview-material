@@ -48,8 +48,26 @@
 * has an edge to B (F -> B), it means B has a dependency on F and F must be built
 * before B.
 *
-* We keep track of nodes we've visited so we don't repeat ourselves. We also track
-* of paths and check for cyclic dependencies.
+* Now, we should calculate the in-degree of each node. That is, how many edges are
+* incoming or, in other words, how many projects it depends on. Pretty simple.
+*
+* Now with all this setup out of the way we can step through a regular Kahn's
+* algorithm to calculate the topological sort.
+*
+* Kahn's algorithm is a BFS, which uses a queue to process nodes that have a 0
+* in-degree (no deps).
+*
+* So as a first step we look for nodes with 0 deps and add them to the queue to
+* to be processed. If there is no deps on the node we know we can build it.
+* Once a node is built, we can now remove all of its outgoing edges beacuse they
+* don't matter anymore. With those edges removed, we can now look again if anymore
+* nodes now have 0 incoming edges. If they do we add them to the queue to repeat
+* the process.
+*
+* Finally, once we have processed all nodes we check to see if any nodes still
+* have remaining incoming edges. If any node has an in-degree greater than 0, we
+* know that the graph cannot be a DAG. Therefore, it must have a cycle and cannot
+* be built so we throw an error.
 *
 * Time: O(P + D)
 * Space: O(P)
@@ -79,14 +97,23 @@ function buildOrder(projects, deps) {
     graph.insertEdge(dep[1], dep[0]);
   });
 
+  // calculate in-degree for nodes
+  graph.nodes.forEach((project) => {
+    project.inDegree = 0;
+  });
+
+  graph.nodes.forEach((project) => {
+    project.edges.forEach((edge) => {
+      edge.inDegree += 1;
+    });
+  });
+
   // topological sort (Kahn's algorithm)
   const queue = [];
 
-  // grab starting projects (nodes) that have no deps (0 degree)
+  // grab starting projects (nodes) that have no deps (0 in-degree)
   graph.nodes.forEach((project) => {
-    if (project.edges.length === 0) {
-      queue.push(project);
-    }
+    if (project.inDegree === 0) queue.push(project);
   });
 
   // process projects
@@ -98,28 +125,21 @@ function buildOrder(projects, deps) {
     // add to build order
     build.push(current.value);
 
-    // remove any edges incoming from current project
-    // push non-dependant projects onto queue
-    graph.nodes.forEach((project) => {
+    // remove outgoing edges
+    current.edges.forEach((edge) => {
+      edge.inDegree -= 1;
 
-      // remove edges
-      project.edges.forEach((edge, index) => {
-        if (edge[1] === current.value) {
-          project.edges.splice(index, 1);
-        }
-      });
-
-      // no incoming edges, push
-      if (project.edges.length === 0) {
-        queue.push(project);
-      }
+      // if this edge now has a 0 in-degree, queue it
+      if (edge.inDegree === 0) queue.push(edge);
     });
   }
 
   // check for cycle, not a DAG
-  // if () {
-  //   throw new Error('Build Error: Cannot build with cyclic dependencies.');
-  // }
+  graph.nodes.forEach((project) => {
+    if (project.inDegree !== 0) {
+      throw new Error('Build Error: Cannot build with cyclic dependencies.');
+    }
+  });
 
   return build;
 }
