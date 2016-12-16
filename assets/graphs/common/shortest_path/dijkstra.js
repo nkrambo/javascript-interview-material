@@ -122,7 +122,58 @@ function dijkstra(graph, start, finish) {
   let totalCost = 0;
 
   // Add the starting point to the heap, it will be the first node visited
-  heap.set(start, 0);
+  heap.add(start, 0);
+
+  // Run until we have visited every node in the heap
+  while (!heap.isEmpty()) {
+
+    // Extract node with the lowest cost ('priority')
+    const node = heap.extract();
+
+    // If we are currently at the finsih, compute the path and exit the loop
+    if (node === finish) {
+
+      // Set the total cost to the current value
+      totalCost = node.distance;
+
+      // let value = node.value;
+      // while (previous.has(value)) {
+      //   path.push(value);
+      //   value = previous.get(value);
+      // }
+      //
+      // break;
+    }
+
+    // Add the current node to the seen set
+    seen.add(node.value);
+
+    // Loop all the neighboring nodes
+    node.edges.forEach((edgeCost, nNode) => {
+
+      // If we already explored the node, skip it
+      if (seen.has(nNode)) return null;
+
+      // If the neighboring node is not yet in the frontier, we add it with
+      // the correct cost
+      if (!frontier.has(nNode)) {
+        previous.set(nNode, node.key);
+        return frontier.set(nNode, node.priority + nCost);
+      }
+
+      const frontierPriority = frontier.get(nNode).priority;
+      const nodeCost = node.priority + nCost;
+
+      // Othewhise we only update the cost of this node in the frontier when
+      // it's below what's currently set
+      if (nodeCost < frontierPriority) {
+        previous.set(nNode, node.key);
+        return heap.add(nNode, nodeCost);
+      }
+
+      return null;
+    });
+  }
 
   return {
     path,
