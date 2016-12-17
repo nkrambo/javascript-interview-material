@@ -69,28 +69,53 @@
 *
 * This is really a BFS approach.
 *
-* Time: O(P + D)
-* Space: O(P)
+* Time: O(V + E)
+* Space: O(V)
 *
-* Where P is the number of projects and D is the number of dependeny pairs.
+* Where V is the number of nodes and E is the number of edges.
+*
+* @param {object} graph to sort
+* @return {array} returns a topoloically sorted array of node values
 */
 
 function kahnSort(graph) {
   const sorted = [];
-  const queue = [];
 
-  // grab a starting point by finding all nodes with no degree, or 0 edges
-  // this should come first lexicographically
-  for (let [key, value] of degree) {
-    if (value === 0) queue.push(key);
-  }
+  // add and calculate in-degree
+  graph.nodes.forEach((node) => {
+    node.inDegree = 0;
+  });
+
+  graph.nodes.forEach((node) => {
+    node.edges.forEach((edge) => {
+      edge.inDegree += 1;
+    });
+  });
+
+  // start with nodes with 0 in-degree
+  const queue = [];
+  graph.nodes.forEach((node) => {
+    if (node.inDegree === 0) queue.push(node);
+  });
 
   while (queue.length) {
     const node = queue.shift();
-    sorted.push(node);
+    sorted.push(node.value);
 
+    // remove outgoing edges and check for new 0 in-degree nodes
+    node.edges.forEach((edge) => {
+      edge.inDegree -= 1;
 
+      if (edge.inDegree === 0) queue.push(edge);
+    });
   }
+
+  // check for cycle, not a DAG
+  graph.nodes.forEach((node) => {
+    if (node.inDegree !== 0) {
+      throw new Error('Cannot sort cyclic graph.');
+    }
+  });
 
   return sorted;
 }
@@ -166,14 +191,44 @@ function kahnSort(graph) {
 * - partial
 * - blank
 *
-* Time: O(P + D)
-* Space: O(P)
+* Time: O(V + E)
+* Space: O(V)
 *
-* Where P is the number of projects and D is the number of dependeny pairs.
+* Where V is the number of nodes and E is the number of edges.
+*
+* @param {object} graph to sort
+* @return {array} returns a topoloically sorted array of node values
 */
 
-function dfsSort() {
+function dfsSort(graph) {
+  const sort = [];
+  const stack = [];
 
+  // queue up and set state on root node
+  const root = graph.nodes[0];
+  root.state = 'blank';
+  stack.push(root);
+
+  while (root.length) {
+    const node = stack.pop();
+
+    if (node.state === 'partial') {
+      throw new Error('Cannot sort a cyclic graph.');
+    }
+
+    if (node.state === 'blank') {
+      node.state = 'partial';
+
+      node.edges.forEach(() => {
+
+      });
+
+      node.state = 'complete';
+      sort.push(node.value);
+    }
+  }
+
+  return sort;
 }
 
 export { kahnSort, dfsSort };
