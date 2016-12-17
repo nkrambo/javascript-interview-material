@@ -17,6 +17,40 @@
 * where the paths diverge. Unfortunately, this is not a BST, so we need a different
 * approach.
 *
+* If each node has a link to its parent, we could trace p and q's paths up until
+* they intersect. This is essentially the same problem as finding the intersection
+* of two linked lists. The 'linked lists' in this case being the paths from each
+* node up to the root.
+*
+* The first step is, like with linked lists, is to 'chop off' any additional nodes
+* on the longest path (deepest node), so that we have paths of the same length.
+*
+* Once we have paths of equal length, we can just traverse upward comparing nodes
+* until we find an intersection, which is the common ancestor.
+*
+* Take the following binary tree.
+*
+*               [1]
+*             ↙     ↘
+*          (2)         3
+*        ↙   ↘       ↙   ↘
+*      4       5   (6)     7
+*
+* Let's say we are trying to find the first common ancestor of (2) and (6). By
+* looking at this simple tree we can see that it's the root node (1).
+*
+* As we said above, to derive this, we first need to 'chop off' the extra nodes
+* on the longest path (deepest node), so that both our paths are of equal length.
+*
+* In our above example, our deepest node is (6) with a depth of 3. Our shallow
+* node is (2) with a depth of 2. To make these paths equal length we need to
+* 'chop off' 1 node from our deep path, which would be the (6) node.
+*
+* Now our paths are equal length, (2) -> (1) and (3) -> (1). We now simply traverse
+* upwards, looking for an intersetion, which in this case will be (1).
+*
+* Our final solution is composed from a couple of functions to achieve this.
+*
 * Time: O(D)
 * Space: O(1)
 *
@@ -29,20 +63,22 @@
 
 function withParents(p, q) {
 
-  // get difference in depths between nodes
+  // get difference in depths between nodes (delta)
   const delta = Math.abs(depth(p) - depth(q));
-  let first = delta > 0 ? q : p; // shallow
-  let second = delta > 0 ? p : q; // deep
+  let shallow = delta > 0 ? q : p;
+  let deep = delta > 0 ? p : q;
 
-  second = goUpBy(second, delta);
+  // shorten the deepest path by traversing up delta positions
+  deep = goUpBy(deep, delta);
 
-  // find where paths intersect
-  while (first !== second && first !== null && second !== null) {
-    first = first.parent;
-    second = second.parent;
+  // traverse upwards until we intersect
+  while (shallow !== deep && shallow !== null && deep !== null) {
+    shallow = shallow.parent;
+    deep = deep.parent;
   }
 
-  return first === null || second === null ? null : first;
+  // we could return either 'deep' or 'shallow'
+  return shallow === null || deep === null ? null : shallow;
 }
 
 /**
