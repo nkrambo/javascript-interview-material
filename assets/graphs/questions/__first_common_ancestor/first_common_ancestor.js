@@ -200,9 +200,26 @@ function withParentsAlt(root, p, q) {
 */
 
 function covers(root, p) {
-  if (root === null) return false;
-  if (root === p) return true;
-  return covers(root.left, p) || covers(root.right, p);
+
+  // DFS
+  const stack = [root];
+
+  while (stack.length) {
+    const node = stack.pop();
+
+    if (node === p) return true;
+
+    if (node.left !== null) {
+      stack.push(node.left);
+    }
+
+    if (node.right !== null) {
+      stack.push(node.right);
+    }
+  }
+
+  // fell through, not covered
+  return false;
 }
 
 /**
@@ -226,14 +243,18 @@ function getSibling(node) {
 *
 * Solution:
 *
-* With no links to parents, we take a different approach. We follow a chain in
-* which p and q are on the same side. That is, if p and q are both on the left side of
-* the node, branch left to look for the common ancestor. If they are both on the right,
-* branch right. When p and q are no longer on the same side, you must have found the
-* common ancestor.
+* With no links to parents, we must take a different approach.
 *
-* Time: O(1)
+* We follow a chain in which p and q are on the same side. That is, if p and q
+* are both on the left side of the node, branch left to look for the common ancestor.
+* If they are both on the right, branch right. When p and q are no longer on the
+* same side, you must have found the common ancestor.
+*
+* Time: O(n)
 * Space: O(1)
+*
+* This algorithm runs in O(n) time on a balanced tree. We know that we can't really
+* do better than that as we need to potentially looks at every node in the tree.
 *
 * @param {object} tree binary tree
 * @param {object} p binary tree node
@@ -242,22 +263,21 @@ function getSibling(node) {
 */
 
 function withoutParents(root, p, q) {
+  const stack = [root];
 
-  // // check tree root
-  // if (root === null) return null;
-  //
-  // // if one of these matches, it is the LCA
-  // if (root === p || root === q) return root;
-  //
-  // let left = withoutParents(root.left, p, q);
-  // let right = withoutParents(root.right, p, q);
-  //
-  // // if p and q are on both sides
-  // if (left && right) return root;
-  //
-  // // either one node is on one branch,
-  // // or none were found in any branches
-  // return left ? left : right;
+  while (stack.length) {
+    const node = stack.pop();
+    const pLeft = covers(node.left, p);
+    const qLeft = covers(node.left, q);
+
+    // nodes are on different sides
+    if (pLeft !== qLeft) return node;
+
+    const childSide = pLeft ? node.left : node.right;
+    stack.push(childSide);
+  }
+
+  return null;
 }
 
 export { withParents, withParentsAlt, withoutParents };
