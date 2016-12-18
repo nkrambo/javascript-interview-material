@@ -116,6 +116,45 @@ function depth(node) {
 }
 
 /**
+* With parent links alternative
+*
+* Solution:
+*
+* Similar to the earlier approach, we could trace p's path upwards and check if
+* any of the nodes cover q. The first node that covers q (we already know that
+* every node on this path will cover p) must be the first common ancestor.
+*
+* Observe that we don't need to re-check the entire subtree. As we move from a node
+* (x) to its parent (y), all the nodes under (x) have already been checked for q.
+* Therefore, we only need to check the nodes 'uncovered', which will be the nodes
+* under n's sibling.
+*
+* For example, suppose we're looking for the first common ancestor of node p = 7
+* and node q = 17. When we go to p.parent (5), we uncover the subtree rooter at (3).
+* We therefore need to search this subtree for q.
+*
+* Next, we go to node 10, uncovering the subtree rooted at 15. We check this subtree
+* for node 17, and there it is!
+*
+*                    20
+*                 ↙     ↘
+*              10         30
+*            ↙   ↘
+*          5       15
+*       ↙    ↘        ↘
+*     3        7       17
+*
+* To implement this, we can just traverse upwards from p, storing the parent and
+* the sibling node in a variable. (The sibling node is always a child of parent
+* and refers to the newly uncovered subtree). At each iteration, sibling gets set
+* to the old parent's sibling node and parent gets set to parent.parent.
+*/
+
+function withParentsAlt() {
+
+}
+
+/**
 * Without parent links
 *
 * Solution:
@@ -154,4 +193,4 @@ function withoutParents(root, p, q) {
   // return left ? left : right;
 }
 
-export { withParents, withoutParents };
+export { withParents, withParentsAlt, withoutParents };

@@ -1,7 +1,7 @@
 
 import { expect } from 'chai';
 import BinaryTree from '../../../class/binary_tree/binary_tree';
-import { withParents, withoutParents } from '../first_common_ancestor';
+import { withParents, withParentsAlt, withoutParents } from '../first_common_ancestor';
 
 // new class with links to node parents
 class BinaryTreeWP extends BinaryTree {
@@ -91,6 +91,12 @@ describe('withParents()', () => {
 
     expect(withParents(five, four)).to.equal(two);
   });
+});
+
+describe('withParentsAlt()', () => {
+  // it('should', () => {
+  //
+  // });
 });
 
 // describe('commonAncestor()', () => {
