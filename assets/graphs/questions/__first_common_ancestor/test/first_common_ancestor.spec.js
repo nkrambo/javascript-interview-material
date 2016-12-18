@@ -94,9 +94,31 @@ describe('withParents()', () => {
 });
 
 describe('withParentsAlt()', () => {
-  // it('should', () => {
-  //
-  // });
+  it('should find the first common ancestor', () => {
+    const BT = new BinaryTreeWP();
+    BT.insert(1);
+    BT.insert(2);
+    BT.insert(3);
+    BT.insert(4);
+    BT.insert(5);
+    BT.insert(6);
+    BT.insert(7);
+
+    const root = BT.root;
+
+    const two = BT.root.left;
+    const three = BT.root.right;
+    expect(withParents(two, three)).to.equal(root);
+
+    const four = BT.root.left.left;
+    const seven = BT.root.right.right;
+    expect(withParents(four, seven)).to.equal(root);
+
+    const five = BT.root.left.right;
+    expect(withParents(five, three)).to.equal(root);
+
+    expect(withParents(five, four)).to.equal(two);  
+  });
 });
 
 // describe('commonAncestor()', () => {

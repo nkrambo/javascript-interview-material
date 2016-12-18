@@ -51,10 +51,10 @@
 *
 * Our final solution is composed from a couple of functions to achieve this.
 *
-* Time: O(D)
+* Time: O(d)
 * Space: O(1)
 *
-* Where D is the depth of the deeper node.
+* Where (d) is the depth of the deeper node.
 *
 * @param {object} p binary tree
 * @param {object} q binary tree
@@ -148,10 +148,77 @@ function depth(node) {
 * the sibling node in a variable. (The sibling node is always a child of parent
 * and refers to the newly uncovered subtree). At each iteration, sibling gets set
 * to the old parent's sibling node and parent gets set to parent.parent.
+*
+* Again, our final solution will be composed of several functions.
+*
+* Time: O(t)
+* Space: O(1)
+*
+* Where (t) is the size of the subtree for the first common ancestor. In the worst
+* case, this will be O(n), where (n) is the number of nodes in the tree. We can
+* derive this runtime by noticing that each node in that subtree is searched once.
+*
+* @param {object} root binary tree node
+* @param {object} p binary tree node
+* @param {object} q binary tree node
+* @return {object} returns the first common ancestor node
 */
 
-function withParentsAlt() {
+function withParentsAlt(root, p, q) {
 
+  // check if either node is not in the tree
+  if (!covers(root, p) || !covers(root, q)) {
+    return null;
+
+  // check if p covers q
+  } else if (covers(p, q)) {
+    return p;
+
+  // check if q covers p
+  } else if (q, p) {
+    return q;
+  }
+
+  // traverse upwards until you find a node that covers q
+  let sibling = getSibling(p);
+  let parent = p.parent;
+
+  while (!covers(sibling, q)) {
+    sibling = getSibling(parent);
+    parent = parent.parent;
+  }
+
+  return parent;
+}
+
+/**
+* covers()
+*
+* @param {object} root binary tree node
+* @param {object} p binary tree node
+* @return {boolean} returns true if node is covered, otherwise false
+*/
+
+function covers(root, p) {
+  if (root === null) return false;
+  if (root === p) return true;
+  return covers(root.left, p) || covers(root.right, p);
+}
+
+/**
+* getSibling()
+*
+* @param {object} node binary tree node
+* @return {object} returns the sibling node, otherwise null
+*/
+
+function getSibling(node) {
+  if (node === null || node.parent === null) {
+    return null;
+  }
+
+  let parent = node.parent;
+  return parent.left === node ? parent.right : parent.left;
 }
 
 /**
