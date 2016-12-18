@@ -175,7 +175,7 @@ function withParentsAlt(root, p, q) {
     return p;
 
   // check if q covers p
-  } else if (q, p) {
+} else if (covers(q, p)) {
     return q;
   }
 

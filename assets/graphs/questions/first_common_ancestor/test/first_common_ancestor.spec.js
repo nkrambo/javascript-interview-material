@@ -109,9 +109,9 @@ describe('withParentsAlt()', () => {
     const seven = BT.root.right.right;
 
     expect(withParentsAlt(root, two, three)).to.equal(root);
-    // expect(withParentsAlt(root, four, seven)).to.equal(root);
-    // expect(withParentsAlt(root, five, three)).to.equal(root);
-    // expect(withParentsAlt(root, five, four)).to.equal(two);
+    expect(withParentsAlt(root, four, seven)).to.equal(root);
+    expect(withParentsAlt(root, five, three)).to.equal(root);
+    expect(withParentsAlt(root, five, four)).to.equal(two);
   });
 });
 
