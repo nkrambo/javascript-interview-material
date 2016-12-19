@@ -22,9 +22,8 @@
 /**
 * In-Order
 *
-* In-order traversal means to 'visit' (often, print) the left branch, then the
-* current node, and finally, the right branch. This is the most common traversal
-* used.
+* In-order traversal means to 'visit' the left branch, then the current node,
+* and finally, the right branch. This is the most common traversal used.
 *
 * In a BST, in-order traversal retrieves data in sorted order, i.e left to right.
 * For example, if we have the following BST an in-order traversal would return:
@@ -64,4 +63,65 @@ function inOrder(node, fn) {
   return order;
 }
 
-export { inOrder };
+/**
+* Pre-Order
+*
+* A pre-order traversal always 'visits' the current node first and then pushes
+* current.right and current.left onto the stack. This means that all left children
+* nodes are visited before any right children.
+*
+* For example, if we have the following BST an in-order traversal would return:
+* [4, 2, 1, 3, 6, 5, 7].
+*
+* We can see that the root node is the first visited and then the entire left path
+* before any right children in the left subtree. Finally, we then visted nodes on
+* the root node right subtree in the same manner.
+*
+*                4
+*             ↙     ↘
+*           2         6
+*        ↙   ↘       ↙   ↘
+*      1       3   5       7
+*
+* @param {object} node binary tree node
+* @param {function} fn optional callback
+* @return {array} returns an array of node values pre-order
+*/
+
+function preOrder(node, fn) {
+  if (node === null) return;
+
+  const order = [];
+  const stack = [node];
+  while (stack.length) {
+    const node = stack.pop();
+
+    if (fn) fn(node);
+    order.push(node.value);
+
+    if (node.right !== null) {
+      stack.push(node.right);
+    }
+
+    if (node.left !== null) {
+      stack.push(node.left);
+    }
+  }
+
+  return order;
+}
+
+/**
+* Post-Order
+*
+*
+* @param {object} node binary tree node
+* @param {function} fn optional callback
+* @return {array} returns an array of node values post-order
+*/
+
+function postOrder(node, fn) {
+
+}
+
+export { inOrder, preOrder, postOrder };
