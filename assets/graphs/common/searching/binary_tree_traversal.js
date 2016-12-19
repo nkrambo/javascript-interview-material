@@ -29,6 +29,12 @@
 * For example, if we have the following BST an in-order traversal would return:
 * [1, 2, 3, 4, 5, 6, 7], all numbers are 'in-order' left to right.
 *
+* If you know that the tree has an inherent sequence in the nodes, and you want
+* to flatten the tree back into its original sequence, than an in-order traversal
+* should be used. The tree would be flattened in the same way it was created. A
+* pre-order or post-order traversal might not unwind the tree back into the sequence
+* which was used to create it.
+*
 *                4
 *             ↙     ↘
 *           2         6
@@ -77,6 +83,9 @@ function inOrder(node, fn) {
 * before any right children in the left subtree. Finally, we then visted nodes on
 * the root node right subtree in the same manner.
 *
+* If you know you need to explore the roots before inspecting any leaves, you pick
+* pre-order because you will encounter all the roots before all of the leaves.
+*
 *                4
 *             ↙     ↘
 *           2         6
@@ -114,6 +123,21 @@ function preOrder(node, fn) {
 /**
 * Post-Order
 *
+* Post-order traversal is the most complicated method to traverse of these approaches.
+* Basically, we defer visiting a node until we hit a leaf node and then we work
+* our way back up the tree toward the root.
+*
+* If you know you need to explore all the leaves before any nodes, you select
+* post-order because you don't waste any time inspecting roots in search for leaves.
+*
+* For example, if we have the following BST an post-order traversal would return:
+* [1, 3, 2, 5, 7, 6, 4].
+*
+*                4
+*             ↙     ↘
+*           2         6
+*        ↙   ↘       ↙   ↘
+*      1       3   5       7
 *
 * @param {object} node binary tree node
 * @param {function} fn optional callback
@@ -121,7 +145,75 @@ function preOrder(node, fn) {
 */
 
 function postOrder(node, fn) {
+  const order = [];
+  const stack = [];
+  let lastNodeVisited = null;
 
+  while (stack.length || node !== null) {
+    if (node !== null) {
+      stack.push(node);
+      node = node.left;
+
+    } else {
+      const peek = stack[stack.length - 1];
+
+      // if right child exists and traversing node
+      // from left child, then move right
+      if (peek.right !== null && lastNodeVisited !== peek.right) {
+        node = peek.right;
+      } else {
+        if (fn) fn(node);
+        order.push(node.value);
+        lastNodeVisited = stack.pop();
+      }
+    }
+  }
+
+  return order;
 }
 
-export { inOrder, preOrder, postOrder };
+/**
+* Level-Order
+*
+* Trees can also be traversed in level-order, where we visit every node on a level
+* before going to a lower level. This search is referred to as breadth-first search
+* (BFS), as the search tree is broadened as much as possible on each depth before
+* going to the next depth.
+*
+* For example, if we have the following BST an level-order traversal would return:
+* [4, 2, 6, 1, 3, 5, 7].
+*
+*                4
+*             ↙     ↘
+*           2         6
+*        ↙   ↘       ↙   ↘
+*      1       3   5       7
+*
+* @param {object} node binary tree node
+* @param {function} fn optional callback
+* @return {array} returns an array of node values post-order
+*/
+
+function levelOrder(node, fn) {
+  const order = [];
+  const queue = [node];
+
+  while (queue.length) {
+    const current = queue.pop();
+
+    if (fn) fn(current);
+    order.push(current.value);
+
+    if (current.left !== null) {
+      queue.push(current.left);
+    }
+
+    if (current.right !== null) {
+      queue.push(current.right);
+    }
+  }
+
+  return order;
+}
+
+export { inOrder, preOrder, postOrder, levelOrder };
