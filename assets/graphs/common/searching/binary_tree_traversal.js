@@ -70,7 +70,7 @@ function inOrder(node, fn) {
 }
 
 /**
-* In-Order Recursive
+* In-Order Recursive (DFS: left, self, right)
 *
 * @param {object} node binary tree node
 * @param {array} array array to store order
@@ -81,9 +81,7 @@ function inOrderRecurse(node, array) {
   if (node === null) return;
 
   inOrderRecurse(node.left, array);
-
   array.push(node.value);
-
   inOrderRecurse(node.right, array);
 }
 
@@ -139,7 +137,7 @@ function preOrder(node, fn) {
 }
 
 /**
-* Pre-Order Recursive
+* Pre-Order Recursive (DFS: self, left, right)
 *
 * @param {object} node binary tree node
 * @param {array} array array to store order
@@ -207,7 +205,7 @@ function postOrder(node, fn) {
 }
 
 /**
-* Post-Order Recursive
+* Post-Order Recursive (DFS: left, right, self)
 *
 * @param {object} node binary tree node
 * @param {array} array array to store order
@@ -223,7 +221,7 @@ function postOrderRecurse(node, array) {
 }
 
 /**
-* Level-Order (BFS: self, left, right)
+* Level-Order (BFS)
 *
 * Trees can also be traversed in level-order, where we visit every node on a level
 * before going to a lower level. This search is referred to as breadth-first search
