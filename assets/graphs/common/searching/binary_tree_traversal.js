@@ -74,7 +74,7 @@ function inOrder(node, fn) {
 *
 * @param {object} node binary tree node
 * @param {array} array array to store order
-* @return {array} returns an array of node values in-order
+* @return {void}
 */
 
 function inOrderRecurse(node, array) {
@@ -141,7 +141,7 @@ function preOrder(node, fn) {
 *
 * @param {object} node binary tree node
 * @param {array} array array to store order
-* @return {array} returns an array of node values in-order
+* @return {void}
 */
 
 function preOrderRecurse(node, array) {
@@ -209,7 +209,7 @@ function postOrder(node, fn) {
 *
 * @param {object} node binary tree node
 * @param {array} array array to store order
-* @return {array} returns an array of node values in-order
+* @return {void}
 */
 
 function postOrderRecurse(node, array) {

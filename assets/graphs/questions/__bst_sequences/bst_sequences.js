@@ -17,81 +17,39 @@
 *
 * Solution:
 *
-* We know that the root element must be the first element in all possible arrays.
-* We call this a prefix. Once the root is inserted, all values less will go left and all
-* values greater will go right. It actually doesn't matter what order the remaining values go in.
-* Therefore we need to find all possible permutations of the remaining values other than the root
-* and return those.
+* It's useful to kick off this question with a good example.
 *
-* We find all possible arrays if the left subtree and all possible arrays of the right subtree.
-* Then we 'weave' all these arrays together, preprend the prefix, and push them as results.
+*                    50
+*                 ↙     ↘
+*              20         60
+*            ↙   ↘           ↘
+*          10     25           70
+*       ↙    ↘               ↙    ↘
+*     5        15          65       80
 *
+* We should think about the ordering of items in a BST. Given a node, all nodes
+* on its left must be less than all the nodes on its right. Once we reach a place
+* without a node, we insert the new value there.
+*
+* What this means is that the very first element in our array must have been a 50
+* in order to create the above tree. If it were anything else, then that value
+* would have been the root instead.
+*
+* What else can we say? Some people jump to the conclusion that everything on the
+* left must have been inserted before elements on the right, but that's not actually
+* true. In fact, the reverse is true: the order of the left or right items doesn't
+* matter.
+*
+* Once the 50 is inserted, all items less than 50 will be routed to the left and
+* all items greater than 50 will be routed to the right. The 60 or the 20 could
+* be inserted first, and it wouldn't matter.
 *
 * @param {object} tree BST
-* @return {array} Returns an array of arrays
+* @return {array} returns an array of arrays
 */
 
-// function bstSequences(tree) {
-//   const results;
-//   const root = tree.root;
-//
-//   const leftSeqs = permutations(DFS(root.left));
-//   const rightSeqs = permutations(DFS(root.right));
-//
-//   for (let left = 0; left < leftSeqs.length; left++) {
-//     for (let right = 0; right < rightSeqs.length; right++) {
-//       const results = weave(left, right);
-//     }
-//   }
-//
-//   return results;
-// }
-//
-// function DFS(root) {
-//   const results = [];
-//   const stack = [root];
-//
-//   while (stack.length) {
-//     const node = stack.pop();
-//     results.push(node.value);
-//
-//     if (node.left !== null) {
-//       stack.push(node.left);
-//     }
-//
-//     if (node.right !== null) {
-//       stack.push(node.right);
-//     }
-//   }
-//
-//   return results;
-// }
-//
-// function permutations(array) {
-//   const results = [];
-//
-//   function permute(arr, memo) {
-//     let current;
-//     let cache = memo || [];
-//
-//     for (var i = 0; i < arr.length; i++) {
-//       current = arr.splice(i, 1);
-//
-//       if (arr.length === 0) {
-//         results.push(cache.concat(current));
-//       }
-//
-//       permute(arr.slice(), cache.concat(current));
-//       arr.splice(i, 0, current[0]);
-//     }
-//
-//     return results;
-//   }
-//   return permute(array);
-// }
-//
-// function weave() {
-//
-// }
+function bstSequences(tree) {
 
-// export default bstSequences;
+}
+
+export default bstSequences;
