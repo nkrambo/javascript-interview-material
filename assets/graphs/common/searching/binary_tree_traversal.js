@@ -162,8 +162,8 @@ function postOrder(node, fn) {
       if (peek.right !== null && lastNodeVisited !== peek.right) {
         node = peek.right;
       } else {
-        if (fn) fn(node);
-        order.push(node.value);
+        if (fn) fn(peek);
+        order.push(peek.value);
         lastNodeVisited = stack.pop();
       }
     }
@@ -173,7 +173,7 @@ function postOrder(node, fn) {
 }
 
 /**
-* Level-Order
+* Level-Order (BFS: self, left, right)
 *
 * Trees can also be traversed in level-order, where we visit every node on a level
 * before going to a lower level. This search is referred to as breadth-first search
@@ -206,7 +206,7 @@ function levelOrder(node, fn) {
 
     if (current.left !== null) {
       queue.push(current.left);
-    }    
+    }
 
     if (current.right !== null) {
       queue.push(current.right);
