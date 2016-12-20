@@ -44,12 +44,56 @@
 * all items greater than 50 will be routed to the right. The 60 or the 20 could
 * be inserted first, and it wouldn't matter.
 *
-* @param {object} tree BST
+* If we had all arrays that could have created the subtree rooted at 20 (call this
+* arraySet20), and all arrays that could have created the subtree rooted at 60
+* (call this arraySet60), how would that give us the full answer? We could just
+* 'weave' each array from 'arraySet20' with each array from 'arraySet60', and then
+* prepend each array with a 50.
+*
+* Here's what we mean by 'weaving'. We are merging two arrays in all possible ways,
+* while keeping the elements within each array in the same relative order.
+*
+* array1: [1, 2]
+* array2: [3, 4]
+* weaved: [1, 2, 3, 4], [1, 3, 2, 4], [1, 3, 4, 2], [3, 1, 2, 4], [3, 1, 4, 2], [3, 4, 1, 2]
+*
+* Note that, as long as there aren't any duplicates in the original array sets,
+* we won't have to worry that weaving will create duplicates.
+*
+* @param {object} node BST root node
 * @return {array} returns an array of arrays
 */
 
-function bstSequences(tree) {
+function bstSequences(node) {
+  const seqs = [];
 
+  if (node === null) {
+    seqs.push([]);
+    return seqs;
+  }
+
+  const prefix = [node.value];
+
+  // recurse left and right subtrees
+  const leftSeq = bstSequences(node.left);
+  const rightSeq = bstSequences(node.right);
+
+  // // weave together each list from the left and right sides
+  // leftSeq.forEach((left) => {
+  //   rightSeq.forEach((right) => {
+  //     const weaved = [];
+  //     weaveLists(left, right, weaved, prefix);
+  //     seqs.push(weaved);
+  //   });
+  // });
+
+  return seqs;
 }
+
+// function weaveLists(left, right, results, prefix) {
+//   if (left.length === 0 || right.length === 0) {
+//
+//   }
+// }
 
 export default bstSequences;

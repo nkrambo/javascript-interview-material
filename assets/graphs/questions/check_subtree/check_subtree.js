@@ -11,7 +11,7 @@
 */
 
 /**
-* Contains tree 1
+* containsTree()
 *
 * Solution:
 *
@@ -23,7 +23,9 @@
 * We should use a pre-order traversal. Even here, trees with different structures
 * could still have the same pre-order traversal. We can fix that by representing
 * NULL nodes with a speacial character like 'X'. As long as we represent these
-* nodes, the pre-order traversal of a tree will be unique.
+* nodes, the pre-order traversal of a tree will be unique. Therefore, two trees
+* are identical if they have the same pre-order traversal using this method.
+*
 *
 *                  1
 *               ↙     ↘
@@ -35,23 +37,26 @@
 *
 * Example: 1, 2, 4, X, X, X, 3, X, X
 *
-* Time - O(n + m)
-* Space - O(n + m)
+* Now consider the subtree problem. If T2's pre-order traversal is a substring of
+* of T1's pre-order traversal, then T2's root element must be found in T1.
+*
+* Time: O(n + m)
+* Space: O(n + m)
 *
 * Where n and m are the nodes in T1 and T2, respectively.
 *
-* @param {object} t1 Parent tree
-* @param {object} t2 Subtree to check for in tree1
-* @return {boolean} Returns true if the subtree exists, otherwise returns false
+* @param {object} t1 parent tree
+* @param {object} t2 subtree to check for in tree1
+* @return {boolean} returns true if the subtree exists, otherwise returns false
 */
 
-function containsTree1(t1, t2) {
+function containsTree(t1, t2) {
   if (t2 === null) return true; // an empty tree is always a subtree.
 
   const t1String = getOrderString(t1.root);
   const t2String = getOrderString(t2.root);
 
-  return t1String.indexOf(t2String) >= 0;
+  return t1String.indexOf(t2String) !== -1;
 }
 
 function getOrderString(root) {
@@ -76,7 +81,7 @@ function getOrderString(root) {
 }
 
 /**
-* Contains tree 2, alternative approach
+* containsTreeAlt
 *
 * Solution:
 *
@@ -84,18 +89,18 @@ function getOrderString(root) {
 * to the root of T2, we call matchTree(). The matchTree() method will compare the
 * two trees to see if they're identical.
 *
-* Time - O(n + km)
-* Space - O(log(n) + log(m)), better memory, which can be impoertant for scalability
+* Time: O(n + km)
+* Space: O(log(n) + log(m)), better memory, which can be important for scalability
 *
 * Where n and m are the nodes in T1 and T2, respectively. And k is the number of
 * occurences of T2's root in T1.
 *
-* @param {object} t1 Parent tree
-* @param {object} t2 Subtree to check for in tree1
-* @return {boolean} Returns true if the subtree exists, otherwise returns false
+* @param {object} t1 parent tree
+* @param {object} t2 subtree to check for in tree1
+* @return {boolean} returns true if the subtree exists, otherwise returns false
 */
 
-function containsTree2(t1, t2) {
+function containsTreeAlt(t1, t2) {
   if (t2 === null) return true; // an empty tree is always a subtree.
 
   const t2Root = t2.root;
@@ -138,4 +143,4 @@ function matchTree(r1, r2) {
   }
 }
 
-export { containsTree1, containsTree2 };
+export { containsTree, containsTreeAlt };
