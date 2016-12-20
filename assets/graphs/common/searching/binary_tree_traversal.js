@@ -20,7 +20,7 @@
 */
 
 /**
-* In-Order
+* In-Order (DFS: left, self, right)
 *
 * In-order traversal means to 'visit' the left branch, then the current node,
 * and finally, the right branch. This is the most common traversal used.
@@ -70,7 +70,7 @@ function inOrder(node, fn) {
 }
 
 /**
-* Pre-Order
+* Pre-Order (DFS: self, left, right)
 *
 * A pre-order traversal always 'visits' the current node first and then pushes
 * current.right and current.left onto the stack. This means that all left children
@@ -121,7 +121,7 @@ function preOrder(node, fn) {
 }
 
 /**
-* Post-Order
+* Post-Order (DFS: left, right, self)
 *
 * Post-order traversal is the most complicated method to traverse of these approaches.
 * Basically, we defer visiting a node until we hit a leaf node and then we work
@@ -199,14 +199,14 @@ function levelOrder(node, fn) {
   const queue = [node];
 
   while (queue.length) {
-    const current = queue.pop();
+    const current = queue.shift();
 
     if (fn) fn(current);
     order.push(current.value);
 
     if (current.left !== null) {
       queue.push(current.left);
-    }
+    }    
 
     if (current.right !== null) {
       queue.push(current.right);
