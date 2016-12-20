@@ -7,7 +7,7 @@
 */
 
 /**
-* Minimal Tree
+* minimal()
 *
 * Solution:
 *
@@ -37,34 +37,19 @@
 
 import BinarySearchTree from '../../class/bst/bst';
 
-function createMinimalBST(nums) {
+function minimal() {}
 
-//   // check length
-//   if (nums.length === 0) return null;
-//
-//   // new tree
-//   const BST = new BinarySearchTree();
-//
-//   let left = 0;
-//   let right = nums.length - 1;
-//   BST.insert(nums[Math.floor((left + right)/ 2)]);
-//
-//   const queue = [BST.root];
-//
-//   while (stack.length) {
-//     const node = queue.shift();
-//
-//     // push
-//     queue.push();
-//   }
-//
-//   return BST;
-}
+/**
+* minimalRecurse()
+*
+* Time: O(n)
+* Space: O(n)
+*
+* @param {array} nums sorted (increasing) unique integers
+* @return {object} returns a minimal binary search tree created from nums
+*/
 
-function createMinimalBSTRecursive(nums) {
-
-  // check length
-  if (nums.length === 0) return null;
+function minimalRecurse(nums) {
 
   // new tree
   const BST = new BinarySearchTree();
@@ -93,4 +78,4 @@ function insertNode(tree, nums, left, right) {
   }
 }
 
-export { createMinimalBST, createMinimalBSTRecursive };
+export { minimal, minimalRecurse };

@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import { createMinimalBST, createMinimalBSTRecursive } from '../minimal_tree';
+import { minimal, minimalRecurse } from '../minimal_tree';
 
 // describe('createMinimalBST()', () => {
 //   it('should create a BST with minimal height', () => {
@@ -22,10 +22,10 @@ import { createMinimalBST, createMinimalBSTRecursive } from '../minimal_tree';
 //   });
 // });
 
-describe('createMinimalBSTRecursive()', () => {
+describe('minimalRecurse()', () => {
   it('should create a BST with minimal height', () => {
     const nums = [1, 2, 3, 4, 5, 6, 7];
-    const test = createMinimalBSTRecursive(nums);
+    const test = minimalRecurse(nums);
 
     // root, height 1
     expect(test.root.value).to.equal(4);
