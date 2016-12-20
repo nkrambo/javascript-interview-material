@@ -70,6 +70,24 @@ function inOrder(node, fn) {
 }
 
 /**
+* In-Order Recursive
+*
+* @param {object} node binary tree node
+* @param {array} array array to store order
+* @return {array} returns an array of node values in-order
+*/
+
+function inOrderRecurse(node, array) {
+  if (node === null) return;
+
+  inOrderRecurse(node.left, array);
+
+  array.push(node.value);
+
+  inOrderRecurse(node.right, array);
+}
+
+/**
 * Pre-Order (DFS: self, left, right)
 *
 * A pre-order traversal always 'visits' the current node first and then pushes
@@ -118,6 +136,22 @@ function preOrder(node, fn) {
   }
 
   return order;
+}
+
+/**
+* Pre-Order Recursive
+*
+* @param {object} node binary tree node
+* @param {array} array array to store order
+* @return {array} returns an array of node values in-order
+*/
+
+function preOrderRecurse(node, array) {
+  if (node === null) return;
+
+  array.push(node.value);
+  preOrderRecurse(node.left, array);
+  preOrderRecurse(node.right, array);
 }
 
 /**
@@ -173,6 +207,22 @@ function postOrder(node, fn) {
 }
 
 /**
+* Post-Order Recursive
+*
+* @param {object} node binary tree node
+* @param {array} array array to store order
+* @return {array} returns an array of node values in-order
+*/
+
+function postOrderRecurse(node, array) {
+  if (node === null) return;
+
+  postOrderRecurse(node.left, array);
+  postOrderRecurse(node.right, array);
+  array.push(node.value);
+}
+
+/**
 * Level-Order (BFS: self, left, right)
 *
 * Trees can also be traversed in level-order, where we visit every node on a level
@@ -216,4 +266,4 @@ function levelOrder(node, fn) {
   return order;
 }
 
-export { inOrder, preOrder, postOrder, levelOrder };
+export { inOrder, inOrderRecurse, preOrder, preOrderRecurse, postOrder, postOrderRecurse, levelOrder };

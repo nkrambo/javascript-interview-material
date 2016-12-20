@@ -1,7 +1,7 @@
 
 import { expect } from 'chai';
 import BST from '../../../class/bst/bst';
-import { inOrder, preOrder, postOrder, levelOrder } from '../binary_tree_traversal';
+import { inOrder, inOrderRecurse, preOrder, preOrderRecurse, postOrder, postOrderRecurse, levelOrder } from '../binary_tree_traversal';
 
 describe('inOrder()', () => {
   it('should return an array of all binary tree nodes in-order', () => {
@@ -34,6 +34,26 @@ describe('inOrder()', () => {
     expect(modOrder[0]).to.equal(2);
     expect(modOrder[1]).to.equal(4);
     expect(modOrder[2]).to.equal(6);
+  });
+});
+
+describe('inOrderRecurse()', () => {
+  it('should return an array of all binary tree nodes in-order', () => {
+    const bst = new BST();
+    bst.insert(4);
+    bst.insert(2);
+    bst.insert(6);
+    bst.insert(1);
+    bst.insert(3);
+    bst.insert(5);
+    bst.insert(7);
+
+    const order = [];
+    inOrderRecurse(bst.root, order);
+
+    expect(order[0]).to.equal(1);
+    expect(order[1]).to.equal(2);
+    expect(order[2]).to.equal(3);
   });
 });
 
@@ -70,6 +90,26 @@ describe('preOrder()', () => {
   });
 });
 
+describe('preOrderRecurse()', () => {
+  it('should return an array of all binary tree nodes pre-order', () => {
+    const bst = new BST();
+    bst.insert(4);
+    bst.insert(2);
+    bst.insert(6);
+    bst.insert(1);
+    bst.insert(3);
+    bst.insert(5);
+    bst.insert(7);
+
+    const order = [];
+    preOrderRecurse(bst.root, order);
+
+    expect(order[0]).to.equal(4);
+    expect(order[1]).to.equal(2);
+    expect(order[2]).to.equal(1);
+  });
+});
+
 describe('postOrder()', () => {
   it('should return an array of all binary tree nodes post-order', () => {
     const bst = new BST();
@@ -100,6 +140,26 @@ describe('postOrder()', () => {
     expect(modOrder[0]).to.equal(2);
     expect(modOrder[1]).to.equal(6);
     expect(modOrder[2]).to.equal(4);
+  });
+});
+
+describe('postOrderRecurse()', () => {
+  it('should return an array of all binary tree nodes post-order', () => {
+    const bst = new BST();
+    bst.insert(4);
+    bst.insert(2);
+    bst.insert(6);
+    bst.insert(1);
+    bst.insert(3);
+    bst.insert(5);
+    bst.insert(7);
+
+    const order = [];
+    postOrderRecurse(bst.root, order);
+
+    expect(order[0]).to.equal(1);
+    expect(order[1]).to.equal(3);
+    expect(order[2]).to.equal(2);
   });
 });
 
