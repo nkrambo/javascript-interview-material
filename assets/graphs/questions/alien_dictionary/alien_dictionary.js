@@ -122,7 +122,7 @@
 * makes use of a queue.
 *
 * In essence, we look for any nodes that have a 0 inDegree and use them as
-* 'starting nodes' and push them onto our queue. There must beat least one such
+* 'starting nodes' and push them onto our queue. There must be at least one such
 * node in a non-empty acyclic graph. These starting nodes come first lexicographically.
 * In our above example, this would only include the 'w' node, all other nodes have
 * an inDegree of 1.
@@ -187,7 +187,7 @@ function alienOrder(words) {
       // add edge to represent this and update node in-degree for topological sorting
       if (c1 !== c2) {
 
-        // Check if we've already added this edge
+        // check if we've already added this edge
         let seen = false;
         graph.find(c1).edges.forEach((edge) => {
           if (edge.value === c2) seen = true;
