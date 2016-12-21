@@ -33,7 +33,17 @@
 * Time: O(n log n)
 * Space: O(1)
 *
+* The complexity of this algorithm is tricky.
 *
+* Consider that node at depth 'd' will be 'touched' (via countPaths()) by 'd' nodes
+* above it. In a balanced bonary tree, 'd' will be no more than approximately (log n).
+* Therefore, we know that with 'n' nodes in the tree, countPaths() will be called
+* O(n log n) times.
+*
+* In an unbalanced tree, the runtime could be much worse. Consider a tree that is
+* a straight line down. At the root, we traverse to (n - 1) nodes. At the next
+* level (with just a single node), we traverse  to (n - 2) nodes, and so on. This
+* leads us to the sum of numbers between 1 and n, which is O(n^2).
 *
 * @param {object} root binary tree node
 * @param {number} target value path should sum to
