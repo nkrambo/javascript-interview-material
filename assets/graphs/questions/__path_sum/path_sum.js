@@ -51,6 +51,8 @@
 */
 
 function pathSumBrute(root, target) {
+
+  // base case
   if (root === null) return 0;
 
   // count paths with sum starting from root
@@ -73,6 +75,8 @@ function pathSumBrute(root, target) {
 */
 
 function countPaths(node, target, currentSum) {
+
+  // base case
   if (node === null) return 0;
 
   currentSum += node.value;
@@ -113,33 +117,33 @@ function countPaths(node, target, currentSum) {
 * 10 -> 5 -> 1 -> 2 -> -1 -> -1 -> 7 -> 1 -> 2
 *
 * What we're really saying is: How many contiguous subsequences in this array sum
-* to a target sum such as 8? In other words, for each y, we're trying to find the
-* x values below. (Or, more accurately, the number of x values below).
+* to a target such as 8? In other words, for each y, we're trying to find the x
+* values below. (Or, more accurately, the number of x values below).
 *
-*                 targetSum
-*               ______|______
+*                   target
+*                _____|_____
 *     __________|___________|
 *    s          x           y
 *
 * If each value knows its running sum (the sum of values from s through itself),
 * then we can find this pretty easily. We just need to leverage this simple equation:
 *
-* runningSum(x) = runningSum(y) - targetSum
+* runningSum(x) = runningSum(y) - target
 *
 * We then look for the values of x where this is true.
 *
 *           runningSum(y)
 *            ____|____
 *           |         |
-*    runningSum(x)  targetSum
+*    runningSum(x)  target
 *      _____|_________|______
 *     |__________|___________|
 *     s          x           y
 *
 * Since we're just looking for the number of paths, we can use a Map(). As
 * we iterate through the array, we map runningSum to the number of times we've
-* seen that sum. Then, for each y, look up runningSum(y) - targetSum in the map.
-* The value in the map will us the number of paths with targetSum that end at y.
+* seen that sum. Then, for each y, look up runningSum(y) - target in the map.
+* The value in the map will us the number of paths with target that end at y.
 *
 * For example:
 *
@@ -148,10 +152,81 @@ function countPaths(node, target, currentSum) {
 * value: 10 -> 5 -> 1 ->  2 -> -1 -> -1 ->  7 ->  1 ->  2
 * sum:   10   15   16    18    17    16    23    24    26
 *
+* The value of runningSum(7) is 24. If the target is 8, then we'd look up 16
+* in the map. This would have a value of 2 (originating from index 2 and index 5).
+* As we can see above, indices 3 through 7 and indices 6 through 7 have sums of 8.
+*
+* Now that we've settled the algorithm for an array, let's review this on a tree.
+* We take a similar approach.
+*
+* We traverse through the tree using a DFS. As we visit each node:
+*
+* 1. Track its runningSum. We'll take this in as a parameter and immediatley
+*    increment it by node.value.
+*
+* 2. Lookup runningSum - target in the map. The value there indicates the total
+*    number. Set totalPaths to this value.
+*
+* 3. If runningSum === target, then there's one additional path that starts at
+*    the root. Increment totalPaths.
+*
+* 4. Add runningSum to the map (incrementing the value already there).
+*
+* 5. Recurse left and right, counting the number of paths with sum targetSum.
+*
+* 6. After we're done recursing left and right, decrement the value of runningSum
+*    in the map. This is essentially backing out of our work; it reverses the
+*    changes to the map so that other nodes don't use it (since we're now done
+*    with that node).
+*
+* Time: O(n)
+* Space: O(n)
+*
+* Where n is the number of nodes in the tree. We know we have a linear runtime
+* because we travel to each node just once, doing O(1) work eaach time. In a
+* balanced tree, the space complexity is O(log n) due to the hash table. The space
+* complexity can grow to O(n) too, in an unbalanced tree.
+*
+* @param {object} node binary tree node
+* @param {number} target value path should sum to
+* @return {number} returns the number of paths that sum to target, or -1
 */
 
-function pathSum() {
+function pathSum(node, target) {
+  const pathCount = new Map();
+  return countPathsMap(root, target, 0, pathCount);
+}
 
+/**
+* countPathsMap()
+*
+* @param {object} node binary tree node
+* @param {number} target value path should sum to
+* @param {number} runningSum
+* @param {map} pathcount
+* @return {number} returns the number of paths that sum to target, or -1
+*/
+
+function countPathsMap(node, target, runningSum, pathCount) {
+
+  // base case
+  if (node === null) return 0;
+
+  // count paths with sum ending at the current node
+  runningSum += node.value;
+  const sum = runningSum - target;
+  let totalPaths = pathCount.get(sum) || 0;
+
+  // if runningSum equals target, then one additional path starts at the root
+  // add this path
+  if (runningSum === target) totalPaths += 1;
+
+  // increment pathCount, recurse, then decrement pathCount
+
+  totalPaths += countPathsMap(node.left, target, runningSum, pathCount);
+  totalPaths += countPathsMap(node.right, target, runningSum, pathCount);
+
+  return totalPaths;
 }
 
 export { pathSumBrute, pathSum };
