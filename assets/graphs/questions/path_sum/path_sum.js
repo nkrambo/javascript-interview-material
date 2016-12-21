@@ -194,11 +194,11 @@ function countPaths(node, target, currentSum) {
 
 function pathSum(node, target) {
   const pathCount = new Map();
-  return countPathsMap(root, target, 0, pathCount);
+  return helper(node, target, 0, pathCount);
 }
 
 /**
-* countPathsMap()
+* helper()
 *
 * @param {object} node binary tree node
 * @param {number} target value path should sum to
@@ -207,7 +207,7 @@ function pathSum(node, target) {
 * @return {number} returns the number of paths that sum to target, or -1
 */
 
-function countPathsMap(node, target, runningSum, pathCount) {
+function helper(node, target, runningSum, pathCount) {
 
   // base case
   if (node === null) return 0;
@@ -215,16 +215,26 @@ function countPathsMap(node, target, runningSum, pathCount) {
   // count paths with sum ending at the current node
   runningSum += node.value;
   const sum = runningSum - target;
-  let totalPaths = pathCount.get(sum) || 0;
+
+  let totalPaths = pathCount.has(sum) ? pathCount.get(sum) : 0;
 
   // if runningSum equals target, then one additional path starts at the root
   // add this path
   if (runningSum === target) totalPaths += 1;
 
-  // increment pathCount, recurse, then decrement pathCount
+  // increment pathCount
+  pathCount.set(runningSum, pathCount.get(runningSum) + 1 || 1);
 
-  totalPaths += countPathsMap(node.left, target, runningSum, pathCount);
-  totalPaths += countPathsMap(node.right, target, runningSum, pathCount);
+  // recurse left and right
+  totalPaths += helper(node.left, target, runningSum, pathCount);
+  totalPaths += helper(node.right, target, runningSum, pathCount);
+
+  // decrement pathCount
+  if (pathCount.get(runningSum) === 0) {
+    pathCount.delete(runningSum);
+  } else {
+    pathCount.set(runningSum, pathCount.get(runningSum) - 1);
+  }
 
   return totalPaths;
 }
