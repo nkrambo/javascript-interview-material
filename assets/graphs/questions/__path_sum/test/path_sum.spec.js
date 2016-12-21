@@ -1,7 +1,7 @@
 
 import { expect } from 'chai';
 import BinaryTree from '../../../class/binary_tree/binary_tree';
-import { pathSumBrute } from '../path_sum';
+import { pathSumBrute, pathSum } from '../path_sum';
 
 describe('pathSumBrute()', () => {
   it('should return the number of paths that sum to target', () => {
