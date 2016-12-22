@@ -22,11 +22,23 @@
 * performing a form of binary search, grabbing the middle index each time and
 * inserting into our tree to achieve the most minimal tree possible.
 *
-* Like most tree problems, we could approach this recursively or iteratively.
-* We'll look at both.
+* So we can proceed constructing our tree in this fasion. The middle of each
+* subsection of the array becomes the root of the node. The left half of the array
+* will become our left subtree, and the right half of the array will become the
+* right subtree.
+*
+* One way to implement this is to use a recursive process. Our insertNode()
+* method is passed a subsection of the array and returns the root of a minimal
+* tree for that array.
+*
+* The algorithm is as follows:
+* 1. Insert into the tree the middle element of the array.
+* 2. Insert (into the left subtree) the left subarray elements.
+* 3. Insert (into the right subtree) the right subarray elements.
+* 4. Recurse
 *
 * Time: O(n)
-* Space: O(n)
+* Space: O(1)
 *
 * We need to grab every index out of nums and insert into a new BST, so both our
 * time and space complexities will be O(n).
@@ -37,19 +49,7 @@
 
 import BinarySearchTree from '../../class/bst/bst';
 
-function minimal() {}
-
-/**
-* minimalRecurse()
-*
-* Time: O(n)
-* Space: O(n)
-*
-* @param {array} nums sorted (increasing) unique integers
-* @return {object} returns a minimal binary search tree created from nums
-*/
-
-function minimalRecurse(nums) {
+function minimal(nums) {
 
   // new tree
   const BST = new BinarySearchTree();
@@ -62,20 +62,18 @@ function minimalRecurse(nums) {
 
 function insertNode(tree, nums, left, right) {
 
-  if (left === right) {
-    tree.insert(nums[left]);
+  // base case
+  if (right < left) return null;
 
-  } else if (left < right) {
-    // calculate middle index
-    const mid = Math.floor((left + right) / 2);
+  // calculate middle index
+  const mid = Math.floor((left + right) / 2);
 
-    // insert
-    tree.insert(nums[mid]);
+  // insert
+  tree.insert(nums[mid]);
 
-    // recurse
-    insertNode(tree, nums, left, mid - 1);
-    insertNode(tree, nums, mid + 1, right);
-  }
+  // recurse
+  insertNode(tree, nums, left, mid - 1);
+  insertNode(tree, nums, mid + 1, right);
 }
 
-export { minimal, minimalRecurse };
+export default minimal;
