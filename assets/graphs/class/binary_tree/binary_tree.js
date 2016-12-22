@@ -30,6 +30,15 @@ class BinaryTree {
     this.root = null;
   }
 
+  /**
+  * insert()
+  *
+  * We use a BFS to find a leaf node to insert into from left to right
+  *
+  * @param {*} value to insert
+  * @return {object} returns the node with value if it exists, otherwise null
+  */
+
   insert(value) {
 
     // create node
@@ -50,7 +59,6 @@ class BinaryTree {
     // make sure to return on insertion, otherwise you'll insert twice because of
     // additional nodes in the queue
     const queue = [this.root];
-
     while (queue.length) {
 
       // dequeue

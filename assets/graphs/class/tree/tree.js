@@ -55,14 +55,21 @@ class Tree {
     this.root = null;
   }
 
-  traverse(callback) {
+  /**
+  * traverse()
+  *
+  * @param {function} fn callback
+  * @return {void}
+  */
+
+  traverse(fn) {
 
     // We'll define a walk function that we can call recursively on every node
     // in the tree.
     function walk(node) {
 
       // First call the callback on the node.
-      callback(node);
+      fn(node);
 
       // Then recursively call the walk function on all of its children.
       node.children.forEach(walk);
@@ -72,9 +79,17 @@ class Tree {
     walk(this.root);
   }
 
+  /**
+  * insert()
+  *
+  * @param {*} value to insert
+  * @param {*} parentValue for reference
+  * @return {void}
+  */
+
   insert(value, parentValue) {
     const node = {
-      value: value,
+      value,
       children: []
     };
 
@@ -86,9 +101,9 @@ class Tree {
 
     // Otherwise traverse the entire tree and find a node with a matching value
     // and add the new node to its children.
-    this.traverse((node) => {
-      if (node.value === parentValue) {
-        node.children.push(node);
+    this.traverse((prev) => {
+      if (prev.value === parentValue) {
+        prev.children.push(node);
       }
     });
   }
