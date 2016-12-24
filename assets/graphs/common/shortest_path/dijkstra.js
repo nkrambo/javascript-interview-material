@@ -28,8 +28,8 @@
 * must be positive, if you're dealing with positive and negative weigths there's
 * an algorithm for that too, Bellman-Ford's algorithm.
 *
-* Dijkstra's algorithm exists in many variants, but the min-priority queue (with a
-* minimum heap) implementation is the fastest known. However, specialized cases
+* Dijkstra's algorithm exists in many variants, but the min-priority queue (with
+* a minimum heap) implementation is the fastest known. However, specialized cases
 * (such as bounded/integer weights, directed acyclic graphs etc.) can indeed be
 * improved further as detailed specialized variants.
 *
@@ -57,16 +57,28 @@
 *
 * If we start at node A, should we go to node B or C? Well, if we take B it will
 * cost us 6 minutes but if we take C it will cost us 2 minutes. Therefore, C is
-* the cheapest node. The rest of the nodes we don't know yet.
+* the cheapest node. The rest of the nodes we don't know yet. You might have guessed
+* by now that Dijkstra's is actually a greedy algorithm because we are always
+* looking for the cheapest node.
 *
-* Because we don't know how long it will take to reach node D yet, we mark it as
-* Infinity.
+* We can represent this easily in a running cost table, like below. The cost of
+* a node is how long it takes to get to that node from the start. We know it takes
+* 6 minutes to get to node B (although we may find a path that takes less time).
+*
+* We don't know how long it will take to reach node D yet (our finish), we mark
+* it as Infinity. That is, all nodes for which we don't have a tentative cost for
+* yet, we mark as Infinity.
 *
 * Node | Time
 * -------------
 *   B  |  6
 *   C  |  2
 *   D  |  ∞
+*
+* What's the best way to calculate the cheapest node? Well, we can use a priority
+* queue, which we'll implement using our heap class. Then we can simply extract
+* the cheapest node from the front of the queue. We can think of all nodes in the
+* queue as 'unseen' or un-processed. That's is, nodes we are yet to explore.
 *
 * Step 2: Update the costs of the neighbors of the cheapest node we picked.
 *
@@ -79,11 +91,14 @@
 * of C we can see that it takes 7 minutes to get to D. So we update this cost from
 * Infinity too.
 *
+* With this system, we are tentatively calculating costs and updating them as we
+* find cheaper paths to those nodes. We mark the current value in () below.
+*
 * Node | Time
 * -------------
-*   B  |  5
+*   B  |  6, (5)
 *   C  |  2
-*   D  |  7
+*   D  |  ∞, (7)
 *
 * Step 3: Repeat!
 *
@@ -94,19 +109,24 @@
 *
 * Node | Time
 * -------------
-*   B  |  5
+*   B  |  6, (5)
 *   C  |  2
-*   D  |  6
+*   D  |  ∞, 7, (6)
 *
 * Step 4: Calculate the final path.
 *
+* Once we hit our finish node, we know that we can build our shortest path to
+* return.
+*
 * Our final path will be A -> C -> B -> D
-*                          2    3    1     = 6 minutes.
+*                          2    3    1 = 6 minutes in total.
+*
+* We'll return an object with a path array, holding the node values, and we'll
+* attach a 'totalCost' property too.
 *
 * Time: O(1)
 * Space: O(1)
 *
-* @param {object} graph
 * @param {object} start node
 * @param {object} finish node
 * @return {object} returns an object containing path array and total cost
@@ -114,64 +134,70 @@
 
 import Heap from '../../class/heap/heap';
 
-function dijkstra(graph, start, finish) {
+function dijkstra(start, finish) {
+  const unseen = new Heap((a, b) => b.cost - a.cost);
   const seen = new Set();
-  const heap = new Heap();
-  const previous = new Map();
+  const runningCosts = new Map();
   let path = [];
   let totalCost = 0;
 
-  // Add the starting point to the heap, it will be the first node visited
-  heap.add(start, 0);
+  // kick off by adding the start node to the heap, 0 cost
+  unseen.add(start);
 
-  // Run until we have visited every node in the heap
-  while (!heap.isEmpty()) {
+  // until we have visited every node in the heap
+  while (!unseen.isEmpty()) {
 
-    // Extract node with the lowest cost ('priority')
-    const node = heap.extract();
+    // extract lowest cost node
+    const node = unseen.extract();
+    // const cost = runningCosts.get(node);
 
-    // If we are currently at the finsih, compute the path and exit the loop
+    // if currently at the finish node, compute path and exit
     if (node === finish) {
 
-      // Set the total cost to the current value
-      totalCost = node.distance;
+      // set the total cost to the current value
+      totalCost = node.cost;
 
+      // // build path
       // let value = node.value;
-      // while (previous.has(value)) {
+      // while (runningCosts.has(value)) {
       //   path.push(value);
-      //   value = previous.get(value);
+      //   value = runningCosts.get(value);
       // }
-      //
-      // break;
+
+      break;
     }
 
-    // Add the current node to the seen set
-    seen.add(node.value);
+    // // add to seen
+    // seen.add(node);
 
-    // Loop all the neighboring nodes
-    node.edges.forEach((edgeCost, nNode) => {
+    // iterate neighboring nodes
+    node.edges.forEach((edge) => {
 
-      // If we already explored the node, skip it
-      if (seen.has(nNode)) return null;
+      const newCost = node.cost + edge.cost;
 
-      // If the neighboring node is not yet in the frontier, we add it with
-      // the correct cost
-      if (!frontier.has(nNode)) {
-        previous.set(nNode, node.key);
-        return frontier.set(nNode, node.priority + nCost);
-      }
+      if (newCost < ) {}
 
-      const frontierPriority = frontier.get(nNode).priority;
-      const nodeCost = node.priority + nCost;
+      // // if we've seen the node, skip it
+      // if (seen.has(edge)) return null;
 
-      // Othewhise we only update the cost of this node in the frontier when
-      // it's below what's currently set
-      if (nodeCost < frontierPriority) {
-        previous.set(nNode, node.key);
-        return heap.add(nNode, nodeCost);
-      }
+      runningCosts.set(edge, edge.cost);
+      unseen.add(edge);
 
-      return null;
+      // // otherwise, add it with the correct cost
+      // runningCosts.set(edge, edge.cost);
+      // frontier.set(nNode, node.priority + nCost);
+      //
+      // const frontierPriority = frontier.get(nNode).priority;
+      // const nodeCost = node.priority + nCost;
+      //
+      // // othewhise we only update the cost of this node in the heap when
+      // // it's below what's currently set
+      // if (nodeCost < frontierPriority) {
+      //   runningCosts.set(edge, cost);
+      //   heap.add(edge);
+      // }
+
+
     });
   }
 

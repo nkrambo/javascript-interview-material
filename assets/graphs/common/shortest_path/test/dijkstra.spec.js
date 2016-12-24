@@ -8,7 +8,15 @@ class Weighted extends Graph {
     super();
   }
 
-  insertEdge(start, end, weight) {
+  insert(value) {
+    this.nodes.push({
+      value,
+      edges: [],
+      cost: 0
+    });
+  }
+
+  insertEdge(start, end, cost) {
     const startNode = this.find(start);
     const endNode = this.find(end);
 
@@ -18,13 +26,20 @@ class Weighted extends Graph {
     }
 
     // push edge
-    endNode.weight = weight;
+    endNode.cost = cost;
     startNode.edges.push(endNode);
   }
 }
 
-describe('dijkstra()', () => {
+/**
+*    (6)   A   (2)            A -> B: 6 mins
+*        ↙  ↘                 A -> C: 2 mins
+*       B  ←  C   (3)         C -> B: 3 mins
+*        ↘   ↙                B -> D: 1 mins
+*    (1)   D   (5)            C -> D: 5 mins
+*/
 
+describe('dijkstra()', () => {
   const weighted = new Weighted();
 
   // nodes
@@ -40,7 +55,12 @@ describe('dijkstra()', () => {
   weighted.insertEdge('B', 'D', 1);
   weighted.insertEdge('C', 'D', 5);
 
+  const start = weighted.find('A');
+  const finish = weighted.find('D');
+
+  // A -> C -> B -> D, cost: 6
   it('should return the shortest path of a weighted DAG', () => {
-    
+    // const shortest = dijkstra(start, finish);
+    // expect(shortest).to.be.a('object');
   });
 });
