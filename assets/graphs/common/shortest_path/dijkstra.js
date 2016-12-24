@@ -124,6 +124,16 @@
 * We'll return an object with a path array, holding the node values, and we'll
 * attach a 'totalCost' property too.
 *
+* In common presentations of Dijkstra's algorithm, initially all nodes are entered
+* into the priority queue. This is, however, not necessary: the algorithm can start
+* with a priority queue that contains only one item, and insert new items as they
+* are discovered. This maintains a smaller priority queue in practice, speeding
+* up the queue operations.
+*
+* This variant of Dijkstra's is also known as Uniform Cost Search (UCF). UCF is
+* Dijkstra's Algorithm which is focused on finding a single shortest path to a
+* single finishing point rather than the shortest path to every point.
+*
 * Time: O(1)
 * Space: O(1)
 *
@@ -134,71 +144,72 @@
 
 import Heap from '../../class/heap/heap';
 
+class PriorityQueue extends Heap {
+  constructor() {
+    super();
+  }
+
+  add(key, value) {
+    this.heap.push(value);
+    this.changeKey(this.heap.length - 1, value);
+  }
+}
+
 function dijkstra(start, finish) {
-  const unseen = new Heap((a, b) => b.cost - a.cost);
-  const seen = new Set();
+  const frontier = new Heap();
+  const explored = new Set();
   const runningCosts = new Map();
   let path = [];
   let totalCost = 0;
 
   // kick off by adding the start node to the heap, 0 cost
-  unseen.add(start);
+
+
+  frontier.add();
+  runningCosts.set(start, 0);
 
   // until we have visited every node in the heap
-  while (!unseen.isEmpty()) {
+  while (!frontier.isEmpty()) {
 
     // extract lowest cost node
-    const node = unseen.extract();
-    // const cost = runningCosts.get(node);
+    const node = frontier.extract();
 
     // if currently at the finish node, compute path and exit
     if (node === finish) {
 
       // set the total cost to the current value
-      totalCost = node.cost;
+      totalCost = runningCosts.get(node);
 
-      // // build path
-      // let value = node.value;
-      // while (runningCosts.has(value)) {
-      //   path.push(value);
-      //   value = runningCosts.get(value);
-      // }
+      // build path
 
       break;
     }
 
-    // // add to seen
-    // seen.add(node);
+    // seen it, mark it off
+    explored.add(node);
 
-    // iterate neighboring nodes
-    node.edges.forEach((edge) => {
+    // look at each neighbour
+    node.edges.forEach((n) => {
 
-      const newCost = node.cost + edge.cost;
-
-      if (newCost < ) {}
-
-      // // if we've seen the node, skip it
-      // if (seen.has(edge)) return null;
-
-      runningCosts.set(edge, edge.cost);
-      unseen.add(edge);
-
-      // // otherwise, add it with the correct cost
-      // runningCosts.set(edge, edge.cost);
-      // frontier.set(nNode, node.priority + nCost);
-      //
-      // const frontierPriority = frontier.get(nNode).priority;
-      // const nodeCost = node.priority + nCost;
-      //
-      // // othewhise we only update the cost of this node in the heap when
-      // // it's below what's currently set
-      // if (nodeCost < frontierPriority) {
-      //   runningCosts.set(edge, cost);
-      //   heap.add(edge);
-      // }
-
-
+      // if we haven't seen it already
+      if (!explored.has(n)) {
+    //     const newCost = cost + n.cost;
+    //
+    //     if (newCost < runningCosts.get(n)) {
+    //       runningCosts.set(n, newCost);
+    //     }
+      }
     });
+
+
+    // for each of node's neighbours n
+    //     if n is not in explored
+    //         if n is not in frontier
+    //             frontier.add(n)
+    //             set n's predecessor to node
+    //         elif n is in frontier with higher cost
+    //             replace existing node with n
+    //             set n's predecessor to node
   }
 
   return {

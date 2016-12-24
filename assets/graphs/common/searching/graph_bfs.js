@@ -52,17 +52,17 @@
 
 function bfs(root) {
   root.marked = true;
-  const queue = [root];
+  const frontier = [root]; // queue
   const order = [];
 
-  while (queue.length) {
-    const node = queue.shift();
+  while (frontier.length) {
+    const node = frontier.shift();
     order.push(node.value);
 
     node.edges.forEach((edge) => {
       if (!edge.marked) {
         edge.marked = true;
-        queue.push(edge);
+        frontier.push(edge);
       }
     });
   }

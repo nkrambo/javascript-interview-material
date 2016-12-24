@@ -11,8 +11,7 @@ class Weighted extends Graph {
   insert(value) {
     this.nodes.push({
       value,
-      edges: [],
-      cost: 0
+      edges: []
     });
   }
 
@@ -26,8 +25,7 @@ class Weighted extends Graph {
     }
 
     // push edge
-    endNode.cost = cost;
-    startNode.edges.push(endNode);
+    startNode.edges.push({endNode, cost});
   }
 }
 
