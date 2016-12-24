@@ -85,8 +85,8 @@ class MillionGazillion {
     let current = this.root;
     let newWord = false;
 
-    // Work downwards through the trie, adding nodes as needed, and keeping track
-    // of whether we add any nodes.
+    // work downwards through the trie, adding nodes as needed,
+    // and keeping track of whether we add any nodes.
     for (let i = 0; i < url.length; i += 1) {
       const char = url[i];
 
@@ -100,8 +100,7 @@ class MillionGazillion {
       current = current[char];
     }
 
-    // Explicitly mark the end of a word. Otherwise, we might say a word is present
-    // if it is a prefix of a different, longer word that was added earlier.
+    // explicitly mark the end of a word
     if (!current.hasOwnProperty('*')) {
       newWord = true;
       current['*'] = {};
