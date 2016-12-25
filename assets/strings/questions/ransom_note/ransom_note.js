@@ -71,8 +71,7 @@
 *
 * @param {string} ransomeNote string of (n) length, lowercase
 * @param {string} magazine string of (n) length, lowercase
-* @return {boolean} returns true if the ransom note can be constructed from the
-* magainze, otherwise false
+* @return {boolean} returns true if the ransom note can be constructed, otherwise false
 */
 
 function ransomNote(ransomNote, magazine) {
