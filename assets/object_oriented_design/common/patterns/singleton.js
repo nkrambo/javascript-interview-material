@@ -96,4 +96,18 @@ const singleton = (() => {
 *
 */
 
+class Singleton {
+  static instance;
+
+  constructor(){
+    if(instance){
+      return instance;
+    }
+
+    this.state = "duke";
+    this.instance = this;
+  }
+}
+
+
 export default singleton;
