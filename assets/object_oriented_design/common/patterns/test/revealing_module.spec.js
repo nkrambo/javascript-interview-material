@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import revealingModule from '../revealing_module';
+import revealingModule from '../__revealing_module';
 
 describe('revealingModule()', () => {
   it('should', () => {});
