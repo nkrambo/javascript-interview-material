@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import { objectModule, counterModule, basketModule, revealingModule } from '../__module';
+import { objectModule, counterModule, basketModule, revealingModule } from '../module';
 
 // object literal module
 describe('objectModule', () => {

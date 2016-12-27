@@ -19,10 +19,10 @@
 *
 * These include:
 *
-* - Object literal notation
-* - The Module pattern
-* - The Revealing Module pattern
-* - AMD and CommonJS modules
+* - Object Literal Notation
+* - The Module Pattern
+* - The Revealing Module Pattern
+* - AMD and CommonJS Modules
 * - ES6 Modules
 */
 
@@ -224,21 +224,46 @@ const revealingModule = (() => {
     increment: publicIncrement,
     count: publicGetCount
   };
-
 })();
 
 /**
 * AMD and CommonJS Modules
 *
-* CommonJS is a project that aims to define a series of specifications to help in the development of server-side JavaScript applications. One of the areas the CommonJS team attempts to address are modules.
-* AMD was born out of a group of developers that were displeased with the direction adopted by CommonJS.
-* In fact, AMD was split from CommonJS early in its development. The main difference between AMD and CommonJS lies in its support for asynchronous module loading.
+* With the development of Node.js came the birth of the CommonJS and then AMD
+* projects to make modular Javascript a little easier than the above solutions.
+*
+* CommonJS is a broad project that actually defines a series of specifications to
+* help in server-side JavaScript application development. One area being modules.
+*
+* AMD was born out of a group of developers that were displeased with the direction
+* adopted by CommonJS. In fact, AMD was split from CommonJS early in its development.
+* The main difference between AMD and CommonJS lies in its support for asynchronous
+* module loading.
+*
+* Which ever one of these you used, it was considered a huge improvement over other
+* patterns for modularity. These tools gained so much popularity that eventually
+* they had a huge influence on the ES6 specification for modules, which we'll look
+* at next. ES6 took the best of both of these two projects and rolled them into
+* the specification, ultimately replacing the need for these in the long run.
 */
 
 /**
 * ES6 Modules
 *
+* The ECMA team behind the standardization of JavaScript decided to finally tackle
+* the issue of modules. The new module feature is syntactically pleasing and compatible
+* with both synchronous and asynchronous modes of operation.
 *
+* This solution, by virtue of being integrated in the language, lets runtimes pick
+* the best loading strategy for modules. In other words, when asynchronous loading
+* gives benefits, it can be used by the runtime.
+*
+* The import directive can be used to bring modules into the namespace. The export
+* directive, on the other hand, can be used to explicitly make elements public.
+* All in all, a very simple syntax.
+*
+* Unfortunately, support for ES6 Modules is still not wide. However, Now with
+* transpilers, like Babel, we can have support for ES6 modules easily.
 */
 
 export { objectModule, counterModule, basketModule, revealingModule };
