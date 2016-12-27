@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import { objectModule } from '../__module';
+import { objectModule, counterModule } from '../__module';
 
 // object literal module
 describe('objectModule', () => {
@@ -19,6 +19,17 @@ describe('objectModule', () => {
 });
 
 // module pattern
-describe('patternModule', () => {
-  it('should', () => {});
+describe('counterModule', () => {
+  it('should give us', () => {
+    // increment count
+    expect(counterModule.incrementCounter()).to.equal(1);
+    expect(counterModule.incrementCounter()).to.equal(2);
+    expect(counterModule.incrementCounter()).to.equal(3);
+
+    // reset
+    counterModule.resetCounter();
+
+    // increment again from 0
+    expect(counterModule.incrementCounter()).to.equal(1);
+  });
 });
