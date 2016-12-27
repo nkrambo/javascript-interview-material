@@ -6,16 +6,28 @@
 * typically help in keeping the units of code for a project both cleanly separated
 * and organized.
 *
-* In JavaScript, there are several options for implementing modules. These include:
+* Different pieces of software are usually developed in isolation until some requirement
+* needs to be satisfied by a previously existing piece of software. The concepts
+* of encapsulation and dependency allows these pieces of software to work together,
+* without conflicts.
+*
+* Building modules and handling dependencies with Javascript was cumbersome in the
+* past. Newer solutions, in the form of libraries or ES6 modules, have taken most
+* of the pain away. Starting a new module or project today, ES6 Modules is the
+* right way to go. However, we'll cover several options for implementing modules
+* to show the journey of how we eventually got to standardized ES6 modules.
+*
+* These include:
 *
 * - Object literal notation
 * - The Module pattern
+* - The Revealing Module pattern
 * - AMD and CommonJS modules
 * - ES6 Modules
 */
 
 /**
-* Object literal module
+* Object Literal Module
 *
 * The most basic form of module can be defined with a simple object literal.
 * Properties and methods are easily added and extensible and there's no need for
@@ -55,7 +67,7 @@ const objectModule = {
 };
 
 /**
-* The Module pattern
+* The Module Pattern
 *
 * The Module pattern is used to emulate the concept of classes in such a way that
 * we're able to include both public/private methods and variables inside a single
@@ -85,6 +97,12 @@ const objectModule = {
 
 /**
 * Counter Module
+*
+* Here, other parts of the code are unable to directly read the value of our
+* incrementCounter() or resetCounter(). The counter variable is actually fully
+* shielded from our global scope so it acts just like a private variable would -
+* its existence is limited to within the module's closure so that the only code
+* able to access its scope are our two functions.
 */
 
 const counterModule = (() => {
@@ -105,16 +123,122 @@ const counterModule = (() => {
 
 /**
 * Basket Module
+*
+* Below we can see a shopping basket implemented using this pattern. The module
+* itself is completely self-contained in a global variable called basketModule.
+* The basket array in the module is kept private and so other parts of our application
+* are unable to directly read it. It only exists with the module's closure and so
+* the only methods able to access it are those with access to its scope (ie. addItem(),
+* getItemCount() etc).
+*
+* The methods are effectively namespaced inside basketModule.
+*
+* The scoping function that wraps around all of our functions, allows us to have
+* private functions and private members which can only be consumed by our module.
+* As they aren't exposed to the rest of the page (only our exported API is),
+* they're considered truly private.
 */
 
-const basket = (() => {
+const basketModule = (() => {
+  const basket = [];
+  let redeemed = false;
 
-
+  function validateCoupon(coupon) {
+    if (coupon === 'TAKE20OFF' && !redeemed) {
+      basket.forEach((item) => {
+        item.price -= (item.price * 0.2);
+        redeemed = true;
+      });
+    }
+  }
 
   // public interface
   return {
+    addItem(value) {
+      basket.push(value);
+    },
 
+    getItemCount() {
+      return basket.length;
+    },
+
+    applyCoupon(coupon) {
+      validateCoupon(coupon);
+    },
+
+    getTotal() {
+      let itemCount = this.getItemCount();
+      let total = 0;
+
+      while (itemCount--) {
+        total += basket[itemCount].price;
+      }
+
+      return total;
+    }
   };
 })();
 
-export { objectModule, counterModule };
+/**
+* The Revealing Module Pattern
+*
+* The revealing module pattern is a slightly improved version of the module pattern
+* above.
+*
+* With the module pattern we have to repeat the name of the main object when we
+* want to call one public method from another or access public variables. Also,
+* we have to switch to object literal notation for the things we wish to make public.
+*
+* The revealing module pattern lets us simply define all functions and variables
+* in the private scope and return an anonymous object with pointers to the private
+* functionality we want revealed as public.
+*
+* This pattern allows the syntax of our scripts to be more consistent. It also makes
+* it more clear at the end of the module which of our functions and variables may
+* be accessed publicly which eases readability.
+*/
+
+const revealingModule = (() => {
+  let privateCounter = 0;
+
+  function privateFunction() {
+    privateCounter += 1;
+  }
+
+  function publicFunction() {
+    publicIncrement();
+  }
+
+  function publicIncrement() {
+    privateFunction();
+  }
+
+  function publicGetCount() {
+    return privateCounter;
+  }
+
+  // reveal public pointers to
+  // private functions and properties
+  return {
+    start: publicFunction,
+    increment: publicIncrement,
+    count: publicGetCount
+  };
+
+})();
+
+/**
+* AMD and CommonJS Modules
+*
+* CommonJS is a project that aims to define a series of specifications to help in the development of server-side JavaScript applications. One of the areas the CommonJS team attempts to address are modules.
+* AMD was born out of a group of developers that were displeased with the direction adopted by CommonJS.
+* In fact, AMD was split from CommonJS early in its development. The main difference between AMD and CommonJS lies in its support for asynchronous module loading.
+*/
+
+/**
+* ES6 Modules
+*
+*
+*/
+
+export { objectModule, counterModule, basketModule, revealingModule };
