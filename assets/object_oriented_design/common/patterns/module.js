@@ -258,12 +258,13 @@ const revealingModule = (() => {
 * the best loading strategy for modules. In other words, when asynchronous loading
 * gives benefits, it can be used by the runtime.
 *
-* The import directive can be used to bring modules into the namespace. The export
+* The 'import' directive can be used to bring modules into the namespace. The 'export'
 * directive, on the other hand, can be used to explicitly make elements public.
 * All in all, a very simple syntax.
 *
-* Unfortunately, support for ES6 Modules is still not wide. However, Now with
-* transpilers, like Babel, we can have support for ES6 modules easily.
+* Unfortunately, support for ES6 Modules is still not wide. However, now with
+* transpilers, like Babel, we can have support for ES6 modules easily. ES6 modules
+* are definitely the right approach when beginning any modern Javascript project.
 */
 
 export { objectModule, counterModule, basketModule, revealingModule };
