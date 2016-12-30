@@ -63,72 +63,61 @@ class Observer {
 * In JavaScript, we commonly implement a variation of the Observer pattern known
 * as the Publish/Subscribe pattern. They are similar, but there are some important
 * differences between these patterns.
+*
+* The Observer pattern requires that the observer (or object) wishing to receive
+* topic notifications must subscribe this interest to the object firing the event
+* (the subject).
+*
+* The Publish/Subscribe pattern however uses a topic/event channel which sits
+* between the objects wishing to receive notifications (subscribers) and the object
+* firing the event (the publisher). This event system allows code to define
+* application specific events which can pass custom arguments containing values
+* needed by the subscriber. The idea here is to avoid dependencies between the
+* subscriber and publisher.
+*
+* This differs from the Observer pattern as it allows any subscriber implementing
+* an appropriate event handler to register for and receive topic notifications
+* broadcast by the publisher.
+*
+* The Observer and Publish/Subscribe patterns encourage us to think hard about
+* the relationships between different parts of our application. This helps to
+* break down an application into smaller, more loosely coupled blocks to improve
+* code management, scalability and potentials for re-use.
+*
+* Publish/Subscribe fits in very well in JavaScript ecosystems, largely because
+* at the core, ECMAScript implementations are event driven. This is particularly
+* true in browser environments as the DOM uses events as its main interaction API
+* for scripting.
+*
+* Consequently, some of the issues with these patterns actually stem from their
+* main benefits. By decoupling publishers from subscribers, it can sometimes become
+* difficult to obtain which subscribers are listening to which publishers.
 */
-//
-// var pubsub = {};
-//
-// (function(myObject) {
-//
-//     // Storage for topics that can be broadcast
-//     // or listened to
-//     var topics = {};
-//
-//     // An topic identifier
-//     var subUid = -1;
-//
-//     // Publish or broadcast events of interest
-//     // with a specific topic name and arguments
-//     // such as the data to pass along
-//     myObject.publish = function( topic, args ) {
-//
-//         if ( !topics[topic] ) {
-//             return false;
-//         }
-//
-//         var subscribers = topics[topic],
-//             len = subscribers ? subscribers.length : 0;
-//
-//         while (len--) {
-//             subscribers[len].func( topic, args );
-//         }
-//
-//         return this;
-//     };
-//
-//     // Subscribe to events of interest
-//     // with a specific topic name and a
-//     // callback function, to be executed
-//     // when the topic/event is observed
-//     myObject.subscribe = function( topic, func ) {
-//
-//         if (!topics[topic]) {
-//             topics[topic] = [];
-//         }
-//
-//         var token = ( ++subUid ).toString();
-//         topics[topic].push({
-//             token: token,
-//             func: func
-//         });
-//         return token;
-//     };
-//
-//     // Unsubscribe from a specific
-//     // topic, based on a tokenized reference
-//     // to the subscription
-//     myObject.unsubscribe = function( token ) {
-//         for ( var m in topics ) {
-//             if ( topics[m] ) {
-//                 for ( var i = 0, j = topics[m].length; i < j; i++ ) {
-//                     if ( topics[m][i].token === token ) {
-//                         topics[m].splice( i, 1 );
-//                         return token;
-//                     }
-//                 }
-//             }
-//         }
-//         return this;
-//     };
-// }(pubsub));
 
-export { Subject, Observer };
+class PubSub {
+  constructor() {
+    this.handlers = [];
+  }
+
+  subscribe(event, handler, context) {
+    if (typeof context === 'undefined') context = handler;
+
+    this.handlers.push({event, handler: handler.bind(context)});
+  }
+
+  unsubscribe() {
+
+  }
+
+  publish(event, args) {
+    this.handlers.forEach((topic) => {
+      if (topic.event === event) {
+        topic.handler(args);
+      }
+    });
+  }
+}
+
+// https://joshbedo.github.io/JS-Design-Patterns/
+
+export { Subject, Observer, PubSub };

@@ -28,8 +28,10 @@
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.2.2",
     "istanbul": "^0.4.5",
+    "jsdom": "^9.9.1",
     "mocha": "^3.0.2",
-    "mocha-eslint": "^3.0.1"
+    "mocha-eslint": "^3.0.1",
+    "mocha-jsdom": "^1.1.0"
   },
   "dependencies": {
     "chai": "^3.5.0"

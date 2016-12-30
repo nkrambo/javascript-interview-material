@@ -18,3 +18,35 @@ describe('observer pattern', () => {
     expect(subject.notifyAll()).to.equal('All observers notified.');
   });
 });
+
+describe('pubsub pattern', () => {
+  it('should', () => {
+    const pubsub = new Subject();
+  });
+});
+
+// /*
+//  * Simple ChatRoom Class
+//  * uses the PubSub Class to notify other users when a message is sent.
+//  */
+// class ChatRoom {
+//   constructor() {
+//     this.pubsub = new PubSub();
+//     this.pubsub.subscribe('message', this.emitMessage, this);
+//   }
+//
+//   emitMessage(msg) {
+//     console.group('PubSub')
+//     console.log('user sent message!', msg);
+//     console.groupEnd();
+//   }
+//
+//   sendMessage() {
+//     this.pubsub.publish('message', 'Hey, how are you?');
+//   }
+//
+// }
+//
+// var room = new ChatRoom();
+// room.sendMessage();
+
