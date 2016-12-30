@@ -11,4 +11,13 @@ class ChatServer {
 
 }
 
+class User {
+  constructor(firstName, lastName, email, handle) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.handle = handle;
+  }
+}
+
 export default ChatServer;

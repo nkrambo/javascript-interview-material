@@ -105,9 +105,7 @@ class PubSub {
     this.handlers.push({event, handler: handler.bind(context)});
   }
 
-  unsubscribe() {
-
-  }
+  unsubscribe() { }
 
   publish(event, args) {
     this.handlers.forEach((topic) => {
