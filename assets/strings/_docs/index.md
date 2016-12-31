@@ -14,7 +14,7 @@
   <tr>
     <td><a href="../questions/bracket_validator/bracket_validator.js">Bracket Validator</a></td>
     <td>Easy</td>
-    <td><small>Stack</small></td>
+    <td><span style="background-color: #337ab7; color: #ffffff; padding: 1px 5px; font-size: 12px;">Stack</span></td>
     <td>:thumbsup:</td>
   </tr>
 
