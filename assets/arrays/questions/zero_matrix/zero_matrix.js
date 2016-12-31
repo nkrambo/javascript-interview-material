@@ -41,9 +41,8 @@ function zeroMatrix(matrix) {
   });
 
   // update matrix rows, columns
-  while (ords.length) {
-    const ord = ords.pop();
-
+  ords.forEach((ord) => {
+    
     // clear rows, we can use fill() horizontally
     matrix[ord[0]].fill(0);
 
@@ -51,7 +50,7 @@ function zeroMatrix(matrix) {
     matrix.forEach((el, index) => {
       matrix[index][ord[1]] = 0;
     });
-  }
+  });
 
   return matrix;
 }
