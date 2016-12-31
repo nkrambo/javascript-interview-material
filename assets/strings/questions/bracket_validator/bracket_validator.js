@@ -2,7 +2,7 @@
 /**
 * Bracket Validator
 *
-* Types: Stack
+* Tags: Stack
 *
 * You're working with an intern that keeps coming to you with JavaScript code
 * that won't run because the braces, brackets, and parentheses are off. To save

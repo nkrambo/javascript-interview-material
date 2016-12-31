@@ -7,6 +7,7 @@
     <th>Question</th>
     <th>Difficulty</th>
     <th>Tags</th>
+    <th>References</th>
     <th>Tested</th>
   </tr>
 
@@ -14,15 +15,32 @@
   <tr>
     <td><a href="../questions/bracket_validator/bracket_validator.js">Bracket Validator</a></td>
     <td>Easy</td>
-    <td><span style="background-color: #337ab7; color: #ffffff; padding: 1px 5px; font-size: 12px;">Stack</span></td>
+    <td>Stack</td>
+    <td>LeetCode #20</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/is_unique/is_unique.js">Is Unique String</a></td>
+    <td>Easy</td>
+    <td>Map</td>
+    <td></td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href=".../questions/check_permutation/check_permutation.js">Check Permutation (Is Valid Anagram)</a></td>
+    <td>Easy</td>
+    <td>Map, Sort</td>
+    <td>LeetCode #242</td>
     <td>:thumbsup:</td>
   </tr>
 
 </table>
 
-* [Bracket Validator](../questions/bracket_validator/bracket_validator.js)
-* [Is Unique String](../questions/is_unique/is_unique.js)
-* [Check Permutation (Is Valid Anagram)](../questions/check_permutation/check_permutation.js)
+
+
+
 * [First Unique Character](../questions/first_unique_character/first_unique_character.js)
 * [Isomorphic Strings](../questions/isomorphic_strings/isomorphic_strings.js)
 * [One Away](../questions/one_away/one_away.js)
