@@ -57,7 +57,7 @@
 * @return {boolean} returns true if 2 movies fit within the flight duration, else false
 */
 
-function twoMovies(flightLength, movieLengths) {
+function twoMovies(movieLengths, flightLength) {
 
   // movie lengths we've seen so far
   const moviesSeen = new Set();

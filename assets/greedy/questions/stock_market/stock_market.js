@@ -57,11 +57,6 @@
 
 function getMaxProfit(pricesYesterday) {
 
-  // type check
-  if (!Array.isArray(pricesYesterday)) {
-    throw new TypeError('getMaxProfit: Expects single argument of [array] type.');
-  }
-
   // make sure we have at least 2 prices
   if (pricesYesterday.length < 2) {
     throw new Error('Getting a profit requires at least 2 prices');

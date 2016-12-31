@@ -158,8 +158,7 @@ function alienOrder(words) {
   // e.g node (a) represents all occurences of a's
   const graph = new Graph();
   words.forEach((word) => {
-    for (let i = 0; i < word.length; i += 1) {
-      const char = word[i];
+    for (let char of word) {
       if (!graph.find(char)) {
         graph.insert(char);
       }

@@ -27,6 +27,8 @@ Practice makes perfect, and wine, plenty of wine.
 
 ![alt tag](/ballmer_peak.png)
 
+* [Strings](/assets/strings/_docs/index.md)
+
 ### String Problems
 
 * [Bracket Validator](/assets/strings/questions/bracket_validator/bracket_validator.js)
@@ -56,3 +58,5 @@ Practice makes perfect, and wine, plenty of wine.
 ### Bit Manipulation Problems
 
 ### Graph Problems
+
+### Common Sorting
