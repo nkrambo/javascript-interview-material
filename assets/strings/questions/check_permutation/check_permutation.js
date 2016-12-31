@@ -1,6 +1,6 @@
 
 /**
-* Check Permutation, also known as Is Valid Anagram
+* Check Permutation, also known as 'Is Valid Anagram'
 *
 * Types: Hash Map
 *

@@ -30,6 +30,19 @@ Practice makes perfect, and wine, plenty of wine.
 ### String Problems
 
 * [Bracket Validator](/assets/strings/questions/bracket_validator/bracket_validator.js)
-* [Is Unique](/assets/strings/questions/is_unique/is_unique.js)
+* [Is Unique String](/assets/strings/questions/is_unique/is_unique.js)
+* [Check Permutation (Is Valid Anagram)](/assets/strings/questions/check_permutation/check_permutation.js)
+* [First Unique Character](/assets/strings/questions/first_unique_character/first_unique_character.js)
+* [Isomorphic Strings](/assets/strings/questions/isomorphic_strings/isomorphic_strings.js)
+* [One Away](/assets/strings/questions/one_away/one_away.js)
+* [Palindrome Permutation](/assets/strings/questions/palindrome permutation/palindrome permutation.js)
+* [Parenthesis Matching](/assets/strings/questions/parenthesis matching/parenthesis matching.js)
+* [Ransom Note](/assets/strings/questions/ransom_note/ransom_note.js)
+* [Recursive String Permutations](/assets/strings/questions/recursive_string_permutations/recursive_string_permutations.js)
+* [Reverse String In Place](/assets/strings/questions/reverse_string_in_place/reverse_string_in_place.js)
+* [Reverse Vowels](/assets/strings/questions/reverse vowels/reverse vowels.js)
+* [Reverse Words](/assets/strings/questions/reverse words/reverse words.js)
+* [String Compression](/assets/strings/questions/string_compression/string_compression.js)
+* [String Rotation](/assets/strings/questions/string_rotation/string_rotation.js)
 
 
