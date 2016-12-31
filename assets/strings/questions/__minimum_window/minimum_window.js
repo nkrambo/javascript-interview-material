@@ -31,7 +31,38 @@
 */
 
 function minimumWindow(str1, str2) {
+  const map = new Map();
+  let counter = str2.length;
+  let begin = 0;
+  let end = 0;
 
+  // count chars in str2
+  for (let char of str2) {
+    map.set(char, map.get(char) + 1 || 1) // increment by or set to 1
+  }
+
+  while (end < str1.length) {
+    if ()
+
+    while (counter === 0) {
+      if () {}
+      if () {}
+    }
+  }
 }
+
+string minWindow(string s, string t) {
+        vector<int> map(128,0);
+        for(auto c: t) map[c]++;
+        int counter=t.size(), begin=0, end=0, d=INT_MAX, head=0;
+        while(end<s.size()){
+            if(map[s[end++]]-->0) counter--; //in t
+            while(counter==0){ //valid
+                if(end-begin<d)  d=end-(head=begin);
+                if(map[s[begin++]]++==0) counter++;  //make it invalid
+            }
+        }
+        return d==INT_MAX? "":s.substr(head, d);
+    }
 
 export default minimumWindow;

@@ -26,3 +26,8 @@ I highly recommend these resources for interview preparation.
 Practice makes perfect, and wine, plenty of wine.
 
 ![alt tag](/ballmer_peak.png)
+
+### String Problems
+
+* [Is Unique](/assets/strings/questions/is_unique/is_unique.js)
+
