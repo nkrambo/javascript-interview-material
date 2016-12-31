@@ -37,16 +37,17 @@
 */
 
 function firstUniqueChar(str) {
+
   // count chars
   const chars = new Map();
-  for (let i = 0; i < str.length; i += 1) {
-    chars.set(str[i], chars.get(str[i]) + 1 || 1);
+  for (let char of str) {
+    chars.set(char, chars.get(char) + 1 || 1);
   }
 
   // grab first unique
-  for (let i = 0; i < str.length; i += 1) {
-    if (chars.get(str[i]) === 1) {
-      return i;
+  for (let char of str) {
+    if (chars.get(char) === 1) {
+      return str.indexOf(char);
     } else {
       continue;
     }

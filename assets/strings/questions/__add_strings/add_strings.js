@@ -27,12 +27,6 @@
 */
 
 function addStrings(num1, num2) {
-
-  // type check
-  if (typeof num1 !== 'string' || typeof num2 !== 'string') {
-    throw new TypeError('addStrings: Expects 2 arguments of [string] type.');
-  }
-
   let sum = '';
   let carry = 0;
   let i = num1.length - 1;

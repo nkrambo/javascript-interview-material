@@ -78,9 +78,7 @@ function bracketValidator(str) {
   // openers stack
   const openersStack = [];
 
-  for (let i = 0; i < str.length; i += 1) {
-    const char = str[i];
-
+  for (let char of str) {
     if (openers.has(char)) {
       openersStack.push(char);
 

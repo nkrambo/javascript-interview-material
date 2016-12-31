@@ -95,13 +95,25 @@ getSomeData(id)
   });
 ```
 
-The problem with Promises is that they cannot be cancelled, which means that you'll probably end up executing code that you didn't want to. This is a problem with most modern web applications.
+Promises have the following features:
+
+- Guaranteed future
+- Immutable
+- Single value
+- Caching
+
+The problem with Promises is that they cannot be cancelled, which means that you'll probably end up executing code that you didn't want to. This is a problem with most modern web applications. This refers to our first feature above, guaranteed future.
 
 For example, let's say that we have an user interface listing thumbnails of video content a user may want to view. When a user clicks on an item we send HTTP request a consume a Promise API. If the user changes their mind and clicks a different thumbnail, we send another request. Now we have 2 requests in flight but only want to consume the latter. Well we cannot abort the first request so it will be parsed once it's returned, hence blocking our thread. There are some Promise libraries, like Bluebird, that have cancellation methods in their API, from which you can handle the XHR.abort() method properly.
 
 The other issue with Promises is that they only return a single value. This means working with AJAX is mostly fine, but for other types of asynchronous implementations, like workers and sockets for example.
 
-So we really want an async solution that we can cancel and which can handle more than 1 value.
+So we really want an async solution that we can cancel and which can handle more than 1 value. The other 2 features, immutable and caching are great.
+
+So to summarize, the problems with the Promise type:
+
+- No cancellation
+- Single value
 
 ### Iterators
 
@@ -111,6 +123,7 @@ So we really want an async solution that we can cancel and which can handle more
 
 https://www.youtube.com/watch?v=COviCoUtwx4
 
+https://www.youtube.com/watch?v=AslncyG8whg&t=159s
 
 
 

@@ -44,11 +44,9 @@ function isUnique(str) {
   const chars = new Set();
 
   // check for character in set, else add it to set
-  for (let i = 0; i < str.length; i += 1) {
-    if (chars.has(str[i])) {
-      return false;
-    }
-    chars.add(str[i]);
+  for (let char of str) {
+    if (chars.has(char)) return false;
+    chars.add(char);
   }
 
   return true;

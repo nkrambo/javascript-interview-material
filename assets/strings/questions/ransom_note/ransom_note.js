@@ -78,8 +78,7 @@ function ransomNote(ransomNote, magazine) {
 
   // count ransom note characters
   const chars = new Map();
-  for (let i = 0; i < ransomNote.length; i += 1) {
-    let char = ransomNote[i];
+  for (let char of ransomNote) {
 
     // ignore spaces
     if (char === ' ') continue;
@@ -89,8 +88,7 @@ function ransomNote(ransomNote, magazine) {
   }
 
   // iterate magazine
-  for (let i = 0; i < magazine.length; i++) {
-    let char = magazine[i];
+  for (let char of magazine) {
     let count = chars.get(char);
 
     // if character isn't in ransom, move on

@@ -8,7 +8,7 @@
 * Notes:
 * 1. The numbers can be arbitrarily large and are non-negative.
 * 2. Converting the input string to integer is NOT allowed.
-* 3. You should NOT use any librarys.
+* 3. You should NOT use any libraries.
 */
 
 /**

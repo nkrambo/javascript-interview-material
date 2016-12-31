@@ -45,22 +45,22 @@ function isPermutation(str1, str2) {
 
   // count characters in str1
   const chars = new Map();
-  for (let i = 0; i < str1.length; i += 1) {
-    chars.set(str1[i], chars.get(str1[i]) + 1 || 1); // increment or set to 1
+  for (let char of str1) {
+    chars.set(char, chars.get(char) + 1 || 1); // increment or set to 1
   }
 
   // check str2 against str1 map
-  for (let i = 0; i < str2.length; i += 1) {
-    let count = chars.get(str2[i]);
+  for (let char of str2) {
+    let count = chars.get(char);
 
     // if character doesn't exist
     if (!count) return false;
 
     // remove if last count, or decrement
     if (count === 1) {
-      chars.delete(str2[i]);
+      chars.delete(char);
     } else {
-      chars.set(str2[i], count - 1);
+      chars.set(char, count - 1);
     }
   }
 

@@ -17,6 +17,7 @@
 * inserted between words.
 *
 * Example:
+*
 * Input: ['This', 'is', 'an', 'example', 'of', 'text', 'justification'.], 16
 * Output: ['This    is    an',
 *          'example  of text',
