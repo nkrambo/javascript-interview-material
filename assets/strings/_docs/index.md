@@ -1,10 +1,13 @@
 
 ### String Problems
 
-| Question                                                                  | Difficulty    | Tags          |
-| ------------------------------------------------------------------------- | ------------- | ------------- |
-| [Bracket Validator](../questions/bracket_validator/bracket_validator.js)  | Easy          | Stack         |
-| [Is Unique String](../questions/is_unique/is_unique.js)                   | Easy          | Map           |
+| Question                                                | Difficulty    | Tags          | Tested        |
+| :------------------------------------------------------ | :------------ | :------------ | :------------ |
+| This is a line\                                         | Easy          | Stack         | Yes           |
+| over two lines                                          |               |               |               |
++---------------------------------------------------------+---------------+---------------+---------------+
+| This is a single line                                   | Easy          | Map           |               |
+
 
 * [Bracket Validator](../questions/bracket_validator/bracket_validator.js)
 * [Is Unique String](../questions/is_unique/is_unique.js)
