@@ -27,10 +27,9 @@ Practice makes perfect, and wine, plenty of wine.
 
 ![alt tag](/ballmer_peak.png)
 
-#### String Problems
+### String Problems
 
-[Bracket Validator](/assets/strings/questions/bracket_validator/bracket_validator.js)
-
-[Is Unique](/assets/strings/questions/is_unique/is_unique.js)
+* [Bracket Validator](/assets/strings/questions/bracket_validator/bracket_validator.js)
+* [Is Unique](/assets/strings/questions/is_unique/is_unique.js)
 
 
