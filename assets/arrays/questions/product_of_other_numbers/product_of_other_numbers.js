@@ -80,11 +80,6 @@
 
 function productOfOthers(arr) {
 
-  // type check
-  if (!Array.isArray(arr)) {
-    throw new TypeError('productOfOthers: Expects single argument of [array] type.');
-  }
-
   // edge case
   if (arr.length < 3) {
     throw new Error('productOfOthers: Minimum array length of 3 required');

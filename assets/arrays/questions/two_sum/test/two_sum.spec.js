@@ -10,12 +10,6 @@ describe('twoSumBrute()', () => {
   it('should throw an error if nums is less than 2', () => {
     expect(function(){ twoSumBrute([1]); }).to.throw(Error);
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ twoSumBrute(null); }).to.throw(TypeError);
-    expect(function(){ twoSumBrute(undefined); }).to.throw(TypeError);
-    expect(function(){ twoSumBrute('string'); }).to.throw(TypeError);
-  });
 });
 
 describe('twoSumHash()', () => {

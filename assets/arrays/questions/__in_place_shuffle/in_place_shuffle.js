@@ -66,11 +66,6 @@
 
 function inPlaceShuffle(arr) {
 
-  // type check
-  if (!Array.isArray(arr)) {
-    throw new TypeError('inPlaceShuffle: Expects single argument of [array] type.');
-  }
-
   // if 1 or 0 items, just return
   if (arr.length <= 1) return;
 

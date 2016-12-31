@@ -10,10 +10,4 @@ describe('findInOrderedSet()', () => {
   it('should return false if target is not in nums', () => {
     expect(findInOrderedSet(5, [1, 2, 3])).to.be.false;
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ findInOrderedSet (null, null); }).to.throw (TypeError);
-    expect(function(){ findInOrderedSet (undefined, undefined); }).to.throw (TypeError);
-  });
-
 });

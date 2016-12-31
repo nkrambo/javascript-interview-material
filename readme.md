@@ -47,6 +47,10 @@ Practice makes perfect, and wine, plenty of wine.
 
 ### Array Problems
 
+* [Zero Matrix](/assets/arrays/questions/zero_matrix/zero_matrix.js)
+* [Two Sum](/assets/arrays/questions/two_sum/two_sum.js)
+* [Two Sum](/assets/arrays/questions/single_riffle_shuffle/single_riffle_shuffle.js)
+
 ### Linked Lists Problems
 
 ### Bit Manipulation Problems

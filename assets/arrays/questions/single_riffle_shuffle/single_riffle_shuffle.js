@@ -68,12 +68,6 @@
 */
 
 function isSingleRiffle(h1, h2, shuffledDeck) {
-
-  // type check
-  if (!Array.isArray(h1) || !Array.isArray(h2) || !Array.isArray(shuffledDeck)) {
-    throw new TypeError('isSingleRiffle: Expects 3 arguments of [array] type.');
-  }
-
   let h1Index = 0;
   let h2Index = 0;
   const h1End = h1.length - 1;

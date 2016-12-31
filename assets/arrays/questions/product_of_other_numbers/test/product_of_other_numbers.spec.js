@@ -12,10 +12,4 @@ describe('productOfOthers()', () => {
     expect(function(){ productOfOthers([1, 2]); }).to.throw (Error);
     expect(function(){ productOfOthers([1]); }).to.throw (Error);
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ productOfOthers(null); }).to.throw (TypeError);
-    expect(function(){ productOfOthers(undefined); }).to.throw (TypeError);
-    expect(function(){ productOfOthers(5); }).to.throw (TypeError);
-  });
 });

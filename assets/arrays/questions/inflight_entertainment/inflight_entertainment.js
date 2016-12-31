@@ -58,12 +58,12 @@
 */
 
 function twoMovies(flightLength, movieLengths) {
-  
+
   // movie lengths we've seen so far
   const moviesSeen = new Set();
 
-  for (let i = 0; i < movieLengths.length; i += 1) {
-    const first = movieLengths[i];
+  for (let movie of movieLengths) {
+    const first = movie;
     const second = flightLength - first;
 
     if (moviesSeen.has(second)) {

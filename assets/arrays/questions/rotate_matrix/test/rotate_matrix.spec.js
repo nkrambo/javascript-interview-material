@@ -21,15 +21,4 @@ describe('rotateMatrix()', () => {
     let smallMatrix = [[0]];
     expect(rotateMatrix(smallMatrix)).to.equal(smallMatrix);
   });
-
-  it('should throw a type error', () => {
-    const invalidMatrix = [[ 4,  8, 12, 16],
-                           [ 3,  7, 11]];
-
-    expect(function(){ rotateMatrix (5); }).to.throw (TypeError);
-    expect(function(){ rotateMatrix (null); }).to.throw (TypeError);
-    expect(function(){ rotateMatrix (undefined); }).to.throw (TypeError);
-    expect(function(){ rotateMatrix (invalidMatrix); }).to.throw (TypeError);
-  });
-
 });

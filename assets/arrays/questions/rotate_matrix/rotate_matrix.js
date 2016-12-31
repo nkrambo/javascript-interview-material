@@ -35,11 +35,6 @@
 
 function rotateMatrix(matrix) {
 
-  // type check
-  if (!Array.isArray(matrix) || matrix.length === 0 || matrix.length !== matrix[0].length) {
-    throw new TypeError('rotateMatrix: Expects a single argument of a two dimensional array NxN');
-  }
-
   // cannot rotate a 1, 1 matrix
   if (matrix.length < 2) return matrix;
 

@@ -36,11 +36,6 @@
 
 function twoSumBrute(nums, target) {
 
-  // type check
-  if (!Array.isArray(nums)) {
-    throw new TypeError('twoSum: Expects single argument of [array] type.');
-  }
-
   // edge cases, minimum 2
   if (nums.length < 2) {
     throw new Error('twoSum: nums[] must be a minimum length of 2.');
@@ -95,13 +90,13 @@ function twoSumHash(nums, target) {
   const map = new Map();
 
   // build hash
-  for (let i = 0; i < nums.length; i += 1) {
-    map.set(nums[i], i);
-  }
+  nums.forEach((num, i) => {
+    map.set(num, i);
+  });
 
   // check for complement
-  for (let i = 0; i < nums.length; i += 1) {
-    const complement = target - nums[i];
+  for (let [i, num] of nums.entries()) {
+    const complement = target - num;
     if (map.has(complement) && map.get(complement) !== i) {
       return [i, map.get(complement)];
     }

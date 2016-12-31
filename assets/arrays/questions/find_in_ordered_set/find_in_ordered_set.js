@@ -16,6 +16,7 @@
 *
 * Time: O(log n)
 * Space: O(1)
+*
 * Where n is the length of the string input.
 *
 * @param {number} target integer value we want to find in nums
@@ -25,12 +26,7 @@
 
 function findInOrderedSet(target, nums) {
 
-  if (typeof target !== 'number' || !Array.isArray(nums)) {
-    throw new TypeError('findInOrderedSet: Expects 2 arguments of [number] and [array]');
-  }
-
   // see if target appears in nums
-
   // we think of floorIndex and ceilingIndex as "walls" around
   // the possible positions of our target so by -1 below we mean
   // to start our wall "to the left" of the 0th index

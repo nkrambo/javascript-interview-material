@@ -6,15 +6,12 @@
 *
 * Given an array of integers, positive and negative, find the highest product you can
 * get from three of the integers. The input will always have at least three integers.
-*
 */
 
 /**
 * highestProductOf3()
 *
 * Solution:
-*
-* Type: Greedy
 *
 * The brute force approach would iterate through array and multiply each integer by each
 * other integer, and then multiply that product by each other other integer.

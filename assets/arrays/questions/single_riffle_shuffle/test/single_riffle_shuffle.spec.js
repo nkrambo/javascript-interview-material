@@ -56,11 +56,4 @@ describe('isSingleRiffle()', () => {
   it('should return false if shuffledDeck is not a single riffle', () => {
     expect(isSingleRiffle(shuffle(shuffled.slice(0, 26)), shuffled.slice(26), shuffled)).to.be.false;
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ isSingleRiffle (null, null, null); }).to.throw (TypeError);
-    expect(function(){ isSingleRiffle (undefined, undefined, undefined); }).to.throw (TypeError);
-    expect(function(){ isSingleRiffle ('', '', ''); }).to.throw (TypeError);
-  });
-
 });

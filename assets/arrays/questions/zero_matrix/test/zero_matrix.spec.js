@@ -23,11 +23,4 @@ describe('zeroMatrix()', () => {
 
     expect(zeroMatrix(noZero)).to.deep.equal(noZero);
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ zeroMatrix (null); }).to.throw (TypeError);
-    expect(function(){ zeroMatrix (undefined); }).to.throw (TypeError);
-    expect(function(){ zeroMatrix (5); }).to.throw (TypeError);
-  });
-
 });
