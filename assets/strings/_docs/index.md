@@ -1,6 +1,11 @@
 
 ### String Problems
 
+| Question                                                                  | Difficulty    | Tags          |
+| ------------------------------------------------------------------------- | ------------- | ------------- |
+| [Bracket Validator](../questions/bracket_validator/bracket_validator.js)  | Easy          | Stack         |
+| [Is Unique String](../questions/is_unique/is_unique.js)                   | Easy          | Map           |
+
 * [Bracket Validator](../questions/bracket_validator/bracket_validator.js)
 * [Is Unique String](../questions/is_unique/is_unique.js)
 * [Check Permutation (Is Valid Anagram)](../questions/check_permutation/check_permutation.js)
