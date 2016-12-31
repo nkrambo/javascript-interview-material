@@ -12,9 +12,9 @@
 
   <!-- entries -->
   <tr>
-    <td>[Bracket Validator](../questions/bracket_validator/bracket_validator.js)</td>
+    <td><a href="../questions/bracket_validator/bracket_validator.js">Bracket Validator</a></td>
     <td>Easy</td>
-    <td>`Stack`</td>
+    <td><small>Stack</small></td>
     <td>:thumbsup:</td>
   </tr>
 
