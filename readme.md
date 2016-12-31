@@ -40,9 +40,15 @@ Practice makes perfect, and wine, plenty of wine.
 * [Ransom Note](/assets/strings/questions/ransom_note/ransom_note.js)
 * [Recursive String Permutations](/assets/strings/questions/recursive_string_permutations/recursive_string_permutations.js)
 * [Reverse String In Place](/assets/strings/questions/reverse_string_in_place/reverse_string_in_place.js)
-* [Reverse Vowels](/assets/strings/questions/reverse vowels/reverse vowels.js)
-* [Reverse Words](/assets/strings/questions/reverse words/reverse words.js)
+* [Reverse Vowels](/assets/strings/questions/reverse_vowels/reverse_vowels.js)
+* [Reverse Words](/assets/strings/questions/reverse_words/reverse_words.js)
 * [String Compression](/assets/strings/questions/string_compression/string_compression.js)
 * [String Rotation](/assets/strings/questions/string_rotation/string_rotation.js)
 
+### Array Problems
 
+### Linked Lists Problems
+
+### Bit Manipulation Problems
+
+### Graph Problems
