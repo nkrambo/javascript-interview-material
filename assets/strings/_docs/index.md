@@ -29,7 +29,7 @@
   </tr>
 
   <tr>
-    <td><a href=".../questions/check_permutation/check_permutation.js">Check Permutation (Is Valid Anagram)</a></td>
+    <td><a href="../questions/check_permutation/check_permutation.js">Check Permutation (Is Valid Anagram)</a></td>
     <td>Easy</td>
     <td>Map, Sort</td>
     <td>LeetCode #242</td>
