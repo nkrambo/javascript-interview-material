@@ -36,13 +36,26 @@
     <td>:thumbsup:</td>
   </tr>
 
+  <tr>
+    <td><a href="../questions/first_unique_character/first_unique_character.js">First Unique Character</a></td>
+    <td>Easy</td>
+    <td>Map</td>
+    <td>LeetCode #387</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/isomorphic_strings/isomorphic_strings.js">Isomorphic Strings</a></td>
+    <td>Easy</td>
+    <td>Map</td>
+    <td>LeetCode #205</td>
+    <td>:thumbsup:</td>
+  </tr>
+
 </table>
 
 
 
-
-* [First Unique Character](../questions/first_unique_character/first_unique_character.js)
-* [Isomorphic Strings](../questions/isomorphic_strings/isomorphic_strings.js)
 * [One Away](../questions/one_away/one_away.js)
 * [Palindrome Permutation](../questions/palindrome permutation/palindrome permutation.js)
 * [Parenthesis Matching](../questions/parenthesis matching/parenthesis matching.js)
