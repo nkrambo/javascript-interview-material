@@ -61,7 +61,7 @@
   </tr>
 
   <tr>
-    <td><a href="../questions/palindrome permutation/palindrome_permutation.js">Palindrome Permutation</a></td>
+    <td><a href="../questions/palindrome_permutation/palindrome_permutation.js">Palindrome Permutation</a></td>
     <td>Easy</td>
     <td>Map</td>
     <td>LeetCode #266, CCI #1.4</td>
@@ -69,7 +69,7 @@
   </tr>
 
   <tr>
-    <td><a href=".../questions/ransom_note/ransom_note.js">Ransom Note</a></td>
+    <td><a href="../questions/ransom_note/ransom_note.js">Ransom Note</a></td>
     <td>Easy</td>
     <td>Map</td>
     <td>LeetCode #383</td>
@@ -93,7 +93,7 @@
   </tr>
 
   <tr>
-    <td><a href="../questions/parenthesis matching/parenthesis_matching.js">Parenthesis Matching</a></td>
+    <td><a href="../questions/parenthesis_matching/parenthesis_matching.js">Parenthesis Matching</a></td>
     <td>Medium</td>
     <td>Map</td>
     <td></td>
