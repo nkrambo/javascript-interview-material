@@ -2,7 +2,7 @@
 /**
 * Check Permutation, also known as 'Is Valid Anagram'
 *
-* Types: Map, Sort
+* Tags: Map, Sort
 *
 * Given two strings, write a method to check if one is a permutation of
 * the other.

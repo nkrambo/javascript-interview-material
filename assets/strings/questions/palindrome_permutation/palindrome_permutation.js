@@ -2,7 +2,7 @@
 /**
 * Palindrome Permutation
 *
-* Types: Hash Map/Set
+* Tags: Map
 *
 * Given a string, write a function to check if it is a permutation of a
 * palindrome. A palindrome is a word or phrase that is the same forwards
@@ -18,7 +18,7 @@
 * isPalidromePermutation()
 *
 * Solution:
-()
+*
 * To solve this, we have to consider some of the properties of a valid palindrome.
 * For a word to be written the same ways forward as backwards, there needs
 * to be the same characters in the first half as there are in the last half.
@@ -47,6 +47,7 @@
 *
 * Time: O(n)
 * Space: O(n)
+*
 * Where n is the length of the string input.
 *
 * @param {string} str string of n length

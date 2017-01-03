@@ -2,6 +2,8 @@
 /**
 * Recursive String Permutations
 *
+* Tags: Map, Recursion
+*
 * Write a recursive function for generating all permutations of an input string.
 * Return them as a set. Don't worry about time or space complexity—if we wanted
 * efficiency we'd write an iterative version.

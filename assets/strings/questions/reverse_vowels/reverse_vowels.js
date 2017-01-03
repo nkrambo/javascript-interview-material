@@ -2,6 +2,8 @@
 /**
 * Reverse Vowels
 *
+* Tags: Map, Two Pointer
+*
 * Write a function that takes a string as input and reverse only
 * the vowels of a string.
 *

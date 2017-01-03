@@ -24,7 +24,7 @@
     <td><a href="../questions/is_unique/is_unique.js">Is Unique String</a></td>
     <td>Easy</td>
     <td>Map</td>
-    <td></td>
+    <td>CCI #1.1</td>
     <td>:thumbsup:</td>
   </tr>
 
@@ -52,17 +52,84 @@
     <td>:thumbsup:</td>
   </tr>
 
+  <tr>
+    <td><a href="../questions/reverse_vowels/reverse_vowels.js">Reverse Vowels</a></td>
+    <td>Easy</td>
+    <td>Map, Two Pointer</td>
+    <td>#345</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/palindrome permutation/palindrome_permutation.js">Palindrome Permutation</a></td>
+    <td>Easy</td>
+    <td>Map</td>
+    <td>LeetCode #266, CCI #1.4</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href=".../questions/ransom_note/ransom_note.js">Ransom Note</a></td>
+    <td>Easy</td>
+    <td>Map</td>
+    <td>LeetCode #383</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/reverse_string_in_place/reverse_string_in_place.js">Reverse String In Place</a></td>
+    <td>Easy</td>
+    <td>Two Pointer</td>
+    <td>LeetCode #344</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/string_compression/string_compression.js">String Compression</a></td>
+    <td>Easy</td>
+    <td></td>
+    <td>CCI #1.6</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/parenthesis matching/parenthesis_matching.js">Parenthesis Matching</a></td>
+    <td>Medium</td>
+    <td>Map</td>
+    <td></td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/one_away/one_away.js">One Away</a></td>
+    <td>Medium</td>
+    <td>Map</td>
+    <td>LeetCode #161, CCI #1.5</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/recursive_string_permutations/recursive_string_permutations.js">Recursive String Permutations</a></td>
+    <td>Medium</td>
+    <td>Map, Recursion</td>
+    <td></td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/reverse_words/reverse_words.js">Reverse Words</a></td>
+    <td>Medium</td>
+    <td>Two Pointer</td>
+    <td>LeetCode #151</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/string_rotation/string_rotation.js">String Rotation</a></td>
+    <td>Medium</td>
+    <td></td>
+    <td>CCI #1.9</td>
+    <td>:thumbsup:</td>
+  </tr>
+
 </table>
-
-
-
-* [One Away](../questions/one_away/one_away.js)
-* [Palindrome Permutation](../questions/palindrome permutation/palindrome permutation.js)
-* [Parenthesis Matching](../questions/parenthesis matching/parenthesis matching.js)
-* [Ransom Note](../questions/ransom_note/ransom_note.js)
-* [Recursive String Permutations](../questions/recursive_string_permutations/recursive_string_permutations.js)
-* [Reverse String In Place](../questions/reverse_string_in_place/reverse_string_in_place.js)
-* [Reverse Vowels](../questions/reverse_vowels/reverse_vowels.js)
-* [Reverse Words](../questions/reverse_words/reverse_words.js)
-* [String Compression](../questions/string_compression/string_compression.js)
-* [String Rotation](../questions/string_rotation/string_rotation.js)

@@ -2,6 +2,8 @@
 /**
 * One Away
 *
+* Tags: Map
+*
 * There are three types of edits that can be performed on strings: insert a
 * character, remove a character, or replace a character. Given two strings,
 * write a function to check if they are one edit (or zero edits) away.
@@ -53,7 +55,7 @@ function oneAway(str1, str2) {
   // compare str2 against str1
   for (let char of str2) {
     let count = chars.get(char);
-    
+
     if (count) {
       if (count === 1) {
         chars.delete(char);

@@ -2,7 +2,7 @@
 /**
 * Isomorphic Strings
 *
-* Types: Hash Map
+* Tags: Map
 *
 * Given two strings str1 and str2, determine if they are isomorphic.
 *
