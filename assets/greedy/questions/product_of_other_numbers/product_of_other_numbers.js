@@ -2,7 +2,7 @@
 /**
 * Product of Other Numbers
 *
-* Types: Greedy
+* Tags: Greedy
 *
 * You have an array of integers, and for each index you want to find the
 * product of every integer except the integer at that index.
@@ -71,6 +71,7 @@
 *
 * Time: O(n)
 * Space: O(n)
+*
 * We make two passes through our input an array, and the array we build always
 * has the same length as the input array.
 *

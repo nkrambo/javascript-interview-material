@@ -2,7 +2,7 @@
 /**
 * Zero Matrix
 *
-* Types: Matrix, Array Transformation
+* Tags: Matrix
 *
 * Write an algorithm such that if an element in an MxN matrix is 0, it's entire
 * row and column are set to 0.
@@ -42,7 +42,7 @@ function zeroMatrix(matrix) {
 
   // update matrix rows, columns
   ords.forEach((ord) => {
-    
+
     // clear rows, we can use fill() horizontally
     matrix[ord[0]].fill(0);
 

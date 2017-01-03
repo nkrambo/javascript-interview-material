@@ -2,7 +2,7 @@
 /**
 * Move Zeros
 *
-* Types: Array Transformation, Two Pointer
+* Tags: Two Pointer
 *
 * Given an array nums, write a function to move all 0s to the end of it while
 * maintaining the relative order of the non-zero elements.
@@ -46,7 +46,7 @@
 */
 
 function moveZeros(nums) {
-  
+
   // Count the zeroes
   let numZeroes = 0;
   for (let i = 0; i < nums.length; i += 1) {

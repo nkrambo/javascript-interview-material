@@ -2,7 +2,7 @@
 /**
 * Find Rotation Point
 *
-* Types: Binary Search
+* Tags: Binary Search
 *
 * I opened up a dictionary to a page in the middle and started flipping through,
 * looking for words I didn't know. I put each word I didn't know at increasing

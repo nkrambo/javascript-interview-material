@@ -2,7 +2,7 @@
 /**
 * Two Sum
 *
-* Types: Hash Map, 2sum Problem, Classic Problem
+* Tags: Map, Classic
 *
 * Given an array of integers, return indices of the two numbers such that they
 * add up to a specific target.

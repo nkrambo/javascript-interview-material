@@ -2,7 +2,7 @@
 /**
 * In-Flight Entertainment
 *
-* Types: Hash Map, Two Sum, Classic Problems
+* Tags: Map, Classic
 *
 * You've built an in-flight entertainment system with on-demand movie streaming.
 *
@@ -26,6 +26,8 @@
 * twoMovies()
 *
 * Solution:
+*
+* This is a re-wording of the classic two sum problem.
 *
 * A naieve approach to this problem would be to loop over movieLengths and treat
 * every iteration as the first movie, and for each of those check if any other
