@@ -2,6 +2,8 @@
 /**
 * Successor
 *
+* Tags: BST
+*
 * Write an algorithm to find the 'next' node (i.e, in-order successor) of a given
 * node in a BST. You may assume that each node has a reference to it's parent.
 */

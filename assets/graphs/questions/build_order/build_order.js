@@ -2,7 +2,7 @@
 /**
 * Build Order
 *
-* Types: Topological Sort, Directed Acyclic Graph (DAG), Kahn's Algorithm
+* Tags: Topological Sort, Kahn's Algorithm
 *
 * You are given a list of projects and a list of dependencies (which is a
 * list of pairs of projects, where the first project is dependent on the second

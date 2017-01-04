@@ -2,7 +2,7 @@
 /**
 * Route Between Nodes
 *
-* Types: BFS, Hash Map
+* Tags: Map, BFS
 *
 * Given a directed graph, design an algorithm to find out whether there is
 * a route between two nodes.

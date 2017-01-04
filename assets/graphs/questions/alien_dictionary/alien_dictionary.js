@@ -2,7 +2,7 @@
 /**
 * Alien Dictionary
 *
-* Types: Topological Sort, Graph Traversal, Lexicographical Order
+* Tags: Topological Sort, Graph Traversal, Lexicographical Order
 *
 * There is a new alien language which uses the latin alphabet. However, the order
 * among letters are unknown to you. You receive a list of words from the dictionary,

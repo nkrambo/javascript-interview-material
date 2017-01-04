@@ -2,6 +2,8 @@
 /**
 * Invert Binary Tree
 *
+* Tags: Binary Tree, BFS, Recursion
+*
 * Given a binary tree, invert it so that it's left value appear on the right or
 * vice versa.
 *

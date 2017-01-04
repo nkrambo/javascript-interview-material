@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import checkBST from '../valid_BST';
+import checkBST from '../valid_bst';
 import BinarySearchTree from '../../../class/bst/bst';
 import BinaryTree from '../../../class/binary_tree/binary_tree';
 

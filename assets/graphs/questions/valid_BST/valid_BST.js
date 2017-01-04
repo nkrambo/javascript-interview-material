@@ -2,6 +2,8 @@
 /**
 * Validate BST
 *
+* Tags: BST, DFS
+*
 * Implement a function to check if a binary tree is a valid BST
 */
 

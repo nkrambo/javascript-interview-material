@@ -2,7 +2,7 @@
 /**
 * Million Gazillion
 *
-* Types: Trie
+* Tags: Trie
 *
 * I'm making a search engine called MillionGazillion™.
 *

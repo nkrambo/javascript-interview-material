@@ -2,7 +2,7 @@
 /**
 * Check Balanced
 *
-* Types: Tree, Greedy, Divide and Conquer
+* Tags: Binary Tree, DFS
 *
 * Implement a function to check if a binary tree is balanced. A tree is unbalanced when the
 * difference in height between leaf nodes is more than 1.
@@ -36,7 +36,7 @@
 * For the space cost, we have two data structures to watch: depths and nodes.
 * depths will never hold more than three elements, so we can write that off as O(1).
 *
-* nodes will hold at most dd nodes where dd is the depth of the tree (the number
+* nodes will hold at most d nodes where dd is the depth of the tree (the number
 * of levels in the tree from the root node down to the lowest node). So we could
 * say our space cost is O(d).
 *

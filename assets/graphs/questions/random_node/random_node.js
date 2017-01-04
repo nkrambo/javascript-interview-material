@@ -2,6 +2,8 @@
 /**
 * Random Node
 *
+* Tags: BST
+*
 * Design and implement an algorithm which returns a random node from a binary
 * search tree class. All nodes should be equally likely to be chosen.
 *

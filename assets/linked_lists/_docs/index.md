@@ -177,7 +177,7 @@ Doubly linked lists allow us to traverse our list backwards. In a singly linked 
   <tr>
     <td><a href="../questions/loop_detection/loop_detection.js">Loop Detection</a></td>
     <td>Easy</td>
-    <td>Two Pointer</td>
+    <td>Map, Two Pointer</td>
     <td>LeetCode #141, CCI #2.8</td>
     <td>:thumbsup:</td>
   </tr>
