@@ -1,7 +1,8 @@
 
-## Arrays
+## Array
 
-> [MDN - Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+[MDN - Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+---
 
 An array is a low-level data structure that holds an ordered collection of elements. Each position in the array has an index, starting with 0.
 
@@ -40,45 +41,86 @@ Fun fact: strings are almost always implemented as arrays of characters.
 
 ### Array Iteration
 
-Before ES5, array iteration was commonly done using a simple `for` loop.
+Before ES5 and ES6, array iteration was commonly done using a simple `for loop`. With ES5 and ES6, however, we have some much nicer methods for iteration. Generally speaking, `Array.forEach()` can and should replace the `for loop` in many cases, but there's a few things to keep in mind.
 
-**`for` loop**
+**`for loop`**
 
 ```javascript
+// old school but flexible
 for (let i = 0; i < myArray.length; i += 1) {
   console.log(myArray[i]);
 }
 ```
 
-With ES5 and ES6, however, we have some much nicer methods for iteration.
+One limitation is that `Array.forEach()` cannot be short-circuited. As in, you cannot `break` or return a value in the middle of execution without throwing an exception.
 
-**Array.forEach()**
+**`Array.forEach()`**
 
 ```javascript
+// access to item, index and array
 myArray.forEach((item, index, array) => {
   console.log(item, index);
 });
+
+// cannot short-circuit
+myArray.forEach((item, index, array) => {
+  if (item === 'something') return true; // throws error
+});
+
+myArray.forEach((item, index, array) => {
+  if (item === 'something') break; // throws error
+});
 ```
 
-**for...of**
+In other cases, we may want to use array iterators, such as `Array.entries()`, `Array.values()`, `Array.keys()`. The iterable protocol allows JavaScript objects to define or customize their iteration behavior, such as what values are looped over in a `for...of` construct.
+
+Arrays have a built-in iterable with a default iteration behavior. When you `for...of` an array, it's `@@iterator` method is called with no arguments, and the returned iterator is used to obtain the values to be iterated.
+
+All iterables implement the iterator protocol. This defines a standard way to produce a sequence of values (either finite or infinite).
+
+An object is an iterator when it implements a **next()** method with the following semantics:
+
+- done (boolean)
+- value (any Javascript value)
+
+**`for...of`**
 
 ```javascript
+// grabs the Array.values() iterator object by default
+const myArray = ['a', 'b', 'c'];
 for (let value of myArray) {
-  console.log(value);
+  console.log(value);  // 'a'
 }
 ```
 
 ```javascript
-for (let [index, value] of myArray) {
-  console.log(index, value);
+// or we can specify the keys() iterator, which gives us the index
+const myArray = ['a', 'b', 'c'];
+for (let index of myArray.keys()) {
+  console.log(index); // 0
 }
 ```
 
 ```javascript
-for (let [index, value] of myArray) {
-  console.log(index, value);
+// the entries() iterator, which gives us both keys and values
+const myArray = ['a', 'b', 'c'];
+for (let [index, value] of myArray.entries()) {
+  console.log(index, value); // 0, 'a'
 }
+
+// or you can directly grab the iterator
+const it = myArray.entries();
+console.log(it.next());
+
+// {
+//   done: false,
+//   value: [0, "a"]
+// }
 ```
+
+tricky array traversal... prev, current etc.
+
+### Matrices
 
 ### Array Problems
 
