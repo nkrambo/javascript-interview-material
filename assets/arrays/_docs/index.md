@@ -1,9 +1,6 @@
 
 ## Array
 
-[MDN - Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
----
-
 An array is a low-level data structure that holds an ordered collection of elements. Each position in the array has an index, starting with 0.
 
 Confusingly, in JavaScript (and some other languages), there is a high-level, list-like, data structure called an "array" which has a few additional features.
@@ -35,10 +32,6 @@ gasPrices[1] = 360;
 gasPrices[2] = 354;
 ```
 
-Here, the details about the array's length are abstracted out for you. You can add as many prices as you'd like.
-
-Fun fact: strings are almost always implemented as arrays of characters.
-
 ### Array Iteration
 
 Before ES5 and ES6, array iteration was commonly done using a simple `for loop`. With ES5 and ES6, however, we have some much nicer methods for iteration. Generally speaking, `Array.forEach()` can and should replace the `for loop` in many cases, but there's a few things to keep in mind.
@@ -52,7 +45,7 @@ for (let i = 0; i < myArray.length; i += 1) {
 }
 ```
 
-One limitation is that `Array.forEach()` cannot be short-circuited. As in, you cannot `break` or return a value in the middle of execution without throwing an exception.
+One limitation is that `Array.forEach()` cannot be short-circuited. As in, you cannot `break` or return a value in the middle of execution without throwing an exception. A `for loop` can be short-circuited however.
 
 **`Array.forEach()`**
 
@@ -89,7 +82,7 @@ An object is an iterator when it implements a **next()** method with the followi
 // grabs the Array.values() iterator object by default
 const myArray = ['a', 'b', 'c'];
 for (let value of myArray) {
-  console.log(value);  // 'a'
+  console.log(value);  // 'a', 'b', 'c'
 }
 ```
 
@@ -97,7 +90,7 @@ for (let value of myArray) {
 // or we can specify the keys() iterator, which gives us the index
 const myArray = ['a', 'b', 'c'];
 for (let index of myArray.keys()) {
-  console.log(index); // 0
+  console.log(index); // 0, 1, 2
 }
 ```
 
@@ -105,7 +98,7 @@ for (let index of myArray.keys()) {
 // the entries() iterator, which gives us both keys and values
 const myArray = ['a', 'b', 'c'];
 for (let [index, value] of myArray.entries()) {
-  console.log(index, value); // 0, 'a'
+  console.log(index, value); // 0, 'a', 1, 'b', 2, 'c'
 }
 
 // or you can directly grab the iterator
@@ -114,13 +107,110 @@ console.log(it.next());
 
 // {
 //   done: false,
-//   value: [0, "a"]
+//   value: [0, 'a']
 // }
 ```
 
-tricky array traversal... prev, current etc.
+### Complicated Iteration
+
+**Two Pointer - Current and Next**
+
+```javascript
+const myArray = ['a', 'b', 'c', 'c'];
+
+for (let i = 0; i < myArray.length - 1; i += 1) {
+  let current = myArray[i];
+  let next = myArray[i + 1];
+
+  if (current === next) console.log('match');
+}
+```
+
+**Two Pointer - Inward**
+
+```javascript
+const myArray = ['a', 'b', 'c'];
+let start = 0;
+let end = myArray.length - 1;
+
+while (start < end) {
+  // some work here...
+  if (myArray[start] === myArray[end]) console.log('match');
+
+  // move indices
+  start += 1;
+  end -= 1
+}
+```
+
+**Nested Loops - Every i, j (Except i === j)**
+
+```javascript
+const myArray = ['a', 'b', 'c'];
+
+for (let i = 0; i < myArray.length; i += 1) {
+  for (let j = 0; j < myArray.length; j += 1) {
+    if (i === j) continue; // exclude own index
+    console.log([myArray[i], myArray[j]]);
+  }
+}
+
+// ['a', 'b']
+// ['a', 'c']
+//
+// ['b', 'a']
+// ['b', 'c']
+//
+// ['c', 'a']
+// ['c', 'b']
+```
+
+**Nested Loops, Every i - (n - 1)**
+
+```javascript
+const myArray = ['a', 'b', 'c'];
+for (let i = 0; i < myArray.length; i += 1) {
+  for (let j = i; j < myArray.length; j += 1) {
+    console.log(myArray[j]);
+  }
+  console.log('break');
+}
+
+// 'a'
+// 'b'
+// 'c'
+// 'break'
+//
+// 'b'
+// 'c'
+// 'break'
+//
+// 'c'
+// 'break'
+```
 
 ### Matrices
+
+Matrices can be used to represent transformations of objects in space. In javascript, we can achieve this with 2 dimensional arrays.
+
+```javascript
+const board = [
+  ['R','N','B','Q','K','B','N','R'],
+  ['P','P','P','P','P','P','P','P'],
+  [' ',' ',' ',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ',' ',' ',' '],
+  [' ',' ',' ',' ',' ',' ',' ',' '],
+  ['p','p','p','p','p','p','p','p'],
+  ['r','n','b','q','k','b','n','r'] ];
+
+console.log(board.join('\n') + '\n\n');
+
+// Move King's Pawn forward 2
+board[4][4] = board[6][4];
+board[6][4] = ' ';
+console.log(board.join('\n'));
+```
 
 ### Array Problems
 
@@ -192,3 +282,6 @@ tricky array traversal... prev, current etc.
   </tr>
 
 </table>
+
+[MDN - Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+[MDN - Matrices](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Matrix_math_for_the_web)
