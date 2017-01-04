@@ -27,20 +27,62 @@ Practice makes perfect, and wine, plenty of wine.
 
 ![alt tag](/ballmer_peak.png)
 
+
+### Table of Contents
+
+<table>
+  <!-- header -->
+  <tr>
+    <th>Chapter</th>
+  </tr>
+
+  <!-- entries -->
+  <tr>
+    <td><a href="../assets/arrays/docs/index.md">Arrays</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="../assets/strings/docs/index.md">Strings</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="../assets/linked_lists/docs/index.md">Linked Lists</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="../assets/math_and_logic/docs/index.md">Math and Logic</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="../assets/object_oriented_design/docs/index.md">Object Oriented Design</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="../assets/graphs/docs/index.md">Graphs</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="../assets/bit_manipulation/docs/index.md">Bit Manipulation</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="../assets/bit_manipulation/docs/index.md">Dynamic Programming</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="../assets/greedy/docs/index.md">Greedy</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="../assets/queues_and_stacks/docs/index.md">Queues and Stacks</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="../assets/sorting_and_searching/docs/index.md">Sorting and Searching</a></td>
+  </tr>
+
+</table>
+
+
 * [Strings](/assets/strings/_docs/index.md)
 
-
-
-### Array Problems
-
-* [Zero Matrix](/assets/arrays/questions/zero_matrix/zero_matrix.js)
-* [Two Sum](/assets/arrays/questions/two_sum/two_sum.js)
-* [Two Sum](/assets/arrays/questions/single_riffle_shuffle/single_riffle_shuffle.js)
-
-### Linked Lists Problems
-
-### Bit Manipulation Problems
-
-### Graph Problems
-
-### Common Sorting
