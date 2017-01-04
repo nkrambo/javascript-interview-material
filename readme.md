@@ -38,51 +38,49 @@ Practice makes perfect, and wine, plenty of wine.
 
   <!-- entries -->
   <tr>
-    <td><a href="../assets/arrays/docs/index.md">Arrays</a></td>
+    <td><a href="/assets/arrays/docs/index.md">Arrays</a></td>
   </tr>
 
   <tr>
-    <td><a href="../assets/strings/docs/index.md">Strings</a></td>
+    <td><a href="/assets/strings/docs/index.md">Strings</a></td>
   </tr>
 
   <tr>
-    <td><a href="../assets/linked_lists/docs/index.md">Linked Lists</a></td>
+    <td><a href="/assets/linked_lists/docs/index.md">Linked Lists</a></td>
   </tr>
 
   <tr>
-    <td><a href="../assets/math_and_logic/docs/index.md">Math and Logic</a></td>
+    <td><a href="/assets/math_and_logic/docs/index.md">Math and Logic</a></td>
   </tr>
 
   <tr>
-    <td><a href="../assets/object_oriented_design/docs/index.md">Object Oriented Design</a></td>
+    <td><a href="/assets/object_oriented_design/docs/index.md">Object Oriented Design</a></td>
   </tr>
 
   <tr>
-    <td><a href="../assets/graphs/docs/index.md">Graphs</a></td>
+    <td><a href="/assets/graphs/docs/index.md">Graphs</a></td>
   </tr>
 
   <tr>
-    <td><a href="../assets/bit_manipulation/docs/index.md">Bit Manipulation</a></td>
+    <td><a href="/assets/bit_manipulation/docs/index.md">Bit Manipulation</a></td>
   </tr>
 
   <tr>
-    <td><a href="../assets/bit_manipulation/docs/index.md">Dynamic Programming</a></td>
+    <td><a href="/assets/bit_manipulation/docs/index.md">Dynamic Programming</a></td>
   </tr>
 
   <tr>
-    <td><a href="../assets/greedy/docs/index.md">Greedy</a></td>
+    <td><a href="/assets/greedy/docs/index.md">Greedy</a></td>
   </tr>
 
   <tr>
-    <td><a href="../assets/queues_and_stacks/docs/index.md">Queues and Stacks</a></td>
+    <td><a href="/assets/queues_and_stacks/docs/index.md">Queues and Stacks</a></td>
   </tr>
 
   <tr>
-    <td><a href="../assets/sorting_and_searching/docs/index.md">Sorting and Searching</a></td>
+    <td><a href="/assets/sorting_and_searching/docs/index.md">Sorting and Searching</a></td>
   </tr>
 
 </table>
 
-
-* [Strings](/assets/strings/_docs/index.md)
 
