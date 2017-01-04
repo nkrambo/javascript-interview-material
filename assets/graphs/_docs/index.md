@@ -105,14 +105,6 @@
   </tr>
 
   <tr>
-    <td><a href="../questions/build_order/build_order.js">Build Order</a></td>
-    <td>Hard</td>
-    <td>Topological Sort, Kahn's Algorithm</td>
-    <td>CCI #4.7</td>
-    <td>:thumbsup:</td>
-  </tr>
-
-  <tr>
     <td><a href="../questions/check_subtree/check_subtree.js">Check Subtree</a></td>
     <td>Medium</td>
     <td>Binary Tree, DFS, BFS</td>
