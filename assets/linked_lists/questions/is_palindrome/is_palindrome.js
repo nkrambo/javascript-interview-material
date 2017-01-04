@@ -1,6 +1,8 @@
 
 /**
-* Palindrome
+* Is Palindrome
+*
+* Tags: Two Pointer, Stack
 *
 * Implement a function to check if a linked list is a palidrome.
 *

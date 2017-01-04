@@ -17,7 +17,7 @@
 *
 * Solution:
 *
-* We can solve this one recusively
+* We can solve this one recusively.
 *
 * Time: O(n)
 * Space: O(1)

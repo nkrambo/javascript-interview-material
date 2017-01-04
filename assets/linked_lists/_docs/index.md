@@ -112,4 +112,114 @@ c.previous = b;
 
 Doubly linked lists allow us to traverse our list backwards. In a singly linked list, if you just had a pointer to a node in the middle of a list, there would be no way to know what its previous node was. Not a problem in a doubly linked list.
 
+### Data Structures
 
+<table>
+  <!-- header -->
+  <tr>
+    <th>Type</th>
+    <th>Tested</th>
+  </tr>
+
+  <!-- entries -->
+  <tr>
+    <td><a href="../class/linked_list/linked_list.js">Linked List</a></td>
+    <td>:thumbsup:</td>
+  </tr>
+
+</table>
+
+### Linked List Problems
+
+<table>
+  <!-- header -->
+  <tr>
+    <th>Question</th>
+    <th>Difficulty</th>
+    <th>Tags</th>
+    <th>References</th>
+    <th>Tested</th>
+  </tr>
+
+  <!-- entries -->
+  <tr>
+    <td><a href="../questions/delete_node/delete_node.js">Delete Node</a></td>
+    <td>Easy</td>
+    <td></td>
+    <td>LeetCode #237</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/intersection/intersection.js">Intersection</a></td>
+    <td>Easy</td>
+    <td></td>
+    <td>LeetCode #160, CCI #2.7</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/is_palindrome/is_palindrome.js">Is Palindrome</a></td>
+    <td>Easy</td>
+    <td>Two Pointer, Stack</td>
+    <td>LeetCode #234, CCI #2.6</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/kth_to_last/kth_to_last.js">Kth to Last</a></td>
+    <td>Easy</td>
+    <td>Two Pointer</td>
+    <td>CCI #2.2</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/loop_detection/loop_detection.js">Loop Detection</a></td>
+    <td>Easy</td>
+    <td>Two Pointer</td>
+    <td>LeetCode #141, CCI #2.8</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/partition/partition.js">Partition</a></td>
+    <td>Easy</td>
+    <td></td>
+    <td>CCI #2.4</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/remove_duplicates/remove_duplicates.js">Remove Duplicates</a></td>
+    <td>Easy</td>
+    <td>Map, Two Pointer</td>
+    <td>CCI #2.1</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/reverse_linked_list/reverse_linked_list.js">Reverse Linked List</a></td>
+    <td>Easy</td>
+    <td>Two Pointer</td>
+    <td>LeetCode #206</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/sum_lists/sum_lists.js">Sum Lists</a></td>
+    <td>Easy</td>
+    <td></td>
+    <td>CCI #2.5</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/swap_pairs/swap_pairs.js">Swap Pairs</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>:thumbsup:</td>
+  </tr>
+
+</table>

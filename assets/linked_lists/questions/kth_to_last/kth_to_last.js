@@ -2,7 +2,7 @@
 /**
 * Kth to Last
 *
-* Types: Two Pointer
+* Tags: Two Pointer
 *
 * You have a linked list and want to find the kth to last node.
 *
@@ -114,11 +114,12 @@ function kthToLast(k, head) {
   // STEP 2: walk to the target node
   // calculate how far to go, from the head,
   // to get to the kth to last node
-  const toGo = listLength - k;
-
+  let toGo = listLength - k;
   currentNode = head;
-  for (let x = 0; x < toGo; x += 1) {
+
+  while (toGo > 0) {
     currentNode = currentNode.next;
+    toGo -= 1;
   }
 
   return currentNode;
