@@ -2,7 +2,7 @@
 /**
 * Binary Search
 *
-* Types: Common Algorithm, Search, Divide and Conquer
+* Tags: Search, Divide and Conquer
 *
 * A binary search algorithm finds an item in a sorted array in O(log n) time.
 *
@@ -75,7 +75,7 @@
 */
 
 function binarySearch(nums, target) {
-  
+
   // we create index 'range' around possible positions of our target
   let left = 0;
   let right = nums.length - 1;

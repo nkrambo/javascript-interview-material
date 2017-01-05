@@ -2,6 +2,8 @@
 /**
 * Find in Ordered Set
 *
+* Tags: Binary Search
+*
 * Suppose we had an array of n integers in sorted order. How quickly could we
 * check if a given integer is in the array?
 */

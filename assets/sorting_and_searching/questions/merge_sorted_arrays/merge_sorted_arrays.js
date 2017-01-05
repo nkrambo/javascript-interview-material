@@ -20,7 +20,7 @@
 */
 
 /**
-* Merge Sorted
+* mergeSorted()
 *
 * Solution:
 *
@@ -82,6 +82,7 @@
 *
 * Time: O(n)
 * Space: O(n)
+*
 * Where n is the number of items in the merged array.
 *
 * The added space comes from allocating the mergedArray. There's no way to do this

@@ -2,7 +2,7 @@
 /**
 * Counting Sort
 *
-* Types: Common Algorithm, Sorting
+* Tags: Sorting
 *
 * Counting sort is a very time-efficient (and somewhat space-inefficient) algorithm
 * for sorting that avoids comparisons and exploits the O(1) time insertions and\
@@ -25,6 +25,7 @@
 *
 * Time: O(n)
 * Space: O(n)
+*
 * Additional space for the new array that we end up returning.
 *
 * You might think because we have nested loops that the runtime would be O(n^2).

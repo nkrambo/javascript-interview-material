@@ -8,10 +8,4 @@ describe('topScores()', () => {
     expect(topScores([60, 70], 100)).to.deep.equal([60, 70]);
     expect(topScores([70, 60], 100)).to.deep.equal([60, 70]);
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ topScores (null, null); }).to.throw (TypeError);
-    expect(function(){ topScores (undefined, undefined); }).to.throw (TypeError);
-    expect(function(){ topScores ('', ''); }).to.throw (TypeError);
-  });
 });

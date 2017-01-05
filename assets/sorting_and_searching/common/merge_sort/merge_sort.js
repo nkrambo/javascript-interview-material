@@ -2,7 +2,7 @@
 /**
 * Merge Sort
 *
-* Types: Common Algorithm, Sorting, Divide and Conquer, Recursive, Top-Down
+* Tags: Sorting, Divide and Conquer, Recursive, Top-Down
 *
 * Merge sort is an efficient, general-purpose, comparison-based sorting algorithm.
 * It is less efficient than Quick Sort.
@@ -39,10 +39,6 @@
 */
 
 function mergeSort(array) {
-  // type check
-  if (!Array.isArray(array)) {
-    new TypeError('mergeSort: Expects a single parameter of [array] type.');
-  }
 
   // base case
   if (array.length <= 1) return array;

@@ -23,6 +23,8 @@ for (char of hello) {
 // 'o'
 ```
 
+### Character Encoding
+
 ### String Problems
 
 A large amount of string problems can usually be solved with a **Map** or **Set** implementation. This should, therefore, be the first line of thought when introduced with a new string problem.

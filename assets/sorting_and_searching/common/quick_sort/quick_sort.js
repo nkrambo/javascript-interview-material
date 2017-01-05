@@ -2,7 +2,7 @@
 /**
 * Quick Sort
 *
-* Types: Common Algorithm, Sorting, Divide and Conquer
+* Tags: Sorting, Divide and Conquer
 *
 * Quicksort is a divide and conquer algorithm. Quicksort first divides a large
 * array into two smaller sub-arrays: the low elements and the high elements.

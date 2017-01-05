@@ -2,6 +2,8 @@
 /**
 * Sorted Search, No Size
 *
+* Tags: Binary Search
+*
 * You are given an array-like data structure 'Listy' which lacks a size method.
 * It does, however, have an elementAt(i) method that returns the element at index i
 * in O(1) time. If i is beyond the bounds of the data structure, it returns -1.

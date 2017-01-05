@@ -2,7 +2,7 @@
 /**
 * Top Scores
 *
-* Types: Sorting, Counting Sort
+* Tags: Sorting, Counting Sort
 *
 * You created a game that is more popular than Angry Birds.
 *
@@ -87,6 +87,7 @@
 *
 * Time: O(n)
 * Space: O(n)
+*
 * Where n is the length of the string input.
 *
 * @param {array} unsortedScores array of unsorted scores
@@ -95,11 +96,6 @@
 */
 
 function topScores(unsortedScores, highestPossibleScore) {
-
-  // type check
-  if (!Array.isArray(unsortedScores) || typeof highestPossibleScore !== 'number') {
-    throw new TypeError('topScores: Expects 2 arguments of [array, number] types.');
-  }
 
   // array of 0s at indices 0..highestPossibleScore
   const scoresToCounts = [];

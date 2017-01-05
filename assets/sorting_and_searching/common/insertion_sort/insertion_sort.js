@@ -2,7 +2,7 @@
 /**
 * Insertion Sort
 *
-* Types: Common Algorithm, Sorting
+* Tags: Sorting
 *
 * Imagine you are playing cards. Somebody is giving you cards one by one. When
 * you are receiving cards, you are planning to put them in a way so that the
@@ -31,6 +31,7 @@
 *
 * Time: O(n^2)
 * Space: O(1)
+*
 * Where n is the number of items to be sorted
 *
 * @param {array} arr array of integers

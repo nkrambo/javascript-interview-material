@@ -2,7 +2,7 @@
 /**
 * Bubble Sort
 *
-* Types: Common Algorithm, Sorting
+* Tags: Sorting
 *
 * Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm
 * that repeatedly steps through the list to be sorted, compares each pair of adjacent
@@ -16,6 +16,7 @@
 *
 * Time: O(n^2)
 * Space: O(1)
+*
 * Where n is the number of items to be sorted
 *
 * Bubble sort is not a practical sorting algorithm, it has the worst run-time of
@@ -29,8 +30,8 @@
 */
 
 function bubbleSort(arr) {
-  for (let i = arr.length - 1; i >= 0; i -= 1) {
 
+  for (let i = arr.length - 1; i >= 0; i -= 1) {
     for(let j = 1; j <= i; j += 1) {
 
       // swap values
