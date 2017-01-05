@@ -32,7 +32,7 @@ We'd call fib(n - 1) and fib(n - 2) **subproblems** of fib(n).
 Now let's look at what happens when we call fib(5):
 
 <p align="center">
-<img src="images/fib.png" width="700" />
+<img src="images/fib.png" width="625" />
 </p>
 
 Our function ends up recursively calling fib(2) **three times**. So the problem of finding the nth fibonacci number has overlapping subproblems.

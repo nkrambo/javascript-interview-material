@@ -92,8 +92,10 @@ I highly recommend these resources for interview preparation.
 
 </table>
 
-<p align="center">
+---
 Practice makes perfect, and wine, plenty of wine.
-![alt tag](/ballmer_peak.png)
+---
+<p align="center">
+<img src="/ballmer_peak.png" width="700" />
 </p>
 
