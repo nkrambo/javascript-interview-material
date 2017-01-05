@@ -111,6 +111,35 @@ console.log(it.next());
 // }
 ```
 
+Do not use `for...in` for array iteration.
+
+Array indexes are just enumerable properties with integer names and are otherwise identical to general Object properties. There is no guarantee that for...in will return the indexes in any particular order.
+
+Because the order of iteration is implementation-dependent, iterating over an array may not visit elements in a consistent order. It's better to use the `for loop`, `Array.forEach()` or `for...of`.
+
+For example:
+
+```javascript
+const array = [];
+array[5] = 5;
+
+// iterate numeric indexes from 0 to 5, as normal
+for (let i = 0; i < array.length; i += 1) {
+  console.log(array[i]);
+}
+
+// undefined
+// undefined
+// undefined
+// undefined
+// 5
+
+// however, for...in returns explicitly only the indices set (5), and ignores 0 - 4, not great
+for (let item in array) {  
+  console.log(item); // 5
+}
+```
+
 ### Complicated Iteration
 
 **Two Pointer - Current and Next**
@@ -236,7 +265,7 @@ console.log(board.join('\n'));
   <tr>
     <td><a href="../questions/two_sum/two_sum.js">Two Sum</a></td>
     <td>Easy</td>
-    <td>Map, Classic</td>
+    <td>Map, Classic Problems</td>
     <td>LeetCode #1</td>
     <td>:thumbsup:</td>
   </tr>
@@ -276,7 +305,7 @@ console.log(board.join('\n'));
   <tr>
     <td><a href="../questions/inflight_entertainment/inflight_entertainment.js">Inflight Entertainment</a></td>
     <td>Easy</td>
-    <td>Map, Classic</td>
+    <td>Map, Classic Problems</td>
     <td></td>
     <td>:thumbsup:</td>
   </tr>

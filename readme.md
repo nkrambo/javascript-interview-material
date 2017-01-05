@@ -1,4 +1,6 @@
 
+# Javascript Interview
+
 If you're like me, you spend most of your time working with full-stack JavaScript.
 
 This repository is a collection of common algorithms, data structures and interview
@@ -79,6 +81,10 @@ Practice makes perfect, and wine, plenty of wine.
 
   <tr>
     <td><a href="/assets/sorting_and_searching/_docs/index.md">Sorting and Searching</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="/assets/_docs/index.md">Asynchronous Javascript</a></td>
   </tr>
 
 </table>
