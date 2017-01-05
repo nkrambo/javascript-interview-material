@@ -3,7 +3,7 @@
 
 JavaScript's String type is used to represent textual data. It is a set of "elements" of 16-bit unsigned integer values. Each element in the String occupies a position in the String. The first element is at index 0, the next at index 1, and so on. The length of a String is the number of elements in it.
 
-Unlike in languages like C, JavaScript strings are immutable. This means that once a string is created, it is not possible to modify it. However, it is still possible to create another string based on an operation on the original string. For example, concatenation of two strings using the concatenation operator (+) or String.concat().
+Unlike in languages like C, JavaScript strings are **immutable**. This means that once a string is created, it is not possible to modify it. However, it is still possible to create another string based on an operation on the original string. For example, concatenation of two strings using the concatenation operator (+) or String.concat().
 
 ### String Iteration
 
@@ -24,6 +24,8 @@ for (char of hello) {
 ```
 
 ### String Problems
+
+A large amount of string problems can usually be solved with a Map or Set implementation. This should, therefore, be the first line of thought when introduced with a new string problem.
 
 <table>
   <!-- header -->

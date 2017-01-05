@@ -1,5 +1,5 @@
 
-# Javascript Interview
+# Javascript Interview Material
 
 If you're like me, you spend most of your time working with full-stack JavaScript.
 
@@ -84,7 +84,15 @@ Practice makes perfect, and wine, plenty of wine.
   </tr>
 
   <tr>
-    <td><a href="/assets/_docs/index.md">Asynchronous Javascript</a></td>
+    <td><a href="/assets/_docs/async.md">Design Pattens</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="/assets/_docs/async/index.md">Async Javascript</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="/assets/_docs/front-end/index.md">Front-End Questions</a></td>
   </tr>
 
 </table>

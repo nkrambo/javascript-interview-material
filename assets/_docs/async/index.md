@@ -1,13 +1,13 @@
 
 ## Asynchronous Javascript
 
-There are really 5 types of asynchronous code in modern web apps
+There are really 5 types of asynchronous code in modern web apps:
 
-- AJAX
+- [AJAX](/ajax.md)
 - User Events
+- [Sockets or Server sent events](/web_sockets)
+- [Workers](/web_workers.md)
 - Animations
-- Sockets or Server sent events
-- Workers
 
 ### Callbacks
 
@@ -121,10 +121,15 @@ So to summarize, the problems with the Promise type:
 
 ### RxJS
 
-https://www.youtube.com/watch?v=COviCoUtwx4
+### Resources
 
-https://www.youtube.com/watch?v=AslncyG8whg&t=159s
-
+- [RxJS](http://reactivex.io/rxjs/)
+- [Redux Observable](https://github.com/redux-observable/redux-observable)
+- [MDN - Callbacks](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks)
+- [MDN - Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [Async Programming in ES7](https://www.youtube.com/watch?v=lil4YCCXRYc)
+- [RxJS Version 5](https://www.youtube.com/watch?v=COviCoUtwx4)
+- [RxJS + Redux + React = Amazing](https://www.youtube.com/watch?v=AslncyG8whg&t=159s)
 
 
 
