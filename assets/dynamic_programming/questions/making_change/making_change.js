@@ -2,7 +2,7 @@
 /**
 * Make Change
 *
-* Types: Bottom Up, Dynamic Programming
+* Tags: Bottom Up, Dynamic Programming
 *
 * Your quirky boss found out that you're a programmer and has a weird
 * request about something they've been wondering for a long time.
@@ -60,6 +60,7 @@
 *
 * Time: O(n * m)
 * Space: O(n)
+*
 * Where n is the amount of money and m is the number of denominations.
 *
 * @param {number} amount amount of money to make change from

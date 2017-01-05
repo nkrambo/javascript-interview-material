@@ -2,7 +2,7 @@
 /**
 * House Robber
 *
-* Types: Dynamic Programming
+* Tags: Dynamic Programming
 *
 * You are a professional robber planning to rob houses along a street. Each house
 * has a certain amount of money stashed, the only constraint stopping you from
@@ -63,20 +63,14 @@
 */
 
 function robHomes(homes) {
-
-  // type check
-  if (!Array.isArray(homes)) {
-    throw new TypeError('homes: Expects single argument of [array] type.');
-  }
-
   let prevMax = 0;
   let currentMax = 0;
 
-  for (let i = 0; i < homes.length; i += 1) {
+  homes.forEach((home) => {
     let temp = currentMax;
-    currentMax = Math.max((prevMax + homes[i]), currentMax)
+    currentMax = Math.max((prevMax + home), currentMax);
     prevMax = temp;
-  }
+  });
 
   return currentMax;
 }

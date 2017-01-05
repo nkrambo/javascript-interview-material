@@ -2,7 +2,7 @@
 /**
 * Wiggle Sequence
 *
-* Types: Dynamic Programming, Greedy
+* Tags: Dynamic Programming, Greedy
 *
 * A sequence of numbers is called a wiggle sequence if the differences between
 * successive numbers strictly alternate between positive and negative. The first
@@ -86,11 +86,6 @@
 
 function maxWiggle(nums) {
 
-  // type check
-  if (!Array.isArray(nums)) {
-    throw new TypeError('maxWiggle: Expects single argument of [array] type.');
-  }
-
   // short-cicuit, return trivial wiggle
   if (nums.length < 2) return nums.length;
 
@@ -141,11 +136,6 @@ function maxWiggle(nums) {
 */
 
 function maxWiggleGreedy(nums) {
-
-  // type check
-  if (!Array.isArray(nums)) {
-    throw new TypeError('maxWiggle: Expects single argument of [array] type.');
-  }
 
   // short-cicuit, return trivial wiggle
   if (nums.length < 2) return nums.length;

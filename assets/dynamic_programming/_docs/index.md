@@ -7,9 +7,35 @@ Dynamic programming algorithms are often used for **optimization**. That is, the
 
 In comparison, [greedy algorithms](/assets/greedy/_docs/index.md) do not guarantee an optimal, 'best' solution. Instead, they pick the locally optimal choice in a sequence of steps for a fast overall solution, but not necessarily the 'best'. Greedy algorithms give us much **fast 'close to optimal' solutions** to NP-Complete problems, like the traveling salesman problem, which have no known optimal solution. Some greedy algorithms, however, are proven to lead to the optimal solution, such as Prim's for minimum spanning trees.
 
-It's also important to note that a problem must have **overlapping sub-problems** to be applicable for solving through dynamic programming.
+It's also important to note that a problem must have **overlapping sub-problems** to be applicable for solving through dynamic programming. Problems that can be solved by combining optimal solutions to **non-overlapping sub-problems**, use a strategy called ["divide and conquer"](/assets/sort_and_searching/_docs/index.md) instead, such as merge sort and binary search.
 
-Problems that can be solved by combining optimal solutions to **non-overlapping sub-problems**, use a strategy called ["divide and conquer"](/assets/sort_and_searching/_docs/index.md) instead, such as merge sort and binary search.
+### Overlapping Subproblems
+
+Overlapping sub-problems means that the space of sub-problems must be small, that is, any recursive algorithm solving the problem should solve the same sub-problems over and over, rather than generating new sub-problems.
+
+As an example, let's look at the fibonacci sequence (the series where each number is the sum of the two previous ones, 0, 1, 1, 2, 3, 5, 8...).
+
+If we wanted to compute the nth fibonacci number, we could use this simple recursive algorithm:
+
+```javascript
+function fib(n) {
+  if (n === 0 || n === 1) {
+    return n;
+  }
+
+  return fib(n - 1) + fib(n - 2);
+}
+```
+
+We'd call fib(n - 1) and fib(n - 2) **subproblems** of fib(n).
+
+Now let's look at what happens when we call fib(5):
+
+<p align="center">
+<img src="images/fib.png" width="500" />
+</p>
+
+Our function ends up recursively calling fib(2) **three times**. So the problem of finding the nth fibonacci number has overlapping subproblems.
 
 ### Dynamic Programming Problems
 

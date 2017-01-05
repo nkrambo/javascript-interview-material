@@ -1,4 +1,6 @@
 
+## Graphs
+
 ### Common Algorithms
 
 <table>

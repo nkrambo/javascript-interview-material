@@ -9,10 +9,4 @@ describe('robHomes()', () => {
     expect(robHomes([100, 200])).to.equal(200);
     expect(robHomes([0, 0, 0])).to.equal(0);
   });
-
-  it('should throw a type error', () => {
-    expect(function(){ robHomes (null); }).to.throw (TypeError);
-    expect(function(){ robHomes (undefined); }).to.throw (TypeError);
-    expect(function(){ robHomes (5); }).to.throw (TypeError);
-  });
 });
