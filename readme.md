@@ -25,11 +25,6 @@ I highly recommend these resources for interview preparation.
 * [LeetCode](https://leetcode.com/)
 * [Hacker Rank](https://www.hackerrank.com/)
 
-Practice makes perfect, and wine, plenty of wine.
-
-![alt tag](/ballmer_peak.png)
-
-
 ### Table of Contents
 
 <table>
@@ -97,4 +92,8 @@ Practice makes perfect, and wine, plenty of wine.
 
 </table>
 
+<p align="center">
+Practice makes perfect, and wine, plenty of wine.
+![alt tag](/ballmer_peak.png)
+</p>
 

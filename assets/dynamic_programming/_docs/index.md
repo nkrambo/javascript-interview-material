@@ -32,10 +32,14 @@ We'd call fib(n - 1) and fib(n - 2) **subproblems** of fib(n).
 Now let's look at what happens when we call fib(5):
 
 <p align="center">
-<img src="images/fib.png" width="500" />
+<img src="images/fib.png" width="700" />
 </p>
 
 Our function ends up recursively calling fib(2) **three times**. So the problem of finding the nth fibonacci number has overlapping subproblems.
+
+Even though the total number of sub-problems is actually small, we end up solving the same problems over and over if we adopt a naive recursive solution such as this. In our above example, you can see recursive functions marked in yellow have already been solved. Dynamic programming takes account of this fact and solves each sub-problem only once.
+
+
 
 ### Dynamic Programming Problems
 
