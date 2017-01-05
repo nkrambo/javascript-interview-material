@@ -111,7 +111,9 @@ console.log(it.next());
 // }
 ```
 
-Do not use `for...in` for array iteration.
+**`for...in`**
+
+**Do not use `for...in` for array iteration.**
 
 Array indexes are just enumerable properties with integer names and are otherwise identical to general Object properties. There is no guarantee that for...in will return the indexes in any particular order.
 

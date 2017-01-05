@@ -68,7 +68,7 @@ Practice makes perfect, and wine, plenty of wine.
   </tr>
 
   <tr>
-    <td><a href="/assets/bit_manipulation/_docs/index.md">Dynamic Programming</a></td>
+    <td><a href="/assets/dynamic_programming/_docs/index.md">Dynamic Programming</a></td>
   </tr>
 
   <tr>

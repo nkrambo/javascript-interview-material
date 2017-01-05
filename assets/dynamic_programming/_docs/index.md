@@ -3,9 +3,9 @@
 
 Dynamic programming is a method for solving complex problems by first solving simpler overlapping subproblems building up to solve the larger problem. Ideally, we use a memory-based data structure to store solutions to already solved subproblems as to not repeat work, we call this "memoization".
 
-Dynamic programming algorithms are often used for **optimization**. That is, they combine their solutions to give the best solution for the given problem.
+Dynamic programming algorithms are often used for **optimization**. That is, they combine their solutions to give the **best solution** for the given problem. In addition to finding optimal solutions to some problem, dynamic programming can also be used for counting the **number of solutions**, for example counting the number of ways a certain amount of change can be made from a given collection of coins.
 
-In comparison, [greedy algorithms](/assets/greedy/_docs/index.md) do not guarantee an optimal, 'best' solution. Instead, they pick the locally optimal choice in a sequence of steps for a fast overall solution, but not necessarily the 'best'. Greedy algorithms give us much **faster** 'close to optimal' solutions to NP-Complete problems, like the traveling salesman problem. However, some greedy algorithms are proven to lead to the optimal solution, such as Prim's for minimum spanning trees.
+In comparison, [greedy algorithms](/assets/greedy/_docs/index.md) do not guarantee an optimal, 'best' solution. Instead, they pick the locally optimal choice in a sequence of steps for a fast overall solution, but not necessarily the 'best'. Greedy algorithms give us much **fast 'close to optimal' solutions** to NP-Complete problems, like the traveling salesman problem, which have no known optimal solution. Some greedy algorithms, however, are proven to lead to the optimal solution, such as Prim's for minimum spanning trees.
 
 It's also important to note that a problem must have **overlapping sub-problems** to be applicable for solving through dynamic programming.
 
@@ -51,7 +51,7 @@ Problems that can be solved by combining optimal solutions to **non-overlapping 
   <tr>
     <td><a href="../questions/cake_thief/cake_thief.js">Cake Thief</a></td>
     <td>Medium</td>
-    <td>Bottom Up, Unbounded Knapsack Problem, Classic Problems</td>
+    <td>Bottom Up, Unbounded Knapsack, Classic</td>
     <td></td>
     <td>:thumbsup:</td>
   </tr>
