@@ -1,0 +1,59 @@
+
+## Dynamic Programming
+
+Dynamic programming is a method for solving complex problems by first solving simpler overlapping subproblems building up to solve the larger problem. Ideally, we use a memory-based data structure to store solutions to already solved subproblems as to not repeat work, we call this "memoization".
+
+Dynamic programming algorithms are often used for **optimization**. That is, they combine their solutions to give the best solution for the given problem.
+
+In comparison, [greedy algorithms](/assets/greedy/_docs/index.md) do not guarantee an optimal, 'best' solution. Instead, they pick the locally optimal choice in a sequence of steps for a fast overall solution, but not necessarily the 'best'. Greedy algorithms give us much **faster** 'close to optimal' solutions to NP-Complete problems, like the traveling salesman problem. However, some greedy algorithms are proven to lead to the optimal solution, such as Prim's for minimum spanning trees.
+
+It's also important to note that a problem must have **overlapping sub-problems** to be applicable for solving through dynamic programming.
+
+Problems that can be solved by combining optimal solutions to **non-overlapping sub-problems**, use a strategy called ["divide and conquer"](/assets/sort_and_searching/_docs/index.md) instead, such as merge sort and binary search.
+
+### Dynamic Programming Problems
+
+<table>
+  <!-- header -->
+  <tr>
+    <th>Question</th>
+    <th>Difficulty</th>
+    <th>Tags</th>
+    <th>References</th>
+    <th>Tested</th>
+  </tr>
+
+  <!-- entries -->
+  <tr>
+    <td><a href="../questions/wiggle_sequence/wiggle_sequence.js">Wiggle Sequence</a></td>
+    <td>Medium</td>
+    <td></td>
+    <td>LeetCode #376</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/making_change/making_change.js">Making Change</a></td>
+    <td>Medium</td>
+    <td></td>
+    <td>LeetCode #322</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/house_robber/house_robber.js">House Robber</a></td>
+    <td>Easy</td>
+    <td></td>
+    <td>LeetCode #198</td>
+    <td>:thumbsup:</td>
+  </tr>
+
+  <tr>
+    <td><a href="../questions/cake_thief/cake_thief.js">Cake Thief</a></td>
+    <td>Medium</td>
+    <td>Bottom Up, Unbounded Knapsack Problem, Classic Problems</td>
+    <td></td>
+    <td>:thumbsup:</td>
+  </tr>
+
+</table>

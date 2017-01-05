@@ -3,15 +3,13 @@
 
 There are really 5 types of asynchronous code in modern web apps:
 
-- [AJAX](/ajax.md)
+- [AJAX](/assets/_docs/async/ajax.md)
 - User Events
-- [Sockets or Server sent events](/web_sockets)
-- [Workers](/web_workers.md)
+- [Sockets or Server sent events](/assets/_docs/async/web_sockets.md)
+- [Workers](/assets/_docs/async/web_workers.md)
 - Animations
 
 ### Callbacks
-
-What's a callback?
 
 Callbacks are the most primitive way to handle asynchronous code.
 

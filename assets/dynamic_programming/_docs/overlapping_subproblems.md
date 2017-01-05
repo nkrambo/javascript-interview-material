@@ -3,7 +3,7 @@
 
 A problem has **overlapping subproblems** if finding its solution involves solving the same subproblem multiple times.
 
-As an example, let's look at the fibonacci squence (the series where each number is the sum of the two previous ones, 0, 1, 1, 2, 3, 5, 8...).
+As an example, let's look at the fibonacci sequence (the series where each number is the sum of the two previous ones, 0, 1, 1, 2, 3, 5, 8...).
 
 If we wanted to compute the nth fibonacci number, we could use this simple recursive algorithm:
 

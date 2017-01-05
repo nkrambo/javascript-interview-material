@@ -2,8 +2,7 @@
 /**
 * Cake Thief
 *
-* Types: Dynamic Programming, Bottom Up, Unbounded Knapsack Problem,
-* Combinatorial Optimization, Classic Problems
+* Tags: Bottom Up, Unbounded Knapsack Problem, Classic Problems
 *
 * You are a renowned thief who has recently switched from stealing precious
 * metals to stealing cakes because of the insane profit margins. You end up
@@ -59,10 +58,11 @@
 *
 * This is a classic computer science puzzle called 'the unbounded knapsack problem'.
 *
-* 
+*
 *
 * Time: O(n * k)
 * Space: O(k)
+*
 * Where n is the number of types of cakes and k is the duffel bag's capacity.
 *
 * We loop through each cake (n cakes) for every capacity (k capacities), so our

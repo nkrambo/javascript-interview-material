@@ -27,3 +27,5 @@ There are a few classical examples of Greedy algorithms:
 
 ### Sort the Input First
 An important problem solving strategy usually applicable to greedy problems: Sorting the input data to elucidate hidden greedy strategies.
+
+
