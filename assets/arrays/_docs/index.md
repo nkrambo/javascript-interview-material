@@ -229,7 +229,7 @@ console.log(board.join('\n'));
     <td><a href="../questions/zero_matrix/zero_matrix.js">Zero Matrix</a></td>
     <td>Easy</td>
     <td>Matrix</td>
-    <td>LeetCode #73</td>
+    <td>LeetCode #73, CCI #1.8</td>
     <td>:thumbsup:</td>
   </tr>
 
@@ -253,7 +253,7 @@ console.log(board.join('\n'));
     <td><a href="../questions/rotate_matrix/rotate_matrix.js">Rotate Matrix</a></td>
     <td>Medium</td>
     <td>Matrix</td>
-    <td></td>
+    <td>CCI #1.7</td>
     <td>:thumbsup:</td>
   </tr>
 
@@ -283,5 +283,7 @@ console.log(board.join('\n'));
 
 </table>
 
-[MDN - Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-[MDN - Matrices](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Matrix_math_for_the_web)
+### Resources
+
+- [MDN - Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+- [MDN - Matrices](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Matrix_math_for_the_web)
