@@ -25,6 +25,8 @@ I highly recommend these resources for interview preparation.
 * [LeetCode](https://leetcode.com/)
 * [Hacker Rank](https://www.hackerrank.com/)
 
+---
+
 ### Table of Contents
 
 <table>
@@ -93,9 +95,9 @@ I highly recommend these resources for interview preparation.
 </table>
 
 ---
-Practice makes perfect, and wine, plenty of wine.
----
-<p align="center">
-<img src="/ballmer_peak.png" width="700" />
-</p>
+
+### Practice makes perfect, and wine, plenty of wine.
+
+<img src="/ballmer_peak.png" />
+
 
