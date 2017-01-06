@@ -43,7 +43,11 @@ This can be achieved in either of two ways: **top-down (with memoization)**; or 
 
 ### Top-Down and Memoization
 
-This is the direct fall-out of the recursive formulation of any problem. If the solution to any problem can be formulated recursively using the solution to its sub-problems, and if its sub-problems are overlapping, then one can easily memoize or store the solutions to the sub-problems, usually in an object. Whenever we attempt to solve a new sub-problem, we first check the storage to see if it is already solved. If a solution has been recorded, we can use it directly, otherwise we solve the sub-problem and add its solution to storage.
+This is the direct fall-out of the recursive formulation of any problem. If the solution to any problem can be formulated recursively using the solution to its sub-problems, and if its sub-problems are overlapping.
+
+This approach builds up a **call stack** of size O(n), which makes our total memory cost O(n). This makes it vulnerable to a **stack overflow error**, where the call stack gets too big and runs out of space.
+
+To help address this, we can easily memoize or store the solutions to the sub-problems, usually in an object. Whenever we attempt to solve a new sub-problem, we first check the storage to see if it is already solved. If a solution has been recorded, we can use it directly, otherwise we solve the sub-problem and add its solution to storage.
 
 Let's continue with the above example.
 
@@ -83,37 +87,24 @@ class Fibber {
 }
 ```
 
-Now in our recurrence tree, no node appears more than twice:
+Now in our recurrence tree, no node appears more than twice and we save a bunch of calls. We can see once we hit a memoized value we stop recursing on that branch, these are marked in blue. This is much better.
 
 <p align="center">
 <img src="images/fib_2.png" width="625" />
 </p>
 
-Memoization is a common strategy for dynamic programming problems, however going bottom-up is usually cleaner and more efficient.
+Memoization is a common strategy for dynamic programming problems but it still has limitations. Going **bottom-up** is usually a cleaner and more efficient approach which avoids recursion, saving the **memory cost** that recursion and memoization incurs.
+
+> Some compilers and interpreters will do what's called **tail call optimization** (TCO), where it can optimize some recursive functions to avoid building up a tall call stack. The JavaScript spec recently allowed TCO in ES6
 
 ### Bottom-Up
 
-Going **bottom-up** is a way to avoid recursion, saving the **memory cost** that recursion incurs when it builds up the **call stack**.
+A bottom-up algorithm "starts from the beginning", while a recursive (top-down) algorithm often "starts from the end and works backwards". Going bottom-up  means solving the sub-problems first and using their solutions to build-on and arrive at solutions to bigger sub-problems. This is also usually done in a **tabular** form by iteratively generating solutions to bigger and bigger sub-problems by using the solutions to small sub-problems.
 
-Put simply, a bottom-up algorithm "starts from the beginning", while a recursive algorithm often "starts from the end and works backwards".
-
-For example, if we wanted to multiply all the numbers in the range 1...n, we could use this cute, **top-down**, recursive one-liner:
+Let's continue with our Fibonacci example.
 
 ```javascript
-function product1ToN(n) {
-  // we assume n >= 1
-  return (n > 1) ? (n * product1ToN(n - 1)) : 1;
-}
-```
-
-This approach has a problem: it builds up a **call stack** of size O(n), which makes our total memory cost O(n). This makes it vulnerable to a **stack overflow error**, where the call stack gets too big and runs out of space.
-
-To avoid this, we can instead go **bottom-up**:
-
-```javascript
-function product1ToN(n) {
-  // we assume n >= 1
-
+function fib(n) {
   let result = 1;
   for (let i = 1; i <= n; i += 1) {
     result *= i;
@@ -124,10 +115,6 @@ function product1ToN(n) {
 ```
 
 This approach uses O(1) space (O(n) time.
-
-> Some compilers and interpreters will do what's called **tail call optimization** (TCO), where it can optimize some recursive functions to avoid building up a tall call stack. Python and Java decidedly do not use TCO. Some Ruby implementations do, but most don't. Some C implementations do, and the JavaScript spec recently allowed TCO. Scheme is one of the few languages that guarantee TCO in all implementations. In general, best not to assume your compiler/interpreter will do this work for you.
-
-Going bottom-up is a common strategy for **dynamic programming** problems, which are problems where the solution is composed of solutions to the same problem with smaller inputs (as with the fibonacci problem, above). The other common strategy for dynamic programming problems is **memoization**.
 
 ### Dynamic Programming Problems
 
@@ -175,3 +162,9 @@ Going bottom-up is a common strategy for **dynamic programming** problems, which
   </tr>
 
 </table>
+
+### Resources
+
+- [ES6 Tail Calls](http://benignbemine.github.io/2015/07/19/es6-tail-calls/)
+
+
