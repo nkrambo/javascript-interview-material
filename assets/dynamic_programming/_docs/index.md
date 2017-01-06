@@ -37,7 +37,7 @@ Now let's look at what happens when we call fib(5):
 
 Our function ends up recursively calling fib(2) **three times**. So the problem of finding the nth fibonacci number has overlapping subproblems.
 
-Even though the total number of sub-problems is actually small, we end up solving the same problems over and over if we adopt a naive recursive solution such as this. In our above example, you can see recursive functions marked in yellow have already been solved. Dynamic programming takes account of this fact and solves each sub-problem only once.
+Even though the total number of sub-problems is actually small, we end up solving the same problems over and over if we adopt a naive recursive solution such as this. In our above example, you can see recursive functions marked in yellow have already been solved. When executing this in a browser, there are a bunch of stack frames which are created, with new environments for each call. Dynamic programming takes account of this fact and solves each sub-problem only once.
 
 This can be achieved in either of two ways: **top-down (with memoization)**; or **bottom-up**.
 
@@ -93,28 +93,33 @@ Now in our recurrence tree, no node appears more than twice and we save a bunch 
 <img src="images/fib_2.png" width="625" />
 </p>
 
-Memoization is a common strategy for dynamic programming problems but it still has limitations. Going **bottom-up** is usually a cleaner and more efficient approach which avoids recursion, saving the **memory cost** that recursion and memoization incurs.
+Memoization is a common strategy for dynamic programming problems but it still has limitations. Going **bottom-up** is usually a cleaner and more efficient approach which avoids recursion, saving the **memory cost** that recursion and memoization incurs. With memoization, if the tree is very deep (e.g. fib(10^6)), you will run out of stack space, throwing a stack overflow error.
 
-> Some compilers and interpreters will do what's called **tail call optimization** (TCO), where it can optimize some recursive functions to avoid building up a tall call stack. The JavaScript spec recently allowed TCO in ES6
+> Some compilers and interpreters will do what's called **tail call optimization** (TCO), where it can optimize some recursive functions to avoid building up a tall call stack. The JavaScript spec recently allowed TCO in ES6.
 
 ### Bottom-Up
 
-A bottom-up algorithm "starts from the beginning", while a recursive (top-down) algorithm often "starts from the end and works backwards". Going bottom-up  means solving the sub-problems first and using their solutions to build-on and arrive at solutions to bigger sub-problems. This is also usually done in a **tabular** form by iteratively generating solutions to bigger and bigger sub-problems by using the solutions to small sub-problems.
+A bottom-up algorithm "starts from the beginning", while a recursive (top-down) algorithm often "starts from the end and works backwards". Going bottom-up  means solving the sub-problems first and using their solutions to build-on and arrive at solutions to bigger sub-problems. This is also usually done in a **tabular** or **grid** form by iteratively generating solutions to bigger and bigger sub-problems by using the solutions to small sub-problems.
 
 Let's continue with our Fibonacci example.
 
 ```javascript
 function fib(n) {
-  let result = 1;
-  for (let i = 1; i <= n; i += 1) {
-    result *= i;
+  const seq = [];
+  seq[0] = 0;
+  seq[1] = 1;
+
+  for (let i = 2; i <= n; i += 1) {
+    seq[i] = seq[i-1] + seq[i-2];
   }
 
-  return result;
+  return seq[n];
 }
 ```
 
-This approach uses O(1) space (O(n) time.
+**Building a Grid**
+
+With a bottom-up approach, every dynamic-programming algorithm starts with a grid.
 
 ### Dynamic Programming Problems
 
@@ -165,6 +170,6 @@ This approach uses O(1) space (O(n) time.
 
 ### Resources
 
-- [ES6 Tail Calls](http://benignbemine.github.io/2015/07/19/es6-tail-calls/)
+- [ES6 Tail Call Optimizations](http://benignbemine.github.io/2015/07/19/es6-tail-calls/)
 
 
