@@ -85,6 +85,10 @@ class Fibber {
 
 Now in our recurrence tree, no node appears more than twice:
 
+<p align="center">
+<img src="images/fib_2.png" width="625" />
+</p>
+
 Memoization is a common strategy for dynamic programming problems, however going bottom-up is usually cleaner and more efficient.
 
 ### Bottom-Up
