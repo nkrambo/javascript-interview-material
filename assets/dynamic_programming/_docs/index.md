@@ -59,28 +59,28 @@ To avoid the duplicate work caused by the branching, we can wrap the function in
 ```javascript
 class Fibber {
   constructor() {
-    this.memo = {};
+    this.memo = new Map();
   }
 
   fib(n) {
     // edge case
     if (n < 0) {
       throw new Error('Index was negative. No such thing as a negative index in a series.');
+    };
 
     // base cases
-    } else if (n === 0 || n === 1) {
+    if (n === 0 || n === 1) {
       return n;
     }
 
     // see if we've already calculated this
-    if (this.memo.hasOwnProperty(n)) {
-      return this.memo[n];
+    if (this.memo.has(n)) {
+      return this.memo.get(n);
     }
 
+    // otherwise, recursively calculate result and memoize
     let result = this.fib(n - 1) + this.fib(n - 2);
-
-    // memoize
-    this.memo[n] = result;
+    this.memo.set(n, result);
 
     return result;
   }
@@ -117,9 +117,60 @@ function fib(n) {
 }
 ```
 
-**Building a Grid**
+**Making a Grid**
 
-With a bottom-up approach, every dynamic-programming algorithm starts with a grid.
+Tackling dynamic programming problems with a bottom-up approach always starts with a grid. We use this grid to record solutions to sub-problems that we can then reference to solve the larger problem. There a few things to consider when making a grid:
+
+- What are the values of the cells?
+- How do you divide this problem into subproblems?
+- What are the axes of the grid?
+
+Our above Fibonacci example is very simple and we have actually indeed used a grid 'of sorts' to record sub-problems to help solve a larger problem. We have used an array, which is common, to record our sub-problems. Let's break it down.
+
+In dynamic programming, you're trying to maximize something. In this case, we're trying to find the maximum value at sequence (n), given that each sequence is the sum of the two previous sequence values. That is, n = (n-2) + (n-1).
+
+Let's draw our table...
+
+<table>
+  <!-- header -->
+  <tr>
+    <th>Sequence (n)</th>
+  </tr>
+
+  <tr>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+    <th>6</th>
+    <th>7</th>
+    <th>8</th>
+  </tr>
+
+  <!-- entries -->
+  <tr>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+
+</table>
+
+Each cell represents a subproblem, so think about how you can divide your problem into subproblems.
+
+
+
+Here's another way to think about the Fibonacci sequence. Imagine that every sequence instead represents
+
+**Filling the Grid**
+
+**The Solution**
 
 ### Dynamic Programming Problems
 
