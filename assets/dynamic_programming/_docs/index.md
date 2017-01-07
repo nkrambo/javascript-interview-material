@@ -160,7 +160,9 @@ Let's draw our table...
 
 Across the top (axis x) we have the sequence index and then we only need a single row to solve the values at each of these sequences. As you can see, each cell represents a subproblem, that we can solve individually. In the Fibonacci, we are given the first two values. That is, sequence 1 has a value of 0 and sequence 2 has a value of 1. All remaining values can now be solved using the formula at each remaining cell. This is exactly what we have done. For example, sequence 3 is the value of sequence 1 + sequence 2 and so on... all the way up to sequence 8.
 
-Looking again at our code, you can easily see how we achieved this programmatically with an array and given the first two values of 0, 1. Given (n), the value we're looking to maximize, we build an array of (n) length and solve the sub-problems at each cell to build up to solve our larger problem, the value at sequence 8, which is 13. And that's it! Well, that's a very basic example. In reality, most dynamic programming problems are more complicated than this.
+Looking again at our code, you can easily see how we achieved this programmatically with an array and given the first two values of 0, 1. Given (n), the value we're looking to maximize, we build an array of (n) length and solve the sub-problems at each cell to build up to solve our larger problem, the value at sequence 8, which is 13. Although we use the same formula at each cell, there's no single formula for calculating a dynamic programming solution. This is where all dynamic problems differ.
+
+And that's it! Well, that's a very basic example. In reality, most dynamic programming problems are more complicated than this.
 
 ### Dynamic Programming Problems
 
