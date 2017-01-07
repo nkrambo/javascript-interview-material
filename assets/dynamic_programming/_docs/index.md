@@ -1,7 +1,7 @@
 
 ## Dynamic Programming
 
-Dynamic programming is a method for solving complex problems by first solving simpler overlapping subproblems building up to solve the larger problem. Ideally, we use a memory-based data structure to store solutions to already solved subproblems as to not repeat work, we call this "memoization".
+Dynamic programming is a method for solving complex problems by first solving simpler overlapping subproblems building up to solve the larger problem. Ideally, we use a memory-based data structure to store solutions to already solved subproblems as to not repeat work.
 
 Dynamic programming algorithms are often used for **optimization**. That is, they combine their solutions to give the **best solution** for the given problem. In addition to finding optimal solutions to some problem, dynamic programming can also be used for counting the **number of solutions**, for example counting the number of ways a certain amount of change can be made from a given collection of coins.
 
@@ -127,7 +127,7 @@ Tackling dynamic programming problems with a bottom-up approach always starts wi
 
 Our above Fibonacci example is very simple and we have actually indeed used a grid 'of sorts' to record sub-problems to help solve a larger problem. We have used an array, which is common, to record our sub-problems. Let's break it down.
 
-In dynamic programming, you're trying to maximize something. In this case, we're trying to find the maximum value at sequence (n), given that each sequence is the sum of the two previous sequence values. That is, n = (n-2) + (n-1).
+As we said earlier, in dynamic programming you're trying to maximize for the 'best' solution or count the number of solutions. What are we trying to do with a Fibonacci sequence then? Well, there's a couple of way to approach that, we could say we're trying to find the maximum value at sequence (n), given that each sequence is the sum of the two previous sequence values. That is, n = (n-2) + (n-1).
 
 Let's draw our table...
 
@@ -135,6 +135,7 @@ Let's draw our table...
   <!-- header -->
   <tr>
     <th>Sequence (n)</th>
+    <th>0</th>
     <th>1</th>
     <th>2</th>
     <th>3</th>
@@ -142,7 +143,6 @@ Let's draw our table...
     <th>5</th>
     <th>6</th>
     <th>7</th>
-    <th>8</th>
   </tr>
 
   <!-- entries -->
@@ -162,7 +162,7 @@ Let's draw our table...
 
 Across the top (axis x) we have the sequence index and then we only need a single row to solve the values at each of these sequences. As you can see, each cell represents a subproblem, that we can solve individually. In the Fibonacci, we are given the first two values. That is, sequence 1 has a value of 0 and sequence 2 has a value of 1. All remaining values can now be solved using the formula at each remaining cell. This is exactly what we have done. For example, sequence 3 is the value of sequence 1 + sequence 2 and so on... all the way up to sequence 8.
 
-Looking again at our code, you can easily see how we achieved this programmatically with an array and given the first two values of 0, 1. Given (n), the value we're looking to maximize, we build an array of (n) length and solve the sub-problems at each cell to build up to solve our larger problem. And that's it! Well, that's a very basic example. Let's look at another more complicated example.
+Looking again at our code, you can easily see how we achieved this programmatically with an array and given the first two values of 0, 1. Given (n), the value we're looking to maximize, we build an array of (n) length and solve the sub-problems at each cell to build up to solve our larger problem, the value at sequence 8, which is 13. And that's it! Well, that's a very basic example. In reality, most dynamic programming problems are more complicated than this.
 
 ### Dynamic Programming Problems
 

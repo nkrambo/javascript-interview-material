@@ -54,6 +54,21 @@
 * Clearly, you want to choose the largest of the two options at each step.
 * This can be done by keeping track of the two previous maximum values.
 *
+* Let's grab another example and build a grid to illustrate this. Let's say we
+* have the following homes array: [10, 300, 10, 10, 10, 200]
+*
+* +-------+-------------------------------------+
+* | index |  0     1     2     3     4     5    |
+* +---------------------------------------------+
+* | value |  10   (300)  10   (10)   10    200  |     (300 + 10)
+* +---------------------------------------------+          >
+* | cMax  |  10    300  (300)  310   310   510  |        (300)
+* +-------+-------------------------------------+
+*
+* We can see that at index 3, we take the maximum of (300 + 10) or (300). That is,
+* the maximum of the previous 'cMax' or the (current value + prev non-adjacent value).
+* Then we repeat the process at each step until we get our final answer, $510.
+*
 * Time: O(n)
 * Space: O(1)
 * Where (n) is the number of houses.
