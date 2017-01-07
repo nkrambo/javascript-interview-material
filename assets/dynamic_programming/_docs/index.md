@@ -134,7 +134,7 @@ Let's draw our table...
 <table>
   <!-- header -->
   <tr>
-    <th>Sequence (n)</th>
+    <th colspan="8">Sequence (n)</th>
   </tr>
 
   <tr>
