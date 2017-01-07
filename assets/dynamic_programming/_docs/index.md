@@ -134,10 +134,7 @@ Let's draw our table...
 <table>
   <!-- header -->
   <tr>
-    <th colspan="8">Sequence (n)</th>
-  </tr>
-
-  <tr>
+    <th>Sequence (n)</th>
     <th>1</th>
     <th>2</th>
     <th>3</th>
@@ -150,27 +147,22 @@ Let's draw our table...
 
   <!-- entries -->
   <tr>
+    <td>Value</td>
     <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>5</td>
+    <td>8</td>
+    <td>13</td>
   </tr>
 
 </table>
 
-Each cell represents a subproblem, so think about how you can divide your problem into subproblems.
+Across the top (axis x) we have the sequence index and then we only need a single row to solve the values at each of these sequences. As you can see, each cell represents a subproblem, that we can solve individually. In the Fibonacci, we are given the first two values. That is, sequence 1 has a value of 0 and sequence 2 has a value of 1. All remaining values can now be solved using the formula at each remaining cell. This is exactly what we have done. For example, sequence 3 is the value of sequence 1 + sequence 2 and so on... all the way up to sequence 8.
 
-
-
-Here's another way to think about the Fibonacci sequence. Imagine that every sequence instead represents
-
-**Filling the Grid**
-
-**The Solution**
+Looking again at our code, you can easily see how we achieved this programmatically with an array and given the first two values of 0, 1. Given (n), the value we're looking to maximize, we build an array of (n) length and solve the sub-problems at each cell to build up to solve our larger problem. And that's it! Well, that's a very basic example. Let's look at another more complicated example.
 
 ### Dynamic Programming Problems
 
