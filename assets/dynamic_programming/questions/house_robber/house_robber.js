@@ -2,7 +2,7 @@
 /**
 * House Robber
 *
-* Tags: Dynamic Programming
+* Tags: Dynamic Programming, Bottom Up
 *
 * You are a professional robber planning to rob houses along a street. Each house
 * has a certain amount of money stashed, the only constraint stopping you from
@@ -71,6 +71,7 @@
 *
 * Time: O(n)
 * Space: O(1)
+*
 * Where (n) is the number of houses.
 *
 * @param {array} homes amount of cash available in each home on street

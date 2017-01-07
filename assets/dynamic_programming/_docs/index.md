@@ -105,9 +105,7 @@ Let's continue with our Fibonacci example.
 
 ```javascript
 function fib(n) {
-  const seq = [];
-  seq[0] = 0;
-  seq[1] = 1;
+  const seq = [0, 1];
 
   for (let i = 2; i <= n; i += 1) {
     seq[i] = seq[i-1] + seq[i-2];
@@ -196,7 +194,7 @@ Looking again at our code, you can easily see how we achieved this programmatica
   <tr>
     <td><a href="../questions/house_robber/house_robber.js">House Robber</a></td>
     <td>Easy</td>
-    <td></td>
+    <td>Bottom Up</td>
     <td>LeetCode #198</td>
     <td>:thumbsup:</td>
   </tr>
