@@ -2,7 +2,7 @@
 /**
 * Cake Thief
 *
-* Tags: Bottom Up, Unbounded Knapsack Problem, Classic Problems
+* Tags: Bottom Up, Unbounded 0/1 Knapsack Problem, Classic Problems
 *
 * You are a renowned thief who has recently switched from stealing precious
 * metals to stealing cakes because of the insane profit margins. You end up
@@ -56,9 +56,38 @@
 *
 * Solution:
 *
-* This is a classic computer science puzzle called 'the unbounded knapsack problem'.
+* This is a classic computer science puzzle called 'the unbounded 1/0 knapsack problem'.
+* There are variations of this problem that determine the approach we would take.
+* We further define this problem as 1/0, which means that we can either take a
+* cake or not, but we cannot split a cake into fractions. If we could take fractions
+* of items then we could actually implement a greedy algorithm to solve this. We
+* further define this problems as 'unbounded' as all the weights are non-negative
+* integers.
 *
+* So how do we solve the 'unbounded 1/0 knapsack', we use bottom-up dynamic programming.
+* As ususal, we can start with an example and build a grid to help up solve the
+* over-lapping sub-problems.
 *
+* Let's say we have the following inputs...
+*
+* cakeTypes = [{weight: 1, value: 1},
+*              {weight: 3, value: 4},
+*              {weight: 4, value: 5},
+*              {weight: 5, value: 7}];
+*
+* capacity = 7
+*
+* +-----+-----+-------------------------------------------------+
+* | val | wgt |   0     1     2     3     4     5     6     7   |
+* +-------------------------------------------------------------+
+* |  1  |  1  |   0     0     0     0     0     0     0     0   |
+* +-------------------------------------------------------------+
+* |  4  |  3  |   0     0     0     0     0     0     0     0   |
+* +-------------------------------------------------------------+
+* |  5  |  4  |   0     0     0     0     0     0     0     0   |
+* +-------------------------------------------------------------+
+* |  7  |  5  |   0     0     0     0     0     0     0     0   |
+* +-------------------------------------------------------------+
 *
 * Time: O(n * k)
 * Space: O(k)

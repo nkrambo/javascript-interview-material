@@ -67,7 +67,7 @@
 function tripleStep(steps) {
   const ways = [0, 1, 2, 4];
 
-  for (let i = 3; i < steps; i += 1) {
+  for (let i = 4; i < steps; i += 1) {
     ways[i] = ways[i-1] + ways[i-2] + ways[i-3];
   }
 
