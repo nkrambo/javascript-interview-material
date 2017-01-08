@@ -62,17 +62,17 @@
 * integers.
 *
 * So how do we solve the 'unbounded knapsack', we use bottom-up dynamic programming.
-* As ususal, we can start with an example and build a grid to help up solve the
+* As ususal, we can start with an example and build a grid to help us solve the
 * over-lapping sub-problems.
 *
 * Let's say we have the following inputs...
 *
-* cakeTypes = [{weight: 1, value: 1},
-*              {weight: 3, value: 4},
-*              {weight: 4, value: 5},
-*              {weight: 5, value: 7}];
+* const cakeTypes = [{weight: 1, value: 1},
+*                    {weight: 3, value: 4},
+*                    {weight: 4, value: 5},
+*                    {weight: 5, value: 7}];
 *
-* capacity = 7
+* const capacity = 7;
 *
 * To solve the max value at our duffel bag's capacity we need to solve the sub-problems
 * of finding the max value at every capacity from 0 to capacity. So across the top
@@ -93,16 +93,18 @@
 * |  7  |  5  |   0     1     2     4     5     7     8     9   |
 * +-------------------------------------------------------------+
 *
-* At capacity 0, we can obviously not put any cakes into out bag. So we have $0.
+* At capacity 0, we can obviously not put any cakes into out bag. So we have $0
+* down the board for this.
 *
 * At capacity 1, we can see that our first cake row has a weight of 1 and a value
 * also of 1. Therefore, we can take 1 cake for each capacity increase by 1, which
 * also happens to be the same value. That is, with capacity 3, we take 3 ($1) cakes
-* with a total value of $3 and so on... So the best we can do at full capacity is $7.
+* with a total value of $3 and so on... So the best we can do at full capacity is.
+* $7. That's easy enough.
 *
-* Let's look at our next cake {weight: 3, value: 4}. You have a knapsack of capacity
-* 1 kg. Will the cake fit in there? Nope, it's too heavy! So, $1 remains the max
-* value for a 1kg capacity. Same thing for the next two cells. Tese knapsacks have
+* Let's look at our next cake {weight: 3, value: 4}. We have a bag of capacity
+* 1kg. Will the cake fit in there? Nope, it's too heavy! So, $1 remains the max
+* value for a 1kg capacity. Same thing for the next two cells. These bags have
 * a capacity of 2kg and 3kg. The old max value for both was $1.
 *
 * At capacity 3kg, the cake finally fits! The current max value above is $3, but
@@ -118,10 +120,11 @@
 * duffle bags. I hope now it makes sense! When you have space left over, you can
 * use the answers to those subproblems to figure out what will fit in that space.
 *
-* So if we if we have a 2 dimensional grid, where (i) are rows and (j) are columns.
-* Each cell's value gets calculated with the same formula. Here it is.
+* So if we have a 2 dimensional grid, where (i) are rows and (j) are columns.
+* Each cell's value gets calculated with the same formula to help build our final
+* answer. Here it is.
 *
-* cell[i][j] = maximum of:
+* Each cell ([i][j]) is the maximum of the two following:
 *
 * 1. the previous max (value at cell[i-1][j])
 *                     vs
@@ -147,52 +150,33 @@
 */
 
 function maxDuffelBagValue(cakeTypes, capacity) {
-  // we make an array to hold the maximum possible value at every duffel bag weight
-  // capacity from 0 to capacity starting each index with value 0
-  const grid = [];
+
+  // maximum possible value at every duffel bag weight
+  const maxValues = [];
+
+  // for each bag from 0 - capacity
   for (let i = 0; i <= capacity; i += 1) {
-    grid[i] = 0;
+    let current = 0;
+
+    // for each cake at capacity
+    cakeTypes.forEach((cake) => {
+
+      // if cake fits into bag calculate, otherwise skip cake
+      if (cake.weight <= i) {
+
+        // if the current cake value and the remaining bag space value is greater than
+        // the current best value, we should take the cake and update the current best
+        current = Math.max(cake.value + maxValues[i - cake.weight], current);
+      }
+    });
+
+    // set bag weight result
+    maxValues[i] = current;
   }
 
-  for (let currentCapacity = 0; currentCapacity <= capacity; currentCapacity += 1) {
-
-    // set a variable to hold the max monetary value so far for currentCapacity
-    let currentMaxValue = 0;
-
-    // we use a for loop here instead of forEach because we return infinity
-    // if we get a cakeType that weighs nothing and has a value. but forEach
-    // loops always return undefined and you can't break out of them without
-    // throwing an exception
-    for (let j = 0; j < cakeTypes.length; j += 1) {
-      const cakeType = cakeTypes[j];
-
-      // if a cake weighs 0 and has a positive value the value of our duffel bag is infinite!
-      if (cakeType.weight === 0 && cakeType.value !== 0) {
-        return Infinity;
-      }
-
-      // if the current cake weighs as much or less than the current weight capacity
-      // it's possible taking the cake would give get a better value
-      if (cakeType.weight <= currentCapacity) {
-
-        // so we check: should we use the cake or not?
-        // if we use the cake, the most kilograms we can include in addition to the cake
-        // we're adding is the current capacity minus the cake's weight. we find the max
-        // value at that integer capacity in our array grid
-        const maxValueUsingCake = cakeType.value + grid[currentCapacity - cakeType.weight];
-
-        // now we see if it's worth taking the cake. how does the
-        // value with the cake compare to the currentMaxValue?
-        currentMaxValue = Math.max(maxValueUsingCake, currentMaxValue);
-      }
-    }
-
-    // add each capacity's max value to our array so we can use them
-    // when calculating all the remaining capacities
-    grid[currentCapacity] = currentMaxValue;
-  }
-
-  return grid[capacity];
+  // return the 'last' maxValue
+  return maxValues[capacity];
 }
+
 
 export default maxDuffelBagValue;
