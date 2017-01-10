@@ -26,19 +26,21 @@
 * side and then for each cell we can solve the longest sequence for interesting
 * characters.
 *
-* +-----+-------------------------------------+
-* |     |   a     b     c     d     a     f   |
-* +-------------------------------------------+
-* |  a  |   1     1     1     1     1     1   |
-* +-------------------------------------------+
-* |  c  |   1     1     2     2     2     2   |
-* +-------------------------------------------+
-* |  b  |   1     2     2     2     2     2   |
-* +-------------------------------------------+
-* |  c  |   1     2     3     3     3     3   |
-* +-------------------------------------------+
-* |  f  |   1     2     3     3     3     4   |
-* +-------------------------------------------+
+* +-----+------------------------------------------+
+* |     |        a     b     c     d     a     f   |
+* +------------------------------------------------+
+* |     |        0     0     0     0     0     0   |
+* +------------------------------------------------+
+* |  a  |   0    1     1     1     1     1     1   |
+* +------------------------------------------------+
+* |  c  |   0    1     1     2     2     2     2   |
+* +------------------------------------------------+
+* |  b  |   0    1     2     2     2     2     2   |
+* +------------------------------------------------+
+* |  c  |   0    1     2     3     3     3     3   |
+* +------------------------------------------------+
+* |  f  |   0    1     2     3     3     3     4   |
+* +------------------------------------------------+
 *
 * Let's step through our grid...
 *
@@ -85,6 +87,10 @@
 * downward and then 'd' across. This result was calculated using this method. We
 * took 3 from the left as it was greater than 2 above.
 *
+* In the left cell, we have the count from 'acbc' in 'abc', 3. And in the top cell,
+* we have the count from 'acb' in 'abcd', 2. It makes sense that we want the hightest
+* count from these two comparisions moving forward.
+*
 * We continue with this method until we resolve all cells and are left with our
 * final result of 4, in the bottom-right corner.
 *
@@ -96,8 +102,8 @@
 *   T[i][j] = max(T[i-1][j], T[i][j-1])
 * }
 *
-* Time: O(n^2)
-* Space: O(1)
+* Time: O(n * k)
+* Space: O(n * k)
 *
 * @param {string} s1 base string
 * @param {string} s2 string to check for subsequence to s1
@@ -105,19 +111,29 @@
 */
 
 function longestCommonSub(s1, s2) {
-  let count = 0;
-  for (let i of s1) {
+  let maxCount = 0;
+  const cols = s1.length + 1;   // Add 1 to represent 0 valued column for DP
+  const rows = s2.length + 1;   // Add 1 to represent 0 valued row for DP
 
-    for (let j of s2) {
-      if (i === j) {
-        count =
+  // build matrix with 0 columns
+  const grid = [];
+  for (let i = 0; i < rows; i += 1) {
+    grid[i] = new Array(cols).fill(0);
+  }
+
+  for (let i = 1; i < rows; i += 1) {
+    for (let j = 1; j < cols; j += 1) {
+      if (s2[i-1] === s1[j-1]) {
+        grid[i][j] = grid[i-1][j-1] + 1;
       } else {
-        count = Math.max();
+        grid[i][j] = Math.max(grid[i-1][j], grid[i][j-1]);
       }
+
+      maxCount = Math.max(maxCount, grid[i][j]);
     }
   }
 
-  return count;
+  return maxCount;
 }
 
 export default longestCommonSub;
