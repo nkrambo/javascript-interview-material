@@ -96,11 +96,11 @@
 *
 * So the formula for this algorithm looks like the following:
 *
-* if (s1[i] === s2[j]) {
-*   T[i][j] = T[i-1][j-1] + 1;
-* } else {
-*   T[i][j] = max(T[i-1][j], T[i][j-1])
-* }
+*     if (s1[i] === s2[j]) {
+*       T[i][j] = T[i-1][j-1] + 1;
+*     } else {
+*       T[i][j] = max(T[i-1][j], T[i][j-1])
+*     }
 *
 * Time: O(n * k)
 * Space: O(n * k)
@@ -116,20 +116,20 @@ function longestCommonSub(s1, s2) {
   const rows = s2.length + 1;   // add 1 to represent 0 valued row for DP
 
   // build matrix with 0 columns
-  const grid = [];
+  const matrix = [];
   for (let i = 0; i < rows; i += 1) {
-    grid[i] = new Array(cols).fill(0);
+    matrix[i] = new Array(cols).fill(0);
   }
 
   for (let i = 1; i < rows; i += 1) {
     for (let j = 1; j < cols; j += 1) {
       if (s2[i-1] === s1[j-1]) {
-        grid[i][j] = grid[i-1][j-1] + 1;
+        matrix[i][j] = matrix[i-1][j-1] + 1;
       } else {
-        grid[i][j] = Math.max(grid[i-1][j], grid[i][j-1]);
+        matrix[i][j] = Math.max(matrix[i-1][j], matrix[i][j-1]);
       }
 
-      maxCount = Math.max(maxCount, grid[i][j]);
+      maxCount = Math.max(maxCount, matrix[i][j]);
     }
   }
 
