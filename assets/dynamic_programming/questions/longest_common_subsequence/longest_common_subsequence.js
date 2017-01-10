@@ -112,8 +112,8 @@
 
 function longestCommonSub(s1, s2) {
   let maxCount = 0;
-  const cols = s1.length + 1;   // Add 1 to represent 0 valued column for DP
-  const rows = s2.length + 1;   // Add 1 to represent 0 valued row for DP
+  const cols = s1.length + 1;   // add 1 to represent 0 valued column for DP
+  const rows = s2.length + 1;   // add 1 to represent 0 valued row for DP
 
   // build matrix with 0 columns
   const grid = [];
