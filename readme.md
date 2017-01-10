@@ -81,6 +81,14 @@ I highly recommend these resources for interview preparation.
   </tr>
 
   <tr>
+    <td><a href="/assets/puzzles/_docs/index.md">Puzzels</a></td>
+  </tr>
+
+  <tr>
+    <td><a href="/assets/system_design/_docs/index.md">System Design</a></td>
+  </tr>
+
+  <tr>
     <td><a href="/assets/_docs/async.md">Design Pattens</a></td>
   </tr>
 

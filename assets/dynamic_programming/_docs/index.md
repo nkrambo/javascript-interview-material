@@ -209,6 +209,14 @@ And that's it! Well, that's a very basic example. In reality, most dynamic progr
     <td>:thumbsup:</td>
   </tr>
 
+  <tr>
+    <td><a href="../questions/longest_common_subsequence/longest_common_subsequence.js">Longest Common Subsequence</a></td>
+    <td>Medium</td>
+    <td>Bottom Up, Classic</td>
+    <td></td>
+    <td>:thumbsup:</td>
+  </tr>
+
 </table>
 
 ### Resources
