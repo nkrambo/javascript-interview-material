@@ -8,7 +8,6 @@
 * Example:
 * Input: str: 'eceba', k: 2
 * Output: 3, where T is 'ece'
-*
 */
 
 /**
