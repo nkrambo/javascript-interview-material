@@ -88,9 +88,9 @@
 function longestCommonSubStr(s1, s2) {
   let count = 0;
   const cols = s1.length + 1; // add 1 to represent 0 valued col for DP
-  const rows = s2.length + 1  // add 1 to represent 0 valued row for DP
+  const rows = s2.length + 1;  // add 1 to represent 0 valued row for DP
 
-  // build matrix with 0 columns
+  // build matrix, fill with 0s by default
   const matrix = [];
   for (let i = 0; i < rows; i += 1) {
     matrix[i] = new Array(cols).fill(0);
@@ -103,7 +103,7 @@ function longestCommonSubStr(s1, s2) {
       // if 'match' grab top-left + 1, recalculate count
       if (s1[i-1] === s2[j-1]) {
         matrix[i][j] = matrix[i-1][j-1] + 1;
-        count = Math.max(matrix[i][j], count);  
+        count = Math.max(matrix[i][j], count);
       }
     }
   }

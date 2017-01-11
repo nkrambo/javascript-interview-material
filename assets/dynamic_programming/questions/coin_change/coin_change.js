@@ -22,7 +22,7 @@
 */
 
 /**
-* makeChange()
+* coinChange()
 *
 * Solution:
 *
@@ -68,7 +68,7 @@
 * @return {array} returns an array of arrays, with possible methods to make change
 */
 
-function makeChange(amount, denominations) {
+function coinChange(amount, denominations) {
   // intialize an array of zeros with indices up to amount
   const ways = [];
   for (let i = 0; i <= amount; i += 1) {
@@ -87,4 +87,4 @@ function makeChange(amount, denominations) {
   return ways[amount];
 }
 
-export default makeChange;
+export default coinChange;
