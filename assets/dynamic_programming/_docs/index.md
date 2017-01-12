@@ -242,7 +242,7 @@ And that's it! Well, that's a very basic example. In reality, most dynamic progr
   </tr>
 
   <tr>
-    <td><a href="../questions/longest_increasing_subsequence/longest_increasing_subsequence.js">Total Ways in Matrix</a></td>
+    <td><a href="../questions/total_ways_in_matrix/total_ways_in_matrix.js">Total Ways in Matrix</a></td>
     <td>Easy</td>
     <td>Bottom Up</td>
     <td></td>

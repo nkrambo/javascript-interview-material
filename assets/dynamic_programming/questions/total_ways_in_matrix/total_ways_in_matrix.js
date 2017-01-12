@@ -30,8 +30,8 @@
 * Let's start with the first cell. We know that this is the starting position, so
 * we don't need to move here at all, so we can set this to 0.
 *
-* Next, the cell to the right of start. Well this is simple, it takes exactly 1
-* step to move to here as we can only come from the starting cell. When you think
+* Next, the cell to the right of start. Well this is simple, there's only 1 way
+* to move to here as we can only come from the left starting cell. When you think
 * about it, the entire first row except for the start should have a result of 1.
 * This is because we can only come left from the start and not from any other
 * direction. The same is true for entire first column, we can only travel downward
@@ -61,10 +61,10 @@
 * |   1     4    10    20   |
 * +-------------------------+
 *
-* Time: O(1)
-* Space: O(1)
+* Time: O(n * m)
+* Space: O(n * m)
 *
-* Where...
+* Where n is the length of matrix, and m is the length of matrix[0]
 *
 * @param {array} matrix
 * @return {number} returns the number of ways to reach bottom right from top left
@@ -79,6 +79,7 @@ function totalWays(matrix) {
   }
 
   // first row and column to 1s
+  // setting the 'start' cell to 0 is irrelevant
   sums[0].fill(1);
   sums.forEach((row) => {
     row[0] = 1;
