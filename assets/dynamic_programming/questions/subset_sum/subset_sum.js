@@ -24,7 +24,7 @@
 * This is another classic problem that we can solve though bottom-up dynamic
 * programming.
 *
-* As usual, we'll start by drawing out a simple grid to help us solve some
+* As usual, we'll start by drawing out a simple matrix to help us solve some
 * sub-problems.
 *
 * Across the top, we'll have the all the numbers from 0 - total. In our case, 11.
@@ -79,7 +79,7 @@
 * If the current 'num' is less than or equal to current 'total', then go up again.
 * If the above cell is T, then current is T, otherwise go back 'num' positions and
 * take that result. So for 'num' 3 and 'total' 3, we go up and back 3 positions
-* and take T. We use this formula to fill outthe whole grid and end up with our
+* and take T. We use this formula to fill out the whole matrix and end up with our
 * final result in the bottom right.
 *
 *            0     1     2    (3)

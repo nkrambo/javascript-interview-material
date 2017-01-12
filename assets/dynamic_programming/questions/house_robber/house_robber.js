@@ -54,7 +54,7 @@
 * Clearly, you want to choose the largest of the two options at each step.
 * This can be done by keeping track of the two previous maximum values.
 *
-* Let's grab another example and build a grid to illustrate this. Let's say we
+* Let's grab another example and build a matrix to illustrate this. Let's say we
 * have the following homes array: [10, 300, 10, 10, 10, 200]
 *
 * +-------+-------------------------------------+

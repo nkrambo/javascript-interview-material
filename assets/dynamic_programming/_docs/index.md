@@ -233,6 +233,14 @@ And that's it! Well, that's a very basic example. In reality, most dynamic progr
     <td>:thumbsup:</td>
   </tr>
 
+  <tr>
+    <td><a href="../questions/longest_increasing_subsequence/longest_increasing_subsequence.js">Longest Increasing Subsequence</a></td>
+    <td>Easy</td>
+    <td>Bottom Up, Classic</td>
+    <td></td>
+    <td>:thumbsup:</td>
+  </tr>
+
 </table>
 
 ### Resources

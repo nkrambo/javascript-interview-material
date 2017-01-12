@@ -62,7 +62,7 @@
 * integers.
 *
 * So how do we solve the 'unbounded knapsack', we use bottom-up dynamic programming.
-* As ususal, we can start with an example and build a grid to help us solve the
+* As ususal, we can start with an example and build a matrix to help us solve the
 * over-lapping sub-problems.
 *
 * Let's say we have the following inputs...
@@ -76,7 +76,7 @@
 *
 * To solve the max value at our duffel bag's capacity we need to solve the sub-problems
 * of finding the max value at every capacity from 0 to capacity. So across the top
-* of our grid we place the weights 0 - capacity (7).
+* of our matrix we place the weights 0 - capacity (7).
 *
 * Down the side, well we want the cakes by weight and value. Then, we go through
 * each cake, checking to see if we should take that cake.
@@ -120,7 +120,7 @@
 * duffle bags. I hope now it makes sense! When you have space left over, you can
 * use the answers to those subproblems to figure out what will fit in that space.
 *
-* So if we have a 2 dimensional grid, where (i) are rows and (j) are columns.
+* So if we have a 2 dimensional matrix, where (i) are rows and (j) are columns.
 * Each cell's value gets calculated with the same formula to help build our final
 * answer. Here it is.
 *

@@ -22,7 +22,7 @@
 * This is a simpler problem of the longest common subsequence problem. You will
 * notice that they are very similiar.
 *
-* Per usual, we start with a grid to help us solve sub-problems. We'll use our
+* Per usual, we start with a matrix to help us solve sub-problems. We'll use our
 * example from above.
 *
 * Across the top, we have s1 chars. Down the side we have the s2 chars. We also
@@ -44,7 +44,7 @@
 * |  f  |   0    0     0     0     0     0     1   |
 * +------------------------------------------------+
 *
-* Let's step through our grid.
+* Let's step through our matrix.
 *
 * First we are comparing 'z' to 'a' for a substring, which there isn't so we set
 * count to 0 for that cell. In fact, 'z' is 0 for all it's cells.

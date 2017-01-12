@@ -18,11 +18,11 @@
 * Solution:
 *
 * This is a classic problem that we can solve using a bottom-up dynamic programming
-* approach. As usual with these problems, let's start by making a grid to solve
+* approach. As usual with these problems, let's start by making a matrix to solve
 * sub-problems to our larger problem.
 *
 * So again, we're trying to count the longest subsequence, so what are the
-* sub-problems? Well, we can places s1 across the top of our grid and s2 down the
+* sub-problems? Well, we can places s1 across the top of our matrix and s2 down the
 * side and then for each cell we can solve the longest sequence for interesting
 * characters.
 *
@@ -42,7 +42,7 @@
 * |  f  |   0    1     2     3     3     3     4   |
 * +------------------------------------------------+
 *
-* Let's step through our grid...
+* Let's step through our matrix...
 *
 * In our first cell we are looking for the longest subsequence between 'a' and 'a'.
 * This is pretty straight forward, since they're the same character, it's 1. We
@@ -83,7 +83,7 @@
 *     'c' | (3) ←  3  |
 *         +-----+-----+
 *
-* This also makes sense when we think about it. Look at the grid about at 'c'
+* This also makes sense when we think about it. Look at the matrix about at 'c'
 * downward and then 'd' across. This result was calculated using this method. We
 * took 3 from the left as it was greater than 2 above.
 *

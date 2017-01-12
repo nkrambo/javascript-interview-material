@@ -15,7 +15,7 @@
 */
 
 /**
-* coinMinimum()
+* minCoinsBottomUp()
 *
 * Solution:
 *
@@ -50,7 +50,7 @@
 *
 * Next, denomination of 5. As we step across we can see that we cannot make a total
 * of 1c from a 5c coin, so we must take the result above as this is the best we
-* can do for this total. This is the same until we get to a totol of 5. Obviously,
+* can do for this total. This is the same until we get to a total of 5. Obviously,
 * a 5c coin totals 5c exacly once, so the answer is 1.
 *
 * But how do we calculate this result instead? Well, we take the minimum between
@@ -89,8 +89,8 @@
 * @return {number} returns the minimum number of coins require to make total
 */
 
-function coinMinimum(total, denominations) {
-  const cols = total + 1;                // add 1 for 0 col
+function minCoinsBottomUp(total, denominations) {
+  const cols = total + 1;                // add 1 for 0s column
   const rows = denominations.length + 1; // add 1 for Infinity row
 
   // build matrix, 0s by default
@@ -106,9 +106,12 @@ function coinMinimum(total, denominations) {
   for (let i = 1; i < rows; i += 1) {
     for (let j = 1; j < cols; j += 1) {
 
+      // if the total is less than the current denomination, take the top
       if (j < denominations[i-1]) {
         matrix[i][j] = matrix[i-1][j];
 
+      // otherwise, check if we can do better than
+      // the top with the current and difference results
       } else {
         matrix[i][j] = Math.min(matrix[i-1][j], matrix[i][j-denominations[i-1]] + 1);
       }
@@ -118,4 +121,88 @@ function coinMinimum(total, denominations) {
   return matrix[rows-1][cols-1];
 }
 
-export default coinMinimum;
+/**
+* minCoinsBottomUpAlt()
+*
+* Solution:
+*
+* This is an alternative bottom-up approach where we only use a single array to
+* solve the problem, instead of a matrix.
+*
+* Time: O(n * k)
+* Space: O(n * k)
+*
+* Where n is the number of coins and k is the total.
+*
+* @param {number} total change required
+* @param {array} denominations available
+* @return {number} returns the minimum number of coins require to make total
+*/
+
+function minCoinsBottomUpAlt(total, denominations) {
+  const cols = total + 1; // add 1 for 0s column
+
+  return;
+}
+
+// cols = total + 1
+// T =[0 if idx == 0 else float("inf") for idx in range(cols)]
+// R = [-1 for _ in range(total + 1)]
+//
+// for j in range(len(coins)):
+//     for i in range(1, cols):
+//         coin = coins[j]
+//         if i >= coins[j]:
+//             if T[i] > 1 + T[i - coin]:
+//                 T[i] = 1 + T[i - coin]
+//                 R[i] = j
+//
+// print_coins(R, coins)
+// return T[cols - 1]
+
+/**
+* MinCoinsTopDown
+*
+* Time: O(n * k)
+* Space: O(n * k)
+*
+* Where n is the number of coins and k is the total.
+*
+* @param {number} total change required
+* @param {array} denominations available
+* @return {number} returns the minimum number of coins require to make total
+*/
+
+class MinCoinsTopDown {
+  constructor() {
+    this.memo = new Map();
+  }
+
+  minCoins(total, denominations) {
+
+    // base case
+    if (total === 0) return 0;
+
+    // check memo
+    if (this.memo.has(total)) {
+      return this.memo.get(total);
+    }
+
+    let minValue = Infinity;
+    for (let i = 0; i < denominations.length; i += 1) {
+      const coin = denominations[i];
+
+      if (coin > total) continue;
+
+      const value = this.minCoins(total - coin, denominations);
+      minValue = Math.min(minValue, value);
+    }
+
+    minValue += 1;
+    this.memo.set(total, minValue);
+
+    return minValue;
+  }
+}
+
+export { minCoinsBottomUp, minCoinsBottomUpAlt, MinCoinsTopDown };
