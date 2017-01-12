@@ -83,7 +83,7 @@
 * So the formula for this algorithm looks like the following:
 *
 *     if (nums[j] < nums[i]) {
-*       nums[i] = max(nums[i], nums[j] + 1)
+*       T[i] = max(T[i], T[j] + 1)
 *     }
 *
 * Time: O(n^2)
