@@ -12,10 +12,10 @@
 * For example, say we given the following matrix:
 *
 *    [['0', '0', '0', '0', 'x'],
-*    ['x', '0', 'x', 'x', 'x'],
-*    ['x', '0', 'x', '0', 'x'],
-*    ['x', 'x', 'x', 'x', 'x'],
-*    ['0', '0', 'x', 'x', 'x']];
+*     ['x', '0', 'x', 'x', 'x'],
+*     ['x', '0', 'x', '0', 'x'],
+*     ['x', 'x', 'x', 'x', 'x'],
+*     ['0', '0', 'x', 'x', 'x']];
 *
 * Here we would return 3, for the square at position matrix[1][2] to matrix[3][4].
 * There are two other valid subsquares in this example, but they both have a
@@ -84,7 +84,7 @@ function maximumSubsquare(matrix) {
   // build matrix, fill with {0, 0} objects by default
   const sums = [];
   for (let i = 0; i < matrix.length; i += 1) {
-    matrix[i] = new Array(matrix[0].length)fill({vert: 0, hori: 0});
+    sums[i] = new Array(matrix[0].length).fill({vert: 0, hori: 0});
   }
 
   // solve sub-problems
@@ -117,6 +117,39 @@ function maximumSubsquare(matrix) {
       }
     }
   }
+
+
+  // corner and find min of hori or ver at every cell.
+
+  //If this is greater than 1 then see if you can find a number between this min and 1
+  //such that on left's ver and top's hori is greater greater than or equal to k.
+
+  // let's calculate the largest subsquare, track it with 'max', 1 default
+  let max = 1;
+
+  // iterate from bottom-right to top-left, eseentially 'backward'
+  for (let i = sums.length - 1; i >= 0; i -= 1) {
+    for (let j = sums[0].length -1; j >= 0; j -= 1) {
+
+
+      if (sums[i][j].vert === 0 || sums[i][j].vert === 1 || sums[i][j].hori === 1) {
+        continue;
+      }
+
+      let min = Math.min(sums[i][j].vert, sums[i][j].hori);
+
+      let k = 0;
+      for (k = min; k > 1; k -= 1) {
+        if (sums[i][j-k+1].vert >= k && sums[i-k+1][j].hori >= k) {
+          break;
+        }
+      }
+
+      if (max < k) max = k;
+    }
+  }
+
+  return max;
 }
 
 export default maximumSubsquare;
