@@ -10,5 +10,6 @@ describe('sumQuery()', () => {
                     [2, -6, 8, 1]];
 
     expect(sumQuery(matrix, [[1, 0], [2, 1]])).to.equal(18);
+    expect(sumQuery(matrix, [[0, 2], [2, 3]])).to.equal(12);
   });
 });
