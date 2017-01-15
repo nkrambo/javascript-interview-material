@@ -25,10 +25,10 @@ describe('maximumSubsquare()', () => {
     //
     // expect(maximumSubsquare(matrix3)).to.equal(2);
 
-    const matrix4 = [['0', '0', '0'],
-                     ['0', 'x', 'x'],
-                     ['0', 'x', 'x']];
-
-    expect(maximumSubsquare(matrix4)).to.equal(4);
+    // const matrix4 = [['0', '0', '0'],
+    //                  ['0', 'x', 'x'],
+    //                  ['0', 'x', 'x']];
+    //
+    // expect(maximumSubsquare(matrix4)).to.equal(4);
   });
 });

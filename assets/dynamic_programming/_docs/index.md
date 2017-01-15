@@ -249,6 +249,14 @@ And that's it! Well, that's a very basic example. In reality, most dynamic progr
     <td>:thumbsup:</td>
   </tr>
 
+  <tr>
+    <td><a href="../questions/minimum_edit_distance/minimum_edit_distance.js">Minimum Edit Distance</a></td>
+    <td>Medium</td>
+    <td>Bottom Up</td>
+    <td></td>
+    <td>:thumbsup:</td>
+  </tr>
+
 </table>
 
 ### Resources
