@@ -8,6 +8,13 @@
 * and depth. Implement a function to compute the height of the tallest possible
 * stack. The height of a stack is the sum of the heights of each box.
 *
+* Example:
+* Input: 
+*/
+
+/*
+* tallestStack()
+*
 * Solution:
 *
 * Time: O(1)
