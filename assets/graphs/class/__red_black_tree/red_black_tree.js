@@ -35,6 +35,30 @@
 *
 * Red-black trees are generally favourable over AVL trees for a self-balancing
 * solution.
+*
+* Example:
+*
+*                  B
+*               ↙
+*             B               Invalid
+*           ↙
+*         B
+*
+* Example:
+*
+*                  B
+*               ↙     ↘
+*             R         B     Valid
+*           ↙   ↘     ↙
+*         B      B  R
+*
+* Example:
+*
+*                  B
+*               ↙
+*             R               Invalid
+*               ↘
+*                 B
 */
 
 class RedBlackTree {
@@ -45,11 +69,12 @@ class RedBlackTree {
    * @public
    * @constructor
    */
+
   constructor() {
-    this._root = null;
-    this._colors = {
-      RED: 0,
-      BLACK: 1
+    this.root = null;
+    this.color = {
+      RED,
+      BLACK
     };
   }
 
@@ -59,7 +84,7 @@ class RedBlackTree {
    *
    * @public
    * @method
-   * @param {Number} key Key.
+   * @param {Numbeterr} key Key.
    * @param {Object} value Value.
    */
 
@@ -68,20 +93,20 @@ class RedBlackTree {
      this._root.setColor(this_colors.BLACK);
    };
 
-  /**
-   * Returns true or false depending on whether
-   * given node is red.
-   *
-   * @private
-   * @method
-   * @param {Node} node Node which sould be checked.
-   * @return Returns true if node is red.
-   */
-
-  isRed(node) {
-    if (!node) return false;
-    return node.isRed();
-  };
+  // /**
+  //  * Returns true or false depending on whether
+  //  * given node is red.
+  //  *
+  //  * @private
+  //  * @method
+  //  * @param {Node} node Node which sould be checked.
+  //  * @return Returns true if node is red.
+  //  */
+  //
+  // isRed(node) {
+  //   if (!node) return false;
+  //   return node.isRed();
+  // };
 
 }
 
