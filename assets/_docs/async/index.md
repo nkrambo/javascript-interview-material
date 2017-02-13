@@ -119,10 +119,13 @@ So to summarize, the problems with the Promise type:
 
 ### RxJS
 
+## Async / Await
+
 ### Resources
 
 - [RxJS](http://reactivex.io/rxjs/)
 - [Redux Observable](https://github.com/redux-observable/redux-observable)
+- [MDN - Async / Await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 - [MDN - Callbacks](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks)
 - [MDN - Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 - [Async Programming in ES7](https://www.youtube.com/watch?v=lil4YCCXRYc)
