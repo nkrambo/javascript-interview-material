@@ -85,27 +85,25 @@ Let's say we have a sayName() function in the global space and a 'james' object.
 We can call the sayName() function in the context of 'nick' with the call() method.
 
 **call()**
+
 The first parameter of call() is the context of what you want to bind the 'this'
 keyword to. The remaining arguments can be passed to the called function individually.
 
-```
-function.prototype.call(context, arg1, arg2, ...);
-```
+`function.prototype.call(context, arg1, arg2, ...);`
+
 **apply()**
+
 The apply() method is exactly the same as call() except it takes an array of arguments
 as the second parameter, which can be cleaner and more concise to use.
 
-```
-function.prototype.apply(context, [argsArray]);
-```
+`function.prototype.apply(context, [argsArray]);`
 
 **bind()**
+
 The bind() method is the same as call() expect it returns a new function that can
 be invoked later.
 
-```
-function.prototype.bind(context, arg1, arg2, ...);
-```
+`function.prototype.bind(context, arg1, arg2, ...);`
 
 ```javascript
 function sayName(lang1, lang2) {
