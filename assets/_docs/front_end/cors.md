@@ -48,6 +48,7 @@ Any request that does not meet the criteria above is a not-so-simple request, an
 CORS can be used as a modern alternative to the JSONP pattern. While JSONP supports only the GET request method, CORS also supports other types of HTTP requests. CORS is supported by most modern web browsers. Also, while JSONP can cause cross-site scripting (XSS) issues where the external site is compromised, CORS allows websites to manually parse responses to ensure security.
 
 **References**
+
 * [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
 * [HTML5 Rocks](https://www.html5rocks.com/en/tutorials/cors/)
 * [The CORS Spec](https://www.w3.org/TR/cors/)
