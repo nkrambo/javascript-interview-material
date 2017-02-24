@@ -829,10 +829,6 @@ duplicate([1, 2, 3, 4, 5]); // [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
 
 ---
 
-### What is the purpose of a code style linting tool?
-
----
-
 ## Performance Questions:
 
 ### What tools would you use to find a performance bug in your code?
