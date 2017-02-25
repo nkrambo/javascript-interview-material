@@ -1,47 +1,4 @@
 
-# Table of Contents
-
-  1. [General Questions](#general-questions)
-    * [Progressive enhancement and graceful degradation](#can-you-describe-the-difference-between-progressive-enhancement-and-graceful-degradation)
-  2. [HTML Questions](#html-questions)
-  3. [CSS Questions](#css-questions)
-  4. [JS Questions](#js-questions)
-  5. [Testing Questions](#testing-questions)
-  6. [Performance Questions](#performance-questions)
-  7. [Network Questions](#network-questions)
-  8. [Coding Questions](#coding-questions)
-  9. [Fun Questions](#fun-questions)
-
-## General Questions:
-
-### What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
-
----
-
-### Talk about your preferred development environment.
-
-Atom editor, with only some basic plugins
-Node.js with Express
-Sequelize ORM and PostGres
-Webpack, Nodemon, Babel, NPM, NPM scripts
-React with Redux, React Router, CSS Modules
-RXJS (Observables) for side effects
-Mocha, Chai, Enzyme
-Git for version control
-eslint with Airbnb config
-Flow
-Passport for Authentication, usually a local (bcrypt) and OAuth strategy
-
----
-
-### Which version control systems are you familiar with?
-
-Git with Git Flow
-
-References:
-
-* [Make School](https://www.youtube.com/watch?v=cgDRpayIsYo)
-
 
 ### Can you describe the difference between progressive enhancement and graceful degradation?
 
@@ -77,19 +34,9 @@ References:
 
 ### Name 3 ways to decrease page load (perceived or actual load time).
 
----
-
-### If you jumped on a project and they used tabs and you used spaces, what would you do?
-
----
 
 ### Describe how you would create a simple slideshow page.
 
----
-
-### If you could master one technology this year, what would it be?
-
----
 
 ### Explain the importance of standards and standards bodies.
 
