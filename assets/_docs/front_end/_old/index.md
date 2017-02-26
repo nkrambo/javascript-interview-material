@@ -268,10 +268,6 @@ Don't forget: in order for the browser to parse this document according to XML/X
 
 As you may have realized, XML parsing rules are more persnickety. It's much easier to use the `text/html` MIME type and its looser HTML syntax.
 
-### Consider HTML5 as an open web platform. What are the building blocks of HTML5?
-
----
-
 ### Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
 
 ---
@@ -436,10 +432,6 @@ normalize.css is usually preferred for the following reasons.
 ---
 
 ### What are the different ways to visually hide content (and make it available only for screen readers)?
-
----
-
-### Have you ever used a grid system, and if so, what do you prefer?
 
 ---
 
