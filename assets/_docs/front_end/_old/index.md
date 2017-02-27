@@ -528,13 +528,8 @@ display: unset;
 3. respect height and width
 
 
-### The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?
+### How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?
 
----
-
-### What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
-
----
 ---
 
 ### How is responsive design different from adaptive design?
