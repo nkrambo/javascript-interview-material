@@ -546,9 +546,6 @@ display: unset;
 
 ### Explain how prototypal inheritance works
 
-
-### How do you organize your code? (module pattern, classical inheritance?)
-
 ### Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 
 
@@ -556,11 +553,7 @@ display: unset;
 
 ---
 
-### Explain Ajax in as much detail as possible.
-
----
-
-### What are the advantages and disadvantages of using Ajax?
+### Explain Ajax in as much detail as possible. What are the advantages and disadvantages of using Ajax?
 
 
 ### Describe event bubbling.
