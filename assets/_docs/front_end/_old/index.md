@@ -630,14 +630,6 @@ window.addEventListener("load", function(event) {
 });
 ```
 
-### What is `"use strict";`? what are the advantages and disadvantages to using it?
-
----
-
-### Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
-
----
-
 ### Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
 
 ---
@@ -674,27 +666,6 @@ It all depends on what you need to do and how you need it done. For code that re
 
 ### Explain the difference between synchronous and asynchronous functions.
 
----
-
-### Explain the difference between mutable and immutable objects.
-
----
-
-### What is an example of an immutable object in JavaScript?
-
----
-
-### What are the pros and cons of immutability?
-
----
-
-### How can you achieve immutability in your own code?
-
----
-
-### What is event loop?
-
----
 
 ### What is the difference between call stack and task queue?
 
@@ -739,10 +710,6 @@ For example, equality == or inequality != signs compares 2 values without type c
 ```javascript
 duplicate([1, 2, 3, 4, 5]); // [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
 ```
-
----
-
-## Testing Questions:
 
 ### What are some advantages/disadvantages to testing your code?
 
