@@ -632,15 +632,9 @@ window.addEventListener("load", function(event) {
 
 ### Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
 
----
-
 ### Explain what a single page app is and how to make one SEO-friendly.
 
----
-
 ### What is the extent of your experience with Promises and/or their polyfills?
-
----
 
 ### What are the pros and cons of using Promises instead of callbacks?
 
@@ -650,15 +644,9 @@ That said a promise's advantage is flexibility. You have much more liberty about
 
 It all depends on what you need to do and how you need it done. For code that relies on short local reactions to asynchronous events go with a callback. For more complex interactions and data flows promises bring order to what could potentially be callback hell.
 
----
-
 ### What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
 
----
-
 ### What tools and techniques do you use debugging JavaScript code?
-
----
 
 ### What language constructions do you use for iterating over object properties and array items?
 
@@ -721,9 +709,6 @@ duplicate([1, 2, 3, 4, 5]); // [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
 
 ### What is the difference between a unit test and a functional/integration test?
 
----
-
-## Performance Questions:
 
 ### What tools would you use to find a performance bug in your code?
 
@@ -731,8 +716,6 @@ duplicate([1, 2, 3, 4, 5]); // [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
 
 ### What are some ways you may improve your website's scrolling performance?
 
-
-## Network Questions:
 
 ### Traditionally, why has it been better to serve site assets from multiple domains?
 
