@@ -650,8 +650,6 @@ It all depends on what you need to do and how you need it done. For code that re
 
 ### What language constructions do you use for iterating over object properties and array items?
 
----
-
 ### Explain the difference between synchronous and asynchronous functions.
 
 
