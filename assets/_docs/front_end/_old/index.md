@@ -655,18 +655,12 @@ It all depends on what you need to do and how you need it done. For code that re
 
 ### What is the difference between call stack and task queue?
 
----
-
 ### Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
 
 
 ### What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?
 
----
-
 ### Have you ever used JavaScript templating? If so, what libraries have you used?
-
----
 
 ### What is the difference between `==` and `===`?
 
