@@ -22,3 +22,6 @@ The trade-off, and most important thing to remember, about absolute positioning 
 **Fixed**
 
 This type of positioning is fairly rare but certainly has its uses. A fixed position element is positioned relative to the viewport, or the browser window itself. The viewport doesn't change when the window is scrolled, so a fixed positioned element will stay right where it is when the page is scrolled, creating an effect a bit like the old school "frames" days. It's often used in fixed sidebars and footers that keeps desired elements present at all times to the user.
+
+### Is there any reason you'd want to use `translate()` instead of ###absolute positioning###, or vice-versa? And why?
+
