@@ -1,3 +1,6 @@
+
+## Animations
+
 There are two primary ways to create animations on the web: with CSS and with JavaScript. Which one you choose really depends on the other dependencies of your project, and what kinds of effects you're trying to achieve.
 
 In general:
