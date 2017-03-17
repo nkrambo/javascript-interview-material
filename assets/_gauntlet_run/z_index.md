@@ -1,5 +1,5 @@
 
-# Z Indexing
+## Z Indexing
 
 z-index is for visual depth. Some elements overlap and some are nested within each other, so there's a natural visual depth that builds, where you can see some elements on top or behind other ones. They stack on top of each other.
 

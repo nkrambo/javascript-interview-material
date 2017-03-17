@@ -1,5 +1,5 @@
 
-# Anonymous Functions
+## Anonymous Functions
 
 Anonymous functions are typically used as callbacks, as in to pass them as arguments to other functions. Take the setTimeout function for example:
 

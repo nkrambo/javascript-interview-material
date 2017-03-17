@@ -1,4 +1,6 @@
 
+## Browser Fixing
+
 ### How would you approach fixing browser-specific styling issues?
 
 ### What's the difference between feature detection, feature inference, and using the UA string?

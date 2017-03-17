@@ -1,5 +1,5 @@
 
-# Floats
+## Floats
 
 The float rule not only affects your target element, but also it's surrounding elements; such as it's parent, siblings, and children.
 

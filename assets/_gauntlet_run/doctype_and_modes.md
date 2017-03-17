@@ -1,5 +1,5 @@
 
-# `doctype` and Modes
+## `doctype` and Modes
 
 **In a Nutshell**
 

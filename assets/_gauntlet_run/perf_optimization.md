@@ -1,4 +1,6 @@
 
+## Perf Optimization
+
 ### How would you optimize a website's assets/resources?
 
 ### How many resources will a browser download from a given domain at a time? What are the exceptions?

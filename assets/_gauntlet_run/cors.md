@@ -1,5 +1,5 @@
 
-# CORS
+## CORS
 
 **What is it?**
 

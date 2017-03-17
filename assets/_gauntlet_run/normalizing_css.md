@@ -1,4 +1,6 @@
 
+## Normalizing CSS
+
 ### What's the difference between 'resetting' and 'normalizing' CSS? Which would you choose, and why?
 
 They are both used for cross-browser consistency.

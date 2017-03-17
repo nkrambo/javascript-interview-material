@@ -1,4 +1,6 @@
 
+## Functions
+
 ### Explain the difference between synchronous and asynchronous functions.
 
 ### Function composition

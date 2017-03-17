@@ -1,4 +1,6 @@
 
+## Display Property
+
 ### List as many values for the display property that you can remember.
 
 The display CSS property specifies the type of rendering box used for an element. In HTML, default display property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet.

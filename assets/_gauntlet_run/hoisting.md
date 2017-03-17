@@ -1,5 +1,5 @@
 
-# Hoisting
+## Hoisting
 
 In javascript there is only function scoping. Variable declarations in a function are moved to the top of the function at run-time.
 

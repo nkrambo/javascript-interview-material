@@ -1,5 +1,5 @@
 
-# SVG
+## SVG
 
 Scalable vector graphics (SVG) is an XML-based vector image format for two-dimensional graphics, with support for interactivity and animation. In other words, SVGs are XML tags that render shapes and graphics, and these shapes and graphics can be interacted with and animated much like HTML elements can be using CSS.
 

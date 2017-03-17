@@ -1,4 +1,6 @@
 
+## Link Tag
+
 ### Why is it generally a good idea to position CSS `<link>`s between `<head></head>`?
 
 According to the WC3 Spec, placing `<style>` and `<link>` tags within the `<body>` is not allowed in valid HTML. Inline styles such as, `<div style="color: red;">` are allowed but are considered bad practice.

@@ -1,4 +1,6 @@
 
+## Parsing Modes
+
 ### What's the difference between HTML and XHTML? Are there any problems with serving pages as `application/xhtml+xml`?
 
 HTML5 has two parsing modes or syntaxes: HTML and XML. The difference depends on whether the document is served with a `Content-type: text/html` header or a `Content-type: application/xml+xhtml header`.

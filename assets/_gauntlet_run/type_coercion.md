@@ -1,4 +1,6 @@
 
+## Type Coercion
+
 ### What is the difference between `==` and `===`?
 
 JavaScript has two sets of equality operators archived under comparison operators:
@@ -21,4 +23,3 @@ For example, equality == or inequality != signs compares 2 values without type c
 **References**
  * [Does it matter which equals operator (== vs ===) I use in JavaScript comparisons?](http://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons)
  * [Comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
- 

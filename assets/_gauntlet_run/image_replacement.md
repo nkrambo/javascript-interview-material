@@ -1,5 +1,5 @@
 
-# Image Replacement Techniques
+## Image Replacement Techniques
 
 In this modern age, if you are still looking to do so, there are many image replacement techniques that still work today. It is important to note that these usually come with SEO complications, even being
 penalised by Google. So, you should use sparingly and look for alternatives first.

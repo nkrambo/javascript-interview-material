@@ -1,5 +1,5 @@
 
-# Flash of Unstyled Content (FOUC)
+## Flash of Unstyled Content (FOUC)
 
 **A Brief History**
 

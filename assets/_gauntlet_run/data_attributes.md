@@ -1,5 +1,5 @@
 
-# `data-` Attributes
+## `data-` Attributes
 
 Before HTML5, working with arbitrary data sucked. To keep things valid, you had to stuff things into rel or class attributes.
 

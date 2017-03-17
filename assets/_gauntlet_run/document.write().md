@@ -1,5 +1,5 @@
 
-# `document.write()`
+## `document.write()`
 
 **What is it?**
 

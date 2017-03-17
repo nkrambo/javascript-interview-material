@@ -1,5 +1,5 @@
 
-# Progressive Rendering
+## Progressive Rendering
 
 Progressive rendering is the name given to techniques used to render content for display as quickly as possible.
 

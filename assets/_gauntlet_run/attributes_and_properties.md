@@ -1,5 +1,5 @@
 
-# Attributes and Properties
+## Attributes and Properties
 
 In short... Attributes are defined by HTML. Properties are defined by the DOM.
 

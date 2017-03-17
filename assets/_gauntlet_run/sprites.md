@@ -1,5 +1,5 @@
 
-# CSS Sprites
+## Sprites
 
 A CSS sprite is a single image containing several background images separated by white space. It's a collection of images combined in one big image. You can then expose different parts of the sprite using background position on certain elements, which acts like a viewport.
 

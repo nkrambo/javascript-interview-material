@@ -1,4 +1,6 @@
 
+## Script Tag
+
 ### Describe the difference between `<script>`, `<script async>` and `<script defer>`. Why is it good practice to place JS `<script>`s just before `</body>`? Do you know any exceptions?
 
 **Normal Execution** `<script>`

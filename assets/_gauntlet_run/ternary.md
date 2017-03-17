@@ -1,5 +1,5 @@
 
-# Ternary Expression
+## Ternary Expression
 
 In mathematics, a ternary operation is an n-ary operation with n = 3. In computer science, a ternary operator is an operator that takes three arguments. The term springs from words like unary, binary, ternary, etc. Ternary, therefore meaning 3-ary.
 

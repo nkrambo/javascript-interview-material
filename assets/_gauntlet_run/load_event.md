@@ -1,5 +1,5 @@
 
-# Load Event
+## Load Event
 
 ### Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
 

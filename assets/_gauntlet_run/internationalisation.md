@@ -1,5 +1,5 @@
 
-# Internationalisation
+## Internationalisation
 
 Internationalization is a big problem. If you want your application to make a worldwide impact, you have to deal with language barriers.
 

@@ -1,5 +1,5 @@
 
-# Critical Rendering Path (CRP).
+## Critical Rendering Path (CRP).
 
 A popular metric commonly used in performance measurement and evaluation, is the total page load time. But from a user's point of view, more important benchmarks arise, despite the fact that the full download time of a page is still important, the user is much more aware of the time it takes for the page to become usable. This is the critical rendering path. In other words, it is the series of events that must take place to render (display) the initial view of a webpage.
 

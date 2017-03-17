@@ -1,5 +1,5 @@
 
-# Same-Origin Policy
+## Same-Origin Policy
 
 Same-origin policy restricts scripts from other websites to be executed on your website. It is an important security measure as it isolates known malicious attacks such as Cross Site Scripting.
 
