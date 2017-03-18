@@ -218,7 +218,7 @@ Beautiful. Now any errors that are thrown in our try block will be caught by our
 
 ### RxJS
 
-### Resources
+### References
 
 - [RxJS](http://reactivex.io/rxjs/)
 - [Redux Observable](https://github.com/redux-observable/redux-observable)

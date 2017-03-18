@@ -56,6 +56,6 @@ document.querySelector('.panel').addEventListener('click', (e) => {
 });
 ```
 
-### Resources
+**References**
 
-- [MDN - Matches API](https://developer.mozilla.org/en-US/docs/Web/API/Element/matches)
+* [MDN - Matches API](https://developer.mozilla.org/en-US/docs/Web/API/Element/matches)
