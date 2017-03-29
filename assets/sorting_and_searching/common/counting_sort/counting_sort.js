@@ -5,7 +5,7 @@
 * Tags: Sorting
 *
 * Counting sort is a very time-efficient (and somewhat space-inefficient) algorithm
-* for sorting that avoids comparisons and exploits the O(1) time insertions and\
+* for sorting that avoids comparisons and exploits the O(1) time insertions and
 * lookups in a list.
 *
 * The idea is simple: if you're sorting integers and you know they all fall in the
@@ -32,7 +32,7 @@
 * Notice what those loops iterate over. The outer loop runs once for each unique
 * number in the array. The inner loop runs once for each time that number occurred.
 *
-* So in essence we're just looping through the nn numbers from our input array,
+* So in essence we're just looping through the n numbers from our input array,
 * except we're splitting it into two steps: (1) each unique number, and (2) each
 * time that number appeared.
 *
@@ -60,16 +60,14 @@ function countingSort(array, maxValue) {
 
   // populate the final sorted array
   const sorted = [];
-  let current = 0;
 
   // for each num in numsToCounts
-  for (let num = 0; num < numsToCounts.length; num += 1) {
-    const count = numsToCounts[num];
+  for (let i = 0; i < numsToCounts.length; i += 1) {
+    const count = numsToCounts[i];
 
     // for the number of times the item occurs, add it to the sorted array
     for (let x = 0; x < count; x += 1) {
-      sorted[current] = num;
-      current += 1;
+      sorted.push(i);
     }
   }
 

@@ -63,19 +63,15 @@ class Fibber {
   }
 
   fib(n) {
-    // edge case
-    if (n < 0) {
-      throw new Error('Index was negative. No such thing as a negative index in a series.');
-    };
-
-    // base cases
-    if (n === 0 || n === 1) {
-      return n;
-    }
 
     // see if we've already calculated this
     if (this.memo.has(n)) {
       return this.memo.get(n);
+    }
+
+    // base cases
+    if (n === 0 || n === 1) {
+      return n;
     }
 
     // otherwise, recursively calculate result and memoize

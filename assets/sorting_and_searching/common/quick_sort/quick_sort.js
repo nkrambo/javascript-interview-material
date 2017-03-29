@@ -34,6 +34,8 @@
 * such limit, too, but it is much higher - it is O(n^2). When you need a guaranteed
 * upper bound on the timing of your code, use merge sort over quick sort.
 *
+* https://www.youtube.com/watch?v=SLauY6PpjW4
+*
 * Time: O(n log n)
 * Space: O(n)
 *
@@ -44,61 +46,99 @@
 */
 
 function quickSort(arr, left, right) {
-  let pivot;
-  let partIndex;
 
-  if (left < right) {
-    pivot = right;
-    partIndex = partition(arr, pivot, left, right);
+  // bounds check
+  if (left >= right) return;
 
-    // sort left and right
-    quickSort(arr, left, partIndex - 1);
-    quickSort(arr, partIndex + 1, right);
-  }
+  const pivot = arr[Math.floor((left + right)/2)];
+  const index = partition(arr, left, right, pivot);
+
+  quickSort(arr, left, index - 1);
+  quickSort(arr, index, right);
 
   return arr;
 }
 
-/**
-* partition()
-*
-* @param {array} arr array of integers
-* @param {number} pivot
-* @param {number} left index
-* @param {number} right index
-* @returns {number} returns
-*/
+function partition(arr, left, right, pivot) {
+  while (left <= right) {
 
-function partition(arr, pivot, left, right) {
-   let pivotValue = arr[pivot];
-   let partIndex = left;
+    while (arr[left] < pivot) {
+      left += 1;
+    }
 
-   for (let i = left; i < right; i += 1) {
-    if(arr[i] < pivotValue) {
-      swap(arr, i, partIndex);
-      partIndex += 1;
+    while (arr[right] > pivot) {
+      right -= 1;
+    }
+
+    if (left <= right) {
+      swap(arr, left, right);
+      left += 1;
+      right -= 1;
     }
   }
 
-  // swap values
-  swap(arr, right, partIndex);
-
-  return partIndex;
+  return left;
 }
-
-/**
-* swap()
-*
-* @param {array} arr array of integers
-* @param {number} i index
-* @param {number} j index
-* @returns {void} modifies arr by swapping values at indices i, j
-*/
 
 function swap(arr, i, j) {
    const temp = arr[i];
    arr[i] = arr[j];
    arr[j] = temp;
 }
+
+
+// function quickSort(arr, left, right) {
+//   if (left < right) {
+//     let p = partition(arr, left, right);
+//
+//     // sort left and right
+//     quickSort(arr, left, p - 1);
+//     quickSort(arr, p + 1, right);
+//   }
+//
+//   return arr;
+// }
+// }
+//
+// /**
+// * partition()
+// *
+// * @param {array} arr array of integers
+// * @param {number} pivot
+// * @param {number} left index
+// * @param {number} right index
+// * @returns {number} returns
+// */
+//
+// function partition(arr, left, right) {
+//   let pivot = arr[right];
+//   let i = left;
+//
+//   for (let j = left; j < right; j += 1) {
+//    if(arr[j] < pivot) {
+//      swap(arr, j, i);
+//      i += 1;
+//    }
+//
+//    // swap values
+//    swap(arr, right, i);
+//
+//    return i;
+// }
+//
+// /**
+// * swap()
+// *
+// * @param {array} arr array of integers
+// * @param {number} i index
+// * @param {number} j index
+// * @returns {void} modifies arr by swapping values at indices i, j
+// */
+//
+// function swap(arr, i, j) {
+//    const temp = arr[i];
+//    arr[i] = arr[j];
+//    arr[j] = temp;
+// }
 
 export default quickSort;

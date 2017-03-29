@@ -90,7 +90,7 @@ function binarySearch(nums, target) {
     if (nums[mid] === target) return true;
 
     // target is to the left, move right side of 'range' inward
-    if (nums[mid] > target) {
+    if (target < nums[mid]) {
       right = mid - 1;
 
     // target is to the right, move left side of 'range' inward
