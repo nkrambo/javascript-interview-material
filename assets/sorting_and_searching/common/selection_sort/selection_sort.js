@@ -64,4 +64,4 @@ function selectionSort(arr) {
   }
 }
 
-export default heapSort;
+export default selectionSort;
