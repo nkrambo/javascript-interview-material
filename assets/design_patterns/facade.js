@@ -35,35 +35,80 @@
 
 // complex parts
 class CPU {
-  freeze() {...}
-  jump(position) {...}
-  execute() {...}
+  constructor(cores = 10, threads = 20, freq = 3.00, cache = 25) {
+    this.cores = cores;
+    this.threads = threads;
+    this.freq = freq;
+    this.cache = cache;
+  }
+
+  freeze() {
+    console.log('Freeze');
+  }
+
+  jump(position) {
+    console.log(`Jumping to ${position}`);
+  }
+
+  execute() {
+    console.log('Executing');
+  }
 }
 
 class Memory {
-  load(position, data) {...}
+  constructor(size = 16) {
+    this.capacity = size;
+  }
+
+  load(position, data) {
+    console.log(`Loading ${data} at ${position}`);
+  }
 }
 
 class HardDrive {
-  read(lba, size) {...}
+  constructor(capacity = 500, transferRate = 1000) {
+    this.capacity = capacity;
+    this.transferRate = transferRate;
+  }
+
+  read(lba, size) {
+    console.log(`Reading ${lba} at ${size}`);
+  }
 }
 
 // facade
-class ComputerFacade {
-  constructor() {
-    this.processor = new CPU();
-    this.ram = new Memory();
-    this.hd = new HardDrive();
+class Computer {
+  constructor(specs) {
+    const { cores, threads, freq, cache, capacity, size, capacity, transferRate } = specs;
+
+    this.processor = new CPU(cores, threads, freq, cache, capacity);
+    this.ram = new Memory(size);
+    this.hd = new HardDrive(capacity, transferRate);
   }
 
-  start() {
+  start(config) {
+    const { bootAddress, bootSector, sectorSize } = config;
+
     this.processor.freeze();
-    this.ram.load(BOOT_ADDRESS, this.hd.read(BOOT_SECTOR, SECTOR_SIZE));
-    this.processor.jump(BOOT_ADDRESS);
+    this.ram.load(bootAddress, this.hd.read(bootSector, sectorSize));
+    this.processor.jump(bootAddress);
     this.processor.execute();
   }
 }
 
 // client
-const computerFacade = new ComputerFacade();
-computerFacade.start()
+const specs = {
+  cores: 15,
+  threads: 25
+};
+
+const config = {
+  bootAddress: '00.11.22.33.44',
+  bootSector: 'main',
+  sectorSize: 10
+};
+
+const computer = new Computer(specs);
+computer.start(config);
+
+export default ComputerFacade;
