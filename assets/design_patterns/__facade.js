@@ -33,8 +33,37 @@
 * consumes 3 separate more complex packages and handles all the logic for the client.
 */
 
-function facade() {
-
+// complex parts
+class CPU {
+  freeze() {...}
+  jump(position) {...}
+  execute() {...}
 }
 
-export default facade;
+class Memory {
+  load(position, data) {...}
+}
+
+class HardDrive {
+  read(lba, size) {...}
+}
+
+// facade
+class ComputerFacade {
+  constructor() {
+    this.processor = new CPU();
+    this.ram = new Memory();
+    this.hd = new HardDrive();
+  }
+
+  start() {
+    this.processor.freeze();
+    this.ram.load(BOOT_ADDRESS, this.hd.read(BOOT_SECTOR, SECTOR_SIZE));
+    this.processor.jump(BOOT_ADDRESS);
+    this.processor.execute();
+  }
+}
+
+// client
+const computerFacade = new ComputerFacade();
+computerFacade.start()
