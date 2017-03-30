@@ -160,6 +160,8 @@ Looking again at our code, you can easily see how we achieved this programmatica
 
 And that's it! Well, that's a very basic example. In reality, most dynamic programming problems are more complicated than this.
 
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/P8Xa2BitN3I/0.jpg)](http://www.youtube.com/watch?v=P8Xa2BitN3I)
+
 ### Dynamic Programming Problems
 
 <table>

@@ -22,10 +22,21 @@
 * 1. Least significant digit (LSD)
 * 2. Most significant digit (MSD)
 *
-* LSD
+* LSD radix sorts typically use the following sorting order: short keys come before
+* longer keys, and keys of the same length are sorted lexicographically. This coincides
+* with the normal order of integer representations, such as the sequence 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11.
+*
+* MSD radix sorts use lexicographic order, which is suitable for sorting strings,
+* such as words, or fixed-length integer representations. A sequence such as
+* "b, c, d, e, f, g, h, i, j, ba" would be lexicographically sorted as
+* "b, ba, c, d, e, f, g, h, i, j". If lexicographic ordering is used to sort
+* variable-length integer representations, then the representations of the numbers
+* from 1 to 10 would be output as 1, 10, 2, 3, 4, 5, 6, 7, 8, 9, as if the shorter
+* keys were left-justified and padded on the right with blank characters to make
+* the shorter keys as long as the longest key for the purpose of determining sorted order.
 *
 * Time: O(kn)
-* Space: O(1)
+* Space: O(k + n)
 *
 * @param {array} arr array of integers
 * @returns {array} returns a new sorted array

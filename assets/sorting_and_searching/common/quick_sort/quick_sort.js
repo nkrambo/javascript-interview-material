@@ -36,6 +36,9 @@
 *
 * https://www.youtube.com/watch?v=SLauY6PpjW4
 *
+* There are also alternative versions of this algorithm, where a pivot is randomly
+* selected everytime, known as r-quick sort, or randomized quick sort.
+*
 * Time: O(n log n)
 * Space: O(n)
 *
