@@ -90,3 +90,5 @@ interpret each bit:
  4       0100        4
  5       0101        4 + 1
 ```
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/NLKQEOgBAnw/0.jpg)](http://www.youtube.com/watch?v=NLKQEOgBAnw)
