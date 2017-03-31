@@ -89,25 +89,22 @@ const singleton = (() => {
   };
 })();
 
-// // http://amanvirk.me/singleton-classes-in-es6/
-//
-// /**
-// * ES6 Singleton
-// *
-// */
-//
-// class Singleton {
-//   static instance;
-//
-//   constructor(){
-//     if(instance){
-//       return instance;
-//     }
-//
-//     this.state = "duke";
-//     this.instance = this;
-//   }
-// }
+/**
+* ES6 Singleton
+*/
 
+class SingletonNoInstance {
+  constructor(enforcer) {
+    throw new Error('Cannot construct singleton');
+  }
+
+  static singletonMethod() {
+    return 'singletonMethod';
+  }
+
+  static staticMethod() {
+    return 'staticMethod';
+  }
+}
 
 export default singleton;

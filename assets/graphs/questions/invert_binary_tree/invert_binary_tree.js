@@ -9,7 +9,7 @@
 *
 * Inspired by Max Howell -
 * "Google: 90% of our engineers use the software you wrote (Homebrew),
-* but you can’t invert a binary tree on a whiteboard so fuck off."
+* but you can’t invert a binary tree on a whiteboard so ... fuck off."
 *
 * Example:
 *
@@ -23,7 +23,7 @@
 *
 *                  4
 *               ↙     ↘
-*             7         4
+*             7         2
 *           ↙  ↘      ↙   ↘
 *         9     6    3     1
 *
@@ -38,7 +38,7 @@
 * r, and subtrees right and left, is a tree with root r, whose right subtree is
 * the inverse of left, and whose left subtree is the inverse of right.
 *
-* Time: O(h)
+* Time: O(n)
 * Space: O(n)
 *
 * Since each node in the tree is visited only once, the time complexity is O(n),
@@ -53,17 +53,19 @@
 * @return {object} Returns the same tree node but inverted
 */
 
-function invertTreeRecursive(root) {
-  if (root === null) return null;
+function invertTreeRecursive(node) {
 
-  let right = invertTreeRecursive(root.right);
-  let left = invertTreeRecursive(root.left);
+  // base
+  if (node === null) return null;
+
+  let right = invertTreeRecursive(node.right);
+  let left = invertTreeRecursive(node.left);
 
   // invert nodes
-  root.left = right;
-  root.right = left;
+  node.left = right;
+  node.right = left;
 
-  return root;
+  return node;
 }
 
 /**
