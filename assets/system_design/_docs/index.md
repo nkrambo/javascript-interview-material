@@ -123,6 +123,7 @@ If you can’t find a friend/coworker, go to a site like HighScalability that co
 
 https://www.hiredintech.com/classrooms/system-design/lesson/61
 
+https://www.youtube.com/watch?v=CZ3wIuvmHeM
 
 
 

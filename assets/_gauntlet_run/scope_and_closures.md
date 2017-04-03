@@ -3,6 +3,8 @@
 
 Closures are functions that refer to independent (free) variables (variables that are used locally, but defined in an enclosing scope). In other words, these functions 'remember' the environment in which they were created.
 
+[(http://img.youtube.com/vi/CQqwU2Ixu-U/0.jpg)](http://www.youtube.com/watch?v=CQqwU2Ixu-U "Closure")
+
 **Lexical Scoping**
 
 ```javascript
