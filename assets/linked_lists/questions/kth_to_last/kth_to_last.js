@@ -96,33 +96,33 @@ function kthToLast(k, head) {
 
   // STEP 1: get the length of the list
   // start at 1, not 0, else we'd fail to count the head node!
-  let listLength = 1;
-  let currentNode = head;
-
   // traverse the whole list, counting all the nodes
-  while (currentNode.next) {
-    currentNode = currentNode.next;
-    listLength += 1;
+  let length = 1;
+  let current = head;
+  
+  while (current.next) {
+    current = current.next;
+    length += 1;
   }
 
   // if k is greater than the length of the list, there can't
   // be a kth-to-last node, so we'll return an error!
-  if (k > listLength) {
+  if (k > length) {
     throw new Error('k is larger than the length of the linked list: ' + k);
   }
 
   // STEP 2: walk to the target node
   // calculate how far to go, from the head,
   // to get to the kth to last node
-  let toGo = listLength - k;
-  currentNode = head;
+  let toGo = length - k;
+  current = head;
 
   while (toGo > 0) {
-    currentNode = currentNode.next;
+    current = current.next;
     toGo -= 1;
   }
 
-  return currentNode;
+  return current;
 }
 
 export default kthToLast;

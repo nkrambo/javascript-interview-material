@@ -47,7 +47,7 @@ class LinkedList {
 
   add(value, position) {
     const node = {
-      value: value,
+      value,
       next: null
     };
 

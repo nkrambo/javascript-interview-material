@@ -23,6 +23,7 @@
 * isPalindrome()
 *
 * Solution:
+*
 * We want to detect linked lists where the front half of the list is the reverse
 * of the second half. How would we do that? By reversing the front half of the list.
 * A stack can accomplish this.

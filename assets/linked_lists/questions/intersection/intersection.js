@@ -116,8 +116,11 @@ function intersection(l1, l2) {
 
 function getKthNode(list, k) {
   let current = list;
-  for (let i = 0; i < k; i += 1) {
+  let i = 0;
+
+  while (i < k) {
     current = current.next;
+    i += 1;
   }
 
   return current;

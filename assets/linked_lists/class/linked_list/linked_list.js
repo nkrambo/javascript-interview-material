@@ -83,8 +83,10 @@ class LinkedList {
 
     // Slide through all of the items using node.next until we reach the
     // specified position.
-    for (let index = 0; index < position; index += 1) {
+    let i = 0;
+    while (i < position) {
       current = current.next;
+      i += 1;
     }
 
     // Return the node we found.
@@ -105,7 +107,7 @@ class LinkedList {
   add(value, position) {
     // First create a node to hold our value.
     const node = {
-      value: value,
+      value,
       next: null
     };
 
