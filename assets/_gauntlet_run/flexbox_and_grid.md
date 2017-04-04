@@ -209,7 +209,9 @@ Getting started with Grid is easy. You just define a container element as a grid
 
 An important thing to understand about Grid is that it's not ready to be used in production yet. It's currently a W3C Working Draft and isn't supported correctly in any browsers yet by default. Internet Explorer 10 and 11 support it, but it's an old implementation with an outdated syntax. In order to experiment with Grid today, your best bet is to use Chrome, Opera or Firefox with special flags enabled. In Chrome, navigate to chrome://flags and enable "experimental web platform features". That method also works in Opera (opera://flags). In Firefox, enable the layout.css.grid.enabled flag.
 
-**References**
+### References
 
-* [CSS Tricks - Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-* [CSS Tricks - Grid Layout](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [CSS Tricks - Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [CSS Tricks - Grid Layout](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [Flexbox Froggy](http://flexboxfroggy.com/)
+- [flexbox.io](https://flexbox.io/)
