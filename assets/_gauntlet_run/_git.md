@@ -1,6 +1,6 @@
 
 ## Git
 
-References:
+### References
 
-* [Make School](https://www.youtube.com/watch?v=cgDRpayIsYo)
+- [Make School](https://www.youtube.com/watch?v=cgDRpayIsYo)
