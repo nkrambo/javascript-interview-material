@@ -1,145 +1,85 @@
 
 ## Functor
 
-In the context of JavaScript, a functor is a function, that, given a value and another function, unwraps the values to get to its inner value(s), calls the given function with the inner value(s), wraps the returned values in a new structure, and returns that new structure.
+A functor is an object that has a map method. Arrays in JavaScript implement map and are therefore functors. Promises, Streams and Trees often implement map in functional languages, and when they do, they are considered functors. The map method of the functor takes it’s own contents and transforms each of them using the transformation callback passed to map, and returns a new functor, which contains the structure as the first functor, but with the transformed values.
 
-Two common examples of this are the `Array.map()` and `Array.filter()` methods.
-
-Let's build an understanding.
-
-We have the following simple function that adds 1 to any value we pass in. Easy.
+Lets have a look at the Functor that we all know and love, Array, and look at what it does that makes it qualify as a functor.
 
 ```javascript
-function plus1(value) {  
-  return value + 1;
-}
+const dragons = [
+  { name: 'Fluffykins', health: 70  },
+  { name: 'Deathlord', health: 65000 },
+  { name: 'Little pizza', health: 2 },
+];
 
-console.log(plus1(3)); // 4
+const names = dragons.map(dragon => dragon.name);
+
+console.log(names); // [Fluffykins', 'Deathlord', 'Little pizza']
 ```
 
-So if we pass the number 3 to plus1, we get 4. However, if we pass in an array of numbers, say 3 and 4, things will, of course, break.
+So here we have an array of dragon objects, and we use map to just get the names of the dragons. Again, we should stress here that map itself is not what we refer to with the word Functor, it is Array that is a Functor because it has a map method.
+
+In order to qualify as a Functor, objects must meet some criteria.
+
+### 1. Transformation of contents
+
+The basic idea is that the map method of the functor takes the contents of the Functor and transforms each of them using the transformation callback passed to map. In this case, this function here is the transformation callback — it transforms a dragon object into just a dragon name. This is the first barrier of entry that Array passes in order to be called a Functor.
+
+Promises are often functors. The promises built into ES6 do not have a map method, but most promise libraries do, for example, if you use Bluebird, you can do this:
 
 ```javascript
-console.log(plus1([3,4])); // Breaks!
+import Promise from 'bluebird';
+
+const whenDragonLoaded = new Promise((resolve, reject) => {
+  // fake loading
+  setTimeout(() => {
+    resolve({
+      { name: ‘Fluffykins’, health: 70  }
+    }, 2000);
+  });
+});
+
+const names =
+    whenDragonLoaded
+        .map(dragon => dragon.name)
+        .then(name => console.log(name));
 ```
 
-But we would like ti to work so we update our function to handle arrays, like so.
+If we look at this code, we create a Promise that yields a dragon object after two seconds. When we have it, we map the name, and then write it to the console.
+
+Note that the map callback is exactly the same as in the previous example. In that example, we saw an array functor shielding the transformation callback from the complex reality that there are more dragons than one, while the Promise functor protects the transformation callback from the complex reality that there isn’t any dragon until later.
+
+### 2. Maintain structure
+
+The second thing that Array#map does in order qualify Array for the title of Functor is that it maintains structure. If you call .map on an array that is three long, it returns an array that is three long. It never changes the length of the array, it doesn’t return null. Like you see in the example, we transform the individual values contained in the array, and even change their types, but map cannot alter the structure of the array itself.
+
+### 3. Returns a new functor
+
+The third and final thing that Array#map does in order to be functor-material is, the value that map returns must be a functor of the same type. Because of this, we can chain map calls like this:
 
 ```javascript
-function plus1(value) {
+const dragons = [
+  { name: 'Fluffykins', health: 70  },
+  { name: 'Deathlord', health: 65000 },
+  { name: 'Little pizza', health: 2 },
+];
 
-  // handle arrays
-  if (Array.isArray(value)) {
-    const newArray = [];
+const nameLengths =
+    dragons
+        .map(dragon => dragon.name)
+        .map(dragonName => dragonName.length);
 
-    for (let i = 0;  i < value.length; i += 1) {
-      newArray[i] = value[i] + 1;
-    }
-
-    return newArray;
-  }
-
-  // handle single value
-  return value + 1;
-}
-
-console.log(plus1([3,4])); // [4, 5]
+console.log(nameLengths); // [ 10, 9, 12 ]
 ```
 
-That works, but what if we also need plus1 to work on strings?
+Here we have the same array of dragons, but after we extract the names, we get the length of each name. Because the first map function returns a functor, we can keep calling map on it. You can also do map map map map chaining with promises, or any other functor.
 
-```javascript
-plus1('ABC'); // should output 'BCD'
-```
-
-We can add another branch of logic to our function to handle this.
-
-```javascript
-function plus1(value) {
-
-  // handle arrays
-  if (Array.isArray(value)) {
-    const newArray = [];
-
-    for (let i = 0; i < value.length; i += 1) {
-      newArray[i] = value[i] + 1;
-    }
-
-    return newArray;
-  }
-
-  // handle strings
-  if (typeof value === 'string') {
-    const chars = value.split('');
-    const newCharArray = [];
-
-    for (let i = 0; i < chars.length; i += 1) {
-      newCharArray[i] = String.fromCharCode(chars[i].charCodeAt(0) + 1);
-    }
-
-    return newCharArray.join('');
-  }
-
-  // handle single value
-  return value + 1;
-}
-
-console.log(plus1('ABC')); // now outputs BCD
-```
-
-Alright, now that works. Quite a bit of code, but working.
-
-But lets say that we also need to write a `minus1()` function. We would need to duplicate all this work between the two functions, not very terse.
-
-Plus and minus could be generalized into an `arithmetic()` function, but when we add square, division, floor, and every other math function under the sun, we would end up with a huge generic "math" function.
-
-Functors can help us here by handling the general iteration of the string and the array.
-
-Let's look at `Array.map()`. Map is a type of functor.
-
-```javascript
-function plus1(value) {
-  return value + 1;  
-}
-
-[3, 4].map(plus1); // = [4, 5]
-```
-
-You can see how functors make our life easier.
-
-What about our string case, going from 'ABC' to 'BCD'? Let's write our own functor.
-
-```javascript
-function stringFunctor(value, fn) {
-  const chars = value.split('');
-
-  return chars.map((char) => {
-    return String.fromCharCode(fn(char.charCodeAt(0)));
-  }).join('');
-}
-
-function plus1(value) {  
-  return value + 1;
-}
-
-function minus1(value) {  
-  return value - 1;
-}
-
-[3, 4].map(plus1); // = [4, 5]
-stringFunctor('ABC', plus1); // returns "BCD"
-stringFunctor('XYZ', minus1); // returns “RXY”
-```
-
-We pass in a string, 'ABC' into the `stringFunctor`, and we're getting 'BCD' out. `stringFunctor` takes a value, and function fn. `value` is 'ABC' and `fn` is `plus1`. `stringFunctor` splits the string into an array called `chars`. It then maps over the array of chars. The `char` parameter being passed to the map callback is each character, in the form of a string with a length of 1. We convert that character to a number, and pass it into `fn` (which is going to be plus1 in this case), and we then take the return value of the function, a number, and convert that back into a character. Map will return an array of these 'incremented' characters, and we then join them together using `join`.
-
-And because `stringFunctor` does the unpacking of strings, we can now let `plus1` and `minus1` do what the do best.
-`stringFunctor` and map are both functors. Functors are functions that take a value and a function. The value might be an array of numbers in the case of map, or the string 'ABC' in the case of the string functor. The functor then unwraps that value, breaks the string or array apart, and feeds each of the items to the function, and then returns the processed values in a structured form.
-
-Another example of a functor would be Array.filter, it takes an array and a function and returns a new array. Array.forEach is not a functor, because it doesn't return an array. forEach doesn’t maintain structure, so it's not a functor.
+**In summary:** A functor is an object that has a map method. Arrays in JavaScript implement map and are therefore functors. Promises, Streams and Trees often implement map in functional languages, and when they do, they are considered functors. The map method of the functor takes it’s own contents and transforms each of them using the transformation callback passed to map, and returns a new functor, which contains the structure as the first functor, but with the transformed values.
 
 ### References
 
 - [Eric Elliot](https://medium.com/javascript-scene/functors-categories-61e031bac53f#.efshrxr1q)
-- [Fun Fun Function](https://www.youtube.com/watch?v=YLIH8TKbAh4)
+- [Fun Fun Function - Part 1](https://www.youtube.com/watch?v=YLIH8TKbAh4)
+- [Fun Fun Function - Part 2](https://www.youtube.com/watch?v=DisD9ftUyCk&t=26s)
 - [Wiki](https://en.wikipedia.org/wiki/Functor)
+- [Functional Javascript](http://functionaljavascript.blogspot.se/2013/07/functors.html)
