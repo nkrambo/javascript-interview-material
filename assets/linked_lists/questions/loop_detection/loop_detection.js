@@ -71,7 +71,7 @@ function loopDetectionSet(list) {
 * Think about a looping list and a linear list. What happens when you traverse
 * one versus the other?
 *
-* A linear list has an end—a node that doesn't have a next node. But a looped list
+* A linear list has an end node that doesn't have a next node. But a looped list
 * will run forever. We know we don't have a loop if we ever reach an end node, but
 * how can we tell if we've run into a loop?
 *

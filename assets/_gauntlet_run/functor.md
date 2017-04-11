@@ -74,7 +74,172 @@ console.log(nameLengths); // [ 10, 9, 12 ]
 
 Here we have the same array of dragons, but after we extract the names, we get the length of each name. Because the first map function returns a functor, we can keep calling map on it. You can also do map map map map chaining with promises, or any other functor.
 
-**In summary:** A functor is an object that has a map method. Arrays in JavaScript implement map and are therefore functors. Promises, Streams and Trees often implement map in functional languages, and when they do, they are considered functors. The map method of the functor takes it’s own contents and transforms each of them using the transformation callback passed to map, and returns a new functor, which contains the structure as the first functor, but with the transformed values.
+A functor is an object that has a map method. Arrays in JavaScript implement map and are therefore functors. Promises, Streams and Trees often implement map in functional languages, and when they do, they are considered functors. The map method of the functor takes it’s own contents and transforms each of them using the transformation callback passed to map, and returns a new functor, which contains the structure as the first functor, but with the transformed values.
+
+### Building Our Own Functor
+
+Here's a simple example of a functor:
+
+```javascript
+const Identity = value => ({
+  map: fn => Identity(fn(value))
+});
+```
+
+As you can see, it satisfies the functor laws:
+
+```javascript
+// trace() is a utility to let you easily inspect
+// the contents.
+const trace = x => {
+  console.log(x);
+  return x;
+};
+const u = Identity(2);
+
+// Identity law
+u.map(trace);             // 2
+u.map(x => x).map(trace); // 2
+const f = n => n + 1;
+const g = n => n * 2;
+
+// Composition law
+const r1 = u.map(x => f(g(x)));
+const r2 = u.map(g).map(f);
+r1.map(trace); // 5
+r2.map(trace); // 5
+```
+
+Now you can map over any data type, just like you can map over an array.
+
+That's about as simple as a functor can get in JavaScript, but it's missing some features we expect from data types in JavaScript. Let's add them. Wouldn't it be cool if the `+` operator could work for number and string values?
+
+To make that work, all we need to do is implement `.valueOf()` -- which also seems like a convenient way to unwrap the value from the functor:
+
+```javascript
+const Identity = value => ({
+  map: fn => Identity(fn(value)),
+  valueOf: () => value,
+});
+
+const ints = (Identity(2) + Identity(4));
+trace(ints); // 6
+
+const hi = (Identity('h') + Identity('i'));
+trace(hi); // "hi"
+```
+
+Nice. But what if we want to inspect an `Identity` instance in the console? It would be cool if it would say `"Identity(value)"`, right. Let's add a `.toString()` method:
+
+```javascript
+toString: () => `Identity(${value})`,
+```
+
+Cool. We should probably also enable the standard JS iteration protocol. We can do that by adding a custom iterator:
+
+```javascript
+[Symbol.iterator]: () => {
+   let first = true;
+   return ({
+     next: () => {
+       if (first) {
+         first = false;
+         return ({
+           done: false,
+           value
+         });
+       }
+       return ({
+         done: true
+       });
+     }
+   });
+ },
+```
+
+Now this will work:
+
+```javascript
+// [Symbol.iterator] enables standard JS iterations:
+const arr = [6, 7, ...Identity(8)];
+trace(arr); // [6, 7, 8]
+```
+
+What if you want to take an `Identity(n)` and return an array of Identities containing `n + 1`, `n + 2`, and so on? Easy, right?
+
+```javascript
+const fRange = (
+  start,
+  end
+) => Array.from(
+  { length: end - start + 1 },
+  (x, i) => Identity(i + start)
+);
+```
+
+Ah, but what if you want this to work with any functor? What if we had a spec that said that each instance of a data type must have a reference to its constructor? Then you could do this:
+
+```javascript
+const fRange = (
+  start,
+  end
+) => Array.from(
+  { length: end - start + 1 },
+
+  // change `Identity` to `start.constructor`
+  (x, i) => start.constructor(i + start)
+);
+
+const range = fRange(Identity(2), 4);
+range.map(x => x.map(trace)); // 2, 3, 4
+```
+
+What if you want to test to see if a value is a functor? We could add a static method on `Identity` to check. We should throw in a static `.toString()` while we're at it:
+
+```javascript
+Object.assign(Identity, {
+  toString: () => 'Identity',
+  is: x => typeof x.map === 'function'
+});
+```
+
+Let's put all this together:
+
+```javascript
+const Identity = value => ({
+  map: fn => Identity(fn(value)),
+
+  valueOf: () => value,
+
+  toString: () => `Identity(${value})`,
+  [Symbol.iterator]: () => {
+    let first = true;
+    return ({
+      next: () => {
+        if (first) {
+          first = false;
+          return ({
+            done: false,
+            value
+          });
+        }
+        return ({
+          done: true
+        });
+      }
+    });
+  },
+
+  constructor: Identity
+});
+
+Object.assign(Identity, {
+  toString: () => 'Identity',
+  is: x => typeof x.map === 'function'
+});
+```
+
+Note you don't need all this extra stuff for something to qualify as a functor or an endofunctor. It’s strictly for convenience. All you need for a functor is a `.map()` interface that satisfies the functor laws.
 
 ### References
 
