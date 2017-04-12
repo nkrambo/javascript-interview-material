@@ -40,29 +40,28 @@
 * @return {object} returns the head node of partitioned list
 */
 
-function partitionList(node, pivot) {
-  let head = node;
-  let tail = node;
+function partitionList(list, pivot) {
+  let head = tail = current = list.head;
 
   // step over all list items
-  while (node !== null) {
-    const next = node.next; // cache next
+  while (current !== null) {
+    const next = current.next; // cache next
 
     // check value against pivot
-    if (node.value < pivot) {
+    if (current.value < pivot) {
 
       // insert node at head
-      node.next = head;
-      head = node;
+      current.next = head;
+      head = current;
 
     // otherwise, insert at tail
     } else {
-      tail.next = node;
-      tail = node;
+      tail.next = current;
+      tail = current;
     }
 
     // keep stepping
-    node = next;
+    current = next;
   }
 
   // set our final tail node.next to null

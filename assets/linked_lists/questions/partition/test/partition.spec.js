@@ -20,7 +20,7 @@ describe('partitionList()', () => {
 
     // partitions list around pivot (5)
     // 1 -> 2 -> 3 -> 5 -> 8 -> 5 -> 10
-    const part = partitionList(list.head, 5);
+    const part = partitionList(list, 5);
 
     expect(part.value).to.equal(1);
   });

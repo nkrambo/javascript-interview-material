@@ -27,6 +27,8 @@
 */
 
 function swapPairsRecursive(head) {
+
+  // base
   if (head === null || head.next === null) return head;
 
   // cache new head

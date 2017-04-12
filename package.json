@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "My answers to common interview questions and topics",
   "scripts": {
-    "test": "npm run test-unit",
-    "test-unit": "./node_modules/.bin/mocha --compilers js:babel-core/register ./**/*.spec.js",
+    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register ./**/*.spec.js",
     "lint": "./node_modules/.bin/eslint ."
   },
   "repository": {
