@@ -41,7 +41,9 @@
 */
 
 function partitionList(list, pivot) {
-  let head = tail = current = list.head;
+  let head = list.head;
+  let tail = list.head;
+  let current = list.head;
 
   // step over all list items
   while (current !== null) {

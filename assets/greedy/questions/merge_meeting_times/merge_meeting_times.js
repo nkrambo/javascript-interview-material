@@ -68,8 +68,8 @@
 * ]
 *
 * Here all of our meetings should be merged together into just {startTime: 1, endTime: 10}.
-* We need keep in mind that after we've merged the first two we're not done with
-* the result—the result of that merge may itself need to be merged into other
+* We need to keep in mind that after we've merged the first two we're not done with
+* the result. The result of that merge may itself need to be merged into other
 * meetings as well.
 *
 * Make sure that your function won't 'leave out' the last meeting.

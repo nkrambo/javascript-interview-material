@@ -1,7 +1,7 @@
 
 import { expect } from 'chai';
-import facade from '../__facade';
+import facade from '../facade';
 
-describe('facade()', () => {
-  it('should', () => {});
-});
+// describe('facade()', () => {
+//   it('should', () => {});
+// });

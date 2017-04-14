@@ -79,7 +79,7 @@ class HardDrive {
 // facade
 class Computer {
   constructor(specs) {
-    const { cores, threads, freq, cache, capacity, size, capacity, transferRate } = specs;
+    const { cores, threads, freq, cache, capacity, size, transferRate } = specs;
 
     this.processor = new CPU(cores, threads, freq, cache, capacity);
     this.ram = new Memory(size);
@@ -111,4 +111,4 @@ const config = {
 const computer = new Computer(specs);
 computer.start(config);
 
-export default ComputerFacade;
+export default Computer;

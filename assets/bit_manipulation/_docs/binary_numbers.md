@@ -57,6 +57,8 @@ Here are the base 10 numbers 0 through 10 in binary:
 
 ###Two's Complement
 
+https://www.youtube.com/watch?v=tCMjsQU3_TM
+
 **Negative numbers** are typically represented in binary using two's complement
 encoding. In two's complement, the leftmost digit is negative, and the rest of
 the digits are positive.
@@ -90,5 +92,13 @@ interpret each bit:
  4       0100        4
  5       0101        4 + 1
 ```
+
+The quickest way to find the negative number in binary is to take the positive, negate it and then add 1 to it.
+
+For example,
+
++ 7 = 0 1 1 1
+      1 0 0 0
+      1 0 0 1 = -7
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/NLKQEOgBAnw/0.jpg)](http://www.youtube.com/watch?v=NLKQEOgBAnw)

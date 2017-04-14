@@ -70,9 +70,9 @@ function getMaxProfit(pricesYesterday) {
   // start at the second (index 1) time
   // we can't sell at the first time, since we must buy first,
   // and we can't buy and sell at the same time!
-  // if we started at index 0, we'd try to buy /and/ sell at time 0.
+  // if we started at index 0, we'd try to buy and sell at time 0.
   // this would give a profit of 0, which is a problem if our
-  // maxProfit is supposed to be /negative/--we'd return 0!
+  // maxProfit is supposed to be negative we'd return 0!
   for (let i = 1; i < pricesYesterday.length; i += 1) {
     let currentPrice = pricesYesterday[i];
 

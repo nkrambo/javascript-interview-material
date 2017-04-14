@@ -13,7 +13,7 @@
 * So, our input represented as their binary numbers are:
 *
 * 00000110   num (6)
-* 00000101   i (5)
+* i = 5
 *
 * We create a mask by shifting 1 over by i bits, represented as (1 << i)
 *
