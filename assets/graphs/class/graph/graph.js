@@ -97,9 +97,7 @@ class Graph {
   */
 
   find(value) {
-    return this.nodes.find((node) => {
-      return node.value === value;
-    });
+    return this.nodes.find((n) => n.value === value);
   }
 
   /**

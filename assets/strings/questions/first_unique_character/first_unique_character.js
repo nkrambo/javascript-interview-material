@@ -28,7 +28,7 @@
 * First we iterate the input string and save characters we come across as the keys
 * in our map and set the value to the count of how many times these appear.
 *
-* We then iterate the string once more and return the index of the first chaacter
+* We then iterate the string once more and return the index of the first character
 * that only occurs once, otherwise we continue and return -1 by default.
 *
 * Time: O(n)
