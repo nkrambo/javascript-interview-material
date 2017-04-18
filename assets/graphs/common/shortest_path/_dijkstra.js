@@ -1,6 +1,6 @@
 
 /**
-* Dijkstra's Algorithm
+* Dijkstra's Algorithm (Uniform Cost Search (UCF))
 *
 * With a BFS you can determine the shortest route between nodes A and C, 3 edges
 * in this case. A -> B -> G -> C
@@ -78,7 +78,7 @@
 * What's the best way to calculate the cheapest node? Well, we can use a priority
 * queue, which we'll implement using our heap class. Then we can simply extract
 * the cheapest node from the front of the queue. We can think of all nodes in the
-* queue as 'unseen' or un-processed. That's is, nodes we are yet to explore.
+* queue as 'unseen' or un-processed. That is, nodes we are yet to explore.
 *
 * Step 2: Update the costs of the neighbors of the cheapest node we picked.
 *

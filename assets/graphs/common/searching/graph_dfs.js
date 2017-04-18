@@ -50,6 +50,8 @@
 * Although you can do a recursive DFS, you can also easily achieve this iteratively
 * using a stack.
 *
+* https://www.youtube.com/watch?v=zaBhtODEL0w
+*
 * Time: O(V * E)
 * Space: O(V)
 *
@@ -68,15 +70,20 @@ function dfs(root) {
     const node = stack.pop();
     order.push(node.value);
 
-    node.edges.forEach((edge) => {
-      if (!edge.marked) {
-        edge.marked = true;
-        stack.push(edge);
+    node.edges.forEach((e) => {
+      if (!e.marked) {
+        e.marked = true;
+        stack.push(e);
       }
     });
   }
 
   return order;
+}
+
+
+function dfsRecurse() {
+
 }
 
 export default dfs;

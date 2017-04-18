@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import dijkstra from '../dijkstra';
+import dijkstra from '../_dijkstra';
 import Graph from '../../../class/graph/graph';
 
 class Weighted extends Graph {

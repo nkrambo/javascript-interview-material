@@ -41,6 +41,8 @@
 * You can think of this as searching level by level out from 0. An iterative solution
 * using a queue usually works best.
 *
+* https://www.youtube.com/watch?v=zaBhtODEL0w
+*
 * Time: O(V * E)
 * Space: O(V)
 *
@@ -52,17 +54,17 @@
 
 function bfs(root) {
   root.marked = true;
-  const frontier = [root]; // queue
+  const queue = [root]; // queue
   const order = [];
 
-  while (frontier.length) {
-    const node = frontier.shift();
+  while (queue.length) {
+    const node = queue.shift();
     order.push(node.value);
 
-    node.edges.forEach((edge) => {
-      if (!edge.marked) {
-        edge.marked = true;
-        frontier.push(edge);
+    node.edges.forEach((e) => {
+      if (!e.marked) {
+        e.marked = true;
+        queue.push(e);
       }
     });
   }
