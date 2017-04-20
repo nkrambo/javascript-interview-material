@@ -37,22 +37,22 @@ class Weighted extends Graph {
 *    (1)   D   (5)
 */
 
+const weighted = new Weighted();
+
+// nodes
+weighted.insert('A');
+weighted.insert('B');
+weighted.insert('C');
+weighted.insert('D');
+
+// edges with weights
+weighted.insertEdge('A', 'B', 6);
+weighted.insertEdge('A', 'C', 2);
+weighted.insertEdge('C', 'B', 3);
+weighted.insertEdge('B', 'D', 1);
+weighted.insertEdge('C', 'D', 5);
+
 describe('singleSource()', () => {
-  const weighted = new Weighted();
-
-  // nodes
-  weighted.insert('A');
-  weighted.insert('B');
-  weighted.insert('C');
-  weighted.insert('D');
-
-  // edges with weights
-  weighted.insertEdge('A', 'B', 6);
-  weighted.insertEdge('A', 'C', 2);
-  weighted.insertEdge('C', 'B', 3);
-  weighted.insertEdge('B', 'D', 1);
-  weighted.insertEdge('C', 'D', 5);
-
   // source
   const source = weighted.find('A');
 
@@ -72,5 +72,16 @@ describe('singleSource()', () => {
 
     expect(result[3].node).to.equal('D');
     expect(result[3].distance).to.equal(6);
+  });
+});
+
+describe('uniformCostSearch()', () => {
+  it('should return the shortest path from start to end node', () => {
+    const start = weighted.find('A');
+    const end = weighted.find('D');
+
+    const result = uniformCostSearch(start, end);
+
+    expect(result.to.be.a('object'));
   });
 });

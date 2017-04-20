@@ -179,3 +179,41 @@ We have a globally spaced sayAge() function. We can explicitly bind this to the
 If we don't bind sayAge() and invoke it, it will bind to the window object by default
 and since we don't have an 'age' property on the window object we will get returned
 'undefined'.
+
+### Replicating Explicit Bindings
+
+**bind**
+
+The bind() method creates a new function that, when called, has its `this` keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+
+```javascript
+if (!Function.prototype.bind) {
+  Function.prototype.bind = function(oThis) {
+    if (typeof this !== 'function') {
+      // closest thing possible to the ECMAScript 5
+      // internal IsCallable function
+      throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
+    }
+
+    let aArgs   = Array.prototype.slice.call(arguments, 1),
+        fToBind = this,
+        fNOP    = function() {},
+        fBound  = function() {
+          return fToBind.apply(this instanceof fNOP
+                 ? this
+                 : oThis,
+                 aArgs.concat(Array.prototype.slice.call(arguments)));
+        };
+
+    if (this.prototype) {
+      // Function.prototype doesn't have a prototype property
+      fNOP.prototype = this.prototype;
+    }
+
+    fBound.prototype = new fNOP();
+
+    return fBound;
+  };
+}
+```
+

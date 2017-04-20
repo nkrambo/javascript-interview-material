@@ -113,16 +113,7 @@
 *   C  |  2
 *   D  |  ∞, 7, (6)
 *
-* Step 4: Calculate the final path.
-*
-* Once we hit our finish node, we know that we can build our shortest path to
-* return.
-*
-* Our final path will be A -> C -> B -> D
-*                          2    3    1 = 6 minutes in total.
-*
-* We'll return an object with a path array, holding the node values, and we'll
-* attach a 'totalCost' property too.
+* Step 4: Return the final costs of all nodes from the source node.
 *
 * In common presentations of Dijkstra's algorithm, initially all nodes are entered
 * into the priority queue. This is, however, not necessary: the algorithm can start
@@ -130,200 +121,25 @@
 * are discovered. This maintains a smaller priority queue in practice, speeding
 * up the queue operations.
 *
-* This variant of Dijkstra's is also known as Uniform Cost Search (UCF). UCF is
-* Dijkstra's Algorithm which is focused on finding a single shortest path to a
-* single finishing point rather than the shortest path to every point.
+* This first function is the 'single source' variety of the algorithm, which is the
+* original version. It takes a graph and a source node and returns the shortest
+* path from the source node to every other node. One note, the original version
+* did not actuall use a minHeap data structure, which we do. This helps us squeeze
+* some performance out of the algorithm as we get O(log n) extractions from the heap.
 *
-* Time: O(1)
-* Space: O(1)
+* singleSource()
 *
-* @param {object} start node
-* @param {object} end node
-* @return {object} returns an object containing path array and total cost
+* Time: O(n log e)
+* Space: O(n)
+*
+* Where (n) is the number of nodes and (e) is the number of edges.
+*
+* @param {object} source node
+* @param {class} graph class that contains source
+* @return {array} returns an array
 */
 
 import Heap from '../../class/heap/heap';
-
-// function uniformCostSearch(start, end) {
-//   const frontier = new Heap();
-//   const seen = new Set();
-//   const runningCosts = new Map();
-//   let path = [];
-//   let totalCost = 0;
-//
-//   // kick off by adding the start node to the heap, 0 cost
-//   frontier.add(start);
-//   runningCosts.set(start, 0);
-//
-//   // until we have visited every node in the heap
-//   while (!frontier.isEmpty()) {
-//     const node = frontier.extract();
-//
-//     // if currently at the finish node, compute path and exit
-//     if (node === end) {
-//
-//       // set the total cost to the current value
-//       totalCost = runningCosts.get(node);
-//
-//       // build path
-//
-//       break;
-//     }
-//
-//     // seen it, mark it off
-//     seen.add(node);
-//
-//     // for i in graph.neighbors(node):
-//     //     if i not in visited:
-//     //         total_cost = cost + graph.get_cost(node, i)
-//     //         queue.put((total_cost, i))
-//
-//     // look at each neighbour
-//     node.edges.forEach((n) => {
-//
-//       if (!seen.has(n)) {
-//         const totalCost = cost
-//         minHeap.add()
-//       }
-//
-//       // if we haven't seen it already
-//       // if (!explored.has(n) || frontier.getCollection().indexOf(n) === -1 {
-//       //   frontier.add(n);
-//       // else if (frontier.getCollection().indexOf(n) !== -1 && ) {
-//       //
-//       // }
-//
-//       // const cost =
-//       //
-//       // if (!seen.has(n) || !runningCosts.has(n) {
-//       //   runningCosts.set(n, n.cost);
-//       // else if (runningCosts.has(n) && runningCosts.get(n) > ()) {
-//       //
-//       // }
-//
-//     //     const newCost = cost + n.cost;
-//     //
-//     //     if (newCost < runningCosts.get(n)) {
-//     //       runningCosts.set(n, newCost);
-//     //     }
-//       }
-//     });
-//
-//     for each of node's neighbors n
-//       if n is not in explored or frontier
-//           frontier.add(n)
-//       else if n is in frontier with higher cost
-//           replace existing node with n
-//
-//
-//
-//   }
-//
-//   return {
-//     path,
-//     cost: totalCost,
-//   };
-// }
-//
-// def ucs(graph, start, goal):
-//     visited = set()
-//     queue = PriorityQueue()
-//     queue.put((0, start))
-//
-//     while queue:
-//         cost, node = queue.get()
-//         if node not in visited:
-//             visited.add(node)
-//
-//             if node == goal:
-//                 return
-//             for i in graph.neighbors(node):
-//                 if i not in visited:
-//                     total_cost = cost + graph.get_cost(node, i)
-//                     queue.put((total_cost, i))
-//
-// // procedure UniformCostSearch(Graph, start, goal)
-// //  node ← start
-// //  cost ← 0
-// //  frontier ← priority queue containing node only
-// //  explored ← empty set
-// //  do
-// //    if frontier is empty
-// //      return failure
-// //    node ← frontier.pop()
-// //    if node is goal
-// //      return solution
-// //    explored.add(node)
-// //    for each of node's neighbors n
-// //      if n is not in explored or frontier
-// //          frontier.add(n)
-// //      else if n is in frontier with higher cost
-// //          replace existing node with n
-//
-// // function singleSource(source) {
-// //   const minHeap = new Heap();
-// //   const costs = new Map();
-// //   const seen = new Map();
-// //
-// //   costs.set(source, 0);
-// //
-// //   // dist.set(source, 0);
-// //   // minHeap.add(source);
-// //
-// //   while (!minHeap.isEmpty()) {
-// //     const node = minHeap.extract();
-// //
-// //     node.edges.forEach((n) => {
-// //       const alt =
-// //     });
-// //   }
-// // }
-//
-// function singleSource(source) {
-//   const minHeap = new Heap((a, b) => b.cost - a.cost);
-//   // const costs = new Map();
-//   // const seen = new Map();
-//   //
-//   // costs.set(source, 0);
-//
-//   // dist.set(source, 0);
-//   // minHeap.add(source);
-//
-//   while (!minHeap.isEmpty()) {
-//     const node = minHeap.extract();
-//
-//     node.edges.forEach((n) => {
-//       const alt =
-//     });
-//   }
-// }
-//
-// // function findLowestCost(costs) {
-// //   let lowestCost = Infinity;
-// //   let lowestCostNode = null;
-// //
-// //   costs.forEach((cost, node) => {
-// //     if (cost < lowestCost && !seen.has(node) {
-// //       lowestCost = cost;
-// //       lowestCostNode = node;
-// //     }
-// //   });
-// //
-// //   return lowestCostNode;
-// // }
-//
-//
-//
-// node =  nd_lowest_cost_node(costs)
-// while node is not None:
-// neighbors = graph[node]
-// for n in neighbors.keys():
-// new_cost = cost + neighbors[n]
-//     costs[n] = new_cost
-// parents[n] = node
-// processed.append(node)
-// node =  nd_lowest_cost_node(costs)
-
 
 function singleSource(source, graph) {
   const minHeap = new Heap((a, b) => b.cost - a.cost);  // minHeap with custom cost comparison
@@ -346,7 +162,7 @@ function singleSource(source, graph) {
     }
   });
 
-  // main loop
+  // main loop, empty our heap
   while (!minHeap.isEmpty()) {
     const { node } = minHeap.extract();
     seen.add(node);
@@ -370,18 +186,69 @@ function singleSource(source, graph) {
   }
 
   // tidy our results up
-  costs.forEach((distance, key) => {
+  costs.forEach((cost, key) => {
     results.push({
       node: key.value,
-      distance,
+      cost,
     });
   });
 
   return results;
 }
 
-function uniformCostSearch(start, end) {
+/*
+* uniformCostSearch()
+*
+* Uniform Cost Search (UCF) is a variant of Dijkstra's original algorithm. UCF is
+* Dijkstra's Algorithm which is focused on finding a single shortest path from a
+* 'start' node to an 'goal' node.
+*
+* Step 4: Calculate our final path
+*
+* Once we hit our finish node, we know that we can build our shortest path to
+* return.
+*
+* Our final path will be A -> C -> B -> D
+*                          2    3    1 = 6 minutes in total.
+*
+* We'll return an object with a path array, holding the node values, and we'll
+* attach a 'totalCost' property too.
+*/
 
-}
+// function uniformCostSearch(start, goal) {
+//   const minHeap = new Heap((a, b) => b.cost - a.cost);
+//   const seen = new Map();
+//
+//   minHeap.add({
+//     node: start,
+//     cost: 0,
+//   });
+//
+//   while (!minHeap.isEmpty()) {
+//     const { node } = minHeap.extract();
+//
+//     if (node === goal) {
+//       return 'Found!'
+//       // return solution
+//     }
+//
+//     seen.set(node);
+//     node.edges.forEach((e) => {
+//       const endNode = e.endNode;
+//       const heapedNode = minHeap.getCollection().filter((n) => n.node === endNode);
+//
+//       if (!seen.has(endNode) || heapedNode.length > 0) {
+//         minHeap.add({
+//           node: endNode,
+//           cost: e.cost,
+//         });
+//       } else if (heapedNode.cost > e.cost) {
+//         node = endNode;
+//       }
+//     });
+//   }
+//
+//   return new Error('Path does not exist.');
+// }
 
 export { uniformCostSearch, singleSource };

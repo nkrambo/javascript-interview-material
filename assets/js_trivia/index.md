@@ -1,4 +1,84 @@
 
+**Question:** Write a function called `partial` that makes the following snippet work?
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+
+const add5 = partial(add, 5);
+add5(4); // 9
+
+function partial(fn, a) {
+  return function(b) {
+    return fn(a, b);
+  }
+}
+```
+
+This question is all about closures and first-class functions.
+
+`partial()` accepts two arguments. One is a function, and the other is a number.
+
+`partial()` must return a function, because we're assigning its return value to `add5` and then calling `add5()`.
+
+**Question:** Make a class called `Square` that inherits from `Rectangle` and satisfies the following snippet.
+
+```javascript
+function Rectangle(width, height) {
+  this.width = width;
+  this.height = height;
+}
+Rectangle.prototype.area = function() {
+  return this.width * this.height;
+};
+// your code here
+const square = new Square(4);
+square.area(); // 16
+Square.prototype.area === Rectangle.prototype.area; // true
+```
+
+**Answer**
+```javascript
+function Square(length) {
+  Rectangle.call(this, length, length);
+}
+
+Square.prototype = Object.create(Rectangle.prototype);
+```
+
+**Question:** Write a function called `shout` that accepts a string and a callback function, and uses `exclaim` and `yell` to transform its input.
+
+```javascript
+function exclaim(value, fn) {
+  setTimeout(function() {
+    fn(value + '!');
+  }, 100);
+}
+
+function yell(value, fn) {
+  setTimeout(function() {
+    fn(value.toUpperCase());
+  }, 100);
+}
+
+shout('hello', function(shouted) {
+  console.log(shouted); // 'HELLO!'
+});
+```
+
+**Answer**
+
+This is async programming, using callbacks.
+
+```javascript
+function shout(value, fn) {
+  exclaim(value, function(exclaimed) {
+    yell(exclaimed, fn);
+  });
+}
+```
+
 **Question:** What is the value of `foo`?
 
 ```javascript
@@ -119,7 +199,7 @@ bad();
 alert(window.var2); // 1. Aggh! ... This is in the global space, it leaked.
 ```
 
-Actually this shows that assignment are right associative. The 'bad' example is equivalent to:
+Actually this shows that assignmemnt are right associative. The 'bad' example is equivalent to:
 
 ```javascript
 let var1 = (window.var2 = (window.var3 = 1));
