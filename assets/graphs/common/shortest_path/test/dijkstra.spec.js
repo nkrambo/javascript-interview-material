@@ -30,10 +30,10 @@ class Weighted extends Graph {
 }
 
 /**
-*    (6)   A   (2)            A -> B: 5 mins
-*        ↙  ↘                 A -> C: 2 mins
-*       B  ←  C   (3)         A -> D: 6 mins
-*        ↘   ↙
+*    (6)   A   (2)            A: 0
+*        ↙  ↘                 B: 5
+*       B  ←  C   (3)         C: 2
+*        ↘   ↙                D: 6
 *    (1)   D   (5)
 */
 
