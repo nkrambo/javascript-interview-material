@@ -251,4 +251,6 @@ function singleSource(source, graph) {
 //   return new Error('Path does not exist.');
 // }
 
+function uniformCostSearch(start, goal) {}
+
 export { uniformCostSearch, singleSource };

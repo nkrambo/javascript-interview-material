@@ -24,15 +24,43 @@
 *
 * Define a function that returns n lines of Pascal's Triangle.
 *
-* Time: O(n)
-* Space: O(n)
+* Time: O(n^2)
+* Space: O(n^2)
 *
 * @param {number} n number of lines of Pascal's
-* @return {array} of n lines long
+* @return {array | number [][]} of arrays n lines long
 */
 
 function pascalsTriangle(n) {
+  const result = [[1], [1, 1]];
 
+  if (n === 1) return [[1]];
+  if (n === 2) return result;
+
+  for (let row = 2; row < n; row += 1) {
+    result[row] = [1];
+
+    for (let col = 1; col <= row -1; col += 1) {
+      result[row][col] = result[row-1][col] + result[row-1][col-1];
+      result[row].push(1);
+    }
+  }
+
+  return result;
 }
+
+// def combination(n, k):
+//     if k == 0 or k == n:
+//         return 1
+//     return combination(n - 1, k - 1) + combination(n - 1, k)
+//
+// def pascals_triangle(rows):
+//     for row in range( rows):
+//         answer = ""
+//         for column in range( row + 1):
+//             answer = answer + str(combination(row, column)) + "\t"
+//         print(answer)
+//
+// pascals_triangle(5)
 
 export default pascalsTriangle;
