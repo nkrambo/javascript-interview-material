@@ -48,14 +48,12 @@
 
 function bellmanFord(source, graph) {
   const costs = new Map();
-  const predecessor = new Map();
   const results = [];
 
   // step 1:
-  // initialize all nodes with cost of infinity and a null predecessor
+  // initialize all nodes with cost of infinity
   graph.nodes.forEach((n) => {
     costs.set(n, Infinity);
-    predecessor.set(n, null);
   });
 
   costs.set(source, 0); // set source to 0
@@ -66,7 +64,6 @@ function bellmanFord(source, graph) {
     n.edges.forEach((e) => {
       if (costs.get(n) + e.cost < costs.get(e.endNode)) {
         costs.set(e.endNode, costs.get(n) + e.cost);
-        predecessor.set(e.endNode, n);
       }
     });
   });
