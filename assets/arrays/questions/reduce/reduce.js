@@ -15,16 +15,16 @@
 * currentIndex
 * array
 *
-* @param {array} arr callback
+* @param {array} arr of values
 * @param {function} fn callback
 * @param {array} start value
 * @return {array} returns a new array modified with callback
 */
 
 function reduce(arr, fn, start) {
-  for (let i = 0; i < arr.length; i += 1) {
-    start = fn(start, arr[i]);
-  }
+  arr.forEach((n) => {
+    start = fn(start, n);
+  });
 
   return start;
 }
