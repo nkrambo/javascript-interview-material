@@ -22,11 +22,32 @@
 * There are several ways to represent tries. Some implement nodes with an array
 * of child pointers. We will, however, use nested objects.
 *
-*                             d
-*                             ↓
-*                             o
-*                            ↙ ↘
-*                          n     g
+*                             d                         words:
+*                             ↓                         - do
+*                             o → *                     - don't
+*                            ↙ ↘                        - dog
+*                          n     g → *                  - dogs
+*                        ↙   ↘     ↘                    - done
+*                       '      e     s
+*                    ↙           ↘     ↘
+*                  t               *     *
+*                ↙
+*              *
+*
+* Inserting a word is fairly straight forward. We start from the root and traverse
+* downward through our trie checking at each level if we have the current character
+* our word, if we don't we add it and keep going.
+*
+* https://www.youtube.com/watch?v=zIjfhVPRZCg
+*
+* There are 26 characters in the english alphabet, not including any punctuation.
+* That means, that at each level we could potentially have an object representing
+* each character. That is, 26 starting characters, and then each of those may have
+* their own 26 characters, 26^2 and they may all have 26 characters 26^3 and so on.
+* This gives us a space complexity of 26^n for all words of length n or fewer.
+*
+* Time: O(1)
+* Space: O(26^n)
 */
 
 class Trie {
@@ -43,16 +64,12 @@ class Trie {
 
   insert(word) {
     let current = this.root;
-    let newWord = false;
 
     // work downwards through the trie, adding nodes as needed,
     // and keeping track of whether we add any nodes.
-    for (let i = 0; i < word.length; i += 1) {
-      const char = word[i];
-
+    for (let char of word) {
       // if we don't have current char
       if (!current.hasOwnProperty(char)) {
-        newWord = true;
         current[char] = {};
       }
 
@@ -62,9 +79,40 @@ class Trie {
 
     // explicitly mark the end of a word
     if (!current.hasOwnProperty('*')) {
-      newWord = true;
       current['*'] = {};
     }
+  }
+
+  /**
+  * remove()
+  *
+  * @param {string} word to remove
+  * @return {void}
+  */
+
+  remove(word) {
+
+  }
+
+  /**
+  * contains()
+  *
+  * @param {string} word to check for
+  * @return {void}
+  */
+
+  contains(word) {
+
+  }
+
+  /**
+  * getWords()
+  *
+  * @return {array} of all words
+  */
+
+  getWords() {
+
   }
 }
 
