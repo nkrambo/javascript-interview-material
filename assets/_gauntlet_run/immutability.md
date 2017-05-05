@@ -3,7 +3,7 @@
 
 ### The Problem
 
-First of all, why is immutability important? Well, mutating data can produce code that's hard to read and error prone. For primitive values (like numbers and strings), it is pretty easy to write 'immutable' code, because primitive values cannot be mutated themselves. Variables containing primitive types always point to the actual value. If you pass it to another variable, the other variable get’s a fresh copy of that value.
+First of all, why is immutability important? Well, mutating data can produce code that's hard to read and error prone. For primitive values (like numbers and strings), it is pretty easy to write 'immutable' code, because primitive values cannot be mutated themselves. Variables containing primitive types always point to the actual value. If you pass it to another variable, the other variable will get a fresh copy of that value.
 
 Objects (and arrays) are a different story, they are passed by reference. This means that if you would pass an object to another variable, they will both refer to the same object. If you would then mutate the object from either variable, they will both reflect the changes. Example:
 
@@ -20,7 +20,7 @@ console.log(newPerson === person); // true
 console.log(person);               // { name: 'John', age: 30 }
 ```
 
-Can you see the problem here? When we change `newObj`, we also automatically change the old `obj` variable. This is because they refer to the same object. In most cases this is unwanted behaviour and bad practice. Let’s see how we can solve this.
+Can you see the problem here? When we change `newPerson`, we also automatically change the old `person` variable. This is because they refer to the same object. In most cases this is unwanted behaviour and bad practice. Let’s see how we can solve this.
 
 ### Going immutable
 

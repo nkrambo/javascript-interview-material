@@ -44,6 +44,6 @@ Now the event propagation stops on the first element of the bubbling sequence. Y
 
 ### Related
 
-The reverse of events that bubble up are events that trickle down. Originally some browsers thought events should trickle down from the ancestors to the element that was interacted with. Now all browsers implenet bubble up events, and some support trickle down.
+The reverse of events that bubble up are events that trickle down. Originally some browsers thought events should trickle down from the ancestors to the element that was interacted with. Now all browsers implement bubble up events, and some support trickle down.
 
 

@@ -3,7 +3,7 @@
 * Binary to String
 *
 * Given a real number between 0 and 1 (e.g, 0.72) that is passed in as a double,
-* return the binary representation. as a string If the number cannot be represented
+* return the binary representation as a string. If the number cannot be represented
 * accurately in binary with at most 32 characters, return an error.
 */
 

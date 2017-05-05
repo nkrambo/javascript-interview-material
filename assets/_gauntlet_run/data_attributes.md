@@ -11,7 +11,7 @@ Of course, this data isn't very useful to a visitor because they can't actually 
 
 **HTML Syntax**
 
-The syntax is simple. Any attribute on any element whose attribute name starts with data- is a data attribute. Say you have an article and you want to store some extra information that doesn’t have any visual representation. Just use data attributes for that:
+The syntax is simple. Any attribute on any element whose attribute name starts with data- is a data attribute. Say you have an article and you want to store some extra information that doesn't have any visual representation. Just use data attributes for that:
 
 ```html
 <article

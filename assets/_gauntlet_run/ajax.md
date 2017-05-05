@@ -33,7 +33,7 @@ After opening the request, we can send it with the send method. The argument to 
 
 For GET requests, we can pass null.
 
-If the third argument to open was false, send will return only after the response to our request was received. We can read the request object’s responseText property to get the response body.
+If the third argument to open was false, send will return only after the response to our request was received. We can read the request object's responseText property to get the response body.
 
 ### Abstracting Requests
 

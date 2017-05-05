@@ -35,13 +35,13 @@ It depends on who you ask. This is one of those "JS standards" - unlike most of 
 
 The main argument against doing this is: if, in future, a browser decides to implement its own version of your method, your method might get overridden (silently) and the browser’s implementation (which is probably different from yours) would take over. So not extending in the first place is future proofing your code.
 
-On the flip side, if you decide to overwrite the browsers definition, any future developer working on your code won’t know about the change. They'll have a harder time getting up to speed.
+On the flip side, if you decide to overwrite the browsers definition, any future developer working on your code won't know about the change. They'll have a harder time getting up to speed.
 
-Generally it’s safer to move your particular changes into a library (as with underscore.js). That way your particular methods are clearly marked and there’s no chance of conflict.
+Generally it's safer to move your particular changes into a library (as with underscore.js). That way your particular methods are clearly marked and there's no chance of conflict.
 
 **But...**
 
-It might be a good idea to add an extension for functionality that became available in later versions, but isn’t guaranteed to be available in your particular browser. You can read more about this kind of polyfill on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter#Polyfill).
+It might be a good idea to add an extension for functionality that became available in later versions, but isn't guaranteed to be available in your particular browser. You can read more about this kind of polyfill on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter#Polyfill).
 
 **References**
 
