@@ -13,3 +13,9 @@ Space: O(n) - average and worst
 Find: O(a(n)) - average and worst
 Union: O(a(n)) - average and worst
 
+
+
+system design
+mongo
+sql
+jquery
