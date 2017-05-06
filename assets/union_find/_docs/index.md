@@ -7,6 +7,24 @@ A union–find data structure, also known as a disjoint-set or a merge–find se
 
 - **Union:** Join two subsets into a single subset.
 
+The other important operation, **MakeSet**, which makes a set containing only a given element (a singleton), is generally trivial.
+
+MakeSet creates 8 singletons.
+
+<p align="center">
+<img src="images/makeset.png" width="440" />
+</p>
+
+After some operations of Union, some sets are grouped together.
+
+<p align="center">
+<img src="images/union.png" width="440" />
+</p>
+
+In order to define these operations more precisely, some way of representing the sets is needed. One common approach is to select a fixed element of each set, called its **representative**, to represent the set as a whole. Then, Find(x) returns the representative of the set that x belongs to, and Union takes two set representatives as its arguments.
+
+
+
 Runtime and space complexity
 
 Space: O(n) - average and worst

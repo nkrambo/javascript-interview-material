@@ -5,9 +5,9 @@ Dynamic programming is a method for solving complex problems by first solving si
 
 Dynamic programming algorithms are often used for **optimization**. That is, they combine their solutions to give the **best solution** for the given problem. In addition to finding optimal solutions to some problem, dynamic programming can also be used for counting the **number of solutions**, for example counting the number of ways a certain amount of change can be made from a given collection of coins.
 
-In comparison, [greedy algorithms](/assets/greedy/_docs/index.md) do not guarantee an optimal, 'best' solution. Instead, they pick the locally optimal choice in a sequence of steps for a fast overall solution, but not necessarily the 'best'. Greedy algorithms give us **fast 'close to optimal' solutions** to NP-Complete problems, like the traveling salesman problem, which have no known optimal solution. Some greedy algorithms, however, are proven to lead to the optimal solution, such as Prim's for minimum spanning trees.
+In comparison, greedy algorithms do not guarantee an optimal, 'best' solution. Instead, they pick the locally optimal choice in a sequence of steps for a fast overall solution, but not necessarily the 'best'. Greedy algorithms give us **fast 'close to optimal' solutions** to NP-Complete problems, like the traveling salesman problem, which have no known optimal solution. Some greedy algorithms, however, are proven to lead to the optimal solution, such as Prim's for minimum spanning trees.
 
-It's also important to note that a problem must have **overlapping sub-problems** to be applicable for solving through dynamic programming. Problems that can be solved by combining optimal solutions to **non-overlapping sub-problems**, use a strategy called ["divide and conquer"](/assets/sort_and_searching/_docs/index.md) instead, such as merge sort and binary search.
+It's also important to note that a problem must have **overlapping sub-problems** to be applicable for solving through dynamic programming. Problems that can be solved by combining optimal solutions to **non-overlapping sub-problems**, use a strategy called "divide and conquer" instead, such as merge sort and binary search.
 
 ### Overlapping Subproblems
 
