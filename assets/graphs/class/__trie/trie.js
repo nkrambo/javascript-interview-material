@@ -170,7 +170,7 @@ class Trie {
   */
 
   startsWith(prefix) {
-    
+
   }
 
   /**
