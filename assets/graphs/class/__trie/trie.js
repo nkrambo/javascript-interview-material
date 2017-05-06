@@ -50,6 +50,7 @@
 * 1. Insert
 * 2. Search
 * 3. Remove
+* 4. Starts With
 *
 * Inserting a word is fairly straight forward. We start from the root and traverse
 * downward through our trie checking at each level if we have the current character
@@ -159,6 +160,17 @@ class Trie {
 
     // check for end of word
     return current.hasOwnProperty('*');
+  }
+
+  /**
+  * startsWith()
+  *
+  * @param {string} prefix to check
+  * @return {boolean} returns true a word exists with prefix
+  */
+
+  startsWith(prefix) {
+    
   }
 
   /**
