@@ -1,5 +1,5 @@
 
-##Bitwise operations
+## Bitwise operations
 
 At a deep level, your computer works with bits — 1s and 0s. But these get bundled
 up into more human readable things, like characters and arrays. This is called **abstraction**.
@@ -18,7 +18,7 @@ AND, for example, takes two sets of bits. For each pair of bits (two bits at the
 same index in each set) it returns 1 _only if both_ bits are 1. Otherwise, it
 returns 0. OR would return 1 if _either_ of the bits were 1.
 
-###AND
+### AND
 
 The AND bitwise operation takes two sets of bits and for each pair of bits (the two bits
 at the same index in each set) returns 1 if both bits are 1. Otherwise, it returns 0.
@@ -43,7 +43,7 @@ When performing AND on two integers, only the digit columns shared by both integ
 //   = 0100  (4)
 ```
 
-###OR
+### OR
 
 The OR bitwise operation takes two sets of bits and for each pair of bits (the two bits
 at the same index in each set) returns 11 if either of the bits are 1. Otherwise, it returns 0.
@@ -71,7 +71,7 @@ integers remain:
 //   = 0111  (7)
 ```
 
-###XOR
+### XOR
 
 The XOR bitwise operation (or exclusive or) takes two sets of bits, and for each
 pair (the two bits at the same index in each bit set) returns 1 only if one but
@@ -101,7 +101,7 @@ integers remain:
 //   = 0011  (3)
 ```
 
-###NOT
+### NOT
 
 The NOT bitwise operation takes one set of bits, and for each bit returns 0 if
 the bit is 1, and 1 if the bit is 0.
@@ -125,7 +125,7 @@ When performing NOT on an integer, each bit of the integer is inverted.
 If you're unsure why the resulting number is negative in this example, it's
 because numbers are represented using two's complement.
 
-###Bit Shifts
+### Bit Shifts
 
 A bit shift moves each digit in a set of bits left or right. The last bit in the
 direction of the shift is lost, and a 0 bit is inserted on the other end.
@@ -153,7 +153,7 @@ Two left shifts multiplies by 4. Three left shifts multiplies by 8.
 
 And similarly, shifting right divides by 2, throwing out any remainders.
 
-###Using
+### Using
 
 How do you know when bit manipulation might be the key to solving a problem?
 

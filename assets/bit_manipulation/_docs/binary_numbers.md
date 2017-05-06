@@ -1,7 +1,7 @@
 
 ##Binary Numbers
 
-###Base 10
+### Base 10
 
 When we use numbers, we usually use **decimal numbers** (or **base 10**), which
 are expressed using 10 values, 0-9.
@@ -22,7 +22,7 @@ Some mathematicians argue that base-12 is a better system than our base-10, beca
 12 has more factors (1, 2, 3, 4, 6) than 10 does (1, 2, 5). We probably use decimal
 numbers because we have 10 fingers.
 
-###Base 2
+### Base 2
 
 **Binary numbers** (or **base 2**) only use two values, 0 and 1. So binary digit
 columns increase by 2 times (1s, 2s, 4s).
@@ -55,7 +55,7 @@ Here are the base 10 numbers 0 through 10 in binary:
 10       1010
 ```
 
-###Two's Complement
+### Two's Complement
 
 https://www.youtube.com/watch?v=tCMjsQU3_TM
 
