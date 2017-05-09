@@ -35,7 +35,21 @@
 */
 
 function canCompleteCicuit(gas, cost) {
+  let start = gas.length - 1;
+  let end = 0;
+  let sum = gas[start] - cost[start];
 
+  while (start > end) {
+     if (sum >= 0) {
+        sum += gas[end] - cost[end];
+        end += 1;
+     } else {
+        start -= 1;
+        sum += gas[start] - cost[start];
+     }
+  }
+
+  return sum >= 0 ? start : -1;
 }
 
 export default canCompleteCicuit;
