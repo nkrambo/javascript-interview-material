@@ -68,9 +68,7 @@ function twoMovies(movieLengths, flightLength) {
     const first = movie;
     const second = flightLength - first;
 
-    if (moviesSeen.has(second)) {
-      return true;
-    }
+    if (moviesSeen.has(second)) return true;
 
     moviesSeen.add(first);
   }
