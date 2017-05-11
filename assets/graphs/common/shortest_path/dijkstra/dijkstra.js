@@ -139,7 +139,7 @@
 * @return {array} returns an array
 */
 
-import Heap from '../../class/heap/heap';
+import Heap from '../../../class/heap/heap';
 
 function singleSource(source, graph) {
   const minHeap = new Heap((a, b) => b.cost - a.cost);  // minHeap with custom cost comparison
