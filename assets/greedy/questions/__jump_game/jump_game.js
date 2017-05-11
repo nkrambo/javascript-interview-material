@@ -42,9 +42,15 @@
 
 // I just iterate and update the maximal index that I can reach
 
-// The basic idea is this: at each step, we keep track of the furthest reachable index. The nature of the problem (eg. maximal jumps where you can hit a range of targets instead of singular jumps where you can only hit one target) is that for an index to be reachable, each of the previous indices have to be reachable.
+// The basic idea is this: at each step, we keep track of the furthest reachable
+// index. The nature of the problem (eg. maximal jumps where you can hit a range
+// of targets instead of singular jumps where you can only hit one target) is that
+// for an index to be reachable, each of the previous indices have to be reachable.
 //
-// Hence, it suffices that we iterate over each index, and If we ever encounter an index that is not reachable, we abort and return false. By the end, we will have iterated to the last index. If the loop finishes, then the last index is reachable.
+// Hence, it suffices that we iterate over each index, and If we ever encounter
+// an index that is not reachable, we abort and return false. By the end, we will
+// have iterated to the last index. If the loop finishes, then the last index is
+// reachable.
 
 function canJump(nums) {
   let i = 0;
@@ -57,12 +63,14 @@ function canJump(nums) {
 }
 
 
-// Idea is to work backwards from the last index. Keep track of the smallest index that can "jump" to the last index. Check whether the current index can jump to this smallest index.
+// Idea is to work backwards from the last index. Keep track of the smallest index
+// that can "jump" to the last index. Check whether the current index can jump to
+// this smallest index.
 
 function canJumpAlt(nums) {
   let max = 0;
 
-  for(let i = 0; i < nums.length; i += 1) {
+  for (let i = 0; i < nums.length; i += 1) {
     if (i > max) return false;
     max = Math.max(nums[i] + i, max);
   }
