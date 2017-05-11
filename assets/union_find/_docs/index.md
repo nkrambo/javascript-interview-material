@@ -5,6 +5,15 @@ A union–find data structure, also known as a disjoint-set or a merge–find se
 
 It can be used to keep track of the connected components of an undirected graph, for example. Or, to determine whether two vertices belong to the same component, or whether adding an edge between them would result in a cycle. It is also used for implementing Kruskal's algorithm to find the minimum spanning tree of a graph.
 
+Some other applications are:
+
+- Friends in a social network
+- Pixels in a digital photo
+- Computers in a network
+- Transistors in a computer chip
+
+https://medium.com/towards-data-science/course-2-data-structure-part-2-priority-queues-and-disjoint-set-ed11a0383011
+
 **Complexity**
 
 Space: O(n)
@@ -54,6 +63,12 @@ Generally speaking, using linked lists is considered a naive approach.
 Disjoint-set forests are data structures where each set is represented by a tree data structure, in which each node holds a reference to its parent node
 
 In a disjoint-set forest, the representative of each set is the root of that set's tree. Find follows parent nodes until it reaches the root. Union combines two trees into one by attaching the root of one to the root of the other.
+
+Although we are using a tree structure, we can represent our nodes in an array, much like we do with a binary heap.
+
+A Union Find data structure maintains a collection of S1, S2, ..., Sn of disjointed dynamic sets. Each set we represent as a rooted tree.
+
+<!-- We can store these sets(rooted trees) by using an array where A[i] is the parent of node i or node i if it is the root. -->
 
 **Union by Rank**
 

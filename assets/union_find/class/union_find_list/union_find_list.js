@@ -6,7 +6,7 @@ class UnionFind {
 
   }
 
-  makeSet() {}
+  makeSet(value) {}
 
   find() {}
 
