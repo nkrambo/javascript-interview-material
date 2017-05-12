@@ -1,7 +1,7 @@
 
 import { expect } from 'chai';
 import bfs from '../graph_bfs.js';
-import Graph from '../../../class/graph/graph';
+import Graph from '../../../../class/graph/graph';
 
 describe('bfs()', () => {
   it('should return an array of values of a graph in order of a BFS', () => {

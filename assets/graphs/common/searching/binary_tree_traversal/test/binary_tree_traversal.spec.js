@@ -1,7 +1,15 @@
 
 import { expect } from 'chai';
-import BST from '../../../class/bst/bst';
-import { inOrder, inOrderRecurse, preOrder, preOrderRecurse, postOrder, postOrderRecurse, levelOrder } from '../binary_tree_traversal';
+import BST from '../../../../class/bst/bst';
+import {
+  inOrder,
+  inOrderRecurse,
+  preOrder,
+  preOrderRecurse,
+  postOrder,
+  postOrderRecurse,
+  levelOrder,
+} from '../binary_tree_traversal';
 
 describe('inOrder()', () => {
   it('should return an array of all binary tree nodes in-order', () => {

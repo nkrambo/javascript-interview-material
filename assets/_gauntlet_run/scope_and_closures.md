@@ -69,6 +69,30 @@ In essence, makeAdder is a function factory — it creates functions which can a
 
 add5 and add10 are both closures. They share the same function body definition, but store different environments. In add5's environment, x is 5. As far as add10 is concerned, x is 10.
 
+**Another Example**
+
+```javascript
+function petCounter(pet) {
+  let counter = 0;
+
+  return function() {
+    console.log(`You have ${counter} ${pet}`);
+    counter += 1;
+  }
+}
+
+const kittenCounter = petCounter('kittens');
+const dogCounter = petCounter('dogs');
+
+kittenCounter();  // You have 0 kittens
+kittenCounter();  // You have 1 kittens
+kittenCounter();  // You have 2 kittens
+
+dogCounter();     // You have 0 dogs
+dogCounter();     // You have 1 dogs
+dogCounter();     // You have 2 dogs
+```
+
 **Practical Closures**
 
 That's the theory of closures — but are closures actually useful? Let's consider their practical implications. A closure lets you associate some data (the environment) with a function that operates on that data. This has obvious parallels to object oriented programming, where objects allow us to associate some data (the object's properties) with one or more methods.
@@ -92,19 +116,24 @@ const counter = (function() {
     privateCounter += val;
   }
 
+  // return interface
   return {
-    increment: function() {
+    increment() {
       changeBy(1);
     },
-    decrement: function() {
+    decrement() {
       changeBy(-1);
     },
-    value: function() {
+    value() {
       return privateCounter;
     }
   };
 })();
 ```
+
+**ES6**
+
+If you're using ES6 modules then there would be no need to implement this pattern. In ES6, each module has its own scope, thus anything you declare there will be "private" unless you export it.
 
 **References**
 

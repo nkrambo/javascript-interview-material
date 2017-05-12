@@ -1,7 +1,7 @@
 
 import { expect } from 'chai';
 import pathExists from '../path_exists';
-import Graph from '../../../class/graph/graph';
+import Graph from '../../../../class/graph/graph';
 
 /**
 *     A  →  B    G
