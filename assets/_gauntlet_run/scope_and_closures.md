@@ -71,6 +71,8 @@ add5 and add10 are both closures. They share the same function body definition, 
 
 **Another Example**
 
+Here we have an example, we our closure allows us to keep track of our `counter` variable, increasing it every time we invoke our returned function.
+
 ```javascript
 function petCounter(pet) {
   let counter = 0;

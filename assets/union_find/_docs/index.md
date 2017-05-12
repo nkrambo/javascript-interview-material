@@ -16,9 +16,9 @@ https://medium.com/towards-data-science/course-2-data-structure-part-2-priority-
 
 **Complexity**
 
-Space: O(n)
-Find: O(a(n))
-Union: O(a(n))
+- Space: O(n)
+- Find: O(a(n))
+- Union: O(a(n))
 
 ### Operations
 
