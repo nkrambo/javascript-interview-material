@@ -102,6 +102,10 @@
 *
 * https://www.youtube.com/watch?v=GSBLe8cKu0s
 *
+* https://briangordon.github.io/2014/08/the-skyline-problem.html
+*
+* https://leetcode.com/problems/the-skyline-problem/#/solutions
+*
 * Time: O(1)
 * Space: O(1)
 *
