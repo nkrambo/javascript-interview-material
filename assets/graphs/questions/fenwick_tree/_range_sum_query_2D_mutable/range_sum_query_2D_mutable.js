@@ -9,7 +9,6 @@
 * by its upper left corner (row1, col1) and lower right corner (row2, col2).
 *
 * Your class must include a sumRegion method, which takes (row1, col1, row2, col2).
-*
 * It should also have a update method, which takes (row, column, value).
 *
 * Example:
