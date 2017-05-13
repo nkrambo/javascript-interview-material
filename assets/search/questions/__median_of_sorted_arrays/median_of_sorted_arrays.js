@@ -2,6 +2,9 @@
 /**
 * Median of Two Sorted Arrays
 *
+* Tags: Binary Search
+* Leetcode: 4
+*
 * There are two sorted arrays nums1 and nums2 of size m and n respectively.
 *
 * Find the median of the two sorted arrays. The overall run time complexity
