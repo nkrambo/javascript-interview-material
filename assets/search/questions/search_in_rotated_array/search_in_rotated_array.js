@@ -13,7 +13,9 @@
 *
 * Input: [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14], 5
 * Output: 8 (index of 5 in array)
-*
+*/
+
+/**
 * Solution:
 *
 * If this problems smells like binary search to you, you're right!
