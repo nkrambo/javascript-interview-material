@@ -24,7 +24,7 @@
 *
 * Solution:
 *
-*
+* https://leetcode.com/problems/find-peak-element/#/solutions
 *
 * Time: O(1)
 * Space: O(1)
