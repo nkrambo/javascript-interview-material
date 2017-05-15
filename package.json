@@ -2,9 +2,10 @@
   "name": "algorithm_probs",
   "version": "1.0.0",
   "description": "My answers to common interview questions and topics",
+  "author": "Nick Krambousanos",
   "scripts": {
     "test": "./node_modules/.bin/mocha --compilers js:babel-core/register ./**/*.spec.js",
-    "lint": "./node_modules/.bin/eslint ."
+    "lint": "eslint . --ext=js"
   },
   "repository": {
     "type": "git",
