@@ -25,8 +25,8 @@
 * @return {number} returns the division
 */
 
-function divide(dividend, divisor) {
-
-}
-
-export default divide;
+// function divide(dividend, divisor) {
+//
+// }
+//
+// export default divide;

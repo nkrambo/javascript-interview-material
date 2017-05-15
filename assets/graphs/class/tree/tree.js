@@ -35,19 +35,6 @@
 *         }]
 *       }
 *     }
-*
-*
-*            ccee88oo             \ | /
-*          C8O8O8Q8PoOb o8oo    '-.;;;.-,   ooooO8O8QOb o8bDbo
-*        dOB69QO8PdUOpugoO9bD  -==;;;;;==-aadOB69QO8PdUOpugoO9bD
-*       CgggbU8OU qOp qOdoUOdcb .-';;;'-.  CgggOU ddqOp qOdoUOdcb
-*           6OuU  /p u gcoUodpP   / | \ jgs  ooSec cdac pdadfoof
-*             \\\//  /douUP         '         \\\d\\\dp/pddoo
-*               \\\////                         \\ \\////
-*                |||/\                           \\///
-*                |||\/                           ||||
-*                |||||                          /|||
-*  .............//||||\.......................//|||\\.....................
 */
 
 class Tree {

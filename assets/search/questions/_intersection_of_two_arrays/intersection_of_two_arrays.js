@@ -33,8 +33,8 @@
 * @return {number} returns an array of all intersecting unique values
 */
 
-function intersection(nums1, nums2) {
-
-}
-
-export default intersection;
+// function intersection(nums1, nums2) {
+//
+// }
+//
+// export default intersection;

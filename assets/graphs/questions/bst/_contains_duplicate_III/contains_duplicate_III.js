@@ -29,8 +29,8 @@
 * @return {boolean} returns true if there is a close neighbour, close to value
 */
 
-function containsCloseValue(nums, k, t) {
-
-}
-
-export default containsCloseValue;
+// function containsCloseValue(nums, k, t) {
+//
+// }
+//
+// export default containsCloseValue;

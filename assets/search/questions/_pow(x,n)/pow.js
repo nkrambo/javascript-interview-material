@@ -24,8 +24,8 @@
 * @return {number} returns the power of x^n
 */
 
-function pow(x, n) {
-
-}
-
-export default pow;
+// function pow(x, n) {
+//
+// }
+//
+// export default pow;

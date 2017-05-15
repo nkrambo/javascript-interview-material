@@ -42,8 +42,8 @@
 * Space: O(1)
 */
 
-class NumberMatrix {
-
-}
-
-export default NumberMatrix;
+// class NumberMatrix {
+//
+// }
+//
+// export default NumberMatrix;

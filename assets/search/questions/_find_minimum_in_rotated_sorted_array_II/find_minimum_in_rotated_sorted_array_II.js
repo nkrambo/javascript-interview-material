@@ -29,8 +29,8 @@
 * @return {number} returns the minimum in nums
 */
 
-function findMinimum(nums) {
-
-}
-
-export default findMinimum;
+// function findMinimum(nums) {
+//
+// }
+//
+// export default findMinimum;

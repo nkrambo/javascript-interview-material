@@ -35,8 +35,8 @@
 * @return {number} returns the duplicate number, otherwise returns -1 if no duplicate exists
 */
 
-function findDuplicates(nums) {
-
-}
-
-export default findDuplicate;
+// function findDuplicates(nums) {
+//
+// }
+//
+// export default findDuplicate;

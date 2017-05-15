@@ -29,6 +29,10 @@
 * This gives us our result...
 *
 * 00100110   result (38)
+*/
+
+/**
+* setBit()
 *
 * Time: O(1)
 * Space: O(1)

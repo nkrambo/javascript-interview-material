@@ -33,8 +33,8 @@
 * @return {number} returns kth smallest number
 */
 
-function kthSmallest(root, k) {
-
-}
-
-export default kthSmallest;
+// function kthSmallest(root, k) {
+//
+// }
+//
+// export default kthSmallest;

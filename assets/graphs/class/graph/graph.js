@@ -54,19 +54,6 @@
 *                      Access       Search       Insert
 * -----------------------------------------------------------------------------
 *          Graph        O(N)         O(N)         O(1)
-*
-*
-*
-*   |                                 RICK ASTLEY'S NEVER GONNA...
-*   |       +-+
-*   |  +-+  |-|                          [^] - GIVE YOU UP
-*   |  |^|  |-|                 +-+      [-] - LET YOU DOWN
-*   |  |^|  |-|       +-+       |*|      [/] - RUN AROUND AND DESERT YOU
-*   |  |^|  |-|  +-+  |\|       |*|      [\] - MAKE YOU CRY
-*   |  |^|  |-|  |/|  |\|  +-+  |*|      [.] - SAY GOODBYE
-*   |  |^|  |-|  |/|  |\|  |.|  |*|      [*] - TELL A LIE AND HURT YOU
-*   |  |^|  |-|  |/|  |\|  |.|  |*|
-*   +--------------------------------
 */
 
 class Graph {

@@ -1,11 +1,11 @@
 
-http://www.cnblogs.com/Liok3187/p/4657526.html
-
-https://www.youtube.com/watch?v=ohHWQf1HDfU
-
-https://www.youtube.com/watch?v=86CQq3pKSUw
-
-https://www.youtube.com/watch?v=39grPZtywyQ
+// http://www.cnblogs.com/Liok3187/p/4657526.html
+//
+// https://www.youtube.com/watch?v=ohHWQf1HDfU
+//
+// https://www.youtube.com/watch?v=86CQq3pKSUw
+//
+// https://www.youtube.com/watch?v=39grPZtywyQ
 
 
 /**
@@ -37,31 +37,31 @@ Remove redundant elements and the queue should store only elements that need to 
  *
  * Maintain an array for possible maximum value's index between [i - k + 1, i]
  */
-var maxSlidingWindow = function(nums, k) {
-    var result = [],
-        queue = [],
-        len = nums.length,
-        i;
-
-    if (k > len || k === 0) {
-        return result;
-    }
-
-    for (i = 0; i < len; i++) {
-        while (queue.length > 0 && nums[queue[queue.length - 1]] < nums[i]) {
-            queue.pop();
-        }
-
-        if (queue[0] < i - k + 1) {
-            queue.shift();
-        }
-
-        queue.push(i);
-
-        if (i >= k - 1) {
-            result.push(nums[queue[0]]);
-        }
-    }
-
-    return result;
-};
+// var maxSlidingWindow = function(nums, k) {
+//     var result = [],
+//         queue = [],
+//         len = nums.length,
+//         i;
+//
+//     if (k > len || k === 0) {
+//         return result;
+//     }
+//
+//     for (i = 0; i < len; i++) {
+//         while (queue.length > 0 && nums[queue[queue.length - 1]] < nums[i]) {
+//             queue.pop();
+//         }
+//
+//         if (queue[0] < i - k + 1) {
+//             queue.shift();
+//         }
+//
+//         queue.push(i);
+//
+//         if (i >= k - 1) {
+//             result.push(nums[queue[0]]);
+//         }
+//     }
+//
+//     return result;
+// };

@@ -32,8 +32,8 @@
 * Space: O(1)
 */
 
-class SummaryRanges {
-
-}
-
-export default SummaryRanges;
+// class SummaryRanges {
+//
+// }
+//
+// export default SummaryRanges;

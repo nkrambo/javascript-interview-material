@@ -37,8 +37,8 @@
 * @return {boolean} returns true if target is in matrix, otherwise false
 */
 
-function searchMatrix(matrix, target) {
-
-}
-
-export default searchMatrix;
+// function searchMatrix(matrix, target) {
+//
+// }
+//
+// export default searchMatrix;

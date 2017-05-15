@@ -35,8 +35,8 @@
 * @return {array} returns a counts array
 */
 
-function countSmaller(nums) {
-
-}
-
-export default countSmaller;
+// function countSmaller(nums) {
+//
+// }
+//
+// export default countSmaller;

@@ -33,8 +33,8 @@
 * @return {number} returns the index of the first peak element, otherwise -1
 */
 
-function findPeakElement(nums) {
-
-}
-
-export default findPeakElement;
+// function findPeakElement(nums) {
+//
+// }
+//
+// export default findPeakElement;

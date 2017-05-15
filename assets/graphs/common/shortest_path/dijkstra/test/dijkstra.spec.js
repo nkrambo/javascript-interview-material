@@ -1,6 +1,7 @@
 
 import { expect } from 'chai';
-import { uniformCostSearch, singleSource } from '../dijkstra';
+// import { uniformCostSearch, singleSource } from '../dijkstra';
+import singleSource from '../dijkstra';
 import Graph from '../../../../class/graph/graph';
 
 class Weighted extends Graph {

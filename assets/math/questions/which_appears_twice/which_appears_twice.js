@@ -38,12 +38,6 @@
 */
 
 function appearsTwice(arr) {
-
-  // type check
-  if (!Array.isArray(arr)) {
-    throw new TypeError('appearsTwice: Expects single argument of [array] type.');
-  }
-
   // sum all numbers 1...n, O(1) time.
   const n = arr[arr.length - 1];
   const sum = ((Math.pow(n, 2)) + n) / 2;

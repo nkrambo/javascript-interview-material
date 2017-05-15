@@ -64,20 +64,20 @@ function findMedian(nums1, nums2) {
 * @return {number} returns the median of nums1 and nums2 combined
 */
 
-function findMedianAlt(nums1, nums2) {
-  const join = nums1.concat(nums2).sort();
-
-  // even or length of 2, add and divide middle two values
-  if (join.length % 2 === 0 || join.length <= 2) {
-    const lower = join[(join.length / 2) - 1];
-    const upper = join[join.length / 2];
-
-    return (lower + upper) / 2;
-
-  // odd, grab middle value
-  } else {
-    return join[Math.floor(join.length / 2)];
-  }
-}
-
-export { findMedian, findMedianAlt };
+// function findMedianAlt(nums1, nums2) {
+//   const join = nums1.concat(nums2).sort();
+//
+//   // even or length of 2, add and divide middle two values
+//   if (join.length % 2 === 0 || join.length <= 2) {
+//     const lower = join[(join.length / 2) - 1];
+//     const upper = join[join.length / 2];
+//
+//     return (lower + upper) / 2;
+//
+//   // odd, grab middle value
+//   } else {
+//     return join[Math.floor(join.length / 2)];
+//   }
+// }
+//
+// export { findMedian, findMedianAlt };

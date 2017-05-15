@@ -32,6 +32,10 @@
 * We get our result of 2...
 *
 * 00000010
+*/
+
+/**
+* clearBit()
 *
 * Time: O(1)
 * Space: O(1)

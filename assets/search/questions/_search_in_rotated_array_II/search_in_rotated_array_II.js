@@ -30,8 +30,8 @@
 * @return {number} returns the index of the target if it exists, else -1
 */
 
-function searchRotatedArray(nums, target) {
-
-}
-
-export default searchRotatedArray;
+// function searchRotatedArray(nums, target) {
+//
+// }
+//
+// export default searchRotatedArray;

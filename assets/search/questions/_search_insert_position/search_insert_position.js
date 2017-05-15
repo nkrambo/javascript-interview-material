@@ -40,8 +40,8 @@
 * @return {boolean} returns the index where target would be inserted, else -1
 */
 
-function searchInsert(nums, target) {
-
-}
-
-export default searchInsert;
+// function searchInsert(nums, target) {
+//
+// }
+//
+// export default searchInsert;

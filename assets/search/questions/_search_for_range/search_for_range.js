@@ -33,8 +33,8 @@
 * @return {boolean} returns the starting and ending position of target, otherwise [-1, -1]
 */
 
-function searchRange(nums, target) {
-
-}
-
-export default searchRange;
+// function searchRange(nums, target) {
+//
+// }
+//
+// export default searchRange;

@@ -26,8 +26,8 @@
 * @return {number} returns the number of nodes in the tree
 */
 
-function countNodes(root) {
-
-}
-
-export default countNodes;
+// function countNodes(root) {
+//
+// }
+//
+// export default countNodes;

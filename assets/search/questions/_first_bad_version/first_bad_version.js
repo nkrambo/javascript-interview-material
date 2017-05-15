@@ -32,8 +32,8 @@
 * @return {number} returns the first bad version
 */
 
-function firstBadVersion(n) {
-
-}
-
-export default firstBadVersion;
+// function firstBadVersion(n) {
+//
+// }
+//
+// export default firstBadVersion;

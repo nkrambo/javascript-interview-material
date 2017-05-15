@@ -36,8 +36,8 @@
 * @return {array} returns the indices of values that add up to target
 */
 
-function twoSum(nums, target) {
-
-}
-
-export default twoSum;
+// function twoSum(nums, target) {
+//
+// }
+//
+// export default twoSum;

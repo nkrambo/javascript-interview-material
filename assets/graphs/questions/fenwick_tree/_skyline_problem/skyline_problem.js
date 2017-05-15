@@ -113,8 +113,8 @@
 * @return {array} returns an array of "key points" defining the skyline
 */
 
-function getSkyline(buildings) {
-
-}
-
-export default getSkyline;
+// function getSkyline(buildings) {
+//
+// }
+//
+// export default getSkyline;

@@ -24,8 +24,8 @@
 * @return {number} returns the square root of x
 */
 
-function sqrt(x) {
-
-}
-
-export default sqrt;
+// function sqrt(x) {
+//
+// }
+//
+// export default sqrt;

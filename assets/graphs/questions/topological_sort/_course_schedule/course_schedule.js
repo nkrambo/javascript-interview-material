@@ -51,8 +51,8 @@
 * @return {boolean} returns true if its possible to finish the course schedule, otherwise false
 */
 
-function canFinish(numCourses, prerequisites) {
-
-}
-
-export default canFinish;
+// function canFinish(numCourses, prerequisites) {
+//
+// }
+//
+// export default canFinish;

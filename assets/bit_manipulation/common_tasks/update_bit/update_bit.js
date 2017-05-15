@@ -28,6 +28,10 @@
 * Then if we simply AND together our num and negated mask to clear the bit at i.
 *
 * Finally, we can OR our cleared number with the ith bit.
+*/
+
+/**
+* updateBit()
 *
 * Time: O(1)
 * Space: O(1)
