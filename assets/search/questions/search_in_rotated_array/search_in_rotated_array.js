@@ -69,7 +69,6 @@ function searchRotatedArray(nums, target) {
 
   // while there are unchecked positions in our 'range', keep checking midpoint
   while (left <= right) {
-
     // calculate midpoint, favour left if we need to
     const mid = Math.floor((left + right) / 2);
 
@@ -78,7 +77,6 @@ function searchRotatedArray(nums, target) {
 
     // left is normally ordered
     if (nums[mid] >= nums[left]) {
-
       // target is within the normally ordered half, move right side of 'range' inward
       if (nums[left] <= target && target < nums[mid]) {
         right = mid - 1;
@@ -90,7 +88,6 @@ function searchRotatedArray(nums, target) {
 
     // the left half is not in normal order, the right half MUST be normally ordered
     } else {
-
       // target is within the normally order half, move left side of 'range' inward
       if (nums[mid] < target && target <= nums[right]) {
         left = mid + 1;

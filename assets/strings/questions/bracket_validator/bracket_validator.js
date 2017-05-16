@@ -63,12 +63,11 @@
 */
 
 function bracketValidator(str) {
-
   // map brackets
   const openersToClosers = {
-    '(' : ')',
-    '[' : ']',
-    '{' : '}'
+    '(': ')',
+    '[': ']',
+    '{': '}',
   };
 
   // store our openers and closers
@@ -78,14 +77,13 @@ function bracketValidator(str) {
   // openers stack
   const openersStack = [];
 
-  for (let char of str) {
+  for (const char of str) {
     if (openers.has(char)) {
       openersStack.push(char);
 
     } else if (closers.has(char)) {
       if (!openersStack.length) {
         return false;
-
       } else {
         // if this closer doesn't match up, short-circuit
         if (openersToClosers[openersStack.pop()] !== char) return false;

@@ -36,7 +36,6 @@
 */
 
 function isUnique(str) {
-
   // assuming ASCII encoding, we can short-circuit
   if (str.length > 128) return false;
 
@@ -44,7 +43,7 @@ function isUnique(str) {
   const chars = new Set();
 
   // check for character in set, else add it to set
-  for (let char of str) {
+  for (const char of str) {
     if (chars.has(char)) return false;
     chars.add(char);
   }
@@ -78,7 +77,6 @@ function isUnique(str) {
 */
 
 function isUniqueSort(str) {
-
   // assuming ASCII encoding, we can short-circuit
   if (str.length > 128) return false;
 

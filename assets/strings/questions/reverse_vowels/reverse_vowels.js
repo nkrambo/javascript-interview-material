@@ -46,7 +46,6 @@
 */
 
 function reverseVowels(str) {
-
   // edge case
   if (str.length < 1) return str;
 
@@ -57,7 +56,7 @@ function reverseVowels(str) {
   const pulledVowels = [];
 
   // pull out vowels from our string
-  for (let char of str) {
+  for (const char of str) {
     if (vowels.has(char)) {
       pulledVowels.push(char);
     }
@@ -69,7 +68,7 @@ function reverseVowels(str) {
   // otherwise, iterate string again, when we come arcoss a vowel pop()
   // from the back of pulledVowels, this will replace them in reverse.
   const result = [];
-  for (let char of str) {
+  for (const char of str) {
     if (vowels.has(char)) {
       result.push(pulledVowels.pop());
     } else {
@@ -78,6 +77,6 @@ function reverseVowels(str) {
   }
 
   return result.join('');
-};
+}
 
 export default reverseVowels;

@@ -13,6 +13,7 @@
     "sourceType": "module"
   },
   "rules": {
+    # "no-unused-expressions": 0,
     "arrow-parens": [
       "error",
       "always"

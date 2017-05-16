@@ -66,7 +66,6 @@
 */
 
 function indexAtListy(listy, target) {
-
   // calculate our list length
   let length = 1;
   while (listy.elementAt(length) !== -1 && listy.elementAt(length) < target) {
@@ -79,7 +78,6 @@ function indexAtListy(listy, target) {
 
   // while there are unchecked positions in our 'range', keep checking midpoint
   while (left <= right) {
-
     // calculate midpoint, favour left if we need to
     const mid = Math.floor((left + right) / 2);
 

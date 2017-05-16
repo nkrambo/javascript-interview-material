@@ -63,8 +63,8 @@ function groupAnagrams(words) {
 
   // convert hash to array
   let index = 0;
-  for (let list of map.values()) {
-    for (let word of list) {
+  for (const list of map.values()) {
+    for (const word of list) {
       words[index] = word;
       index += 1;
     }

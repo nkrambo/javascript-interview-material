@@ -30,12 +30,10 @@
 */
 
 function bubbleSort(arr) {
-
   for (let i = arr.length - 1; i >= 0; i -= 1) {
-    for(let j = 1; j <= i; j += 1) {
-
+    for (let j = 1; j <= i; j += 1) {
       // swap values
-      if(arr[j - 1] > arr[j]) {
+      if (arr[j - 1] > arr[j]) {
         const temp = arr[j - 1];
         arr[j - 1] = arr[j];
         arr[j] = temp;

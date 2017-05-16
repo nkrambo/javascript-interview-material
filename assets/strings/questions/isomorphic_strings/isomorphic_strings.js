@@ -54,13 +54,12 @@
 */
 
 function isIsomorphic(str1, str2) {
-
   // length check
   if (str1.length !== str2.length) return false;
 
   // map str1 to str2
   const chars = new Map();
-  for (let i = 0; i <  str1.length; i += 1) {
+  for (let i = 0; i < str1.length; i += 1) {
     const c1 = str1[i];
     const c2 = str2[i];
 

@@ -55,11 +55,9 @@
 */
 
 function isPalidromePermutation(str) {
-
   // use a set to balance characters
   const chars = new Set();
-  for (let char of str) {
-
+  for (const char of str) {
     // delete if present
     if (chars.has(char)) {
       chars.delete(char);

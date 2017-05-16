@@ -36,7 +36,6 @@
 */
 
 function reverseString(str) {
-
   // edge case
   if (str.length <= 1) return str;
 
@@ -46,15 +45,14 @@ function reverseString(str) {
   let end = arr.length - 1;
 
   while (start < end) {
+    // swap characters
+    const temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
 
-      // swap characters
-      let temp = arr[start];
-      arr[start] = arr[end];
-      arr[end] = temp;
-
-      // move towards middle
-      start += 1;
-      end -= 1;
+    // move towards middle
+    start += 1;
+    end -= 1;
   }
 
   return arr.join('');

@@ -43,7 +43,6 @@
 */
 
 function selectionSort(arr) {
-
   // advance the position through the entire array
   for (let j = 0; j < arr.length - 1; j += 1) {
     // assume the min is the first element

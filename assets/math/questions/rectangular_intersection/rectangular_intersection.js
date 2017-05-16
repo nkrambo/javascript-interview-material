@@ -124,7 +124,6 @@
 */
 
 function rangeOverlap(point1, length1, point2, length2) {
-
   // find the highest start point and lowest end point.
   // the highest ("rightmost" or "upmost") start point is
   // the start point of the overlap.
@@ -134,13 +133,13 @@ function rangeOverlap(point1, length1, point2, length2) {
 
   // return null overlap if there is no overlap
   if (highestStartPoint >= lowestEndPoint) {
-    return {startPoint: null, overlapLength: null};
+    return { startPoint: null, overlapLength: null };
   }
 
   // compute the overlap length
   const overlapLength = lowestEndPoint - highestStartPoint;
 
-  return {startPoint: highestStartPoint, overlapLength: overlapLength};
+  return { startPoint: highestStartPoint, overlapLength };
 }
 
 function rectangleIntersection(rect1, rect2) {

@@ -49,7 +49,6 @@
 */
 
 function quickSort(arr, left, right) {
-
   // bounds check
   if (left >= right) return;
 

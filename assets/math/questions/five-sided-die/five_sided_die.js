@@ -64,6 +64,7 @@ function rand5() {
   while (result > 5) {
     result = rand7();
   }
+
   return result;
 }
 

@@ -96,7 +96,6 @@
 */
 
 function topScores(unsortedScores, highestPossibleScore) {
-
   // array of 0s at indices 0..highestPossibleScore
   const scoresToCounts = [];
   for (let i = 0; i < highestPossibleScore + 1; i += 1) {
@@ -113,7 +112,6 @@ function topScores(unsortedScores, highestPossibleScore) {
 
   // for each item in scoresToCounts
   scoresToCounts.forEach((count, score) => {
-
     // for the number of times the item occurs
     for (let time = 0; time < count; time += 1) {
       sortedScores.push(score);

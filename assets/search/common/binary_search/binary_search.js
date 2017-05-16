@@ -75,14 +75,12 @@
 */
 
 function binarySearch(nums, target) {
-
   // we create index 'range' around possible positions of our target
   let left = 0;
   let right = nums.length - 1;
 
   // while there are unchecked positions in our 'range', keep checking midpoint
   while (left <= right) {
-
     // calculate midpoint, favour left if we need to
     const mid = Math.floor((left + right) / 2);
 

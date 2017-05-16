@@ -75,7 +75,6 @@
 */
 
 function reverseWords(str) {
-
   // first we reverse all the characters in the entire message
   const msg = str.split('');
   reverseCharacters(msg, 0, msg.length - 1);
@@ -90,7 +89,6 @@ function reverseWords(str) {
   // as we look for the /end/ of the current word
   let wordStart = 0;
   for (let i = 0; i <= msg.length; i += 1) {
-
     // found the end of the current word!
     if (i === msg.length || msg[i] === ' ') {
       // if we haven't exhausted the string our
@@ -114,9 +112,8 @@ function reverseWords(str) {
 function reverseCharacters(msg, start, end) {
   // walk towards the middle, from both sides
   while (start < end) {
-
     // swap the front char and back char
-    let temp = msg[start];
+    const temp = msg[start];
     msg[start] = msg[end];
     msg[end] = temp;
     start += 1;

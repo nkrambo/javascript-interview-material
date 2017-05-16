@@ -42,25 +42,24 @@
 */
 
 function oneAway(str1, str2) {
-
   // if lengths differ by more than 1, must be false
   if (Math.abs(str1.length - str2.length) > 1) return false;
 
   // count characters in str1
   const chars = new Map();
-  for (let char of str1) {
+  for (const char of str1) {
     chars.set(char, chars.get(char) + 1 || 1); // increment by or set to 1
   }
 
   // compare str2 against str1
-  for (let char of str2) {
-    let count = chars.get(char);
+  for (const char of str2) {
+    const count = chars.get(char);
 
     if (count) {
       if (count === 1) {
         chars.delete(char);
       } else {
-       chars.set(char, count - 1);
+        chars.set(char, count - 1);
       }
     }
   }

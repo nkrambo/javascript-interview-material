@@ -27,7 +27,6 @@
 */
 
 function findInOrderedSet(target, nums) {
-
   // see if target appears in nums
   // we think of floorIndex and ceilingIndex as "walls" around
   // the possible positions of our target so by -1 below we mean
@@ -39,25 +38,20 @@ function findInOrderedSet(target, nums) {
   // if there isn't at least 1 index between floor and ceiling,
   // we've run out of guesses and the number must not be present
   while (floorIndex + 1 < ceilingIndex) {
-
     // find the index ~halfway between the floor and ceiling
     // we use integer division, so we'll never get a "half index"
-    let distance = ceilingIndex - floorIndex;
-    let halfDistance = Math.floor(distance / 2);
-    let guessIndex = floorIndex + halfDistance;
-
-    let guessValue = nums[guessIndex];
+    const distance = ceilingIndex - floorIndex;
+    const halfDistance = Math.floor(distance / 2);
+    const guessIndex = floorIndex + halfDistance;
+    const guessValue = nums[guessIndex];
 
     if (guessValue === target) return true;
 
     if (guessValue > target) {
-
       // target is to the left
       // so move ceiling to the left
       ceilingIndex = guessIndex;
-
     } else {
-
       // target is to the right
       // so move floor to the right
       floorIndex = guessIndex;

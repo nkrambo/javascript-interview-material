@@ -50,7 +50,6 @@ function stringCompress(str) {
   for (let i = 0; i < str.length; i += 1) {
     if (str[i] === str[i + 1]) {
       charCount += 1;
-
     } else {
       // concat to running result
       compressed = compressed.concat(str[i] + charCount);

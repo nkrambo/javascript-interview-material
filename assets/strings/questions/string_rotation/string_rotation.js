@@ -41,7 +41,6 @@
 */
 
 function isRotation(str1, str2) {
-
   // length check, short-circuit
   if (str1.length !== str2.length) return false;
 

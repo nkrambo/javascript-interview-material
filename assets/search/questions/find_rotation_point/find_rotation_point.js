@@ -82,7 +82,7 @@ function findRotationPoint(words) {
 
   while (floor < ceiling) {
     // guess a point halfway between floor and ceiling
-    let guess = Math.floor(floor + ((ceiling - floor) / 2));
+    const guess = Math.floor(floor + ((ceiling - floor) / 2));
 
     // if guess comes after first word, go right
     if (words[guess] > first) {

@@ -42,9 +42,9 @@
 * @return {number} returns the median of nums1 and nums2 combined
 */
 
-function findMedian(nums1, nums2) {
-  const joined = [];
-}
+// function findMedian(nums1, nums2) {
+//   const joined = [];
+// }
 
 /**
 * findMedian()

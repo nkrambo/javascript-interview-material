@@ -39,19 +39,18 @@
 */
 
 function isPermutation(str1, str2) {
-
   // length check, short-circuit
   if (str1.length !== str2.length) return false;
 
   // count characters in str1
   const chars = new Map();
-  for (let char of str1) {
+  for (const char of str1) {
     chars.set(char, chars.get(char) + 1 || 1); // increment or set to 1
   }
 
   // check str2 against str1 map
-  for (let char of str2) {
-    let count = chars.get(char);
+  for (const char of str2) {
+    const count = chars.get(char);
 
     // if character doesn't exist
     if (!count) return false;
@@ -88,7 +87,6 @@ function isPermutation(str1, str2) {
 */
 
 function isPermutationSort(str1, str2) {
-
   // length check, short-circuit
   if (str1.length !== str2.length) return false;
 

@@ -43,7 +43,6 @@
 */
 
 function parenthesisMatching(str, pos) {
-
   // check pos actually references opening parenthesis
   if (str[pos] !== '(') {
     throw new Error('parenthesisMatching: [Pos] does not reference opening parenthesis index.');
@@ -58,9 +57,9 @@ function parenthesisMatching(str, pos) {
     } else if (char === ')') {
       if (openParens === 0) {
         return i;
-      } else {
-        openParens -= 1;
       }
+
+      openParens -= 1;
     }
   }
 

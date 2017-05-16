@@ -39,7 +39,6 @@
 */
 
 function mergeSort(array) {
-
   // base case
   if (array.length <= 1) return array;
 

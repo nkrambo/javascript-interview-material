@@ -39,7 +39,6 @@
 */
 
 function insertionSort(arr) {
-
   // step over our input array
   for (let i = 1; i < arr.length; i += 1) {
     // grab our current value and also the previous value index

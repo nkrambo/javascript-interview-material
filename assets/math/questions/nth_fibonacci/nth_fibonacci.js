@@ -56,13 +56,12 @@
 */
 
 function fib(n) {
-
   // edge cases
-   if (n < 0) {
-     throw new Error('Index was negative. No such thing as a negative index in a series.');
-   } else if (n === 0 || n === 1) {
-     return n;
-   }
+  if (n < 0) {
+    throw new Error('Index was negative. No such thing as a negative index in a series.');
+  } else if (n === 0 || n === 1) {
+    return n;
+  }
 
   // we'll be building the fibonacci series from the bottom up
   // so we'll need to track the previous 2 numbers at each step
@@ -93,10 +92,9 @@ function fib(n) {
 */
 
 function fibRecursive(n) {
-
   // base cases
   if (n === 0 || n === 1) {
-      return n;
+    return n;
   }
 
   // recurse

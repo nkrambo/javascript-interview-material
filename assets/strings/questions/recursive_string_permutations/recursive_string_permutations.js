@@ -72,7 +72,6 @@
 */
 
 function recursivePerms(str) {
-
   // base case
   if (str.length <= 1) {
     return new Set(str);

@@ -73,7 +73,7 @@ class ThreeInOne {
 
   push(stack, value) {
     // calculate index and push value
-    const index = this.getLength(stack) * 3 + stack - 1;
+    const index = (this.getLength(stack) * 3) + (stack - 1);
     this.array[index] = value;
 
     // increment length
@@ -104,7 +104,7 @@ class ThreeInOne {
     if (length === 0) return null;
 
     // grab index and value
-    const index = (length - 1) * 3 + stack - 1;
+    const index = ((length - 1) * 3) + (stack - 1);
     const value = this.array[index]; // cache
 
     // 'delete' value and decrement length
@@ -127,7 +127,7 @@ class ThreeInOne {
     if (length === 0) return null;
 
     // grab index and value
-    const index = (length - 1) * 3 + stack - 1;
+    const index = ((length - 1) * 3) + (stack - 1);
 
     return this.array[index];
   }

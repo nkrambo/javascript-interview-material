@@ -13,14 +13,14 @@
 * items to the stack and another process removing them from the end–
 * prioritizing items added most recently.
 *
+* Key Operations:
 *
-*                           Pop          Push         Peek
-* -----------------------------------------------------------------------------
-*                 Stack     O(1)         O(1)         O(1)
+* pop:  O(1)
+* push: O(1)
+* peek: O(1)
 */
 
 class Stack {
-
   /**
   * @constructor
   *

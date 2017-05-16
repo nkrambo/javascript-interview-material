@@ -46,7 +46,6 @@
 */
 
 function countingSort(array, maxValue) {
-
   // array of 0s at indices 0..maxValue
   const numsToCounts = [];
   for (let i = 0; i < maxValue + 1; i += 1) {
