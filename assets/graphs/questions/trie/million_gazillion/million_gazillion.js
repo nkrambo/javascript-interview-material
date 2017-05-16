@@ -88,7 +88,6 @@ class MillionGazillion {
     // work downwards through the trie, adding nodes as needed,
     // and keeping track of whether we add any nodes.
     for (let char of url) {
-
       // if we don't have current char
       if (!current.hasOwnProperty(char)) {
         newWord = true;

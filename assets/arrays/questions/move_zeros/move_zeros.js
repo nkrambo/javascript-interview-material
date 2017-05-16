@@ -46,7 +46,6 @@
 */
 
 function moveZeros(nums) {
-
   // Count the zeroes
   let numZeroes = 0;
   for (let i = 0; i < nums.length; i += 1) {
@@ -62,8 +61,9 @@ function moveZeros(nums) {
   }
 
   // Move all zeroes to the end
-  while (numZeroes--) {
+  while (numZeroes > 0) {
     result.push(0);
+    numZeroes -= 1;
   }
 
   // Combine the result, if you didn't need to do this in-place you could just

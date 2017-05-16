@@ -13,7 +13,7 @@
     "sourceType": "module"
   },
   "rules": {
-    # "no-unused-expressions": 0,
+    "no-param-reassign": 0, # perhaps turn back
     "arrow-parens": [
       "error",
       "always"

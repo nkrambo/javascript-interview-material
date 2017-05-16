@@ -1,20 +1,22 @@
 
 import { expect } from 'chai';
-import ransomNote from '../ransom_note';
+import canMakeRansomNote from '../ransom_note';
 
-describe('ransomNote()', () => {
+describe('canMakeRansomNote()', () => {
   it('should return false if magazine < ransom note, white space excluded', () => {
-    expect(ransomNote('muchlonger', 'short')).to.be.false;
+    expect(canMakeRansomNote('muchlonger', 'short')).to.be.false;
   });
 
   it('should return false if ransom cannot be constructed from magazine', () => {
-    expect(ransomNote('a', 'b')).to.be.false;
-    expect(ransomNote('aa', 'ab')).to.be.false;
+    expect(canMakeRansomNote('a', 'b')).to.be.false;
+    expect(canMakeRansomNote('aa', 'ab')).to.be.false;
   });
 
   it('should return true if ransom can be constructed from magazine', () => {
-    expect(ransomNote('a', 'a')).to.be.true;
-    expect(ransomNote('abc', 'a b c')).to.be.true;
-    expect(ransomNote('money or else', 'more money, more problems.')).to.be.true;
+    expect(canMakeRansomNote('a', 'a')).to.be.true;
+    expect(canMakeRansomNote('abc', 'a b c')).to.be.true;
+    expect(canMakeRansomNote('a b c', 'abc')).to.be.true;
+    expect(canMakeRansomNote('a b c', 'a b c')).to.be.true;
+    expect(canMakeRansomNote('a b c', 'abcdefg')).to.be.true;
   });
 });

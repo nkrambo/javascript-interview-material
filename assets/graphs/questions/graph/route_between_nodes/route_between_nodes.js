@@ -29,7 +29,6 @@
 */
 
 function routeBetweenNodes(start, end) {
-
   // short-circuit
   if (start === end) return true;
 
@@ -38,7 +37,6 @@ function routeBetweenNodes(start, end) {
   const queue = [start];
 
   while (queue.length) {
-
     // dequeue and grab edges
     const node = queue.shift();
     const edges = node.edges;
@@ -49,7 +47,6 @@ function routeBetweenNodes(start, end) {
 
       // check for cycle
       if (!visited.has(edge)) {
-
         // if we reached the end, we found a route
         if (edge === end) return true;
 

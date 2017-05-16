@@ -161,13 +161,12 @@ class BSTRandom {
   */
 
   insert(value) {
-
     // create node, track size
     const node = {
       value,
       left: null,
       right: null,
-      children: null
+      children: null,
     };
 
     if (this.root === null) {
@@ -179,7 +178,6 @@ class BSTRandom {
     let current = this.root;
 
     while (current) {
-
       // children bump each node in branch
       current.children += 1;
 
@@ -213,14 +211,12 @@ class BSTRandom {
   */
 
   getRandomNode() {
-
     // generate random index
-    let index = Math.ceil(Math.random() * this.root.children - 1); // minus 1 for zero based indexing
+    let index = Math.ceil(Math.random() * (this.root.children - 1)); // minus 1 for zero based indexing
 
     // traverse from root
     let current = this.root;
     while (current) {
-
       // if we're at index
       if (index === this.getChildren(current.left)) return current.value;
 

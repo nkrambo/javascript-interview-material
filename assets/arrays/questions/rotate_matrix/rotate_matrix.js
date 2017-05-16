@@ -36,7 +36,6 @@
 */
 
 function rotateMatrix(matrix) {
-
   // cannot rotate a 1, 1 matrix
   if (matrix.length < 2) return matrix;
 

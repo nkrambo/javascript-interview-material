@@ -35,7 +35,6 @@
 */
 
 function twoSumBrute(nums, target) {
-
   // edge cases, minimum 2
   if (nums.length < 2) {
     throw new Error('twoSum: nums[] must be a minimum length of 2.');

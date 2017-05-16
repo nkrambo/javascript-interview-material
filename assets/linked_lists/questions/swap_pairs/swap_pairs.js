@@ -27,7 +27,6 @@
 */
 
 function swapPairsRecursive(head) {
-
   // base
   if (head === null || head.next === null) return head;
 
@@ -59,15 +58,15 @@ function swapPairs(head) {
   let cur = head;
   let newHead = head.next;
   while (cur !== null && cur.next !== null) {
-    let tmp = cur;
+    const temp = cur;
     cur = cur.next;
-    tmp.next = cur.next;
-    cur.next = tmp;
-    cur = tmp.next;
-    if (cur !== null && cur.next !== null) tmp.next = cur.next;
+    temp.next = cur.next;
+    cur.next = temp;
+    cur = temp.next;
+    if (cur !== null && cur.next !== null) temp.next = cur.next;
   }
 
   return newHead;
 }
 
-export {swapPairsRecursive, swapPairs};
+export { swapPairsRecursive, swapPairs };

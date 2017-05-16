@@ -80,7 +80,6 @@ function bracketValidator(str) {
   for (const char of str) {
     if (openers.has(char)) {
       openersStack.push(char);
-
     } else if (closers.has(char)) {
       if (!openersStack.length) {
         return false;

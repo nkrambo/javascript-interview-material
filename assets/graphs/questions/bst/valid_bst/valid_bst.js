@@ -48,7 +48,6 @@
 */
 
 function checkBST(tree) {
-
   // start at the root, with an arbitrarily low lower bound
   // and an arbitrarily high upper bound
   const stack = [{

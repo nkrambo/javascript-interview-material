@@ -213,7 +213,6 @@ function alienOrder(words) {
   });
 
   while (queue.length) {
-
     // dequeue
     const node = queue.shift();
 

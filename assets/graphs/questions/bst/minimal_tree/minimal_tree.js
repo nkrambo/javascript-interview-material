@@ -52,7 +52,6 @@
 import BinarySearchTree from '../../../class/bst/bst';
 
 function minimal(nums) {
-
   // new tree
   const BST = new BinarySearchTree();
 
@@ -63,7 +62,6 @@ function minimal(nums) {
 }
 
 function insertNode(tree, nums, left, right) {
-
   // base case
   if (right < left) return null;
 

@@ -118,7 +118,6 @@ function buildOrder(projects, deps) {
 
   // process projects
   while (queue.length) {
-
     // dequeue
     const current = queue.shift();
 

@@ -31,7 +31,6 @@
 */
 
 function zeroMatrix(matrix) {
-
   // find zero co-ordinates
   const ords = [];
   matrix.forEach((row, i) => {
@@ -42,7 +41,6 @@ function zeroMatrix(matrix) {
 
   // update matrix rows, columns
   ords.forEach((ord) => {
-
     // clear rows, we can use fill() horizontally
     matrix[ord[0]].fill(0);
 

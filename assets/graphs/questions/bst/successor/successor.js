@@ -31,7 +31,6 @@
 */
 
 function findNext(node) {
-
   if (node === null) return null;
 
   // if we have a right child, get the smallest of that sub-tree

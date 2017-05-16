@@ -76,30 +76,30 @@
 * @return {boolean} returns true if the ransom note can be constructed, otherwise false
 */
 
-function ransomNote(ransomNote, magazine) {
+function canMakeRansomNote(ransomNote, magazine) {
   // count ransom note characters
   const chars = new Map();
+
   for (const char of ransomNote) {
     // ignore spaces
-    if (char === ' ') continue;
-
-    // otherwise, count up characters
-    chars.set(char, chars.get(char) + 1 || 1); // increment by or add 1
+    if (char !== ' ') {
+      // count up characters
+      chars.set(char, chars.get(char) + 1 || 1); // increment by or add 1
+    }
   }
 
   // iterate magazine
   for (const char of magazine) {
     const count = chars.get(char);
 
-    // if character isn't in ransom, move on
-    // or if we come across a space
-    if (!count || char === ' ') continue;
-
-    // remove or decrement characters
-    if (count === 1) {
-      chars.delete(char);
-    } else {
-      chars.set(char, count - 1);
+    // if character isn't in ransom, move on or if we come across a space
+    if (count || char !== ' ') {
+      // remove or decrement characters
+      if (count === 1) {
+        chars.delete(char);
+      } else {
+        chars.set(char, count - 1);
+      }
     }
 
     // only return true if all chars are accounted for
@@ -109,4 +109,4 @@ function ransomNote(ransomNote, magazine) {
   return false;
 }
 
-export default ransomNote;
+export default canMakeRansomNote;

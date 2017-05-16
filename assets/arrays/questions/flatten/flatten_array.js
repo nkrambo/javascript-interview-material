@@ -45,9 +45,7 @@ function flatten2(arr) {
 */
 
 function flatten3(arr) {
-  return arr.reduce((prev, curr) => {
-    return prev.concat(curr);
-  }, []);
+  return arr.reduce((prev, curr) => prev.concat(curr), []);
 }
 
 /**
@@ -71,9 +69,7 @@ function flatten4(arr) {
 
 // ES6
 function flattenMixed(arr) {
-  return arr.reduce((acc, val) => {
-    return acc.concat(Array.isArray(val) ? flattenMixed(val) : val);
-  }, []);
+  return arr.reduce((acc, val) => acc.concat(Array.isArray(val) ? flattenMixed(val) : val), []);
 }
 
 export { flatten1, flatten2, flatten3, flatten4, flattenMixed };
