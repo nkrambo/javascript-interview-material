@@ -1,8 +1,9 @@
 
-import LinkedList from '../../class/linked_list/linked_list';
-
 /**
-* Sum Lists
+* Add Two Numbers
+*
+* Tags: Linked List
+* Leetcode: 2
 *
 * You have two numbers represented by a linked list, where each node contains a
 * single digit. The digits are stored in reverse order, such that the 1's digit
@@ -18,10 +19,20 @@ import LinkedList from '../../class/linked_list/linked_list';
 *
 * Example: Input: (6 -> 1 -> 7) + (2 -> 9 -> 5). That is, 617 + 295.
 * Output: 9 -> 1 -> 2. That is, 912.
+*
+* You may assume the two numbers do not contain any leading zero, except the number
+* 0 itself.
+*
+* Definition for singly-linked list:
+*
+* function ListNode(val) {
+*   this.val = val;
+*   this.next = null;
+* }
 */
 
 /**
-* sumLists()
+* addTwoNumbers()
 *
 * Solution:
 *
@@ -84,24 +95,21 @@ import LinkedList from '../../class/linked_list/linked_list';
 * complexity will be O(log n) as we need to return a new list, which will be about
 * half the nodes of (n).
 *
-* @param {object} l1 linked list
-* @param {object} l2 linked list
-* @return {number} returns the sum of list1 and list2
+* @param {object} l1 linked list node
+* @param {object} l2 linked list node
+* @return {number} returns the addition of list1 and list2
 */
 
-function sumLists(l1, l2) {
-  const results = new LinkedList();
-  let node1 = l1.head;
-  let node2 = l2.head;
+function addTwoNumbers(l1, l2) {
+  const results = new ListNode(null);
   let carry = 0;
   let sum;
 
   // matched values:
   // iterate while we have both values in columns
-  while (node1 && node2) {
-
+  while (l1 && l2) {
     // add up values and carry
-    sum = node1.value + node2.value + carry;
+    sum = l1.val + l2.val + carry;
 
     // check for carry value
     if (sum >= 10) {
@@ -112,20 +120,20 @@ function sumLists(l1, l2) {
     }
 
     // add sum to result list
-    results.add(sum, results.length);
+    insert(results, sum);
 
     // keep iterating
-    node1 = node1.next;
-    node2 = node2.next;
+    l1 = l1.next;
+    l2 = l2.next;
   }
 
   // single values:
   // get any remaining values
-  let node = node1 || node2;
+  let node = l1 || l2;
 
   // iterate remaining values
   while (node) {
-    sum = node.value + carry;
+    sum = node.val + carry;
 
     // check for carry
     if (sum >= 10) {
@@ -136,14 +144,46 @@ function sumLists(l1, l2) {
     }
 
     // add to sum and look for next single value
-    results.add(sum, results.length);
+    insert(results, sum);
+
     node = node.next;
   }
 
   // check for any last remainder
-  if (carry > 0) results.add(carry, results.length);
+  if (carry > 0) insert(results, carry);
 
   return results;
 }
 
-export default sumLists;
+/**
+* ListNode
+*
+* @constructor
+* @param {*} val
+* @return {object} returns a linked list node
+*/
+
+function ListNode(val) {
+  this.val = val;
+  this.next = null;
+}
+
+/**
+* insert()
+*
+* @param {object} node head of linked list
+* @param {*} val
+* @return {void}
+*/
+
+function insert(node, val) {
+  const newNode = new ListNode(val);
+
+  while (node.next !== null) {
+    node = node.next;
+  }
+
+  node.val = newNode;
+}
+
+export { addTwoNumbers, ListNode, insert };
