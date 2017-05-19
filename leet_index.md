@@ -8,6 +8,6 @@
   </tr>
   <tr>
     <td>1</td>
-    <td>[Two Sum](http://www.google.com)</td>
+    <td><a href="https://leetcode.com/problems/two-sum/#/description">Two Sum</a></td>
   </tr>
 </table>
