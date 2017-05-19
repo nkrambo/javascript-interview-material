@@ -8,6 +8,6 @@
   </tr>
   <tr>
     <td>1</td>
-    <td><a href="assets/arrays/questions/two_sum">Two Sum</a></td>
+    <td><a href="assets/arrays/questions/two_sum/two_sum.js">Two Sum</a></td>
   </tr>
 </table>
