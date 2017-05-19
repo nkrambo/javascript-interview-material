@@ -2,7 +2,8 @@
 /**
 * Two Sum
 *
-* Tags: Map, Classic
+* Tags: Map
+* Leetcode: 1
 *
 * Given an array of integers, return indices of the two numbers such that they
 * add up to a specific target.
@@ -103,5 +104,33 @@ function twoSumHash(nums, target) {
 
   return null;
 }
+
+// function twoMovies(movieLengths, flightLength) {
+//   // movie lengths we've seen so far
+//   const moviesSeen = new Set();
+//
+//   for (const movie of movieLengths) {
+//     const first = movie;
+//     const second = flightLength - first;
+//
+//     if (moviesSeen.has(second)) return true;
+//
+//     moviesSeen.add(first);
+//   }
+//
+//   // we never found a match, so return false
+//   return false;
+// }
+//
+//
+// var twoSum = function(nums, target) {
+//     for (var i=0;i<nums.length-1;i++){
+//         for (var j=i+1;j<nums.length;j++){
+//             if (nums[i]+nums[j]===target){
+//                 return [i,j];
+//             }
+//         }
+//     }
+// };
 
 export { twoSumBrute, twoSumHash };

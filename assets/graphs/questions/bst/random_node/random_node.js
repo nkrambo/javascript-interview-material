@@ -63,7 +63,7 @@
 *
 * 4.children = 6
 * 2.children = 2
-* 5.children = 2
+* 6.children = 2
 *
 * So how is this useful? We'll if we want to select randomly with equal probability
 * of selecting any other node, we can use this property to our advantage. If we

@@ -25,6 +25,8 @@ I highly recommend these resources for interview preparation.
 * [LeetCode](https://leetcode.com/)
 * [Hacker Rank](https://www.hackerrank.com/)
 
+If you use LeetCode, questions have been [referenced](/leet_index.md).
+
 ---
 
 ### Practice makes perfect, and wine, plenty of wine.
