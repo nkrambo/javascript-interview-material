@@ -105,57 +105,30 @@
 
 function addTwoNumbers(l1, l2) {
   const sentinel = new ListNode(0);
-  let d = sentinel;
+  let current = sentinel;
+  let p = l1;
+  let q = l2;
   let carry = 0;
-  let sum;
 
   // matched values:
   // iterate while we have both values in columns
-  while (l1 && l2) {
+  while (p !== null || q !== null) {
     // add up values and carry
-    sum = l1.val + l2.val + carry;
-
-    // check for carry value
-    if (sum >= 10) {
-      carry = 1;
-      sum -= 10;
-    } else {
-      carry = 0;
-    }
-
-    // add sum to result list
-    d.next = new ListNode(sum);
-    d = d.next
+    const x = (p !== null) ? p.val : 0;
+    const y = (q !== null) ? q.val : 0;
+    const sum = carry + x + y;
+    carry = Math.floor(sum / 10);
+    current.next = new ListNode(sum % 10);
+    current = current.next;
 
     // keep iterating
-    l1 = l1.next;
-    l2 = l2.next;
-  }
-
-  // single values:
-  // get any remaining values
-  let node = l1 || l2;
-
-  // iterate remaining values
-  while (node) {
-    sum = node.val + carry;
-
-    // check for carry
-    if (sum >= 10) {
-      carry = 1;
-      sum -= 10;
-    } else {
-      carry = 0;
-    }
-
-    // add to sum and look for next single value
-    d.next = new ListNode(sum);
-    node = node.next;
+    if (p !== null) p = p.next;
+    if (q !== null) q = q.next;
   }
 
   // check for any last remainder
   if (carry > 0) {
-    d.next = new ListNode(carry);
+    current.next = new ListNode(carry);
   }
 
   return sentinel.next;
