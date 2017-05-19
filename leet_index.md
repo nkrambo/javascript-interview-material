@@ -14,4 +14,8 @@
     <td>2</td>
     <td><a href="assets/linked_lists/questions/add_two_numbers/add_two_numbers.js">Add Two Numbers</a></td>
   </tr>
+  <tr>
+    <td>3</td>
+    <td><a href="assets/strings/questions/longest_substring_no_repeats/longest_substring_no_repeats.js">Longest Substring Without Repeating Characters</a></td>
+  </tr>
 </table>

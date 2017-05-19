@@ -1,18 +1,32 @@
 
 import { expect } from 'chai';
-import { addTwoNumbers, ListNode, insert } from '../add_two_numbers';
+import { addTwoNumbers, ListNode } from '../add_two_numbers';
 
 describe('addTwoNumbers()', () => {
   it('should return the sum of the reverse of l1 and l2', () => {
     // 7 -> 1 -> 6
-    const l1 = new ListNode(7);
-    insert(l1, 1);
-    insert(l1, 6);
+    const l1 = {
+      val: 7,
+      next: {
+        val: 1,
+        next: {
+          val: 6,
+          next: null,
+        },
+      },
+    };
 
     // 5 -> 9 -> 2
-    const l2 = new ListNode(5);
-    insert(l2, 9);
-    insert(l2, 2);
+    const l2 = {
+      val: 5,
+      next: {
+        val: 9,
+        next: {
+          val: 2,
+          next: null,
+        },
+      },
+    };
 
     // that is, 617 + 295 = (2 -> 1 -> 9)
     const result = addTwoNumbers(l1, l2);

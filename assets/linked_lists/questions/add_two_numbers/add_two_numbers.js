@@ -10,14 +10,17 @@
 * is at the head of the list. Write a function that adds the two numbers and
 * returns the sum as a linked list.
 *
-* Example:
+* Example 1:
+*
 * Input: (7 -> 1 -> 6) + (5 -> 9 -> 2). That is, 617 + 295
 * Output: 2 -> 1 -> 9. That is, 912.
 *
 * Follow Up:
 * Suppose the digits are stored in forward order. Reapeat the above problem.
 *
-* Example: Input: (6 -> 1 -> 7) + (2 -> 9 -> 5). That is, 617 + 295.
+* Example 2:
+*
+* Input: (6 -> 1 -> 7) + (2 -> 9 -> 5). That is, 617 + 295.
 * Output: 9 -> 1 -> 2. That is, 912.
 *
 * You may assume the two numbers do not contain any leading zero, except the number
@@ -101,7 +104,8 @@
 */
 
 function addTwoNumbers(l1, l2) {
-  const results = new ListNode(null);
+  const sentinel = new ListNode(0);
+  let d = sentinel;
   let carry = 0;
   let sum;
 
@@ -120,7 +124,8 @@ function addTwoNumbers(l1, l2) {
     }
 
     // add sum to result list
-    insert(results, sum);
+    d.next = new ListNode(sum);
+    d = d.next
 
     // keep iterating
     l1 = l1.next;
@@ -144,15 +149,16 @@ function addTwoNumbers(l1, l2) {
     }
 
     // add to sum and look for next single value
-    insert(results, sum);
-
+    d.next = new ListNode(sum);
     node = node.next;
   }
 
   // check for any last remainder
-  if (carry > 0) insert(results, carry);
+  if (carry > 0) {
+    d.next = new ListNode(carry);
+  }
 
-  return results;
+  return sentinel.next;
 }
 
 /**
@@ -168,22 +174,4 @@ function ListNode(val) {
   this.next = null;
 }
 
-/**
-* insert()
-*
-* @param {object} node head of linked list
-* @param {*} val
-* @return {void}
-*/
-
-function insert(node, val) {
-  const newNode = new ListNode(val);
-
-  while (node.next !== null) {
-    node = node.next;
-  }
-
-  node.val = newNode;
-}
-
-export { addTwoNumbers, ListNode, insert };
+export { addTwoNumbers, ListNode };

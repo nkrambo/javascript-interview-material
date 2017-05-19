@@ -2,17 +2,23 @@
 /**
 * Longest Substring No Repeated Characters
 *
+* Tags: Map, Two Pointers
+* Leetcode: 3
+*
 * Given a string, find the length of the longest substring without repeating characters.
 *
-* Example:
+* Example 1:
+*
 * Input: 'abcabcbb'
 * Output: 3 ('abc')
 *
-* Example:
+* Example 2:
+*
 * Input: 'bbbbb'
 * Output: 1 ('b')
 *
-* Example:
+* Example 3:
+*
 * Input: 'pwwkew'
 * Output: 3 ('wke')
 * Note that the answer must be a substring, 'pwke' is a subsequence and not a substring.
