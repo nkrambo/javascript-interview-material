@@ -40,6 +40,15 @@
 */
 
 function longestSubstring(s) {
+  // init a result count
+  // init a map for chars seen
+
+  // step over string
+
+  // check map for char
+    // if not seen: add char to map, increase result count, keep going
+
+    // if seen: 
 
 }
 
