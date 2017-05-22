@@ -1,6 +1,11 @@
 
 import { expect } from 'chai';
-import { longestSubstringBrute, allUnique } from '../longest_substring_no_repeats';
+import {
+  longestSubstringBrute,
+  allUnique,
+  longestSubstring,
+  longestSubstringMap
+} from '../longest_substring_no_repeats';
 
 describe('longestSubstringBrute()', () => {
   it('should find the longest substring with no repeating characters', () => {
@@ -27,13 +32,13 @@ describe('allUnique()', () => {
   });
 });
 
-// describe('longestSubstringAlt()', () => {
-//   it('should find the longest substring with no repeating characters', () => {
-//     expect(longestSubstringAlt('abcabcbb')).to.equal(3);
-//     expect(longestSubstringAlt('bbbbb')).to.equal(1);
-//     expect(longestSubstringAlt('pwwkew')).to.equal(3);
-//     expect(longestSubstringAlt('c')).to.equal(1);
-//     expect(longestSubstringAlt('au')).to.equal(2);
-//     expect(longestSubstringAlt('dvdf')).to.equal(3);
-//   });
-// });
+describe('longestSubstringMap()', () => {
+  it('should find the longest substring with no repeating characters', () => {
+    expect(longestSubstringMap('abcabcbb')).to.equal(3);
+    expect(longestSubstringMap('bbbbb')).to.equal(1);
+    expect(longestSubstringMap('pwwkew')).to.equal(3);
+    expect(longestSubstringMap('c')).to.equal(1);
+    expect(longestSubstringMap('au')).to.equal(2);
+    expect(longestSubstringMap('dvdf')).to.equal(3);
+  });
+});

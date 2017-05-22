@@ -99,5 +99,122 @@ function allUnique(s, start, end) {
   return true;
 }
 
+/**
+* longestSubstring()
+*
+* Solution:
+*
+* In the naive approache, we repeatedly check a substring to see if it has duplicate
+* character. But it is unnecessary. If a substring s{ij} from index i to j - 1 is
+* already checked to have no duplicate characters. We only need to check if s[j]
+* is already in the substring s{ij}​​.
+*
+* To check if a character is already in the substring, we can scan the substring,
+* which leads to an O(n^2) algorithm. But we can do better.
+*
+* By using Map as a sliding window, checking if a character in the current substring
+* can be done in O(1).
+*
+* A sliding window is an abstract concept commonly used in array/string problems.
+* A window is a range of elements in the array/string which is usually defined by the
+* start and end indices, i.e. (i, j) (left-closed, right-open). A sliding window
+* is a window that "slides" its two boundaries to a certain direction.
+*
+* For example, if we slide (i, j) to the right by 1 element, then it becomes (i + 1, j + 1)
+* (left-closed, right-open).
+*
+* Back to our problem. We use Map to store the characters in current window
+* (i, j), j === i initially. Then we slide the index j to the right. If it is not
+* in the Map, we slide j further. Doing so until s[j] is already in the Map. At
+* this point, we found the maximum size of substrings without duplicate characters
+* start with index i. If we do this for all i, we get our answer.
+*
+* Time: O(n)
+* Space: O(k)
+*
+* In the worst case each character will be visited twice by i and j. O(2n) = O(n)
+*
+* We need O(k) space for the sliding window, where k is the size of the Set. The
+* size of the Set is upper bounded by the size of the string n and the size of the
+* charset/alphabet m.
+*
+* @param {string} s string of (n) length
+* @return {number} returns length of the longest substring with no repeated characters
+*/
 
-export { longestSubstringBrute, allUnique };
+// abcabcbb
+
+function longestSubstring(s) {
+  const slidingWindow = new Set();
+  let max = 0;
+  let i = 0;
+  let j = 0;
+
+  while (i < s.length && j < s.length) {
+    // try to extend the range [i, j]
+    if (!slidingWindow.has(s[j])) {
+      j += 1;
+      slidingWindow.add(s[j]);
+      max = Math.max(max, j - i);
+    } else {
+      i += 1;
+      slidingWindow.delete(s[i]);
+    }
+  }
+
+  return max;
+}
+
+/**
+* longestSubstringMap()
+*
+* Solution:
+*
+* The above solution requires at most 2n steps. In fact, it could be optimized to
+* require only n steps. Instead of using a set to tell if a character exists or
+* not, we could define a mapping of the characters to its index. Then we can skip
+* the characters immediately when we found a repeated character.
+*
+* The reason is that if s[j] has a duplicate in the range (i, j) with index j,
+​* we don't need to increase i little by little. We can skip all the elements in
+* the range (i, j) and let i to be j + 1 directly.
+*
+* In other words, the basic idea is, keep a Map which stores the characters in the
+* string as keys and their positions as values, and keep two pointers which define
+* the max substring.
+*
+* Move the right pointer to scan through the string, and meanwhile update the Map.
+*
+* If the character is already in the Map, then move the left pointer to the right
+* of the same character last found.
+*
+* Note that the two pointers can only move forward.
+*
+* Time: O(n)
+* Space: O(k)
+*
+* @param {string} s string of (n) length
+* @return {number} returns length of the longest substring with no repeated characters
+*/
+
+function longestSubstringMap(s) {
+  const slidingWindow = new Map();
+  let max = 0;
+
+  // catch edge
+  if (s.length === 0) return 0;
+
+  // step over
+  for (let i = 0, j = 0; i < s.length; i += 1) {
+    if (slidingWindow.has(s[i])) {
+      j = Math.max(j, slidingWindow.get(s[i]) + 1);
+    }
+
+    slidingWindow.set(s[i], i);
+    max = Math.max(max, (i - j) + 1);
+  }
+
+  return max;
+}
+
+export { longestSubstringBrute, allUnique, longestSubstring, longestSubstringMap };
