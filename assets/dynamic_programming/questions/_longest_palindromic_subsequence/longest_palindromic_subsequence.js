@@ -2,7 +2,7 @@
 /**
 * Longest Palindromic Subsequence
 *
-* Tags: Bottom Up, Classic Problems
+* Tags: Dynamic Programming
 *
 * Given a string find longest palindromic subsequence in this string.
 *

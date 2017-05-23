@@ -71,7 +71,7 @@ function longestSubstringBrute(s) {
   for (let i = 0; i < s.length; i += 1) {
     for (let j = i + 1; j <= s.length; j += 1) {
       if (allUnique(s, i, j)) {
-        max = Math.max(max, j - i)
+        max = Math.max(max, j - i);
       }
     }
   }
@@ -107,7 +107,7 @@ function allUnique(s, start, end) {
 * In the naive approache, we repeatedly check a substring to see if it has duplicate
 * character. But it is unnecessary. If a substring s{ij} from index i to j - 1 is
 * already checked to have no duplicate characters. We only need to check if s[j]
-* is already in the substring s{ij}​​.
+* is already in the substring s{ij}.
 *
 * To check if a character is already in the substring, we can scan the substring,
 * which leads to an O(n^2) algorithm. But we can do better.
@@ -176,7 +176,7 @@ function longestSubstring(s) {
 * the characters immediately when we found a repeated character.
 *
 * The reason is that if s[j] has a duplicate in the range (i, j) with index j,
-​* we don't need to increase i little by little. We can skip all the elements in
+* we don't need to increase i little by little. We can skip all the elements in
 * the range (i, j) and let i to be j + 1 directly.
 *
 * In other words, the basic idea is, keep a Map which stores the characters in the
