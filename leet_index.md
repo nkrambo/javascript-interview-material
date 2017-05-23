@@ -18,4 +18,8 @@
     <td>3</td>
     <td><a href="assets/strings/questions/longest_substring_no_repeats/longest_substring_no_repeats.js">Longest Substring Without Repeating Characters</a></td>
   </tr>
+  <tr>
+    <td>4</td>
+    <td><a href="assets/strings/questions/median_of_sorted_arrays/median_of_sorted_arrays.js">Median of Two Sorted Arrays</a></td>
+  </tr>
 </table>
