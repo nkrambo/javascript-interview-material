@@ -36,19 +36,19 @@ describe('isPalindrome()', () => {
   });
 });
 
-// describe('longestPalindromeDP()', () => {
-//   it('should return the longest palindromic substring', () => {
-//     expect(longestPalindromeDP('babad')).to.be.oneOf(['bab', 'aba']);
-//     expect(longestPalindromeDP('ababa')).to.equal('ababa');
-//     expect(longestPalindromeDP('ccc')).to.equal('ccc');
-//     expect(longestPalindromeDP('hsaaaracecaroo')).to.equal('racecar');
-//     expect(longestPalindromeDP('cbbd')).to.equal('bb');
-//     expect(longestPalindromeDP('a')).to.equal('a');
-//     expect(longestPalindromeDP('dad')).to.equal('dad');
-//     expect(longestPalindromeDP('abcda')).to.equal('a');
-//   });
-// });
-//
+describe('longestPalindromeDP()', () => {
+  it('should return the longest palindromic substring', () => {
+    expect(longestPalindromeDP('babad')).to.be.oneOf(['bab', 'aba']);
+    expect(longestPalindromeDP('ababa')).to.equal('ababa');
+    expect(longestPalindromeDP('ccc')).to.equal('ccc');
+    expect(longestPalindromeDP('hsaaaracecaroo')).to.equal('racecar');
+    expect(longestPalindromeDP('cbbd')).to.equal('bb');
+    expect(longestPalindromeDP('a')).to.equal('a');
+    expect(longestPalindromeDP('dad')).to.equal('dad');
+    expect(longestPalindromeDP('abcda')).to.equal('a');
+  });
+});
+
 // describe('longestPalindrome()', () => {
 //   it('should return the longest palindromic substring', () => {
 //     expect(longestPalindrome('babad')).to.be.oneOf(['bab', 'aba']);

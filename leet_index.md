@@ -22,4 +22,8 @@
     <td>4</td>
     <td><a href="assets/strings/questions/median_of_sorted_arrays/median_of_sorted_arrays.js">Median of Two Sorted Arrays</a></td>
   </tr>
+  <tr>
+    <td>5</td>
+    <td><a href="assets/strings/questions/longest_palindromic_substring/longest_palindromic_substring.js">Longest Palindromic Substring</a></td>
+  </tr>
 </table>

@@ -2,7 +2,7 @@
 /**
 * Longest Palindromic Substring
 *
-* Tags: String
+* Tags: String, Manachers, Dynamic Programming
 * Leetcode: 5
 *
 * Given a string, find the longest palindromic substring of that string. You may
@@ -114,6 +114,73 @@ function isPalindrome(s, left, right) {
 * obvious that 'ababa' must be a palindrome since the two left and right end letters
 * are the same.
 *
+* We can use these properties to our advantage using a dynamic programming approach.
+*
+* The two conditions we are checking to see if a string is a palindrome are:
+*
+* 1. The first and last characters match.
+* 2. Substring (excluding the first and last characters) is a palindrome.
+*
+* Let's use the example string 'banana'.
+*
+* This string contains a few palindromes, 'ana', 'nan' and the longest 'anana'.
+*
+* As with most DP solutions, we'll use a matrix to build our answer. We have the
+* string represented as columns and rows, or simply (x, y).
+*
+* We also need to keep track of the 'currentLength', 'maxLength' and 'longestPalindrome',
+* so far.
+*
+* Firstly, we are testing for a 'currentLength' of 1, that is, 'B' and 'B', or A[i][i].
+*
+* We know that single characters are valid palindromes, and we can mark these as
+* true. Once we go through we update our 'maxLength' to 1 and 'longestPalindrome'
+* to 'A', which was the last cell we calculated.
+*
+* Next, we update our 'currentLength' to 2. We step through and see that we calculate
+* no true palindromes, as none of the cells meet the first condition of first and
+* last characters matching. 'maxLength' stays the same and so does 'longestPalindrome'.
+*
+* Now we step through again with a 'currentLength' of 3. We can see that 'ban' does
+* not meet our conditions, but 'ana' has matching first and last characters and
+* it's substring 'n' is a valid palindrome and set to true. Therefore, we update
+* our 'maxLength' to 3 and our 'longestPalindrome' to 'ana'.
+*
+* We continue through the matrix building our results with this formula until we
+* can return the longest palindrome.
+*
+* It's important to note that we first need to initialize the one and two letters
+* palindromes, and work our way up finding all three letters palindromes, and so on...
+*
+* +-----+------------------------------------+
+* |     |   B    A     N     A     N     A   |
+* +------------------------------------------+
+* |  B  |   T    F     F     F     F     F   |
+* +------------------------------------------+
+* |  A  |        T     F     T     F     T   |
+* +------------------------------------------+
+* |  N  |              T     F     T     F   |
+* +------------------------------------------+
+* |  A  |                    T     F     T   |
+* +------------------------------------------+
+* |  N  |                          T     F   |
+* +------------------------------------------+
+* |  A  |                                T   |
+* +------------------------------------------+
+*
+* The formula for this is easy:
+*
+* single character palindrome (base case):
+* T[i][i] = true;
+*
+* T[i][i + 1] =
+*
+*     if (T[i][i]) {
+*       T[i][j] = T[i-1][j-1] + 1
+*     } else {
+*       T[i][j] = 0
+*     }
+*
 * Time: O(n^2)
 * Space: O(n^2)
 *
@@ -122,25 +189,45 @@ function isPalindrome(s, left, right) {
 */
 
 function longestPalindromeDP(s) {
-  let result = null;
+  let palindromeBeginsAt = 0; // index where the longest palindrome begins
+  let maxLength = 1;          // length of the longest palindrome
 
-  // build matrix
+  // build boolean matrix of NxN
   const matrix = [];
   for (let i = 0; i < s.length; i += 1) {
-    matrix[i] = new Array(s.length).fill(false);
+    matrix[i] = new Array(s.length);
   }
 
-  for (let i = s.length - 1; i >= 0; i -= 1) {
-    for (let j = i; j < s.length; j += 1) {
-      matrix[i][j] = s[i] === s[j] && (j - 1 < 3 || matrix[i + 1[j - 1]]);
+  // trivial case: single letter palindromes
+  for (let i = 0; i < matrix.length; i += 1) {
+    matrix[i][i] = true;
+  }
 
-      if (matrix[i][j] && (result === null || (j - i) + 1 > result.length)) {
-        result = s.substring(i, j + 1);
+  // palindromes of two characters
+  for (let i = 0; i < s.length - 1; i += 1) {
+    if (s[i] === s[i + 1]) {
+      matrix[i][i + 1] = true;
+      palindromeBeginsAt = i;
+      maxLength = 2;
+    }
+  }
+
+  // palindromes of length 3 to n and saving the longest
+  for (let currentLength = 3; currentLength <= s.length; currentLength += 1) {
+    for (let i = 0; i < (s.length - currentLength) + 1; i += 1) {
+      const j = (i + currentLength) - 1;
+
+      // 1. first and last characters should match
+      // 2. substring should be a palindrome
+      if (s[i] === s[j] && matrix[i + 1][j - 1]) {
+        matrix[i][j] = true;
+        palindromeBeginsAt = i;
+        maxLength = currentLength;
       }
     }
   }
 
-  return result;
+  return s.substring(palindromeBeginsAt, maxLength + palindromeBeginsAt);
 }
 
 /**
@@ -204,16 +291,5 @@ function expandAroundCenter(s, left, right) {
 
   return R - L - 1;
 }
-
-// private void extendPalindrome(String s, int j, int k) {
-// 	while (j >= 0 && k < s.length() && s.charAt(j) == s.charAt(k)) {
-// 		j--;
-// 		k++;
-// 	}
-// 	if (maxLen < k - j - 1) {
-// 		lo = j + 1;
-// 		maxLen = k - j - 1;
-// 	}
-// }}
 
 export { longestPalindromeBrute, isPalindrome, longestPalindromeDP, longestPalindrome, expandAroundCenter };
