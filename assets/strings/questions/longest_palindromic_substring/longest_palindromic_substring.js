@@ -170,16 +170,23 @@ function isPalindrome(s, left, right) {
 *
 * The formula for this is easy:
 *
-* single character palindrome (base case):
-* T[i][i] = true;
+* Base cases:
 *
-* T[i][i + 1] =
+* single character palindrome:
 *
-*     if (T[i][i]) {
-*       T[i][j] = T[i-1][j-1] + 1
-*     } else {
-*       T[i][j] = 0
-*     }
+* T[i][i] = true
+*
+* 2 character palindrome:
+*
+* if (s[i] === s[i + 1]) {
+*   T[i][i + 1]
+* }
+*
+* All other cases:
+*
+* if (s[i] === s[j] && T[i + 1][j - 1]) {
+*   T[i][j] = true
+* }
 *
 * Time: O(n^2)
 * Space: O(n^2)
@@ -198,12 +205,12 @@ function longestPalindromeDP(s) {
     matrix[i] = new Array(s.length);
   }
 
-  // trivial case: single letter palindromes
+  // base case 1: single letter palindromes
   for (let i = 0; i < matrix.length; i += 1) {
     matrix[i][i] = true;
   }
 
-  // palindromes of two characters
+  // base case 2: palindromes of two characters
   for (let i = 0; i < s.length - 1; i += 1) {
     if (s[i] === s[i + 1]) {
       matrix[i][i + 1] = true;
@@ -212,7 +219,7 @@ function longestPalindromeDP(s) {
     }
   }
 
-  // palindromes of length 3 to n and saving the longest
+  // all other cases: palindromes of 3 characters to n
   for (let currentLength = 3; currentLength <= s.length; currentLength += 1) {
     for (let i = 0; i < (s.length - currentLength) + 1; i += 1) {
       const j = (i + currentLength) - 1;
@@ -235,12 +242,69 @@ function longestPalindromeDP(s) {
 *
 * Solution:
 *
-* We observe that a palindrome mirrors around its center. Therefore, a palindrome
-* can be expanded from its center, and there are only 2n - 1 such centers.
+* We can do even better than our DP solution, achieving a constant space complexity.
 *
-* You might be asking why there are 2n - 1 but not nn centers? The reason is the
+* We observe that a palindrome mirrors around its center. That is, 'dad' mirrors
+* around the center character 'a', it has a 'd' on each side. Likewise, 'baab'
+* also mirrors from the center, except there is no center character in the middle,
+* but working from the middle, there are two 'a' characters, then two 'b' characters.
+*
+* This is true for all valid palindromes and therefore we can validate a string
+* as a palindrome by expanding from it's center and checking it mirrors on both
+* sides.
+*
+* We can write a help function to do this. We'll call it expand. It takes a string
+* and a left and right index. It will then check if characters mirror each other
+* and expand outward until the mirror breaks, at which point it will return the
+* mirror (palindrome) that is found.
+*
+* Okay, so how many centers are there in a string. Well, there are actually
+* 2n - 1 such centers. Yup, that's right... here's why.
+*
+* You might be asking why there are 2n - 1 but not n centers? The reason is the
 * center of a palindrome can be in between two letters. Such palindromes have even
 * number of letters (such as 'abba') and its center are between the two 'b's.
+*
+* If the expand function is expanding on an even lengthed string, the smallest
+* substring that it might find is actually an empty string, e.g in 'ab', it would
+* be ''.
+*
+* On the other hand, if the string is odd, then the smallest substring expand can
+* return is the single middle character, which is a valid palindrome, e.g in 'abc',
+* it would be 'b'.
+*
+* We'll need to keep track of the 'maxLength' that we've found so far so that we
+* can return the correct result.
+*
+* Then we step through the string and pass each character into the expand helper,
+* this will catch all the cases of 'odd' string lengths that have a middle character.
+* Whenever we encounter a longer vaild mirror (palindrome) than our 'maxLength' we
+* update our result.
+*
+* For example, for the string 'banana':
+*
+* expand(undefined, 'a')  => 'b'
+* expand('b', 'n')        => 'a'
+* expand('a', 'a')        => 'ana'
+* expand('n', 'n')        => 'anana'
+* expand('a', 'a')        => 'ana'
+* expand('n', undefined)  => 'a'
+*
+* The longest palindrome we found was 'anana'.
+*
+* Now we do the same but catch all the cases where the string is even, that is,
+* has no middle character.
+*
+* expand('b', 'a')        => ''
+* expand('a', 'n')        => ''
+* expand('n', 'a')        => ''
+* expand('a', 'n')        => ''
+* expand('n', 'a')        => ''
+* expand('a', undefined)  => ''
+*
+* We find that there are no valid palindromes through this pass.
+*
+* Therefore, the longest palindromic sunstring is 'anana', so we return it.
 *
 * Time: O(n^2)
 * Space: O(1)
@@ -253,43 +317,59 @@ function longestPalindromeDP(s) {
 */
 
 function longestPalindrome(s) {
-  let start = 0;
-  let end = 0;
+  let maxLength = 0;
+  let result = '';
 
+  // catch edge
+  if (s.length < 2) return s;
+
+  // expand odd
   for (let i = 0; i < s.length; i += 1) {
-    const len1 = expandAroundCenter(s, i, i);
-    const len2 = expandAroundCenter(s, i, i + 1);
-    const len = Math.max(len1, len2);
+    const temp = expand(s, i - 1, i + 1);
 
-    if (len > end - start) {
-      // start = i - ((len - 1) / 2);
-      start = (i - len - 1) / 2;
-      end = i + (len / 2);
+    if (temp.length > maxLength) {
+      maxLength = temp.length;
+      result = temp;
     }
   }
 
-  return s.substring(start, end + 1);
+  // expand even
+  for (let i = 0; i < s.length; i += 1) {
+    const temp = expand(s, i, i + 1);
+
+    if (temp.length > maxLength) {
+      maxLength = temp.length;
+      result = temp;
+    }
+  }
+
+  return result;
 }
 
 /**
-* expandAroundCenter()
+* expand()
 *
 * @param {string} s string
 * @param {number} left index
 * @param {number} right index
-* @return {number} returns
+* @return {string} returns substring
 */
 
-function expandAroundCenter(s, left, right) {
-  let L = left;
-  let R = right;
-
-  while (L >= 0 && R < s.length && s[L] === s[R]) {
-    L -= 1;
-    R += 1;
+function expand(s, left, right) {
+  while (left >= 0 && right < s.length && s[left] === s[right]) {
+    // iterate outward
+    left -= 1;
+    right += 1;
   }
 
-  return R - L - 1;
+  return s.substring(left + 1, right);
 }
 
-export { longestPalindromeBrute, isPalindrome, longestPalindromeDP, longestPalindrome, expandAroundCenter };
+/**
+* Manacher's Algorithm
+*
+* This algorithm solves this in O(n) time. This is the ultimate answer to this
+* question. Check it out under 'strings/common/manachers'
+*/
+
+export { longestPalindromeBrute, isPalindrome, longestPalindromeDP, longestPalindrome };
