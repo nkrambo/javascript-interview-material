@@ -63,7 +63,7 @@
 * @return {number} returns the highest product of 3 combined integers within array.
 */
 
-function highestProductOf3(arr) {
+function highestProduct(arr) {
   if (arr.length < 3) throw new Error('Less than 3 items!');
 
   // We're going to start at the 3rd item (at index 2)
@@ -71,10 +71,10 @@ function highestProductOf3(arr) {
   // we could also start these as null and check below if they're set
   // but this is arguably cleaner
   let highest = Math.max(arr[0], arr[1]);
-  let lowest  = Math.min(arr[0], arr[1]);
+  let lowest = Math.min(arr[0], arr[1]);
 
   let highestProductOf2 = arr[0] * arr[1];
-  let lowestProductOf2  = arr[0] * arr[1];
+  let lowestProductOf2 = arr[0] * arr[1];
 
   // except this one--we pre-populate it for the first /3/ items.
   // this means in our first pass it'll check against itself, which is fine.
@@ -82,7 +82,7 @@ function highestProductOf3(arr) {
 
   // walk through items, starting at index 2
   for (let i = 2; i < arr.length; i += 1) {
-    let current = arr[i];
+    const current = arr[i];
 
     // do we have a new highest product of 3?
     // it's either the current highest,
@@ -118,4 +118,4 @@ function highestProductOf3(arr) {
   return highestProductOf3;
 }
 
-export default highestProductOf3;
+export default highestProduct;

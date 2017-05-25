@@ -90,7 +90,12 @@ function majorityMooreVoting(nums) {
 
   for (let i = 0; i < nums.length; i += 1) {
     if (count === 0) major = nums[i];
-    nums[i] === major ? count += 1 : count -= 1;
+
+    if (nums[i] === major) {
+      count += 1;
+    } else {
+      count -= 1;
+    }
   }
 
   return major;

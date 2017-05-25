@@ -49,15 +49,13 @@
 * transitive dependencies in a node_modules folder, the internet itself is a
 * graph of webpages connected together by links.
 *
+* Key Operations:
 *
-*
-*                      Access       Search       Insert
-* -----------------------------------------------------------------------------
-*          Graph        O(N)         O(N)         O(1)
+* insert: O(1)
+* find:   O(n)
 */
 
 class Graph {
-
   constructor() {
     this.nodes = [];
   }
@@ -72,7 +70,7 @@ class Graph {
   insert(value) {
     this.nodes.push({
       value,
-      edges: []
+      edges: [],
     });
   }
 

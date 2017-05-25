@@ -36,15 +36,16 @@ function findNext(node) {
   // if we have a right child, get the smallest of that sub-tree
   if (node.right !== null) {
     return findSmallest(node.right);
+  }
 
   // there's no right child, we go up until we find an ancestor with a
   // value larger than node
-  }
-
   while (node) {
     if (node.parent.value > node.value) return node;
     node = node.parent;
   }
+
+  return null;
 }
 
 function findSmallest(root) {
@@ -54,6 +55,8 @@ function findSmallest(root) {
     if (current.left === null) return current;
     current = current.left;
   }
+
+  return null;
 }
 
 export default findNext;

@@ -81,9 +81,4 @@ function dfs(root) {
   return order;
 }
 
-
-function dfsRecurse() {
-
-}
-
 export default dfs;

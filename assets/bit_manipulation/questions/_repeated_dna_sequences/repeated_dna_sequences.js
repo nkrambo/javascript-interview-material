@@ -22,8 +22,8 @@
 * @return {array} Returns an array of repeated DNA strings
 */
 
-function findRepeatedDna(dna) {
-
-}
-
-export default findRepeatedDna;
+// function findRepeatedDna(dna) {
+//
+// }
+//
+// export default findRepeatedDna;

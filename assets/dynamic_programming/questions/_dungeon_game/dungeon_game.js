@@ -58,8 +58,8 @@
 * @return {number} returns the minimum health points needed to win game
 */
 
-function calculateMinimumHP(dungeon) {
-
-}
-
-export default calculateMinimumHP;
+// function calculateMinimumHP(dungeon) {
+//
+// }
+//
+// export default calculateMinimumHP;

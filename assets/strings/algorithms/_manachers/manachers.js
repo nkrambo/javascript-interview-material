@@ -76,7 +76,7 @@ function manachers(s) {
   const sentinel = [];
 
   for (let i = 0, j = 0; i < (s.length * 2) + 1; i += 1) {
-    sentinel[i] = (i % 2 !== 0) ? s[j++] : '$';
+    sentinel[i] = (i % 2 !== 0) ? s[j += 1] : '$';
   }
 
   // create temporary array for holding largest palindrome at every center point

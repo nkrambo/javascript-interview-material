@@ -55,7 +55,6 @@
 */
 
 class BinarySearchTree {
-
   constructor() {
     this.root = null;
   }
@@ -68,25 +67,21 @@ class BinarySearchTree {
   */
 
   find(value) {
-
     // if empty
     if (this.isEmpty()) {
-      new Error('Tree is empty.');
+      throw new Error('Tree is empty.');
     }
 
     // start from root and traverse
     let current = this.root;
     while (current) {
-
       // if value is less than current, traverse left
       if (value < current.value) {
-
         if (current.left === null) return current; // return closest leaf
         current = current.left;
 
       // if value if larger than current, move right
       } else if (value > current.value) {
-
         if (current.right === null) return current; // return closest leaf
         current = current.right;
 
@@ -96,6 +91,7 @@ class BinarySearchTree {
       }
     }
 
+    return null;
   }
 
   /**
@@ -106,13 +102,12 @@ class BinarySearchTree {
   */
 
   insert(value) {
-
     // create node
     const node = {
       value,
       left: null,
       right: null,
-      parent: null
+      parent: null,
     };
 
     // check if root is empty
@@ -149,7 +144,7 @@ class BinarySearchTree {
   */
 
   isEmpty() {
-    return this.root ? false : true;
+    return this.root === null;
   }
 
   /**
@@ -159,7 +154,7 @@ class BinarySearchTree {
   * simply traverse as far right as we can.
   *
   * @param {object} root node of BST
-  * @return {object} returns the node with largest value
+  * @return {object} returns the node with largest value, otherwise null
   */
 
   largest(root) {
@@ -169,6 +164,8 @@ class BinarySearchTree {
       if (current.right === null) return current;
       current = current.right;
     }
+
+    return null;
   }
 
   /**
@@ -178,7 +175,7 @@ class BinarySearchTree {
   * simply traverse as far left as we can.
   *
   * @param {object} root node of BST
-  * @return {object} returns the node with smallest value
+  * @return {object} returns the node with smallest value, otherwise null
   */
 
   smallest(root) {
@@ -188,6 +185,8 @@ class BinarySearchTree {
       if (current.left === null) return current;
       current = current.left;
     }
+
+    return null;
   }
 
   /**
@@ -211,15 +210,16 @@ class BinarySearchTree {
     // if we have a right child, get the smallest of that sub-tree
     if (node.right !== null) {
       return this.smallest(node.right);
+    }
 
     // there's no right child, we go up until we find an ancestor with a
     // value larger than node
-    } else {
-      while (node) {
-        if (node.parent.value > node.value) return node;
-        node = node.parent;
-      }
+    while (node) {
+      if (node.parent.value > node.value) return node;
+      node = node.parent;
     }
+
+    return null;
   }
 
   /**
@@ -230,7 +230,6 @@ class BinarySearchTree {
   */
 
   delete(value) {
-
     // grab node
     let node = this.find(value);
 
@@ -241,7 +240,6 @@ class BinarySearchTree {
 
     // if no right node
     if (node.right === null) {
-
       // promote node.left if it exists
       if (node.left) {
         node.left.parent = node.parent;
@@ -251,7 +249,6 @@ class BinarySearchTree {
       } else {
         node.parent.left = null;
       }
-
     } else {
       let next = this.next(node.value);
 
@@ -280,7 +277,6 @@ class BinarySearchTree {
   */
 
   range(start, end) {
-
     // check for range error
     const smallest = this.smallest();
     const largest = this.largest();
@@ -317,7 +313,7 @@ class BinarySearchTree {
 
     while (stack.length) {
       // pop frame
-      let node = stack.pop();
+      const node = stack.pop();
 
       // do work here...
       fn(node);
@@ -347,9 +343,8 @@ class BinarySearchTree {
     const queue = [root || this.root];
 
     while (queue.length) {
-
       // dequeue
-      let node = queue.shift();
+      const node = queue.shift();
 
       // do work here...
       fn(node);

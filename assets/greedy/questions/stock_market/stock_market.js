@@ -56,7 +56,6 @@
 */
 
 function getMaxProfit(pricesYesterday) {
-
   // make sure we have at least 2 prices
   if (pricesYesterday.length < 2) {
     throw new Error('Getting a profit requires at least 2 prices');
@@ -74,11 +73,11 @@ function getMaxProfit(pricesYesterday) {
   // this would give a profit of 0, which is a problem if our
   // maxProfit is supposed to be negative we'd return 0!
   for (let i = 1; i < pricesYesterday.length; i += 1) {
-    let currentPrice = pricesYesterday[i];
+    const currentPrice = pricesYesterday[i];
 
     // see what our profit would be if we bought at the
     // min price and sold at the current price
-    let potentialProfit = currentPrice - minPrice;
+    const potentialProfit = currentPrice - minPrice;
 
     // update maxProfit if we can do better
     maxProfit = Math.max(maxProfit, potentialProfit);

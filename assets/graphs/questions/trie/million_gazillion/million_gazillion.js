@@ -89,7 +89,7 @@ class MillionGazillion {
     // and keeping track of whether we add any nodes.
     for (const char of url) {
       // if we don't have current char
-      if (!current.hasOwnProperty(char)) {
+      if (!Object.prototype.hasOwnProperty.call(current, char)) {
         newWord = true;
         current[char] = {};
       }
@@ -99,7 +99,7 @@ class MillionGazillion {
     }
 
     // explicitly mark the end of a word
-    if (!current.hasOwnProperty('*')) {
+    if (!Object.prototype.hasOwnProperty.call(current, '*')) {
       newWord = true;
       current['*'] = {};
     }

@@ -62,6 +62,8 @@ function findLargest(root) {
     if (!current.right) return current.value;
     current = current.right;
   }
+
+  return null;
 }
 
 function findSecondLargest(root) {
@@ -87,6 +89,8 @@ function findSecondLargest(root) {
 
     current = current.right;
   }
+
+  return null;
 }
 
 export default findSecondLargest;

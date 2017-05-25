@@ -44,7 +44,6 @@
 */
 
 function insertion(n, m, i, j) {
-
   const allOnes = ~0;              // sequence of all 1s
   const left = allOnes << (j + 1); // 1s before position j, then 0s.          left = 11100000
   const right = ((1 << i) - 1);    // 1s after position i.                    right = 00000011

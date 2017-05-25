@@ -50,11 +50,9 @@ class Tree {
   */
 
   traverse(fn) {
-
     // We'll define a walk function that we can call recursively on every node
     // in the tree.
     function walk(node) {
-
       // First call the callback on the node.
       fn(node);
 
@@ -77,7 +75,7 @@ class Tree {
   insert(value, parentValue) {
     const node = {
       value,
-      children: []
+      children: [],
     };
 
     // If there is no root, set node.

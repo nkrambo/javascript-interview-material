@@ -57,7 +57,7 @@ class Stack {
   */
 
   pop() {
-    if (this.length === 0) return;
+    if (this.length === 0) return null;
     this.length -= 1;
     return this.items.pop();
   }

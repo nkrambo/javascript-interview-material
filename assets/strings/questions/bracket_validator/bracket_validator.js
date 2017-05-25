@@ -83,10 +83,10 @@ function bracketValidator(str) {
     } else if (closers.has(char)) {
       if (!openersStack.length) {
         return false;
-      } else {
-        // if this closer doesn't match up, short-circuit
-        if (openersToClosers[openersStack.pop()] !== char) return false;
       }
+
+      // if this closer doesn't match up, short-circuit
+      if (openersToClosers[openersStack.pop()] !== char) return false;
     }
   }
 

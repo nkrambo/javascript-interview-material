@@ -62,7 +62,7 @@
 function findUniqueDeliveryId(deliveryIds) {
   let uniqueId = 0;
 
-  deliveryIds.forEach(function(id) {
+  deliveryIds.forEach((id) => {
     uniqueId ^= id;
   });
 

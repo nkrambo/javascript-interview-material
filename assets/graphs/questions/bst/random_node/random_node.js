@@ -229,6 +229,8 @@ class BSTRandom {
         current = current.right;
       }
     }
+
+    return null;
   }
 
   /**

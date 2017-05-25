@@ -72,7 +72,7 @@ function flipBitToWin(num) {
     }
 
     maxLength = Math.max(previousLength + currentLength + 1, maxLength);
-    num = num >>> 1;
+    num >>>= 1;
   }
 
   return maxLength;

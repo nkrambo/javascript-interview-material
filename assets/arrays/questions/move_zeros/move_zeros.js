@@ -115,7 +115,8 @@ function moveZerosOptimal(nums) {
   // append it just in front of last non 0 element we found.
   for (let i = 0; i < nums.length; i += 1) {
     if (nums[i] !== 0) {
-      nums[lastNonZeroFoundAt++] = nums[i];
+      nums[lastNonZeroFoundAt] = nums[i];
+      lastNonZeroFoundAt += 1;
     }
   }
 

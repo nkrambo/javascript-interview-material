@@ -60,6 +60,8 @@ function removeDuplicates(list) {
 
     current = current.next;
   }
+
+  return list;
 }
 
 /**
@@ -107,6 +109,8 @@ function removeDuplicatesNoBuffer(list) {
 
     current = current.next;
   }
+
+  return list;
 }
 
 export { removeDuplicates, removeDuplicatesNoBuffer };

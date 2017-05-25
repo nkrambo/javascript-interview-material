@@ -71,7 +71,6 @@ function fib(n) {
   let current;       // Declare current
 
   for (let x = 1; x < n; x += 1) {
-
     // To get nth fibonacci ... do n - 1 iterations.
     current = prev + prevPrev;
     prevPrev = prev;

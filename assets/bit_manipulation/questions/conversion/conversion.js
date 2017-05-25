@@ -30,7 +30,7 @@
 function conversion(a, b) {
   let count = 0;
 
-  for (let c = a ^ b; c !== 0; c = c >> 1) {
+  for (let c = a ^ b; c !== 0; c >>= 1) {
     count += c & 1;
   }
 

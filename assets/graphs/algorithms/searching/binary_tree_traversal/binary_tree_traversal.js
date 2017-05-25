@@ -107,16 +107,14 @@ function inOrderRecurse(node, array) {
 *        ↙   ↘       ↙   ↘
 *      1       3   5       7
 *
-* @param {object} node binary tree node
+* @param {object} root binary tree node
 * @param {function} fn optional callback
 * @return {array} returns an array of node values pre-order
 */
 
-function preOrder(node, fn) {
-  if (node === null) return;
-
+function preOrder(root, fn) {
   const order = [];
-  const stack = [node];
+  const stack = [root];
   while (stack.length) {
     const node = stack.pop();
 

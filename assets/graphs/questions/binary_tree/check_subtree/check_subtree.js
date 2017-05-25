@@ -53,7 +53,8 @@
 */
 
 function containsTree(t1, t2) {
-  if (t2 === null) return true; // an empty tree is always a subtree.
+  // an empty tree is always a subtree.
+  if (t2 === null) return true;
 
   const t1String = getOrderString(t1.root);
   const t2String = getOrderString(t2.root);
@@ -62,7 +63,7 @@ function containsTree(t1, t2) {
 }
 
 function getOrderString(root) {
-  if (root === null) return;
+  if (root === null) return '';
 
   let traversal = '';
   const stack = [root];
@@ -72,13 +73,13 @@ function getOrderString(root) {
 
     if (node === null) {
       traversal = `${traversal}X`;
-      continue;
+    } else {
+      traversal = `${traversal}${node.value}`;
+      stack.push(node.right);
+      stack.push(node.left);
     }
-
-    traversal = `${traversal}${node.value}`;
-    stack.push(node.right);
-    stack.push(node.left);
   }
+
   return traversal;
 }
 

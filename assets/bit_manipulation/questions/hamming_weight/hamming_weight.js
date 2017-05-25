@@ -66,7 +66,7 @@ function hammingWeight(num) {
   // use x & (x-1) to determine if an integer is a power of two
   // every time you perform the operation x & (x-1), a single 1 bit is erased
   while (num !== 0) {
-    num = num & (num - 1);
+    num &= (num - 1);
     count += 1;
   }
 
@@ -112,7 +112,6 @@ function hammingWeightFlip(num) {
 
   // iterate all 32 bits
   for (let i = 0; i < 32; i += 1) {
-
     // check if current index is 1 or 0
     if ((num & mask) !== 0) {
       bits += 1;

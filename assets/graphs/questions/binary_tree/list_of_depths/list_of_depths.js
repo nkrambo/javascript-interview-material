@@ -37,7 +37,6 @@ function createDepthLinkList(tree) {
   const nodes = [[tree.root, 0]];
 
   while (nodes.length) {
-
     // dequeue
     const nodePair = nodes.shift();
     const node = nodePair[0];
@@ -52,7 +51,6 @@ function createDepthLinkList(tree) {
       const level = new LinkedList();
       level.add(node.value, 0);
       result.push(level);
-
     } else {
       result[depth].add(node.value, 0);
     }

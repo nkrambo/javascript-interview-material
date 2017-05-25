@@ -19,7 +19,6 @@
 */
 
 class Heap {
-
   /**
    * Minimum heap constructor.
    *
@@ -60,10 +59,10 @@ class Heap {
    * @return {Number} Index of the inserted value.
    */
 
-   add(value) {
-     this.heap.push(value);
-     this.changeKey(this.heap.length - 1, value);
-   }
+  add(value) {
+    this.heap.push(value);
+    this.changeKey(this.heap.length - 1, value);
+  }
 
  /**
   * Changes the key.
@@ -71,11 +70,10 @@ class Heap {
   *
   * @public
   * @param {Number} index Index of the value which should be changed.
-  * @param {Number|Object} value New value according to the index.
   * @return {Number} New position of the element.
   */
 
-  changeKey(index, value) {
+  changeKey(index) {
     const elem = this.heap[index];
     let parent = Math.floor(index / 2);
     let temp;
@@ -91,7 +89,7 @@ class Heap {
     }
 
     return parent;
-  };
+  }
 
   /**
    * Exchange indexes with start index given as argument
@@ -111,8 +109,8 @@ class Heap {
   heapify(index) {
     let extr = index;
     let temp;
-    const left = 2 * index + 1;
-    const right = 2 * index + 2;
+    const left = (2 * index) + 1;
+    const right = (2 * index) + 2;
 
     if (left < this.heap.length && this.compare(this.heap[left], this.heap[index]) > 0) {
       extr = left;
@@ -128,7 +126,7 @@ class Heap {
       this.heap[extr] = temp;
       this.heapify(extr);
     }
-  };
+  }
 
   /**
    * Removes and returns the current extremum value
@@ -141,12 +139,13 @@ class Heap {
 
   extract() {
     if (this.isEmpty()) {
-      throw 'The heap is already empty!';
+      throw new Error('The heap is already empty!');
     }
+
     const root = this.heap.shift();
     this.heapify(0);
     return root;
-  };
+  }
 
   /**
    * Returns collection

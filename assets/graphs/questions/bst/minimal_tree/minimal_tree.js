@@ -74,6 +74,8 @@ function insertNode(tree, nums, left, right) {
   // recurse
   insertNode(tree, nums, left, mid - 1);
   insertNode(tree, nums, mid + 1, right);
+
+  return null;
 }
 
 export default minimal;

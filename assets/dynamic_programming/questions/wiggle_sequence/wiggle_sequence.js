@@ -85,7 +85,6 @@
 */
 
 function maxWiggle(nums) {
-
   // short-cicuit, return trivial wiggle
   if (nums.length < 2) return nums.length;
 
@@ -93,7 +92,6 @@ function maxWiggle(nums) {
   let up = 1;
 
   for (let i = 1; i < nums.length; i += 1) {
-
     // 'up' position
     if (nums[i] > nums[i - 1]) {
       up = down + 1;
@@ -136,7 +134,6 @@ function maxWiggle(nums) {
 */
 
 function maxWiggleGreedy(nums) {
-
   // short-cicuit, return trivial wiggle
   if (nums.length < 2) return nums.length;
 
@@ -146,7 +143,7 @@ function maxWiggleGreedy(nums) {
 
   // iterate from 3rd
   for (let i = 2; i < nums.length; i += 1) {
-    let diff = nums[i] - nums[i - 1];
+    const diff = nums[i] - nums[i - 1];
     if ((diff > 0 && prevdiff <= 0) || (diff < 0 && prevdiff >= 0)) {
       count += 1;
       prevdiff = diff;

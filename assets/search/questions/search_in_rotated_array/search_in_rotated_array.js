@@ -87,15 +87,13 @@ function searchRotatedArray(nums, target) {
       }
 
     // the left half is not in normal order, the right half MUST be normally ordered
-    } else {
-      // target is within the normally order half, move left side of 'range' inward
-      if (nums[mid] < target && target <= nums[right]) {
-        left = mid + 1;
+    // if target is not within the normally order half, move right side of 'range' inward
+    } else if (nums[mid] < target && target <= nums[right]) {
+      left = mid + 1;
 
-      // target is not within the normally order half, move right side of 'range' inward
-      } else {
-        right = mid - 1;
-      }
+    // target is not within the normally order half, move right side of 'range' inward
+    } else {
+      right = mid - 1;
     }
   }
 

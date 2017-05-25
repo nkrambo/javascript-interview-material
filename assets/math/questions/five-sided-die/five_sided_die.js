@@ -25,15 +25,15 @@
 * per the problem statement) and see that some results for rand5() are more likely
 * because they are caused by more results from rand7():
 *
-*           rand7()	 |   rand5()
+*           rand7()   |   rand5()
 *         ------------------------
-*             1	     |     2
-*             2	     |     3
-*             3	     |     4
-*             4      |     5
-*             5	     |     1
-*             6	     |     2
-*             7	     |     3
+*               1     |     2
+*               2     |     3
+*               3     |     4
+*               4     |     5
+*               5     |     1
+*               6     |     2
+*               7     |     3
 *
 * So we see that there are two ways to get 2 and 3, but only one way to get 1, 4,
 * or 5. This makes 2 and 3 twice as likely as the others.
@@ -75,7 +75,7 @@ function rand5() {
 */
 
 function rand7() {
-  return Math.floor(Math.random() * (7 - 1 + 1)) + 1;
+  return Math.floor(Math.random() * (7 - (1 + 1))) + 1;
 }
 
 export { rand5, rand7 };

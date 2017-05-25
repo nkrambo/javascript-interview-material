@@ -115,9 +115,7 @@
 
 function mergeTimes(meetings) {
   // sort by start times
-  const sorted = meetings.slice().sort((a, b) => {
-    return a.startTime > b.startTime ? 1 : -1;
-  });
+  const sorted = meetings.slice().sort((a, b) => a.startTime > b.startTime ? 1 : -1);
 
   // initialize merged with the earliest meeting
   const merged = [sorted[0]];

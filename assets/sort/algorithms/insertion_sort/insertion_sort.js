@@ -42,7 +42,7 @@ function insertionSort(arr) {
   // step over our input array
   for (let i = 1; i < arr.length; i += 1) {
     // grab our current value and also the previous value index
-    let value = arr[i];
+    const value = arr[i];
     let prev = i - 1;
 
     // while our prev is larger than our current, move left

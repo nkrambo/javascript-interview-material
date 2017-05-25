@@ -12,7 +12,6 @@
 */
 
 class BinaryTree {
-
   constructor() {
     this.root = null;
   }
@@ -27,12 +26,11 @@ class BinaryTree {
   */
 
   insert(value) {
-
     // create node
     const node = {
       value,
       left: null,
-      right: null
+      right: null,
     };
 
     // check root
@@ -47,7 +45,6 @@ class BinaryTree {
     // additional nodes in the queue
     const queue = [this.root];
     while (queue.length) {
-
       // dequeue
       const current = queue.shift();
 
@@ -55,7 +52,6 @@ class BinaryTree {
       if (current.left === null) {
         current.left = node;
         return;
-
       } else if (current.right === null) {
         current.right = node;
         return;

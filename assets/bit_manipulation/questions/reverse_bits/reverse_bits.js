@@ -70,12 +70,12 @@
 */
 
 function reverseBits(num) {
-  let result =  0;
+  let result = 0;
 
   for (let i = 0; i < 32; i += 1) {
     result *= 2;
     result += num & 1;
-    num = num >> 1;
+    num >>= 1;
   }
 
   return result;

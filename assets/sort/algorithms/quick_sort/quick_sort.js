@@ -50,9 +50,9 @@
 
 function quickSort(arr, left, right) {
   // bounds check
-  if (left >= right) return;
+  if (left >= right) return null;
 
-  const pivot = arr[Math.floor((left + right)/2)];
+  const pivot = arr[Math.floor((left + right) / 2)];
   const index = partition(arr, left, right, pivot);
 
   quickSort(arr, left, index - 1);
@@ -63,7 +63,6 @@ function quickSort(arr, left, right) {
 
 function partition(arr, left, right, pivot) {
   while (left <= right) {
-
     while (arr[left] < pivot) {
       left += 1;
     }
@@ -83,9 +82,9 @@ function partition(arr, left, right, pivot) {
 }
 
 function swap(arr, i, j) {
-   const temp = arr[i];
-   arr[i] = arr[j];
-   arr[j] = temp;
+  const temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
 }
 
 export default quickSort;

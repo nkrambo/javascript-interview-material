@@ -80,7 +80,6 @@
 */
 
 function productOfOthers(arr) {
-
   // edge case
   if (arr.length < 3) {
     throw new Error('productOfOthers: Minimum array length of 3 required');
@@ -93,7 +92,7 @@ function productOfOthers(arr) {
   let soFar = 1;
   for (let i = 0; i < arr.length; i += 1) {
     result[i] = soFar;
-    soFar = soFar * arr[i];
+    soFar *= arr[i];
   }
 
   // for each integer, we find the product of all the integers
@@ -102,8 +101,8 @@ function productOfOthers(arr) {
   // the total product of all other integers
   soFar = 1;
   for (let j = arr.length - 1; j >= 0; j -= 1) {
-    result[j] = result[j] * soFar;
-    soFar = soFar * arr[j];
+    result[j] *= soFar;
+    soFar *= arr[j];
   }
 
   return result;

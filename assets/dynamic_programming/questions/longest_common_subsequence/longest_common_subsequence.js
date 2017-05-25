@@ -123,10 +123,10 @@ function longestCommonSub(s1, s2) {
 
   for (let i = 1; i < rows; i += 1) {
     for (let j = 1; j < cols; j += 1) {
-      if (s2[i-1] === s1[j-1]) {
-        matrix[i][j] = matrix[i-1][j-1] + 1;
+      if (s2[i - 1] === s1[j - 1]) {
+        matrix[i][j] = matrix[i - 1][j - 1] + 1;
       } else {
-        matrix[i][j] = Math.max(matrix[i-1][j], matrix[i][j-1]);
+        matrix[i][j] = Math.max(matrix[i - 1][j], matrix[i][j - 1]);
       }
 
       maxCount = Math.max(maxCount, matrix[i][j]);

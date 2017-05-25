@@ -150,7 +150,6 @@
 */
 
 function maxDuffelBagValue(cakeTypes, capacity) {
-
   // maximum possible value at every duffel bag weight
   const maxValues = [];
 
@@ -160,10 +159,8 @@ function maxDuffelBagValue(cakeTypes, capacity) {
 
     // for each cake at capacity
     cakeTypes.forEach((cake) => {
-
       // if cake fits into bag calculate, otherwise skip cake
       if (cake.weight <= i) {
-
         // if the current cake value and the remaining bag space value is greater than
         // the current best value, we should take the cake and update the current best
         current = Math.max(cake.value + maxValues[i - cake.weight], current);

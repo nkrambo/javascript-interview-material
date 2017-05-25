@@ -99,20 +99,19 @@ function minEditDistance(s1, s2) {
   // solve sub-problems
   for (let i = 1; i < rows; i += 1) {
     for (let j = 1; j < cols; j += 1) {
-
       // matching character, take top-left
-      if (s1[i-1] === s2[j-1]) {
-        matrix[i][j] = matrix[i-1][j-1];
+      if (s1[i - 1] === s2[j - 1]) {
+        matrix[i][j] = matrix[i - 1][j - 1];
 
       // otherwise, take min of (top-left, left, top) and add 1
       } else {
-        matrix[i][j] = Math.min(matrix[i-1][j], matrix[i][j-1], matrix[i-1][j-1]) + 1;
+        matrix[i][j] = Math.min(matrix[i - 1][j], matrix[i][j - 1], matrix[i - 1][j - 1]) + 1;
       }
     }
   }
 
   // return bottom-right
-  return matrix[rows-1][cols-1];
+  return matrix[rows - 1][cols - 1];
 }
 
 export default minEditDistance;

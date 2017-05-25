@@ -99,10 +99,9 @@ function longestCommonSubStr(s1, s2) {
   // solve sub-problems
   for (let i = 1; i < rows; i += 1) {
     for (let j = 1; j < cols; j += 1) {
-
       // if 'match' grab top-left + 1, recalculate count
-      if (s1[i-1] === s2[j-1]) {
-        matrix[i][j] = matrix[i-1][j-1] + 1;
+      if (s1[i - 1] === s2[j - 1]) {
+        matrix[i][j] = matrix[i - 1][j - 1] + 1;
         count = Math.max(matrix[i][j], count);
       }
     }

@@ -60,7 +60,7 @@
 * The right hand side asks, 'what power must we raise 2 to, to get 2^x'?
 * Well, that's just x!
 *
-* >> log(2)n​​ = x
+* >> log(2)n = x
 *
 * So there it is. The number of times we must divide n in half to get down to 1
 * is log(2) n

@@ -90,7 +90,6 @@ class TempTracker {
   }
 
   insert(temp) {
-
     // range check
     if (temp < 0 || temp > 110) {
       throw new RangeError('TempTracker.insert(temp): temp is outside range (0 - 110)');

@@ -83,7 +83,7 @@ function robHomes(homes) {
   let currentMax = 0;
 
   homes.forEach((home) => {
-    let temp = currentMax;
+    const temp = currentMax;
     currentMax = Math.max((prevMax + home), currentMax);
     prevMax = temp;
   });

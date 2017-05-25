@@ -71,7 +71,6 @@
 */
 
 function totalWays(matrix) {
-
   // build sums matrix, mimic input
   const sums = [];
   for (let i = 0; i < matrix.length; i += 1) {
@@ -88,7 +87,7 @@ function totalWays(matrix) {
   // solve sub-problems, start from 1, 1
   for (let i = 1; i < sums.length; i += 1) {
     for (let j = 1; j < sums[0].length; j += 1) {
-      sums[i][j] = sums[i-1][j] + sums[i][j-1];
+      sums[i][j] = sums[i - 1][j] + sums[i][j - 1];
     }
   }
 

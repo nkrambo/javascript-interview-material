@@ -118,27 +118,26 @@ function subsetSum(nums, total) {
   }
 
   // set 0s to true
-  for (let row of matrix) {
+  for (const row of matrix) {
     row[0] = true;
   }
 
   // solve cells
   for (let i = 1; i < rows; i += 1) {
     for (let j = 1; j < cols; j += 1) {
-
       // if current 'total' is less than 'num', take the top cell
-      if (j < nums[i-1]) {
-        matrix[i][j] = matrix[i-1][j];
+      if (j < nums[i - 1]) {
+        matrix[i][j] = matrix[i - 1][j];
 
       // otherwise, take the top cell if 'true' or go back 'num' positions
       } else {
-        matrix[i][j] = matrix[i-1][j] || matrix[i-1][j-nums[i-1]];
+        matrix[i][j] = matrix[i - 1][j] || matrix[i - 1][j - nums[i - 1]];
       }
     }
   }
 
   // grab bottom right result
-  return matrix[rows-1][cols-1];
+  return matrix[rows - 1][cols - 1];
 }
 
 export default subsetSum;

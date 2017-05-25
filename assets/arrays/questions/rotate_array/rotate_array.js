@@ -140,7 +140,7 @@ function rotateArrayExtra(nums, k) {
 * get placed at their required position. This happens because when we jump k steps
 * every time, we will only hit the numbers k steps apart. We start with index i = 0,
 * having i. Thus, we hit all the numbers satisfying the above condition in the
-* first cycle. When we reach back the original index, we have placed n/k​​ elements
+* first cycle. When we reach back to the original index, we have placed elements
 * at their correct position, since we hit only that many elements in the first cycle.
 *
 * Now, we increment the index for replacing the numbers. This time, we place other n/k
@@ -163,7 +163,7 @@ function rotateArrayExtra(nums, k) {
 */
 
 function rotateArrayCyclic(nums, k) {
-  k = k % nums.length;
+  k %= nums.length;
   let count = 0;
 
   for (let start = 0; count < nums.length; start += 1) {
@@ -171,8 +171,8 @@ function rotateArrayCyclic(nums, k) {
     let prev = nums[start];
 
     do {
-      let next = (current + k) % nums.length;
-      let temp = nums[next];
+      const next = (current + k) % nums.length;
+      const temp = nums[next];
       nums[next] = prev;
       prev = temp;
       current = next;
@@ -212,7 +212,7 @@ function rotateArrayCyclic(nums, k) {
 */
 
 function rotateArrayReverse(nums, k) {
-  k = k % nums.length;
+  k %= nums.length;
   reverse(nums, 0, nums.length - 1); // reverse all
   reverse(nums, 0, k - 1);           // reverse k numbers
   reverse(nums, k, nums.length - 1); // reverse n - k numbers
@@ -238,7 +238,7 @@ function rotateArrayReverse(nums, k) {
 
 function reverse(nums, start, end) {
   while (start < end) {
-    let temp = nums[start];
+    const temp = nums[start];
     nums[start] = nums[end];
     nums[end] = temp;
     start += 1;

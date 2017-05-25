@@ -86,7 +86,7 @@
 */
 
 function countingBits(num) {
-  let result = [0];
+  const result = [0];
 
   for (let i = 1; i <= num; i += 1) {
     result[i] = result[i >> 1] + (i & 1);
