@@ -24,10 +24,11 @@
 *       }
 *     }
 *
+* Key Operations:
 *
-*                      Access       Search       Insert       Delete
-* -----------------------------------------------------------------------------
-*       Linked List     O(N)         O(N)         O(1)         O(1)
+* get:    O(n)
+* add:    O(1)
+* remove: O(1)
 */
 
 class LinkedList {
@@ -59,23 +60,21 @@ class LinkedList {
   */
 
   get(position) {
-    // Throw an error if less items than the requested position are available
+    // check position is in range
     if (position >= this.length) {
       throw new Error('Position outside of list range');
     }
 
-    // Start with the head of the list.
+    // start with the head of the list
     let current = this.head;
 
-    // Slide through all of the items using node.next until we reach the
-    // specified position.
+    // move through until we reach position
     let i = 0;
     while (i < position) {
       current = current.next;
       i += 1;
     }
 
-    // Return the node we found.
     return current;
   }
 
@@ -91,34 +90,29 @@ class LinkedList {
   */
 
   add(value, position) {
-    // First create a node to hold our value.
+    // create a node
     const node = {
       value,
-      next: null
+      next: null,
     };
 
-    // We need to have a special case for nodes being inserted at the head.
-    // We'll set the "next" field to the current head and then replace it with
-    // our new node.
+    // inserting into head case
     if (position === 0) {
       node.next = this.head;
       this.head = node;
 
-    // If we're adding a node in any other position we need to splice it in
-    // between the current node and the previous node.
+    // inserting into list, splice between the current node and the previous
     } else {
-      // First, find the previous node and the current node.
-      let prev = this.get(position - 1);
-      let current = prev.next;
+      // find previous and current
+      const prev = this.get(position - 1);
+      const current = prev.next;
 
-      // Then insert the new node in between them by setting its "next" field
-      // to the current node and updating the previous node's "next" field to
-      // the new one.
+      // place new node in-between
       node.next = current;
       prev.next = node;
     }
 
-    // Finally just increment the length.
+    // increment list length
     this.length += 1;
   }
 
@@ -133,19 +127,17 @@ class LinkedList {
   */
 
   remove(position) {
-    // If we're removing the first node we simply need to set the head to the
-    // next node in the chain
+    // removing from the head case, set head to the next node
     if (position === 0) {
       this.head = this.head.next;
 
-    // For any other position we need to look up the previous node and set it
-    // to the node after the current position.
+    // all other positions, get previous node and set to node after current position
     } else {
       const prev = this.get(position - 1);
       prev.next = prev.next.next;
     }
 
-    // Then we just decrement the length.
+    // decrement list length
     this.length -= 1;
   }
 }
