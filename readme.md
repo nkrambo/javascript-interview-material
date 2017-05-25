@@ -24,16 +24,20 @@ a question thoroughly first.
 * [Data Structures](/nav/data_structures.md)
 * [Known Algorithms](/nav/known_algorithms.md)
 
+### Recommended Resources
+
 I highly recommend these resources for interview preparation.
 
+* [LeetCode](https://leetcode.com/)
 * [Interview Cake](https://www.interviewcake.com)
 * [Cracking the Coding Interview, 6th Edition](https://www.careercup.com/book)
-* [LeetCode](https://leetcode.com/)
 * [Hacker Rank](https://www.hackerrank.com/)
+* [Geek for Geeks](http://www.geeksforgeeks.org/)
+* [Coding Made Simple](https://www.youtube.com/channel/UCZLJf_R2sWyUtXSKiKlyvAw)
 
 ---
 
-### Practice makes perfect, and wine, plenty of wine.
+### Practice makes perfect, and wine... just the right amount of wine.
 
 <img src="/ballmer_peak.png" />
 
