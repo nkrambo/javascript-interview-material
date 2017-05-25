@@ -64,9 +64,8 @@
 */
 
 function withParents(p, q) {
-
   // get difference in depths between nodes (delta)
-  const delta = Math.abs(depth(p) - depth(q));
+  const delta = Math.abs(findDepth(p) - findDepth(q));
   let shallow = delta > 0 ? q : p;
   let deep = delta > 0 ? p : q;
 
@@ -101,13 +100,13 @@ function goUpBy(node, delta) {
 }
 
 /**
-* depth()
+* findDepth()
 *
 * @param {object} node
 * @return {number} returns the depth value of a binary tree node
 */
 
-function depth(node) {
+function findDepth(node) {
   let depth = 0;
   while (node !== null) {
     node = node.parent;
@@ -167,7 +166,6 @@ function depth(node) {
 */
 
 function withParentsAlt(root, p, q) {
-
   // check if either node is not in the tree
   if (!covers(root, p) || !covers(root, q)) {
     return null;
@@ -177,7 +175,7 @@ function withParentsAlt(root, p, q) {
     return p;
 
   // check if q covers p
-} else if (covers(q, p)) {
+  } else if (covers(q, p)) {
     return q;
   }
 
@@ -202,7 +200,6 @@ function withParentsAlt(root, p, q) {
 */
 
 function covers(root, p) {
-
   // DFS
   const stack = [root];
 
@@ -236,7 +233,7 @@ function getSibling(node) {
     return null;
   }
 
-  let parent = node.parent;
+  const parent = node.parent;
   return parent.left === node ? parent.right : parent.left;
 }
 

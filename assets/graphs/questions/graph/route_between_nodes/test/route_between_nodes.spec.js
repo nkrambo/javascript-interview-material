@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import Graph from '../../../../class/graph/graph';
+import Graph from '../../../../data_structures/graph/graph';
 import routeBetweenNodes from '../route_between_nodes';
 
 describe('routeBetweenNodes()', () => {

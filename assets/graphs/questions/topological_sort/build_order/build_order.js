@@ -79,7 +79,7 @@
 * @return {array} Returns a new array with the project build order, or an error if no valid order exists.
 */
 
-import Graph from '../../../class/graph/graph';
+import Graph from '../../../data_structures/graph/graph';
 
 function buildOrder(projects, deps) {
   const build = [];

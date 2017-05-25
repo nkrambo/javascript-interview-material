@@ -148,7 +148,7 @@
 * @return {string} returns a string representing the order of the words
 */
 
-import Graph from '../../../class/graph/graph';
+import Graph from '../../../data_structures/graph/graph';
 
 function alienOrder(words) {
   let result = '';
@@ -158,7 +158,7 @@ function alienOrder(words) {
   // e.g node (a) represents all occurences of a's
   const graph = new Graph();
   words.forEach((word) => {
-    for (let char of word) {
+    for (const char of word) {
       if (!graph.find(char)) {
         graph.insert(char);
       }
@@ -185,7 +185,6 @@ function alienOrder(words) {
       // if they are different, c1 must come before c2 lexicographically
       // add edge to represent this and update node in-degree for topological sorting
       if (c1 !== c2) {
-
         // check if we've already added this edge
         let seen = false;
         graph.find(c1).edges.forEach((edge) => {

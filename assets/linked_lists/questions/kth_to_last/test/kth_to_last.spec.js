@@ -1,7 +1,7 @@
 
 import { expect } from 'chai';
 import kthToLast from '../kth_to_last';
-import LinkedList from '../../../class/linked_list/linked_list';
+import LinkedList from '../../../data_structures/singly_linked_list/singly_linked_list';
 
 describe('kthToLast()', () => {
   it('should return the kth to last node', () => {

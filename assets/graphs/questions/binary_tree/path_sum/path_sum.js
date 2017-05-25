@@ -53,7 +53,6 @@
 */
 
 function pathSumBrute(root, target) {
-
   // base case
   if (root === null) return 0;
 
@@ -77,7 +76,6 @@ function pathSumBrute(root, target) {
 */
 
 function countPaths(node, target, currentSum) {
-
   // base case
   if (node === null) return 0;
 
@@ -210,7 +208,6 @@ function pathSum(node, target) {
 */
 
 function helper(node, target, runningSum, pathCount) {
-
   // base case
   if (node === null) return 0;
 

@@ -1,5 +1,5 @@
 
-## LeetCode
+# LeetCode
 
 All of the following solutions have been accepted on LeetCode. In addition, there
 are local test cases as well.

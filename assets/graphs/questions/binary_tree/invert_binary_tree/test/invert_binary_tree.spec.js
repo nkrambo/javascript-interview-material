@@ -1,7 +1,7 @@
 
 import { expect } from 'chai';
 import { invertTreeRecursive, invertTreeIterative } from '../invert_binary_tree';
-import BinaryTree from '../../../../class/binary_tree/binary_tree';
+import BinaryTree from '../../../../data_structures/binary_tree/binary_tree';
 
 describe('invertTreeRecursive()', () => {
   const test = new BinaryTree();

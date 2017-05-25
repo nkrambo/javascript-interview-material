@@ -1,7 +1,7 @@
 
 import { expect } from 'chai';
 import reverseLinkedList from '../reverse_linked_list';
-import LinkedList from '../../../class/linked_list/linked_list';
+import LinkedList from '../../../data_structures/singly_linked_list/singly_linked_list';
 
 describe('reverseLinkedList()', () => {
   it('should reverse a linked list', () => {

@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import LinkedList from '../../../class/linked_list/linked_list';
+import LinkedList from '../../../data_structures/singly_linked_list/singly_linked_list';
 import partitionList from '../partition';
 
 describe('partitionList()', () => {

@@ -54,12 +54,11 @@
 */
 
 function invertTreeRecursive(node) {
-
   // base
   if (node === null) return null;
 
-  let right = invertTreeRecursive(node.right);
-  let left = invertTreeRecursive(node.left);
+  const right = invertTreeRecursive(node.right);
+  const left = invertTreeRecursive(node.left);
 
   // invert nodes
   node.left = right;
@@ -92,7 +91,7 @@ function invertTreeRecursive(node) {
 *
 * Space complexity is O(n), since in the worst case, the queue will contain all
 * nodes in one level of the binary tree. For a full binary tree, the leaf level
-* has n / 2 = O(n)​​ leaves.
+* had n / 2 = O(n) leaves.
 *
 * @param {object} tree Tree node
 * @return {object} Returns the same tree node but inverted
@@ -104,10 +103,10 @@ function invertTreeIterative(root) {
 
   while (queue.length) {
     // dequeue
-    let current = queue.shift();
+    const current = queue.shift();
 
     // invert nodes
-    let temp = current.left;
+    const temp = current.left;
     current.left = current.right;
     current.right = temp;
 

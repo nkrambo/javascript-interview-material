@@ -60,15 +60,13 @@ function isBalanced(tree) {
   nodes.push([tree.root, 0]);
 
   while (nodes.length) {
-
     // pop a node and its depth from the top of our stack
     const nodePair = nodes.pop();
-    const node  = nodePair[0];
+    const node = nodePair[0];
     const depth = nodePair[1];
 
     // case: we found a leaf
     if (!node.left && !node.right) {
-
       // we only care if it's a new depth
       if (depths.indexOf(depth) < 0) {
         depths.push(depth);
@@ -83,7 +81,6 @@ function isBalanced(tree) {
 
     // push onto stack
     } else {
-
       if (node.left) {
         nodes.push([node.left, depth + 1]);
       }

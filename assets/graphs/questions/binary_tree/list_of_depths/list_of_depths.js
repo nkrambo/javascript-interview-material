@@ -27,7 +27,7 @@
 * @return {array} returns an array of linked lists representing nodes at each depth
 */
 
-import LinkedList from '../../../../linked_lists/class/linked_list/linked_list';
+import LinkedList from '../../../../linked_lists/data_structures/singly_linked_list/singly_linked_list';
 
 function createDepthLinkList(tree) {
   const result = [];

@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import BinaryTree from '../../../../class/binary_tree/binary_tree';
+import BinaryTree from '../../../../data_structures/binary_tree/binary_tree';
 import { withParents, withParentsAlt, withoutParents } from '../first_common_ancestor';
 
 // new class with links to node parents

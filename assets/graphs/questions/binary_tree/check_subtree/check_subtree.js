@@ -112,7 +112,7 @@ function containsTreeAlt(t1, t2) {
     const node = queue.shift();
 
     if (node.value === t2Root.value) {
-      if(matchTree(node, t2Root)) return true;
+      if (matchTree(node, t2Root)) return true;
     }
 
     if (node.left !== null) {
@@ -127,7 +127,6 @@ function containsTreeAlt(t1, t2) {
 }
 
 function matchTree(r1, r2) {
-
   // nothing left in subtree
   if (r1 === null && r2 === null) {
     return true;
@@ -139,10 +138,9 @@ function matchTree(r1, r2) {
   // values don't match
   } else if (r1.value !== r2.value) {
     return false;
-
-  } else {
-    return matchTree(r1.left, r2.left) && matchTree(r1.right, r2.right);
   }
+
+  return matchTree(r1.left, r2.left) && matchTree(r1.right, r2.right);
 }
 
 export { containsTree, containsTreeAlt };

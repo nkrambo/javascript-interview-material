@@ -89,9 +89,8 @@
 */
 
 function kthToLast(k, head) {
-
   if (k < 1) {
-    throw new Error('Impossible to find less than first to last node: ' + k);
+    throw new Error(`Impossible to find less than first to last node: ${k}`);
   }
 
   // STEP 1: get the length of the list
@@ -99,7 +98,7 @@ function kthToLast(k, head) {
   // traverse the whole list, counting all the nodes
   let length = 1;
   let current = head;
-  
+
   while (current.next) {
     current = current.next;
     length += 1;
@@ -108,7 +107,7 @@ function kthToLast(k, head) {
   // if k is greater than the length of the list, there can't
   // be a kth-to-last node, so we'll return an error!
   if (k > length) {
-    throw new Error('k is larger than the length of the linked list: ' + k);
+    throw new Error(`k is larger than the length of the linked list: ${k}`);
   }
 
   // STEP 2: walk to the target node

@@ -159,13 +159,13 @@ function loopDetectionRunner(list) {
   let fast = list.head;
 
 // until we hit the end of the list
-while (fast && fast.next) {
-  slow = slow.next;
-  fast = fast.next.next;
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
 
   // case: fast is about to "lap" slow
-  if (fast === slow) return fast;
-}
+    if (fast === slow) return fast;
+  }
 
   // case: fast hit the end of the list
   return null;

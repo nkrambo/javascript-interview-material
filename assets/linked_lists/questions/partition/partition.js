@@ -51,7 +51,6 @@ function partitionList(list, pivot) {
 
     // check value against pivot
     if (current.value < pivot) {
-
       // insert node at head
       current.next = head;
       head = current;

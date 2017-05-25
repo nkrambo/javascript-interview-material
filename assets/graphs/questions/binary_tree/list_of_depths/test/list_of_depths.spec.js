@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import BinaryTree from '../../../../class/binary_tree/binary_tree';
+import BinaryTree from '../../../../data_structures/binary_tree/binary_tree';
 import createDepthLinkList from '../list_of_depths';
 
 describe('createDepthLinkList()', () => {

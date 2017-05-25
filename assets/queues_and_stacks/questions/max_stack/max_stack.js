@@ -62,7 +62,7 @@
 * have optimized for faster push() and pop() functions.
 */
 
-import Stack from '../../class/stack/stack';
+import Stack from '../../data_structures/stack/stack';
 
 class MaxStack {
   constructor() {

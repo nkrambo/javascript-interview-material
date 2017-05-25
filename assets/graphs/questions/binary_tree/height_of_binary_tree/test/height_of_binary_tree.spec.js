@@ -1,8 +1,8 @@
 
 import { expect } from 'chai';
 import height from '../height_of_binary_tree';
-import BinaryTree from '../../../../class/binary_tree/binary_tree';
-import BST from '../../../../class/bst/bst';
+import BinaryTree from '../../../../data_structures/binary_tree/binary_tree';
+import BST from '../../../../data_structures/bst/bst';
 
 describe('height()', () => {
   it('should return the maximum height of a Binary Tree', () => {

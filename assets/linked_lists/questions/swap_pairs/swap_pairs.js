@@ -56,7 +56,7 @@ function swapPairs(head) {
   if (head == null || head.next == null) return head;
 
   let cur = head;
-  let newHead = head.next;
+  const newHead = head.next;
   while (cur !== null && cur.next !== null) {
     const temp = cur;
     cur = cur.next;

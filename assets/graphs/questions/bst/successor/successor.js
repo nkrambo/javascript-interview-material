@@ -39,11 +39,11 @@ function findNext(node) {
 
   // there's no right child, we go up until we find an ancestor with a
   // value larger than node
-  } else {
-    while (node) {
-      if (node.parent.value > node.value) return node;
-      node = node.parent;
-    }
+  }
+
+  while (node) {
+    if (node.parent.value > node.value) return node;
+    node = node.parent;
   }
 }
 

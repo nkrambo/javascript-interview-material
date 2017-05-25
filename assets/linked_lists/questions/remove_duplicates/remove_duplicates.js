@@ -35,7 +35,6 @@
 */
 
 function removeDuplicates(list) {
-
   // if only 1 item, there cannot be duplicates
   if (list.length <= 1) return list;
 
@@ -47,7 +46,6 @@ function removeDuplicates(list) {
   let current = list.head;
 
   while (current !== null) {
-
     // found duplicate
     if (seen.has(current.value)) {
       previous.next = current.next; // remove
@@ -85,7 +83,6 @@ function removeDuplicates(list) {
 */
 
 function removeDuplicatesNoBuffer(list) {
-
   // if only 1 item, there cannot be duplicates
   if (list.length <= 1) return list;
 
@@ -97,7 +94,6 @@ function removeDuplicatesNoBuffer(list) {
 
     // look at all subsequent nodes for duplicates
     while (runner.next !== null) {
-
       // found duplicate
       if (runner.next.value === current.value) {
         runner.next = runner.next.next; // remove

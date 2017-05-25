@@ -1,7 +1,7 @@
 
 import { expect } from 'chai';
 import findSecondLargest from '../second_largest_element';
-import BinarySearchTree from '../../../../class/bst/bst';
+import BinarySearchTree from '../../../../data_structures/bst/bst';
 
 describe('findSecondLargest()', () => {
   it('should return the second largest node, with no largest subtree', () => {

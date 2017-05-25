@@ -1,7 +1,7 @@
 
 import { expect } from 'chai';
 import isBalanced from '../balanced_tree';
-import BinarySearchTree from '../../../../class/bst/bst';
+import BinarySearchTree from '../../../../data_structures/bst/bst';
 
 describe('isBalanced()', () => {
   it('should return true if tree is balanced', () => {

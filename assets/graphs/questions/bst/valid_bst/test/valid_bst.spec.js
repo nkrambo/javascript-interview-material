@@ -1,8 +1,8 @@
 
 import { expect } from 'chai';
 import checkBST from '../valid_bst';
-import BinarySearchTree from '../../../../class/bst/bst';
-import BinaryTree from '../../../../class/binary_tree/binary_tree';
+import BinarySearchTree from '../../../../data_structures/bst/bst';
+import BinaryTree from '../../../../data_structures/binary_tree/binary_tree';
 
 describe('checkBST()', () => {
   it('should return true if it is a valid BST', () => {

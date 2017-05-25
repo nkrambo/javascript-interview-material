@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import BinarySearchTree from '../../../../class/bst/bst';
+import BinarySearchTree from '../../../../data_structures/bst/bst';
 import findNext from '../successor';
 
 describe('findNext()', () => {

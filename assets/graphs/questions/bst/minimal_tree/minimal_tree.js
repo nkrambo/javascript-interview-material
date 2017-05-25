@@ -49,7 +49,7 @@
 * @return {object} returns a minimal binary search tree created from nums
 */
 
-import BinarySearchTree from '../../../class/bst/bst';
+import BinarySearchTree from '../../../data_structures/bst/bst';
 
 function minimal(nums) {
   // new tree

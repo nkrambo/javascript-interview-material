@@ -53,7 +53,7 @@
 */
 
 function reverseLinkedList(list) {
-  let current  = list.head;
+  let current = list.head;
   let previous = null;
   let nextNode = null;
 
@@ -74,7 +74,7 @@ function reverseLinkedList(list) {
   // nest our return in a head and add the length property back
   return {
     head: previous,
-    length: list.length
+    length: list.length,
   };
 }
 

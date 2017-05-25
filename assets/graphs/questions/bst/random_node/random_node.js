@@ -187,7 +187,6 @@ class BSTRandom {
           break;
         }
         current = current.left;
-
       } else if (value > current.value) {
         if (current.right === null) {
           current.right = node;

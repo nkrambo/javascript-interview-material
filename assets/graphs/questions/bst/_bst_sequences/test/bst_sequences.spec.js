@@ -1,6 +1,6 @@
 //
 // import { expect } from 'chai';
-// import BST from '../../../../class/bst/bst';
+// import BST from '../../../../data_structures/bst/bst';
 // import bstSequences from '../bst_sequences';
 //
 // describe('bstSequences()', () => {
