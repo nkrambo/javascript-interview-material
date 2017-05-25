@@ -18,14 +18,18 @@ If you're preparing for a technical interview, again, this is meant only as a re
 I personally think there is little value in reading a solution without attempting
 a question thoroughly first.
 
+### Navigation
+
+* [LeetCode Reference](/nav/leetcode_reference.md)
+* [Data Structures](/nav/data_structures.md)
+* [Known Algorithms](/nav/known_algorithms.md)
+
 I highly recommend these resources for interview preparation.
 
 * [Interview Cake](https://www.interviewcake.com)
 * [Cracking the Coding Interview, 6th Edition](https://www.careercup.com/book)
 * [LeetCode](https://leetcode.com/)
 * [Hacker Rank](https://www.hackerrank.com/)
-
-If you use LeetCode, questions have been [referenced](/leet_index.md).
 
 ---
 
