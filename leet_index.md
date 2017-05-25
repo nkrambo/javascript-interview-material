@@ -26,4 +26,8 @@
     <td>5</td>
     <td><a href="assets/strings/questions/longest_palindromic_substring/longest_palindromic_substring.js">Longest Palindromic Substring</a></td>
   </tr>
+  <tr>
+    <td>6</td>
+    <td><a href="assets/strings/questions/zigzag_conversion/zigzag_conversion.js">ZigZag Conversion</a></td>
+  </tr>
 </table>
