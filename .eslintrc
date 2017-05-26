@@ -12,8 +12,12 @@
     "ecmaVersion": 6,
     "sourceType": "module"
   },
+  "plugins": [
+    "chai-friendly"
+  ],
   "rules": {
-    "no-param-reassign": 0, # perhaps turn back
+    "no-unused-expressions": 0,
+    "chai-friendly/no-unused-expressions": 2,
     "arrow-parens": [
       "error",
       "always"

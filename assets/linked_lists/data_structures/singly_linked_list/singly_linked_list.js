@@ -1,6 +1,6 @@
 
 /**
-* Linked List
+* Singly Linked List
 *
 * Linked lists are a very common data structure that is often used to
 * implement other data structures because of its ability to efficiently add
@@ -9,7 +9,7 @@
 * The basic idea of a linked list is similar to a graph. You have nodes that
 * point to other nodes. They look sorta like this:
 *
-*     1 -> 2 -> 3 -> 4 -> 5
+* 1 → 2 → 3 → 4 → 5
 *
 * Visualizing them as a JSON-like structure looks like this:
 *
@@ -32,7 +32,6 @@
 */
 
 class LinkedList {
-
   /**
   * @constructor
   *

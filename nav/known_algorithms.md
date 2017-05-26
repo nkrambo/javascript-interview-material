@@ -34,3 +34,13 @@
 - [Graph BSF](../assets/graphs/algorithms/graph_bfs/graph_bfs.js)
 - [Graph DSF](../assets/graphs/algorithms/graph_dfs/graph_dfs.js)
 - [Path Exists](../assets/graphs/algorithms/path_exists/path_exists.js)
+- [HyperLogLog](../assets/graphs/algorithms/hyperloglog/hyperloglog.js)
+
+### Cryptography
+
+- [Diffe-Hellman](../assets/cryptography/algorithms/diffe_hellman/diffe_hellman.js)
+- [SHA](../assets/cryptography/algorithms/sha/sha.js)
+
+### Linear Programming
+
+- [Dantzig's Simplex Method](../assets/linear_programming/algorithms/dantzigs_simplex_method/dantzigs_simplex_method.js)

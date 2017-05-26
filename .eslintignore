@@ -1,5 +1,2 @@
 
 # /node_modules/* and /bower_components/* ignored by default
-
-# perhaps turn back on linting test files
-**/*.spec.js

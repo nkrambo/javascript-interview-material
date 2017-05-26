@@ -28,16 +28,16 @@
 * This makes the traversal to find a value very efficient. Say we're trying to
 * find the number 5 in our tree:
 *
-*                  4            <- 5 > 4, so move right.
+*                  4            ← 5 > 4, so move right.
 *               ↙     ↘
-*             2         6       <- 5 < 6, so move left.
+*             2         6       ← 5 < 6, so move left.
 *           ↙  ↘      ↙   ↘
-*         1     3    5     7    <- We've reached 5!
+*         1     3    5     7    ← We've reached 5!
 *
 * Notice how we only had to do 3 checks to reach the number 5. If we were to
 * expand this tree to 1000 items. We'd go:
 *
-* 500 -> 250 -> 125 -> 62 -> 31 -> 15 -> 7 -> 3 -> 4 -> 5
+* 500 → 250 → 125 → 62 → 31 → 15 → 7 → 3 → 4 → 5
 *
 * Only 10 checks for 1000 items!
 *

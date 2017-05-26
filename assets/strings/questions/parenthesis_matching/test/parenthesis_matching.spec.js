@@ -11,10 +11,10 @@ describe('parenthesisMatching()', () => {
   });
 
   it('should throw an error if pos does not match parenthesis index.', () => {
-    expect(function(){ parenthesisMatching ('(sentence)', 5); }).to.throw (Error);
+    expect(() => { parenthesisMatching('(sentence)', 5); }).to.throw(Error);
   });
 
   it('should throw an error if there is no closing parenthesis.', () => {
-    expect(function(){ parenthesisMatching ('(this will throw error', 0); }).to.throw (Error);
+    expect(() => { parenthesisMatching('(this will throw error', 0); }).to.throw(Error);
   });
 });

@@ -34,3 +34,4 @@
 - [Graph](../assets/graphs/data_structures/graph/graph.js)
 - [Heap](../assets/graphs/data_structures/heap/heap.js)
 - [Tree](../assets/graphs/data_structures/tree/tree.js)
+- [Bloom Filter](../assets/graphs/data_structures/bloom_filter/bloom_filter.js)
