@@ -8,38 +8,36 @@
 *
 * Imagine taking a sequence of numbers:
 *
-*     1  2  3  4  5  6  7
+* 1  2  3  4  5  6  7
 *
 * And turning it into a tree starting from the center.
 *
-*              4
-*           /     \
-*        2           6
-*      /   \       /  \
-*     1     3     5    7
-*    -^--^--^--^--^--^--^-
-*     1  2  3  4  5  6  7
+*                  4
+*               ↙     ↘
+*             2         6
+*           ↙  ↘      ↙   ↘
+*         1     3    5     7
 *
 * This is how a binary tree works. Each node can have two children:
 *
-*     - Left: Less than parent node's value.
-*     - Right: Greater than parent node's value.
+* - Left: Less than parent node's value.
+* - Right: Greater than parent node's value.
 *
-* > Note: In order to make this work all values must be unique in the tree.
+* Note: In order to make this work all values must be unique in the tree.
 *
 * This makes the traversal to find a value very efficient. Say we're trying to
 * find the number 5 in our tree:
 *
-*             (4)         <--- 5 > 4, so move right.
-*           /     \
-*        2         (6)    <--- 5 < 6, so move left.
-*      /   \       /  \
-*     1     3    (5)   7 <--- We've reached 5!
+*                  4            <- 5 > 4, so move right.
+*               ↙     ↘
+*             2         6       <- 5 < 6, so move left.
+*           ↙  ↘      ↙   ↘
+*         1     3    5     7    <- We've reached 5!
 *
 * Notice how we only had to do 3 checks to reach the number 5. If we were to
 * expand this tree to 1000 items. We'd go:
 *
-*   500 -> 250 -> 125 -> 62 -> 31 -> 15 -> 7 -> 3 -> 4 -> 5
+* 500 -> 250 -> 125 -> 62 -> 31 -> 15 -> 7 -> 3 -> 4 -> 5
 *
 * Only 10 checks for 1000 items!
 *
@@ -47,11 +45,11 @@
 * to linked lists in the sense that you only need to update the immediately
 * surrounding items when adding or removing a value.
 *
+* Key Operations:
 *
-*                      Access       Search       Insert       Delete
-* -----------------------------------------------------------------------------
-*            BST      O(log N)     O(log N)     O(log N)     O(log N)
-*
+* find:   O(log n)
+* insert: O(log n)
+* delete: O(log n)
 */
 
 class BinarySearchTree {
