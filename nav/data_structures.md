@@ -6,17 +6,17 @@
 - [Singly Linked List](../assets/linked_lists/data_structures/singly_linked_list/singly_linked_list.js)
 - [Doubly Linked List](../assets/linked_lists/data_structures/doubly_linked_list/doubly_linked_list.js)
 
-## Stacks and Queues
+### Stacks and Queues
 
 - [Queue](../assets/queues_and_stacks/data_structures/queue/queue.js)
 - [Stack](../assets/queues_and_stacks/data_structures/stack/stack.js)
 
-## Union Find (Disjoint Set)
+### Union Find (Disjoint Set)
 
 - [Union Find Forest](../assets/union_find/data_structures/union_find_forest/union_find_forest.js)
 - [Union Find List](../assets/union_find/data_structures/union_find_list/union_find_list.js)
 
-## Graphs and Trees
+### Graphs and Trees
 
 - [AVL Tree](../assets/graphs/data_structures/avl_tree/avl_tree.js)
 - [B-Tree](../assets/graphs/data_structures/b_tree/b_tree.js)

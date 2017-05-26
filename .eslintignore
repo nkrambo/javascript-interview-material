@@ -3,4 +3,3 @@
 
 # perhaps turn back on linting test files
 **/*.spec.js
-_other
