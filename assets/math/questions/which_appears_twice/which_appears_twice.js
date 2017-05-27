@@ -40,7 +40,7 @@
 function appearsTwice(arr) {
   // sum all numbers 1...n, O(1) time.
   const n = arr[arr.length - 1];
-  const sum = ((Math.pow(n, 2)) + n) / 2;
+  const sum = ((n ** 2) + n) / 2;
 
   // sum array, O(n) time.
   const arrSum = arr.reduce((x, y) => x + y, 0);

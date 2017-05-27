@@ -199,8 +199,6 @@ class BSTRandom {
         throw new Error('Cannot insert duplicate values');
       }
     }
-
-    return;
   }
 
   /**

@@ -7,7 +7,7 @@ describe('MillionGazillion', () => {
   dict.checkOrAdd('test');
 
   it('should add in new word', () => {
-    expect(dict.root.hasOwnProperty('t')).to.be.true;
+    expect(Object.prototype.hasOwnProperty.call(dict.root, 't')).to.be.true;
   });
 
   it('should return false if a word exists', () => {

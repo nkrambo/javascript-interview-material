@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import {
   longestSubstringBrute,
   allUnique,
-  longestSubstring,
+  // longestSubstring,
   longestSubstringMap,
 } from '../longest_substring_no_repeats';
 
