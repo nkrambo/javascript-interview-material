@@ -1,22 +1,29 @@
 {
-  "name": "algorithm_probs",
+  "name": "javascript-interview-material",
   "version": "1.0.0",
   "description": "My answers to common interview questions, algorithms and data structures",
   "author": "Nicholas Krambousanos",
+  "license": "MIT",
+  "keywords": [
+    "javascript",
+    "algorithms",
+    "data structures",
+    "interview",
+    "leetcode"
+  ],
   "scripts": {
     "test": "nyc mocha --compilers js:babel-core/register ./**/*.spec.js",
     "lint": "eslint . --ext=js",
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov --token=:552e2543-734b-4da0-9aef-f9376685eba0"
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nkrambo/javascript-algorithms.git"
+    "url": "git+https://github.com/nkrambo/javascript-interview-material.git"
   },
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nkrambo/javascript-algorithms/issues"
+    "url": "https://github.com/nkrambo/javascript-interview-material/issues"
   },
-  "homepage": "https://github.com/nkrambo/javascript-algorithms#readme",
+  "homepage": "https://github.com/nkrambo/javascript-interview-material#readme",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
