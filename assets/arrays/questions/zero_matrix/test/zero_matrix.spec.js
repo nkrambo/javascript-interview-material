@@ -18,8 +18,8 @@ describe('zeroMatrix()', () => {
   });
 
   it('should return the same matrix if no zeros are passed in', () => {
-      const noZero = [[1, 1],
-                      [1, 1]]
+    const noZero = [[1, 1],
+                    [1, 1]];
 
     expect(zeroMatrix(noZero)).to.deep.equal(noZero);
   });

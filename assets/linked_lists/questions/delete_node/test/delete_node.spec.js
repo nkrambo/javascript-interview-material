@@ -23,7 +23,6 @@ describe('deleteNode()', () => {
   it('should throw an error trying to delete last node', () => {
     // position 1 is now last
     const lastNode = list.get(1);
-    expect(function(){ deleteNode(lastNode) }).to.throw (Error);
+    expect(() => { deleteNode(lastNode); }).to.throw(Error);
   });
-
 });

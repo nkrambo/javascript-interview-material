@@ -147,4 +147,4 @@ function ListNode(val) {
   this.next = null;
 }
 
-export { addTwoNumbers, ListNode };
+export default addTwoNumbers;

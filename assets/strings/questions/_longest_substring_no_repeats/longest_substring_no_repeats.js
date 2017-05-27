@@ -104,7 +104,7 @@ function allUnique(s, start, end) {
 *
 * Solution:
 *
-* In the naive approache, we repeatedly check a substring to see if it has duplicate
+* In the naive approach, we repeatedly check a substring to see if it has duplicate
 * character. But it is unnecessary. If a substring s{ij} from index i to j - 1 is
 * already checked to have no duplicate characters. We only need to check if s[j]
 * is already in the substring s{ij}.

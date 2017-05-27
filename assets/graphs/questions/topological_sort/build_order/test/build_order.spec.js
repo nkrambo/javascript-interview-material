@@ -33,7 +33,7 @@ describe('buildOrder()', () => {
     const deps = [['B', 'A'],
                   ['C', 'B'],
                   ['A', 'C']];
-                  
-    expect(function(){ buildOrder(projects, deps); }).to.throw (Error);
+
+    expect(() => { buildOrder(projects, deps); }).to.throw(Error);
   });
 });

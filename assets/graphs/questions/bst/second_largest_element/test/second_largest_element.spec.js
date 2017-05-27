@@ -32,6 +32,6 @@ describe('findSecondLargest()', () => {
     const BST3 = new BinarySearchTree();
     BST3.insert(100);
 
-    expect(function(){ findSecondLargest(BST3); }).to.throw (Error);
+    expect(() => { findSecondLargest(BST3); }).to.throw(Error);
   });
 });

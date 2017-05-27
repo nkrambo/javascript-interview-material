@@ -10,7 +10,6 @@ describe('highestProduct()', () => {
 
   it('should throw an error if array is less than 3', () => {
     const arr = [3, 2];
-    expect(function(){ highestProduct (arr); }).to.throw (Error);
+    expect(() => { highestProduct(arr); }).to.throw(Error);
   });
-
 });

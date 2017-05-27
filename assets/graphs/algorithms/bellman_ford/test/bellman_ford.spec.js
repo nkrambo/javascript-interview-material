@@ -4,14 +4,10 @@ import bellmanFord from '../bellman_ford';
 import Graph from '../../../data_structures/graph/graph';
 
 class Weighted extends Graph {
-  constructor() {
-    super();
-  }
-
   insert(value) {
     this.nodes.push({
       value,
-      edges: []
+      edges: [],
     });
   }
 
@@ -25,7 +21,7 @@ class Weighted extends Graph {
     }
 
     // push edge
-    startNode.edges.push({endNode, cost});
+    startNode.edges.push({ endNode, cost });
   }
 }
 

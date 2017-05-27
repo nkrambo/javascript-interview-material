@@ -5,18 +5,13 @@ import { withParents, withParentsAlt, withoutParents } from '../first_common_anc
 
 // new class with links to node parents
 class BinaryTreeWP extends BinaryTree {
-  constructor() {
-    super();
-  }
-
   insert(value) {
-
     // create node
     const node = {
       value,
       left: null,
       right: null,
-      parent: null
+      parent: null,
     };
 
     // check root
@@ -28,7 +23,6 @@ class BinaryTreeWP extends BinaryTree {
     const queue = [this.root];
 
     while (queue.length) {
-
       // dequeue
       const current = queue.shift();
 
@@ -37,7 +31,6 @@ class BinaryTreeWP extends BinaryTree {
         node.parent = current;
         current.left = node;
         return;
-
       } else if (current.right === null) {
         node.parent = current;
         current.right = node;

@@ -9,6 +9,6 @@ describe('getMaxProfit()', () => {
   });
 
   it('should throw an error if pricesYesterday is less than 2', () => {
-    expect(function(){ getMaxProfit([10]); }).to.throw (Error);
+    expect(() => { getMaxProfit([10]); }).to.throw(Error);
   });
 });

@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import { addTwoNumbers, ListNode } from '../add_two_numbers';
+import addTwoNumbers from '../add_two_numbers';
 
 describe('addTwoNumbers()', () => {
   it('should return the sum of the reverse of l1 and l2', () => {

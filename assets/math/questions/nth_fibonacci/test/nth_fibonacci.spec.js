@@ -14,7 +14,7 @@ describe('fib()', () => {
   });
 
   it('should throw an error if n is negative', () => {
-    expect(function(){ fib(-1); }).to.throw (Error);
+    expect(() => { fib(-1); }).to.throw(Error);
   });
 });
 

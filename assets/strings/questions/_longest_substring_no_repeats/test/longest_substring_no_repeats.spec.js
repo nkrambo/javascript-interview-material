@@ -4,7 +4,7 @@ import {
   longestSubstringBrute,
   allUnique,
   longestSubstring,
-  longestSubstringMap
+  longestSubstringMap,
 } from '../longest_substring_no_repeats';
 
 describe('longestSubstringBrute()', () => {
@@ -31,6 +31,17 @@ describe('allUnique()', () => {
     expect(allUnique('aaaaa', 0, 5)).to.be.false;
   });
 });
+
+// describe('longestSubstring()', () => {
+//   it('should find the longest substring with no repeating characters', () => {
+//     expect(longestSubstring('abcabcbb')).to.equal(3);
+//     expect(longestSubstring('bbbbb')).to.equal(1);
+//     expect(longestSubstring('pwwkew')).to.equal(3);
+//     expect(longestSubstring('c')).to.equal(1);
+//     expect(longestSubstring('au')).to.equal(2);
+//     expect(longestSubstring('dvdf')).to.equal(3);
+//   });
+// });
 
 describe('longestSubstringMap()', () => {
   it('should find the longest substring with no repeating characters', () => {

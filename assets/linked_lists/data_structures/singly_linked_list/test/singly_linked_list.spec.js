@@ -34,7 +34,7 @@ describe('LinkedList', () => {
     const list4 = new LinkedList();
     list4.add(10, 0);
 
-    expect(list4.get(0)).to.deep.equal({value: 10, next: null});
+    expect(list4.get(0)).to.deep.equal({ value: 10, next: null });
     expect(list4.length).to.equal(1);
   });
 });

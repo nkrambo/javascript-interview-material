@@ -1,6 +1,6 @@
 
-import { expect } from 'chai';
-import findMedian from '../median_of_sorted_arrays';
+// import { expect } from 'chai';
+// import findMedian from '../median_of_sorted_arrays';
 
 // describe('findMedian()', () => {
 //   it('should return the median value of two sorted arrays', () => {

@@ -5,7 +5,6 @@ import isPalindrome from '../is_palindrome';
 
 describe('isPalindrome()', () => {
   it('should return true if linked list is a plaindrome', () => {
-
     // 0 -> 1 -> 2 -> 1 -> 0
     const l1 = new LinkedList();
     l1.add(0, 0);
@@ -32,7 +31,6 @@ describe('isPalindrome()', () => {
   });
 
   it('should return false if linked list is not a plaindrome', () => {
-
     // 0 -> 1 -> 2 -> 1 -> 1
     const l4 = new LinkedList();
     l4.add(0, 0);

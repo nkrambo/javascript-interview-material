@@ -4,17 +4,12 @@ import BSTRandom from '../random_node';
 
 // overwrite the getRandomNode() to explicitly pass in index for testing
 class BSTRandomTest extends BSTRandom {
-  constructor() {
-    super();
-  }
-
   getRandomNode(idx) {
     let index = idx;
 
     // traverse from root
     let current = this.root;
     while (current) {
-
       // if we're at index
       if (index === this.getChildren(current.left)) return current.value;
 
@@ -28,6 +23,8 @@ class BSTRandomTest extends BSTRandom {
         current = current.right;
       }
     }
+
+    return null;
   }
 }
 

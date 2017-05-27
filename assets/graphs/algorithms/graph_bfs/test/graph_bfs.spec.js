@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import bfs from '../graph_bfs.js';
+import bfs from '../graph_bfs';
 import Graph from '../../../data_structures/graph/graph';
 
 describe('bfs()', () => {

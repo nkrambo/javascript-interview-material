@@ -4,7 +4,6 @@ import longestCommonSubStr from '../longest_common_substring';
 
 describe('longestCommonSubStr()', () => {
   it('should return the longest common substring', () => {
-
     // bcd
     expect(longestCommonSubStr('abcdaf', 'zbcdf')).to.equal(3);
 

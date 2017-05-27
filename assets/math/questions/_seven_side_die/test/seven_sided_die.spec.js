@@ -1,4 +1,4 @@
-// 
+//
 // import { expect } from 'chai';
 // import { rand5, rand7 } from '../seven_sided_die';
 //

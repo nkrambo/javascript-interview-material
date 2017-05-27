@@ -5,7 +5,6 @@ import partitionList from '../partition';
 
 describe('partitionList()', () => {
   it('should partition a linked list around a value x', () => {
-
     // 3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1
     const list = new LinkedList();
     list.add(1, 0);

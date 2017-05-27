@@ -11,7 +11,7 @@ describe('rectangleIntersection()', () => {
 
       // width and height
       width: 10,
-      height: 5
+      height: 5,
     };
 
     const rect2 = {
@@ -21,7 +21,7 @@ describe('rectangleIntersection()', () => {
 
       // width and height
       width: 10,
-      height: 5
+      height: 5,
     };
 
     const intersection = {
@@ -31,7 +31,7 @@ describe('rectangleIntersection()', () => {
 
       // width and height
       width: 8,
-      height: 3
+      height: 3,
     };
 
     expect(rectangleIntersection(rect1, rect2)).to.deep.equal(intersection);
@@ -45,7 +45,7 @@ describe('rectangleIntersection()', () => {
 
       // width and height
       width: 4,
-      height: 2
+      height: 2,
     };
 
     const rect2 = {
@@ -55,7 +55,7 @@ describe('rectangleIntersection()', () => {
 
       // width and height
       width: 4,
-      height: 2
+      height: 2,
     };
 
     const nullRect = {

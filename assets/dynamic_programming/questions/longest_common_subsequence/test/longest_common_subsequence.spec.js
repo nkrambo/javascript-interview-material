@@ -4,7 +4,7 @@ import longestCommonSub from '../longest_common_subsequence';
 
 describe('longestCommonSub()', () => {
   it('should return the longest common subsequence', () => {
-    // 'abcf'    
+    // 'abcf'
     expect(longestCommonSub('abcdaf', 'acbcf')).to.equal(4);
 
     // 'a'

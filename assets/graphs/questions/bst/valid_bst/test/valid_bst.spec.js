@@ -17,7 +17,7 @@ describe('checkBST()', () => {
   });
 
   it('should return false if it is not a valid BST', () => {
-    const binaryTree = new BinaryTree;
+    const binaryTree = new BinaryTree();
     binaryTree.insert(100);
     binaryTree.insert(150);
     binaryTree.insert(15);

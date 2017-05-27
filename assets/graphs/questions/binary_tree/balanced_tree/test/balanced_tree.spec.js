@@ -5,7 +5,7 @@ import BinarySearchTree from '../../../../data_structures/bst/bst';
 
 describe('isBalanced()', () => {
   it('should return true if tree is balanced', () => {
-    const tree1 = new BinarySearchTree;
+    const tree1 = new BinarySearchTree();
     tree1.insert(50);
     tree1.insert(30);
     tree1.insert(80);

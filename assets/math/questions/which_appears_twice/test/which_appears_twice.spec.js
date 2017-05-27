@@ -10,8 +10,8 @@ describe('appearsTwice()', () => {
   });
 
   it('should throw a type error', () => {
-    expect(function(){ appearsTwice(null); }).to.throw (TypeError);
-    expect(function(){ appearsTwice(undefined); }).to.throw (TypeError);
-    expect(function(){ appearsTwice(5); }).to.throw (TypeError);
+    expect(() => { appearsTwice(null); }).to.throw(TypeError);
+    expect(() => { appearsTwice(undefined); }).to.throw(TypeError);
+    expect(() => { appearsTwice(5); }).to.throw(TypeError);
   });
 });

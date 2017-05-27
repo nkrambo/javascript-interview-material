@@ -9,7 +9,7 @@ describe('productOfOthers()', () => {
   });
 
   it('should throw an error if the array is less than 3 elements', () => {
-    expect(function(){ productOfOthers([1, 2]); }).to.throw (Error);
-    expect(function(){ productOfOthers([1]); }).to.throw (Error);
+    expect(() => { productOfOthers([1, 2]); }).to.throw(Error);
+    expect(() => { productOfOthers([1]); }).to.throw(Error);
   });
 });

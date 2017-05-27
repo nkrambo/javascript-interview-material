@@ -31,7 +31,7 @@ describe('TempTracker', () => {
   });
 
   it('should throw a range error', () => {
-    expect(function(){ thermo.insert(115); }).to.throw (RangeError);
-    expect(function(){ thermo.insert(-10); }).to.throw (RangeError);
+    expect(() => { thermo.insert(115); }).to.throw(RangeError);
+    expect(() => { thermo.insert(-10); }).to.throw(RangeError);
   });
 });

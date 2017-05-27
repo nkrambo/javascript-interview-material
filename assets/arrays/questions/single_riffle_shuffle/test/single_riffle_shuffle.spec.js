@@ -3,7 +3,6 @@ import { expect } from 'chai';
 import isSingleRiffle from '../single_riffle_shuffle';
 
 describe('isSingleRiffle()', () => {
-
   function shuffle(deck) {
     let current = deck.length;
     let temp;
@@ -11,7 +10,6 @@ describe('isSingleRiffle()', () => {
 
     // While there remain elements to shuffle...
     while (current > 0) {
-
       // Pick a remaining element...
       random = Math.floor(Math.random() * current);
       current -= 1;
@@ -31,7 +29,11 @@ describe('isSingleRiffle()', () => {
     const h2 = deck.slice(26);
 
     for (let i = 0; i < deck.length; i += 1) {
-      i % 2 === 0 ? riffled.push(h1.shift()) : riffled.push(h2.shift());
+      if (i % 2 === 0) {
+        riffled.push(h1.shift());
+      } else {
+        riffled.push(h2.shift());
+      }
     }
     return riffled;
   }

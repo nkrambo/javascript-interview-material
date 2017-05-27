@@ -4,7 +4,6 @@ import LinkedList from '../../../data_structures/singly_linked_list/singly_linke
 import intersection from '../intersection';
 
 describe('intersection()', () => {
-
   /*
   *     3 -> 1 -> 5 -> 9
   *                    |
