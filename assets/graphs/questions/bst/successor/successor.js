@@ -40,12 +40,14 @@ function findNext(node) {
 
   // there's no right child, we go up until we find an ancestor with a
   // value larger than node
-  while (node) {
-    if (node.parent.value > node.value) return node;
-    node = node.parent;
+  let q = node;
+  let x = q.parent;
+  while (x !== null && x.left !== q) {
+    q = x;
+    x = x.parent;
   }
 
-  return null;
+  return x;
 }
 
 function findSmallest(root) {

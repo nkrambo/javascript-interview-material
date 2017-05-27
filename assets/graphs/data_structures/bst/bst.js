@@ -203,7 +203,9 @@ class BinarySearchTree {
   */
 
   next(value) {
-    let node = this.find(value);
+    const node = this.find(value);
+
+    if (!node) return null;
 
     // if we have a right child, get the smallest of that sub-tree
     if (node.right !== null) {
@@ -212,12 +214,14 @@ class BinarySearchTree {
 
     // there's no right child, we go up until we find an ancestor with a
     // value larger than node
-    while (node) {
-      if (node.parent.value > node.value) return node;
-      node = node.parent;
+    let q = node;
+    let x = q.parent;
+    while (x !== null && x.left !== q) {
+      q = x;
+      x = x.parent;
     }
 
-    return null;
+    return x;
   }
 
   /**
@@ -265,7 +269,6 @@ class BinarySearchTree {
 
   /**
   * range()
-  * @todo failing test cases...
   *
   * Gets a range of values in the BST and returns them in an array.
   *
@@ -288,7 +291,7 @@ class BinarySearchTree {
     // traverse from start
     let current = this.find(start);
 
-    while (current.value <= end) {
+    while (current && current.value <= end) {
       results.push(current.value);
       current = this.next(current.value);
     }
