@@ -33,4 +33,8 @@ are local test cases as well.
     <td>6</td>
     <td><a href="../assets/strings/questions/zigzag_conversion/zigzag_conversion.js">ZigZag Conversion</a></td>
   </tr>
+  <tr>
+    <td>7</td>
+    <td><a href="../assets/math/questions/_reverse_integer/reverse_integer.js">Reverse Integer</a></td>
+  </tr>
 </table>
