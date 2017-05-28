@@ -2,7 +2,7 @@
 // import { expect } from 'chai';
 // import AVL from '../avl';
 //
-// describe('AVL class', () => {
+// describe('AVL', () => {
 //   it('should', () => {
 //
 //   });
