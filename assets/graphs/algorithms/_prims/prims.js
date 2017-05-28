@@ -1,18 +1,18 @@
 
 /**
-* Dantzig's Simplex Method
+* Prim's
 *
 */
 
 /**
-* simplexMethod()
+* prims()
 *
 * @param {object} param description
 * @return {object} returns an something
 */
 
-// function simplexMethod() {
+// function prims() {
 //
 // }
 //
-// export default simplexMethod;
+// export default prims;

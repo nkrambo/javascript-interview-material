@@ -35,3 +35,5 @@
 - [Heap](../assets/graphs/data_structures/heap/heap.js)
 - [Tree](../assets/graphs/data_structures/tree/tree.js)
 - [Bloom Filter](../assets/graphs/data_structures/_bloom_filter/bloom_filter.js)
+- [Inverted Index](../assets/graphs/data_structures/_inverted_index/inverted_index.js)
+
