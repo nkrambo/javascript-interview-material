@@ -103,6 +103,18 @@ are local test cases as well.
   </tr>
   <tr>
     <td>24</td>
-    <td><a href="../assets/linked_lists/questions/swap_nodes_in_pairs/swap_nodes_in_pairs.js">Swap Nodes in Pairs</a></td>
+    <td><a href="../assets/linked_lists/questions/_swap_nodes_in_pairs/swap_nodes_in_pairs.js">Swap Nodes in Pairs</a></td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td><a href="../assets/linked_lists/questions/_reverse_nodes_in_k_group/reverse_nodes_in_k_group.js">Reverse Nodes in k Group</a></td>
+  </tr>
+  <tr>
+    <td>26</td>
+    <td><a href="../assets/arrays/questions/_remove_duplicates_from_sorted_array/remove_duplicates_from_sorted_array.js">Remove Duplicates from Sorted Array</a></td>
+  </tr>
+  <tr>
+    <td>27</td>
+    <td><a href="../assets/arrays/questions/_remove_element/remove_element.js">Remove Element</a></td>
   </tr>
 </table>
