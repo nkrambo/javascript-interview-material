@@ -101,4 +101,8 @@ are local test cases as well.
     <td>23</td>
     <td><a href="../assets/linked_lists/questions/merge_k_sorted_lists/merge_k_sorted_lists.js">Merge k Sorted Lists</a></td>
   </tr>
+  <tr>
+    <td>24</td>
+    <td><a href="../assets/linked_lists/questions/swap_nodes_in_pairs/swap_nodes_in_pairs.js">Swap Nodes in Pairs</a></td>
+  </tr>
 </table>
