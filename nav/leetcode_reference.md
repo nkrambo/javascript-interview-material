@@ -45,4 +45,16 @@ are local test cases as well.
     <td>9</td>
     <td><a href="../assets/math/questions/_palindrome_number/palindrome_number.js">Palindrome Number</a></td>
   </tr>
+  <tr>
+    <td>10</td>
+    <td><a href="../assets/dynamic_programming/questions/_regular_expression_matching/regular_expression_matching.js">Regular Expression Matching</a></td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td><a href="../assets/arrays/questions/_container_with_most_water/container_with_most_water.js">Container With Most Water</a></td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td><a href="../assets/math/questions/_integer_to_roman/integer_to_roman.js">Integer to Roman</a></td>
+  </tr>
 </table>

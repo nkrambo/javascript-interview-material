@@ -15,7 +15,7 @@
 * When otherwise ambiguous, we'll use the x (b2) and x (b10) to indicate whether
 * x is in base 2 or base 10.
 *
-* Fisrt, let's start off by asking ourselves what a non-interger number looks like
+* Fisrt, let's start off by asking ourselves what a non-integer number looks like
 * in binary. By analogy to a decimal number, the binary number 0.101 would look like:
 *
 * 0.101 (b2) = 1 * (1/2^1 + 0) * (1/2^2 + 1) * 1/2^3

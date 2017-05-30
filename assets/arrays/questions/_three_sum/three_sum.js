@@ -38,7 +38,7 @@
 //     throw new TypeError('threeSum: Expects a single argument of [array] type.');
 //   }
 //
-//   // edge case, minimum 3 intergers
+//   // edge case, minimum 3 integers
 //   if (nums.length < 3) {
 //     throw new Error('nums[] must be a minimum of 3 integers.');
 //   }

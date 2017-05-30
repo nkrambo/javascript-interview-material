@@ -2,7 +2,7 @@
 /**
 * Next Number
 *
-* Given a positive interger, print the next smallest and the next largest number
+* Given a positive integer, print the next smallest and the next largest number
 * that have the same number of 1 bits in their binary representation.
 *
 * Solution:
@@ -14,7 +14,7 @@
 *
 * Time:
 *
-* @param {number} n positive interger
+* @param {number} n positive integer
 * @return {number} Returns 2 integers, next smallest and largest with the same
 * number if 1's in binary representation.
 */
