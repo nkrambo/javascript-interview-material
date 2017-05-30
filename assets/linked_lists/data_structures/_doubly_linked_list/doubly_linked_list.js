@@ -30,7 +30,7 @@
 * remove: O(1)
 */
 
-class DoublyLinkedList {
+// class DoublyLinkedList {
   /**
   * @constructor
   *
@@ -40,11 +40,11 @@ class DoublyLinkedList {
   * We're also going to track the length.
   */
 
-  constructor() {
-    this.head = null;
-    this.tail = null;
-    this.length = 0;
-  }
+  // constructor() {
+  //   this.head = null;
+  //   this.tail = null;
+  //   this.length = 0;
+  // }
 
   /**
   * get()
@@ -76,10 +76,10 @@ class DoublyLinkedList {
   //
   //   return current;
   // }
-}
+// }
 
 // https://github.com/nzakas/computer-science-in-javascript/blob/master/data-structures/doubly-linked-list/doubly-linked-list.js
 
 // https://code.tutsplus.com/articles/data-structures-with-javascript-singly-linked-list-and-doubly-linked-list--cms-23392
 
-export default DoublyLinkedList;
+// export default DoublyLinkedList;

@@ -1,22 +1,17 @@
 
 /**
-* Bracket Validator
+* Valid Parentheses
 *
-* Tags: Stack
+* Tags: Stack, String
+* Leetcode: 20
 *
-* You're working with an intern that keeps coming to you with JavaScript code
-* that won't run because the braces, brackets, and parentheses are off. To save
-* you both some time, you decide to write a braces/brackets/parentheses validator.
+* Given a string containing just the characters '(', ')', '{', '}', '[' and ']',
+* determine if the input string is valid.
 *
-* Let's say:
+* The brackets must close in the correct order, '()' and '()[]{}' are all valid
+* but '(]' and '([)]' are not.
 *
-* ['(', '{', '['] are called 'openers'.
-* [')', '}', ']'] are called 'closers'.
-*
-* Write an efficient function that tells us whether or not an input string's
-* openers and closers are properly nested.
-*
-* Examples:
+* Some more examples:
 *
 * Input: '{ [ ] ( ) }'
 * Output: true
@@ -29,7 +24,7 @@
 */
 
 /**
-* bracketValidator()
+* isValid()
 *
 * Solution:
 *
@@ -53,16 +48,26 @@
 * - If we finish iterating and our stack is empty, we know every opener was
 *   properly closed.
 *
+* Let's say we use two sets:
+*
+* ['(', '{', '['] are called 'openers'.
+* [')', '}', ']'] are called 'closers'.
+*
+* We also use a POJO to map our openers to closers.
+*
+* Although the questions states that we will only ever recieve parentheses characters,
+* this solution will also work when other types of characters are passed in as well.
+*
 * Time: O(n)
 * Space: O(n)
 *
 * Where n is the length of the string input.
 *
-* @param {string} str string of (n) length
+* @param {string} s string of (n) length
 * @return {boolean} returns true if all brackets are balanced
 */
 
-function bracketValidator(str) {
+function isValid(s) {
   // map brackets
   const openersToClosers = {
     '(': ')',
@@ -77,7 +82,7 @@ function bracketValidator(str) {
   // openers stack
   const openersStack = [];
 
-  for (const char of str) {
+  for (const char of s) {
     if (openers.has(char)) {
       openersStack.push(char);
     } else if (closers.has(char)) {
@@ -93,4 +98,4 @@ function bracketValidator(str) {
   return openersStack.length === 0;
 }
 
-export default bracketValidator;
+export default isValid;
