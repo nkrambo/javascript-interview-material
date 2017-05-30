@@ -57,4 +57,16 @@ are local test cases as well.
     <td>12</td>
     <td><a href="../assets/math/questions/_integer_to_roman/integer_to_roman.js">Integer to Roman</a></td>
   </tr>
+  <tr>
+    <td>13</td>
+    <td><a href="../assets/math/questions/_roman_to_integer/roman_to_integer.js">Roman to Integer</a></td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td><a href="../assets/strings/questions/_longest_common_prefix/longest_common_prefix.js">Longest Common Prefix</a></td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td><a href="../assets/arrays/questions/_3_sum/3_sum.js">3Sum</a></td>
+  </tr>
 </table>
