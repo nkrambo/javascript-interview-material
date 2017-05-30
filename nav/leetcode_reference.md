@@ -89,4 +89,16 @@ are local test cases as well.
     <td>20</td>
     <td><a href="../assets/strings/questions/valid_parentheses/valid_parentheses.js">Valid Parentheses</a></td>
   </tr>
+  <tr>
+    <td>21</td>
+    <td><a href="../assets/linked_lists/questions/merge_two_sorted_lists/merge_two_sorted_lists.js">Merge Two Sorted Lists</a></td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td><a href="../assets/dynamic_programming/questions/generate_parentheses/generate_parentheses.js">Generate Parentheses</a></td>
+  </tr>
+  <tr>
+    <td>23</td>
+    <td><a href="../assets/linked_lists/questions/merge_k_sorted_lists/merge_k_sorted_lists.js">Merge k Sorted Lists</a></td>
+  </tr>
 </table>
