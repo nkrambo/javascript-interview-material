@@ -39,6 +39,10 @@ are local test cases as well.
   </tr>
   <tr>
     <td>8</td>
-    <td><a href="../assets/math/questions/_string_to_integer_atoi/string_to_integer_atoi.js">String to Interger (atoi)</a></td>
+    <td><a href="../assets/math/questions/_string_to_integer_atoi/string_to_integer_atoi.js">String to Integer (atoi)</a></td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td><a href="../assets/math/questions/_palindrome_number/palindrome_number.js">Palindrome Number</a></td>
   </tr>
 </table>
