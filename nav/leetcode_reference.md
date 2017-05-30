@@ -11,7 +11,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>1</td>
-    <td><a href="../assets/arrays/questions/two_sum/two_sum.js">Two Sum</a></td>
+    <td><a href="../assets/arrays/questions/2sum/2sum.js">2Sum</a></td>
   </tr>
   <tr>
     <td>2</td>
@@ -67,6 +67,22 @@ are local test cases as well.
   </tr>
   <tr>
     <td>15</td>
-    <td><a href="../assets/arrays/questions/_3_sum/3_sum.js">3Sum</a></td>
+    <td><a href="../assets/arrays/questions/_3sum/3sum.js">3Sum</a></td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td><a href="../assets/arrays/questions/_3sum_closest/3sum_closest.js">3Sum Closest</a></td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td><a href="../assets/dynamic_programming/questions/_letter_combinations_phone_number/letter_combinations_phone_number.js">Letter Combinations of a Phone Number</a></td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td><a href="../assets/arrays/questions/_4sum/4sum.js">4Sum</a></td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td><a href="../assets/linked_lists/questions/_remove_nth_node_from_end_of_list/remove_nth_node_from_end_of_list.js">Remove Nth Node From End of List</a></td>
   </tr>
 </table>
