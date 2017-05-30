@@ -37,4 +37,8 @@ are local test cases as well.
     <td>7</td>
     <td><a href="../assets/math/questions/_reverse_integer/reverse_integer.js">Reverse Integer</a></td>
   </tr>
+  <tr>
+    <td>8</td>
+    <td><a href="../assets/math/questions/_string_to_integer_atoi/string_to_integer_atoi.js">String to Interger (atoi)</a></td>
+  </tr>
 </table>

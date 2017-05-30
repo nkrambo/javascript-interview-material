@@ -2,6 +2,9 @@
 /**
 * Reverse Integer
 *
+* Tags: Math
+* Leetcode: 7
+*
 * Reverse digits of an integer.
 *
 * Example 1:
