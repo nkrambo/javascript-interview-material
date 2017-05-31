@@ -117,4 +117,8 @@ are local test cases as well.
     <td>27</td>
     <td><a href="../assets/arrays/questions/_remove_element/remove_element.js">Remove Element</a></td>
   </tr>
+  <tr>
+    <td>28</td>
+    <td><a href="../assets/strings/questions/_implement_strStr/implement_strStr.js">Implement strStr()</a></td>
+  </tr>
 </table>
