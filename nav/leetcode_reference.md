@@ -121,4 +121,16 @@ are local test cases as well.
     <td>28</td>
     <td><a href="../assets/strings/questions/_implement_strStr/implement_strStr.js">Implement strStr()</a></td>
   </tr>
+  <tr>
+    <td>29</td>
+    <td><a href="../assets/search/questions/_divide_two_integers/divide_two_integers.js">Divide Two Integers</a></td>
+  </tr>
+  <tr>
+    <td>30</td>
+    <td><a href="../assets/strings/questions/_substring_with_concatenation_of_words/substring_with_concatenation_of_words.js">Substring With Concatenation of All Words</a></td>
+  </tr>
+  <tr>
+    <td>31</td>
+    <td><a href="../assets/array/questions/_next_permutation/next_permutation.js">Next Permutation</a></td>
+  </tr>
 </table>
