@@ -153,4 +153,16 @@ are local test cases as well.
     <td>36</td>
     <td><a href="../assets/arrays/questions/_valid_sudoku/valid_sudoku.js">Valid Sudoku</a></td>
   </tr>
+  <tr>
+    <td>37</td>
+    <td><a href="../assets/arrays/questions/_sudoku_solver/sudoku_solver.js">Sudoku Solver</a></td>
+  </tr>
+  <tr>
+    <td>38</td>
+    <td><a href="../assets/strings/questions/_count_and_say/count_and_say.js">Count and Say</a></td>
+  </tr>
+  <tr>
+    <td>39</td>
+    <td><a href="../assets/arrays/questions/_combination_sum/combination_sum.js">Combination Sum</a></td>
+  </tr>
 </table>
