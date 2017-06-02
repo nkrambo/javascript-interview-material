@@ -149,4 +149,8 @@ are local test cases as well.
     <td>35</td>
     <td><a href="../assets/search/questions/_search_insert_position/search_insert_position.js">Search Insert Position</a></td>
   </tr>
+  <tr>
+    <td>36</td>
+    <td><a href="../assets/arrays/questions/_valid_sudoku/valid_sudoku.js">Valid Sudoku</a></td>
+  </tr>
 </table>
