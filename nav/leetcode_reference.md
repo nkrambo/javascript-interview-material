@@ -137,4 +137,16 @@ are local test cases as well.
     <td>32</td>
     <td><a href="../assets/dynamic_programming/questions/_longest_valid_parentheses/longest_valid_parentheses.js">Longest Valid Parentheses</a></td>
   </tr>
+  <tr>
+    <td>33</td>
+    <td><a href="../assets/search/questions/search_in_rotated_sorted_array/search_in_rotated_sorted_array.js">Search in Rotated Sorted Array</a></td>
+  </tr>
+  <tr>
+    <td>34</td>
+    <td><a href="../assets/search/questions/_search_for_a_range/search_for_a_range.js">Search for a Range</a></td>
+  </tr>
+  <tr>
+    <td>35</td>
+    <td><a href="../assets/search/questions/_search_insert_position/search_insert_position.js">Search Insert Position</a></td>
+  </tr>
 </table>

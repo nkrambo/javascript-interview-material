@@ -2,7 +2,7 @@
 /**
 * Search Insert Position
 *
-* Tags: Binary Search
+* Tags: Binary Search, Array
 * Leetcode: 35
 *
 * Given a sorted array and a target value, return the index if the target is found.

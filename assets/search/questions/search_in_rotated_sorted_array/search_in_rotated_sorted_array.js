@@ -2,17 +2,18 @@
 /**
 * Search in Rotated Array
 *
-* Tags: Binary Search
+* Tags: Binary Search, Array
 * Leetcode: 33
 *
-* Given a sorted array of n integers that has been rotated an unknown number
-* of times, write code to find an element in the array. You may assume that the
-* array was originally sorted in increasing order.
+* Suppose an array sorted in ascending order is rotated at some pivot unknown to
+* you beforehand.
 *
-* Example:
+* (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
 *
-* Input: [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14], 5
-* Output: 8 (index of 5 in array)
+* You are given a target value to search. If found in the array return its index,
+* otherwise return -1.
+*
+* You may assume no duplicate exists in the array.
 */
 
 /**
@@ -62,7 +63,7 @@
 * @return {number} returns the index of the target if it exists, else -1
 */
 
-function searchRotatedArray(nums, target) {
+function search(nums, target) {
   // we create index 'range' around possible positions of our target
   let left = 0;
   let right = nums.length - 1;
@@ -101,4 +102,4 @@ function searchRotatedArray(nums, target) {
   return -1;
 }
 
-export default searchRotatedArray;
+export default search;

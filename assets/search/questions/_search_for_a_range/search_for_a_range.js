@@ -1,8 +1,8 @@
 
 /**
-* Search For Range
+* Search for a Range
 *
-* Tags: Binary Search
+* Tags: Binary Search, Array
 * Leetcode: 34
 *
 * Given an array of integers sorted in ascending order, find the starting and
