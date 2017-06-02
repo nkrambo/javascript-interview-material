@@ -131,6 +131,10 @@ are local test cases as well.
   </tr>
   <tr>
     <td>31</td>
-    <td><a href="../assets/array/questions/_next_permutation/next_permutation.js">Next Permutation</a></td>
+    <td><a href="../assets/arrays/questions/_next_permutation/next_permutation.js">Next Permutation</a></td>
+  </tr>
+  <tr>
+    <td>32</td>
+    <td><a href="../assets/dynamic_programming/questions/_longest_valid_parentheses/longest_valid_parentheses.js">Longest Valid Parentheses</a></td>
   </tr>
 </table>
