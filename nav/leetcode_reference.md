@@ -165,4 +165,8 @@ are local test cases as well.
     <td>39</td>
     <td><a href="../assets/arrays/questions/_combination_sum/combination_sum.js">Combination Sum</a></td>
   </tr>
+  <tr>
+    <td>40</td>
+    <td><a href="../assets/arrays/questions/_combination_sum_II/combination_sum_II.js">Combination Sum II</a></td>
+  </tr>
 </table>
