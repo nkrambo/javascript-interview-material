@@ -2,7 +2,8 @@
 /**
 * Number of Islands
 *
-* Tags: Union Find
+* Tags: DFS, BFS, Union Find
+* Leetcode: 200
 *
 * Given a 2d grid map of 1s (land) and 0s (water), count the number of islands.
 *

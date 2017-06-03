@@ -2,7 +2,8 @@
 /**
 * Longest Consecutive Sequence
 *
-* Tags: Union Find
+* Tags: Array, Union Find
+* Leetcode: 128
 *
 * Given an unsorted array of integers, find the length of the longest consecutive
 * elements sequence.

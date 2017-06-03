@@ -2,7 +2,8 @@
 /**
 * Friend Circles
 *
-* Tags: Union Find
+* Tags: Union Find, DFS
+* Leetcode: 547
 *
 * There are N students in a class. Some of them are friends, while some are not.
 * Their friendship is transitive in nature. For example, if A is a direct friend

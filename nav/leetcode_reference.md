@@ -169,4 +169,45 @@ are local test cases as well.
     <td>40</td>
     <td><a href="../assets/arrays/questions/_combination_sum_II/combination_sum_II.js">Combination Sum II</a></td>
   </tr>
+  <tr>
+    <td>41</td>
+    <td><a href="../assets/arrays/questions/_first_missing_positive/first_missing_positive.js">First Missing Positive</a></td>
+  </tr>
+</table>
+
+### Already Done / Stubbed
+
+<table>
+  <tr>
+    <td>#</td>
+    <td>Title</td>
+  </tr>
+  <tr>
+    <td>128</td>
+    <td><a href="../assets/union_find/questions/_longest_consecutive_sequence/longest_consecutive_sequence.js">Longest Consecutive Sequence</a></td>
+  </tr>
+  <tr>
+    <td>130</td>
+    <td><a href="../assets/union_find/questions/_surrounded_regions/surrounded_regions.js">Surrounded Regions</a></td>
+  </tr>
+  <tr>
+    <td>200</td>
+    <td><a href="../assets/union_find/questions/_number_of_islands/number_of_islands.js">Number of Islands</a></td>
+  </tr>
+  <tr>
+    <td>261</td>
+    <td><a href="../assets/union_find/questions/_graph_valid_tree/graph_valid_tree.js">Graph Valid Tree</a></td>
+  </tr>
+  <tr>
+    <td>305</td>
+    <td><a href="../assets/union_find/questions/_number_of_islands_II/number_of_islands_II.js">Number of Islands II</a></td>
+  </tr>
+  <tr>
+    <td>323</td>
+    <td><a href="../assets/union_find/questions/_number_of_connected_components/number_of_connected_components.js">Number of Connected Components in an Undirected Graph</a></td>
+  </tr>
+  <tr>
+    <td>547</td>
+    <td><a href="../assets/union_find/questions/_friend_circles/friend_circles.js">Friend Circles</a></td>
+  </tr>
 </table>
