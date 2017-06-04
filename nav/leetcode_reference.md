@@ -191,6 +191,10 @@ are local test cases as well.
     <td>Title</td>
   </tr>
   <tr>
+    <td>68</td>
+    <td><a href="../assets/strings/questions/_text_justification/text_justification.js">Text Justification</a></td>
+  </tr>
+  <tr>
     <td>76</td>
     <td><a href="../assets/strings/questions/_minimum_window_substring/minimum_window_substring.js">Minimum Window Substring</a></td>
   </tr>
@@ -205,6 +209,10 @@ are local test cases as well.
   <tr>
     <td>200</td>
     <td><a href="../assets/union_find/questions/_number_of_islands/number_of_islands.js">Number of Islands</a></td>
+  </tr>
+  <tr>
+    <td>242</td>
+    <td><a href="../assets/strings/questions/valid_anagram/valid_anagram.js">Valid Anagram</a></td>
   </tr>
   <tr>
     <td>249</td>
@@ -229,6 +237,10 @@ are local test cases as well.
   <tr>
     <td>340</td>
     <td><a href="../assets/strings/questions/_longest_substring_most_k_distinct/longest_substring_most_k_distinct.js">Longest Substring with at Most K Distinct Characters</a></td>
+  </tr>
+  <tr>
+    <td>387</td>
+    <td><a href="../assets/strings/questions/first_unique_character/first_unique_character.js">First Unique Character in a String</a></td>
   </tr>
   <tr>
     <td>394</td>

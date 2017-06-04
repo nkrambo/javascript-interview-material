@@ -2,18 +2,21 @@
 /**
 * First Unique Character in String
 *
-* Tags: Map
+* Tags: Map, String
+* Leetcode: 387
 *
 * Given a string, find the first non-repeating character in it and return it's
 * index. If it doesn't exist, return -1.
 *
-* Example:
-* Input: 'leetcode'
-* Output: 0
+* Example 1:
 *
-* Example:
-* Input: 'loveleetcode'
-* Output: 2
+* Given: 'leetcode'
+* Return: 0
+*
+* Example 2:
+*
+* Given: 'loveleetcode'
+* Return: 2
 *
 * You may assume the string contain only lowercase letters.
 */
@@ -34,25 +37,25 @@
 * Time: O(n)
 * Space: O(n)
 *
-* @param {string} str string of (n) length
+* @param {string} s string of (n) length
 * @return {number} returns index of first unique character, otherwise -1
 */
 
-function firstUniqueChar(str) {
+function firstUniqChar(s) {
   // count chars
   const chars = new Map();
-  for (const char of str) {
+  for (const char of s) {
     chars.set(char, chars.get(char) + 1 || 1);
   }
 
   // grab first unique
-  for (const char of str) {
+  for (const char of s) {
     if (chars.get(char) === 1) {
-      return str.indexOf(char);
+      return s.indexOf(char);
     }
   }
 
   return -1;
 }
 
-export default firstUniqueChar;
+export default firstUniqChar;

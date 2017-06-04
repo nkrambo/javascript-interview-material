@@ -2,6 +2,9 @@
 /**
 * Text Justification
 *
+* Tags: String
+* Leetcode: 68
+*
 * Given an array of words and a length L, format the text such that each line
 * has exactly L characters and is fully (left and right) justified.
 *
@@ -23,11 +26,18 @@
 *          'example  of text',
 *          'justification.  ']
 *
-* Note: Each word is guaranteed not to exceed len in length.
+* Note:
+*
+* Each word is guaranteed not to exceed len in length.
+*
+* Corner Cases:
+*
+* A line other than the last line might contain only one word. In this case, that
+* line should be left-justified.
 */
 
 /**
-* justify()
+* fullJustify()
 *
 * Solution:
 *
@@ -35,12 +45,12 @@
 * Space: O(1)
 *
 * @param {array} words array of strings
-* @param {number} len length of lines
+* @param {number} maxWidth length of lines
 * @return {array} returns an array of length justified strings
 */
 
-// function justify(words, len) {
+// function fullJustify(words, maxWidth) {
 //
 // }
 //
-// export default justify;
+// export default fullJustify;

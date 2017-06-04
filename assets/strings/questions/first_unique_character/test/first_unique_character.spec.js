@@ -1,15 +1,15 @@
 
 import { expect } from 'chai';
-import firstUniqueChar from '../first_unique_character';
+import firstUniqChar from '../first_unique_character';
 
-describe('firstUniqueChar()', () => {
+describe('firstUniqChar()', () => {
   it('should return the index of the first unique character', () => {
-    expect(firstUniqueChar('leetcode')).to.equal(0);
-    expect(firstUniqueChar('loveleetcode')).to.equal(2);
+    expect(firstUniqChar('leetcode')).to.equal(0);
+    expect(firstUniqChar('loveleetcode')).to.equal(2);
   });
 
   it('should return -1 if there are no unique characters', () => {
-    expect(firstUniqueChar('aabb')).to.equal(-1);
-    expect(firstUniqueChar('cdcd')).to.equal(-1);
+    expect(firstUniqChar('aabb')).to.equal(-1);
+    expect(firstUniqChar('cdcd')).to.equal(-1);
   });
 });

@@ -1,8 +1,8 @@
 //
 // import { expect } from 'chai';
-// import justify from '../text_justification';
+// import fullJustify from '../text_justification';
 //
-// describe('justify()', () => {
+// describe('fullJustify()', () => {
 //   it('should', () => {
 //
 //   });

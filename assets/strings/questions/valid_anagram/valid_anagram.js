@@ -1,15 +1,24 @@
 
 /**
-* Check Permutation, also known as 'Is Valid Anagram'
+* Valid Anagram
 *
 * Tags: Map, Sort
+* Leetcode: 242
 *
-* Given two strings, write a method to check if one is a permutation of
-* the other.
+* Given two strings s and t, write a function to determine if t is an anagram of s.
+*
+* Note:
+*
+* You may assume the string contains only lowercase alphabets.
+*
+* Follow up:
+*
+* What if the inputs contain unicode characters? How would you adapt your solution
+* to such case?
 */
 
 /**
-* isPermutation()
+* isAnagram()
 *
 * Solution:
 *
@@ -18,9 +27,9 @@
 * return false.
 *
 * Otherwise, we can use a Map() to keep track of the characters, and their count,
-* as we iterate over str1.
+* as we iterate over s.
 *
-* We can then iterate over str2 and decrement, or remove, characters from the map
+* We can then iterate over t and decrement, or remove, characters from the map
 * as we come across them. If the two strings are permutations of each other, there
 * should be an exact same count of characters in both. Therefore, there should be no
 * leftover characters in the map.
@@ -31,25 +40,25 @@
 * Time: O(n + m)
 * Space: O(n)
 *
-* Where n is the length of str1, m is the length of str2
+* Where n is the length of s, m is the length of t
 *
-* @param  {string} str2 First string of (n) length
-* @param  {string} str1 Second string of (n) length
-* @return {boolean} Returns true if str1 and str2 are permutations of each other, otherwise false.
+* @param  {string} s string of (n) length
+* @param  {string} t string of (n) length
+* @return {boolean} returns true if s and t are permutations of each other, otherwise false.
 */
 
-function isPermutation(str1, str2) {
+function isAnagram(s, t) {
   // length check, short-circuit
-  if (str1.length !== str2.length) return false;
+  if (s.length !== t.length) return false;
 
-  // count characters in str1
+  // count characters in s
   const chars = new Map();
-  for (const char of str1) {
+  for (const char of s) {
     chars.set(char, chars.get(char) + 1 || 1); // increment or set to 1
   }
 
-  // check str2 against str1 map
-  for (const char of str2) {
+  // check t against s map
+  for (const char of t) {
     const count = chars.get(char);
 
     // if character doesn't exist
@@ -67,7 +76,7 @@ function isPermutation(str1, str2) {
 }
 
 /**
-* isPermutationSort()
+* isAnagramSort()
 *
 * Solution:
 *
@@ -79,19 +88,19 @@ function isPermutation(str1, str2) {
 * Time: O((n log n) + (m log m))
 * Space: O(1)
 *
-* Where n is the length of str1, m is the length of str2
+* Where n is the length of s, m is the length of t
 *
-* @param  {string} str2 First string of (n) length
-* @param  {string} str1 Second string of (n) length
-* @return {boolean} Returns true if str1 and str2 are permutations of each other, otherwise false.
+* @param  {string} t string of (n) length
+* @param  {string} s string of (n) length
+* @return {boolean} returns true if s and t are permutations of each other, otherwise false.
 */
 
-function isPermutationSort(str1, str2) {
+function isAnagramSort(s, t) {
   // length check, short-circuit
-  if (str1.length !== str2.length) return false;
+  if (s.length !== t.length) return false;
 
   // compare the sorted strings
-  return str1.split('').sort().join() === str2.split('').sort().join();
+  return s.split('').sort().join() === t.split('').sort().join();
 }
 
-export { isPermutation, isPermutationSort };
+export { isAnagram, isAnagramSort };
