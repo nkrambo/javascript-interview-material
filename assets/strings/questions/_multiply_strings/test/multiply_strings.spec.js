@@ -1,8 +1,8 @@
 //
 // import { expect } from 'chai';
-// import multiplyStrings from '../multiply_strings';
+// import multiply from '../multiply_strings';
 //
-// describe('multiplyStrings()', () => {
+// describe('multiply()', () => {
 //   it('should', () => {
 //
 //   });

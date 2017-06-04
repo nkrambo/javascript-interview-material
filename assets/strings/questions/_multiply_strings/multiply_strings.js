@@ -2,30 +2,35 @@
 /**
 * Multiply Strings
 *
-* Given two numbers represented as strings, return multiplication of the
-* numbers as a string.
+* Tags: Math, String
+* Leetcode: 43
 *
-* Notes:
-* 1. The numbers can be arbitrarily large and are non-negative.
-* 2. Converting the input string to integer is NOT allowed.
-* 3. You should NOT use any libraries.
+* Given two non-negative integers num1 and num2 represented as strings, return
+* the product of num1 and num2.
+*
+* Note:
+*
+* 1. The length of both num1 and num2 is < 110.
+* 2. Both num1 and num2 contains only digits 0-9.
+* 3. Both num1 and num2 does not contain any leading zero.
+* 4. You must not use any built-in BigInteger library or convert the inputs to integer directly.
 */
 
 /**
-* multiplyStrings()
+* multiply()
 *
 * Solution:
 *
 * Time: O(1)
 * Space: O(1)
 *
-* @param {string} str1 integer represented as string
-* @param {string} str2 integer represented as string
-* @return {number} returns the multiplication of str1 and str2
+* @param {string} num1 integer represented as string
+* @param {string} num2 integer represented as string
+* @return {string} returns the multiplication of num1 and num2
 */
 
-// function multiplyStrings(str1, str2) {
+// function multiply(num1, num2) {
 //
 // }
 //
-// export default multiplyStrings;
+// export default multiply;

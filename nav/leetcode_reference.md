@@ -19,7 +19,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>3</td>
-    <td><a href="../assets/strings/questions/longest_substring_no_repeats/longest_substring_no_repeats.js">Longest Substring Without Repeating Characters</a></td>
+    <td><a href="../assets/strings/questions/longest_substring_no_repeating_characters/longest_substring_no_repeating_characters.js">Longest Substring Without Repeating Characters</a></td>
   </tr>
   <tr>
     <td>4</td>
@@ -173,6 +173,14 @@ are local test cases as well.
     <td>41</td>
     <td><a href="../assets/arrays/questions/_first_missing_positive/first_missing_positive.js">First Missing Positive</a></td>
   </tr>
+  <tr>
+    <td>42</td>
+    <td><a href="../assets/queues_and_stacks/questions/_trapping_rain_water/trapping_rain_water.js">Trapping Rain Water</a></td>
+  </tr>
+  <tr>
+    <td>43</td>
+    <td><a href="../assets/strings/questions/_multiply_strings/multiply_strings.js">Multiply Strings</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
@@ -181,6 +189,10 @@ are local test cases as well.
   <tr>
     <td>#</td>
     <td>Title</td>
+  </tr>
+  <tr>
+    <td>76</td>
+    <td><a href="../assets/strings/questions/_minimum_window_substring/minimum_window_substring.js">Minimum Window Substring</a></td>
   </tr>
   <tr>
     <td>128</td>
@@ -216,11 +228,15 @@ are local test cases as well.
   </tr>
   <tr>
     <td>340</td>
-    <td><a href="../assets/strings/questions/_longest_substring_most_k_distinct/longest_substring_most_k_distinct.js">Longest Substring with At Most K Distinct Characters</a></td>
+    <td><a href="../assets/strings/questions/_longest_substring_most_k_distinct/longest_substring_most_k_distinct.js">Longest Substring with at Most K Distinct Characters</a></td>
   </tr>
   <tr>
     <td>394</td>
     <td><a href="../assets/queues_and_stacks/questions/_decode_string/decode_string.js">Decode String</a></td>
+  </tr>
+  <tr>
+    <td>395</td>
+    <td><a href="../assets/strings/questions/_longest_substring_least_k_distinct/longest_substring_least_k_distinct.js">Longest Substring with at Least K Distinct Characters</a></td>
   </tr>
   <tr>
     <td>415</td>

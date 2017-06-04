@@ -5,7 +5,7 @@ import {
   allUnique,
   // longestSubstring,
   longestSubstringMap,
-} from '../longest_substring_no_repeats';
+} from '../longest_substring_no_repeated_characters';
 
 describe('longestSubstringBrute()', () => {
   it('should find the longest substring with no repeating characters', () => {
