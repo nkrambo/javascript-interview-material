@@ -195,8 +195,16 @@ are local test cases as well.
     <td><a href="../assets/union_find/questions/_number_of_islands/number_of_islands.js">Number of Islands</a></td>
   </tr>
   <tr>
+    <td>249</td>
+    <td><a href="../assets/strings/questions/_group_shifted_strings/group_shifted_strings.js">Group Shifted Strings</a></td>
+  </tr>
+  <tr>
     <td>261</td>
     <td><a href="../assets/union_find/questions/_graph_valid_tree/graph_valid_tree.js">Graph Valid Tree</a></td>
+  </tr>
+  <tr>
+    <td>271</td>
+    <td><a href="../assets/strings/questions/_encode_and_decode_strings/encode_and_decode_strings.js">Encode and Decode Strings</a></td>
   </tr>
   <tr>
     <td>305</td>
@@ -207,7 +215,30 @@ are local test cases as well.
     <td><a href="../assets/union_find/questions/_number_of_connected_components/number_of_connected_components.js">Number of Connected Components in an Undirected Graph</a></td>
   </tr>
   <tr>
+    <td>340</td>
+    <td><a href="../assets/strings/questions/_longest_substring_most_k_distinct/longest_substring_most_k_distinct.js">Longest Substring with At Most K Distinct Characters</a></td>
+  </tr>
+  <tr>
+    <td>394</td>
+    <td><a href="../assets/queues_and_stacks/questions/_decode_string/decode_string.js">Decode String</a></td>
+  </tr>
+  <tr>
+    <td>415</td>
+    <td><a href="../assets/strings/questions/_add_strings/add_strings.js">Add Strings</a></td>
+  </tr>
+  <tr>
     <td>547</td>
     <td><a href="../assets/union_find/questions/_friend_circles/friend_circles.js">Friend Circles</a></td>
   </tr>
 </table>
+
+
+### Other Questions
+
+<table>
+  <tr>
+    <td>#</td>
+    <td>Title</td>
+  </tr>
+</table>
+

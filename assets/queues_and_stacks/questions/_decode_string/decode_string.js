@@ -2,6 +2,9 @@
 /**
 * Decode String
 *
+* Tags: DFS, Stack
+* Leetcode: 394
+*
 * Given an encoded string, return it's decoded string.
 *
 * The encoding rule is: k[encoded_string], where the encoded_string inside the
@@ -15,15 +18,18 @@
 * and that digits are only for those repeat numbers, k. For example, there won't
 * be input like 3a or 2[4].
 *
-* Example:
+* Example 1:
+*
 * Input: '3[a]2[bc]'
 * Output: 'aaabcbc'
 *
-* Example:
+* Example 2:
+*
 * Input: '3[a2[c]]'
 * Output: 'accaccacc'
 *
-* Example:
+* Example 3:
+*
 * Input: '2[abc]3[cd]ef'
 * Output: 'abcabccdcdcdef'
 */
@@ -36,11 +42,11 @@
 * Time: O(1)
 * Space: O(1)
 *
-* @param {string} str string of (n) length to be decoded
+* @param {string} s string of (n) length to be decoded
 * @return {string} returns decoded string
 */
 
-// function decodeString(str) {
+// function decodeString(s) {
 //
 // }
 //

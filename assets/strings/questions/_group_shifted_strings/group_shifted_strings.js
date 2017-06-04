@@ -2,6 +2,9 @@
 /**
 * Group Shifted Strings
 *
+* Tags: Map, String
+* Leetcode: 249
+*
 * Given a string, we can 'shift' each of its letter to its successive letter,
 * for example: 'abc' -> 'bcd'. We can keep 'shifting' which forms the sequence:
 *
@@ -11,6 +14,7 @@
 * strings that belong to the same shifting sequence.
 *
 * Example:
+*
 * Input: ['abc', 'bcd', 'acef', 'xyz', 'az', 'ba', 'a', 'z']
 * Output: [['abc','bcd','xyz'],
 *          ['az','ba'],
