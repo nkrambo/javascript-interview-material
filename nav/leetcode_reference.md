@@ -191,6 +191,10 @@ are local test cases as well.
     <td>Title</td>
   </tr>
   <tr>
+    <td>49</td>
+    <td><a href="../assets/strings/questions/group_anagrams/group_anagrams.js">Group Anagrams</a></td>
+  </tr>
+  <tr>
     <td>68</td>
     <td><a href="../assets/strings/questions/_text_justification/text_justification.js">Text Justification</a></td>
   </tr>
@@ -309,12 +313,40 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/recursive_string_permutations/recursive_string_permutations.js">Recursive String Permutations</a></td>
   </tr>
   <tr>
-    <td>String Compression</td>
+    <td>String</td>
     <td><a href="../assets/strings/questions/string_compression/string_compression.js">String Compression</a></td>
   </tr>
   <tr>
-    <td>String Rotation</td>
+    <td>String</td>
     <td><a href="../assets/strings/questions/string_rotation/string_rotation.js">String Rotation</a></td>
+  </tr>
+  <tr>
+    <td>Sorting, Counting Sort</td>
+    <td><a href="../assets/sort/questions/top_scores/top_scores.js">Top Scores</a></td>
   </tr>
 </table>
 
+### Cracking the Coding Interview
+
+<table>
+  <tr>
+    <td>Type</td>
+    <td>Title</td>
+  </tr>
+  <tr>
+    <td>Sort</td>
+    <td><a href="../assets/sort/questions/_peaks_and_valleys/peaks_and_valleys.js">Peaks and Valleys</a></td>
+  </tr>
+  <tr>
+    <td>Sort</td>
+    <td><a href="../assets/sort/questions/_rank_from_stream/rank_from_stream.js">Rank From Stream</a></td>
+  </tr>
+  <tr>
+    <td>Sort</td>
+    <td><a href="../assets/sort/questions/_sort_big_file/sort_big_file.js">Sort Big File</a></td>
+  </tr>
+  <tr>
+    <td>Sort</td>
+    <td><a href="../assets/sort/questions/sorted_search_no_size/sorted_search_no_size.js">Sorted Search, No Size</a></td>
+  </tr>
+</table>

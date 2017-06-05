@@ -2,10 +2,20 @@
 /**
 * Group Anagrams
 *
-* Tags: Map, Sorting
+* Tags: Map, String
+* Leetcode: 49
 *
-* Write a method to sort an array of strings so that all
-* the anagrams are next to each other.
+* Given an array of strings, group anagrams together.
+*
+* Example:
+*
+* Given: ["eat", "tea", "tan", "ate", "nat", "bat"]
+* Return:
+* [
+*   ["ate", "eat","tea"],
+*   ["nat","tan"],
+*   ["bat"]
+* ]
 *
 * Solution:
 *
@@ -36,7 +46,7 @@
 * grouped all the words into these lists by anagram, we can then put them back into
 * the array.
 *
-* @param {array} words array of strings
+* @param {array} strs array of strings
 * @return {modify} modfies the input array
 *
 * Time: O(n log n)
@@ -46,18 +56,18 @@
 * we're using a hash map so our space complexity will be O(n).
 */
 
-function groupAnagrams(words) {
+function groupAnagrams(strs) {
   const map = new Map();
 
   // group words by anagram
-  for (let i = 0; i < words.length; i += 1) {
-    const key = words[i].split('').sort().join('');
+  for (let i = 0; i < strs.length; i += 1) {
+    const key = strs[i].split('').sort().join('');
 
     // if we have the key concat our anagram
     if (map.has(key)) {
-      map.set(key, map.get(key).concat([words[i]]));
+      map.set(key, map.get(key).concat([strs[i]]));
     } else {
-      map.set(key, [words[i]]);
+      map.set(key, [strs[i]]);
     }
   }
 
@@ -65,7 +75,7 @@ function groupAnagrams(words) {
   let index = 0;
   for (const list of map.values()) {
     for (const word of list) {
-      words[index] = word;
+      strs[index] = word;
       index += 1;
     }
   }
