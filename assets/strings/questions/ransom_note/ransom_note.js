@@ -27,7 +27,7 @@
 */
 
 /**
-* ransomNote()
+* canConstruct()
 *
 * Solution:
 *
@@ -77,7 +77,7 @@
 * @return {boolean} returns true if the ransom note can be constructed, otherwise false
 */
 
-function canMakeRansomNote(ransomNote, magazine) {
+function canConstruct(ransomNote, magazine) {
   // count ransom note characters
   const chars = new Map();
 
@@ -110,4 +110,4 @@ function canMakeRansomNote(ransomNote, magazine) {
   return false;
 }
 
-export default canMakeRansomNote;
+export default canConstruct;

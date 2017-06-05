@@ -2,7 +2,8 @@
 /**
 * Reverse Vowels
 *
-* Tags: Map, Two Pointer
+* Tags: Map, Two Pointer, String
+* Leetcode: 345
 *
 * Write a function that takes a string as input and reverse only
 * the vowels of a string.
@@ -15,7 +16,7 @@
 * Input: 'leetcode'
 * Output: 'leotcede'
 *
-* You can assume that the string will contain letters [a-z], all lowercase.
+* You can assume that the string will contain letters [a-z], mixed lowercase and uppercase.
 */
 
 /**
@@ -41,34 +42,34 @@
 *
 * Where n is the length of the string input and m is the number of vowels.
 *
-* @param {string} str string of (n) length
+* @param {string} s string of (n) length
 * @return {string} returns a string with vowels reversed
 */
 
-function reverseVowels(str) {
+function reverseVowels(s) {
   // edge case
-  if (str.length < 1) return str;
+  if (s.length < 1) return s;
 
   // store vowel values
-  const vowels = new Set(['a', 'e', 'i', 'o', 'u']);
+  const vowels = new Set(['a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U']);
 
   // vowel stack
   const pulledVowels = [];
 
   // pull out vowels from our string
-  for (const char of str) {
+  for (const char of s) {
     if (vowels.has(char)) {
       pulledVowels.push(char);
     }
   }
 
   // if there's no, or only 1, vowel
-  if (pulledVowels.length <= 1) return str;
+  if (pulledVowels.length <= 1) return s;
 
   // otherwise, iterate string again, when we come arcoss a vowel pop()
   // from the back of pulledVowels, this will replace them in reverse.
   const result = [];
-  for (const char of str) {
+  for (const char of s) {
     if (vowels.has(char)) {
       result.push(pulledVowels.pop());
     } else {

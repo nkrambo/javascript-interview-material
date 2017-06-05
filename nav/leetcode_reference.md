@@ -207,6 +207,10 @@ are local test cases as well.
     <td><a href="../assets/union_find/questions/_surrounded_regions/surrounded_regions.js">Surrounded Regions</a></td>
   </tr>
   <tr>
+    <td>151</td>
+    <td><a href="../assets/strings/questions/reverse_words_in_a_string/reverse_words_in_a_string.js">Reverse Words in a String</a></td>
+  </tr>
+  <tr>
     <td>161</td>
     <td><a href="../assets/strings/questions/one_edit_distance/one_edit_distance.js">One Edit Distance</a></td>
   </tr>
@@ -251,6 +255,18 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/_longest_substring_most_k_distinct/longest_substring_most_k_distinct.js">Longest Substring with at Most K Distinct Characters</a></td>
   </tr>
   <tr>
+    <td>344</td>
+    <td><a href="../assets/strings/questions/reverse_string/reverse_string.js">Reverse String</a></td>
+  </tr>
+  <tr>
+    <td>345</td>
+    <td><a href="../assets/strings/questions/reverse_vowels_of_string/reverse_vowels_of_string.js">Reverse Vowels of a String</a></td>
+  </tr>
+  <tr>
+    <td>383</td>
+    <td><a href="../assets/strings/questions/ransom_note/ransom_note.js">Ransom Note</a></td>
+  </tr>
+  <tr>
     <td>387</td>
     <td><a href="../assets/strings/questions/first_unique_character/first_unique_character.js">First Unique Character in a String</a></td>
   </tr>
@@ -287,6 +303,18 @@ are local test cases as well.
   <tr>
     <td>String</td>
     <td><a href="../assets/strings/questions/parenthesis_matching/parenthesis_matching.js">Parenthesis Matching</a></td>
+  </tr>
+  <tr>
+    <td>String</td>
+    <td><a href="../assets/strings/questions/recursive_string_permutations/recursive_string_permutations.js">Recursive String Permutations</a></td>
+  </tr>
+  <tr>
+    <td>String Compression</td>
+    <td><a href="../assets/strings/questions/string_compression/string_compression.js">String Compression</a></td>
+  </tr>
+  <tr>
+    <td>String Rotation</td>
+    <td><a href="../assets/strings/questions/string_rotation/string_rotation.js">String Rotation</a></td>
   </tr>
 </table>
 

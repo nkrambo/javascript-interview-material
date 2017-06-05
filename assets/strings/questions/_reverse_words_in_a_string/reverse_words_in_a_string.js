@@ -1,29 +1,26 @@
 
 /**
-* Reverse Words
+* Reverse Words in a String
 *
-* Tags: Two Pointer
+* Tags: String
+* Leetcode: 151
 *
-* You're working on a secret team solving coded transmissions.
-*
-* Your team is scrambling to decipher a recent message, worried it's a plot
-* to break into a major European National Cake Vault. The message has been
-* mostly deciphered, but all the words are backwards!
-*
-* Your colleagues have handed off the last step to you.
-*
-* Write a function reverseWords() that takes a string message and reverses
-* the order of the words in-place.
-*
-* When writing your function, assume the message contains only letters
-* and spaces, and all words are separated by one space.
+* Given an input string, reverse the string word by word.
 *
 * Example:
 *
-* const message = 'find you will pain only go you recordings security the into if';
+* Given: 'the sky is blue'
+* Return: 'blue is sky the'
 *
-* reverseWords(message);
-* returns: 'if into the security recordings you go only pain will you find'
+* Notes:
+*
+* 1. What constitutes a word? A sequence of non-space characters constitutes a word.
+*
+* 2. Could the input string contain leading or trailing spaces? Yes. However, your
+*    reversed string should not contain leading or trailing spaces.
+*
+* 3. How about multiple spaces between two words? Reduce them to a single space
+*    in the reversed string.
 */
 
 /**

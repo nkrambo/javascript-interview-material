@@ -1,11 +1,16 @@
 
 /**
-* Reverse String In-Place
+* Reverse String
 *
-* Tags: Two Pointer
+* Tags: Two Pointers, String
+* Leetcode: 344
 *
-* Write a function to reverse a string in-place. There is only a single
-* word, with no spaces, in this string.
+* Write a function that takes a string as input and returns the string reversed.
+*
+* Example:
+*
+* Given: 'hello'
+* Return: 'olleh'
 */
 
 /**
@@ -31,16 +36,16 @@
 *
 * Where n is the length of the string input.
 *
-* @param {string} str String of (n) length
+* @param {string} s string of (n) length
 * @return {string} returns a reversed string
 */
 
-function reverseString(str) {
+function reverseString(s) {
   // edge case
-  if (str.length <= 1) return str;
+  if (s.length <= 1) return s;
 
   // split and swap
-  const arr = str.split('');
+  const arr = s.split('');
   let start = 0;
   let end = arr.length - 1;
 
