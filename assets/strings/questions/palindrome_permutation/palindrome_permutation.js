@@ -2,16 +2,25 @@
 /**
 * Palindrome Permutation
 *
-* Tags: Map
+* Tags: Map, String
+* Leetcode: 266
 *
-* Given a string, write a function to check if it is a permutation of a
-* palindrome. A palindrome is a word or phrase that is the same forwards
-* as it is backwards. A permutation is a rearrangement of letters. The
-* palindrome does not need to be limited to just dictionary words.
+* Given a string, determine if a permutation of the string could form a palindrome.
 *
-* Example:
-* Input: 'Tact Coa'
-* Output: True (permutations: 'taco cat', 'atco cta', etc...)
+* Example 1:
+*
+* Given: 'code'
+* Return: false
+*
+* Example 2:
+*
+* Given: 'aab'
+* Return: true
+*
+* Example 3:
+*
+* Given: 'carerac'
+* Return: true
 */
 
 /**
@@ -50,14 +59,14 @@
 *
 * Where n is the length of the string input.
 *
-* @param {string} str string of n length
-* @return {boolean} returns true if the string is a permutation of a palindrome, otherwise returns false.
+* @param {string} s string of n length
+* @return {boolean} returns true if the string is a permutation of a palindrome, otherwise false.
 */
 
-function isPalidromePermutation(str) {
+function canPermutePalindrome(s) {
   // use a set to balance characters
   const chars = new Set();
-  for (const char of str) {
+  for (const char of s) {
     // delete if present
     if (chars.has(char)) {
       chars.delete(char);
@@ -71,4 +80,4 @@ function isPalidromePermutation(str) {
   return chars.size <= 1;
 }
 
-export default isPalidromePermutation;
+export default canPermutePalindrome;

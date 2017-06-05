@@ -2,7 +2,8 @@
 /**
 * Ransom Note
 *
-* Tags: Map
+* Tags: Map, String
+* Leetcode: 383
 *
 * Given an arbitrary ransom note string and another string containing letters
 * from all the magazines, write a function that will return true if the ransom

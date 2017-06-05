@@ -207,8 +207,16 @@ are local test cases as well.
     <td><a href="../assets/union_find/questions/_surrounded_regions/surrounded_regions.js">Surrounded Regions</a></td>
   </tr>
   <tr>
+    <td>161</td>
+    <td><a href="../assets/strings/questions/one_edit_distance/one_edit_distance.js">One Edit Distance</a></td>
+  </tr>
+  <tr>
     <td>200</td>
     <td><a href="../assets/union_find/questions/_number_of_islands/number_of_islands.js">Number of Islands</a></td>
+  </tr>
+  <tr>
+    <td>205</td>
+    <td><a href="../assets/strings/questions/isomorphic_strings/isomorphic_strings.js">Isomorphic Strings</a></td>
   </tr>
   <tr>
     <td>242</td>
@@ -221,6 +229,10 @@ are local test cases as well.
   <tr>
     <td>261</td>
     <td><a href="../assets/union_find/questions/_graph_valid_tree/graph_valid_tree.js">Graph Valid Tree</a></td>
+  </tr>
+  <tr>
+    <td>266</td>
+    <td><a href="../assets/strings/questions/palindrome_permutation/palindrome_permutation.js">Palindrome Permutation</a></td>
   </tr>
   <tr>
     <td>271</td>
@@ -265,8 +277,16 @@ are local test cases as well.
 
 <table>
   <tr>
-    <td>#</td>
+    <td>Type</td>
     <td>Title</td>
+  </tr>
+  <tr>
+    <td>String</td>
+    <td><a href="../assets/strings/questions/is_unique/is_unique.js">Is Unique</a></td>
+  </tr>
+  <tr>
+    <td>String</td>
+    <td><a href="../assets/strings/questions/parenthesis_matching/parenthesis_matching.js">Parenthesis Matching</a></td>
   </tr>
 </table>
 

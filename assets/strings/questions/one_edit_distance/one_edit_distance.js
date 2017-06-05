@@ -1,14 +1,20 @@
 
 /**
-* One Away
+* One Edit Distance
 *
-* Tags: Map
+* Tags: Map, String
+* Leetcode: 161
 *
-* There are three types of edits that can be performed on strings: insert a
-* character, remove a character, or replace a character. Given two strings,
-* write a function to check if they are one edit (or zero edits) away.
+* Given two strings S and T, determine if they are both one edit distance apart.
+*
+* There are three types of edits:
+*
+* 1. insert a character
+* 2. delete a character
+* 3. replace a character
 *
 * Example:
+*
 * pale, ple -> true
 * pales, pale -> true
 * pale, bale -> true
@@ -16,7 +22,7 @@
 */
 
 /**
-* oneAway()
+* isOneEditDistance()
 *
 * Solution:
 *
@@ -24,8 +30,8 @@
 * If the lengths differ by more than 1, we know that they must differ by more than
 * 1 edit.
 *
-* Otherwise we can use a map to track the type and count of characters in str1.
-* We then also interate over str2 and compare the occurence of characters, removing
+* Otherwise we can use a map to track the type and count of characters in s.
+* We then also interate over t and compare the occurence of characters, removing
 * and decremting as needed.
 *
 * If the strings are only 1 edit (or less) apart, then the size of the map should
@@ -36,23 +42,23 @@
 *
 * Where n is the length of the string input.
 *
-* @param {string} str1 string of (n) length
-* @param {string} str2 string of (n) length
+* @param {string} s string of (n) length
+* @param {string} t string of (n) length
 * @return {boolean} returns true if difference is 1 or less edits, otherwise returns false
 */
 
-function oneAway(str1, str2) {
+function isOneEditDistance(s, t) {
   // if lengths differ by more than 1, must be false
-  if (Math.abs(str1.length - str2.length) > 1) return false;
+  if (Math.abs(s.length - t.length) > 1) return false;
 
-  // count characters in str1
+  // count characters in s
   const chars = new Map();
-  for (const char of str1) {
+  for (const char of s) {
     chars.set(char, chars.get(char) + 1 || 1); // increment by or set to 1
   }
 
-  // compare str2 against str1
-  for (const char of str2) {
+  // compare t against s
+  for (const char of t) {
     const count = chars.get(char);
 
     if (count) {
@@ -67,4 +73,4 @@ function oneAway(str1, str2) {
   return chars.size <= 1;
 }
 
-export default oneAway;
+export default isOneEditDistance;
