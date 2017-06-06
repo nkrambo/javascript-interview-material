@@ -1,6 +1,6 @@
 
 /**
-* Loop Detection
+* Linked List Cycle
 *
 * Types: Map, Two Pointer
 *

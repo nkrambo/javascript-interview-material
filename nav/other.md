@@ -66,4 +66,8 @@
     <td>Math</td>
     <td><a href="../assets/math/questions/which_appears_twice/which_appears_twice.js">Which Appears Twice</a></td>
   </tr>
+  <tr>
+    <td>Linked List</td>
+    <td><a href="../assets/linked_lists/questions/kth_to_last/kth_to_last.js">Kth to Last</a></td>
+  </tr>
 </table>

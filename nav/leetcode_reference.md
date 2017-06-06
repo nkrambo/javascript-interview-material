@@ -239,6 +239,10 @@ are local test cases as well.
     <td><a href="../assets/queues_and_stacks/questions/_min_stack/min_stack.js">Min Stack</a></td>
   </tr>
   <tr>
+    <td>160</td>
+    <td><a href="../assets/linked_lists/questions/_intersection_of_two_linked_lists/intersection_of_two_linked_lists.js">Intersection of Two Linked Lists</a></td>
+  </tr>
+  <tr>
     <td>161</td>
     <td><a href="../assets/strings/questions/one_edit_distance/one_edit_distance.js">One Edit Distance</a></td>
   </tr>
@@ -277,6 +281,14 @@ are local test cases as well.
   <tr>
     <td>232</td>
     <td><a href="../assets/queues_and_stacks/questions/_implement_queue_using_stacks/implement_queue_using_stacks.js">Implement Queue Using Stacks</a></td>
+  </tr>
+  <tr>
+    <td>234</td>
+    <td><a href="../assets/linked_lists/questions/_palindrome_linked_list/palindrome_linked_list.js">Palindrome Linked List</a></td>
+  </tr>
+  <tr>
+    <td>237</td>
+    <td><a href="../assets/search/questions/_delete_node_in_a_linked_list/delete_node_in_a_linked_list.js">Delete Node in a Linked List</a></td>
   </tr>
   <tr>
     <td>240</td>

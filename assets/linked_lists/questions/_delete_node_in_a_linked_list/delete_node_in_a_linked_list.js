@@ -1,24 +1,24 @@
 
 /**
-* Delete Node
+* Delete Node in a Linked List
 *
-* Delete a node from a singly-linked list, given only a variable pointing to that node.
+* Tags: Linked List
+* Leetcode: 237
 *
-* The input could, for example, be the variable b below:
+* Write a function to delete a node (except the tail) in a singly linked list,
+* given only access to that node.
 *
-* function LinkedListNode(value) {
-*   this.value = value;
-*   this.next = null;
+* Supposed the linked list is 1 -> 2 -> 3 -> 4 and you are given the third node
+* with value 3, the linked list should become 1 -> 2 -> 4 after calling your function.
+*/
+
+/**
+* Definition for singly-linked list.
+*
+* function ListNode(val) {
+*     this.val = val;
+*     this.next = null;
 * }
-*
-* let a = new LinkedListNode('A');
-* let b = new LinkedListNode('B');
-* let c = new LinkedListNode('C');
-*
-* a.next = b;
-* b.next = c;
-*
-* deleteNode(b);
 */
 
 /**
@@ -79,23 +79,24 @@
 * Time: O(1)
 * Space: O(1)
 *
-* @param {object} nodeToDelete list node to be deleted
+* @param {object} node list node to be deleted
+* @return {void} modify node in-place
 */
 
-function deleteNode(nodeToDelete) {
-  // get the input node's next node, the one we want to skip to
-  const nextNode = nodeToDelete.next;
-
-  if (nextNode) {
-    // replace the input node's value and pointer with the next
-    // node's value and pointer. the previous node now effectively
-    // skips over the input node
-    nodeToDelete.value = nextNode.value;
-    nodeToDelete.next = nextNode.next;
-  } else {
-    // eep, we're trying to delete the last node!
-    throw new Error('Can\'t delete the last node with this method!');
-  }
-}
-
-export default deleteNode;
+// function deleteNode(node) {
+//   // get the input node's next node, the one we want to skip to
+//   const nextNode = node.next;
+//
+//   if (nextNode) {
+//     // replace the input node's value and pointer with the next
+//     // node's value and pointer. the previous node now effectively
+//     // skips over the input node
+//     node.value = nextNode.value;
+//     node.next = nextNode.next;
+//   } else {
+//     // eep, we're trying to delete the last node!
+//     throw new Error('Can\'t delete the last node with this method!');
+//   }
+// }
+//
+// export default deleteNode;

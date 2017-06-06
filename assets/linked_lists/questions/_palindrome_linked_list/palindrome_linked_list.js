@@ -1,22 +1,35 @@
 
 /**
-* Is Palindrome
+* Palindrome Linked List
 *
-* Tags: Two Pointer, Stack
+* Tags: Two Pointer, Linked List
+* Leetcode: 234
 *
-* Implement a function to check if a linked list is a palidrome.
+* Given a singly linked list, determine if it is a palindrome.
 *
 * Example:
-* Input: 0 -> 1 -> 2 -> 1 -> 0
+* Input: 0 → 1 → 2 → 1 → 0
 * Output: true
 *
 * Example:
-* Input: 'a' -> 'b' -> 'a'
+* Input: 'a' → 'b' → 'a'
 * Output: true
 *
 * Example:
-* Input: 'f' -> 'o' -> 'o'
+* Input: 'f' → 'o' → 'o'
 * Output: false
+*
+* Follow up:
+* Could you do it in O(n) time and O(1) space?
+*/
+
+/**
+* Definition for singly-linked list.
+*
+* function ListNode(val) {
+*     this.val = val;
+*     this.next = null;
+* }
 */
 
 /**
@@ -51,37 +64,37 @@
 * Time: O(n)
 * Space: O(1)
 *
-* @param {object} list linked list
+* @param {object} head linked list node
 * @return {boolean} returns true if list is a palindrome, otherwise returns false
 */
 
-function isPalindrome(list) {
-  let slow = list.head;
-  let fast = list.head;
-  const stack = [];
-
-  // push elements from first half into the stack. If we know the length of the list
-  // we could just use a for loop instead of the runner.
-  while (fast !== null && fast.next !== null) {
-    stack.push(slow.value);
-    slow = slow.next;
-    fast = fast.next.next;
-  }
-
-  // has odd number of elements
-  if (fast !== null) {
-    slow = slow.next;
-  }
-
-  while (slow !== null) {
-    const top = stack.pop();
-
-    // if values are different then it's not a palindrome
-    if (top !== slow.value) return false;
-    slow = slow.next;
-  }
-
-  return true;
-}
-
-export default isPalindrome;
+// function isPalindrome(head) {
+//   let slow = list.head;
+//   let fast = list.head;
+//   const stack = [];
+//
+//   // push elements from first half into the stack. If we know the length of the list
+//   // we could just use a for loop instead of the runner.
+//   while (fast !== null && fast.next !== null) {
+//     stack.push(slow.value);
+//     slow = slow.next;
+//     fast = fast.next.next;
+//   }
+//
+//   // has odd number of elements
+//   if (fast !== null) {
+//     slow = slow.next;
+//   }
+//
+//   while (slow !== null) {
+//     const top = stack.pop();
+//
+//     // if values are different then it's not a palindrome
+//     if (top !== slow.value) return false;
+//     slow = slow.next;
+//   }
+//
+//   return true;
+// }
+//
+// export default isPalindrome;
