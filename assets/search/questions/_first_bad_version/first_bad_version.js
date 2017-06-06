@@ -19,7 +19,17 @@
 */
 
 /**
-* firstBadVersion()
+ * Definition for isBadVersion()
+ *
+ * @param {integer} version number
+ * @return {boolean} whether the version is bad
+ * isBadVersion = function(version) {
+ *     ...
+ * };
+ */
+
+/**
+* solution()
 *
 * Solution:
 *
@@ -32,8 +42,14 @@
 * @return {number} returns the first bad version
 */
 
-// function firstBadVersion(n) {
+// function solution(isBadVersion) {
+//   /**
+//     * @param {integer} n Total versions
+//     * @return {integer} The first bad version
+//     */
+//    return function(n) {
 //
+//    };
 // }
 //
-// export default firstBadVersion;
+// export default solution;

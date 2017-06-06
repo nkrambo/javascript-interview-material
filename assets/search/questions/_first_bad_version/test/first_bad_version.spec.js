@@ -1,10 +1,10 @@
 //
 // import { expect } from 'chai';
-// import firstBadVersion from '../first_bad_version';
+// import solution from '../first_bad_version';
 //
 // // define API boolean isBadVersion() here...
 //
-// describe('firstBadVersion()', () => {
+// describe('solution()', () => {
 //   it('should return the first bad version', () => {
 //
 //   });

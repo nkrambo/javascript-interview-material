@@ -2,7 +2,7 @@
 /**
 * Count Complete Tree Nodes
 *
-* Tags: Binary Search
+* Tags: Binary Search, Tree
 * Leetcode: 222
 *
 * Given a complete binary tree, count the number of nodes.

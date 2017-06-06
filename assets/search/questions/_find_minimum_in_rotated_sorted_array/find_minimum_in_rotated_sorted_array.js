@@ -2,7 +2,7 @@
 /**
 * Find Minimum in Rotated Sorted Array
 *
-* Tags: Binary Search
+* Tags: Binary Search, Array
 * Leetcode: 153
 *
 * Suppose an array sorted in ascending order is rotated at some pivot unknown to
@@ -16,7 +16,7 @@
 */
 
 /**
-* findMinimum()
+* findMin()
 *
 * Solution:
 *
@@ -29,8 +29,8 @@
 * @return {number} returns the minimum in nums
 */
 
-// function findMinimum(nums) {
+// function findMin(nums) {
 //
 // }
 //
-// export default findMinimum;
+// export default findMin;

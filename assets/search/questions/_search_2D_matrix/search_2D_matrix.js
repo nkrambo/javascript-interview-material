@@ -2,7 +2,7 @@
 /**
 * Search 2D Matrix II
 *
-* Tags: Binary Search
+* Tags: Binary Search, Array
 * Leetcode: 74
 *
 * Write an efficient algorithm that searches for a value in an m x n matrix. This

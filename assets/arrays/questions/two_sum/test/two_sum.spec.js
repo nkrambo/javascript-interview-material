@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import { twoSumBrute, twoSumMap } from '../2sum';
+import { twoSumBrute, twoSumMap } from '../two_sum';
 
 // brute
 describe('twoSumBrute()', () => {

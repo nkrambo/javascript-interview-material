@@ -2,7 +2,7 @@
 /**
 * Find Peak Element
 *
-* Tags: Binary Search
+* Tags: Binary Search, Array
 * Leetcode: 162
 *
 * A peak element is an element that is greater than its neighbors.

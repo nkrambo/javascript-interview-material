@@ -2,7 +2,7 @@
 /**
 * Intersection of Two Arrays II
 *
-* Tags: Binary Search
+* Tags: Binary Search, Map, Two Pointers, Sort
 * Leetcode: 350
 *
 * Given two arrays, write a function to compute their intersection.
@@ -28,7 +28,7 @@
 */
 
 /**
-* intersection()
+* intersect()
 *
 * Solution:
 *
@@ -42,8 +42,8 @@
 * @return {number} returns an array of all intersecting unique values
 */
 
-// function intersection(nums1, nums2) {
+// function intersect(nums1, nums2) {
 //
 // }
 //
-// export default intersection;
+// export default intersect;

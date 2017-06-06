@@ -2,7 +2,7 @@
 /**
 * Intersection of Two Arrays
 *
-* Tags: Binary Search
+* Tags: Binary Search, Map, Two Pointers, Sort
 * Leetcode: 349
 *
 * Given two arrays, write a function to compute their intersection.

@@ -1,8 +1,8 @@
 //
 // import { expect } from 'chai';
-// import sqrt from '../sqrt';
+// import mySqrt from '../sqrt';
 //
-// describe('sqrt()', () => {
+// describe('mySqrt()', () => {
 //   it('should return the square root', () => {
 //
 //   });

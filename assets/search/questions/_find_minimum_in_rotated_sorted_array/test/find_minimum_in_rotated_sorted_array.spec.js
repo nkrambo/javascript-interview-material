@@ -1,8 +1,8 @@
 //
 // import { expect } from 'chai';
-// import findMinimum from '../find_minimum_in_rotate_sorted_array';
+// import findMin from '../find_minimum_in_rotate_sorted_array';
 //
-// describe('findMinimum()', () => {
+// describe('findMin()', () => {
 //   it('should return the minimum in a sorted rotated array', () => {
 //
 //   });

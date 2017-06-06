@@ -2,7 +2,7 @@
 /**
 * Find The Duplicate Number
 *
-* Tags: Binary Search
+* Tags: Binary Search, Array, Two Pointers
 * Leetcode: 287
 *
 * Given an array nums containing n + 1 integers where each integer is between 1
@@ -35,7 +35,7 @@
 * @return {number} returns the duplicate number, otherwise returns -1 if no duplicate exists
 */
 
-// function findDuplicates(nums) {
+// function findDuplicate(nums) {
 //
 // }
 //

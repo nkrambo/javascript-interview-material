@@ -2,14 +2,14 @@
 /**
 * Pow(x, n)
 *
-* Tags: Binary Search
+* Tags: Binary Search, Math
 * Leetcode: 50
 *
 * Implement Pow(x, n)
 */
 
 /**
-* pow()
+* myPow()
 *
 * Solution:
 *
@@ -24,8 +24,8 @@
 * @return {number} returns the power of x^n
 */
 
-// function pow(x, n) {
+// function myPow(x, n) {
 //
 // }
 //
-// export default pow;
+// export default myPow;

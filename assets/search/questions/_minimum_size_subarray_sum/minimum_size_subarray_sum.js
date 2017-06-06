@@ -2,7 +2,7 @@
 /**
 * Minimum Size Sub-Array Sum
 *
-* Tags: Binary Search
+* Tags: Binary Search, Two Pointers, Array
 * Leetcode: 209
 *
 * Given an array of n positive integers and a positive integer s, find the minimal
@@ -18,7 +18,7 @@
 */
 
 /**
-* minSubArrayLength()
+* minSubArrayLen()
 *
 * Solution:
 *
@@ -32,8 +32,8 @@
 * @return {number} returns the length of the minimum sub-array
 */
 
-// function minSubArrayLength(nums) {
+// function minSubArrayLen(s, nums) {
 //
 // }
 //
-// export default minSubArrayLength;
+// export default minSubArrayLen;

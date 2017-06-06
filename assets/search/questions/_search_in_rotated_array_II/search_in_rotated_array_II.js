@@ -2,7 +2,7 @@
 /**
 * Search in Rotated Array II
 *
-* Tags: Binary Search
+* Tags: Binary Search, Array
 * Leetcode: 81
 *
 * Suppose an array sorted in ascending order is rotated at some pivot unknown to
@@ -16,7 +16,7 @@
 */
 
 /**
-* searchRotatedArray()
+* search()
 *
 * Solution:
 *
@@ -30,8 +30,8 @@
 * @return {number} returns the index of the target if it exists, else -1
 */
 
-// function searchRotatedArray(nums, target) {
+// function search(nums, target) {
 //
 // }
 //
-// export default searchRotatedArray;
+// export default search;

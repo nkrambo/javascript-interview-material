@@ -2,7 +2,7 @@
 /**
 * Sqrt(x)
 *
-* Tags: Binary Search
+* Tags: Binary Search, Math
 * Leetcode: 69
 *
 * Implement sqrt(x).
@@ -11,7 +11,7 @@
 */
 
 /**
-* sqrt()
+* mySqrt()
 *
 * Solution:
 *
@@ -24,8 +24,8 @@
 * @return {number} returns the square root of x
 */
 
-// function sqrt(x) {
+// function mySqrt(x) {
 //
 // }
 //
-// export default sqrt;
+// export default mySqrt;

@@ -2,7 +2,7 @@
 /**
 * Kth Smallest in a BST
 *
-* Tags: Binary Search
+* Tags: Binary Search, Tree
 * Leetcode: 230
 *
 * Given a binary search tree, write a function kthSmallest to find the kth smallest

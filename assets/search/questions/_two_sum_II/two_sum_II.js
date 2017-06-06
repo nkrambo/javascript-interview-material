@@ -2,7 +2,7 @@
 /**
 * Two Sum II
 *
-* Tags: Binary Search
+* Tags: Binary Search, Array, Two Pointers
 * Leetcode: 167
 *
 * Given an array of integers that is already sorted in ascending order, find two
@@ -17,7 +17,7 @@
 *
 * Example:
 *
-* nums = [2, 7, 11, 15], target = 9
+* numbers = [2, 7, 11, 15], target = 9
 * Returns [1, 2]
 */
 
@@ -31,12 +31,12 @@
 * Time: O(1)
 * Space: O(1)
 *
-* @param {array} nums of sorted integers
+* @param {array} numbers of sorted integers
 * @param {number} target to sum to
 * @return {array} returns the indices of values that add up to target
 */
 
-// function twoSum(nums, target) {
+// function twoSum(numbers, target) {
 //
 // }
 //

@@ -11,7 +11,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>1</td>
-    <td><a href="../assets/arrays/questions/2sum/2sum.js">2Sum</a></td>
+    <td><a href="../assets/arrays/questions/two_sum/two_sum.js">Two Sum</a></td>
   </tr>
   <tr>
     <td>2</td>
@@ -23,7 +23,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>4</td>
-    <td><a href="../assets/strings/questions/median_of_sorted_arrays/median_of_sorted_arrays.js">Median of Two Sorted Arrays</a></td>
+    <td><a href="../assets/search/questions/_median_of_two_sorted_arrays/median_of_two_sorted_arrays.js">Median of Two Sorted Arrays</a></td>
   </tr>
   <tr>
     <td>5</td>
@@ -195,8 +195,20 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/group_anagrams/group_anagrams.js">Group Anagrams</a></td>
   </tr>
   <tr>
+    <td>50</td>
+    <td><a href="../assets/search/questions/_pow(x,n)/pow.js">Pow(x, n)</a></td>
+  </tr>
+  <tr>
     <td>68</td>
     <td><a href="../assets/strings/questions/_text_justification/text_justification.js">Text Justification</a></td>
+  </tr>
+  <tr>
+    <td>69</td>
+    <td><a href="../assets/search/questions/_sqrt(x)/sqrt.js">Sqrt(x)</a></td>
+  </tr>
+  <tr>
+    <td>74</td>
+    <td><a href="../assets/search/questions/_search_2D_matrix/search_2D_matrix.js">Search 2D Matrix</a></td>
   </tr>
   <tr>
     <td>76</td>
@@ -215,8 +227,24 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/reverse_words_in_a_string/reverse_words_in_a_string.js">Reverse Words in a String</a></td>
   </tr>
   <tr>
+    <td>153</td>
+    <td><a href="../assets/search/questions/_find_minimum_in_rotated_sorted_array/find_minimum_in_rotated_sorted_array.js">Find Minimum in Rotated Sorted Array</a></td>
+  </tr>
+  <tr>
+    <td>154</td>
+    <td><a href="../assets/search/questions/_find_minimum_in_rotated_sorted_array_II/find_minimum_in_rotated_sorted_array_II.js">Find Minimum in Rotated Sorted Array II</a></td>
+  </tr>
+  <tr>
     <td>161</td>
     <td><a href="../assets/strings/questions/one_edit_distance/one_edit_distance.js">One Edit Distance</a></td>
+  </tr>
+  <tr>
+    <td>162</td>
+    <td><a href="../assets/search/questions/_find_peak_element/find_peak_element.js">Find Peak Element</a></td>
+  </tr>
+  <tr>
+    <td>167</td>
+    <td><a href="../assets/search/questions/_two_sum_II/two_sum_II.js">Two Sum II - Input Array is Sorted</a></td>
   </tr>
   <tr>
     <td>200</td>
@@ -225,6 +253,22 @@ are local test cases as well.
   <tr>
     <td>205</td>
     <td><a href="../assets/strings/questions/isomorphic_strings/isomorphic_strings.js">Isomorphic Strings</a></td>
+  </tr>
+  <tr>
+    <td>209</td>
+    <td><a href="../assets/search/questions/_minimum_size_subarray_sum/minimum_size_subarray_sum.js">Minimum Size Subarray Sum</a></td>
+  </tr>
+  <tr>
+    <td>222</td>
+    <td><a href="../assets/search/questions/_count_complete_tree_nodes/count_complete_tree_nodes.js">Count Complete Tree Nodes</a></td>
+  </tr>
+  <tr>
+    <td>230</td>
+    <td><a href="../assets/search/questions/_kth_smallest_element_in_a_bst/kth_smallest_element_in_a_bst.js">Kth Smallest Element in a BST</a></td>
+  </tr>
+  <tr>
+    <td>240</td>
+    <td><a href="../assets/search/questions/_search_2D_matrix_II/search_2D_matrix_II.js">Search 2D Matrix II</a></td>
   </tr>
   <tr>
     <td>242</td>
@@ -247,6 +291,14 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/_encode_and_decode_strings/encode_and_decode_strings.js">Encode and Decode Strings</a></td>
   </tr>
   <tr>
+    <td>278</td>
+    <td><a href="../assets/search/questions/_first_bad_version/first_bad_version.js">First Bad Version</a></td>
+  </tr>
+  <tr>
+    <td>287</td>
+    <td><a href="../assets/search/questions/_find_the_duplicate_number/find_the_duplicate_number.js">Find the Duplicate Number</a></td>
+  </tr>
+  <tr>
     <td>305</td>
     <td><a href="../assets/union_find/questions/_number_of_islands_II/number_of_islands_II.js">Number of Islands II</a></td>
   </tr>
@@ -265,6 +317,14 @@ are local test cases as well.
   <tr>
     <td>345</td>
     <td><a href="../assets/strings/questions/reverse_vowels_of_string/reverse_vowels_of_string.js">Reverse Vowels of a String</a></td>
+  </tr>
+  <tr>
+    <td>349</td>
+    <td><a href="../assets/search/questions/_intersection_of_two_arrays/intersection_of_two_arrays.js">Intersection of Two Arrays</a></td>
+  </tr>
+  <tr>
+    <td>350</td>
+    <td><a href="../assets/search/questions/_intersection_of_two_arrays_II/intersection_of_two_arrays_II.js">Intersection of Two Arrays II</a></td>
   </tr>
   <tr>
     <td>383</td>
@@ -324,6 +384,14 @@ are local test cases as well.
     <td>Sorting, Counting Sort</td>
     <td><a href="../assets/sort/questions/top_scores/top_scores.js">Top Scores</a></td>
   </tr>
+  <tr>
+    <td>Sorting</td>
+    <td><a href="../assets/sort/questions/find_in_ordered_set/find_in_ordered_set.js">Find in Ordered Set</a></td>
+  </tr>
+  <tr>
+    <td>Sorting</td>
+    <td><a href="../assets/sort/questions/find_rotation_point/find_rotation_point.js">Find Rotation Point</a></td>
+  </tr>
 </table>
 
 ### Cracking the Coding Interview
@@ -348,5 +416,13 @@ are local test cases as well.
   <tr>
     <td>Sort</td>
     <td><a href="../assets/sort/questions/sorted_search_no_size/sorted_search_no_size.js">Sorted Search, No Size</a></td>
+  </tr>
+  <tr>
+    <td>Sort</td>
+    <td><a href="../assets/sort/questions/_missing_int/missing_int.js">Missing Int</a></td>
+  </tr>
+  <tr>
+    <td>Sort</td>
+    <td><a href="../assets/sort/questions/_sparse_search/sparse_search.js">Sparse Search</a></td>
   </tr>
 </table>

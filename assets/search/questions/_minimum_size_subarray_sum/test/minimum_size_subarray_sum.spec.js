@@ -1,8 +1,8 @@
 //
 // import { expect } from 'chai';
-// import minSubArrayLength from '../minimum_size_subarray_sum';
+// import minSubArrayLen from '../minimum_size_subarray_sum';
 //
-// describe('minSubArrayLength()', () => {
+// describe('minSubArrayLen()', () => {
 //   it('should return the length of the minimum size subarray sum', () => {
 //
 //   });

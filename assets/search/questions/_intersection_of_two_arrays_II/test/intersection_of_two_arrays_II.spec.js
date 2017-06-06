@@ -1,8 +1,8 @@
 //
 // import { expect } from 'chai';
-// import intersection from '../intersection_of_two_arrays_II';
+// import intersect from '../intersection_of_two_arrays_II';
 //
-// describe('intersection()', () => {
+// describe('intersect()', () => {
 //   it('should return an array of unique intersecting values', () => {
 //
 //   });

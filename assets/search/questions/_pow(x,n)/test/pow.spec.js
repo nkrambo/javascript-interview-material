@@ -1,8 +1,8 @@
 //
 // import { expect } from 'chai';
-// import pow from '../pow';
+// import myPow from '../pow';
 //
-// describe('pow()', () => {
+// describe('myPow()', () => {
 //   it('should return the power of x^n', () => {
 //
 //   });
