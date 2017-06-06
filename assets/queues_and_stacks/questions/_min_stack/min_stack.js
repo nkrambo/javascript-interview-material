@@ -1,53 +1,78 @@
 
 /**
- * MinStack maintains a current stack minimum by putting an object on the stack
- * that holds the value and the minimum at that time rather than just the value.
- * When items are popped the value is returned without the wrapping object. When
- * minimum is called we return the min property of the wrapping object.
- *
- * Time: push O(1), pop O(1), peek O(1), min O(1)
- * Additional space: push O(N), pop O(1), peek O(1), min O(1)
- * Additional space required in push to create wrapping object to hold min at
- * that point.
- */
+* Min Stack
+*
+* Tags: Stack, Design
+* Leetcode: 155
+*
+* Design a stack that supports push, pop, top, and retrieving the minimum
+* element in constant time.
+*
+* push(x) -- Push element x onto stack.
+* pop() -- Removes the element on top of the stack.
+* top() -- Get the top element.
+* getMin() -- Retrieve the minimum element in the stack.
+*
+* Example:
+*
+* MinStack minStack = new MinStack();
+* minStack.push(-2);
+* minStack.push(0);
+* minStack.push(-3);
+* minStack.getMin();   --> Returns -3.
+* minStack.pop();
+* minStack.top();      --> Returns 0.
+* minStack.getMin();   --> Returns -2.
+*/
 
-// class MinStack {
-//   constructor() {
-//     this.stack = [];
-//   }
+/**
+* Your MinStack object will be instantiated and called as such:
+* var obj = Object.create(MinStack).createNew()
+* obj.push(x)
+* obj.pop()
+* var param_3 = obj.top()
+* var param_4 = obj.getMin()
+*/
+
+/**
+* initialize your data structure here.
+*/
+
+// function MinStack() {
 //
-//   push(value) {
-//     let min = this.min();
-//     this.stack.push({
-//       value: value,
-//       min: Math.min(min !== undefined ? min : Number.POSITIVE_INFINITY, value)
-//     });
-//   }
-//
-//   pop() {
-//     if (!this.isEmpty()) {
-//       let item = this.stack.pop();
-//       return item.value;
-//     }
-//   }
-//
-//   peek() {
-//     if (!this.isEmpty()) {
-//       let item = this.stack[this.stack.length - 1];
-//       return item.value;
-//     }
-//   }
-//
-//   min() {
-//     if (!this.isEmpty()) {
-//       let item = this.stack[this.stack.length - 1];
-//       return item.min;
-//     }
-//   }
-//
-//   isEmpty() {
-//     return this.stack.length === 0;
-//   }
 // }
+//
+// /**
+// * @param {number} x
+// * @return {void}
+// */
+//
+// MinStack.prototype.push = (x) => {
+//
+// };
+//
+// /**
+// * @return {void}
+// */
+//
+// MinStack.prototype.pop = () => {
+//
+// };
+//
+// /**
+// * @return {number}
+// */
+//
+// MinStack.prototype.top = () => {
+//
+// };
+//
+// /**
+// * @return {number}
+// */
+//
+// MinStack.prototype.getMin = () => {
+//
+// };
 //
 // export default MinStack;

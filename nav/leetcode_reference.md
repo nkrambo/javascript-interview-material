@@ -235,6 +235,10 @@ are local test cases as well.
     <td><a href="../assets/search/questions/_find_minimum_in_rotated_sorted_array_II/find_minimum_in_rotated_sorted_array_II.js">Find Minimum in Rotated Sorted Array II</a></td>
   </tr>
   <tr>
+    <td>155</td>
+    <td><a href="../assets/queues_and_stacks/questions/_min_stack/min_stack.js">Min Stack</a></td>
+  </tr>
+  <tr>
     <td>161</td>
     <td><a href="../assets/strings/questions/one_edit_distance/one_edit_distance.js">One Edit Distance</a></td>
   </tr>
@@ -265,6 +269,10 @@ are local test cases as well.
   <tr>
     <td>230</td>
     <td><a href="../assets/search/questions/_kth_smallest_element_in_a_bst/kth_smallest_element_in_a_bst.js">Kth Smallest Element in a BST</a></td>
+  </tr>
+  <tr>
+    <td>232</td>
+    <td><a href="../assets/queues_and_stacks/questions/_implement_queue_using_stacks/implement_queue_using_stacks.js">Implement Queue Using Stacks</a></td>
   </tr>
   <tr>
     <td>240</td>
@@ -391,6 +399,14 @@ are local test cases as well.
   <tr>
     <td>Sorting</td>
     <td><a href="../assets/sort/questions/find_rotation_point/find_rotation_point.js">Find Rotation Point</a></td>
+  </tr>
+  <tr>
+    <td>Stack</td>
+    <td><a href="../assets/queues_and_stacks/questions/max_stack/max_stack.js">Max Stack</a></td>
+  </tr>
+  <tr>
+    <td>Stack</td>
+    <td><a href="../assets/queues_and_stacks/questions/three_in_one/three_in_one.js">Three in One</a></td>
   </tr>
 </table>
 
