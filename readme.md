@@ -23,6 +23,8 @@ a question thoroughly first.
 * [LeetCode Reference](/nav/leetcode_reference.md)
 * [Data Structures](/nav/data_structures.md)
 * [Known Algorithms](/nav/known_algorithms.md)
+* [Cracking The Coding Interview](/nav/cracking_the_coding_interview.md)
+* [Other](/nav/other.md)
 
 ### Recommended Resources
 
