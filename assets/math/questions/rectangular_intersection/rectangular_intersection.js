@@ -2,7 +2,7 @@
 /**
 * Rectangular Intersection
 *
-* Types: Maths, Rectangle Intersection
+* Tags: Maths
 *
 *                                   h
 *                                   +------------------+

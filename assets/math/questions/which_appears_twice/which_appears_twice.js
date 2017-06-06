@@ -2,7 +2,7 @@
 /**
 * Which Appears Twice
 *
-* Types: Maths, Triangular Series
+* Tags: Maths
 *
 * I have an array where every number in the range 1...n appears once except for
 * one number which appears twice.

@@ -2,16 +2,18 @@
 /**
 * Power of Three
 *
-* Types: Maths
+* Tags: Math
+* Leetcode: 326
 *
 * Given an integer, write a function to determine if it is a power of three.
 *
 * Follow up:
+*
 * Could you do it without using any loop / recursion?
 */
 
 /**
-* powerOfThreeIteration()
+* isPowerOfThree()
 *
 * Solution:
 *
@@ -34,7 +36,7 @@
 * @return {boolean} returns true if n is a power of three, otherwise false
 */
 
-function powerOfThree(n) {
+function isPowerOfThree(n) {
   if (n < 1) return false;
 
   while (n % 3 === 0) {
@@ -44,4 +46,4 @@ function powerOfThree(n) {
   return n === 1;
 }
 
-export default powerOfThree;
+export default isPowerOfThree;

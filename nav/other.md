@@ -50,4 +50,20 @@
     <td>Puzzle</td>
     <td><a href="../assets/puzzles/questions/chain_link/chain_link.md">Chain Link</a></td>
   </tr>
+  <tr>
+    <td>Math</td>
+    <td><a href="../assets/math/questions/five_sided_die/five_sided_die.js">Five Sided Die</a></td>
+  </tr>
+  <tr>
+    <td>Math</td>
+    <td><a href="../assets/math/questions/nth_fibonacci_sequence/nth_fibonacci_sequence.js">Nth Fibonacci Sequence</a></td>
+  </tr>
+  <tr>
+    <td>Math</td>
+    <td><a href="../assets/math/questions/rectangular_intersection/rectangular_intersection.js">Rectangular Intersection</a></td>
+  </tr>
+  <tr>
+    <td>Math</td>
+    <td><a href="../assets/math/questions/which_appears_twice/which_appears_twice.js">Which Appears Twice</a></td>
+  </tr>
 </table>

@@ -319,6 +319,10 @@ are local test cases as well.
     <td><a href="../assets/union_find/questions/_number_of_connected_components/number_of_connected_components.js">Number of Connected Components in an Undirected Graph</a></td>
   </tr>
   <tr>
+    <td>326</td>
+    <td><a href="../assets/search/questions/_power_of_three/power_of_three.js">Power of Three</a></td>
+  </tr>
+  <tr>
     <td>340</td>
     <td><a href="../assets/strings/questions/_longest_substring_most_k_distinct/longest_substring_most_k_distinct.js">Longest Substring with at Most K Distinct Characters</a></td>
   </tr>
