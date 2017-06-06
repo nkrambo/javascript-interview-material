@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import reverseString from '../reverse_string_in_place';
+import reverseString from '../reverse_string';
 
 describe('reverseString()', () => {
   it('should return a reversed a string', () => {

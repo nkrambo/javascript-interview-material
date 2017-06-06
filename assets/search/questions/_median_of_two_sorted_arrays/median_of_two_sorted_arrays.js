@@ -44,8 +44,8 @@
 * @return {number} returns the median of nums1 and nums2 combined
 */
 
-function findMedianSortedArrays(nums1, nums2) {
-
-}
-
-export default findMedianSortedArrays;
+// function findMedianSortedArrays(nums1, nums2) {
+//
+// }
+//
+// export default findMedianSortedArrays;

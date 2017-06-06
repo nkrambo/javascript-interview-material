@@ -1,6 +1,6 @@
 
 import { expect } from 'chai';
-import reverseVowels from '../reverse_vowels';
+import reverseVowels from '../reverse_vowels_of_string';
 
 describe('reverseVowels()', () => {
   it('should return a string with vowels reversed', () => {
