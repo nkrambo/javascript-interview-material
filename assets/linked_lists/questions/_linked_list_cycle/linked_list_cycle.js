@@ -1,26 +1,45 @@
 
 /**
-* Linked List Cycle
+* Linked List Cycle II
 *
-* Types: Map, Two Pointer
+* Tags: Linked List, Map, Two Pointer
+* Leetcode: 142
 *
-* Given a circular linked list, implement an algorithm that returns the node at
-* the beginning of the loop.
+* Given a linked list, return the node where the cycle begins. If there is no
+* cycle, return null.
 *
 * Careful, a cycle can occur in the middle of a list, or it can simply mean the
 * last node links back to the first node. Does your function work for both?
 *
-* Definition:
-* Circular linked list: A (corrupt) linked list in which a node's next pointer
-* points to an earlier node, so as to make a loop in the linked list.
+* Note:
+*
+* Do not modify the linked list.
+*
+* Follow up:
+*
+* Can you solve it without using extra space?
 *
 * Example:
-* Input: A -> B -> C -> D -> E -> C [the same C as eariler]
+*
+* Input:
+*             D
+*           ↗  ↘
+* A → B → C  ←  E
+*
 * Output: C
 */
 
 /**
-* loopDetectionSet()
+* Definition for singly-linked list.
+*
+* function ListNode(val) {
+*     this.val = val;
+*     this.next = null;
+* }
+*/
+
+/**
+* detectCycleSet()
 *
 * Solution:
 *
@@ -40,31 +59,31 @@
 * Where (n) is the number if elements in our list. We can do better by getting a
 * constant space complexity in our next solution.
 *
-* @param {object} list linked list
+* @param {object} head linked list node
 * @return {object} returns a node at beginning of loop, if one exists, else null
 */
 
-function loopDetectionSet(list) {
-  const seen = new Set();
-  let current = list.head;
-
-  while (current) {
-    // found loop
-    if (seen.has(current)) {
-      return current;
-    }
-
-    // otherwise, keep traversing
-    seen.add(current);
-    current = current.next;
-  }
-
-  // no loop found
-  return null;
-}
+// function detectCycleSet(head) {
+//   const seen = new Set();
+//   let current = list.head;
+//
+//   while (current) {
+//     // found loop
+//     if (seen.has(current)) {
+//       return current;
+//     }
+//
+//     // otherwise, keep traversing
+//     seen.add(current);
+//     current = current.next;
+//   }
+//
+//   // no loop found
+//   return null;
+// }
 
 /**
-* loopDetectionRunner()
+* hasCycleSet()
 *
 * Solution:
 *
@@ -135,7 +154,7 @@ function loopDetectionSet(list) {
 * 1 node ahead of slowRunner, since their speeds differ by only 1. So we would have
 * something like this:
 *
-* [ ] -> [s] -> [f]
+* [ ] → [s] → [f]
 *
 * What would the step right before this "skipping step" look like? fastRunner would
 * be 2 nodes back, and slowRunner would be 1 node back. But wait, that means they
@@ -149,26 +168,26 @@ function loopDetectionSet(list) {
 * For space, we store two variables no matter how long the linked list is, which
 * gives us a space cost of O(1).
 *
-* @param {object} list linked list
+* @param {object} head linked list node
 * @return {object} returns a node at beginning of loop, if one exists, else null
 */
 
-function loopDetectionRunner(list) {
-  // start both runners at the beginning
-  let slow = list.head;
-  let fast = list.head;
+// function detectCycle(head) {
+//   // start both runners at the beginning
+//   let slow = list.head;
+//   let fast = list.head;
+//
+// // until we hit the end of the list
+//   while (fast && fast.next) {
+//     slow = slow.next;
+//     fast = fast.next.next;
+//
+//   // case: fast is about to "lap" slow
+//     if (fast === slow) return fast;
+//   }
+//
+//   // case: fast hit the end of the list
+//   return null;
+// }
 
-// until we hit the end of the list
-  while (fast && fast.next) {
-    slow = slow.next;
-    fast = fast.next.next;
-
-  // case: fast is about to "lap" slow
-    if (fast === slow) return fast;
-  }
-
-  // case: fast hit the end of the list
-  return null;
-}
-
-export { loopDetectionSet, loopDetectionRunner };
+export { detectCycleSet, detectCycle };
