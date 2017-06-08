@@ -215,12 +215,20 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/_minimum_window_substring/minimum_window_substring.js">Minimum Window Substring</a></td>
   </tr>
   <tr>
+    <td>86</td>
+    <td><a href="../assets/linked_lists/questions/_partition_list/partition_list.js">Partition List</a></td>
+  </tr>
+  <tr>
     <td>128</td>
     <td><a href="../assets/union_find/questions/_longest_consecutive_sequence/longest_consecutive_sequence.js">Longest Consecutive Sequence</a></td>
   </tr>
   <tr>
     <td>130</td>
     <td><a href="../assets/union_find/questions/_surrounded_regions/surrounded_regions.js">Surrounded Regions</a></td>
+  </tr>
+  <tr>
+    <td>142</td>
+    <td><a href="../assets/linked_lists/questions/_linked_list_cycle_II/linked_list_cycle_II.js">Linked List Cycle II</a></td>
   </tr>
   <tr>
     <td>151</td>

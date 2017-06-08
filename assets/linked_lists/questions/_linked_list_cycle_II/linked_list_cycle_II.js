@@ -83,7 +83,7 @@
 // }
 
 /**
-* hasCycleSet()
+* detectCycle()
 *
 * Solution:
 *
@@ -190,4 +190,4 @@
 //   return null;
 // }
 
-export { detectCycleSet, detectCycle };
+// export { detectCycleSet, detectCycle };
