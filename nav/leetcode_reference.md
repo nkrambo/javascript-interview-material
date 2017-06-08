@@ -275,6 +275,10 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/isomorphic_strings/isomorphic_strings.js">Isomorphic Strings</a></td>
   </tr>
   <tr>
+    <td>206</td>
+    <td><a href="../assets/linked_lists/questions/_reverse_linked_list/reverse_linked_list.js">Reverse Linked List</a></td>
+  </tr>
+  <tr>
     <td>209</td>
     <td><a href="../assets/search/questions/_minimum_size_subarray_sum/minimum_size_subarray_sum.js">Minimum Size Subarray Sum</a></td>
   </tr>

@@ -2,21 +2,28 @@
 /**
 * Reverse Linked List
 *
-* Write a function for reversing a linked list. Do it in-place.
+* Tags: Linked List
+* Leetcode: 206
 *
-* Your function will have one input: the head of the list; and should return the
-* new head of the list.
+* Reverse a singly linked list.
 *
-* Here's a sample linked list node class:
+* Hint:
 *
-* function LinkedListNode(value) {
-*   this.value = value;
+* A linked list can be reversed either iteratively or recursively. Could you
+* implement both?
+*/
+
+/**
+* Definition for singly-linked list.
+*
+* function ListNode(val) {
+*   this.val = val;
 *   this.next = null;
 * }
 */
 
 /**
-* reverseLinkedList()
+* reverseList()
 *
 * Solution:
 *
@@ -48,34 +55,34 @@
 * Space: O(1)
 * We pass over the list only once, and maintain a constant number of variables in memory.
 *
-* @param {object} list linked list to reverse
+* @param {object} head linked list node
 * @return {object} returns the same modified list in-reverse
 */
 
-function reverseLinkedList(list) {
-  let current = list.head;
-  let previous = null;
-  let nextNode = null;
-
-  // until we have 'fallen off' the end of the list
-  while (current) {
-    // copy a pointer to the next element
-    // before we overwrite current.next
-    nextNode = current.next;
-
-    // reverse the 'next' pointer
-    current.next = previous;
-
-    // step forward in the list
-    previous = current;
-    current = nextNode;
-  }
-
-  // nest our return in a head and add the length property back
-  return {
-    head: previous,
-    length: list.length,
-  };
-}
-
-export default reverseLinkedList;
+// function reverseList(head) {
+//   let current = list.head;
+//   let previous = null;
+//   let nextNode = null;
+//
+//   // until we have 'fallen off' the end of the list
+//   while (current) {
+//     // copy a pointer to the next element
+//     // before we overwrite current.next
+//     nextNode = current.next;
+//
+//     // reverse the 'next' pointer
+//     current.next = previous;
+//
+//     // step forward in the list
+//     previous = current;
+//     current = nextNode;
+//   }
+//
+//   // nest our return in a head and add the length property back
+//   return {
+//     head: previous,
+//     length: list.length,
+//   };
+// }
+//
+// export default reverseList;

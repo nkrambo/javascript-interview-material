@@ -30,4 +30,8 @@
     <td>Sort</td>
     <td><a href="../assets/sort/questions/_sparse_search/sparse_search.js">Sparse Search</a></td>
   </tr>
+  <tr>
+    <td>Linked List</td>
+    <td><a href="../assets/linked_lists/questions/remove_duplicates/remove_duplicates.js">Remove Duplicates</a></td>
+  </tr>
 </table>
