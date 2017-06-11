@@ -3,6 +3,7 @@
 * Assign Cookies
 *
 * Tags: Greedy
+* Leetcode: 455
 *
 * Assume you are an awesome parent and want to give your children some cookies.
 * But, you should give each child at most one cookie. Each child i has a greed
@@ -38,7 +39,7 @@
 */
 
 /**
-* assignCookies()
+* findContentChildren()
 *
 * Solution:
 *
@@ -47,13 +48,13 @@
 * Time: O(1)
 * Space: O(1)
 *
-* @param {array} greed factor of each child greed[i]
-* @param {array} size of each cookie size[i]
+* @param {array} g factor of each child greed[i]
+* @param {array} s of each cookie size[i]
 * @return {number} returns the maximum of content children
 */
 
-// function assignCookies(greed, size) {
+// function findContentChildren(g, s) {
 //
 // }
 //
-// export default assignCookies;
+// export default findContentChildren;

@@ -387,6 +387,10 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/_add_strings/add_strings.js">Add Strings</a></td>
   </tr>
   <tr>
+    <td>445</td>
+    <td><a href="../assets/greedy/questions/_assign_cookies/assign_cookies.js">Assign Cookies</a></td>
+  </tr>
+  <tr>
     <td>547</td>
     <td><a href="../assets/union_find/questions/_friend_circles/friend_circles.js">Friend Circles</a></td>
   </tr>

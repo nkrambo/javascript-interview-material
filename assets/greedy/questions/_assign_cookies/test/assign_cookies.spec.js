@@ -1,8 +1,8 @@
 //
 // import { expect } from 'chai';
-// import assignCookies from '../assign_cookies';
+// import findContentChildren from '../assign_cookies';
 //
-// describe('assignCookies()', () => {
+// describe('findContentChildren()', () => {
 //   it('should return the maximum number of content children', () => {
 //
 //   });
