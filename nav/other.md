@@ -80,10 +80,14 @@
   </tr>
   <tr>
     <td>Trie</td>
-    <td><a href="../assets/trie/questions/million_gazillion/million_gazillion.js">Million Gazillion</a></td>
+    <td><a href="../assets/graphs/questions/trie/million_gazillion/million_gazillion.js">Million Gazillion</a></td>
   </tr>
   <tr>
     <td>Trie</td>
-    <td><a href="../assets/trie/questions/_contacts_list/contacts_list.js">Contacts List</a></td>
+    <td><a href="../assets/graphs/questions/trie/_contacts_list/contacts_list.js">Contacts List</a></td>
+  </tr>
+  <tr>
+    <td>Topological Sort</td>
+    <td><a href="../assets/graphs/questions/topological_sort/build_order/build_order.js">Build Order</a></td>
   </tr>
 </table>

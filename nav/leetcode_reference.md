@@ -303,12 +303,20 @@ are local test cases as well.
     <td><a href="../assets/linked_lists/questions/_reverse_linked_list/reverse_linked_list.js">Reverse Linked List</a></td>
   </tr>
   <tr>
+    <td>207</td>
+    <td><a href="../assets/graphs/questions/topological_sort/_course_schedule/course_schedule.js">Course Schedule</a></td>
+  </tr>
+  <tr>
     <td>209</td>
     <td><a href="../assets/search/questions/_minimum_size_subarray_sum/minimum_size_subarray_sum.js">Minimum Size Subarray Sum</a></td>
   </tr>
   <tr>
+    <td>210</td>
+    <td><a href="../assets/graphs/questions/topological_sort/_course_schedule_II/course_schedule_II.js">Course Schedule II</a></td>
+  </tr>
+  <tr>
     <td>212</td>
-    <td><a href="../assets/trie/questions/_word_search_II/word_search_II.js">Word Search II</a></td>
+    <td><a href="../assets/graphs/questions/trie/_word_search_II/word_search_II.js">Word Search II</a></td>
   </tr>
   <tr>
     <td>222</td>
@@ -359,6 +367,10 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/palindrome_permutation/palindrome_permutation.js">Palindrome Permutation</a></td>
   </tr>
   <tr>
+    <td>269</td>
+    <td><a href="../assets/graphs/questions/topological_sort/_alien_dictionary/alien_dictionary.js">Alien Dictionary</a></td>
+  </tr>
+  <tr>
     <td>271</td>
     <td><a href="../assets/strings/questions/_encode_and_decode_strings/encode_and_decode_strings.js">Encode and Decode Strings</a></td>
   </tr>
@@ -387,12 +399,16 @@ are local test cases as well.
     <td><a href="../assets/search/questions/_power_of_three/power_of_three.js">Power of Three</a></td>
   </tr>
   <tr>
+    <td>329</td>
+    <td><a href="../assets/graphs/questions/topological_sort/_longest_increasing_path_in_matrix/longest_increasing_path_in_matrix.js">Longest Increasing Path in a Matrix</a></td>
+  </tr>
+  <tr>
     <td>330</td>
     <td><a href="../assets/greedy/questions/_patching_array/patching_array.js">Patching Array</a></td>
   </tr>
   <tr>
     <td>336</td>
-    <td><a href="../assets/trie/questions/_palindrome_pairs/palindrome_pairs.js">Palindrome Pairs</a></td>
+    <td><a href="../assets/graphs/questions/trie/_palindrome_pairs/palindrome_pairs.js">Palindrome Pairs</a></td>
   </tr>
   <tr>
     <td>340</td>
@@ -440,11 +456,11 @@ are local test cases as well.
   </tr>
   <tr>
     <td>421</td>
-    <td><a href="../assets/trie/questions/_max_XOR_of_two_numbers_in_array/max_XOR_of_two_numbers_in_array.js">Maximum XOR of Two Numbers in an Array</a></td>
+    <td><a href="../assets/graphs/questions/trie/_max_XOR_of_two_numbers_in_array/max_XOR_of_two_numbers_in_array.js">Maximum XOR of Two Numbers in an Array</a></td>
   </tr>
   <tr>
     <td>425</td>
-    <td><a href="../assets/trie/questions/_word_squares/word_squares.js">Word Squares</a></td>
+    <td><a href="../assets/graphs/questions/trie/_word_squares/word_squares.js">Word Squares</a></td>
   </tr>
   <tr>
     <td>445</td>
@@ -452,7 +468,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>472</td>
-    <td><a href="../assets/trie/questions/_concatenated_words/concatenated_words.js">Concatenated Words</a></td>
+    <td><a href="../assets/graphs/questions/trie/_concatenated_words/concatenated_words.js">Concatenated Words</a></td>
   </tr>
   <tr>
     <td>547</td>

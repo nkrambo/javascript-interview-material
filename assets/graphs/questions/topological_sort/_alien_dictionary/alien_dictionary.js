@@ -3,6 +3,7 @@
 * Alien Dictionary
 *
 * Tags: Topological Sort, Graph Traversal, Lexicographical Order
+* Leetcode: 269
 *
 * There is a new alien language which uses the latin alphabet. However, the order
 * among letters are unknown to you. You receive a list of words from the dictionary,
@@ -148,93 +149,93 @@
 * @return {string} returns a string representing the order of the words
 */
 
-import Graph from '../../../data_structures/graph/graph';
-
-function alienOrder(words) {
-  let result = '';
-
-  // build graph
-  // each node represents a unique character for all words
-  // e.g node (a) represents all occurences of a's
-  const graph = new Graph();
-  words.forEach((word) => {
-    for (const char of word) {
-      if (!graph.find(char)) {
-        graph.insert(char);
-      }
-    }
-  });
-
-  // add inDegree property to nodes
-  // our graph class doesn't support this property natively
-  graph.nodes.forEach((node) => {
-    node.inDegree = 0;
-  });
-
-  // grab adjacent words, that is, 'current' and 'next'
-  for (let i = 0; i < words.length - 1; i += 1) {
-    const current = words[i];
-    const next = words[i + 1];
-    const length = Math.min(current.length, next.length);
-
-    // iterate adjacent words and compare characters at index j
-    for (let j = 0; j < length; j += 1) {
-      const c1 = current[j];
-      const c2 = next[j];
-
-      // if they are different, c1 must come before c2 lexicographically
-      // add edge to represent this and update node in-degree for topological sorting
-      if (c1 !== c2) {
-        // check if we've already added this edge
-        let seen = false;
-        graph.find(c1).edges.forEach((edge) => {
-          if (edge.value === c2) seen = true;
-        });
-
-        // if we haven't, add it
-        if (!seen) {
-          // edge
-          graph.insertEdge(c1, c2);
-
-          // degree
-          graph.find(c2).inDegree += 1;
-        }
-      }
-    }
-  }
-
-  // BFS (Karn's aglorithm) to find lexicographical order
-  const queue = [];
-
-  // grab starting nodes that have a 0 in-degree, they come first lexicographically
-  graph.nodes.forEach((node) => {
-    if (node.inDegree === 0) queue.push(node);
-  });
-
-  while (queue.length) {
-    // dequeue
-    const node = queue.shift();
-
-    // concat onto result string
-    result += node.value;
-
-    // remove outgoing edges
-    node.edges.forEach((edge) => {
-      edge.inDegree -= 1;
-
-      // if this edge now has a 0 in-degree, queue it
-      if (edge.inDegree === 0) queue.push(edge);
-    });
-  }
-
-  // check for cycle, not a DAG
-  graph.nodes.forEach((node) => {
-    if (node.inDegree !== 0) {
-      throw new Error('Build Error: Cannot build with cyclic dependencies.');
-    }
-  });
-
-  return result;
-}
-
-export default alienOrder;
+// import Graph from '../../../data_structures/graph/graph';
+//
+// function alienOrder(words) {
+//   let result = '';
+//
+//   // build graph
+//   // each node represents a unique character for all words
+//   // e.g node (a) represents all occurences of a's
+//   const graph = new Graph();
+//   words.forEach((word) => {
+//     for (const char of word) {
+//       if (!graph.find(char)) {
+//         graph.insert(char);
+//       }
+//     }
+//   });
+//
+//   // add inDegree property to nodes
+//   // our graph class doesn't support this property natively
+//   graph.nodes.forEach((node) => {
+//     node.inDegree = 0;
+//   });
+//
+//   // grab adjacent words, that is, 'current' and 'next'
+//   for (let i = 0; i < words.length - 1; i += 1) {
+//     const current = words[i];
+//     const next = words[i + 1];
+//     const length = Math.min(current.length, next.length);
+//
+//     // iterate adjacent words and compare characters at index j
+//     for (let j = 0; j < length; j += 1) {
+//       const c1 = current[j];
+//       const c2 = next[j];
+//
+//       // if they are different, c1 must come before c2 lexicographically
+//       // add edge to represent this and update node in-degree for topological sorting
+//       if (c1 !== c2) {
+//         // check if we've already added this edge
+//         let seen = false;
+//         graph.find(c1).edges.forEach((edge) => {
+//           if (edge.value === c2) seen = true;
+//         });
+//
+//         // if we haven't, add it
+//         if (!seen) {
+//           // edge
+//           graph.insertEdge(c1, c2);
+//
+//           // degree
+//           graph.find(c2).inDegree += 1;
+//         }
+//       }
+//     }
+//   }
+//
+//   // BFS (Karn's aglorithm) to find lexicographical order
+//   const queue = [];
+//
+//   // grab starting nodes that have a 0 in-degree, they come first lexicographically
+//   graph.nodes.forEach((node) => {
+//     if (node.inDegree === 0) queue.push(node);
+//   });
+//
+//   while (queue.length) {
+//     // dequeue
+//     const node = queue.shift();
+//
+//     // concat onto result string
+//     result += node.value;
+//
+//     // remove outgoing edges
+//     node.edges.forEach((edge) => {
+//       edge.inDegree -= 1;
+//
+//       // if this edge now has a 0 in-degree, queue it
+//       if (edge.inDegree === 0) queue.push(edge);
+//     });
+//   }
+//
+//   // check for cycle, not a DAG
+//   graph.nodes.forEach((node) => {
+//     if (node.inDegree !== 0) {
+//       throw new Error('Build Error: Cannot build with cyclic dependencies.');
+//     }
+//   });
+//
+//   return result;
+// }
+//
+// export default alienOrder;

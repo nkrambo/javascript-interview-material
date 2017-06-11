@@ -2,7 +2,8 @@
 /**
 * Course Schedule II
 *
-* Tags: Topological Sort
+* Tags: Topological Sort, BFS, DFS, Graph
+* Leetcode: 210
 *
 * There are a total of n courses you have to take, labeled from 0 to n - 1.
 *
