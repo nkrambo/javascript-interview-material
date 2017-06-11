@@ -2,7 +2,8 @@
 /**
 * Wildcard Matching
 *
-* Types: Greedy
+* Tags: Greedy, String, Dynamic Programming, Backtracking
+* Leetcode: 44
 *
 * Implement wildcard pattern matching with support for '?' and '*'.
 *

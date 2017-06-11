@@ -191,12 +191,24 @@ are local test cases as well.
     <td>Title</td>
   </tr>
   <tr>
+    <td>44</td>
+    <td><a href="../assets/greedy/questions/_wildcard_matching/wildcard_matching.js">Wildcard Matching</a></td>
+  </tr>
+  <tr>
+    <td>45</td>
+    <td><a href="../assets/greedy/questions/_jump_game_II/jump_game_II.js">Jump Game II</a></td>
+  </tr>
+  <tr>
     <td>49</td>
     <td><a href="../assets/strings/questions/group_anagrams/group_anagrams.js">Group Anagrams</a></td>
   </tr>
   <tr>
     <td>50</td>
     <td><a href="../assets/search/questions/_pow(x,n)/pow.js">Pow(x, n)</a></td>
+  </tr>
+  <tr>
+    <td>55</td>
+    <td><a href="../assets/greedy/questions/_jump_game/jump_game.js">Jump Game</a></td>
   </tr>
   <tr>
     <td>68</td>
@@ -219,12 +231,24 @@ are local test cases as well.
     <td><a href="../assets/linked_lists/questions/_partition_list/partition_list.js">Partition List</a></td>
   </tr>
   <tr>
+    <td>121</td>
+    <td><a href="../assets/greedy/questions/_best_time_to_buy_and_sell_stock/best_time_to_buy_and_sell_stock.js">Best Time to Buy and Sell Stock</a></td>
+  </tr>
+  <tr>
     <td>128</td>
     <td><a href="../assets/union_find/questions/_longest_consecutive_sequence/longest_consecutive_sequence.js">Longest Consecutive Sequence</a></td>
   </tr>
   <tr>
     <td>130</td>
     <td><a href="../assets/union_find/questions/_surrounded_regions/surrounded_regions.js">Surrounded Regions</a></td>
+  </tr>
+  <tr>
+    <td>134</td>
+    <td><a href="../assets/greedy/questions/_gas_station/gas_station.js">Gas Station</a></td>
+  </tr>
+  <tr>
+    <td>135</td>
+    <td><a href="../assets/greedy/questions/_candy/candy.js">Candy</a></td>
   </tr>
   <tr>
     <td>142</td>
@@ -303,6 +327,10 @@ are local test cases as well.
     <td><a href="../assets/search/questions/_delete_node_in_a_linked_list/delete_node_in_a_linked_list.js">Delete Node in a Linked List</a></td>
   </tr>
   <tr>
+    <td>238</td>
+    <td><a href="../assets/array/questions/_product_of_array_except_self/product_of_array_except_self.js">Product of Array Except Self</a></td>
+  </tr>
+  <tr>
     <td>240</td>
     <td><a href="../assets/search/questions/_search_2D_matrix_II/search_2D_matrix_II.js">Search 2D Matrix II</a></td>
   </tr>
@@ -313,6 +341,10 @@ are local test cases as well.
   <tr>
     <td>249</td>
     <td><a href="../assets/strings/questions/_group_shifted_strings/group_shifted_strings.js">Group Shifted Strings</a></td>
+  </tr>
+  <tr>
+    <td>253</td>
+    <td><a href="../assets/greedy/questions/_meeting_rooms_II/meeting_rooms_II.js">Meeting Rooms II</a></td>
   </tr>
   <tr>
     <td>261</td>
@@ -339,12 +371,20 @@ are local test cases as well.
     <td><a href="../assets/union_find/questions/_number_of_islands_II/number_of_islands_II.js">Number of Islands II</a></td>
   </tr>
   <tr>
+    <td>316</td>
+    <td><a href="../assets/greedy/questions/_remove_duplcate_letters/remove_duplcate_letters.js">Remove Duplicate Letters</a></td>
+  </tr>
+  <tr>
     <td>323</td>
     <td><a href="../assets/union_find/questions/_number_of_connected_components/number_of_connected_components.js">Number of Connected Components in an Undirected Graph</a></td>
   </tr>
   <tr>
     <td>326</td>
     <td><a href="../assets/search/questions/_power_of_three/power_of_three.js">Power of Three</a></td>
+  </tr>
+  <tr>
+    <td>330</td>
+    <td><a href="../assets/greedy/questions/_patching_array/patching_array.js">Patching Array</a></td>
   </tr>
   <tr>
     <td>340</td>
@@ -381,6 +421,10 @@ are local test cases as well.
   <tr>
     <td>395</td>
     <td><a href="../assets/strings/questions/_longest_substring_least_k_distinct/longest_substring_least_k_distinct.js">Longest Substring with at Least K Distinct Characters</a></td>
+  </tr>
+  <tr>
+    <td>406</td>
+    <td><a href="../assets/greedy/questions/_queue_reconstruction_height/queue_reconstruction_height.js">Queue Reconstruction Height</a></td>
   </tr>
   <tr>
     <td>415</td>

@@ -2,7 +2,8 @@
 /**
 * Jump Game II
 *
-* Types: Greedy
+* Tags: Greedy, Array
+* Leetcode: 45
 *
 * Given an array of non-negative integers, you are initially positioned at the
 * first index of the array.
@@ -23,7 +24,7 @@
 */
 
 /**
-* minimumJumps()
+* jump()
 *
 * Solution:
 *
@@ -36,8 +37,8 @@
 * @return {number} returns the minimum number of jumps to reach the last index
 */
 
-// function minimumJumps(nums) {
+// function jump(nums) {
 //
 // }
 //
-// export default minimumJumps;
+// export default jump;

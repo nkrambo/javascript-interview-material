@@ -1,14 +1,14 @@
 
 /**
-* Product of Other Numbers
+* Product of Array Except Self
 *
-* Tags: Greedy
+* Tags: Array
+* Leetcode: 238
 *
-* You have an array of integers, and for each index you want to find the
-* product of every integer except the integer at that index.
+* Given an array of n integers where n > 1, nums, return an array output such
+* that output[i] is equal to the product of all the elements of nums except nums[i].
 *
-* Write a function that takes an array
-* of integers and returns an array of the products.
+* Solve it without division and in O(n).
 *
 * For example, given:
 * [1, 7, 3, 4]
@@ -19,11 +19,14 @@
 * By calculating:
 * [7*3*4, 1*3*4, 1*7*4, 1*7*3]
 *
-* Do not use division in your solution.
+* Follow Up:
+*
+* Could you solve it with constant space complexity? (Note: The output array does
+* not count as extra space for the purpose of space complexity analysis.)
 */
 
 /**
-* productOfOthers()
+* productExceptSelf()
 *
 * Solution:
 *
@@ -75,37 +78,32 @@
 * We make two passes through our input an array, and the array we build always
 * has the same length as the input array.
 *
-* @param {array} arr array of integers
+* @param {array} nums array of integers
 * @return {array} returns array of the products of all other numbers except index
 */
 
-function productOfOthers(arr) {
-  // edge case
-  if (arr.length < 3) {
-    throw new Error('productOfOthers: Minimum array length of 3 required');
-  }
-
-  const result = [];
-
-  // for each integer, we find the product of all the integers
-  // before it, storing the total product so far each time
-  let soFar = 1;
-  for (let i = 0; i < arr.length; i += 1) {
-    result[i] = soFar;
-    soFar *= arr[i];
-  }
-
-  // for each integer, we find the product of all the integers
-  // after it. since each index in products already has the
-  // product of all the integers before it, now we're storing
-  // the total product of all other integers
-  soFar = 1;
-  for (let j = arr.length - 1; j >= 0; j -= 1) {
-    result[j] *= soFar;
-    soFar *= arr[j];
-  }
-
-  return result;
-}
-
-export default productOfOthers;
+// function productExceptSelf(nums) {
+//   const result = [];
+//
+//   // for each integer, we find the product of all the integers
+//   // before it, storing the total product so far each time
+//   let soFar = 1;
+//   for (let i = 0; i < nums.length; i += 1) {
+//     result[i] = soFar;
+//     soFar *= nums[i];
+//   }
+//
+//   // for each integer, we find the product of all the integers
+//   // after it. since each index in products already has the
+//   // product of all the integers before it, now we're storing
+//   // the total product of all other integers
+//   soFar = 1;
+//   for (let j = nums.length - 1; j >= 0; j -= 1) {
+//     result[j] *= soFar;
+//     soFar *= nums[j];
+//   }
+//
+//   return result;
+// }
+//
+// export default productExceptSelf;

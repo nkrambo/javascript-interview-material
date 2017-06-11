@@ -2,7 +2,7 @@
 /**
 * Higest Product of Three
 *
-* Types: Greedy
+* Tags: Greedy
 *
 * Given an array of integers, positive and negative, find the highest product you can
 * get from three of the integers. The input will always have at least three integers.

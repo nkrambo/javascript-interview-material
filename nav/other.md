@@ -70,4 +70,12 @@
     <td>Linked List</td>
     <td><a href="../assets/linked_lists/questions/kth_to_last/kth_to_last.js">Kth to Last</a></td>
   </tr>
+  <tr>
+    <td>Greedy</td>
+    <td><a href="../assets/greedy/questions/highest_product_of_three/highest_product_of_three.js">Highest Product of Three</a></td>
+  </tr>
+  <tr>
+    <td>Greedy</td>
+    <td><a href="../assets/greedy/questions/merge_meeting_times/merge_meeting_times.js">Merge Meeting Times</a></td>
+  </tr>
 </table>

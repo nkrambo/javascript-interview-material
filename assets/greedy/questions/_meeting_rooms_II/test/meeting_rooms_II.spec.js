@@ -1,8 +1,8 @@
 //
 // import { expect } from 'chai';
-// import meetingRooms from '../meeting_rooms';
+// import minMeetingRooms from '../meeting_rooms_II';
 //
-// describe('meetingRooms()', () => {
+// describe('minMeetingRooms()', () => {
 //   it('should return the minimum number of conference rooms required', () => {
 //
 //   });

@@ -2,7 +2,8 @@
 /**
 * Queue Reconstruction by Height
 *
-* Types: Greedy
+* Tags: Greedy
+* Leetcode: 406
 *
 * Suppose you have a random list of people standing in a queue. Each person is
 * described by a pair of integers (h, k), where h is the height of the person and

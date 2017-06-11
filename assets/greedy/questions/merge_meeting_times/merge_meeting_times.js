@@ -2,7 +2,7 @@
 /**
 * Merge Meeting Times
 *
-* Types: Greedy, Sorting
+* Tagss: Greedy, Sorting
 *
 * Your company built an in-house calendar tool called HiCal. You want to add a
 * feature to see the times in a day when everyone is available.
