@@ -319,6 +319,10 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/trie/_word_search_II/word_search_II.js">Word Search II</a></td>
   </tr>
   <tr>
+    <td>218</td>
+    <td><a href="../assets/graphs/questions/fenwick_tree/_skyline_problem/skyline_problem.js">The Skyline Problem</a></td>
+  </tr>
+  <tr>
     <td>222</td>
     <td><a href="../assets/search/questions/_count_complete_tree_nodes/count_complete_tree_nodes.js">Count Complete Tree Nodes</a></td>
   </tr>
@@ -385,6 +389,14 @@ are local test cases as well.
   <tr>
     <td>305</td>
     <td><a href="../assets/union_find/questions/_number_of_islands_II/number_of_islands_II.js">Number of Islands II</a></td>
+  </tr>
+  <tr>
+    <td>308</td>
+    <td><a href="../assets/graphs/questions/fenwick_tree/_range_sum_query_mutable/range_sum_query_mutable.js">Range Sum Query Mutable</a></td>
+  </tr>
+  <tr>
+    <td>308</td>
+    <td><a href="../assets/graphs/questions/fenwick_tree/_range_sum_query_2D_mutable/range_sum_query_2D_mutable.js">Range Sum Query 2D Mutable</a></td>
   </tr>
   <tr>
     <td>316</td>
