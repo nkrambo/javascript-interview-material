@@ -1,8 +1,8 @@
 //
 // import { expect } from 'chai';
-// import concatenateWords from '../concatenate_words';
+// import findAllConcatenatedWordsInADict from '../concatenated_words';
 //
-// describe('concatenateWords()', () => {
+// describe('findAllConcatenatedWordsInADict()', () => {
 //   it('should return all concatenated words in the given list of words', () => {
 //
 //   });

@@ -2,7 +2,8 @@
 /**
 * Concatentated Words
 *
-* Tags: Trie
+* Tags: Trie, Dynamic Programming, DFS
+* Leetcode: 472
 *
 * Given a list of words (without duplicates), please write a program that returns
 * all concatenated words in the given list of words.
@@ -31,7 +32,7 @@
 */
 
 /**
-* concatenateWords()
+* findAllConcatenatedWordsInADict()
 *
 * Solution:
 *
@@ -43,8 +44,8 @@
 * @return {array} returns an array of concatenated words
 */
 
-// function concatenateWords(words) {
+// function findAllConcatenatedWordsInADict(words) {
 //
 // }
 //
-// export default concatenateWords;
+// export default findAllConcatenatedWordsInADict;

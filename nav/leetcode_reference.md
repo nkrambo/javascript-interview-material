@@ -307,6 +307,10 @@ are local test cases as well.
     <td><a href="../assets/search/questions/_minimum_size_subarray_sum/minimum_size_subarray_sum.js">Minimum Size Subarray Sum</a></td>
   </tr>
   <tr>
+    <td>212</td>
+    <td><a href="../assets/trie/questions/_word_search_II/word_search_II.js">Word Search II</a></td>
+  </tr>
+  <tr>
     <td>222</td>
     <td><a href="../assets/search/questions/_count_complete_tree_nodes/count_complete_tree_nodes.js">Count Complete Tree Nodes</a></td>
   </tr>
@@ -387,6 +391,10 @@ are local test cases as well.
     <td><a href="../assets/greedy/questions/_patching_array/patching_array.js">Patching Array</a></td>
   </tr>
   <tr>
+    <td>336</td>
+    <td><a href="../assets/trie/questions/_palindrome_pairs/palindrome_pairs.js">Palindrome Pairs</a></td>
+  </tr>
+  <tr>
     <td>340</td>
     <td><a href="../assets/strings/questions/_longest_substring_most_k_distinct/longest_substring_most_k_distinct.js">Longest Substring with at Most K Distinct Characters</a></td>
   </tr>
@@ -431,8 +439,20 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/_add_strings/add_strings.js">Add Strings</a></td>
   </tr>
   <tr>
+    <td>421</td>
+    <td><a href="../assets/trie/questions/_max_XOR_of_two_numbers_in_array/max_XOR_of_two_numbers_in_array.js">Maximum XOR of Two Numbers in an Array</a></td>
+  </tr>
+  <tr>
+    <td>425</td>
+    <td><a href="../assets/trie/questions/_word_squares/word_squares.js">Word Squares</a></td>
+  </tr>
+  <tr>
     <td>445</td>
     <td><a href="../assets/greedy/questions/_assign_cookies/assign_cookies.js">Assign Cookies</a></td>
+  </tr>
+  <tr>
+    <td>472</td>
+    <td><a href="../assets/trie/questions/_concatenated_words/concatenated_words.js">Concatenated Words</a></td>
   </tr>
   <tr>
     <td>547</td>

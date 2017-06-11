@@ -2,7 +2,8 @@
 /**
 * Word Squares
 *
-* Tags: Trie
+* Tags: Trie, Backtracking
+* Leetcode: 425
 *
 * Given a set of words (without duplicates), find all word squares you can build
 * from them.

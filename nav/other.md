@@ -78,4 +78,12 @@
     <td>Greedy</td>
     <td><a href="../assets/greedy/questions/merge_meeting_times/merge_meeting_times.js">Merge Meeting Times</a></td>
   </tr>
+  <tr>
+    <td>Trie</td>
+    <td><a href="../assets/trie/questions/million_gazillion/million_gazillion.js">Million Gazillion</a></td>
+  </tr>
+  <tr>
+    <td>Trie</td>
+    <td><a href="../assets/trie/questions/_contacts_list/contacts_list.js">Contacts List</a></td>
+  </tr>
 </table>
