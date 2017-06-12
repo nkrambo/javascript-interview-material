@@ -1,15 +1,25 @@
 
 /**
-* Minimal Tree
+* Convert Sorted Array to Binary Search Tree
 *
-* Tags: BST, Recursion
+* Tags: BST, Recursion, DFS
+* Leetcode: 108
 *
-* Given a sorted (increasing order) array with unique integer elements, write an
-* algorithm to create a binary search tree with minimal height.
+* Given an array where elements are sorted in ascending order, convert it to a
+* height balanced BST.
 */
 
 /**
-* minimal()
+* Definition for a binary tree node.
+*
+* function TreeNode(val) {
+*   this.val = val;
+*   this.left = this.right = null;
+* }
+*/
+
+/**
+* sortedArrayToBST()
 *
 * Solution:
 *
@@ -34,6 +44,7 @@
 * tree for that array.
 *
 * The algorithm is as follows:
+*
 * 1. Insert into the tree the middle element of the array.
 * 2. Insert (into the left subtree) the left subarray elements.
 * 3. Insert (into the right subtree) the right subarray elements.
@@ -49,33 +60,31 @@
 * @return {object} returns a minimal binary search tree created from nums
 */
 
-import BinarySearchTree from '../../../data_structures/bst/bst';
-
-function minimal(nums) {
-  // new tree
-  const BST = new BinarySearchTree();
-
-  // recursive insert
-  insertNode(BST, nums, 0, nums.length - 1);
-
-  return BST;
-}
-
-function insertNode(tree, nums, left, right) {
-  // base case
-  if (right < left) return null;
-
-  // calculate middle index
-  const mid = Math.floor((left + right) / 2);
-
-  // insert
-  tree.insert(nums[mid]);
-
-  // recurse
-  insertNode(tree, nums, left, mid - 1);
-  insertNode(tree, nums, mid + 1, right);
-
-  return null;
-}
-
-export default minimal;
+// function sortedArrayToBST(nums) {
+//   // new tree
+//   const BST = new BinarySearchTree();
+//
+//   // recursive insert
+//   insertNode(BST, nums, 0, nums.length - 1);
+//
+//   return BST;
+// }
+//
+// function insertNode(tree, nums, left, right) {
+//   // base case
+//   if (right < left) return null;
+//
+//   // calculate middle index
+//   const mid = Math.floor((left + right) / 2);
+//
+//   // insert
+//   tree.insert(nums[mid]);
+//
+//   // recurse
+//   insertNode(tree, nums, left, mid - 1);
+//   insertNode(tree, nums, mid + 1, right);
+//
+//   return null;
+// }
+//
+// export default sortedArrayToBST;

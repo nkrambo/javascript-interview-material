@@ -34,4 +34,20 @@
     <td>Linked List</td>
     <td><a href="../assets/linked_lists/questions/remove_duplicates/remove_duplicates.js">Remove Duplicates</a></td>
   </tr>
+  <tr>
+    <td>BST</td>
+    <td><a href="../assets/graphs/questions/bst/bst_sequences/bst_sequences.js">BST Sequences</a></td>
+  </tr>
+  <tr>
+    <td>BST</td>
+    <td><a href="../assets/graphs/questions/bst/random_node/random_node.js">Random Node</a></td>
+  </tr>
+  <tr>
+    <td>BST</td>
+    <td><a href="../assets/graphs/questions/bst/second_largest_element/second_largest_element.js">Second Largest Element</a></td>
+  </tr>
+  <tr>
+    <td>BST</td>
+    <td><a href="../assets/graphs/questions/bst/successor/successor.js">Successor</a></td>
+  </tr>
 </table>

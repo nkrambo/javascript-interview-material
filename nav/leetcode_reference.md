@@ -231,6 +231,14 @@ are local test cases as well.
     <td><a href="../assets/linked_lists/questions/_partition_list/partition_list.js">Partition List</a></td>
   </tr>
   <tr>
+    <td>98</td>
+    <td><a href="../assets/graphs/questions/bst/_validate_bst/validate_bst.js">Validate Binary Search Tree</a></td>
+  </tr>
+  <tr>
+    <td>108</td>
+    <td><a href="../assets/graphs/questions/bst/_convert_sorted_array_to_bst/convert_sorted_array_to_bst.js">Convert Sorted Array to Binary Search Tree</a></td>
+  </tr>
+  <tr>
     <td>121</td>
     <td><a href="../assets/greedy/questions/_best_time_to_buy_and_sell_stock/best_time_to_buy_and_sell_stock.js">Best Time to Buy and Sell Stock</a></td>
   </tr>
@@ -323,6 +331,10 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/fenwick_tree/_skyline_problem/skyline_problem.js">The Skyline Problem</a></td>
   </tr>
   <tr>
+    <td>220</td>
+    <td><a href="../assets/graphs/questions/bst/_contains_duplicate_III/contains_duplicate_III.js">Contains Duplicate III</a></td>
+  </tr>
+  <tr>
     <td>222</td>
     <td><a href="../assets/search/questions/_count_complete_tree_nodes/count_complete_tree_nodes.js">Count Complete Tree Nodes</a></td>
   </tr>
@@ -399,6 +411,10 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/fenwick_tree/_range_sum_query_2D_mutable/range_sum_query_2D_mutable.js">Range Sum Query 2D Mutable</a></td>
   </tr>
   <tr>
+    <td>315</td>
+    <td><a href="../assets/graphs/questions/bst/_count_smaller_numbers_after_self/count_smaller_numbers_after_self.js">Count of Smaller Numbers After Self</a></td>
+  </tr>
+  <tr>
     <td>316</td>
     <td><a href="../assets/greedy/questions/_remove_duplcate_letters/remove_duplcate_letters.js">Remove Duplicate Letters</a></td>
   </tr>
@@ -409,6 +425,10 @@ are local test cases as well.
   <tr>
     <td>326</td>
     <td><a href="../assets/search/questions/_power_of_three/power_of_three.js">Power of Three</a></td>
+  </tr>
+  <tr>
+    <td>327</td>
+    <td><a href="../assets/graphs/questions/bst/_count_of_range_sum/count_of_range_sum.js">Count of Range Sum</a></td>
   </tr>
   <tr>
     <td>329</td>
@@ -441,6 +461,10 @@ are local test cases as well.
   <tr>
     <td>350</td>
     <td><a href="../assets/search/questions/_intersection_of_two_arrays_II/intersection_of_two_arrays_II.js">Intersection of Two Arrays II</a></td>
+  </tr>
+  <tr>
+    <td>352</td>
+    <td><a href="../assets/graphs/questions/bst/_data_stream_disjoint_intervals/data_stream_disjoint_intervals.js">Data Stream as Disjoint Intervals</a></td>
   </tr>
   <tr>
     <td>383</td>

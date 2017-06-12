@@ -14,7 +14,7 @@
 */
 
 /**
-* containsCloseValue()
+* containsNearbyAlmostDuplicate()
 *
 * Solution:
 *
@@ -29,8 +29,8 @@
 * @return {boolean} returns true if there is a close neighbour, close to value
 */
 
-// function containsCloseValue(nums, k, t) {
+// function containsNearbyAlmostDuplicate(nums, k, t) {
 //
 // }
 //
-// export default containsCloseValue;
+// export default containsNearbyAlmostDuplicate;

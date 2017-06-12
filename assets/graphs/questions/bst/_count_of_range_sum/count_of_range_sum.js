@@ -2,7 +2,7 @@
 /**
 * Count of Range Sum
 *
-* Tags: BST
+* Tags: BST, Divide and Conquer
 * Leetcode: 327
 *
 * Given an integer array nums, return the number of range sums that lie in
