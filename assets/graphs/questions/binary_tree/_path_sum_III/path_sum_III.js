@@ -1,14 +1,48 @@
 
 /**
-* Paths with Sum
+* Path Sum III
 *
 * Tags: Binary Tree, Recursion
+* Leetcode: 437
 *
-* You are given a binary tree in which each node contains an integer value
-* (which might be positive or negative). Design an algorithm to count the
-* number of paths that sum to a given value. The path does not need to start
-* or end at the root or a leaf, but it must go downwards (traveling only from
-* the parent nodes to the child nodes).
+* You are given a binary tree in which each node contains an integer value.
+*
+* Find the number of paths that sum to a given value.
+*
+* The path does not need to start or end at the root or a leaf, but it must go
+* downwards (traveling only from parent nodes to child nodes).
+*
+* The tree has no more than 1,000 nodes and the values are in the range
+* -1,000,000 to 1,000,000.
+*
+* Example:
+*
+* Given the following binary tree, sum = 8
+*
+*                  10
+*               ↙     ↘
+*             5        -3
+*           ↙  ↘          ↘
+*         3     2          11
+*       ↙  ↘      ↘
+*     3     -2      1
+*
+* Return 3
+*
+* The paths that sum to 8 are:
+*
+* 1. 5 → 3
+* 2. 5 → 2 → 1
+* 3. -3 → 11
+*/
+
+/**
+* Definition for a binary tree node.
+*
+* function TreeNode(val) {
+*   this.val = val;
+*   this.left = this.right = null;
+* }
 */
 
 /**
@@ -16,8 +50,9 @@
 *
 * Solution:
 *
-* Let's pick a potential sum, say 8, and then draw a binary tree based on this.
-* This tree intentionally has a number of paths with this sum.
+* Let's use the above example.
+*
+* If we use sum = 8, then this tree has 3 paths with this sum.
 *
 *                  10
 *               ↙     ↘
@@ -52,19 +87,19 @@
 * @return {number} returns the number of paths that sum to target, or -1
 */
 
-function pathSumBrute(root, target) {
-  // base case
-  if (root === null) return 0;
-
-  // count paths with sum starting from root
-  const pathsFromRoot = countPaths(root, target, 0);
-
-  // try nodes on the left and right
-  const pathOnLeft = pathSumBrute(root.left, target);
-  const pathOnRight = pathSumBrute(root.right, target);
-
-  return pathsFromRoot + pathOnLeft + pathOnRight;
-}
+// function pathSumBrute(root, target) {
+//   // base case
+//   if (root === null) return 0;
+//
+//   // count paths with sum starting from root
+//   const pathsFromRoot = countPaths(root, target, 0);
+//
+//   // try nodes on the left and right
+//   const pathOnLeft = pathSumBrute(root.left, target);
+//   const pathOnRight = pathSumBrute(root.right, target);
+//
+//   return pathsFromRoot + pathOnLeft + pathOnRight;
+// }
 
 /**
 * countPaths()
@@ -75,22 +110,22 @@ function pathSumBrute(root, target) {
 * @return {number} returns the number of paths that sum to target, or -1
 */
 
-function countPaths(node, target, currentSum) {
-  // base case
-  if (node === null) return 0;
-
-  currentSum += node.value;
-  let totalPaths = 0;
-
-  // found a path from root
-  if (currentSum === target) totalPaths += 1;
-
-  // recurse left and right
-  totalPaths += countPaths(node.left, target, currentSum);
-  totalPaths += countPaths(node.right, target, currentSum);
-
-  return totalPaths;
-}
+// function countPaths(node, target, currentSum) {
+//   // base case
+//   if (node === null) return 0;
+//
+//   currentSum += node.value;
+//   let totalPaths = 0;
+//
+//   // found a path from root
+//   if (currentSum === target) totalPaths += 1;
+//
+//   // recurse left and right
+//   totalPaths += countPaths(node.left, target, currentSum);
+//   totalPaths += countPaths(node.right, target, currentSum);
+//
+//   return totalPaths;
+// }
 
 /**
 * pathSum()
@@ -114,7 +149,7 @@ function countPaths(node, target, currentSum) {
 * Let's isolate a given path and treat it as just an array. Consider a (hypothetical,
 * extended) path like:
 *
-* 10 -> 5 -> 1 -> 2 -> -1 -> -1 -> 7 -> 1 -> 2
+* 10 → 5 → 1 → 2 → -1 → -1 → 7 → 1 → 2
 *
 * What we're really saying is: How many contiguous subsequences in this array sum
 * to a target such as 8? In other words, for each y, we're trying to find the x
@@ -149,7 +184,7 @@ function countPaths(node, target, currentSum) {
 *
 * index:  0    1    2     3     4     5     6     7     8
 * --------------------------------------------------------
-* value: 10 -> 5 -> 1 ->  2 -> -1 -> -1 ->  7 ->  1 ->  2
+* value: 10 →  5 →  1 →   2 →  -1 →  -1 →  7  →  1  →  2
 * sum:   10   15   16    18    17    16    23    24    26
 *
 * The value of runningSum(7) is 24. If the target is 8, then we'd look up 16
@@ -187,55 +222,55 @@ function countPaths(node, target, currentSum) {
 * balanced tree, the space complexity is O(log n) due to the hash table. The space
 * complexity can grow to O(n) too, in an unbalanced tree.
 *
-* @param {object} node binary tree node
-* @param {number} target value path should sum to
+* @param {object} root binary tree node
+* @param {number} sum value
 * @return {number} returns the number of paths that sum to target, or -1
 */
 
-function pathSum(node, target) {
-  const pathCount = new Map();
-  return helper(node, target, 0, pathCount);
-}
+// function pathSum(root, sum) {
+//   const pathCount = new Map();
+//   return helper(root, sum, 0, pathCount);
+// }
 
 /**
 * helper()
 *
 * @param {object} node binary tree node
-* @param {number} target value path should sum to
+* @param {number} target value
 * @param {number} runningSum
 * @param {map} pathcount
 * @return {number} returns the number of paths that sum to target, or -1
 */
 
-function helper(node, target, runningSum, pathCount) {
-  // base case
-  if (node === null) return 0;
-
-  // count paths with sum ending at the current node
-  runningSum += node.value;
-  const sum = runningSum - target;
-
-  let totalPaths = pathCount.has(sum) ? pathCount.get(sum) : 0;
-
-  // if runningSum equals target, then one additional path starts at the root
-  // add this path
-  if (runningSum === target) totalPaths += 1;
-
-  // increment pathCount
-  pathCount.set(runningSum, pathCount.get(runningSum) + 1 || 1);
-
-  // recurse left and right
-  totalPaths += helper(node.left, target, runningSum, pathCount);
-  totalPaths += helper(node.right, target, runningSum, pathCount);
-
-  // decrement pathCount
-  if (pathCount.get(runningSum) === 0) {
-    pathCount.delete(runningSum);
-  } else {
-    pathCount.set(runningSum, pathCount.get(runningSum) - 1);
-  }
-
-  return totalPaths;
-}
-
-export { pathSumBrute, pathSum };
+// function helper(node, target, runningSum, pathCount) {
+//   // base case
+//   if (node === null) return 0;
+//
+//   // count paths with sum ending at the current node
+//   runningSum += node.value;
+//   const sum = runningSum - target;
+//
+//   let totalPaths = pathCount.has(sum) ? pathCount.get(sum) : 0;
+//
+//   // if runningSum equals target, then one additional path starts at the root
+//   // add this path
+//   if (runningSum === target) totalPaths += 1;
+//
+//   // increment pathCount
+//   pathCount.set(runningSum, pathCount.get(runningSum) + 1 || 1);
+//
+//   // recurse left and right
+//   totalPaths += helper(node.left, target, runningSum, pathCount);
+//   totalPaths += helper(node.right, target, runningSum, pathCount);
+//
+//   // decrement pathCount
+//   if (pathCount.get(runningSum) === 0) {
+//     pathCount.delete(runningSum);
+//   } else {
+//     pathCount.set(runningSum, pathCount.get(runningSum) - 1);
+//   }
+//
+//   return totalPaths;
+// }
+//
+// export { pathSumBrute, pathSum };

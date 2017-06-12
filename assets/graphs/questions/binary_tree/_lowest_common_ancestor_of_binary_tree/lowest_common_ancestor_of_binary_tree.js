@@ -1,13 +1,42 @@
 
 /**
-* First Common Ancestor
+* Lowest Common Ancestor of a Binary Tree
 *
 * Tags: Binary Tree, DFS
+* Leetcode: 236
 *
-* Design an algorithm and write code to find the first common ancestor of two
-* nodes in a binary tree. Avoid storing additional nodes in a data structure.
+* Given a binary tree, find the lowest common ancestor (LCA) of two given nodes
+* in the tree.
+*
+* Note:
 *
 * This is not necessarily a BST.
+*
+* The lowest common ancestor is defined between two nodes v and w as the lowest
+* node in T that has both v and w as descendants (where we allow a node to be a
+* descendant of itself).
+*
+*                  3
+*               ↙     ↘
+*             5         1
+*           ↙  ↘      ↙   ↘
+*         6     2    0     8
+*             ↙   ↘
+*           7      4
+*
+* For example, the lowest common ancestor (LCA) of nodes 5 and 1 is 3.
+*
+* Another example is LCA of nodes 5 and 4 is 5, since a node can be a descendant
+* of itself according to the LCA definition.
+*/
+
+/**
+* Definition for a binary tree node.
+*
+* function TreeNode(val) {
+*   this.val = val;
+*   this.left = this.right = null;
+* }
 */
 
 /**
@@ -63,24 +92,24 @@
 * @return {object} returns a node that is the first common ancestor of p, q
 */
 
-function withParents(p, q) {
-  // get difference in depths between nodes (delta)
-  const delta = Math.abs(findDepth(p) - findDepth(q));
-  let shallow = delta > 0 ? q : p;
-  let deep = delta > 0 ? p : q;
-
-  // shorten the deepest path by traversing up delta positions
-  deep = goUpBy(deep, delta);
-
-  // traverse upwards until we intersect
-  while (shallow !== deep && shallow !== null && deep !== null) {
-    shallow = shallow.parent;
-    deep = deep.parent;
-  }
-
-  // we could return either 'deep' or 'shallow'
-  return shallow === null || deep === null ? null : shallow;
-}
+// function withParents(p, q) {
+//   // get difference in depths between nodes (delta)
+//   const delta = Math.abs(findDepth(p) - findDepth(q));
+//   let shallow = delta > 0 ? q : p;
+//   let deep = delta > 0 ? p : q;
+//
+//   // shorten the deepest path by traversing up delta positions
+//   deep = goUpBy(deep, delta);
+//
+//   // traverse upwards until we intersect
+//   while (shallow !== deep && shallow !== null && deep !== null) {
+//     shallow = shallow.parent;
+//     deep = deep.parent;
+//   }
+//
+//   // we could return either 'deep' or 'shallow'
+//   return shallow === null || deep === null ? null : shallow;
+// }
 
 /**
 * goUpBy()
@@ -90,14 +119,14 @@ function withParents(p, q) {
 * @return {object} returns node at delta distance up from node
 */
 
-function goUpBy(node, delta) {
-  while (delta > 0 && node !== null) {
-    node = node.parent;
-    delta -= 1;
-  }
-
-  return node;
-}
+// function goUpBy(node, delta) {
+//   while (delta > 0 && node !== null) {
+//     node = node.parent;
+//     delta -= 1;
+//   }
+//
+//   return node;
+// }
 
 /**
 * findDepth()
@@ -106,15 +135,15 @@ function goUpBy(node, delta) {
 * @return {number} returns the depth value of a binary tree node
 */
 
-function findDepth(node) {
-  let depth = 0;
-  while (node !== null) {
-    node = node.parent;
-    depth += 1;
-  }
-
-  return depth;
-}
+// function findDepth(node) {
+//   let depth = 0;
+//   while (node !== null) {
+//     node = node.parent;
+//     depth += 1;
+//   }
+//
+//   return depth;
+// }
 
 /**
 * With parent links alternative
@@ -165,31 +194,31 @@ function findDepth(node) {
 * @return {object} returns the first common ancestor node
 */
 
-function withParentsAlt(root, p, q) {
-  // check if either node is not in the tree
-  if (!covers(root, p) || !covers(root, q)) {
-    return null;
-
-  // check if p covers q
-  } else if (covers(p, q)) {
-    return p;
-
-  // check if q covers p
-  } else if (covers(q, p)) {
-    return q;
-  }
-
-  // traverse upwards until you find a node that covers q
-  let sibling = getSibling(p);
-  let parent = p.parent;
-
-  while (!covers(sibling, q)) {
-    sibling = getSibling(parent);
-    parent = parent.parent;
-  }
-
-  return parent;
-}
+// function withParentsAlt(root, p, q) {
+//   // check if either node is not in the tree
+//   if (!covers(root, p) || !covers(root, q)) {
+//     return null;
+//
+//   // check if p covers q
+//   } else if (covers(p, q)) {
+//     return p;
+//
+//   // check if q covers p
+//   } else if (covers(q, p)) {
+//     return q;
+//   }
+//
+//   // traverse upwards until you find a node that covers q
+//   let sibling = getSibling(p);
+//   let parent = p.parent;
+//
+//   while (!covers(sibling, q)) {
+//     sibling = getSibling(parent);
+//     parent = parent.parent;
+//   }
+//
+//   return parent;
+// }
 
 /**
 * covers()
@@ -199,27 +228,27 @@ function withParentsAlt(root, p, q) {
 * @return {boolean} returns true if node is covered, otherwise false
 */
 
-function covers(root, p) {
-  // DFS
-  const stack = [root];
-
-  while (stack.length) {
-    const node = stack.pop();
-
-    if (node === p) return true;
-
-    if (node.left !== null) {
-      stack.push(node.left);
-    }
-
-    if (node.right !== null) {
-      stack.push(node.right);
-    }
-  }
-
-  // fell through, not covered
-  return false;
-}
+// function covers(root, p) {
+//   // DFS
+//   const stack = [root];
+//
+//   while (stack.length) {
+//     const node = stack.pop();
+//
+//     if (node === p) return true;
+//
+//     if (node.left !== null) {
+//       stack.push(node.left);
+//     }
+//
+//     if (node.right !== null) {
+//       stack.push(node.right);
+//     }
+//   }
+//
+//   // fell through, not covered
+//   return false;
+// }
 
 /**
 * getSibling()
@@ -228,14 +257,14 @@ function covers(root, p) {
 * @return {object} returns the sibling node, otherwise null
 */
 
-function getSibling(node) {
-  if (node === null || node.parent === null) {
-    return null;
-  }
-
-  const parent = node.parent;
-  return parent.left === node ? parent.right : parent.left;
-}
+// function getSibling(node) {
+//   if (node === null || node.parent === null) {
+//     return null;
+//   }
+//
+//   const parent = node.parent;
+//   return parent.left === node ? parent.right : parent.left;
+// }
 
 /**
 * Without parent links
@@ -255,28 +284,28 @@ function getSibling(node) {
 * This algorithm runs in O(n) time on a balanced tree. We know that we can't really
 * do better than that as we need to potentially looks at every node in the tree.
 *
-* @param {object} tree binary tree
+* @param {object} root binary tree
 * @param {object} p binary tree node
 * @param {object} q binary tree node
 * @return {object} returns a node that is the first common ancestor of p, q
 */
 
-function withoutParents(root, p, q) {
-  const stack = [root];
-
-  while (stack.length) {
-    const node = stack.pop();
-    const pLeft = covers(node.left, p);
-    const qLeft = covers(node.left, q);
-
-    // nodes are on different sides
-    if (pLeft !== qLeft) return node;
-
-    const childSide = pLeft ? node.left : node.right;
-    stack.push(childSide);
-  }
-
-  return null;
-}
-
-export { withParents, withParentsAlt, withoutParents };
+// function lowestCommonAncestor(root, p, q) {
+//   const stack = [root];
+//
+//   while (stack.length) {
+//     const node = stack.pop();
+//     const pLeft = covers(node.left, p);
+//     const qLeft = covers(node.left, q);
+//
+//     // nodes are on different sides
+//     if (pLeft !== qLeft) return node;
+//
+//     const childSide = pLeft ? node.left : node.right;
+//     stack.push(childSide);
+//   }
+//
+//   return null;
+// }
+//
+// export { withParents, withParentsAlt, lowestCommonAncestor };

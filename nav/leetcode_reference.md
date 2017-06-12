@@ -235,8 +235,16 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/bst/_validate_bst/validate_bst.js">Validate Binary Search Tree</a></td>
   </tr>
   <tr>
+    <td>104</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_maximum_depth_of_binary_tree/maximum_depth_of_binary_tree.js">Maximum Depth of Binary Tree</a></td>
+  </tr>
+  <tr>
     <td>108</td>
     <td><a href="../assets/graphs/questions/bst/_convert_sorted_array_to_bst/convert_sorted_array_to_bst.js">Convert Sorted Array to Binary Search Tree</a></td>
+  </tr>
+  <tr>
+    <td>110</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_balanced_binary_tree/balanced_binary_tree.js">Balanced Binary Tree</a></td>
   </tr>
   <tr>
     <td>121</td>
@@ -339,6 +347,10 @@ are local test cases as well.
     <td><a href="../assets/search/questions/_count_complete_tree_nodes/count_complete_tree_nodes.js">Count Complete Tree Nodes</a></td>
   </tr>
   <tr>
+    <td>226</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_invert_binary_tree/invert_binary_tree.js">Invert Binary Tree</a></td>
+  </tr>
+  <tr>
     <td>230</td>
     <td><a href="../assets/search/questions/_kth_smallest_element_in_a_bst/kth_smallest_element_in_a_bst.js">Kth Smallest Element in a BST</a></td>
   </tr>
@@ -349,6 +361,10 @@ are local test cases as well.
   <tr>
     <td>234</td>
     <td><a href="../assets/linked_lists/questions/_palindrome_linked_list/palindrome_linked_list.js">Palindrome Linked List</a></td>
+  </tr>
+  <tr>
+    <td>236</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_lowest_common_ancestor_of_binary_tree/lowest_common_ancestor_of_binary_tree.js">Lowest Common Ancestor of a Binary Tree</a></td>
   </tr>
   <tr>
     <td>237</td>
@@ -393,6 +409,10 @@ are local test cases as well.
   <tr>
     <td>278</td>
     <td><a href="../assets/search/questions/_first_bad_version/first_bad_version.js">First Bad Version</a></td>
+  </tr>
+  <tr>
+    <td>285</td>
+    <td><a href="../assets/graphs/questions/bst/_inorder_successor_in_BST/inorder_successor_in_BST.js">Inorder Successor in BST</a></td>
   </tr>
   <tr>
     <td>287</td>
@@ -499,6 +519,10 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/trie/_word_squares/word_squares.js">Word Squares</a></td>
   </tr>
   <tr>
+    <td>437</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_path_sum_III/path_sum_III.js">Path Sum III</a></td>
+  </tr>
+  <tr>
     <td>445</td>
     <td><a href="../assets/greedy/questions/_assign_cookies/assign_cookies.js">Assign Cookies</a></td>
   </tr>
@@ -509,5 +533,9 @@ are local test cases as well.
   <tr>
     <td>547</td>
     <td><a href="../assets/union_find/questions/_friend_circles/friend_circles.js">Friend Circles</a></td>
+  </tr>
+  <tr>
+    <td>572</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_subtree_of_another_tree/subtree_of_another_tree.js">Subtree of Another Tree</a></td>
   </tr>
 </table>

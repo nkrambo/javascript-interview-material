@@ -3,6 +3,7 @@
 * Invert Binary Tree
 *
 * Tags: Binary Tree, BFS, Recursion
+* Leetcode: 226
 *
 * Given a binary tree, invert it so that it's left value appear on the right or
 * vice versa.
@@ -30,6 +31,15 @@
 */
 
 /**
+* Definition for a binary tree node.
+*
+* function TreeNode(val) {
+*   this.val = val;
+*   this.left = this.right = null;
+* }
+*/
+
+/**
 * invertTreeRecursive()
 *
 * Solution:
@@ -49,26 +59,26 @@
 * worst case, where h is the height of the tree. Because h ∈ O(n), the space
 * complexity is O(n).
 *
-* @param {object} tree Tree node
-* @return {object} Returns the same tree node but inverted
+* @param {object} root tree node
+* @return {object} returns the same tree node but inverted
 */
 
-function invertTreeRecursive(node) {
-  // base
-  if (node === null) return null;
-
-  const right = invertTreeRecursive(node.right);
-  const left = invertTreeRecursive(node.left);
-
-  // invert nodes
-  node.left = right;
-  node.right = left;
-
-  return node;
-}
+// function invertTreeRecursive(root) {
+//   // base
+//   if (root === null) return null;
+//
+//   const right = invertTreeRecursive(root.right);
+//   const left = invertTreeRecursive(root.left);
+//
+//   // invert nodes
+//   root.left = right;
+//   root.right = left;
+//
+//   return root;
+// }
 
 /**
-* invertTreeIterative()
+* invertTree()
 *
 * Solution:
 *
@@ -93,29 +103,29 @@ function invertTreeRecursive(node) {
 * nodes in one level of the binary tree. For a full binary tree, the leaf level
 * had n / 2 = O(n) leaves.
 *
-* @param {object} tree Tree node
-* @return {object} Returns the same tree node but inverted
+* @param {object} root tree node
+* @return {object} returns the same tree node but inverted
 */
 
-function invertTreeIterative(root) {
-  if (root === null) return null;
-  const queue = [root];
-
-  while (queue.length) {
-    // dequeue
-    const current = queue.shift();
-
-    // invert nodes
-    const temp = current.left;
-    current.left = current.right;
-    current.right = temp;
-
-    // queue up nodes
-    if (current.left !== null) queue.push(current.left);
-    if (current.right !== null) queue.push(current.right);
-  }
-
-  return root;
-}
-
-export { invertTreeRecursive, invertTreeIterative };
+// function invertTree(root) {
+//   if (root === null) return null;
+//   const queue = [root];
+//
+//   while (queue.length) {
+//     // dequeue
+//     const current = queue.shift();
+//
+//     // invert nodes
+//     const temp = current.left;
+//     current.left = current.right;
+//     current.right = temp;
+//
+//     // queue up nodes
+//     if (current.left !== null) queue.push(current.left);
+//     if (current.right !== null) queue.push(current.right);
+//   }
+//
+//   return root;
+// }
+//
+// export { invertTreeRecursive, invertTree };

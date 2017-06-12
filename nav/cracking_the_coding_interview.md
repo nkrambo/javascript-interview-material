@@ -47,7 +47,7 @@
     <td><a href="../assets/graphs/questions/bst/second_largest_element/second_largest_element.js">Second Largest Element</a></td>
   </tr>
   <tr>
-    <td>BST</td>
-    <td><a href="../assets/graphs/questions/bst/successor/successor.js">Successor</a></td>
+    <td>Binary Tree</td>
+    <td><a href="../assets/graphs/questions/binary_tree/list_of_depths/list_of_depths.js">List of Depths</a></td>
   </tr>
 </table>
