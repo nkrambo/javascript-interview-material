@@ -443,6 +443,10 @@ are local test cases as well.
     <td><a href="../assets/greedy/questions/_remove_duplcate_letters/remove_duplcate_letters.js">Remove Duplicate Letters</a></td>
   </tr>
   <tr>
+    <td>322</td>
+    <td><a href="../assets/dynamic_programming/questions/_coin_change/coin_change.js">Coin Change</a></td>
+  </tr>
+  <tr>
     <td>323</td>
     <td><a href="../assets/union_find/questions/_number_of_connected_components/number_of_connected_components.js">Number of Connected Components in an Undirected Graph</a></td>
   </tr>

@@ -1,8 +1,9 @@
 
 /**
-* Coin Change II
+* Coin Change
 *
 * Tags: Bottom Up, Dynamic Programming
+* Leetcode: 322
 *
 * You are given coins of different denominations and a total amount of money amount.
 * Write a function to compute the fewest number of coins that you need to make up
@@ -131,88 +132,4 @@
 //   return matrix[rows-1][cols-1];
 // }
 //
-// /**
-// * minCoinsBottomUpAlt()
-// *
-// * Solution:
-// *
-// * This is an alternative bottom-up approach where we only use a single array to
-// * solve the problem, instead of a matrix.
-// *
-// * Time: O(n * k)
-// * Space: O(n * k)
-// *
-// * Where n is the number of coins and k is the total.
-// *
-// * @param {number} total change required
-// * @param {array} denominations available
-// * @return {number} returns the minimum number of coins require to make total
-// */
-//
-// function minCoinsBottomUpAlt(total, denominations) {
-//   const cols = total + 1; // add 1 for 0s column
-//
-//   return;
-// }
-//
-// // cols = total + 1
-// // T =[0 if idx == 0 else float("inf") for idx in range(cols)]
-// // R = [-1 for _ in range(total + 1)]
-// //
-// // for j in range(len(coins)):
-// //     for i in range(1, cols):
-// //         coin = coins[j]
-// //         if i >= coins[j]:
-// //             if T[i] > 1 + T[i - coin]:
-// //                 T[i] = 1 + T[i - coin]
-// //                 R[i] = j
-// //
-// // print_coins(R, coins)
-// // return T[cols - 1]
-//
-// /**
-// * MinCoinsTopDown
-// *
-// * Time: O(n * k)
-// * Space: O(n * k)
-// *
-// * Where n is the number of coins and k is the total.
-// *
-// * @param {number} total change required
-// * @param {array} denominations available
-// * @return {number} returns the minimum number of coins require to make total
-// */
-//
-// class MinCoinsTopDown {
-//   constructor() {
-//     this.memo = new Map();
-//   }
-//
-//   minCoins(total, denominations) {
-//
-//     // base case
-//     if (total === 0) return 0;
-//
-//     // check memo
-//     if (this.memo.has(total)) {
-//       return this.memo.get(total);
-//     }
-//
-//     let minValue = Infinity;
-//     for (let i = 0; i < denominations.length; i += 1) {
-//       const coin = denominations[i];
-//
-//       if (coin > total) continue;
-//
-//       const value = this.minCoins(total - coin, denominations);
-//       minValue = Math.min(minValue, value);
-//     }
-//
-//     minValue += 1;
-//     this.memo.set(total, minValue);
-//
-//     return minValue;
-//   }
-// }
-//
-// export { minCoinsBottomUp, minCoinsBottomUpAlt, MinCoinsTopDown };
+// export default coinChange
