@@ -431,6 +431,10 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/fenwick_tree/_range_sum_query_2D_mutable/range_sum_query_2D_mutable.js">Range Sum Query 2D Mutable</a></td>
   </tr>
   <tr>
+    <td>312</td>
+    <td><a href="../assets/dynamic_programming/questions/_burst_ballons/burst_ballons.js">Burst Ballons</a></td>
+  </tr>
+  <tr>
     <td>315</td>
     <td><a href="../assets/graphs/questions/bst/_count_smaller_numbers_after_self/count_smaller_numbers_after_self.js">Count of Smaller Numbers After Self</a></td>
   </tr>
@@ -481,6 +485,10 @@ are local test cases as well.
   <tr>
     <td>350</td>
     <td><a href="../assets/search/questions/_intersection_of_two_arrays_II/intersection_of_two_arrays_II.js">Intersection of Two Arrays II</a></td>
+  </tr>
+  <tr>
+    <td>351</td>
+    <td><a href="../assets/dynamic_programming/questions/_android_unlock_patterns/android_unlock_patterns.js">Android Unlock Patterns</a></td>
   </tr>
   <tr>
     <td>352</td>

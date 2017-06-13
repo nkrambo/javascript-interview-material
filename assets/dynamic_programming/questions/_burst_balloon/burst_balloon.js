@@ -2,9 +2,10 @@
 /**
 * Burst Balloons
 *
-* Tags: Bottom Up, Dynamic Programming
+* Tags: Bottom Up, Dynamic Programming, Divide and Conquer
+* Leetcode: 312
 *
-* Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number
+* Given n balloons, indexed from 0 to n - 1. Each balloon is painted with a number
 * on it represented by array nums. You are asked to burst all the balloons. If the
 * you burst balloon i you will get nums[left] * nums[i] * nums[right] coins. Here
 * left and right are adjacent indices of i. After the burst, the left and right then
@@ -13,7 +14,10 @@
 * Find the maximum coins you can collect by bursting the balloons wisely.
 *
 * Note:
-* 1. You may imagine nums[-1] = nums[n] = 1. They are not real therefore you can not burst them.
+*
+* 1. You may imagine nums[-1] = nums[n] = 1. They are not real therefore you
+*    can not burst them.
+*
 * 2. 0 ≤ n ≤ 500, 0 ≤ nums[i] ≤ 100
 *
 * Example:
@@ -28,3 +32,20 @@
 * https://www.youtube.com/watch?v=IFNibRVgFBo
 */
 
+/**
+* maxCoins()
+*
+* Solution:
+*
+* Time: O(1)
+* Space: O(1)
+*
+* @param {array} nums of balloons
+* @return {number} returns the maximum coins
+*/
+
+// function maxCoins(nums) {
+//
+// }
+//
+// export default maxCoins;

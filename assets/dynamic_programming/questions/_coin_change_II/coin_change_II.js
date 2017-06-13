@@ -1,21 +1,31 @@
 
 /**
-* Coin Change, Minimum Coins
+* Coin Change II
 *
-* Tags: Bottom Up, Classic Problems
+* Tags: Bottom Up, Dynamic Programming
 *
-* Given a total and coins of certain denominations find number of ways total can
-* be formed from coins assuming infinity supply of coins.
+* You are given coins of different denominations and a total amount of money amount.
+* Write a function to compute the fewest number of coins that you need to make up
+* that amount. If that amount of money cannot be made up by any combination of
+* the coins, return -1.
 *
-* Assume that the denominations will always be sorted.
+* Example 1:
 *
-* Example:
-* Input: 11, [1, 5, 6, 8]
-* Output: 1, [5, 6]
+* Given: [1, 2, 5], 11
+* Return: 3, [5, 5, 1]
+*
+* Example 2:
+*
+* Given: [2], 3
+* Return: -1
+*
+* Note:
+*
+* You may assume that you have an infinite number of each kind of coin.
 */
 
 /**
-* minCoinsBottomUp()
+* coinChange()
 *
 * Solution:
 *
@@ -84,14 +94,14 @@
 *
 * Where n is the number of coins and k is the total.
 *
-* @param {number} total change required
-* @param {array} denominations available
+* @param {number} coins available
+* @param {array} amount of change required
 * @return {number} returns the minimum number of coins require to make total
 */
 
-// function minCoinsBottomUp(total, denominations) {
+// function coinChange(coins, amount) {
 //   const cols = total + 1;                // add 1 for 0s column
-//   const rows = denominations.length + 1; // add 1 for Infinity row
+//   const rows = coins.length + 1; // add 1 for Infinity row
 //
 //   // build matrix, 0s by default
 //   const matrix = [];
@@ -107,13 +117,13 @@
 //     for (let j = 1; j < cols; j += 1) {
 //
 //       // if the total is less than the current denomination, take the top
-//       if (j < denominations[i-1]) {
+//       if (j < coins[i-1]) {
 //         matrix[i][j] = matrix[i-1][j];
 //
 //       // otherwise, check if we can do better than
 //       // the top with the current and difference results
 //       } else {
-//         matrix[i][j] = Math.min(matrix[i-1][j], matrix[i][j-denominations[i-1]] + 1);
+//         matrix[i][j] = Math.min(matrix[i-1][j], matrix[i][j-coins[i-1]] + 1);
 //       }
 //     }
 //   }

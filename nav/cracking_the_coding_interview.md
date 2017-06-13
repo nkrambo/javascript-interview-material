@@ -50,4 +50,8 @@
     <td>Binary Tree</td>
     <td><a href="../assets/graphs/questions/binary_tree/list_of_depths/list_of_depths.js">List of Depths</a></td>
   </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td><a href="../assets/dynamic_programming/questions/_boolean_evaluation/boolean_evaluation.js">Boolean Evaluation</a></td>
+  </tr>
 </table>
