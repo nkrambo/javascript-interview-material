@@ -207,6 +207,10 @@ are local test cases as well.
     <td><a href="../assets/search/questions/_pow(x,n)/pow.js">Pow(x, n)</a></td>
   </tr>
   <tr>
+    <td>51</td>
+    <td><a href="../assets/dynamic_programming/questions/_n_queens/n_queens.js">N-Queens</a></td>
+  </tr>
+  <tr>
     <td>55</td>
     <td><a href="../assets/greedy/questions/_jump_game/jump_game.js">Jump Game</a></td>
   </tr>
@@ -301,6 +305,10 @@ are local test cases as well.
   <tr>
     <td>167</td>
     <td><a href="../assets/search/questions/_two_sum_II/two_sum_II.js">Two Sum II - Input Array is Sorted</a></td>
+  </tr>
+  <tr>
+    <td>174</td>
+    <td><a href="../assets/dynamic_programming/questions/_dungeon_game/dungeon_game.js">Dungeon Game</a></td>
   </tr>
   <tr>
     <td>200</td>

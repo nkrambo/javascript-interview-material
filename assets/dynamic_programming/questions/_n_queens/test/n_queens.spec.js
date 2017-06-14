@@ -1,8 +1,8 @@
 //
 // import { expect } from 'chai';
-// import placeQueens from '../eight_queens';
+// import solveNQueens from '../n_queens';
 //
-// describe('placeQueens()', () => {
+// describe('solveNQueens()', () => {
 //   it('should', () => {
 //
 //   });
