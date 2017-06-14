@@ -211,6 +211,10 @@ are local test cases as well.
     <td><a href="../assets/dynamic_programming/questions/_n_queens/n_queens.js">N-Queens</a></td>
   </tr>
   <tr>
+    <td>52</td>
+    <td><a href="../assets/dynamic_programming/questions/_n_queens_II/n_queens_II.js">N-Queens II</a></td>
+  </tr>
+  <tr>
     <td>55</td>
     <td><a href="../assets/greedy/questions/_jump_game/jump_game.js">Jump Game</a></td>
   </tr>
