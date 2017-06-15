@@ -3,6 +3,7 @@
 * House Robber II
 *
 * Tags: Dynamic Programming, Bottom Up
+* Leetcode: 231
 *
 * Note: This is an extension of House Robber.
 *
@@ -18,21 +19,19 @@
 */
 
 /**
-* robHomesCircular()
+* rob()
 *
 * Solution:
 *
-* Time: O(n)
+* Time: O(1)
 * Space: O(1)
 *
-* Where (n) is the number of houses.
-*
-* @param {array} homes amount of cash available in each home on street
+* @param {array} nums amount of cash available in each home on street
 * @return {number} returns the maximum amount of cash without alerting police
 */
 
-// function robHomesCircular(homes) {
+// function rob(nums) {
 //
 // }
 //
-// export default robHomesCircular;
+// export default rob;

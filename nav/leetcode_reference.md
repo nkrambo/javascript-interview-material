@@ -367,6 +367,10 @@ are local test cases as well.
     <td><a href="../assets/search/questions/_kth_smallest_element_in_a_bst/kth_smallest_element_in_a_bst.js">Kth Smallest Element in a BST</a></td>
   </tr>
   <tr>
+    <td>231</td>
+    <td><a href="../assets/dynamic_programming/questions/_house_robber_II/house_robber_II.js">House Robber II</a></td>
+  </tr>
+  <tr>
     <td>232</td>
     <td><a href="../assets/queues_and_stacks/questions/_implement_queue_using_stacks/implement_queue_using_stacks.js">Implement Queue Using Stacks</a></td>
   </tr>
