@@ -3,16 +3,26 @@
 * Longest Palindromic Subsequence
 *
 * Tags: Dynamic Programming
+* Leetcode: 516
 *
-* Given a string find longest palindromic subsequence in this string.
+* Given a string s, find the longest palindromic subsequence's length in s. You
+* may assume that the maximum length of s is 1000.
 *
-* Example:
-* Input: 'agbdba'
-* Output: 5, 'abdba'
+* Example 1:
+*
+* Input: 'bbbab'
+* Output: 4
+* One possible longest palindromic subsequence is 'bbbb'.
+*
+* Example: 2:
+*
+* Input: 'cbbd'
+* Output: 2
+* One possible longest palindromic subsequence is 'bb'.
 */
 
 /**
-* longestPalindromicSub()
+* longestPalindromeSubseq()
 *
 * Solution:
 *
@@ -45,63 +55,12 @@
 * Time: O(n * k)
 * Space: O(n * k)
 *
-* @param {string} str sequence
-* @return {number} returns the longest palindromic subsequence of str
+* @param {string} s string
+* @return {number} returns the longest palindromic subsequence of s
 */
 
-// function longestPalindromicSub(str) {
-//   const rows = cols = str.length;
+// function longestPalindromeSubseq(s) {
 //
-//   // build matrix
-//   const matrix = [];
-//   for (let i = 0; i < rows; i += 1) {
-//     matrix[i] = new Array(cols);
-//   }
-//
-//   // insert 1s
-//   matrix.forEach((row, index) => {
-//     row[index] = 1;
-//   });
-//
-//   // for () {
-//   //   for () {
-//   //     if () {
-//   //
-//   //       if () {
-//   //
-//   //       } else {
-//   //
-//   //       }
-//   //
-//   //     } else {
-//   //
-//   //     }
-//   //   }
-//   // }
-//
-//   // return top-right
-//   return matrix[0][matrix.length - 1];
 // }
 //
-// // def longest_palindromic_subsequence(given_string):
-// //     rows = cols = string_length = len(given_string)
-// //     T = [[0 for _ in range(cols)] for _ in range(rows)]
-// //
-// //     for row in range(rows):
-// //         T[row][row] = 1
-// //
-// //     for substring_length in range(2, string_length + 1):
-// //         for row in range(0, string_length - substring_length + 1):
-// //             col = row + substring_length - 1
-// //
-// //             if given_string[row] == given_string[col]:
-// //                 if string_length == 2:
-// //                     T[row][col] = 2
-// //                 else:
-// //                     T[row][col] = 2 + T[row + 1][col - 1]
-// //             else:
-// //                 T[row][col] = max(T[row + 1][col], T[row][col - 1])
-// //
-// //     return T[0][-1]
-//
-// export default longestPalindromicSub;
+// export default longestPalindromeSubseq;

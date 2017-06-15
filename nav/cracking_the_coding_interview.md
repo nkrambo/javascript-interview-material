@@ -54,4 +54,8 @@
     <td>Dynamic Programming</td>
     <td><a href="../assets/dynamic_programming/questions/_boolean_evaluation/boolean_evaluation.js">Boolean Evaluation</a></td>
   </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td><a href="../assets/dynamic_programming/questions/_paint_fill/paint_fill.js">Paint Fill</a></td>
+  </tr>
 </table>

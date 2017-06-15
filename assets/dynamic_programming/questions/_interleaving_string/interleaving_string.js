@@ -2,18 +2,19 @@
 /**
 * Interleaving String
 *
+* Tags: Dynamic Programming, String
+* Leetcode: 97
+*
 * Given strings s1, s2, s3, find whether s3 is formed by the interleaving of s1 and s2.
 *
-* s3 is said to be interleaving s1 and s2, if it contains all characters of s1 and
-* s2 and order of all characters in individual strings is preserved.
-*
 * Example:
-* Input: 'aab', 'axy', 'aaxaby'
-* Output: true
 *
-* Example:
-* Input: 'aab', 'axy', 'abaaxy'
-* Output: false
+* Given:
+* s1 = 'aabcc',
+* s2 = 'dbbca',
+*
+* When s3 = 'aadbbcbcac', return true.
+* When s3 = 'aadbbbaccc', return false.
 */
 
 /**

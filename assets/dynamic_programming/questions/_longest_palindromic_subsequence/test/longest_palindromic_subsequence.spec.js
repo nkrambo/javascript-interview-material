@@ -1,8 +1,8 @@
 //
 // import { expect } from 'chai';
-// import longestPalindromicSub from '../longest_palindromic_subsequence';
+// import longestPalindromeSubseq from '../longest_palindromic_subsequence';
 //
-// describe('longestPalindromicSub()', () => {
+// describe('longestPalindromeSubseq()', () => {
 //   it('should return the longest palindromic subsequence', () => {
 //   });
 // });

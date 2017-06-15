@@ -239,6 +239,10 @@ are local test cases as well.
     <td><a href="../assets/linked_lists/questions/_partition_list/partition_list.js">Partition List</a></td>
   </tr>
   <tr>
+    <td>97</td>
+    <td><a href="../assets/dynamic_programming/questions/_interleaving_string/interleaving_string.js">Interleaving String</a></td>
+  </tr>
+  <tr>
     <td>98</td>
     <td><a href="../assets/graphs/questions/bst/_validate_bst/validate_bst.js">Validate Binary Search Tree</a></td>
   </tr>
@@ -557,6 +561,10 @@ are local test cases as well.
   <tr>
     <td>472</td>
     <td><a href="../assets/graphs/questions/trie/_concatenated_words/concatenated_words.js">Concatenated Words</a></td>
+  </tr>
+  <tr>
+    <td>516</td>
+    <td><a href="../assets/dynamic_programming/questions/_longest_palindromic_subsequence/longest_palindromic_subsequence.js">Longest Palindromic Subsequence</a></td>
   </tr>
   <tr>
     <td>547</td>
