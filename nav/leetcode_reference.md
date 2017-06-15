@@ -439,6 +439,10 @@ are local test cases as well.
     <td><a href="../assets/search/questions/_find_the_duplicate_number/find_the_duplicate_number.js">Find the Duplicate Number</a></td>
   </tr>
   <tr>
+    <td>304</td>
+    <td><a href="../assets/dynamic_programming/questions/_range_sum_query_2D_immutable/range_sum_query_2D_immutable.js">Range Sum Query 2D Immutable</a></td>
+  </tr>
+  <tr>
     <td>305</td>
     <td><a href="../assets/union_find/questions/_number_of_islands_II/number_of_islands_II.js">Number of Islands II</a></td>
   </tr>

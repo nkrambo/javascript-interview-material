@@ -58,4 +58,12 @@
     <td>Dynamic Programming</td>
     <td><a href="../assets/dynamic_programming/questions/_paint_fill/paint_fill.js">Paint Fill</a></td>
   </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td><a href="../assets/dynamic_programming/questions/_recursive_multiply/recursive_multiply.js">Recursive Multiply</a></td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td><a href="../assets/dynamic_programming/questions/_robot_in_a_grid/robot_in_a_grid.js">Robot in a Grid</a></td>
+  </tr>
 </table>

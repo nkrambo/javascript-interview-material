@@ -2,6 +2,8 @@
 /**
 * Scramble String
 *
+* Tags: Dynamic Programming, String
+*
 * Given a string str1, we may represent it as a binary tree by partitioning it
 * to two non-empty substrings recursively.
 *
@@ -52,17 +54,12 @@
 * Time: O(1)
 * Space: O(1)
 *
-* @param {string} str1 string
-* @param {string} str2 string to check if scramble of str1
-* @return {boolean} returns true if str2 is a scramble of str1
+* @param {string} s1 string
+* @param {string} s2 string to check if scramble of s1
+* @return {boolean} returns true if s2 is a scramble of s1
 */
 
-// function isScramble(str1, str2) {
-//
-//   // length check
-//   if (str1.length !== str2.length) return false;
-//
-//   // divide string and check that characters are non-leaf nodes
+// function isScramble(s1, s2) {
 //
 // }
 //
