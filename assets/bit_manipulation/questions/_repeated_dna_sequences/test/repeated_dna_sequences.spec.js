@@ -1,9 +1,9 @@
 //
 // import { expect } from 'chai';
-// import findRepeatedDna from '../repeated_dna_sequence';
+// import findRepeatedDnaSequences from '../repeated_dna_sequence';
 //
-// describe('findRepeatedDna()', () => {
+// describe('findRepeatedDnaSequences()', () => {
 //   it('should return an array of repeated DNA strings', () => {
-//     expect(findRepeatedDna('AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT')).to.deep.equal(['AAAAACCCCC', 'CCCCCAAAAA']);
+//     expect(findRepeatedDnaSequences('AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT')).to.deep.equal(['AAAAACCCCC', 'CCCCCAAAAA']);
 //   });
 // });

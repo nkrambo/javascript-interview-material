@@ -1,8 +1,9 @@
 
 /**
-* UTF8 Validation
+* UTF-8 Validation
 *
-* Types: Bit Manipulation
+* Tags: Bit Manipulation
+* Leetcode: 393
 *
 * A character in UTF8 can be from 1 to 4 bytes long, subjected to the following rules:
 *
@@ -30,23 +31,33 @@
 * integer is used to store the data. This means each integer represents only 1
 * byte of data.
 *
-* Example:
+* Example 1:
+*
 * Input: [197, 130, 1], which represents the octet sequence: 11000101 10000010 00000001.
 * Output: true
+*
 * It is a valid utf-8 encoding for a 2-bytes character followed by a 1-byte character.
 *
-* Example:
+* Example 2:
+*
 * Input: [235, 140, 4], which represented the octet sequence: 11101011 10001100 00000100.
 * Output: false
+*
 * The first 3 bits are all one's and the 4th bit is 0 means it is a 3-bytes character.
 * The next byte is a continuation byte which starts with 10 and that's correct.
 * But the second continuation byte does not start with 10, so it is invalid.
+*/
+
+/**
+* validUtf8()
+*
+* Solution:
 *
 * Time: O(1)
 * Space: O(1)
 *
 * @param {array} data array of integers, representing data
-* @return {boolean} Returns true if the data is in valid UTF8 encoding, otherwise false
+* @return {boolean} returns true if the data is in valid UTF8 encoding, otherwise false
 */
 
 // function validUtf8(data) {

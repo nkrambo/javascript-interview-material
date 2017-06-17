@@ -2,21 +2,29 @@
 /**
 * Power of Four
 *
-* Types: Bit Manipulation
+* Tags: Bit Manipulation
+* Leetcode: 342
 *
 * Given an integer (signed 32 bits), write a function to check whether it is a
 * power of 4.
 *
-* Example:
+* Example 1:
+*
 * Input: 16
 * Output: true
 *
-* Example:
+* Example 2:
+*
 * Input: 5
 * Output: false
 *
 * Follow up:
+*
 * Could you solve it without loops/recursion?
+*/
+
+/**
+* isPowerOfFour()
 *
 * Solution:
 *
@@ -120,11 +128,6 @@
 *
 * 0 + 1 + 2 ... n = n(n + 1) / 2
 *
-(4^n - 1) % 3 == 0
-another proof:
-(1) 4^n - 1 = (2^n + 1) * (2^n - 1)
-(2) among any 3 consecutive numbers, there must be one that is a multiple of 3
-among (2^n-1), (2^n), (2^n+1), one of them must be a multiple of 3, and (2^n) cannot be the one, therefore either (2^n-1) or (2^n+1) must be a multiple of 3, and 4^n-1 must be a multiple of 3 as well.
 *
 * Time: O(1)
 * Space: O(1)
@@ -133,8 +136,8 @@ among (2^n-1), (2^n), (2^n+1), one of them must be a multiple of 3, and (2^n) ca
 * @return {boolean} Returns true if num is a power of 4, otherwise false
 */
 
-// function powerOfFour(num) {
+// function isPowerOfFour(num) {
 //   return num <= 0 ? false : (num & (num - 1)) === 0 && (num - 1) % 3 === 0;
 // }
 //
-// export default powerOfFour;
+// export default isPowerOfFour;

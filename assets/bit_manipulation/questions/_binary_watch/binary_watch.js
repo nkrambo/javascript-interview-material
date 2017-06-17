@@ -2,7 +2,8 @@
 /**
 * Binary Watch
 *
-* Types: Bit Manipulation
+* Tags: Bit Manipulation, Backtracking
+* Leetcode: 401
 *
 * A binary watch has 4 LEDs on the top which represent the hours (0-11), and the
 * 6 LEDs on the bottom represent the minutes (0-59).
@@ -42,16 +43,7 @@
 */
 
 // function readBinaryWatch(num) {
-//   const times = [];
-//   for (let h = 0; h < 12; h += 1) {
-//     for (let m = 0; m < 60; m += 1) {
-//       if ((h * 64 + m) === num) {
-//         times.push(`${h}:${m}`);
-//       }
-//     }
-//   }
 //
-//   return times;
 // }
 //
 // export default readBinaryWatch;

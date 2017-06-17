@@ -2,7 +2,8 @@
 /**
 * Repeated DNA Sequences
 *
-* Types: Bit Manipulation
+* Tags: Bit Manipulation
+* Leetcode: 187
 *
 * All DNA is composed of a series of nucleotides abbreviated as A, C, G, and T,
 * for example: 'ACGAATTCCG'. When studying DNA, it is sometimes useful to identify
@@ -12,18 +13,25 @@
 * more than once in a DNA molecule.
 *
 * Example:
+*
 * Input: 'AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT'
 * Output: ['AAAAACCCCC', 'CCCCCAAAAA']
+*/
+
+/**
+* findRepeatedDnaSequences()
+*
+* Solution:
 *
 * Time: O(1)
 * Space: O(1)
 *
-* @param {string} dna
+* @param {string} s
 * @return {array} Returns an array of repeated DNA strings
 */
 
-// function findRepeatedDna(dna) {
+// function findRepeatedDnaSequences(s) {
 //
 // }
 //
-// export default findRepeatedDna;
+// export default findRepeatedDnaSequences;

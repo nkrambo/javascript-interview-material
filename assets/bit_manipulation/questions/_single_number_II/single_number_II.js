@@ -2,7 +2,8 @@
 /**
 * Single Number II
 *
-* Types: Bit Manipulation
+* Tags: Bit Manipulation
+* Leetcode: 137
 *
 * Given an array of integers, every element appears three times except for one.
 * Find that single one.
@@ -10,6 +11,10 @@
 * Note:
 * Your algorithm should have a linear runtime complexity. Could you implement it
 * without using extra memory?
+*/
+
+/**
+* singleNumber()
 *
 * Solution:
 *
@@ -41,7 +46,7 @@
 * @return {number} Returns the unique value in nums
 */
 
-// function singleNumberII(nums) {
+// function singleNumber(nums) {
 //   let ones = 0;
 //   let twos = 0;
 //
@@ -53,4 +58,4 @@
 //   return ones;
 // }
 //
-// export default singleNumberII;
+// export default singleNumber;

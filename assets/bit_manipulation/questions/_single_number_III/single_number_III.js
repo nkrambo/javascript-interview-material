@@ -2,13 +2,15 @@
 /**
 * Single Number III
 *
-* Types: Bit Manipulation
+* Tags: Bit Manipulation
+* Leetcode: 260
 *
 * Given an array of numbers nums, in which exactly two elements appear only once
 * and all the other elements appear exactly twice. Find the two elements that
 * appear only once.
 *
 * Example:
+*
 * Input: [1, 2, 1, 3, 2, 5]
 * Output: [3, 5]
 *
@@ -19,16 +21,22 @@
 *
 * 2. Your algorithm should run in linear runtime complexity. Could you implement
 *    it using only constant space complexity?
+*/
+
+/**
+* singleNumber()
+*
+* Solution:
 *
 * Time: O(1)
 * Space: O(1)
 *
-* @param {array} array of numbers all appearing twice, except 2 numbers appearing once
+* @param {array} nums of numbers all appearing twice, except 2 numbers appearing once
 * @return {array} Returns an array of the values appearing once
 */
 
-// function singleNumberIII(nums) {
+// function singleNumber(nums) {
 //
 // }
 //
-// export default singleNumberIII;
+// export default singleNumber;

@@ -2,7 +2,8 @@
 /**
 * Integer Replacement
 *
-* Types: Bit Manipulation
+* Tags: Bit Manipulation, Math
+* Leetcode: 397
 *
 * Given a positive integer num and you can do operations as follow:
 *
@@ -11,24 +12,33 @@
 *
 * What is the minimum number of replacements needed for num to become 1?
 *
-* Example:
+* Example 1:
+*
 * Input: 8
 * Output: 3
-* 8 -> 4 -> 2 -> 1
+* 8 → 4 → 2 → 1
 *
-* Example:
+* Example 2:
+*
 * Input: 7
 * Output: 4
-* 7 -> 8 -> 4 -> 2 -> 1 or 7 -> 6 -> 3 -> 2 -> 1
+* 7 → 8 → 4 → 2 → 1 or 7 → 6 → 3 → 2 → 1
+*/
+
+/**
+* integerReplacement()
+*
+* Solution:
+*
 *
 * Time: O(1)
 * Space: O(1)
 *
-* @param {number} num 32-bit unsigned integer
-* @return {number} Returns calculated the minimum replacements for num to equal 1
+* @param {number} n 32-bit unsigned integer
+* @return {number} Returns calculated the minimum replacements for n to equal 1
 */
 
-// function integerReplacement(num) {
+// function integerReplacement(n) {
 //
 // }
 //

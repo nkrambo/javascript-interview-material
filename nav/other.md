@@ -118,6 +118,10 @@
     <td>Dynamic Programming</td>
     <td><a href="../assets/dynamic_programming/questions/total_ways/total_ways.js">Total Ways</a></td>
   </tr>
+  <tr>
+    <td>Bit Manipulation</td>
+    <td><a href="../assets/bit_manipulation/questions/stolen_breakfast_drone/stolen_breakfast_drone.js">Stolen Breakfast Drone</a></td>
+  </tr>
 </table>
 
 

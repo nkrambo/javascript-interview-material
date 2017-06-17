@@ -235,6 +235,10 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/_minimum_window_substring/minimum_window_substring.js">Minimum Window Substring</a></td>
   </tr>
   <tr>
+    <td>78</td>
+    <td><a href="../assets/bit_manipulation/questions/_subsets/subsets.js">Subsets</a></td>
+  </tr>
+  <tr>
     <td>86</td>
     <td><a href="../assets/linked_lists/questions/_partition_list/partition_list.js">Partition List</a></td>
   </tr>
@@ -283,6 +287,14 @@ are local test cases as well.
     <td><a href="../assets/greedy/questions/_candy/candy.js">Candy</a></td>
   </tr>
   <tr>
+    <td>136</td>
+    <td><a href="../assets/bit_manipulation/questions/_single_number/single_number.js">Single Number</a></td>
+  </tr>
+  <tr>
+    <td>137</td>
+    <td><a href="../assets/bit_manipulation/questions/_single_number_II/single_number_II.js">Single Number II</a></td>
+  </tr>
+  <tr>
     <td>142</td>
     <td><a href="../assets/linked_lists/questions/_linked_list_cycle_II/linked_list_cycle_II.js">Linked List Cycle II</a></td>
   </tr>
@@ -319,8 +331,24 @@ are local test cases as well.
     <td><a href="../assets/search/questions/_two_sum_II/two_sum_II.js">Two Sum II - Input Array is Sorted</a></td>
   </tr>
   <tr>
+    <td>169</td>
+    <td><a href="../assets/bit_manipulation/questions/_majority_element/majority_element.js">Majority Element</a></td>
+  </tr>
+  <tr>
     <td>174</td>
     <td><a href="../assets/dynamic_programming/questions/_dungeon_game/dungeon_game.js">Dungeon Game</a></td>
+  </tr>
+  <tr>
+    <td>187</td>
+    <td><a href="../assets/bit_manipulation/questions/_repeated_dna_sequences/repeated_dna_sequences.js">Repeated DNA Sequences</a></td>
+  </tr>
+  <tr>
+    <td>190</td>
+    <td><a href="../assets/bit_manipulation/questions/_reverse_bits/reverse_bits.js">Reverse Bits</a></td>
+  </tr>
+  <tr>
+    <td>191</td>
+    <td><a href="../assets/bit_manipulation/questions/_number_of_1_bits/number_of_1_bits.js">Number of 1 Bits (Hamming Weight)</a></td>
   </tr>
   <tr>
     <td>198</td>
@@ -329,6 +357,10 @@ are local test cases as well.
   <tr>
     <td>200</td>
     <td><a href="../assets/union_find/questions/_number_of_islands/number_of_islands.js">Number of Islands</a></td>
+  </tr>
+  <tr>
+    <td>201</td>
+    <td><a href="../assets/bit_manipulation/questions/_bitwise_AND_of_numbers_range/bitwise_AND_of_numbers_range.js">Bitwise AND of Numbers Range</a></td>
   </tr>
   <tr>
     <td>202</td>
@@ -359,6 +391,10 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/trie/_word_search_II/word_search_II.js">Word Search II</a></td>
   </tr>
   <tr>
+    <td>213</td>
+    <td><a href="../assets/dynamic_programming/questions/_house_robber_II/house_robber_II.js">House Robber II</a></td>
+  </tr>
+  <tr>
     <td>218</td>
     <td><a href="../assets/graphs/questions/fenwick_tree/_skyline_problem/skyline_problem.js">The Skyline Problem</a></td>
   </tr>
@@ -380,7 +416,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>231</td>
-    <td><a href="../assets/dynamic_programming/questions/_house_robber_II/house_robber_II.js">House Robber II</a></td>
+    <td><a href="../assets/bit_manipulation/questions/_power_of_two/power_of_two.js">Power of Two</a></td>
   </tr>
   <tr>
     <td>232</td>
@@ -419,12 +455,20 @@ are local test cases as well.
     <td><a href="../assets/greedy/questions/_meeting_rooms_II/meeting_rooms_II.js">Meeting Rooms II</a></td>
   </tr>
   <tr>
+    <td>260</td>
+    <td><a href="../assets/bit_manipulation/questions/_single_number_III/single_number_III.js">Single Number III</a></td>
+  </tr>
+  <tr>
     <td>261</td>
     <td><a href="../assets/union_find/questions/_graph_valid_tree/graph_valid_tree.js">Graph Valid Tree</a></td>
   </tr>
   <tr>
     <td>266</td>
     <td><a href="../assets/strings/questions/palindrome_permutation/palindrome_permutation.js">Palindrome Permutation</a></td>
+  </tr>
+  <tr>
+    <td>268</td>
+    <td><a href="../assets/bit_manipulation/questions/_missing_number/missing_number.js">Missing Number</a></td>
   </tr>
   <tr>
     <td>269</td>
@@ -479,6 +523,14 @@ are local test cases as well.
     <td><a href="../assets/greedy/questions/_remove_duplcate_letters/remove_duplcate_letters.js">Remove Duplicate Letters</a></td>
   </tr>
   <tr>
+    <td>318</td>
+    <td><a href="../assets/bit_manipulation/questions/_max_product_of_word_lengths/max_product_of_word_lengths.js">Max Product of Word Lengths</a></td>
+  </tr>
+  <tr>
+    <td>320</td>
+    <td><a href="../assets/bit_manipulation/questions/_generalized_abbreviation/generalized_abbreviation.js">Generalized Abbreviation</a></td>
+  </tr>
+  <tr>
     <td>322</td>
     <td><a href="../assets/dynamic_programming/questions/_coin_change/coin_change.js">Coin Change</a></td>
   </tr>
@@ -507,8 +559,16 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/trie/_palindrome_pairs/palindrome_pairs.js">Palindrome Pairs</a></td>
   </tr>
   <tr>
+    <td>338</td>
+    <td><a href="../assets/bit_manipulation/questions/_counting_bits/counting_bits.js">Counting Bits</a></td>
+  </tr>
+  <tr>
     <td>340</td>
     <td><a href="../assets/strings/questions/_longest_substring_most_k_distinct/longest_substring_most_k_distinct.js">Longest Substring with at Most K Distinct Characters</a></td>
+  </tr>
+  <tr>
+    <td>342</td>
+    <td><a href="../assets/bit_manipulation/questions/_power_of_four/power_of_four.js">Power of Four</a></td>
   </tr>
   <tr>
     <td>344</td>
@@ -551,6 +611,14 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/first_unique_character/first_unique_character.js">First Unique Character in a String</a></td>
   </tr>
   <tr>
+    <td>389</td>
+    <td><a href="../assets/bit_manipulation/questions/_find_the_difference/find_the_difference.js">Find the Difference</a></td>
+  </tr>
+  <tr>
+    <td>393</td>
+    <td><a href="../assets/bit_manipulation/questions/_utf8_validation/utf8_validation.js">UTF-8 Validation</a></td>
+  </tr>
+  <tr>
     <td>394</td>
     <td><a href="../assets/queues_and_stacks/questions/_decode_string/decode_string.js">Decode String</a></td>
   </tr>
@@ -559,8 +627,24 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/_longest_substring_least_k_distinct/longest_substring_least_k_distinct.js">Longest Substring with at Least K Distinct Characters</a></td>
   </tr>
   <tr>
+    <td>397</td>
+    <td><a href="../assets/bit_manipulation/questions/_integer_replacement/integer_replacement.js">Integer Replacement</a></td>
+  </tr>
+  <tr>
+    <td>401</td>
+    <td><a href="../assets/bit_manipulation/questions/_binary_watch/binary_watch.js">Binary Watch</a></td>
+  </tr>
+  <tr>
+    <td>405</td>
+    <td><a href="../assets/bit_manipulation/questions/_convert_a_number_to_hexadecimal/convert_a_number_to_hexadecimal.js">Convert a Number to Hexadecimal</a></td>
+  </tr>
+  <tr>
     <td>406</td>
     <td><a href="../assets/greedy/questions/_queue_reconstruction_height/queue_reconstruction_height.js">Queue Reconstruction Height</a></td>
+  </tr>
+  <tr>
+    <td>411</td>
+    <td><a href="../assets/bit_manipulation/questions/_minimum_unique_word_abbreviation/minimum_unique_word_abbreviation.js">Minimum Unique Word Abbreviation</a></td>
   </tr>
   <tr>
     <td>415</td>

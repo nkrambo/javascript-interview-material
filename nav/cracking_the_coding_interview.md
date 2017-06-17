@@ -66,4 +66,32 @@
     <td>Dynamic Programming</td>
     <td><a href="../assets/dynamic_programming/questions/_robot_in_a_grid/robot_in_a_grid.js">Robot in a Grid</a></td>
   </tr>
+  <tr>
+    <td>Bit Manipulation</td>
+    <td><a href="../assets/bit_manipulation/questions/insertion/insertion.js">Insertion</a></td>
+  </tr>
+  <tr>
+    <td>Bit Manipulation</td>
+    <td><a href="../assets/bit_manipulation/questions/_binary_to_string/binary_to_string.js">Binary to String</a></td>
+  </tr>
+  <tr>
+    <td>Bit Manipulation</td>
+    <td><a href="../assets/bit_manipulation/questions/flip_bit_to_win/flip_bit_to_win.js">Flip Bit to Win</a></td>
+  </tr>
+  <tr>
+    <td>Bit Manipulation</td>
+    <td><a href="../assets/bit_manipulation/questions/_next_number/next_number.js">Next Number</a></td>
+  </tr>
+  <tr>
+    <td>Bit Manipulation</td>
+    <td><a href="../assets/bit_manipulation/questions/conversion/conversion.js">Conversion</a></td>
+  </tr>
+  <tr>
+    <td>Bit Manipulation</td>
+    <td><a href="../assets/bit_manipulation/questions/pairwise_swap/pairwise_swap.js">Pairwise Swap</a></td>
+  </tr>
+  <tr>
+    <td>Bit Manipulation</td>
+    <td><a href="../assets/bit_manipulation/questions/_draw_line/draw_line.js">Draw Line</a></td>
+  </tr>
 </table>
