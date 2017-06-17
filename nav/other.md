@@ -119,3 +119,54 @@
     <td><a href="../assets/dynamic_programming/questions/total_ways/total_ways.js">Total Ways</a></td>
   </tr>
 </table>
+
+
+### Design
+
+<table>
+  <tr>
+    <td>Title</td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/temperature_tracker/temperature_tracker.js">Temperature Tracker</a></td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/word_cloud_data/word_cloud_data.js">Word Cloud Data</a></td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/_call_center/call_center.js">Call Center</a></td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/_chat_server/chat_server.js">Chat Server</a></td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/_deck_of_cards/deck_of_cards.js">Deck of Cards</a></td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/_elevator/elevator.js">Elevator</a></td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/_file_system/file_system.js">File System</a></td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/_hash_table/hash_table.js">Hash Table</a></td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/_jigsaw/jigsaw.js">Jigsaw</a></td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/_mine_sweeper/mine_sweeper.js">Mine Sweeper</a></td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/_othello/othello.js">Othello</a></td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/_parking_lot/parking_lot.js">Parking Lot</a></td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/_pizza_ordering/pizza_ordering.js">Pizza Ordering</a></td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/_ring_buffer/ring_buffer.js">Ring Buffer</a></td>
+  </tr>
+</table>

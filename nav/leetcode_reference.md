@@ -535,6 +535,10 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/bst/_data_stream_disjoint_intervals/data_stream_disjoint_intervals.js">Data Stream as Disjoint Intervals</a></td>
   </tr>
   <tr>
+    <td>355</td>
+    <td><a href="../assets/design/questions/_design_twitter/design_twitter.js">Design Twitter</a></td>
+  </tr>
+  <tr>
     <td>376</td>
     <td><a href="../assets/dynamic_programming/questions/_wiggle_subsequence/wiggle_subsequence.js">Wiggle Subsequence</a></td>
   </tr>
@@ -585,6 +589,10 @@ are local test cases as well.
   <tr>
     <td>516</td>
     <td><a href="../assets/dynamic_programming/questions/_longest_palindromic_subsequence/longest_palindromic_subsequence.js">Longest Palindromic Subsequence</a></td>
+  </tr>
+  <tr>
+    <td>534</td>
+    <td><a href="../assets/design/questions/_design_tiny_url/design_tiny_url.md">Design Tiny URL</a></td>
   </tr>
   <tr>
     <td>547</td>
