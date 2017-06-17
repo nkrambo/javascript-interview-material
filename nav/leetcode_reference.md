@@ -239,6 +239,10 @@ are local test cases as well.
     <td><a href="../assets/linked_lists/questions/_partition_list/partition_list.js">Partition List</a></td>
   </tr>
   <tr>
+    <td>87</td>
+    <td><a href="../assets/dynamic_programming/questions/_scramble_string/scramble_string.js">Scamble String</a></td>
+  </tr>
+  <tr>
     <td>97</td>
     <td><a href="../assets/dynamic_programming/questions/_interleaving_string/interleaving_string.js">Interleaving String</a></td>
   </tr>
@@ -317,6 +321,10 @@ are local test cases as well.
   <tr>
     <td>174</td>
     <td><a href="../assets/dynamic_programming/questions/_dungeon_game/dungeon_game.js">Dungeon Game</a></td>
+  </tr>
+  <tr>
+    <td>198</td>
+    <td><a href="../assets/dynamic_programming/questions/_house_robber/house_robber.js">House Robber</a></td>
   </tr>
   <tr>
     <td>200</td>
@@ -439,6 +447,10 @@ are local test cases as well.
     <td><a href="../assets/search/questions/_find_the_duplicate_number/find_the_duplicate_number.js">Find the Duplicate Number</a></td>
   </tr>
   <tr>
+    <td>300</td>
+    <td><a href="../assets/dynamic_programming/questions/_longest_increasing_subsequence/longest_increasing_subsequence.js">Longest Increasing Subsequence</a></td>
+  </tr>
+  <tr>
     <td>304</td>
     <td><a href="../assets/dynamic_programming/questions/_range_sum_query_2D_immutable/range_sum_query_2D_immutable.js">Range Sum Query 2D Immutable</a></td>
   </tr>
@@ -521,6 +533,10 @@ are local test cases as well.
   <tr>
     <td>352</td>
     <td><a href="../assets/graphs/questions/bst/_data_stream_disjoint_intervals/data_stream_disjoint_intervals.js">Data Stream as Disjoint Intervals</a></td>
+  </tr>
+  <tr>
+    <td>376</td>
+    <td><a href="../assets/dynamic_programming/questions/_wiggle_subsequence/wiggle_subsequence.js">Wiggle Subsequence</a></td>
   </tr>
   <tr>
     <td>383</td>

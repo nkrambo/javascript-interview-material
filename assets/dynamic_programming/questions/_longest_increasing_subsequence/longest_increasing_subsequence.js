@@ -2,22 +2,27 @@
 /**
 * Longest Increasing Subsequence
 *
-* Tags: Bottom Up, Classic Problems
+* Tags: Dynamic Programming, Binary Search
+* Leetcoed: 300
 *
-* Find a subsequence in given array in which the subsequence's elements are in
-* sorted order, lowest to highest, and in which the subsequence is as long as possible.
-*
-* Example:
-* Input: [3, 4, -1, 0, 6, 2, 3]
-* Output: 4, [-1, 0, 2, 3]
+* Given an unsorted array of integers, find the length of longest increasing
+* subsequence.
 *
 * Example:
-* Input: [2, 5, 1, 8, 3]
-* Output: 3, [2, 5, 8]
+*
+* Given [10, 9, 2, 5, 3, 7, 101, 18]
+*
+* The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
+* Note that there may be more than one LIS combination, it is only necessary for
+* you to return the length.
+*
+* Your algorithm should run in O(n2) complexity.
+*
+* Follow up: Could you improve it to O(n log n) time complexity?
 */
 
 /**
-* longestIncreasingSub()
+* lengthOfLIS()
 *
 * Solution:
 *
@@ -95,26 +100,26 @@
 * @return {number} returns the longest increasing subsequence of nums
 */
 
-function longestIncreasingSub(nums) {
-  if (nums.length === 0) return 0;
-
-  // set DP to 1 by default, define result
-  const dp = new Array(nums.length).fill(1);
-  let result = 1;
-
-  // solve sub-problems
-  for (let i = 1; i < nums.length; i += 1) {
-    for (let j = 0; j < i; j += 1) {
-      if (nums[j] < nums[i]) {
-        dp[i] = Math.max(dp[i], dp[j] + 1);
-      }
-    }
-
-    // update max result
-    result = Math.max(result, dp[i]);
-  }
-
-  return result;
-}
-
-export default longestIncreasingSub;
+// function lengthOfLIS(nums) {
+//   if (nums.length === 0) return 0;
+//
+//   // set DP to 1 by default, define result
+//   const dp = new Array(nums.length).fill(1);
+//   let result = 1;
+//
+//   // solve sub-problems
+//   for (let i = 1; i < nums.length; i += 1) {
+//     for (let j = 0; j < i; j += 1) {
+//       if (nums[j] < nums[i]) {
+//         dp[i] = Math.max(dp[i], dp[j] + 1);
+//       }
+//     }
+//
+//     // update max result
+//     result = Math.max(result, dp[i]);
+//   }
+//
+//   return result;
+// }
+//
+// export default lengthOfLIS;

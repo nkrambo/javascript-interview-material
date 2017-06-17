@@ -3,6 +3,7 @@
 * Wiggle Sequence
 *
 * Tags: Dynamic Programming, Greedy
+* Leetcode: 376
 *
 * A sequence of numbers is called a wiggle sequence if the differences between
 * successive numbers strictly alternate between positive and negative. The first
@@ -19,23 +20,25 @@
 * elements (eventually, also zero) from the original sequence, leaving the remaining
 * elements in their original orde
 *
-* Example:
+* Examples:
+*
 * Input: [1, 7, 4, 9, 2, 5]
 * Output: 6
 * The entire sequence is a wiggle sequence.
 *
-* Example:
 * Input: [1, 17, 5, 10, 13, 15, 10, 5, 16, 8]
 * Output: 7
 * There are several subsequences that achieve this length. One is [1, 17, 10, 13, 10, 16, 8].
 *
-* Example:
 * Input: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 * Output: 2
+*
+* Follow up:
+* Can you do it in O(n) time?
 */
 
 /**
-* maxWiggle()
+* wiggleMaxLength()
 *
 * Solution:
 *
@@ -84,27 +87,27 @@
 * @return {number} returns length of longest wiggle sequence
 */
 
-function maxWiggle(nums) {
-  // short-cicuit, return trivial wiggle
-  if (nums.length < 2) return nums.length;
-
-  let down = 1;
-  let up = 1;
-
-  for (let i = 1; i < nums.length; i += 1) {
-    // 'up' position
-    if (nums[i] > nums[i - 1]) {
-      up = down + 1;
-
-    // 'down' position
-    } else if (nums[i] < nums[i - 1]) {
-      down = up + 1;
-    }
-  }
-
-  // return the largest sequence
-  return Math.max(down, up);
-}
+// function wiggleMaxLength(nums) {
+//   // short-cicuit, return trivial wiggle
+//   if (nums.length < 2) return nums.length;
+//
+//   let down = 1;
+//   let up = 1;
+//
+//   for (let i = 1; i < nums.length; i += 1) {
+//     // 'up' position
+//     if (nums[i] > nums[i - 1]) {
+//       up = down + 1;
+//
+//     // 'down' position
+//     } else if (nums[i] < nums[i - 1]) {
+//       down = up + 1;
+//     }
+//   }
+//
+//   // return the largest sequence
+//   return Math.max(down, up);
+// }
 
 /**
 * maxWiggleGreedy()
@@ -133,24 +136,24 @@ function maxWiggle(nums) {
 * @return {number} returns length of longest wiggle sequence
 */
 
-function maxWiggleGreedy(nums) {
-  // short-cicuit, return trivial wiggle
-  if (nums.length < 2) return nums.length;
-
-  // diff the first 2 elements
-  let prevdiff = nums[1] - nums[0];
-  let count = prevdiff !== 0 ? 2 : 1;
-
-  // iterate from 3rd
-  for (let i = 2; i < nums.length; i += 1) {
-    const diff = nums[i] - nums[i - 1];
-    if ((diff > 0 && prevdiff <= 0) || (diff < 0 && prevdiff >= 0)) {
-      count += 1;
-      prevdiff = diff;
-    }
-  }
-
-  return count;
-}
-
-export { maxWiggle, maxWiggleGreedy };
+// function maxWiggleGreedy(nums) {
+//   // short-cicuit, return trivial wiggle
+//   if (nums.length < 2) return nums.length;
+//
+//   // diff the first 2 elements
+//   let prevdiff = nums[1] - nums[0];
+//   let count = prevdiff !== 0 ? 2 : 1;
+//
+//   // iterate from 3rd
+//   for (let i = 2; i < nums.length; i += 1) {
+//     const diff = nums[i] - nums[i - 1];
+//     if ((diff > 0 && prevdiff <= 0) || (diff < 0 && prevdiff >= 0)) {
+//       count += 1;
+//       prevdiff = diff;
+//     }
+//   }
+//
+//   return count;
+// }
+//
+// export { wiggleMaxLength, maxWiggleGreedy };

@@ -3,6 +3,7 @@
 * House Robber
 *
 * Tags: Dynamic Programming, Bottom Up
+* Leetcode: 198
 *
 * You are a professional robber planning to rob houses along a street. Each house
 * has a certain amount of money stashed, the only constraint stopping you from
@@ -16,7 +17,7 @@
 */
 
 /**
-* robHomes()
+* rob()
 *
 * Solution:
 *
@@ -74,21 +75,21 @@
 *
 * Where (n) is the number of houses.
 *
-* @param {array} homes amount of cash available in each home on street
+* @param {array} nums amount of cash available in each home on street
 * @return {number} returns the maximum amount of cash without alerting police
 */
-
-function robHomes(homes) {
-  let prevMax = 0;
-  let currentMax = 0;
-
-  homes.forEach((home) => {
-    const temp = currentMax;
-    currentMax = Math.max((prevMax + home), currentMax);
-    prevMax = temp;
-  });
-
-  return currentMax;
-}
-
-export default robHomes;
+//
+// function rob(nums) {
+//   let prevMax = 0;
+//   let currentMax = 0;
+//
+//   homes.forEach((home) => {
+//     const temp = currentMax;
+//     currentMax = Math.max((prevMax + home), currentMax);
+//     prevMax = temp;
+//   });
+//
+//   return currentMax;
+// }
+//
+// export default rob;

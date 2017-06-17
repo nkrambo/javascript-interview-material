@@ -90,4 +90,32 @@
     <td>Topological Sort</td>
     <td><a href="../assets/graphs/questions/topological_sort/build_order/build_order.js">Build Order</a></td>
   </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td><a href="../assets/dynamic_programming/questions/_triple_step/triple_step.js">Triple Step</a></td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td><a href="../assets/dynamic_programming/questions/cake_thief/cake_thief.js">Cake Thief</a></td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td><a href="../assets/dynamic_programming/questions/longest_common_subsequence/longest_common_subsequence.js">Longest Common Subsequence</a></td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td><a href="../assets/dynamic_programming/questions/longest_common_substring/longest_common_substring.js">Longest Common Substring</a></td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td><a href="../assets/dynamic_programming/questions/minimum_edit_distance/minimum_edit_distance.js">Minimum Edit Distance</a></td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td><a href="../assets/dynamic_programming/questions/sunset_sum/sunset_sum.js">Subset Sum</a></td>
+  </tr>
+  <tr>
+    <td>Dynamic Programming</td>
+    <td><a href="../assets/dynamic_programming/questions/total_ways/total_ways.js">Total Ways</a></td>
+  </tr>
 </table>

@@ -3,6 +3,7 @@
 * Scramble String
 *
 * Tags: Dynamic Programming, String
+* Leetcode: 87
 *
 * Given a string str1, we may represent it as a binary tree by partitioning it
 * to two non-empty substrings recursively.
@@ -10,11 +11,11 @@
 * Below is one possible representation of str1 = 'great':
 *
 *        great
-*       /    \
+*       ↙    ↘
 *      gr    eat
-*     / \    /  \
+*     ↙ ↘    ↙  ↘
 *    g   r  e   at
-*               / \
+*               ↙ ↘
 *              a   t
 *
 * To scramble the string, we may choose any non-leaf node and swap its two children.
@@ -23,22 +24,22 @@
 * a scrambled string 'rgeat'.
 *
 *        rgeat
-*       /    \
-*      rg    eat
-*     / \    /  \
-*    r   g  e   at
-*               / \
-*              a   t
+*       ↙     ↘
+*     rg      eat
+*    ↙  ↘     ↙  ↘
+*   r    g   e   at
+*               ↙  ↘
+*              a    t
 *
 * We say that 'rgeat' is a scrambled string of 'great'.
 *
 *        rgtae
-*       /    \
-*      rg    tae
-*     / \    /  \
-*    r   g  ta  e
-*           / \
-*          t   a
+*       ↙     ↘
+*      rg     tae
+*     ↙  ↘    ↙  ↘
+*    r    g  ta   e
+*           ↙  ↘
+*          t    a
 *
 * We say that 'rgtae' is a scrambled string of 'great'.
 *
