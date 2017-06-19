@@ -203,6 +203,10 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/group_anagrams/group_anagrams.js">Group Anagrams</a></td>
   </tr>
   <tr>
+    <td>48</td>
+    <td><a href="../assets/arrays/questions/_rotate_image/rotate_image.js">Rotate Image</a></td>
+  </tr>
+  <tr>
     <td>50</td>
     <td><a href="../assets/search/questions/_pow(x,n)/pow.js">Pow(x, n)</a></td>
   </tr>
@@ -225,6 +229,10 @@ are local test cases as well.
   <tr>
     <td>69</td>
     <td><a href="../assets/search/questions/_sqrt(x)/sqrt.js">Sqrt(x)</a></td>
+  </tr>
+  <tr>
+    <td>73</td>
+    <td><a href="../assets/arrays/questions/_set_matrix_zeroes/set_matrix_zeroes.js">Set Matrix Zeroes</a></td>
   </tr>
   <tr>
     <td>74</td>
@@ -269,6 +277,10 @@ are local test cases as well.
   <tr>
     <td>110</td>
     <td><a href="../assets/graphs/questions/binary_tree/_balanced_binary_tree/balanced_binary_tree.js">Balanced Binary Tree</a></td>
+  </tr>
+  <tr>
+    <td>118</td>
+    <td><a href="../assets/arrays/questions/_pascals_triangle/pascals_triangle.js">Pascals Triangle</a></td>
   </tr>
   <tr>
     <td>121</td>
@@ -345,6 +357,10 @@ are local test cases as well.
   <tr>
     <td>187</td>
     <td><a href="../assets/bit_manipulation/questions/_repeated_dna_sequences/repeated_dna_sequences.js">Repeated DNA Sequences</a></td>
+  </tr>
+  <tr>
+    <td>189</td>
+    <td><a href="../assets/arrays/questions/_rotate_array/rotate_array.js">Rotate Array</a></td>
   </tr>
   <tr>
     <td>190</td>
@@ -485,6 +501,10 @@ are local test cases as well.
   <tr>
     <td>278</td>
     <td><a href="../assets/search/questions/_first_bad_version/first_bad_version.js">First Bad Version</a></td>
+  </tr>
+  <tr>
+    <td>283</td>
+    <td><a href="../assets/arrays/questions/_move_zeroes/move_zeroes.js">Move Zeroes</a></td>
   </tr>
   <tr>
     <td>285</td>
@@ -651,8 +671,16 @@ are local test cases as well.
     <td><a href="../assets/greedy/questions/_queue_reconstruction_height/queue_reconstruction_height.js">Queue Reconstruction Height</a></td>
   </tr>
   <tr>
+    <td>410</td>
+    <td><a href="../assets/arrays/questions/_split_array_largest_sum/split_array_largest_sum.js">Split Array Largest Sum</a></td>
+  </tr>
+  <tr>
     <td>411</td>
     <td><a href="../assets/bit_manipulation/questions/_minimum_unique_word_abbreviation/minimum_unique_word_abbreviation.js">Minimum Unique Word Abbreviation</a></td>
+  </tr>
+  <tr>
+    <td>414</td>
+    <td><a href="../assets/arrays/questions/_third_maximum/third_maximum.js">Third Maximum</a></td>
   </tr>
   <tr>
     <td>415</td>

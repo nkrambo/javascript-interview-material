@@ -122,6 +122,14 @@
     <td>Bit Manipulation</td>
     <td><a href="../assets/bit_manipulation/questions/stolen_breakfast_drone/stolen_breakfast_drone.js">Stolen Breakfast Drone</a></td>
   </tr>
+  <tr>
+    <td>Array</td>
+    <td><a href="../assets/arrays/questions/inflight_entertainment/inflight_entertainment.js">Inflight Entertainment</a></td>
+  </tr>
+  <tr>
+    <td>Array</td>
+    <td><a href="../assets/arrays/questions/single_riffle_shuffle/single_riffle_shuffle.js">Single Riffle Shuffle</a></td>
+  </tr>
 </table>
 
 

@@ -2,11 +2,17 @@
 /**
 * Rotate Array
 *
+* Tags: Array
+* Leetcode: 189
+*
 * Rotate an array of n elements to the right by k steps.
 *
 * Example:
+*
 * Input: [1, 2, 3, 4, 5, 6, 7], 3
 * Output: [5, 6, 7, 1, 2, 3, 4]
+*
+* Note:
 *
 * Try to come up as many solutions as you can, there are at least 3 different
 * ways to solve this problem.
@@ -37,20 +43,20 @@
 * @return {void} modify nums in-place
 */
 
-function rotateArrayBrute(nums, k) {
-  let temp;
-  let prev;
-
-  for (let i = 0; i < k; i += 1) {
-    prev = nums[nums.length - 1];
-
-    for (let j = 0; j < nums.length; j += 1) {
-      temp = nums[j];
-      nums[j] = prev;
-      prev = temp;
-    }
-  }
-}
+// function rotateArrayBrute(nums, k) {
+//   let temp;
+//   let prev;
+//
+//   for (let i = 0; i < k; i += 1) {
+//     prev = nums[nums.length - 1];
+//
+//     for (let j = 0; j < nums.length; j += 1) {
+//       temp = nums[j];
+//       nums[j] = prev;
+//       prev = temp;
+//     }
+//   }
+// }
 
 /**
 * rotateArrayExtra()
@@ -102,19 +108,19 @@ function rotateArrayBrute(nums, k) {
 * @return {void} modify nums in-place
 */
 
-function rotateArrayExtra(nums, k) {
-  const temp = new Array(nums.length);
-
-  // use modulo operand to place correctly
-  for (let i = 0; i < nums.length; i += 1) {
-    temp[(i + k) % nums.length] = nums[i];
-  }
-
-  // copy results into original array from temp
-  for (let i = 0; i < nums.length; i += 1) {
-    nums[i] = temp[i];
-  }
-}
+// function rotateArrayExtra(nums, k) {
+//   const temp = new Array(nums.length);
+//
+//   // use modulo operand to place correctly
+//   for (let i = 0; i < nums.length; i += 1) {
+//     temp[(i + k) % nums.length] = nums[i];
+//   }
+//
+//   // copy results into original array from temp
+//   for (let i = 0; i < nums.length; i += 1) {
+//     nums[i] = temp[i];
+//   }
+// }
 
 /**
 * rotateArrayCyclic()
@@ -162,24 +168,24 @@ function rotateArrayExtra(nums, k) {
 * @return {void} modify nums in-place
 */
 
-function rotateArrayCyclic(nums, k) {
-  k %= nums.length;
-  let count = 0;
-
-  for (let start = 0; count < nums.length; start += 1) {
-    let current = start;
-    let prev = nums[start];
-
-    do {
-      const next = (current + k) % nums.length;
-      const temp = nums[next];
-      nums[next] = prev;
-      prev = temp;
-      current = next;
-      count += 1;
-    } while (start !== current);
-  }
-}
+// function rotateArrayCyclic(nums, k) {
+//   k %= nums.length;
+//   let count = 0;
+//
+//   for (let start = 0; count < nums.length; start += 1) {
+//     let current = start;
+//     let prev = nums[start];
+//
+//     do {
+//       const next = (current + k) % nums.length;
+//       const temp = nums[next];
+//       nums[next] = prev;
+//       prev = temp;
+//       current = next;
+//       count += 1;
+//     } while (start !== current);
+//   }
+// }
 
 /**
 * rotateArrayReverse()
@@ -211,12 +217,12 @@ function rotateArrayCyclic(nums, k) {
 * @return {void} modify nums in-place
 */
 
-function rotateArrayReverse(nums, k) {
-  k %= nums.length;
-  reverse(nums, 0, nums.length - 1); // reverse all
-  reverse(nums, 0, k - 1);           // reverse k numbers
-  reverse(nums, k, nums.length - 1); // reverse n - k numbers
-}
+// function rotateArrayReverse(nums, k) {
+//   k %= nums.length;
+//   reverse(nums, 0, nums.length - 1); // reverse all
+//   reverse(nums, 0, k - 1);           // reverse k numbers
+//   reverse(nums, k, nums.length - 1); // reverse n - k numbers
+// }
 
 /**
 * reverse()
@@ -236,14 +242,14 @@ function rotateArrayReverse(nums, k) {
 * @return {void} modify nums in-place
 */
 
-function reverse(nums, start, end) {
-  while (start < end) {
-    const temp = nums[start];
-    nums[start] = nums[end];
-    nums[end] = temp;
-    start += 1;
-    end -= 1;
-  }
-}
-
-export { rotateArrayBrute, rotateArrayExtra, rotateArrayCyclic, rotateArrayReverse };
+// function reverse(nums, start, end) {
+//   while (start < end) {
+//     const temp = nums[start];
+//     nums[start] = nums[end];
+//     nums[end] = temp;
+//     start += 1;
+//     end -= 1;
+//   }
+// }
+//
+// export { rotateArrayBrute, rotateArrayExtra, rotateArrayCyclic, rotateArrayReverse };

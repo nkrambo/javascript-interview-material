@@ -2,6 +2,29 @@
 /**
 * Pascals Triangle
 *
+* Tags: Array,
+* Leetcode: 118
+*
+* Given numRows, generate the first numRows of Pascal's triangle.
+*
+* For example, given numRows = 5,
+*
+* Return:
+*
+* [
+*      [1],
+*     [1,1],
+*    [1,2,1],
+*   [1,3,3,1],
+*  [1,4,6,4,1]
+* ]
+*/
+
+/**
+* generate()
+*
+* Solution:
+*
 * In mathematics, Pascal's Triangle is a triangular array of the binomial coefficients.
 *
 * The rows of Pascal's triangle are conventionally enumerated starting with row
@@ -22,31 +45,29 @@
 *         1   3   3   1
 *       1   4   6   4   1
 *
-* Define a function that returns n lines of Pascal's Triangle.
-*
 * Time: O(n^2)
 * Space: O(n^2)
 *
-* @param {number} n number of lines of Pascal's
+* @param {number} numRows number of lines of Pascal's
 * @return {array | number [][]} of arrays n lines long
 */
 
-function pascalsTriangle(n) {
-  const result = [[1], [1, 1]];
-
-  if (n === 1) return [[1]];
-  if (n === 2) return result;
-
-  for (let row = 2; row < n; row += 1) {
-    result[row] = [1];
-
-    for (let col = 1; col <= row - 1; col += 1) {
-      result[row][col] = result[row - 1][col] + result[row - 1][col - 1];
-      result[row].push(1);
-    }
-  }
-
-  return result;
-}
-
-export default pascalsTriangle;
+// function generate(numRows) {
+//   const result = [[1], [1, 1]];
+//
+//   if (numRows === 1) return [[1]];
+//   if (numRows === 2) return result;
+//
+//   for (let row = 2; row < numRows; row += 1) {
+//     result[row] = [1];
+//
+//     for (let col = 1; col <= row - 1; col += 1) {
+//       result[row][col] = result[row - 1][col] + result[row - 1][col - 1];
+//       result[row].push(1);
+//     }
+//   }
+//
+//   return result;
+// }
+//
+// export default generate;

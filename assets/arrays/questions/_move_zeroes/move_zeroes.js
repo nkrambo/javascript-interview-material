@@ -1,23 +1,26 @@
 
 /**
-* Move Zeros
+* Move Zeroes
 *
-* Tags: Two Pointer
+* Tags: Array, Two Pointer
+* Leetcode: 283
 *
 * Given an array nums, write a function to move all 0s to the end of it while
 * maintaining the relative order of the non-zero elements.
 *
 * Example:
+*
 * Input: [0, 1, 0, 3, 12]
 * Output: [1, 3, 12, 0, 0]
 *
 * Note:
-* - You must do this in-place without making a copy of the array.
-* - Minimize the total number of operations.
+*
+* 1. You must do this in-place without making a copy of the array.
+* 2. Minimize the total number of operations.
 */
 
 /**
-* moveZeros()
+* moveZeroes()
 *
 * Solution:
 *
@@ -45,33 +48,33 @@
 * @return {array} returns the same array with zeros moved to the end
 */
 
-function moveZeros(nums) {
-  // Count the zeroes
-  let numZeroes = 0;
-  for (let i = 0; i < nums.length; i += 1) {
-    numZeroes += (nums[i] === 0);
-  }
-
-  // Make all the non-zero elements retain their original order.
-  const result = [];
-  for (let i = 0; i < nums.length; i += 1) {
-    if (nums[i] !== 0) {
-      result.push(nums[i]);
-    }
-  }
-
-  // Move all zeroes to the end
-  while (numZeroes > 0) {
-    result.push(0);
-    numZeroes -= 1;
-  }
-
-  // Combine the result, if you didn't need to do this in-place you could just
-  // return results as is
-  for (let i = 0; i < nums.length; i += 1) {
-    nums[i] = result[i];
-  }
-}
+// function moveZeroes(nums) {
+//   // Count the zeroes
+//   let numZeroes = 0;
+//   for (let i = 0; i < nums.length; i += 1) {
+//     numZeroes += (nums[i] === 0);
+//   }
+//
+//   // Make all the non-zero elements retain their original order.
+//   const result = [];
+//   for (let i = 0; i < nums.length; i += 1) {
+//     if (nums[i] !== 0) {
+//       result.push(nums[i]);
+//     }
+//   }
+//
+//   // Move all zeroes to the end
+//   while (numZeroes > 0) {
+//     result.push(0);
+//     numZeroes -= 1;
+//   }
+//
+//   // Combine the result, if you didn't need to do this in-place you could just
+//   // return results as is
+//   for (let i = 0; i < nums.length; i += 1) {
+//     nums[i] = result[i];
+//   }
+// }
 
 /**
 * moveZerosOptimal()
@@ -108,24 +111,24 @@ function moveZeros(nums) {
 * @return {array} returns the same array with zeros moved to the end
 */
 
-function moveZerosOptimal(nums) {
-  let lastNonZeroFoundAt = 0;
-
-  // If the current element is not 0, then we need to
-  // append it just in front of last non 0 element we found.
-  for (let i = 0; i < nums.length; i += 1) {
-    if (nums[i] !== 0) {
-      nums[lastNonZeroFoundAt] = nums[i];
-      lastNonZeroFoundAt += 1;
-    }
-  }
-
-  // After we have finished processing new elements,
-  // all the non-zero elements are already at beginning of array.
-  // We just need to fill remaining array with 0's.
-  for (let i = lastNonZeroFoundAt; i < nums.length; i += 1) {
-    nums[i] = 0;
-  }
-}
-
-export { moveZeros, moveZerosOptimal };
+// function moveZeroesOptimal(nums) {
+//   let lastNonZeroFoundAt = 0;
+//
+//   // If the current element is not 0, then we need to
+//   // append it just in front of last non 0 element we found.
+//   for (let i = 0; i < nums.length; i += 1) {
+//     if (nums[i] !== 0) {
+//       nums[lastNonZeroFoundAt] = nums[i];
+//       lastNonZeroFoundAt += 1;
+//     }
+//   }
+//
+//   // After we have finished processing new elements,
+//   // all the non-zero elements are already at beginning of array.
+//   // We just need to fill remaining array with 0's.
+//   for (let i = lastNonZeroFoundAt; i < nums.length; i += 1) {
+//     nums[i] = 0;
+//   }
+// }
+//
+// export { moveZeroes, moveZeroesOptimal };
