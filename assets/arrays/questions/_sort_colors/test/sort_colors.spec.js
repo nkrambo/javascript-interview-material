@@ -3,25 +3,22 @@
 // import sortColors from '../sort_colors';
 //
 // describe('sortColors()', () => {
-//
-//   const arr = [
-//     {color: 2},
-//     {color: 1},
-//     {color: 0},
-//     {color: 1},
-//     {color: 1},
-//     {color: 0},
-//     {color: 1},
-//     {color: 2},
-//     {color: 2},
-//     {color: 0},
+//   const nums = [
+//     { color: 2 },
+//     { color: 1 },
+//     { color: 0 },
+//     { color: 1 },
+//     { color: 1 },
+//     { color: 0 },
+//     { color: 1 },
+//     { color: 2 },
+//     { color: 2 },
+//     { color: 0 },
 //   ];
 //
 //   it('should return a sorted array by color', () => {
-//     const result = sortColors(arr);
-//
+//     const result = sortColors(nums);
 //     expect(result).to.be.a('array');
-//
 //     expect(result[0].color).to.equal(0);
 //     expect(result[1].color).to.equal(0);
 //     expect(result[3].color).to.equal(1);

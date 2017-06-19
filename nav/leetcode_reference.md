@@ -231,6 +231,10 @@ are local test cases as well.
     <td><a href="../assets/search/questions/_search_2D_matrix/search_2D_matrix.js">Search 2D Matrix</a></td>
   </tr>
   <tr>
+    <td>75</td>
+    <td><a href="../assets/arrays/questions/_sort_colors/sort_colors.js">Sort Colors</a></td>
+  </tr>
+  <tr>
     <td>76</td>
     <td><a href="../assets/strings/questions/_minimum_window_substring/minimum_window_substring.js">Minimum Window Substring</a></td>
   </tr>
