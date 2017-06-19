@@ -1,20 +1,30 @@
 
 /**
-* In-Place Shuffle
+* Shuffle an Array
 *
-* Types: Fisher-Yates, Knuth Shuffle
+* Tags: Fisher-Yates, Knuth Shuffle
+* Leetcode: 384
 *
-* Write a function for doing an in-place shuffle of an array.
-* The shuffle must be 'uniform', meaning each item in the original array must
-* have the same probability of ending up in each spot in the final array.
+* Shuffle a set of numbers without duplicates.
 *
-* Assume that you have a function getRandom(floor, ceiling) for getting a
-* random integer that is >= floor and <= ceiling.
+* Example:
+*
+* // Init an array with set 1, 2, and 3.
+* int[] nums = {1, 2, 3};
+* Solution solution = new Solution(nums);
+*
+* // Shuffle the array [1, 2, 3] and return its result. Any permutation of [1, 2, 3]
+* // must equally likely to be returned.
+* solution.shuffle();
+*
+* // Resets the array back to its original configuration [1, 2, 3].
+* solution.reset();
+*
+* // Returns the random shuffling of array [1, 2, 3].
+* solution.shuffle();
 */
 
 /**
-* inPlaceShuffle()
-*
 * Solution:
 *
 * A common first idea is to walk through the array and swap each element with a
@@ -64,37 +74,37 @@
 * @return {void} modifies arr in-place, uniform shuffle
 */
 
-// function inPlaceShuffle(arr) {
+/**
+* @param {number[]} nums
+*/
+
+// const Solution = (nums) => {
 //
-//   // if 1 or 0 items, just return
-//   if (arr.length <= 1) return;
+// };
+
+/**
+* Resets the array to its original configuration and return it.
+* @return {number[]}
+*/
+
+// Solution.prototype.reset = () => {
 //
-//   // walk through from beginning to end
-//   for (let i = 0; i < arr.length; i += 1) {
+// };
+
+/**
+* Returns a random shuffling of the array.
+* @return {number[]}
+*/
+
+// Solution.prototype.shuffle = () => {
 //
-//     // choose a random not-yet-placed item to place there
-//     // (could also be the item currently in that spot)
-//     // must be an item AFTER the current item, because the stuff
-//     // before has all already been placed
-//     const random = getRandom(i, arr.length - 1);
-//
-//     // place our random choice in the spot by swapping
-//     const temp = arr[i];
-//     arr[i] = arr[random];
-//     arr[random] = temp;
-//   }
-// }
-//
-// /**
-// * getRandom()
-// *
-// * @param {number} floor lower bound
-// * @param {number} ceiling upper bound
-// * @return {number} returns a random number >= floor and <= ceiling
-// */
-//
-// function getRandom(floor, ceiling) {
-//   return Math.floor(Math.random() * (ceiling - floor + 1)) + floor;
-// }
-//
-// export default inPlaceShuffle;
+// };
+
+/**
+* Your Solution object will be instantiated and called as such:
+* const obj = Object.create(Solution).createNew(nums)
+* const param_1 = obj.reset()
+* const param_2 = obj.shuffle()
+*/
+
+// export default Solution;

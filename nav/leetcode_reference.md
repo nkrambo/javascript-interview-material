@@ -607,6 +607,10 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/ransom_note/ransom_note.js">Ransom Note</a></td>
   </tr>
   <tr>
+    <td>384</td>
+    <td><a href="../assets/arrays/questions/_shuffle_an_array/shuffle_an_array.js">Shuffle an Array</a></td>
+  </tr>
+  <tr>
     <td>387</td>
     <td><a href="../assets/strings/questions/first_unique_character/first_unique_character.js">First Unique Character in a String</a></td>
   </tr>
