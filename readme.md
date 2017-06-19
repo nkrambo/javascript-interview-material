@@ -26,17 +26,6 @@ a question thoroughly first.
 * [Cracking The Coding Interview](/nav/cracking_the_coding_interview.md)
 * [Other](/nav/other.md)
 
-### Recommended Resources
-
-I highly recommend these resources for interview preparation.
-
-* [LeetCode](https://leetcode.com/)
-* [Interview Cake](https://www.interviewcake.com)
-* [Cracking the Coding Interview, 6th Edition](https://www.careercup.com/book)
-* [Hacker Rank](https://www.hackerrank.com/)
-* [Geek for Geeks](http://www.geeksforgeeks.org/)
-* [Coding Made Simple](https://www.youtube.com/channel/UCZLJf_R2sWyUtXSKiKlyvAw)
-
 ---
 
 ### Practice makes perfect, and wine... just the right amount of wine.
