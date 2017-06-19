@@ -667,6 +667,10 @@ are local test cases as well.
     <td><a href="../assets/greedy/questions/_assign_cookies/assign_cookies.js">Assign Cookies</a></td>
   </tr>
   <tr>
+    <td>448</td>
+    <td><a href="../assets/arrays/questions/_find_all_numbers_disappeared_in_an_array/find_all_numbers_disappeared_in_an_array.js">Find All Numbers Disappeared in an Array </a></td>
+  </tr>
+  <tr>
     <td>472</td>
     <td><a href="../assets/graphs/questions/trie/_concatenated_words/concatenated_words.js">Concatenated Words</a></td>
   </tr>
