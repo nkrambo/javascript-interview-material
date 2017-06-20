@@ -19,7 +19,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>3</td>
-    <td><a href="../assets/strings/questions/longest_substring_no_repeating_characters/longest_substring_no_repeating_characters.js">Longest Substring Without Repeating Characters</a></td>
+    <td><a href="../assets/strings/questions/_longest_substring_no_repeating_characters/longest_substring_no_repeating_characters.js">Longest Substring Without Repeating Characters</a></td>
   </tr>
   <tr>
     <td>4</td>
