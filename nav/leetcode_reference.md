@@ -181,15 +181,6 @@ are local test cases as well.
     <td>43</td>
     <td><a href="../assets/strings/questions/_multiply_strings/multiply_strings.js">Multiply Strings</a></td>
   </tr>
-</table>
-
-### Already Done / Stubbed
-
-<table>
-  <tr>
-    <td>#</td>
-    <td>Title</td>
-  </tr>
   <tr>
     <td>44</td>
     <td><a href="../assets/greedy/questions/_wildcard_matching/wildcard_matching.js">Wildcard Matching</a></td>
@@ -199,12 +190,20 @@ are local test cases as well.
     <td><a href="../assets/greedy/questions/_jump_game_II/jump_game_II.js">Jump Game II</a></td>
   </tr>
   <tr>
-    <td>49</td>
-    <td><a href="../assets/strings/questions/group_anagrams/group_anagrams.js">Group Anagrams</a></td>
+    <td>46</td>
+    <td><a href="../assets/dynamic_programming/questions/_permutations/permutations.js">Permutations</a></td>
+  </tr>
+  <tr>
+    <td>47</td>
+    <td><a href="../assets/dynamic_programming/questions/_permutations_II/permutations_II.js">Permutations II</a></td>
   </tr>
   <tr>
     <td>48</td>
     <td><a href="../assets/arrays/questions/_rotate_image/rotate_image.js">Rotate Image</a></td>
+  </tr>
+  <tr>
+    <td>49</td>
+    <td><a href="../assets/strings/questions/group_anagrams/group_anagrams.js">Group Anagrams</a></td>
   </tr>
   <tr>
     <td>50</td>
@@ -217,6 +216,15 @@ are local test cases as well.
   <tr>
     <td>52</td>
     <td><a href="../assets/dynamic_programming/questions/_n_queens_II/n_queens_II.js">N-Queens II</a></td>
+  </tr>
+</table>
+
+### Already Done / Stubbed
+
+<table>
+  <tr>
+    <td>#</td>
+    <td>Title</td>
   </tr>
   <tr>
     <td>55</td>
