@@ -217,6 +217,14 @@ are local test cases as well.
     <td>52</td>
     <td><a href="../assets/dynamic_programming/questions/_n_queens_II/n_queens_II.js">N-Queens II</a></td>
   </tr>
+  <tr>
+    <td>53</td>
+    <td><a href="../assets/dynamic_programming/questions/_maximum_subarray/maximum_subarray.js">Maximum Subarray</a></td>
+  </tr>
+  <tr>
+    <td>54</td>
+    <td><a href="../assets/arrays/questions/_spiral_matrix/spiral_matrix.js">Spiral Matrix</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
