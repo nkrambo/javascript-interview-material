@@ -225,6 +225,14 @@ are local test cases as well.
     <td>54</td>
     <td><a href="../assets/arrays/questions/_spiral_matrix/spiral_matrix.js">Spiral Matrix</a></td>
   </tr>
+  <tr>
+    <td>55</td>
+    <td><a href="../assets/greedy/questions/_jump_game/jump_game.js">Jump Game</a></td>
+  </tr>
+  <tr>
+    <td>56</td>
+    <td><a href="../assets/sort/questions/_merge_intervals/merge_intervals.js">Merge Intervals</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
@@ -233,10 +241,6 @@ are local test cases as well.
   <tr>
     <td>#</td>
     <td>Title</td>
-  </tr>
-  <tr>
-    <td>55</td>
-    <td><a href="../assets/greedy/questions/_jump_game/jump_game.js">Jump Game</a></td>
   </tr>
   <tr>
     <td>68</td>
