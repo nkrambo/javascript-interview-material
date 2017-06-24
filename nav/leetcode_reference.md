@@ -233,6 +233,26 @@ are local test cases as well.
     <td>56</td>
     <td><a href="../assets/sort/questions/_merge_intervals/merge_intervals.js">Merge Intervals</a></td>
   </tr>
+  <tr>
+    <td>57</td>
+    <td><a href="../assets/sort/questions/_insert_intervals/insert_intervals.js">Insert Interval</a></td>
+  </tr>
+  <tr>
+    <td>58</td>
+    <td><a href="../assets/strings/questions/_length_of_last_word/length_of_last_word.js">Length of Last Word</a></td>
+  </tr>
+  <tr>
+    <td>59</td>
+    <td><a href="../assets/arrays/questions/_spiral_matrix_II/spiral_matrix_II.js">Spiral Matrix II</a></td>
+  </tr>
+  <tr>
+    <td>60</td>
+    <td><a href="../assets/dynamic_programming/questions/_permutation_sequence/permutation_sequence.js">Permutation Sequence</a></td>
+  </tr>
+  <tr>
+    <td>61</td>
+    <td><a href="../assets/linked_lists/questions/_rotate_list/rotate_list.js">Rotate List</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
