@@ -253,6 +253,10 @@ are local test cases as well.
     <td>61</td>
     <td><a href="../assets/linked_lists/questions/_rotate_list/rotate_list.js">Rotate List</a></td>
   </tr>
+  <tr>
+    <td>62</td>
+    <td><a href="../assets/dynamic_programming/questions/_unique_paths/unique_paths.js">Unique Paths</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
