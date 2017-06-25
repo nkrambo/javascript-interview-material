@@ -1,8 +1,8 @@
 //
 // import { expect } from 'chai';
-// import uniquePaths from '../unique_paths';
+// import minPathSum from '../minimum_path_sum';
 //
-// describe('uniquePaths()', () => {
+// describe('minPathSum()', () => {
 //   it('should', () => {
 //
 //   });

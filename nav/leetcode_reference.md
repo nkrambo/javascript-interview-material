@@ -257,6 +257,14 @@ are local test cases as well.
     <td>62</td>
     <td><a href="../assets/dynamic_programming/questions/_unique_paths/unique_paths.js">Unique Paths</a></td>
   </tr>
+  <tr>
+    <td>63</td>
+    <td><a href="../assets/dynamic_programming/questions/_unique_paths/unique_paths.js">Unique Paths</a></td>
+  </tr>
+  <tr>
+    <td>64</td>
+    <td><a href="../assets/dynamic_programming/questions/_minimum_path_sum/minimum_path_sum.js">Minimum Path Sum</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
