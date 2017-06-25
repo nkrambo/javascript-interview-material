@@ -269,14 +269,13 @@ are local test cases as well.
     <td>65</td>
     <td><a href="../assets/strings/questions/_valid_number/valid_number.js">Valid Number</a></td>
   </tr>
-</table>
-
-### Already Done / Stubbed
-
-<table>
   <tr>
-    <td>#</td>
-    <td>Title</td>
+    <td>66</td>
+    <td><a href="../assets/arrays/questions/_plus_one/plus_one.js">Plus One</a></td>
+  </tr>
+  <tr>
+    <td>67</td>
+    <td><a href="../assets/strings/questions/_add_binary/add_binary.js">Add Binary</a></td>
   </tr>
   <tr>
     <td>68</td>
@@ -285,6 +284,19 @@ are local test cases as well.
   <tr>
     <td>69</td>
     <td><a href="../assets/search/questions/_sqrt(x)/sqrt.js">Sqrt(x)</a></td>
+  </tr>
+  <tr>
+    <td>70</td>
+    <td><a href="../assets/dynamic_programming/questions/climbing_stairs/climbing_stairs.js">Climbing Stairs</a></td>
+  </tr>
+</table>
+
+### Already Done / Stubbed
+
+<table>
+  <tr>
+    <td>#</td>
+    <td>Title</td>
   </tr>
   <tr>
     <td>73</td>
