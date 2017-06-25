@@ -265,6 +265,10 @@ are local test cases as well.
     <td>64</td>
     <td><a href="../assets/dynamic_programming/questions/_minimum_path_sum/minimum_path_sum.js">Minimum Path Sum</a></td>
   </tr>
+  <tr>
+    <td>65</td>
+    <td><a href="../assets/strings/questions/_valid_number/valid_number.js">Valid Number</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
