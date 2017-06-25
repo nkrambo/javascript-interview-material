@@ -287,16 +287,15 @@ are local test cases as well.
   </tr>
   <tr>
     <td>70</td>
-    <td><a href="../assets/dynamic_programming/questions/climbing_stairs/climbing_stairs.js">Climbing Stairs</a></td>
+    <td><a href="../assets/dynamic_programming/questions/_climbing_stairs/climbing_stairs.js">Climbing Stairs</a></td>
   </tr>
-</table>
-
-### Already Done / Stubbed
-
-<table>
   <tr>
-    <td>#</td>
-    <td>Title</td>
+    <td>71</td>
+    <td><a href="../assets/queues_and_stacks/questions/_simplify_path/simplify_path.js">Simplify Path</a></td>
+  </tr>
+  <tr>
+    <td>72</td>
+    <td><a href="../assets/dynamic_programming/questions/_edit_distance/edit_distance.js">Edit Distance</a></td>
   </tr>
   <tr>
     <td>73</td>
@@ -315,8 +314,25 @@ are local test cases as well.
     <td><a href="../assets/strings/questions/_minimum_window_substring/minimum_window_substring.js">Minimum Window Substring</a></td>
   </tr>
   <tr>
+    <td>77</td>
+    <td><a href="../assets/dynamic_programming/questions/_combinations/combinations.js">Combinations</a></td>
+  </tr>
+  <tr>
     <td>78</td>
     <td><a href="../assets/bit_manipulation/questions/_subsets/subsets.js">Subsets</a></td>
+  </tr>
+  <tr>
+    <td>79</td>
+    <td><a href="../assets/dynamic_programming/questions/_word_search/word_search.js">Word Search</a></td>
+  </tr>
+</table>
+
+### Already Done / Stubbed
+
+<table>
+  <tr>
+    <td>#</td>
+    <td>Title</td>
   </tr>
   <tr>
     <td>86</td>
