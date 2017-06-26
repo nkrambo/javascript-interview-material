@@ -325,6 +325,14 @@ are local test cases as well.
     <td>79</td>
     <td><a href="../assets/dynamic_programming/questions/_word_search/word_search.js">Word Search</a></td>
   </tr>
+  <tr>
+    <td>80</td>
+    <td><a href="../assets/arrays/questions/_remove_duplicates_from_sorted_array_II/remove_duplicates_from_sorted_array_II.js">Remove Duplicates From Sorted Array II</a></td>
+  </tr>
+  <tr>
+    <td>81</td>
+    <td><a href="../assets/search/questions/_search_in_rotated_array_II/search_in_rotated_array_II.js">Search in Rotated Array II</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
