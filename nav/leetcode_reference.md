@@ -333,6 +333,10 @@ are local test cases as well.
     <td>81</td>
     <td><a href="../assets/search/questions/_search_in_rotated_array_II/search_in_rotated_array_II.js">Search in Rotated Array II</a></td>
   </tr>
+  <tr>
+    <td>82</td>
+    <td><a href="../assets/linked_lists/questions/_remove_duplicates_from_sorted_list_II/remove_duplicates_from_sorted_list_II.js">Remove Duplicates from Sorted List II</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
