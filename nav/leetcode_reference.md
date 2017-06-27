@@ -337,6 +337,14 @@ are local test cases as well.
     <td>82</td>
     <td><a href="../assets/linked_lists/questions/_remove_duplicates_from_sorted_list_II/remove_duplicates_from_sorted_list_II.js">Remove Duplicates from Sorted List II</a></td>
   </tr>
+  <tr>
+    <td>83</td>
+    <td><a href="../assets/linked_lists/questions/_remove_duplicates_from_sorted_list/remove_duplicates_from_sorted_list.js">Remove Duplicates from Sorted List</a></td>
+  </tr>
+  <tr>
+    <td>84</td>
+    <td><a href="../assets/queues_and_stacks/questions/_largest_rectangle_in_histogram/largest_rectangle_in_histogram.js">Largest Rectangle in Histogram</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed

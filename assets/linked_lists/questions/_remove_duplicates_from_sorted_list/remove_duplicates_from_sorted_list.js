@@ -1,22 +1,22 @@
 
 /**
-* Remove Duplicates from Sorted List II
+* Remove Duplicates from Sorted List
 *
 * Tags: Linked List
-* Leetcode: 82
+* Leetcode: 83
 *
-* Given a sorted linked list, delete all nodes that have duplicate numbers,
-* leaving only distinct numbers from the original list.
+* Given a sorted linked list, delete all duplicates such that each element appear
+* only once.
 *
 * Example 1:
 *
-* Given 1 → 2 → 3 → 3 → 4 → 4 → 5
-* Return 1 → 2 → 5
+* Given: 1 → 1 → 2
+* Return: 1 → 2
 *
 * Example 2:
 *
-* Given 1 → 1 → 1 → 2 → 3
-* Return 2 → 3
+* Given: 1 → 1 → 2 → 3 → 3
+* Return: 1 → 2 → 3
 */
 
 /**
