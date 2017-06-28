@@ -345,6 +345,10 @@ are local test cases as well.
     <td>84</td>
     <td><a href="../assets/queues_and_stacks/questions/_largest_rectangle_in_histogram/largest_rectangle_in_histogram.js">Largest Rectangle in Histogram</a></td>
   </tr>
+  <tr>
+    <td>85</td>
+    <td><a href="../assets/dynamic_programming/questions/_maximal_rectangle/maximal_rectangle.js">Maximal Rectangle</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
