@@ -349,6 +349,14 @@ are local test cases as well.
     <td>85</td>
     <td><a href="../assets/dynamic_programming/questions/_maximal_rectangle/maximal_rectangle.js">Maximal Rectangle</a></td>
   </tr>
+  <tr>
+    <td>86</td>
+    <td><a href="../assets/linked_lists/questions/_partition_list/partition_list.js">Partition List</a></td>
+  </tr>
+  <tr>
+    <td>87</td>
+    <td><a href="../assets/dynamic_programming/questions/_scramble_string/scramble_string.js">Scamble String</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
@@ -357,14 +365,6 @@ are local test cases as well.
   <tr>
     <td>#</td>
     <td>Title</td>
-  </tr>
-  <tr>
-    <td>86</td>
-    <td><a href="../assets/linked_lists/questions/_partition_list/partition_list.js">Partition List</a></td>
-  </tr>
-  <tr>
-    <td>87</td>
-    <td><a href="../assets/dynamic_programming/questions/_scramble_string/scramble_string.js">Scamble String</a></td>
   </tr>
   <tr>
     <td>97</td>
