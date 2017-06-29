@@ -357,6 +357,14 @@ are local test cases as well.
     <td>87</td>
     <td><a href="../assets/dynamic_programming/questions/_scramble_string/scramble_string.js">Scamble String</a></td>
   </tr>
+  <tr>
+    <td>88</td>
+    <td><a href="../assets/arrays/questions/_merge_sorted_array/merge_sorted_array.js">Merge Sorted Array</a></td>
+  </tr>
+  <tr>
+    <td>89</td>
+    <td><a href="../assets/dynamic_programming/questions/_gray_code/gray_code.js">Gray Code</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
