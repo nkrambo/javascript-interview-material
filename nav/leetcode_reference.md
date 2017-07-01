@@ -369,6 +369,22 @@ are local test cases as well.
     <td>90</td>
     <td><a href="../assets/dynamic_programming/questions/_subsets_II/subsets_II.js">Subsets II</a></td>
   </tr>
+  <tr>
+    <td>91</td>
+    <td><a href="../assets/dynamic_programming/questions/_decode_ways/decode_ways.js">Decode Ways</a></td>
+  </tr>
+  <tr>
+    <td>92</td>
+    <td><a href="../assets/linked_lists/questions/_reverse_linked_list_II/reverse_linked_list_II.js">Reverse Linked List II</a></td>
+  </tr>
+  <tr>
+    <td>93</td>
+    <td><a href="../assets/dynamic_programming/questions/_restore_IP_addresses/restore_IP_addresses.js">Restore IP Addresses</a></td>
+  </tr>
+  <tr>
+    <td>94</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_inorder_traversal/binary_tree_inorder_traversal.js">Binary Tree In-Order Traversal</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
