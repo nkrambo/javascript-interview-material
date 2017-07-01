@@ -365,6 +365,10 @@ are local test cases as well.
     <td>89</td>
     <td><a href="../assets/dynamic_programming/questions/_gray_code/gray_code.js">Gray Code</a></td>
   </tr>
+  <tr>
+    <td>90</td>
+    <td><a href="../assets/dynamic_programming/questions/_subsets_II/subsets_II.js">Subsets II</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
