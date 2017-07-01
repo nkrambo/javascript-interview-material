@@ -19,7 +19,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>3</td>
-    <td><a href="../assets/strings/questions/_longest_substring_no_repeating_characters/longest_substring_no_repeating_characters.js">Longest Substring Without Repeating Characters</a></td>
+    <td><a href="../assets/strings/questions/_longest_substring_no_repeated_characters/longest_substring_no_repeated_characters.js">Longest Substring No Repeated Characters</a></td>
   </tr>
   <tr>
     <td>4</td>
@@ -31,7 +31,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>6</td>
-    <td><a href="../assets/strings/questions/zigzag_conversion/zigzag_conversion.js">ZigZag Conversion</a></td>
+    <td><a href="../assets/strings/questions/_zigzag_conversion/zigzag_conversion.js">ZigZag Conversion</a></td>
   </tr>
   <tr>
     <td>7</td>
@@ -91,15 +91,15 @@ are local test cases as well.
   </tr>
   <tr>
     <td>21</td>
-    <td><a href="../assets/linked_lists/questions/merge_two_sorted_lists/merge_two_sorted_lists.js">Merge Two Sorted Lists</a></td>
+    <td><a href="../assets/linked_lists/questions/_merge_two_sorted_lists/merge_two_sorted_lists.js">Merge Two Sorted Lists</a></td>
   </tr>
   <tr>
     <td>22</td>
-    <td><a href="../assets/dynamic_programming/questions/generate_parentheses/generate_parentheses.js">Generate Parentheses</a></td>
+    <td><a href="../assets/dynamic_programming/questions/_generate_parentheses/generate_parentheses.js">Generate Parentheses</a></td>
   </tr>
   <tr>
     <td>23</td>
-    <td><a href="../assets/linked_lists/questions/merge_k_sorted_lists/merge_k_sorted_lists.js">Merge k Sorted Lists</a></td>
+    <td><a href="../assets/linked_lists/questions/_merge_k_sorted_lists/merge_k_sorted_lists.js">Merge k Sorted Lists</a></td>
   </tr>
   <tr>
     <td>24</td>
@@ -235,7 +235,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>57</td>
-    <td><a href="../assets/sort/questions/_insert_intervals/insert_intervals.js">Insert Interval</a></td>
+    <td><a href="../assets/sort/questions/_insert_interval/insert_interval.js">Insert Interval</a></td>
   </tr>
   <tr>
     <td>58</td>
