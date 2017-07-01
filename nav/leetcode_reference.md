@@ -385,14 +385,13 @@ are local test cases as well.
     <td>94</td>
     <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_inorder_traversal/binary_tree_inorder_traversal.js">Binary Tree In-Order Traversal</a></td>
   </tr>
-</table>
-
-### Already Done / Stubbed
-
-<table>
   <tr>
-    <td>#</td>
-    <td>Title</td>
+    <td>95</td>
+    <td><a href="../assets/graphs/questions/bst/_unique_binary_search_trees_II/unique_binary_search_trees_II.js">Unique Binary Search Trees II</a></td>
+  </tr>
+  <tr>
+    <td>96</td>
+    <td><a href="../assets/graphs/questions/bst/_unique_binary_search_trees/unique_binary_search_trees.js">Unique Binary Search Trees</a></td>
   </tr>
   <tr>
     <td>97</td>
@@ -401,6 +400,23 @@ are local test cases as well.
   <tr>
     <td>98</td>
     <td><a href="../assets/graphs/questions/bst/_validate_bst/validate_bst.js">Validate Binary Search Tree</a></td>
+  </tr>
+  <tr>
+    <td>99</td>
+    <td><a href="../assets/graphs/questions/bst/_recover_binary_search_tree/recover_binary_search_tree.js">Recover Binary Search Tree</a></td>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_same_tree/same_tree.js">Same Tree</a></td>
+  </tr>
+</table>
+
+### Already Done / Stubbed
+
+<table>
+  <tr>
+    <td>#</td>
+    <td>Title</td>
   </tr>
   <tr>
     <td>104</td>
