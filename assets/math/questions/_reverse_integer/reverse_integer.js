@@ -31,11 +31,11 @@
 * Time: O(1)
 * Space: O(1)
 *
-* @param {number} num 32-bit signed integer
-* @return {number} returns the reverse of num, otherwise 0 in case of overflow
+* @param {number} x
+* @return {number}
 */
 
-// function reverse(num) {
+// function reverse(x) {
 //
 // }
 //
