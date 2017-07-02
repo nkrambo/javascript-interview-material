@@ -20,16 +20,56 @@
 *
 * Solution:
 *
+* Let's use an example to help us illustrate our solution.
+*
+* Assume height = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+*
+* What would this look like if we plotted out these co-ordinates according to the
+* problem?
+*
+*
+*  (height)
+*
+*     ^
+*     |
+*     |
+*   8 +             +                                  +
+*     |             |                                  |
+*     |             |                                  |
+*   7 +             |                                  |             +
+*     |             |                                  |             |
+*     |             |                                  |             |
+*   6 +             |      +                           |             |
+*     |             |      |                           |             |
+*     |             |      |                           |             |
+*   5 +             |      |             +             |             |
+*     |             |      |             |             |             |
+*     |             |      |             |             |             |
+*   4 +             |      |             |      +      |             |
+*     |             |      |             |      |      |             |
+*     |             |      |             |      |      |             |
+*   3 +             |      |             |      |      |      +      |
+*     |             |      |             |      |      |      |      |
+*     |             |      |             |      |      |      |      |
+*   2 +             |      |      +      |      |      |      |      |
+*     |             |      |      |      |      |      |      |      |
+*     |             |      |      |      |      |      |      |      |
+*   1 +      +      |      |      |      |      |      |      |      |
+*     |      |      |      |      |      |      |      |      |      |
+*     |      |      |      |      |      |      |      |      |      |
+*     +------+------+------+------+------+------+------+------+------+------+--->
+*     0      1      2      3      4      5      6      7      8      9      10
+*
 *
 * Time: O(1)
 * Space: O(1)
 *
-* @param {array} height number coordinates
-* @return {number} returns the max area that contains the most water
+* @param {number[]} height
+* @return {number}
 */
 
-// function maxArea(height) {
-//
-// }
-//
-// export default maxArea;
+function maxArea(height) {
+
+}
+
+export default maxArea;
