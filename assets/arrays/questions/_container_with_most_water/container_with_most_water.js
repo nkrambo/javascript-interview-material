@@ -28,7 +28,6 @@
 * problem?
 *
 *
-*
 *  (height)
 *
 *     ^

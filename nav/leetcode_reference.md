@@ -423,6 +423,10 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/binary_tree/_symmetric_tree/symmetric_tree.js">Symmetric Tree</a></td>
   </tr>
   <tr>
+    <td>101</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_level_traversal/binary_tree_level_traversal.js">Binary Tree Level Order Traversal</a></td>
+  </tr>
+  <tr>
     <td>104</td>
     <td><a href="../assets/graphs/questions/binary_tree/_maximum_depth_of_binary_tree/maximum_depth_of_binary_tree.js">Maximum Depth of Binary Tree</a></td>
   </tr>
