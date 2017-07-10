@@ -1,9 +1,9 @@
-//
-// import { expect } from 'chai';
-// import maxArea from '../container_with_most_water';
-//
-// describe('maxArea()', () => {
-//   it('should return the maximum area to contain the most water', () => {
-//
-//   });
-// });
+
+import { expect } from 'chai';
+import maxArea from '../container_with_most_water';
+
+describe('maxArea()', () => {
+  it('should return the maximum area to contain the most water', () => {
+
+  });
+});
