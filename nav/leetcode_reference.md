@@ -423,8 +423,12 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/binary_tree/_symmetric_tree/symmetric_tree.js">Symmetric Tree</a></td>
   </tr>
   <tr>
-    <td>101</td>
+    <td>102</td>
     <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_level_traversal/binary_tree_level_traversal.js">Binary Tree Level Order Traversal</a></td>
+  </tr>
+  <tr>
+    <td>103</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_zigzag_level_traversal/binary_tree_zigzag_level_traversal.js">Binary Tree Zigzag Level Order Traversal</a></td>
   </tr>
   <tr>
     <td>104</td>
