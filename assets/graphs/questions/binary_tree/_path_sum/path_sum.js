@@ -25,6 +25,10 @@
 */
 
 /**
+* hasPathSum()
+*
+* Solution:
+*
 * @param {TreeNode} root
 * @param {number} sum
 * @return {boolean}

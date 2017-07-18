@@ -519,6 +519,10 @@ are local test cases as well.
     <td><a href="../assets/bit_manipulation/questions/_majority_element/majority_element.js">Majority Element</a></td>
   </tr>
   <tr>
+    <td>171</td>
+    <td><a href="../assets/math/questions/_excel_sheet_column_number/excel_sheet_column_number.js">Excel Sheet Column Number</a></td>
+  </tr>
+  <tr>
     <td>174</td>
     <td><a href="../assets/dynamic_programming/questions/_dungeon_game/dungeon_game.js">Dungeon Game</a></td>
   </tr>
