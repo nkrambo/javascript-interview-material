@@ -511,6 +511,10 @@ are local test cases as well.
     <td><a href="../assets/search/questions/_find_peak_element/find_peak_element.js">Find Peak Element</a></td>
   </tr>
   <tr>
+    <td>163</td>
+    <td><a href="../assets/arrays/questions/_missing_range/missing_range.js">Missing Range</a></td>
+  </tr>
+  <tr>
     <td>167</td>
     <td><a href="../assets/search/questions/_two_sum_II/two_sum_II.js">Two Sum II - Input Array is Sorted</a></td>
   </tr>
