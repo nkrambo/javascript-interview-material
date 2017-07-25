@@ -512,7 +512,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>163</td>
-    <td><a href="../assets/arrays/questions/_missing_range/missing_range.js">Missing Range</a></td>
+    <td><a href="../assets/arrays/questions/_missing_ranges/missing_ranges.js">Missing Ranges</a></td>
   </tr>
   <tr>
     <td>167</td>
