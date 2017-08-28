@@ -435,6 +435,10 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/binary_tree/_maximum_depth_of_binary_tree/maximum_depth_of_binary_tree.js">Maximum Depth of Binary Tree</a></td>
   </tr>
   <tr>
+    <td>105</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_construct_binary_tree_from_preorder_and_inorder_traversal/construct_binary_tree_from_preorder_and_inorder_traversal.js">Construct Binary Tree from Preorder and Inorder Traversal</a></td>
+  </tr>
+  <tr>
     <td>108</td>
     <td><a href="../assets/graphs/questions/bst/_convert_sorted_array_to_bst/convert_sorted_array_to_bst.js">Convert Sorted Array to Binary Search Tree</a></td>
   </tr>
