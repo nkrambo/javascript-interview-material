@@ -439,6 +439,10 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/binary_tree/_construct_binary_tree_from_preorder_and_inorder_traversal/construct_binary_tree_from_preorder_and_inorder_traversal.js">Construct Binary Tree from Preorder and Inorder Traversal</a></td>
   </tr>
   <tr>
+    <td>106</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_construct_binary_tree_from_inorder_and_postorder_traversal/construct_binary_tree_from_inorder_and_postorder_traversal.js">Construct Binary Tree from Inorder and Postorder Traversal</a></td>
+  </tr>
+  <tr>
     <td>108</td>
     <td><a href="../assets/graphs/questions/bst/_convert_sorted_array_to_bst/convert_sorted_array_to_bst.js">Convert Sorted Array to Binary Search Tree</a></td>
   </tr>
