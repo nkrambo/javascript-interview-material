@@ -451,6 +451,11 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/bst/_convert_sorted_array_to_bst/convert_sorted_array_to_bst.js">Convert Sorted Array to Binary Search Tree</a></td>
   </tr>
   <tr>
+    <td>109</td>
+    <td><a href="../assets/graphs/questions/bst/_convert_sorted_list_to_binary_search_tree/convert_sorted_list_to_binary_search_tree.js">Convert Sorted List to Binary Search Tree</a></td>
+  </tr>  
+
+  <tr>
     <td>110</td>
     <td><a href="../assets/graphs/questions/binary_tree/_balanced_binary_tree/balanced_binary_tree.js">Balanced Binary Tree</a></td>
   </tr>
