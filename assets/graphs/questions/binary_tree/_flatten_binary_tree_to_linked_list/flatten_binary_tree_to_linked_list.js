@@ -47,7 +47,7 @@
 */
 
 /**
-* pathSum()
+* flatten()
 *
 * Solution:
 *
