@@ -512,6 +512,14 @@ are local test cases as well.
     <td><a href="../assets/greedy/questions/_best_time_to_buy_and_sell_stock_III/best_time_to_buy_and_sell_stock_III.js">Best Time to Buy and Sell Stock III</a></td>
   </tr>
   <tr>
+    <td>124</td>
+    <td><a href="../assets/graphs/questions/binary_tree/binary_tree_maximum_path_sum/binary_tree_maximum_path_sum.js">Binary Tree Maximum Path Sum</a></td>
+  </tr>
+  <tr>
+    <td>125</td>
+    <td><a href="../assets/strings/questions/_valid_palindrome/valid_palindrome.js">Valid Palindrome</a></td>
+  </tr>
+  <tr>
     <td>128</td>
     <td><a href="../assets/union_find/questions/_longest_consecutive_sequence/longest_consecutive_sequence.js">Longest Consecutive Sequence</a></td>
   </tr>
