@@ -492,6 +492,14 @@ are local test cases as well.
     <td><a href="../assets/arrays/questions/_pascals_triangle/pascals_triangle.js">Pascals Triangle</a></td>
   </tr>
   <tr>
+    <td>119</td>
+    <td><a href="../assets/arrays/questions/_pascals_triangle_II/pascals_triangle_II.js">Pascals Triangle II</a></td>
+  </tr>
+  <tr>
+    <td>120</td>
+    <td><a href="../assets/dynamic_programming/questions/_triangle/triangle.js">Triangle</a></td>
+  </tr>
+  <tr>
     <td>121</td>
     <td><a href="../assets/greedy/questions/_best_time_to_buy_and_sell_stock/best_time_to_buy_and_sell_stock.js">Best Time to Buy and Sell Stock</a></td>
   </tr>
