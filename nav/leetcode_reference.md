@@ -513,11 +513,19 @@ are local test cases as well.
   </tr>
   <tr>
     <td>124</td>
-    <td><a href="../assets/graphs/questions/binary_tree/binary_tree_maximum_path_sum/binary_tree_maximum_path_sum.js">Binary Tree Maximum Path Sum</a></td>
+    <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_maximum_path_sum/binary_tree_maximum_path_sum.js">Binary Tree Maximum Path Sum</a></td>
   </tr>
   <tr>
     <td>125</td>
     <td><a href="../assets/strings/questions/_valid_palindrome/valid_palindrome.js">Valid Palindrome</a></td>
+  </tr>
+  <tr>
+    <td>126</td>
+    <td><a href="../assets/dynamic_programming/questions/_word_ladder_II/word_ladder_II.js">Word Ladder II</a></td>
+  </tr>
+  <tr>
+    <td>127</td>
+    <td><a href="../assets/dynamic_programming/questions/_word_ladder/word_ladder.js">Word Ladder</a></td>
   </tr>
   <tr>
     <td>128</td>
