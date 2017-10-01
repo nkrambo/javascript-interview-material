@@ -472,6 +472,10 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/binary_tree/_path_sum_II/path_sum_II.js">Path Sum II</a></td>
   </tr>
   <tr>
+    <td>114</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_flatten_binary_tree_to_linked_list/flatten_binary_tree_to_linked_list.js">Flatten Binary Tree to Linked List</a></td>
+  </tr>
+  <tr>
     <td>118</td>
     <td><a href="../assets/arrays/questions/_pascals_triangle/pascals_triangle.js">Pascals Triangle</a></td>
   </tr>
