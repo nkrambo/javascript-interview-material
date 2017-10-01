@@ -504,6 +504,14 @@ are local test cases as well.
     <td><a href="../assets/greedy/questions/_best_time_to_buy_and_sell_stock/best_time_to_buy_and_sell_stock.js">Best Time to Buy and Sell Stock</a></td>
   </tr>
   <tr>
+    <td>122</td>
+    <td><a href="../assets/greedy/questions/_best_time_to_buy_and_sell_stock_II/best_time_to_buy_and_sell_stock_II.js">Best Time to Buy and Sell Stock II</a></td>
+  </tr>
+  <tr>
+    <td>123</td>
+    <td><a href="../assets/greedy/questions/_best_time_to_buy_and_sell_stock_III/best_time_to_buy_and_sell_stock_III.js">Best Time to Buy and Sell Stock III</a></td>
+  </tr>
+  <tr>
     <td>128</td>
     <td><a href="../assets/union_find/questions/_longest_consecutive_sequence/longest_consecutive_sequence.js">Longest Consecutive Sequence</a></td>
   </tr>
