@@ -484,6 +484,10 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/binary_tree/_populating_next_right_pointers_in_each_node/populating_next_right_pointers_in_each_node.js">Populating Next Right Pointers in Each Node</a></td>
   </tr>
   <tr>
+    <td>117</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_populating_next_right_pointers_in_each_node_II/populating_next_right_pointers_in_each_node_II.js">Populating Next Right Pointers in Each Node II</a></td>
+  </tr>
+  <tr>
     <td>118</td>
     <td><a href="../assets/arrays/questions/_pascals_triangle/pascals_triangle.js">Pascals Triangle</a></td>
   </tr>
