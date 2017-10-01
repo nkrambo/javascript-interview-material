@@ -409,15 +409,6 @@ are local test cases as well.
     <td>100</td>
     <td><a href="../assets/graphs/questions/binary_tree/_same_tree/same_tree.js">Same Tree</a></td>
   </tr>
-</table>
-
-### Already Done / Stubbed
-
-<table>
-  <tr>
-    <td>#</td>
-    <td>Title</td>
-  </tr>
   <tr>
     <td>101</td>
     <td><a href="../assets/graphs/questions/binary_tree/_symmetric_tree/symmetric_tree.js">Symmetric Tree</a></td>
@@ -498,6 +489,15 @@ are local test cases as well.
   <tr>
     <td>120</td>
     <td><a href="../assets/dynamic_programming/questions/_triangle/triangle.js">Triangle</a></td>
+  </tr>
+</table>
+
+### Already Done / Stubbed
+
+<table>
+  <tr>
+    <td>#</td>
+    <td>Title</td>
   </tr>
   <tr>
     <td>121</td>
