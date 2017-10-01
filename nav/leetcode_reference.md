@@ -464,6 +464,10 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/binary_tree/_minimum_depth_of_binary_tree/minimum_depth_of_binary_tree.js">Minimum Depth of Binary Tree</a></td>
   </tr>
   <tr>
+    <td>112</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_path_sum/path_sum.js">Path Sum</a></td>
+  </tr>
+  <tr>
     <td>118</td>
     <td><a href="../assets/arrays/questions/_pascals_triangle/pascals_triangle.js">Pascals Triangle</a></td>
   </tr>
