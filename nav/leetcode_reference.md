@@ -468,6 +468,10 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/binary_tree/_path_sum/path_sum.js">Path Sum</a></td>
   </tr>
   <tr>
+    <td>113</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_path_sum_II/path_sum_II.js">Path Sum II</a></td>
+  </tr>
+  <tr>
     <td>118</td>
     <td><a href="../assets/arrays/questions/_pascals_triangle/pascals_triangle.js">Pascals Triangle</a></td>
   </tr>
