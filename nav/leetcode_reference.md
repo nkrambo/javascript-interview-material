@@ -604,6 +604,10 @@ are local test cases as well.
     <td><a href="../assets/design/questions/_LRU_cache/LRU_cache.js">LRU Cache</a></td>
   </tr>
   <tr>
+    <td>147</td>
+    <td><a href="../assets/linked_lists/questions/_insertion_sort_list/insertion_sort_list.js">Insertion Sort List</a></td>
+  </tr>
+  <tr>
     <td>151</td>
     <td><a href="../assets/strings/questions/reverse_words_in_a_string/reverse_words_in_a_string.js">Reverse Words in a String</a></td>
   </tr>
