@@ -490,15 +490,6 @@ are local test cases as well.
     <td>120</td>
     <td><a href="../assets/dynamic_programming/questions/_triangle/triangle.js">Triangle</a></td>
   </tr>
-</table>
-
-### Already Done / Stubbed
-
-<table>
-  <tr>
-    <td>#</td>
-    <td>Title</td>
-  </tr>
   <tr>
     <td>121</td>
     <td><a href="../assets/greedy/questions/_best_time_to_buy_and_sell_stock/best_time_to_buy_and_sell_stock.js">Best Time to Buy and Sell Stock</a></td>
@@ -532,8 +523,21 @@ are local test cases as well.
     <td><a href="../assets/union_find/questions/_longest_consecutive_sequence/longest_consecutive_sequence.js">Longest Consecutive Sequence</a></td>
   </tr>
   <tr>
+    <td>129</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_sum_root_to_leaf_numbers/sum_root_to_leaf_numbers.js">Sum Root to Leaf Numbers</a></td>
+  </tr>
+  <tr>
     <td>130</td>
     <td><a href="../assets/union_find/questions/_surrounded_regions/surrounded_regions.js">Surrounded Regions</a></td>
+  </tr>
+</table>
+
+### Already Done / Stubbed
+
+<table>
+  <tr>
+    <td>#</td>
+    <td>Title</td>
   </tr>
   <tr>
     <td>134</td>
