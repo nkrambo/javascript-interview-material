@@ -570,15 +570,6 @@ are local test cases as well.
     <td>140</td>
     <td><a href="../assets/dynamic_programming/questions/_word_break_II/word_break_II.js">Word Break II</a></td>
   </tr>
-</table>
-
-### Already Done / Stubbed
-
-<table>
-  <tr>
-    <td>#</td>
-    <td>Title</td>
-  </tr>
   <tr>
     <td>141</td>
     <td><a href="../assets/linked_lists/questions/_linked_list_cycle/linked_list_cycle.js">Linked List Cycle</a></td>
@@ -606,6 +597,27 @@ are local test cases as well.
   <tr>
     <td>147</td>
     <td><a href="../assets/linked_lists/questions/_insertion_sort_list/insertion_sort_list.js">Insertion Sort List</a></td>
+  </tr>
+  <tr>
+    <td>148</td>
+    <td><a href="../assets/linked_lists/questions/_sort_list/sort_list.js">Sort List</a></td>
+  </tr>
+  <tr>
+    <td>149</td>
+    <td><a href="../assets/math/questions/_max_points_on_a_line/max_points_on_a_line.js">Max Points on a a Line</a></td>
+  </tr>
+  <tr>
+    <td>150</td>
+    <td><a href="../assets/queues_and_stacks/questions/_evaluate_reverse_polish_notation/evaluate_reverse_polish_notation.js">Evaluate Reverse Polish Notation</a></td>
+  </tr>
+</table>
+
+### Already Done / Stubbed
+
+<table>
+  <tr>
+    <td>#</td>
+    <td>Title</td>
   </tr>
   <tr>
     <td>151</td>
