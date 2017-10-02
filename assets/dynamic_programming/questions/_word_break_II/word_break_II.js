@@ -9,7 +9,7 @@
 * words, add spaces in s to construct a sentence where each word is a valid dictionary
 * word. You may assume the dictionary does not contain duplicate words.
 *
-*Return all such possible sentences.
+* Return all such possible sentences.
 *
 * For example, givenm
 *

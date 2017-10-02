@@ -580,8 +580,20 @@ are local test cases as well.
     <td>Title</td>
   </tr>
   <tr>
+    <td>141</td>
+    <td><a href="../assets/linked_lists/questions/_linked_list_cycle/linked_list_cycle.js">Linked List Cycle</a></td>
+  </tr>
+  <tr>
     <td>142</td>
     <td><a href="../assets/linked_lists/questions/_linked_list_cycle_II/linked_list_cycle_II.js">Linked List Cycle II</a></td>
+  </tr>
+  <tr>
+    <td>143</td>
+    <td><a href="../assets/linked_lists/questions/_reorder_list/reorder_list.js">Reorder List</a></td>
+  </tr>
+  <tr>
+    <td>144</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_preorder_traversal/binary_tree_preorder_traversal.js">Binary Tree Preorder Traversal</a></td>
   </tr>
   <tr>
     <td>151</td>
