@@ -530,15 +530,6 @@ are local test cases as well.
     <td>130</td>
     <td><a href="../assets/union_find/questions/_surrounded_regions/surrounded_regions.js">Surrounded Regions</a></td>
   </tr>
-</table>
-
-### Already Done / Stubbed
-
-<table>
-  <tr>
-    <td>#</td>
-    <td>Title</td>
-  </tr>
   <tr>
     <td>131</td>
     <td><a href="../assets/dynamic_programming/questions/_palindrome_partitioning/palindrome_partitioning.js">Palindrome Partitioning</a></td>
@@ -549,7 +540,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>133</td>
-    <td><a href="../assets/graphs/questions/graphs/_clone_graph/clone_graph.js">Clone Graph</a></td>
+    <td><a href="../assets/graphs/questions/graph/_clone_graph/clone_graph.js">Clone Graph</a></td>
   </tr>
   <tr>
     <td>134</td>
@@ -566,6 +557,27 @@ are local test cases as well.
   <tr>
     <td>137</td>
     <td><a href="../assets/bit_manipulation/questions/_single_number_II/single_number_II.js">Single Number II</a></td>
+  </tr>
+  <tr>
+    <td>138</td>
+    <td><a href="../assets/linked_lists/questions/_copy_list_with_random_pointer/copy_list_with_random_pointer.js">Copy List with Random Pointer</a></td>
+  </tr>
+  <tr>
+    <td>139</td>
+    <td><a href="../assets/dynamic_programming/questions/_word_break/word_break.js">Word Break</a></td>
+  </tr>
+  <tr>
+    <td>140</td>
+    <td><a href="../assets/dynamic_programming/questions/_word_break_II/word_break_II.js">Word Break II</a></td>
+  </tr>
+</table>
+
+### Already Done / Stubbed
+
+<table>
+  <tr>
+    <td>#</td>
+    <td>Title</td>
   </tr>
   <tr>
     <td>142</td>
