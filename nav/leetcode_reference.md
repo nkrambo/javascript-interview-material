@@ -621,7 +621,11 @@ are local test cases as well.
   </tr>
   <tr>
     <td>151</td>
-    <td><a href="../assets/strings/questions/reverse_words_in_a_string/reverse_words_in_a_string.js">Reverse Words in a String</a></td>
+    <td><a href="../assets/strings/questions/_reverse_words_in_a_string/reverse_words_in_a_string.js">Reverse Words in a String</a></td>
+  </tr>
+  <tr>
+    <td>152</td>
+    <td><a href="../assets/dynamic_programming/questions/_maximum_product_subarray/maximum_product_subarray.js">Maximum Product Subarray</a></td>
   </tr>
   <tr>
     <td>153</td>

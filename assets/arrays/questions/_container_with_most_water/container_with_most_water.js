@@ -61,15 +61,30 @@
 *     0      1      2      3      4      5      6      7      8      9      10
 *
 *
-* Time: O(1)
+* Time: O(n)
 * Space: O(1)
+*
+* We can do this in a single pass.
 *
 * @param {number[]} height
 * @return {number}
 */
 
-// function maxArea(height) {
-//
-// }
-//
-// export default maxArea;
+function maxArea(height) {
+  let maxarea = 0;
+  let l = 0;
+  let r = height.length - 1;
+
+  while (l < r) {
+    maxarea = Math.max(maxarea, Math.min(height[l], height[r]) * (r - l));
+    if (height[l] < height[r]) {
+      l += 1;
+    } else {
+      r -= 1;
+    }
+  }
+
+  return maxarea;
+}
+
+export default maxArea;
