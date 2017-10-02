@@ -640,6 +640,14 @@ are local test cases as well.
     <td><a href="../assets/queues_and_stacks/questions/_min_stack/min_stack.js">Min Stack</a></td>
   </tr>
   <tr>
+    <td>156</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_upside_down/binary_tree_upside_down.js">Binary Tree Upside Down</a></td>
+  </tr>
+  <tr>
+    <td>157</td>
+    <td><a href="../assets/strings/questions/_read_n_characters_given_read4/read_n_characters_given_read4.js">Read N Characters Given Read4</a></td>
+  </tr>
+  <tr>
     <td>160</td>
     <td><a href="../assets/linked_lists/questions/_intersection_of_two_linked_lists/intersection_of_two_linked_lists.js">Intersection of Two Linked Lists</a></td>
   </tr>
