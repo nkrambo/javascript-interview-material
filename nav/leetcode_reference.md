@@ -540,6 +540,18 @@ are local test cases as well.
     <td>Title</td>
   </tr>
   <tr>
+    <td>131</td>
+    <td><a href="../assets/dynamic_programming/questions/_palindrome_partitioning/palindrome_partitioning.js">Palindrome Partitioning</a></td>
+  </tr>
+  <tr>
+    <td>132</td>
+    <td><a href="../assets/dynamic_programming/questions/_palindrome_partitioning_II/palindrome_partitioning_II.js">Palindrome Partitioning II</a></td>
+  </tr>
+  <tr>
+    <td>133</td>
+    <td><a href="../assets/graphs/questions/graphs/_clone_graph/clone_graph.js">Clone Graph</a></td>
+  </tr>
+  <tr>
     <td>134</td>
     <td><a href="../assets/greedy/questions/_gas_station/gas_station.js">Gas Station</a></td>
   </tr>
