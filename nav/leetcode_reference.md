@@ -596,6 +596,14 @@ are local test cases as well.
     <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_preorder_traversal/binary_tree_preorder_traversal.js">Binary Tree Preorder Traversal</a></td>
   </tr>
   <tr>
+    <td>145</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_postorder_traversal/binary_tree_postorder_traversal.js">Binary Tree Postorder Traversal</a></td>
+  </tr>
+  <tr>
+    <td>146</td>
+    <td><a href="../assets/design/questions/_LRU_cache/LRU_cache.js">LRU Cache</a></td>
+  </tr>
+  <tr>
     <td>151</td>
     <td><a href="../assets/strings/questions/reverse_words_in_a_string/reverse_words_in_a_string.js">Reverse Words in a String</a></td>
   </tr>
