@@ -672,6 +672,10 @@ are local test cases as well.
     <td><a href="../assets/arrays/questions/_missing_ranges/missing_ranges.js">Missing Ranges</a></td>
   </tr>
   <tr>
+    <td>164</td>
+    <td><a href="../assets/sort/questions/_maximum_gap/maximum_gap.js">Maximum Gap</a></td>
+  </tr>
+  <tr>
     <td>167</td>
     <td><a href="../assets/search/questions/_two_sum_II/two_sum_II.js">Two Sum II - Input Array is Sorted</a></td>
   </tr>
