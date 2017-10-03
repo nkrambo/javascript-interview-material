@@ -676,6 +676,14 @@ are local test cases as well.
     <td><a href="../assets/sort/questions/_maximum_gap/maximum_gap.js">Maximum Gap</a></td>
   </tr>
   <tr>
+    <td>165</td>
+    <td><a href="../assets/strings/questions/_compare_version_numbers/compare_version_numbers.js">Compare Version Numbers</a></td>
+  </tr>
+  <tr>
+    <td>166</td>
+    <td><a href="../assets/math/questions/_fraction_to_recurring_decimal/fraction_to_recurring_decimal.js">Fraction to Recurring Decimal</a></td>
+  </tr>
+  <tr>
     <td>167</td>
     <td><a href="../assets/search/questions/_two_sum_II/two_sum_II.js">Two Sum II - Input Array is Sorted</a></td>
   </tr>
