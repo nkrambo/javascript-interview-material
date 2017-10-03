@@ -650,15 +650,6 @@ are local test cases as well.
     <td>160</td>
     <td><a href="../assets/linked_lists/questions/_intersection_of_two_linked_lists/intersection_of_two_linked_lists.js">Intersection of Two Linked Lists</a></td>
   </tr>
-</table>
-
-### Already Done / Stubbed
-
-<table>
-  <tr>
-    <td>#</td>
-    <td>Title</td>
-  </tr>
   <tr>
     <td>161</td>
     <td><a href="../assets/strings/questions/one_edit_distance/one_edit_distance.js">One Edit Distance</a></td>
@@ -698,6 +689,15 @@ are local test cases as well.
   <tr>
     <td>170</td>
     <td><a href="../assets/design/questions/_two_sum_III/two_sum_III.js">Two Sum III - Data structure design</a></td>
+  </tr>
+</table>
+
+### Already Done / Stubbed
+
+<table>
+  <tr>
+    <td>#</td>
+    <td>Title</td>
   </tr>
   <tr>
     <td>171</td>
