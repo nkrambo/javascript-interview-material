@@ -690,15 +690,6 @@ are local test cases as well.
     <td>170</td>
     <td><a href="../assets/design/questions/_two_sum_III/two_sum_III.js">Two Sum III - Data structure design</a></td>
   </tr>
-</table>
-
-### Already Done / Stubbed
-
-<table>
-  <tr>
-    <td>#</td>
-    <td>Title</td>
-  </tr>
   <tr>
     <td>171</td>
     <td><a href="../assets/math/questions/_excel_sheet_column_number/excel_sheet_column_number.js">Excel Sheet Column Number</a></td>
@@ -714,6 +705,39 @@ are local test cases as well.
   <tr>  
     <td>174</td>
     <td><a href="../assets/dynamic_programming/questions/_dungeon_game/dungeon_game.js">Dungeon Game</a></td>
+  </tr>
+  <tr>  
+    <td>175</td>
+    <td><a href="../assets/db/questions/_combine_two_tables/combine_two_tables.md">Combine Two Tables</a></td>
+  </tr>
+  <tr>  
+    <td>176</td>
+    <td><a href="../assets/db/questions/_second_highest_salary/second_highest_salary.md">Second Highest Salary</a></td>
+  </tr>
+  <tr>  
+    <td>177</td>
+    <td><a href="../assets/db/questions/_nth_highest_salary/nth_highest_salary.md">Nth Highest Salary</a></td>
+  </tr>
+  <tr>  
+    <td>178</td>
+    <td><a href="../assets/db/questions/_rank_scores/rank_scores.md">Rank Scores</a></td>
+  </tr>
+  <tr>  
+    <td>179</td>
+    <td><a href="../assets/sort/questions/_largest_number/largest_number.js">Largest Number</a></td>
+  </tr>
+  <tr>  
+    <td>180</td>
+    <td><a href="../assets/db/questions/_consecutive_numbers/consecutive_numbers.md">Consecutive Numbers</a></td>
+  </tr>
+</table>
+
+### Already Done / Stubbed
+
+<table>
+  <tr>
+    <td>#</td>
+    <td>Title</td>
   </tr>
   <tr>
     <td>187</td>
