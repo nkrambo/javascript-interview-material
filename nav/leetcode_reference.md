@@ -705,7 +705,7 @@ are local test cases as well.
   </tr>
   <tr>  
     <td>172</td>
-    <td><a href="../assets/math/questions/_factorial_trailing_zeros/factorial_trailing_zeros.js">Factorial Trailing Zeros</a></td>
+    <td><a href="../assets/math/questions/_factorial_trailing_zeroes/factorial_trailing_zeroes.js">Factorial Trailing Zeroes</a></td>
   </tr>
   <tr>  
     <td>174</td>
