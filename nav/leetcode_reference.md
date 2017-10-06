@@ -709,7 +709,7 @@ are local test cases as well.
   </tr>
   <tr>  
     <td>173</td>
-    <td><a href="../assets/graphs/questions/BST/_binary_search_tree_iterator/binary_search_tree_iterator.js">Binary Search Tree Iterator</a></td>
+    <td><a href="../assets/graphs/questions/bst/_binary_search_tree_iterator/binary_search_tree_iterator.js">Binary Search Tree Iterator</a></td>
   </tr>
   <tr>  
     <td>174</td>
