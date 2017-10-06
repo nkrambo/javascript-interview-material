@@ -739,6 +739,26 @@ are local test cases as well.
     <td>#</td>
     <td>Title</td>
   </tr>
+  <tr>  
+    <td>181</td>
+    <td><a href="../assets/db/questions/_employees_earning_more_than_their_managers/employees_earning_more_than_their_managers.md">Employees Earning More Than Their Managers</a></td>
+  </tr>
+  <tr>  
+    <td>182</td>
+    <td><a href="../assets/db/questions/_duplicate_emails/duplicate_emails.md">Duplicate Emails</a></td>
+  </tr>
+  <tr>  
+    <td>183</td>
+    <td><a href="../assets/db/questions/_customers_who_never_order/customers_who_never_order.md">Customers Who Never Order</a></td>
+  </tr>
+  <tr>  
+    <td>184</td>
+    <td><a href="../assets/db/questions/_department_highest_salary/department_highest_salary.md">Department Highest Salary</a></td>
+  </tr>
+  <tr>  
+    <td>185</td>
+    <td><a href="../assets/db/questions/_department_top_three_salaries/department_top_three_salaries.md">Department Top Three Salaries</a></td>
+  </tr>
   <tr>
     <td>187</td>
     <td><a href="../assets/bit_manipulation/questions/_repeated_dna_sequences/repeated_dna_sequences.js">Repeated DNA Sequences</a></td>
