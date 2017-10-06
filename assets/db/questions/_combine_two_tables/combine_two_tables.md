@@ -1,7 +1,7 @@
 
 175. Combine Two Tables
 
-Table: Person
+**Table: Person**
 
 | Column Name   | Type          |
 | ------------- |:-------------:|
@@ -11,7 +11,7 @@ Table: Person
 
 PersonId is the primary key column for this table.
 
-Table: Address
+**Table: Address**
 
 | Column Name   | Type          |
 | ------------- |:-------------:|
@@ -24,4 +24,4 @@ AddressId is the primary key column for this table.
 
 Write a SQL query for a report that provides the following information for each person in the Person table, regardless if there is an address for each of those people:
 
-FirstName, LastName, City, State
+`FirstName, LastName, City, State`
