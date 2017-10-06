@@ -708,6 +708,10 @@ are local test cases as well.
     <td><a href="../assets/math/questions/_factorial_trailing_zeroes/factorial_trailing_zeroes.js">Factorial Trailing Zeroes</a></td>
   </tr>
   <tr>  
+    <td>173</td>
+    <td><a href="../assets/graphs/questions/BST/_binary_search_tree_iterator/binary_search_tree_iterator.js">Binary Search Tree Iterator</a></td>
+  </tr>
+  <tr>  
     <td>174</td>
     <td><a href="../assets/dynamic_programming/questions/_dungeon_game/dungeon_game.js">Dungeon Game</a></td>
   </tr>
