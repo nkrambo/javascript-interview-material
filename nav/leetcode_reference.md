@@ -703,7 +703,11 @@ are local test cases as well.
     <td>171</td>
     <td><a href="../assets/math/questions/_excel_sheet_column_number/excel_sheet_column_number.js">Excel Sheet Column Number</a></td>
   </tr>
-  <tr>
+  <tr>  
+    <td>172</td>
+    <td><a href="../assets/math/questions/_factorial_trailing_zeros/factorial_trailing_zeros.js">Factorial Trailing Zeros</a></td>
+  </tr>
+  <tr>  
     <td>174</td>
     <td><a href="../assets/dynamic_programming/questions/_dungeon_game/dungeon_game.js">Dungeon Game</a></td>
   </tr>
