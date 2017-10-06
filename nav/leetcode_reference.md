@@ -770,6 +770,46 @@ are local test cases as well.
     <td>190</td>
     <td><a href="../assets/bit_manipulation/questions/_reverse_bits/reverse_bits.js">Reverse Bits</a></td>
   </tr>
+  <tr>
+    <td>191</td>
+    <td><a href="../assets/bit_manipulation/questions/_number_of_1_bits/number_of_1_bits.js">Number of 1 Bits (Hamming Weight)</a></td>
+  </tr>
+  <tr>
+    <td>192</td>
+    <td><a href="../assets/shell/questions/_word_frequency/word_frequency.md">Word Frequency</a></td>
+  </tr>
+  <tr>
+    <td>193</td>
+    <td><a href="../assets/shell/questions/_valid_phone_numbers/valid_phone_numbers.md">Valid Phone Numbers</a></td>
+  </tr>
+  <tr>
+    <td>194</td>
+    <td><a href="../assets/shell/questions/_transpose_file/transpose_file.md">Transpose File</a></td>
+  </tr>
+  <tr>
+    <td>195</td>
+    <td><a href="../assets/shell/questions/_tenth_line/tenth_line.md">Tenth Line</a></td>
+  </tr>
+  <tr>
+    <td>196</td>
+    <td><a href="../assets/db/questions/_delete_duplicate_emails/delete_duplicate_emails.md">Delete Duplicate Emails</a></td>
+  </tr>
+  <tr>
+    <td>197</td>
+    <td><a href="../assets/db/questions/_rising_temperature/rising_temperature.md">Rising Temperature</a></td>
+  </tr>
+  <tr>
+    <td>198</td>
+    <td><a href="../assets/dynamic_programming/questions/_house_robber/house_robber.js">House Robber</a></td>
+  </tr>
+  <tr>
+    <td>199</td>
+    <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_right_side_view/binary_tree_right_side_view.js">Binary Tree Right Side View</a></td>
+  </tr>
+  <tr>
+    <td>200</td>
+    <td><a href="../assets/union_find/questions/_number_of_islands/number_of_islands.js">Number of Islands</a></td>
+  </tr>
 </table>
 
 ### Already Done / Stubbed
@@ -778,18 +818,6 @@ are local test cases as well.
   <tr>
     <td>#</td>
     <td>Title</td>
-  </tr>
-  <tr>
-    <td>191</td>
-    <td><a href="../assets/bit_manipulation/questions/_number_of_1_bits/number_of_1_bits.js">Number of 1 Bits (Hamming Weight)</a></td>
-  </tr>
-  <tr>
-    <td>198</td>
-    <td><a href="../assets/dynamic_programming/questions/_house_robber/house_robber.js">House Robber</a></td>
-  </tr>
-  <tr>
-    <td>200</td>
-    <td><a href="../assets/union_find/questions/_number_of_islands/number_of_islands.js">Number of Islands</a></td>
   </tr>
   <tr>
     <td>201</td>
