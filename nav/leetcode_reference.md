@@ -359,7 +359,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>88</td>
-    <td><a href="../assets/arrays/questions/_merge_sorted_array/merge_sorted_array.js">Merge Sorted Array</a></td>
+    <td><a href="../assets/arrays/questions/merge_sorted_array/merge_sorted_array.js">Merge Sorted Array</a></td>
   </tr>
   <tr>
     <td>89</td>
