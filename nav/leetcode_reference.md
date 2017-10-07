@@ -111,11 +111,11 @@ are local test cases as well.
   </tr>
   <tr>
     <td>26</td>
-    <td><a href="../assets/arrays/questions/_remove_duplicates_from_sorted_array/remove_duplicates_from_sorted_array.js">Remove Duplicates from Sorted Array</a></td>
+    <td><a href="../assets/arrays/questions/remove_duplicates_from_sorted_array/remove_duplicates_from_sorted_array.js">Remove Duplicates from Sorted Array</a></td>
   </tr>
   <tr>
     <td>27</td>
-    <td><a href="../assets/arrays/questions/_remove_element/remove_element.js">Remove Element</a></td>
+    <td><a href="../assets/arrays/questions/remove_element/remove_element.js">Remove Element</a></td>
   </tr>
   <tr>
     <td>28</td>
