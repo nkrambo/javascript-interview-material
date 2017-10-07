@@ -17,6 +17,10 @@
 *   ["bat"]
 * ]
 *
+* Note: All inputs will be in lower-case.
+*/
+
+/**
 * Solution:
 *
 * This problems asks us to group the strings in an array such that the anagrams
@@ -46,8 +50,8 @@
 * grouped all the words into these lists by anagram, we can then put them back into
 * the array.
 *
-* @param {array} strs array of strings
-* @return {modify} modfies the input array
+* @param {string[]} strs
+* @return {string[][]}
 *
 * Time: O(n log n)
 * Space: O(n)

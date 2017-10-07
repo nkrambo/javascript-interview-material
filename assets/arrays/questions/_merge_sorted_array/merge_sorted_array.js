@@ -31,8 +31,32 @@
 * @return {void} Do not return anything, modify nums1 in-place instead.
 */
 
-// function merge(nums1, m, nums2, n) {
-//
-// }
-//
-// export default merge;
+function merge(nums1, m, nums2, n) {
+  let i = m - 1;      // length of A
+  let j = n - 1;      // length of B
+  let k = m + n - 1;  // length of new merged array
+
+  // rename for convienience
+  const A = nums1;
+  const B = nums2;
+
+  // while we have 'evenly matched' elements in both A and B, pairs of elements
+  while (i >= 0 && j >= 0) {
+
+    // if A is greater than B, take A and place in new index
+    if (A[i] > B[j]) {
+      A[k--] = A[i--];
+
+    // otherwise, take B and place in new index
+    } else {
+      A[k--] = B[j--];
+    }
+  }
+
+  // take any 'odd' remaining values in B and place them in A
+  while (j >= 0) {
+    A[k--] = B[j--];
+  }
+}
+
+export default merge;
