@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import {
   longestSubstringBrute,
   allUnique,
-  // longestSubstring,
+  longestSubstring,
   longestSubstringMap,
 } from '../longest_substring_no_repeated_characters';
 
@@ -32,16 +32,16 @@ describe('allUnique()', () => {
   });
 });
 
-// describe('longestSubstring()', () => {
-//   it('should find the longest substring with no repeating characters', () => {
-//     expect(longestSubstring('abcabcbb')).to.equal(3);
-//     expect(longestSubstring('bbbbb')).to.equal(1);
-//     expect(longestSubstring('pwwkew')).to.equal(3);
-//     expect(longestSubstring('c')).to.equal(1);
-//     expect(longestSubstring('au')).to.equal(2);
-//     expect(longestSubstring('dvdf')).to.equal(3);
-//   });
-// });
+describe('longestSubstring()', () => {
+  it('should find the longest substring with no repeating characters', () => {
+    expect(longestSubstring('abcabcbb')).to.equal(3);
+    expect(longestSubstring('bbbbb')).to.equal(1);
+    expect(longestSubstring('pwwkew')).to.equal(3);
+    expect(longestSubstring('c')).to.equal(1);
+    expect(longestSubstring('au')).to.equal(2);
+    expect(longestSubstring('dvdf')).to.equal(3);
+  });
+});
 
 describe('longestSubstringMap()', () => {
   it('should find the longest substring with no repeating characters', () => {

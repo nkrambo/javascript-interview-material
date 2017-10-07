@@ -36,22 +36,54 @@
 * @return {boolean}
 */
 
-// function isPalindrome(x) {
-//   // special cases:
-//   // 1. when x < 0, x is not a palindrome.
-//   // 2. if the last digit is 0, the first digit must also be 0 to be a palindrome
-//   if (x < 0 || (x % 10 === 0 && x !== 0)) return false;
-//
-//   let revertedNumber = 0;
-//   while (x > revertedNumber) {
-//     revertedNumber = (revertedNumber * 10) + (x % 10);
-//     x /= 10;
-//   }
-//
-//   // When the length is an odd number, we can get rid of the middle digit by revertedNumber/10
-//   // For example when the input is 12321, at the end of the while loop we get x = 12, revertedNumber = 123,
-//   // since the middle digit doesn't matter in palidrome(it will always equal to itself), we can simply get rid of it.
-//   return x === revertedNumber || x === revertedNumber / 10;
-// }
-//
-// export default isPalindrome;
+function isPalindrome1(x) {
+  x += '';
+  let i = 0;
+  let j = x.length - 1;
+
+  while(i < j) {
+    if (x[i] !== x[j]) return false
+
+    i += 1;
+    j -= 1;
+  }
+
+  return true;
+}
+
+function isPalindrome2(x) {
+  if (x < 0) return false;
+
+  let div = 1;
+
+  // it means that the div is still a valid divider
+  // e.g 600 the divider should be 100 at maximum
+  // e.g. 90 the divider should be 10 at maximum
+  // e.g. 1 the divider should be a 1 at maximum
+  while (parseInt(x/div) >= 10) {
+    div *= 10;
+  }
+
+  let left, right;
+
+  // when div === 1 it means the digit only has one value to examine
+  // e.g. 121 -> only 2 is left for examine which can be ignore
+  // e.g. 1 -> 1
+  // e.g. 43234 -> 2
+  while (div > 1) {
+    left = parseInt(x / div);
+    right = x % 10;
+
+    if (left !== right) {
+      return false;
+    }
+
+    x = x % div; // remove the left most digit
+    x = parseInt(x / 10); // remove the right most digit
+    div /= 100;
+  }
+
+  return true;
+}
+
+export { isPalindrome1, isPalindrome2 };

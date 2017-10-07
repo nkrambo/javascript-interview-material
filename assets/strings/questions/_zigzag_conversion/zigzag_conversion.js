@@ -28,17 +28,41 @@
 *
 * Solution:
 *
+* https://github.com/duteng/leetcode/tree/master/Algorithms/ZigZag%20Conversion
 *
 * Time: O(1)
 * Space: O(1)
 *
-* @param {string} s string to convert
-* @param {number} numRows number of rows s should be zigzagged
-* @return {string} returns a zigzagged string
+* @param {string} s
+* @param {number} numRows
+* @return {string}
 */
 
-// function convert(s, numRows) {
-//
-// }
-//
-// export default convert;
+function convert(s, numRows) {
+  let result = '';
+  const chars = s.split('');
+  const arrs = [];
+
+  for (let i = 0; i < numRows; i += 1) {
+    arrs.push([]);
+  }
+
+  let i = 0;
+  while (i < chars.length) {
+    for (let x = 0; x < numRows && i < chars.length; x += 1) {
+      arrs[x].push(chars[i++]);
+    }
+
+    for (let x = numRows - 2; x > 0 && i < chars.length; x -= 1) {
+      arrs[x].push(chars[i++]);
+    }
+  }
+
+  arrs.map((item) => {
+    result = result.concat(item.join(''));
+  });
+
+  return result;
+}
+
+export default convert;

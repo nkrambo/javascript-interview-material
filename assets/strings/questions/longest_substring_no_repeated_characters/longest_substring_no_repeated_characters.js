@@ -142,8 +142,6 @@ function allUnique(s, start, end) {
 * @return {number} returns length of the longest substring with no repeated characters
 */
 
-// abcabcbb
-
 function longestSubstring(s) {
   const slidingWindow = new Set();
   let max = 0;
@@ -152,18 +150,18 @@ function longestSubstring(s) {
 
   while (i < s.length && j < s.length) {
     // try to extend the range [i, j]
-    if (!slidingWindow.has(s[j])) {
-      j += 1;
-      slidingWindow.add(s[j]);
+    if (!slidingWindow.has(s.charAt(j))) {
+      slidingWindow.add(s.charAt(j++));
       max = Math.max(max, j - i);
+
     } else {
-      i += 1;
-      slidingWindow.delete(s[i]);
+      slidingWindow.delete(s.charAt(i++));
     }
   }
 
   return max;
 }
+
 
 /**
 * longestSubstringMap()
