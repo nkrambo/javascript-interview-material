@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import merge from '../merge_sorted_array';
 
 describe('merge()', () => {
-  it('should merge two sorted integer arrays into a single array', () => {
+  test('should merge two sorted integer arrays into a single array', () => {
     const nums1 = [1, 2, 3];
     const nums2 = [4, 5, 6];
 

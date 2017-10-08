@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import Queue from '../queue';
 
 describe('Queue', () => {
-  it('should enqueue a new value', () => {
+  test('should enqueue a new value', () => {
     const queueOne = new Queue();
     queueOne.enqueue(10);
     queueOne.enqueue(20);
@@ -13,7 +13,7 @@ describe('Queue', () => {
     expect(queueOne.items[1]).to.equal(20);
   });
 
-  it('should dequeue the first item', () => {
+  test('should dequeue the first item', () => {
     const queueTwo = new Queue();
     queueTwo.enqueue(10);
     queueTwo.enqueue(20);
@@ -23,7 +23,7 @@ describe('Queue', () => {
     expect(queueTwo.length).to.equal(1);
   });
 
-  it('should return first item', () => {
+  test('should return first item', () => {
     const queueThree = new Queue();
     queueThree.enqueue(10);
     queueThree.enqueue(20);

@@ -4,7 +4,7 @@ import bfs from '../graph_bfs';
 import Graph from '../../../data_structures/graph/graph';
 
 describe('bfs()', () => {
-  it('should return an array of values of a graph in order of a BFS', () => {
+  test('should return an array of values of a graph in order of a BFS', () => {
     const graph = new Graph();
     graph.insert(0);
     graph.insert(1);

@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import MaxStack from '../max_stack';
 
 describe('MaxStack', () => {
-  it('should return the max value in the stack', () => {
+  test('should return the max value in the stack', () => {
     const stack = new MaxStack();
     stack.push(5);
     stack.push(34);

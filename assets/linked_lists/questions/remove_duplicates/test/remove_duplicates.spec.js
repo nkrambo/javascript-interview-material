@@ -4,7 +4,7 @@ import LinkedList from '../../../data_structures/singly_linked_list/singly_linke
 import { removeDuplicates, removeDuplicatesNoBuffer } from '../remove_duplicates';
 
 describe('removeDuplicates()', () => {
-  it('should remove duplicates from an unsorted linked list', () => {
+  test('should remove duplicates from an unsorted linked list', () => {
     const list = new LinkedList();
     list.add(100, 0);
     list.add(200, 0);
@@ -24,7 +24,7 @@ describe('removeDuplicates()', () => {
 });
 
 describe('removeDuplicatesNoBuffer()', () => {
-  it('should remove duplicates from an unsorted linked list', () => {
+  test('should remove duplicates from an unsorted linked list', () => {
     const list = new LinkedList();
     list.add(100, 0);
     list.add(200, 0);

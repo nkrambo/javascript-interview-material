@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import ThreeInOne from '../three_in_one';
 
 describe('ThreeInOne', () => {
-  it('should construct a ThreeInOne class', () => {
+  test('should construct a ThreeInOne class', () => {
     const tripleStack = new ThreeInOne();
 
     expect(tripleStack.array).to.a('array');
@@ -13,7 +13,7 @@ describe('ThreeInOne', () => {
     expect(tripleStack.lengths[0]).to.equal(0);
   });
 
-  it('should return push a frame to 3 different stacks', () => {
+  test('should return push a frame to 3 different stacks', () => {
     const tripleStack = new ThreeInOne();
     tripleStack.push(1, 1);
     tripleStack.push(1, 2);
@@ -28,7 +28,7 @@ describe('ThreeInOne', () => {
     expect(tripleStack.array[4]).to.equal(undefined);
   });
 
-  it('should return the length of the 3 different stacks', () => {
+  test('should return the length of the 3 different stacks', () => {
     const tripleStack = new ThreeInOne();
     tripleStack.push(1, 1);
     tripleStack.push(1, 2);
@@ -39,7 +39,7 @@ describe('ThreeInOne', () => {
     expect(tripleStack.getLength(2)).to.equal(0);
   });
 
-  it('should return pop a frame from 3 different stacks', () => {
+  test('should return pop a frame from 3 different stacks', () => {
     const tripleStack = new ThreeInOne();
     tripleStack.push(1, 1);
     tripleStack.push(1, 2);
@@ -48,7 +48,7 @@ describe('ThreeInOne', () => {
     expect(tripleStack.pop(2)).to.equal(null);
   });
 
-  it('should return peek values from 3 different stacks', () => {
+  test('should return peek values from 3 different stacks', () => {
     const tripleStack = new ThreeInOne();
     tripleStack.push(1, 1);
     tripleStack.push(1, 2);
@@ -57,7 +57,7 @@ describe('ThreeInOne', () => {
     expect(tripleStack.peek(2)).to.equal(null);
   });
 
-  it('should check if 3 different stacks are empty', () => {
+  test('should check if 3 different stacks are empty', () => {
     const tripleStack = new ThreeInOne();
     tripleStack.push(1, 1);
     tripleStack.push(3, 1);

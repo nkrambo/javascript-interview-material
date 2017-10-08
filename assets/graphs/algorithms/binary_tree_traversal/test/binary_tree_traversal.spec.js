@@ -12,7 +12,7 @@ import {
 } from '../binary_tree_traversal';
 
 describe('inOrder()', () => {
-  it('should return an array of all binary tree nodes in-order', () => {
+  test('should return an array of all binary tree nodes in-order', () => {
     const bst = new BST();
     bst.insert(4);
     bst.insert(2);
@@ -46,7 +46,7 @@ describe('inOrder()', () => {
 });
 
 describe('inOrderRecurse()', () => {
-  it('should return an array of all binary tree nodes in-order', () => {
+  test('should return an array of all binary tree nodes in-order', () => {
     const bst = new BST();
     bst.insert(4);
     bst.insert(2);
@@ -66,7 +66,7 @@ describe('inOrderRecurse()', () => {
 });
 
 describe('preOrder()', () => {
-  it('should return an array of all binary tree nodes pre-order', () => {
+  test('should return an array of all binary tree nodes pre-order', () => {
     const bst = new BST();
     bst.insert(4);
     bst.insert(2);
@@ -99,7 +99,7 @@ describe('preOrder()', () => {
 });
 
 describe('preOrderRecurse()', () => {
-  it('should return an array of all binary tree nodes pre-order', () => {
+  test('should return an array of all binary tree nodes pre-order', () => {
     const bst = new BST();
     bst.insert(4);
     bst.insert(2);
@@ -119,7 +119,7 @@ describe('preOrderRecurse()', () => {
 });
 
 describe('postOrder()', () => {
-  it('should return an array of all binary tree nodes post-order', () => {
+  test('should return an array of all binary tree nodes post-order', () => {
     const bst = new BST();
     bst.insert(4);
     bst.insert(2);
@@ -152,7 +152,7 @@ describe('postOrder()', () => {
 });
 
 describe('postOrderRecurse()', () => {
-  it('should return an array of all binary tree nodes post-order', () => {
+  test('should return an array of all binary tree nodes post-order', () => {
     const bst = new BST();
     bst.insert(4);
     bst.insert(2);
@@ -172,7 +172,7 @@ describe('postOrderRecurse()', () => {
 });
 
 describe('levelOrder()', () => {
-  it('should return an array of all binary tree nodes level-order', () => {
+  test('should return an array of all binary tree nodes level-order', () => {
     const bst = new BST();
     bst.insert(4);
     bst.insert(2);

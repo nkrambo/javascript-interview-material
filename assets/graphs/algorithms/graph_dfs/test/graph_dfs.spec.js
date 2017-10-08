@@ -4,7 +4,7 @@ import dfs from '../graph_dfs';
 import Graph from '../../../data_structures/graph/graph';
 
 describe('dfs()', () => {
-  it('should return an array of values of a graph in order of a DFS', () => {
+  test('should return an array of values of a graph in order of a DFS', () => {
     const graph = new Graph();
     graph.insert(0);
     graph.insert(1);

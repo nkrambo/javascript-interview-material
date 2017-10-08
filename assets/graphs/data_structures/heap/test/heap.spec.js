@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import Heap from '../heap';
 
 describe('Heap', () => {
-  it('should construct a minimum heap by default', () => {
+  test('should construct a minimum heap by default', () => {
     const heap = new Heap();
 
     expect(heap.heap).to.be.a('array');

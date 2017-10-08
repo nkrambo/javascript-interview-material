@@ -10,7 +10,7 @@ bt.insert(0);
 bt.insert(1);
 
 describe('BinaryTree', () => {
-  it('should create a binary tree with BFS insertions', () => {
+  test('should create a binary tree with BFS insertions', () => {
     expect(bt.root.value).to.equal(5);
     expect(bt.root.left.value).to.equal(-3);
     expect(bt.root.right.value).to.equal(6);

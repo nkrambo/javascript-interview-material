@@ -4,7 +4,7 @@ import findSecondLargest from '../second_largest_element';
 import BinarySearchTree from '../../../../data_structures/bst/bst';
 
 describe('findSecondLargest()', () => {
-  it('should return the second largest node, with no largest subtree', () => {
+  test('should return the second largest node, with no largest subtree', () => {
     const BST1 = new BinarySearchTree();
     BST1.insert(100);
     BST1.insert(50);
@@ -15,7 +15,7 @@ describe('findSecondLargest()', () => {
     expect(findSecondLargest(BST1.root)).to.equal(150);
   });
 
-  it('should return the second largest node, with a largest subtree', () => {
+  test('should return the second largest node, with a largest subtree', () => {
     const BST2 = new BinarySearchTree();
     BST2.insert(100);
     BST2.insert(50);
@@ -28,7 +28,7 @@ describe('findSecondLargest()', () => {
     expect(findSecondLargest(BST2.root)).to.equal(158);
   });
 
-  it('should throw an error', () => {
+  test('should throw an error', () => {
     const BST3 = new BinarySearchTree();
     BST3.insert(100);
 

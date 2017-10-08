@@ -51,7 +51,7 @@ weighted.insertEdge('C', 'D', 5);
 describe('bellmanFord()', () => {
   const source = weighted.find('A'); // source
 
-  it('should return the shortest path for all nodes from source', () => {
+  test('should return the shortest path for all nodes from source', () => {
     const result = bellmanFord(source, weighted);
 
     expect(result).to.be.a('array');

@@ -14,23 +14,23 @@ describe('TempTracker', () => {
   thermo.insert(60);
   thermo.insert(60);
 
-  it('should return the min temperature', () => {
+  test('should return the min temperature', () => {
     expect(thermo.getMin()).to.equal(10);
   });
 
-  it('should return the max temperature', () => {
+  test('should return the max temperature', () => {
     expect(thermo.getMax()).to.equal(80);
   });
 
-  it('should return the mean temperature', () => {
+  test('should return the mean temperature', () => {
     expect(thermo.getMean()).to.equal(41);
   });
 
-  it('should return the mode temperature', () => {
+  test('should return the mode temperature', () => {
     expect(thermo.getMode()).to.equal(60);
   });
 
-  it('should throw a range error', () => {
+  test('should throw a range error', () => {
     expect(() => { thermo.insert(115); }).to.throw(RangeError);
     expect(() => { thermo.insert(-10); }).to.throw(RangeError);
   });

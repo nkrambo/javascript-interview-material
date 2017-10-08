@@ -13,7 +13,7 @@ class Listy {
 }
 
 describe('indexAtListy()', () => {
-  it('should return the index of target', () => {
+  test('should return the index of target', () => {
     const list = new Listy();
     list.items.push(1);
     list.items.push(2);
@@ -28,7 +28,7 @@ describe('indexAtListy()', () => {
     expect(indexAtListy(list, 1)).to.equal(0);
   });
 
-  it('should return -1 if target does not exist', () => {
+  test('should return -1 if target does not exist', () => {
     const list = new Listy();
     list.items.push(1);
     list.items.push(2);

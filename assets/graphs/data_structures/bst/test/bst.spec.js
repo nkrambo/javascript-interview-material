@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import BinarySearchTree from '../bst';
 
 describe('BinarySearchTree', () => {
-  it('should insert a value', () => {
+  test('should insert a value', () => {
     const BST = new BinarySearchTree();
     BST.insert(5);
     BST.insert(2);
@@ -14,7 +14,7 @@ describe('BinarySearchTree', () => {
     expect(BST.root.left.value).to.equal(2);
   });
 
-  it('should find a value', () => {
+  test('should find a value', () => {
     const BST = new BinarySearchTree();
     BST.insert(5);
     BST.insert(2);
@@ -23,7 +23,7 @@ describe('BinarySearchTree', () => {
     expect(BST.find(5).value).to.equal(5);
   });
 
-  it('should check if the tree is empty', () => {
+  test('should check if the tree is empty', () => {
     const BST = new BinarySearchTree();
     expect(BST.isEmpty()).to.be.true;
 
@@ -31,7 +31,7 @@ describe('BinarySearchTree', () => {
     expect(BST.isEmpty()).to.be.false;
   });
 
-  it('should return the largest value', () => {
+  test('should return the largest value', () => {
     const BST = new BinarySearchTree();
     BST.insert(5);
     BST.insert(2);
@@ -42,7 +42,7 @@ describe('BinarySearchTree', () => {
     expect(BST.largest().value).to.equal(7);
   });
 
-  it('should return the smallest value', () => {
+  test('should return the smallest value', () => {
     const BST = new BinarySearchTree();
     BST.insert(5);
     BST.insert(2);
@@ -53,7 +53,7 @@ describe('BinarySearchTree', () => {
     expect(BST.smallest().value).to.equal(2);
   });
 
-  it('should return the next value', () => {
+  test('should return the next value', () => {
     /**
     *                  5
     *               ↙     ↘
@@ -79,7 +79,7 @@ describe('BinarySearchTree', () => {
     expect(BST.next(6).value).to.equal(7);
   });
 
-  it('should delete a value', () => {
+  test('should delete a value', () => {
     const BST = new BinarySearchTree();
     BST.insert(5);
     BST.insert(2);
@@ -90,7 +90,7 @@ describe('BinarySearchTree', () => {
     expect(BST.delete(7)).to.equal('Node removed');
   });
 
-  it('should return a range of values', () => {
+  test('should return a range of values', () => {
     const BST = new BinarySearchTree();
     BST.insert(5);
     BST.insert(2);
@@ -109,7 +109,7 @@ describe('BinarySearchTree', () => {
     expect(BST.range(1, 8)).to.deep.equal([1, 2, 4, 5, 6, 7, 8]);
   });
 
-  it('should perform a dfs', () => {
+  test('should perform a dfs', () => {
     const BST = new BinarySearchTree();
     BST.insert(5);
     BST.insert(2);
@@ -125,7 +125,7 @@ describe('BinarySearchTree', () => {
     expect(BST.root.left.value).to.equal(4);
   });
 
-  it('should perform a bfs', () => {
+  test('should perform a bfs', () => {
     const BST = new BinarySearchTree();
     BST.insert(5);
     BST.insert(2);

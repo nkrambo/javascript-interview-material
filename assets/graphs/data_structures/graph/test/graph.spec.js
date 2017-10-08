@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import Graph from '../graph';
 
 describe('Graph', () => {
-  it('should insert a node', () => {
+  test('should insert a node', () => {
     const graph = new Graph();
     graph.insert('A');
     graph.insert('B');
@@ -13,7 +13,7 @@ describe('Graph', () => {
     expect(graph.nodes.length).to.equal(3);
   });
 
-  it('should find a node', () => {
+  test('should find a node', () => {
     const graph = new Graph();
     graph.insert('A');
     graph.insert('B');
@@ -26,7 +26,7 @@ describe('Graph', () => {
     expect(graph.find('D')).to.equal(undefined);
   });
 
-  it('should insert an edge', () => {
+  test('should insert an edge', () => {
     const graph = new Graph();
     graph.insert('A');
     graph.insert('B');

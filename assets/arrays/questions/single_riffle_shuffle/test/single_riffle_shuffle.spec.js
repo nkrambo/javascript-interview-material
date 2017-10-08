@@ -51,11 +51,11 @@ describe('isSingleRiffle()', () => {
   const shuffled = shuffle(deck); // randomly shuffle
   const riffledDeck = riffle(shuffled); // riffle shuffle
 
-  it('should return true if shuffledDeck is a single riffle', () => {
+  test('should return true if shuffledDeck is a single riffle', () => {
     expect(isSingleRiffle(riffledDeck.slice(0, 26), riffledDeck.slice(26), riffledDeck)).to.be.true;
   });
 
-  it('should return false if shuffledDeck is not a single riffle', () => {
+  test('should return false if shuffledDeck is not a single riffle', () => {
     expect(isSingleRiffle(shuffle(shuffled.slice(0, 26)), shuffled.slice(26), shuffled)).to.be.false;
   });
 });

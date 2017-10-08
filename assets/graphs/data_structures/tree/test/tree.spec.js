@@ -3,14 +3,14 @@ import { expect } from 'chai';
 import Tree from '../tree';
 
 describe('tree', () => {
-  it('should instantiate a new Tree class', () => {
+  test('should instantiate a new Tree class', () => {
     const tree = new Tree();
     expect(tree).to.be.a('object');
     expect(tree.traverse).to.be.a('function');
     expect(tree.insert).to.be.a('function');
   });
 
-  it('should insert values', () => {
+  test('should insert values', () => {
     const tree = new Tree();
     tree.insert(10);
     tree.insert(20, 10);

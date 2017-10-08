@@ -16,7 +16,7 @@ describe('findRotationPoint()', () => {
     'karpatka',
     'othellolagkage'];
 
-  it('should return the index of the rotation point', () => {
+  test('should return the index of the rotation point', () => {
     expect(findRotationPoint(words)).to.equal(5);
   });
 });

@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import maxDuffelBagValue from '../cake_thief';
 
 describe('maxDuffelBagValue()', () => {
-  it('should return the maximum value the bag capacity can hold', () => {
+  test('should return the maximum value the bag capacity can hold', () => {
     const cakesOne = [
       { weight: 7, value: 160 },
       { weight: 3, value: 90 },

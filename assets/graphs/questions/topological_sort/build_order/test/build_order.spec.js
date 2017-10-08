@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import buildOrder from '../build_order';
 
 describe('buildOrder()', () => {
-  it('should return the correct build order of projects', () => {
+  test('should return the correct build order of projects', () => {
     const projects = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
     const deps = [['C', 'F'],
                   ['B', 'F'],
@@ -28,7 +28,7 @@ describe('buildOrder()', () => {
     expect(build[6]).to.equal('E');
   });
 
-  it('should return an error if graph is not a DAG', () => {
+  test('should return an error if graph is not a DAG', () => {
     const projects = ['A', 'B', 'C'];
     const deps = [['B', 'A'],
                   ['C', 'B'],

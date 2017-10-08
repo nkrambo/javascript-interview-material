@@ -53,7 +53,7 @@ describe('singleSource()', () => {
   // source
   const source = weighted.find('A');
 
-  it('should return the shortest path costs from source to all nodes', () => {
+  test('should return the shortest path costs from source to all nodes', () => {
     const result = singleSource(source, weighted);
     expect(result).to.be.a('array');
     expect(result.length).to.equal(4);

@@ -6,11 +6,11 @@ describe('MillionGazillion', () => {
   const dict = new MillionGazillion();
   dict.checkOrAdd('test');
 
-  it('should add in new word', () => {
+  test('should add in new word', () => {
     expect(Object.prototype.hasOwnProperty.call(dict.root, 't')).to.be.true;
   });
 
-  it('should return false if a word exists', () => {
+  test('should return false if a word exists', () => {
     expect(dict.checkOrAdd('test')).to.be.false;
   });
 });

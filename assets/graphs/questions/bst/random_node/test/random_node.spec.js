@@ -46,7 +46,7 @@ bst.insert(5);
 bst.insert(7);
 
 describe('getRandomNode()', () => {
-  it('should return a random node from a BST class', () => {
+  test('should return a random node from a BST class', () => {
     expect(bst.getRandomNode(0)).to.equal(1);
     expect(bst.getRandomNode(1)).to.equal(2);
     expect(bst.getRandomNode(2)).to.equal(3);

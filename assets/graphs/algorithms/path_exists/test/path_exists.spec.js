@@ -29,12 +29,12 @@ graph.insertEdge('D', 'E');
 graph.insertEdge('E', 'C');
 
 describe('pathExists()', () => {
-  it('should return true if a path exists between two nodes', () => {
+  test('should return true if a path exists between two nodes', () => {
     expect(pathExists(graph.find('A'), graph.find('C'))).to.be.true;
     expect(pathExists(graph.find('A'), graph.find('A'))).to.be.true;
   });
 
-  it('should return false if no path exists between two nodes', () => {
+  test('should return false if no path exists between two nodes', () => {
     const start = graph.find('A');
     const end = graph.find('G');
     expect(pathExists(start, end)).to.be.false;

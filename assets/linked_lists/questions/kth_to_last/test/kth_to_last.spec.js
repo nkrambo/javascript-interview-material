@@ -4,7 +4,7 @@ import kthToLast from '../kth_to_last';
 import LinkedList from '../../../data_structures/singly_linked_list/singly_linked_list';
 
 describe('kthToLast()', () => {
-  it('should return the kth to last node', () => {
+  test('should return the kth to last node', () => {
     const list = new LinkedList();
     list.add('Eccles', 0);
     list.add('Devil\'s Food', 0);

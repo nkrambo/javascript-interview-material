@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import mergeTimes from '../merge_meeting_times';
 
 describe('mergeTimes()', () => {
-  it('should return an array of merged meeting times.', () => {
+  test('should return an array of merged meeting times.', () => {
     const meetings = [{ startTime: 0, endTime: 1 },
                       { startTime: 3, endTime: 5 },
                       { startTime: 4, endTime: 8 },
