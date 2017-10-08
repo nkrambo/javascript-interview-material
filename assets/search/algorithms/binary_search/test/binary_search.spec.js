@@ -1,16 +1,15 @@
 
-import { expect } from 'chai';
 import binarySearch from '../binary_search';
 
 describe('binarySearch()', () => {
-  it('should return the correct index of searched integer if found', () => {
+  test('should return the correct index of searched integer if found', () => {
     const test = [1, 2, 3, 4, 5];
-    expect(binarySearch(test, 4)).to.be.true;
-    expect(binarySearch(test, 1)).to.be.true;
+    expect(binarySearch(test, 4)).toBeTruthy();
+    expect(binarySearch(test, 1)).toBeTruthy();
   });
 
-  it('should return -1 if the value is not present', () => {
+  test('should return -1 if the value is not present', () => {
     const test = [1, 2, 3, 4, 5];
-    expect(binarySearch(test, 6)).to.be.false;
+    expect(binarySearch(test, 6)).toBeFalsy();
   });
 });
