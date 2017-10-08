@@ -10,30 +10,72 @@
 */
 
 /**
-* Defintion for a singly-linked list.
+* ListNode
 *
-* function ListNode(val) {
-*   this.val = val;
-*   this.next = null;
-* }
+* @constructor
+* @param {*} val
+* @return {object} returns a linked list node
 */
 
+function ListNode(val) {
+  this.val = val;
+  this.next = null;
+}
+
 /**
-* mergeTwoLists()
+* mergeTwoListsIter()
 *
 * Solution:
+*
+* There are actually a few ways that we could approach this problem. We could solve
+* this iteratively and recursively. We'll look at both.
+*
+* Time: O(1)
+* Space: O(1)
+*
+* @param {ListNode} l1
+* @param {ListNode} l2
+* @return {ListNode}
+*/
+
+function mergeTwoListsIter(l1, l2) {
+  let sentinel = new ListNode(0);
+  let cur = sentinel;
+
+  while (l1 && l2) {
+    if (l1.val < l2.val) {
+      cur.next = l1;
+      l1 = l1.next;
+
+    } else {
+      cur.next = l2;
+      l2 = l2.next;
+    }
+
+    cur = cur.next;
+  }
+
+  cur.next = l1 || l2;
+  return sentinel.next;
+}
+
+/**
+* mergeTwoListsRecursive()
+*
+* Solution:
+*
 *
 *
 * Time: O(1)
 * Space: O(1)
 *
-* @param {object} l1 list node
-* @param {object} l2 list node
-* @return {object} returns the head list node of merged l1 and l2
+* @param {ListNode} l1
+* @param {ListNode} l2
+* @return {ListNode}
 */
 
-// function mergeTwoLists(l1, l2) {
-//
-// }
-//
-// export default mergeTwoLists;
+function mergeTwoListsRecursive(l1, l2) {
+
+}
+
+export { mergeTwoListsIter, mergeTwoListsRecursive };
