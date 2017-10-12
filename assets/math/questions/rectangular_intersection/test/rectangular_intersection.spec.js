@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import rectangleIntersection from '../rectangular_intersection';
 
 describe('rectangleIntersection()', () => {
@@ -34,7 +33,7 @@ describe('rectangleIntersection()', () => {
       height: 3,
     };
 
-    expect(rectangleIntersection(rect1, rect2)).to.deep.equal(intersection);
+    expect(rectangleIntersection(rect1, rect2)).toEqual(intersection);
   });
 
   test(
@@ -67,7 +66,7 @@ describe('rectangleIntersection()', () => {
         height: null,
       };
 
-      expect(rectangleIntersection(rect1, rect2)).to.deep.equal(nullRect);
+      expect(rectangleIntersection(rect1, rect2)).toEqual(nullRect);
     }
   );
 });
