@@ -1,5 +1,4 @@
 
-
 import isSingleRiffle from '../single_riffle_shuffle';
 
 describe('isSingleRiffle()', () => {

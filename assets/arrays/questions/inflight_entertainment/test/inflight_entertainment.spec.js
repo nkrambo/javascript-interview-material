@@ -1,5 +1,4 @@
 
-
 import twoMovies from '../inflight_entertainment';
 
 describe('twoMovies()', () => {

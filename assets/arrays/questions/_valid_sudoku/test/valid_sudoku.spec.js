@@ -1,5 +1,5 @@
 
-import isValidSudoku from '../valid_sudoku';
+// import isValidSudoku from '../valid_sudoku';
 
 describe.skip('isValidSudoku()', () => {
   test('should return true if a board is a valid sudoku', () => {
