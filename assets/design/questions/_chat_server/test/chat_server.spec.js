@@ -1,7 +1,6 @@
-//
 
 // import ChatServer from '../chat_server';
-//
-// describe('ChatServer', () => {
-//   test('should', () => {});
-// });
+
+describe.skip('ChatServer', () => {
+  test('should', () => {});
+});

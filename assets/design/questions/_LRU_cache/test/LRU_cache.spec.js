@@ -1,9 +1,8 @@
-//
 
 // import LRUCache from '../LRU_cache';
-//
-// describe('LRUCache()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('LRUCache()', () => {
+  test('should', () => {
+
+  });
+});

@@ -1,7 +1,6 @@
-//
 
 // import ParkingLot from '../parking_lot';
-//
-// describe('ParkingLot', () => {
-//   test('should', () => {});
-// });
+
+describe.skip('ParkingLot', () => {
+  test('should', () => {});
+});

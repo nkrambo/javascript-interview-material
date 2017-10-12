@@ -1,7 +1,6 @@
-//
 
 // import Jigsaw from '../jigsaw';
-//
-// describe('Jigsaw', () => {
-//   test('should', () => {});
-// });
+
+describe.skip('Jigsaw', () => {
+  test('should', () => {});
+});

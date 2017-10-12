@@ -1,7 +1,6 @@
-//
 
 // import JukeBox from '../juke_box';
-//
-// describe('JukeBox', () => {
-//   test('should', () => {});
-// });
+
+describe.skip('JukeBox', () => {
+  test('should', () => {});
+});

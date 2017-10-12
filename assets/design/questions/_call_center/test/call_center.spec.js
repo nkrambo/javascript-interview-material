@@ -1,7 +1,6 @@
-//
 
 // import CallCenter from '../call_center';
-//
-// describe('CallCenter', () => {
-//   test('should', () => {});
-// });
+
+describe.skip('CallCenter', () => {
+  test('should', () => {});
+});

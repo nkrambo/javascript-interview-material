@@ -1,5 +1,4 @@
 
-
 import TempTracker from '../temperature_tracker';
 
 describe('TempTracker', () => {

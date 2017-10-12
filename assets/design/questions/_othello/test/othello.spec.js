@@ -1,7 +1,6 @@
-//
 
 // import Othello from '../othello';
-//
-// describe('Othello', () => {
-//   test('should', () => {});
-// });
+
+describe.skip('Othello', () => {
+  test('should', () => {});
+});

@@ -1,7 +1,6 @@
-//
 
 // import RingBuffer from '../ring_buffer';
-//
-// describe('RingBuffer', () => {
-//   test('should', () => {});
-// });
+
+describe.skip('RingBuffer', () => {
+  test('should', () => {});
+});
