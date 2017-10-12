@@ -833,7 +833,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>206</td>
-    <td><a href="../assets/linked_lists/questions/_reverse_linked_list/reverse_linked_list.js">Reverse Linked List</a></td>
+    <td><a href="../assets/linked_lists/questions/reverse_linked_list/reverse_linked_list.js">Reverse Linked List</a></td>
   </tr>
   <tr>
     <td>207</td>
