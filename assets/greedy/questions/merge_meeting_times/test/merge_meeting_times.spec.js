@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import mergeTimes from '../merge_meeting_times';
 
 describe('mergeTimes()', () => {
@@ -14,6 +13,6 @@ describe('mergeTimes()', () => {
                     { startTime: 3, endTime: 8 },
                     { startTime: 9, endTime: 12 }];
 
-    expect(mergeTimes(meetings)).to.deep.equal(merged);
+    expect(mergeTimes(meetings)).toEqual(merged);
   });
 });

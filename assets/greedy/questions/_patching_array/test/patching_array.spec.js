@@ -1,9 +1,8 @@
-//
-// import { expect } from 'chai';
+
 // import minPatches from '../patching_array';
-//
-// describe('minPatches()', () => {
-//   it('should', () => {
-//
-//   });
-// });
+
+describe.skip('minPatches()', () => {
+  test('should', () => {
+
+  });
+});
