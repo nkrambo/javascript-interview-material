@@ -32,7 +32,7 @@
 */
 
 /**
-* setBtest()
+* setBit()
 *
 * Time: O(1)
 * Space: O(1)
@@ -42,7 +42,7 @@
 * @return {number} Returns a 32-bit number with set bit at i
 */
 
-function setBtest(num, i) {
+function setBit(num, i) {
   return num | (1 << i);
 }
 

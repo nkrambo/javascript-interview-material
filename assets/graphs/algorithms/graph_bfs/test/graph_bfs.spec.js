@@ -27,7 +27,6 @@ describe('bfs()', () => {
     // 0, 1, 4, 5, 3, 2
     const order = bfs(graph.nodes[0]);
 
-    expect(order).to.be.a('array');
     expect(order.length).toBe(6);
 
     expect(order[0]).toBe(0);

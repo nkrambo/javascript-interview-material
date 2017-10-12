@@ -1,5 +1,4 @@
 
-
 import findInOrderedSet from '../find_in_ordered_set';
 
 describe('findInOrderedSet()', () => {

@@ -16,7 +16,6 @@ describe('tree', () => {
     tree.insert(30, 10);
 
     expect(tree.root.value).toBe(10);
-    expect(tree.root.children).to.be.a('array');
     expect(tree.root.children[0].value).toBe(20);
     expect(tree.root.children[1].value).toBe(30);
   });

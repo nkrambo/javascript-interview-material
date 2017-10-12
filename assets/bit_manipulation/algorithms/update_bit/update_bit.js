@@ -31,7 +31,7 @@
 */
 
 /**
-* updateBtest()
+* updateBit()
 *
 * Time: O(1)
 * Space: O(1)
@@ -42,7 +42,7 @@
 * @return {number} Returns a 32-bit number
 */
 
-function updateBtest(num, i, bitIs1) {
+function updateBit(num, i, bitIs1) {
   const value = bitIs1 ? 1 : 0;
   const mask = ~(1 << i);
   return (num & mask) | (value << i);

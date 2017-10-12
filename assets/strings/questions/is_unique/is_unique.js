@@ -81,7 +81,7 @@ function isUniqueSort(str) {
   if (str.length > 128) return false;
 
   // split and sort string alpabetically
-  str.spltest('').sort();
+  str.split('').sort();
 
   // check each character against the previous
   for (let i = 1; i < str.length; i += 1) {

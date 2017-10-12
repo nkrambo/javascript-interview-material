@@ -1,9 +1,8 @@
-//
 
 // import missingInt from '../missing_int';
-//
-// describe('missingInt()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('missingInt()', () => {
+  test('should', () => {
+
+  });
+});

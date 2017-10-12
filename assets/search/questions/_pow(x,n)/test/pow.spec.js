@@ -1,9 +1,8 @@
-//
 
 // import myPow from '../pow';
-//
-// describe('myPow()', () => {
-//   test('should return the power of x^n', () => {
-//
-//   });
-// });
+
+describe.skip('myPow()', () => {
+  test('should return the power of x^n', () => {
+
+  });
+});

@@ -1,5 +1,4 @@
 
-
 import search from '../search_in_rotated_sorted_array';
 
 describe('search()', () => {
@@ -14,11 +13,8 @@ describe('search()', () => {
     expect(search(test2, 2)).toBe(2);
   });
 
-  test(
-    'should return -1 if it cannot find an element in a rotated sorted array',
-    () => {
-      const test3 = [15, 16, 19, 20, 25];
-      expect(search(test3, 2)).toBe(-1);
-    }
-  );
+  test('should return -1 if it cannot find an element in a rotated sorted array', () => {
+    const test3 = [15, 16, 19, 20, 25];
+    expect(search(test3, 2)).toBe(-1);
+  });
 });

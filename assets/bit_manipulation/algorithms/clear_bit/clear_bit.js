@@ -35,7 +35,7 @@
 */
 
 /**
-* clearBtest()
+* clearBit()
 *
 * Time: O(1)
 * Space: O(1)
@@ -45,7 +45,7 @@
 * @return {number} Returns a 32-bit number
 */
 
-function clearBtest(num, i) {
+function clearBit(num, i) {
   const mask = ~(1 << i);
   return num & mask;
 }

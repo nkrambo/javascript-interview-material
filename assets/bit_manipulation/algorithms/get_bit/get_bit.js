@@ -29,7 +29,7 @@
 */
 
 /**
-* getBtest()
+* getBit()
 *
 * Time: O(1)
 * Space: O(1)
@@ -39,7 +39,7 @@
 * @return {number} Returns a 32-bit number
 */
 
-function getBtest(num, i) {
+function getBit(num, i) {
   return ((num & (1 << i)) !== 0);
 }
 
