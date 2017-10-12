@@ -1,9 +1,8 @@
-//
 
 // import getPermutation from '../permutation_sequence';
-//
-// describe('getPermutation()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('getPermutation()', () => {
+  test('should', () => {
+
+  });
+});

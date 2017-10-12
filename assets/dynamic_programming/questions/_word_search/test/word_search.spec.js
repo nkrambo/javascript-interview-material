@@ -1,9 +1,8 @@
-//
 
-// import exist from '../exist';
-//
-// describe('exist()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+import exist from '../exist';
+
+describe.skip('exist()', () => {
+  test('should', () => {
+
+  });
+});

@@ -1,5 +1,4 @@
 
-
 import longestCommonSubStr from '../longest_common_substring';
 
 describe('longestCommonSubStr()', () => {

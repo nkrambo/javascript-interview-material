@@ -1,9 +1,8 @@
-//
 
 // import numDecodings from '../decode_ways';
-//
-// describe('numDecodings()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('numDecodings()', () => {
+  test('should', () => {
+
+  });
+});

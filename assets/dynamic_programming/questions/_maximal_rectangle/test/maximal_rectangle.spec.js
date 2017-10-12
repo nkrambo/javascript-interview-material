@@ -1,9 +1,8 @@
-//
 
 // import maximalRectangle from '../maximal_rectangle';
-//
-// describe('maximalRectangle()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('maximalRectangle()', () => {
+  test('should', () => {
+
+  });
+});

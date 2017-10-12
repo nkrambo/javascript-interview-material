@@ -1,5 +1,4 @@
 
-
 import minEditDistance from '../minimum_edit_distance';
 
 describe('minEditDistance()', () => {

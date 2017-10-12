@@ -1,9 +1,8 @@
-//
 
 // import minimumTotal from '../triangle';
-//
-// describe('minimumTotal()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('minimumTotal()', () => {
+  test('should', () => {
+
+  });
+});

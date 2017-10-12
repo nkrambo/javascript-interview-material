@@ -1,9 +1,8 @@
-//
 
 // import uniquePaths from '../unique_paths';
-//
-// describe('uniquePaths()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('uniquePaths()', () => {
+  test('should', () => {
+
+  });
+});

@@ -1,5 +1,4 @@
 
-
 import totalWays from '../total_ways_in_matrix';
 
 describe('totalWays()', () => {

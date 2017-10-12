@@ -1,9 +1,8 @@
-//
 
 // import minDistance from '../edit_distance';
-//
-// describe('minDistance()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('minDistance()', () => {
+  test('should', () => {
+
+  });
+});

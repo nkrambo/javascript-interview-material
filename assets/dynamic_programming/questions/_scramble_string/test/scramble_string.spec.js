@@ -1,9 +1,8 @@
-//
 
 // import isScramble from '../scramble_string';
-//
-// describe('isScramble()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('isScramble()', () => {
+  test('should', () => {
+
+  });
+});

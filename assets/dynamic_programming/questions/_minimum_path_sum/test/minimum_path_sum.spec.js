@@ -1,9 +1,8 @@
-//
 
-// import minPathSum from '../minimum_path_sum';
-//
-// describe('minPathSum()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+import minPathSum from '../minimum_path_sum';
+
+describe.skip('minPathSum()', () => {
+  test('should', () => {
+
+  });
+});

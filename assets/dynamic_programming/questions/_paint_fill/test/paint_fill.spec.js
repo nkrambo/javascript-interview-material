@@ -1,9 +1,8 @@
-//
 
-// import paintFill from '../paint_fill';
-//
-// describe('paintFill()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+import paintFill from '../paint_fill';
+
+describe.skip('paintFill()', () => {
+  test('should', () => {
+
+  });
+});

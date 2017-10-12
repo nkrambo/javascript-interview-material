@@ -1,5 +1,4 @@
 
-
 import subsetSum from '../subset_sum';
 
 describe('subsetSum()', () => {

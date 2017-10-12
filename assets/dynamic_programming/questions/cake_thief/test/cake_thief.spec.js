@@ -1,5 +1,4 @@
 
-
 import maxDuffelBagValue from '../cake_thief';
 
 describe('maxDuffelBagValue()', () => {

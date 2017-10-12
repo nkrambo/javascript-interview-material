@@ -1,9 +1,8 @@
-//
 
 // import booleanEval from '../boolean_evaluation';
-//
-// describe('booleanEval()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('booleanEval()', () => {
+  test('should', () => {
+
+  });
+});

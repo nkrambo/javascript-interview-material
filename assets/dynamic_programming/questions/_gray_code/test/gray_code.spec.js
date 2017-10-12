@@ -1,9 +1,8 @@
-//
 
 // import grayCode from '../gray_code';
-//
-// describe('grayCode()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('grayCode()', () => {
+  test('should', () => {
+
+  });
+});

@@ -1,9 +1,8 @@
-//
 
 // import recursiveMultiply from '../recursive_multiply';
-//
-// describe('recursiveMultiply()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('recursiveMultiply()', () => {
+  test('should', () => {
+
+  });
+});

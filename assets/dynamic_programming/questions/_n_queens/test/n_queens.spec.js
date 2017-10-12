@@ -1,9 +1,8 @@
-//
 
 // import solveNQueens from '../n_queens';
-//
-// describe('solveNQueens()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('solveNQueens()', () => {
+  test('should', () => {
+
+  });
+});
