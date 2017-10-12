@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import Queue from '../queue';
 
 describe('Queue', () => {
@@ -8,9 +7,9 @@ describe('Queue', () => {
     queueOne.enqueue(10);
     queueOne.enqueue(20);
 
-    expect(queueOne.length).to.equal(2);
-    expect(queueOne.items[0]).to.equal(10);
-    expect(queueOne.items[1]).to.equal(20);
+    expect(queueOne.length).toBe(2);
+    expect(queueOne.items[0]).toBe(10);
+    expect(queueOne.items[1]).toBe(20);
   });
 
   test('should dequeue the first item', () => {
@@ -19,8 +18,8 @@ describe('Queue', () => {
     queueTwo.enqueue(20);
 
     const item = queueTwo.dequeue();
-    expect(item).to.equal(10);
-    expect(queueTwo.length).to.equal(1);
+    expect(item).toBe(10);
+    expect(queueTwo.length).toBe(1);
   });
 
   test('should return first item', () => {
@@ -28,7 +27,7 @@ describe('Queue', () => {
     queueThree.enqueue(10);
     queueThree.enqueue(20);
 
-    expect(queueThree.peek()).to.equal(10);
-    expect(queueThree.length).to.equal(2);
+    expect(queueThree.peek()).toBe(10);
+    expect(queueThree.length).toBe(2);
   });
 });

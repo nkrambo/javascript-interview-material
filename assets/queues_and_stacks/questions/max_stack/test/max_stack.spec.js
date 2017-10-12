@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import MaxStack from '../max_stack';
 
 describe('MaxStack', () => {
@@ -12,6 +11,6 @@ describe('MaxStack', () => {
     stack.push(78);
     stack.push(66);
 
-    expect(stack.getMax()).to.equal(154);
+    expect(stack.getMax()).toBe(154);
   });
 });
