@@ -12,13 +12,18 @@
 */
 
 /**
-* Definition for singly-linked list with a random pointer.
+* ListNode
 *
-* function RandomListNode(label) {
-*   this.label = label;
-*   this.next = this.random = null;
-* }
+* @constructor
+* @param {*} val
+* @return {object} returns a linked list node
 */
+
+function ListNode(val) {
+  this.val = val;
+  this.next = null;
+}
+
 
 /**
 * copyRandomList()

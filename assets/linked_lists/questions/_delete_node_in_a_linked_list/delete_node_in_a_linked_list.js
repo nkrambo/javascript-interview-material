@@ -13,13 +13,18 @@
 */
 
 /**
-* Definition for singly-linked list.
+* ListNode
 *
-* function ListNode(val) {
-*     this.val = val;
-*     this.next = null;
-* }
+* @constructor
+* @param {*} val
+* @return {object} returns a linked list node
 */
+
+function ListNode(val) {
+  this.val = val;
+  this.next = null;
+}
+
 
 /**
 * deleteNode()

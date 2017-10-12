@@ -5,7 +5,7 @@
   "env": {
     "browser": false,
     "node": true,
-    "mocha": true,
+    "jest/globals": true,
     "es6": true
   },
   "parserOptions": {
@@ -13,13 +13,16 @@
     "sourceType": "module"
   },
   "plugins": [
-    "chai-friendly"
+    "jest"
   ],
   "rules": {
     "no-unused-expressions": 0,
     "no-param-reassign": 0,
     "no-restricted-syntax": 0,
-    "chai-friendly/no-unused-expressions": 2,
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/valid-expect": "error",
     "arrow-parens": [
       "error",
       "always"
