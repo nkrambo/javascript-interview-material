@@ -1,9 +1,8 @@
 
-
 import setBit from '../set_bit';
 
-describe('setBtest()', () => {
+describe('setBit()', () => {
   test('should set the bit at index i', () => {
-    expect(setBtest(6, 5)).toBe(38);
+    expect(setBit(6, 5)).toBe(38);
   });
 });

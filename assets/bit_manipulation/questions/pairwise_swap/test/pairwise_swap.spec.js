@@ -1,5 +1,4 @@
 
-
 import pairwiseSwap from '../pairwise_swap';
 
 describe('pairwiseSwap()', () => {

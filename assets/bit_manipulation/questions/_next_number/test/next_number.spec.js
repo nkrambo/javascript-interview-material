@@ -1,7 +1,8 @@
-//
 
 // import nextNumber from '../next_number';
-//
-// describe('nextNumber()', () => {
-//   test('should', () => {});
-// });
+
+describe.skip('nextNumber()', () => {
+  test('should', () => {
+
+  });
+});
