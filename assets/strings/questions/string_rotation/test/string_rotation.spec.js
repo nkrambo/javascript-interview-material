@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import isRotation from '../string_rotation';
 
 describe('isRotation()', () => {

@@ -4,6 +4,6 @@
 //
 // describe('rangeBitwiseAnd()', () => {
 //   test('should return the bitwise AND of all numbers between m and n', () => {
-//     expect(rangeBitwiseAnd([5, 7])).to.equal(4);
+//     expect(rangeBitwiseAnd([5, 7])).toBe(4);
 //   });
 // });

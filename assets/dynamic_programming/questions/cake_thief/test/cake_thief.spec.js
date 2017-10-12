@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import maxDuffelBagValue from '../cake_thief';
 
 describe('maxDuffelBagValue()', () => {
@@ -14,7 +14,7 @@ describe('maxDuffelBagValue()', () => {
       { weight: 2, value: 15 },
     ];
 
-    expect(maxDuffelBagValue(cakesOne, 20)).to.equal(555);
-    expect(maxDuffelBagValue(cakesTwo, 6)).to.equal(180);
+    expect(maxDuffelBagValue(cakesOne, 20)).toBe(555);
+    expect(maxDuffelBagValue(cakesTwo, 6)).toBe(180);
   });
 });

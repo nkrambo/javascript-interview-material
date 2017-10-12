@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import stringCompress from '../string_compression';
 
 describe('stringCompress()', () => {

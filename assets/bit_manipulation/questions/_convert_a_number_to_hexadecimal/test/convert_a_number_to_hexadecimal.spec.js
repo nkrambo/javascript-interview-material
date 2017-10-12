@@ -4,7 +4,7 @@
 //
 // describe('numberToHex()', () => {
 //   test('should return the hexadecimal value of num', () => {
-//     expect(numberToHex(26)).to.equal('1a');
-//     expect(numberToHex(-1)).to.equal('ffffffff');
+//     expect(numberToHex(26)).toBe('1a');
+//     expect(numberToHex(-1)).toBe('ffffffff');
 //   });
 // });

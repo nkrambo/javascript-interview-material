@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import TempTracker from '../temperature_tracker';
 
 describe('TempTracker', () => {
@@ -15,19 +15,19 @@ describe('TempTracker', () => {
   thermo.insert(60);
 
   test('should return the min temperature', () => {
-    expect(thermo.getMin()).to.equal(10);
+    expect(thermo.getMin()).toBe(10);
   });
 
   test('should return the max temperature', () => {
-    expect(thermo.getMax()).to.equal(80);
+    expect(thermo.getMax()).toBe(80);
   });
 
   test('should return the mean temperature', () => {
-    expect(thermo.getMean()).to.equal(41);
+    expect(thermo.getMean()).toBe(41);
   });
 
   test('should return the mode temperature', () => {
-    expect(thermo.getMode()).to.equal(60);
+    expect(thermo.getMode()).toBe(60);
   });
 
   test('should throw a range error', () => {

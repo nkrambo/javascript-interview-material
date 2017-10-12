@@ -37,7 +37,7 @@ describe('removeDuplicatesNoBuffer()', () => {
     // in-place removal of dups, removes 300
     removeDuplicatesNoBuffer(list);
 
-    expect(list.length).to.equal(4);
+    expect(list.length).toBe(4);
     expect(list.head.next.next.value).toBe(200);
   });
 });

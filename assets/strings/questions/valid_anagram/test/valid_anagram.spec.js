@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import { isAnagram, isAnagramSort } from '../valid_anagram';
 
 describe('isAnagram()', () => {

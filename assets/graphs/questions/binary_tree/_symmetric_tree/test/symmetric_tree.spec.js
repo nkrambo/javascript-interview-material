@@ -1,9 +1,8 @@
-//
 
 // import isSymmetric from '../symmetric_tree';
-//
-// describe('isSymmetric()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('isSymmetric()', () => {
+  test('should', () => {
+
+  });
+});

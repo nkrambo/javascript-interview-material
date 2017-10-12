@@ -4,8 +4,8 @@
 //
 // describe('findTheDifference()', () => {
 //   test('should return the random letter from s2, that is not in s1', () => {
-//     expect(findTheDifference('abcd', 'abecd')).to.equal('e');
-//     expect(findTheDifference('abcd', 'kabcd')).to.equal('k');
-//     expect(findTheDifference('a', 'aa')).to.equal('a');
+//     expect(findTheDifference('abcd', 'abecd')).toBe('e');
+//     expect(findTheDifference('abcd', 'kabcd')).toBe('k');
+//     expect(findTheDifference('a', 'aa')).toBe('a');
 //   });
 // });

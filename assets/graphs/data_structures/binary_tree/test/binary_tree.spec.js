@@ -13,7 +13,7 @@ describe('BinaryTree', () => {
     expect(bt.root.value).toBe(5);
     expect(bt.root.left.value).toBe(-3);
     expect(bt.root.right.value).toBe(6);
-    expect(bt.root.right.right).toBe(null);
+    expect(bt.root.right.right).toBeNull();
     expect(bt.root.left.left.value).toBe(0);
     expect(bt.root.left.right.value).toBe(1);
   });

@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import BinaryTree from '../../../../data_structures/binary_tree/binary_tree';
 import createDepthLinkList from '../list_of_depths';
 
@@ -21,10 +20,10 @@ describe('createDepthLinkList()', () => {
       const levels = createDepthLinkList(tree);
 
       expect(levels).to.be.a('array');
-      expect(levels.length).to.equal(3);
+      expect(levels.length).toBe(3);
 
-      expect(levels[0].head.value).to.equal(10);
-      expect(levels[1].head.next.value).to.equal(30);
+      expect(levels[0].head.value).toBe(10);
+      expect(levels[1].head.next.value).toBe(30);
     }
   );
 });

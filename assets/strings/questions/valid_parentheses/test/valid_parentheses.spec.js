@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import isValid from '../valid_parentheses';
 
 describe('isValid()', () => {

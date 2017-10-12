@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import findRotationPoint from '../find_rotation_point';
 
 describe('findRotationPoint()', () => {
@@ -17,6 +17,6 @@ describe('findRotationPoint()', () => {
     'othellolagkage'];
 
   test('should return the index of the rotation point', () => {
-    expect(findRotationPoint(words)).to.equal(5);
+    expect(findRotationPoint(words)).toBe(5);
   });
 });

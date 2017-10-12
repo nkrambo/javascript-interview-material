@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import BSTRandom from '../random_node';
 
 // overwrite the getRandomNode() to explicitly pass in index for testing
@@ -47,12 +47,12 @@ bst.insert(7);
 
 describe('getRandomNode()', () => {
   test('should return a random node from a BST class', () => {
-    expect(bst.getRandomNode(0)).to.equal(1);
-    expect(bst.getRandomNode(1)).to.equal(2);
-    expect(bst.getRandomNode(2)).to.equal(3);
-    expect(bst.getRandomNode(3)).to.equal(4);
-    expect(bst.getRandomNode(4)).to.equal(5);
-    expect(bst.getRandomNode(5)).to.equal(6);
-    expect(bst.getRandomNode(6)).to.equal(7);
+    expect(bst.getRandomNode(0)).toBe(1);
+    expect(bst.getRandomNode(1)).toBe(2);
+    expect(bst.getRandomNode(2)).toBe(3);
+    expect(bst.getRandomNode(3)).toBe(4);
+    expect(bst.getRandomNode(4)).toBe(5);
+    expect(bst.getRandomNode(5)).toBe(6);
+    expect(bst.getRandomNode(6)).toBe(7);
   });
 });

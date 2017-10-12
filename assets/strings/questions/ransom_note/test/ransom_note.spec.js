@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import canConstruct from '../ransom_note';
 
 describe('canConstruct()', () => {

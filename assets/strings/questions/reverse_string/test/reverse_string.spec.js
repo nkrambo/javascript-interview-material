@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import reverseString from '../reverse_string';
 
 describe('reverseString()', () => {

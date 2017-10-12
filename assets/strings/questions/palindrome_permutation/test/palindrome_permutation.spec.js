@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import canPermutePalindrome from '../palindrome_permutation';
 
 describe('canPermutePalindrome', () => {

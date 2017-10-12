@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import findSecondLargest from '../second_largest_element';
 import BinarySearchTree from '../../../../data_structures/bst/bst';
 
@@ -12,7 +12,7 @@ describe('findSecondLargest()', () => {
     BST1.insert(110);
     BST1.insert(160);
 
-    expect(findSecondLargest(BST1.root)).to.equal(150);
+    expect(findSecondLargest(BST1.root)).toBe(150);
   });
 
   test('should return the second largest node, with a largest subtree', () => {
@@ -25,7 +25,7 @@ describe('findSecondLargest()', () => {
     BST2.insert(155);
     BST2.insert(158);
 
-    expect(findSecondLargest(BST2.root)).to.equal(158);
+    expect(findSecondLargest(BST2.root)).toBe(158);
   });
 
   test('should throw an error', () => {

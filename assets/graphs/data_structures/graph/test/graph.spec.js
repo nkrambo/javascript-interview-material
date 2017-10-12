@@ -20,7 +20,7 @@ describe('Graph', () => {
     const A = graph.find('A');
     expect(A.value).toBe('A');
 
-    expect(graph.find('D')).toBe(undefined);
+    expect(graph.find('D')).toBeUndefined();
   });
 
   test('should insert an edge', () => {

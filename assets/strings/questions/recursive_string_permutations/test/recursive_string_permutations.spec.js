@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import recursivePerms from '../recursive_string_permutations';
 
 describe('recursivePerms()', () => {

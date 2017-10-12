@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import subsetSum from '../subset_sum';
 
 describe('subsetSum()', () => {

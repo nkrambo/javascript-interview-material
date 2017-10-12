@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import WordCloudData from '../word_cloud_data';
 
 describe('WordCloudData()', () => {
@@ -8,6 +8,6 @@ describe('WordCloudData()', () => {
     const spaceX = new WordCloudData(falcon9);
     expect(spaceX.cloud.has('Falcon')).to.be.true;
     expect(spaceX.cloud.has('history')).to.be.true;
-    expect(spaceX.cloud.get('space')).to.equal(3);
+    expect(spaceX.cloud.get('space')).toBe(3);
   });
 });

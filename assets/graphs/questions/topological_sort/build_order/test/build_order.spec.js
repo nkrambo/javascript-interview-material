@@ -1,5 +1,5 @@
 
-import { expect } from 'chai';
+
 import buildOrder from '../build_order';
 
 describe('buildOrder()', () => {
@@ -17,15 +17,15 @@ describe('buildOrder()', () => {
     const build = buildOrder(projects, deps);
 
     expect(build).to.be.a('array');
-    expect(build.length).to.equal(7);
+    expect(build.length).toBe(7);
 
-    expect(build[0]).to.equal('D');
-    expect(build[1]).to.equal('F');
-    expect(build[2]).to.equal('G');
-    expect(build[3]).to.equal('C');
-    expect(build[4]).to.equal('B');
-    expect(build[5]).to.equal('A');
-    expect(build[6]).to.equal('E');
+    expect(build[0]).toBe('D');
+    expect(build[1]).toBe('F');
+    expect(build[2]).toBe('G');
+    expect(build[3]).toBe('C');
+    expect(build[4]).toBe('B');
+    expect(build[5]).toBe('A');
+    expect(build[6]).toBe('E');
   });
 
   test('should return an error if graph is not a DAG', () => {
