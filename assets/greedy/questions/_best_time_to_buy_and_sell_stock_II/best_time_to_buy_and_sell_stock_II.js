@@ -15,7 +15,7 @@
 */
 
 /**
-* maxProfit()
+* maxProftest()
 *
 * Solution:
 *
@@ -23,7 +23,7 @@
 * @return {number}
 */
 
-// function maxProfit(prices) {
+// function maxProftest(prices) {
 //
 // }
 //

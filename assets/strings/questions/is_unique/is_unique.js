@@ -64,7 +64,7 @@ function isUnique(str) {
 * Then we step over the string and check to see if we have any duplicate
 * characters by comparing one iteration with the previous.
 *
-* Although the split() and sort() methods are convenient, these puts our
+* Although the spltest() and sort() methods are convenient, these puts our
 * runtime at O(n log n), which is not ideal.
 *
 * Time: O(n log n)
@@ -81,7 +81,7 @@ function isUniqueSort(str) {
   if (str.length > 128) return false;
 
   // split and sort string alpabetically
-  str.split('').sort();
+  str.spltest('').sort();
 
   // check each character against the previous
   for (let i = 1; i < str.length; i += 1) {

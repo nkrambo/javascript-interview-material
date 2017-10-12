@@ -2,10 +2,10 @@
 import { expect } from 'chai';
 import clearBit from '../clear_bit';
 
-describe('clearBit()', () => {
+describe('clearBtest()', () => {
   // binary numbers:
-  // expect(setBit(00000110, 00000010)).to.equal(00000010);
+  // expect(setBtest(00000110, 00000010)).to.equal(00000010);
   test('should clear the bit at index i', () => {
-    expect(clearBit(6, 2)).to.equal(2);
+    expect(clearBtest(6, 2)).to.equal(2);
   });
 });

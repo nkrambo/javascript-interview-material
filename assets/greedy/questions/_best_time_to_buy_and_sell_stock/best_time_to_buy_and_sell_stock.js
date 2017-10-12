@@ -28,7 +28,7 @@
 */
 
 /**
-* maxProfit()
+* maxProftest()
 *
 * Solution:
 *
@@ -58,7 +58,7 @@
 * @return {number} returns maximum profit that could have been made.
 */
 
-// function maxProfit(prices) {
+// function maxProftest(prices) {
 //   // we'll greedily update minPrice and maxProfit, so we initialize
 //   // them to the first price and the first possible profit
 //   let minPrice = prices[0];

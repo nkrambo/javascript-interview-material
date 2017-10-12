@@ -65,7 +65,7 @@ function groupAnagrams(strs) {
 
   // group words by anagram
   for (let i = 0; i < strs.length; i += 1) {
-    const key = strs[i].split('').sort().join('');
+    const key = strs[i].spltest('').sort().join('');
 
     // if we have the key concat our anagram
     if (map.has(key)) {

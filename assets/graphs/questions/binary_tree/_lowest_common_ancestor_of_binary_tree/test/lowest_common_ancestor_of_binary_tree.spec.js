@@ -1,8 +1,7 @@
-//
-// import { expect } from 'chai';
+
 // import BinaryTree from '../../../../data_structures/binary_tree/binary_tree';
 // import { withParents, withParentsAlt, lowestCommonAncestor } from '../lowest_common_ancestor_of_binary_tree';
-//
+
 // // new class with links to node parents
 // class BinaryTreeWP extends BinaryTree {
 //   insert(value) {
@@ -48,68 +47,68 @@
 //     }
 //   }
 // }
-//
-// /**
-// *                1
-// *             ↙     ↘
-// *          2           3
-// *        ↙   ↘       ↙   ↘
-// *      4       5   6       7
-// *
-// */
-//
-// describe('withParents()', () => {
-//   it('should find the lowest common ancestor (LCA)', () => {
-//     const BT = new BinaryTreeWP();
-//     BT.insert(1);
-//     BT.insert(2);
-//     BT.insert(3);
-//     BT.insert(4);
-//     BT.insert(5);
-//     BT.insert(6);
-//     BT.insert(7);
-//
-//     const root = BT.root;
-//     const two = BT.root.left;
-//     const three = BT.root.right;
-//     const four = BT.root.left.left;
-//     const five = BT.root.left.right;
-//     const seven = BT.root.right.right;
-//
-//     expect(withParents(two, three)).to.equal(root);
-//     expect(withParents(four, seven)).to.equal(root);
-//     expect(withParents(five, three)).to.equal(root);
-//     expect(withParents(five, four)).to.equal(two);
-//   });
-// });
-//
-// describe('withParentsAlt()', () => {
-//   it('should find the lowest common ancestor (LCA)', () => {
-//     const BT = new BinaryTreeWP();
-//     BT.insert(1);
-//     BT.insert(2);
-//     BT.insert(3);
-//     BT.insert(4);
-//     BT.insert(5);
-//     BT.insert(6);
-//     BT.insert(7);
-//
-//     const root = BT.root;
-//     const two = BT.root.left;
-//     const three = BT.root.right;
-//     const four = BT.root.left.left;
-//     const five = BT.root.left.right;
-//     const seven = BT.root.right.right;
-//
-//     expect(withParentsAlt(root, two, three)).to.equal(root);
-//     expect(withParentsAlt(root, four, seven)).to.equal(root);
-//     expect(withParentsAlt(root, five, three)).to.equal(root);
-//     expect(withParentsAlt(root, five, four)).to.equal(two);
-//   });
-// });
-//
-// describe('lowestCommonAncestor()', () => {
-//   it('should find the lowest common ancestor (LCA)', () => {
-//
-//   });
-// });
+
+/**
+*                1
+*             ↙     ↘
+*          2           3
+*        ↙   ↘       ↙   ↘
+*      4       5   6       7
+*
+*/
+
+describe.skip('withParents()', () => {
+  test('should find the lowest common ancestor (LCA)', () => {
+    // const BT = new BinaryTreeWP();
+    // BT.insert(1);
+    // BT.insert(2);
+    // BT.insert(3);
+    // BT.insert(4);
+    // BT.insert(5);
+    // BT.insert(6);
+    // BT.insert(7);
+    //
+    // const root = BT.root;
+    // const two = BT.root.left;
+    // const three = BT.root.right;
+    // const four = BT.root.left.left;
+    // const five = BT.root.left.right;
+    // const seven = BT.root.right.right;
+
+    // expect(withParents(two, three)).toBe(root);
+    // expect(withParents(four, seven)).toBe(root);
+    // expect(withParents(five, three)).toBe(root);
+    // expect(withParents(five, four)).toBe(two);
+  });
+});
+
+describe.skip('withParentsAlt()', () => {
+  test('should find the lowest common ancestor (LCA)', () => {
+    // const BT = new BinaryTreeWP();
+    // BT.insert(1);
+    // BT.insert(2);
+    // BT.insert(3);
+    // BT.insert(4);
+    // BT.insert(5);
+    // BT.insert(6);
+    // BT.insert(7);
+    //
+    // const root = BT.root;
+    // const two = BT.root.left;
+    // const three = BT.root.right;
+    // const four = BT.root.left.left;
+    // const five = BT.root.left.right;
+    // const seven = BT.root.right.right;
+
+    // expect(withParentsAlt(root, two, three)).toBe(root);
+    // expect(withParentsAlt(root, four, seven)).toBe(root);
+    // expect(withParentsAlt(root, five, three)).toBe(root);
+    // expect(withParentsAlt(root, five, four)).toBe(two);
+  });
+});
+
+describe.skip('lowestCommonAncestor()', () => {
+  test('should find the lowest common ancestor (LCA)', () => {
+
+  });
+});

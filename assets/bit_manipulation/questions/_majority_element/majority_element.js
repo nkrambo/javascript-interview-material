@@ -13,7 +13,7 @@
 */
 
 /**
-* majorityBit()
+* majorityBtest()
 *
 * Solution:
 *
@@ -32,7 +32,7 @@
 * @return {number} Returns the value of the integer that appears more than n / 2 times
 */
 
-// function majorityBit(nums) {
+// function majorityBtest(nums) {
 //   let major = 0;
 //
 //   // iterate 32 bits and mask with a 1 bit at index i, otherwise 0s

@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import Graph from '../graph';
 
 describe('Graph', () => {
@@ -9,8 +8,7 @@ describe('Graph', () => {
     graph.insert('B');
     graph.insert('C');
 
-    expect(graph.nodes).to.be.a('array');
-    expect(graph.nodes.length).to.equal(3);
+    expect(graph.nodes.length).toBe(3);
   });
 
   test('should find a node', () => {
@@ -20,10 +18,9 @@ describe('Graph', () => {
     graph.insert('C');
 
     const A = graph.find('A');
-    expect(A).to.be.a('object');
-    expect(A.value).to.equal('A');
+    expect(A.value).toBe('A');
 
-    expect(graph.find('D')).to.equal(undefined);
+    expect(graph.find('D')).toBe(undefined);
   });
 
   test('should insert an edge', () => {
@@ -35,6 +32,6 @@ describe('Graph', () => {
     // insert edge A -> B
     graph.insertEdge('A', 'B');
 
-    expect(graph.nodes[0].edges[0].value).to.equal('B');
+    expect(graph.nodes[0].edges[0].value).toBe('B');
   });
 });

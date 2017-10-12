@@ -15,7 +15,7 @@ describe.skip('sortColors()', () => {
   //   { color: 0 },
   // ];
 
-  it('should return a sorted array by color', () => {
+  test('should return a sorted array by color', () => {
     // const result = sortColors(nums);
     //
     // expect(result[0].color).toBe(0);

@@ -1,10 +1,10 @@
 //
-// import { expect } from 'chai';
+
 // import BinarySearchTree from '../../../../data_structures/bst/bst';
 // import { findNext, inorderSuccessor } from '../inorder_successor_in_BST';
 //
 // describe('findNext()', () => {
-//   it('should return the successor value', () => {
+//   test('should return the successor value', () => {
 //     /**
 //     *                  5
 //     *               ↙     ↘
@@ -32,7 +32,7 @@
 // });
 //
 // describe('inorderSuccessor()', () => {
-//   it('should return the successor value', () => {
+//   test('should return the successor value', () => {
 //
 //   });
 // });

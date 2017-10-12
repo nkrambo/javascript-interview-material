@@ -21,7 +21,7 @@
 */
 
 /**
-* canCompleteCicuit()
+* canCompleteCicutest()
 *
 * Solution:
 *
@@ -35,7 +35,7 @@
 * @return {number} returns the starting station's index if circuit is possible, otherwise -1
 */
 
-// function canCompleteCicuit(gas, cost) {
+// function canCompleteCicutest(gas, cost) {
 //   let start = gas.length - 1;
 //   let end = 0;
 //   let sum = gas[start] - cost[start];

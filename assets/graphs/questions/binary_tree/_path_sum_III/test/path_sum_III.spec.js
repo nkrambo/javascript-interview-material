@@ -1,5 +1,5 @@
 
-// import { expect } from 'chai';
+
 // import BinaryTree from '../../../../data_structures/binary_tree/binary_tree';
 // import { pathSumBrute, pathSum } from '../path_sum_III';
 
@@ -26,14 +26,14 @@
 // bt.insert(2);
 // bt.insert(6);
 
-// describe('pathSumBrute()', () => {
-//   it('should return the number of paths that sum to target', () => {
-//     expect(pathSumBrute(bt.root, 8)).to.equal(3);
-//   });
-// });
+describe.skip('pathSumBrute()', () => {
+  test('should return the number of paths that sum to target', () => {
+    // expect(pathSumBrute(bt.root, 8)).toBe(3);
+  });
+});
 
-// describe('pathSum()', () => {
-//   it('should return the number of paths that sum to target', () => {
-//     expect(pathSum(bt.root, 8)).to.equal(3);
-//   });
-// });
+describe.skip('pathSum()', () => {
+  test('should return the number of paths that sum to target', () => {
+    // expect(pathSum(bt.root, 8)).toBe(3);
+  });
+});

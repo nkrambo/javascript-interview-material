@@ -73,7 +73,7 @@
 
 function reverseWords(str) {
   // first we reverse all the characters in the entire message
-  const msg = str.split('');
+  const msg = str.spltest('');
   reverseCharacters(msg, 0, msg.length - 1);
 
   // this gives us the right word order

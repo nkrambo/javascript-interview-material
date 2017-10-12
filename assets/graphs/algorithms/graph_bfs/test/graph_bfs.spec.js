@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import bfs from '../graph_bfs';
 import Graph from '../../../data_structures/graph/graph';
 
@@ -29,13 +28,13 @@ describe('bfs()', () => {
     const order = bfs(graph.nodes[0]);
 
     expect(order).to.be.a('array');
-    expect(order.length).to.equal(6);
+    expect(order.length).toBe(6);
 
-    expect(order[0]).to.equal(0);
-    expect(order[1]).to.equal(1);
-    expect(order[2]).to.equal(4);
-    expect(order[3]).to.equal(5);
-    expect(order[4]).to.equal(3);
-    expect(order[5]).to.equal(2);
+    expect(order[0]).toBe(0);
+    expect(order[1]).toBe(1);
+    expect(order[2]).toBe(4);
+    expect(order[3]).toBe(5);
+    expect(order[4]).toBe(3);
+    expect(order[5]).toBe(2);
   });
 });

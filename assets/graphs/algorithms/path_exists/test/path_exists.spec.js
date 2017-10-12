@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import pathExists from '../path_exists';
 import Graph from '../../../data_structures/graph/graph';
 
@@ -30,13 +29,13 @@ graph.insertEdge('E', 'C');
 
 describe('pathExists()', () => {
   test('should return true if a path exists between two nodes', () => {
-    expect(pathExists(graph.find('A'), graph.find('C'))).to.be.true;
-    expect(pathExists(graph.find('A'), graph.find('A'))).to.be.true;
+    expect(pathExists(graph.find('A'), graph.find('C'))).toBeTruthy();
+    expect(pathExists(graph.find('A'), graph.find('A'))).toBeTruthy();
   });
 
   test('should return false if no path exists between two nodes', () => {
     const start = graph.find('A');
     const end = graph.find('G');
-    expect(pathExists(start, end)).to.be.false;
+    expect(pathExists(start, end)).toBeFalsy();
   });
 });

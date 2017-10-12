@@ -2,7 +2,7 @@
 // import manachers from '../manachers';
 
 describe.skip('manachers()', () => {
-  it('should return the longest palindromic substring', () => {
+  test('should return the longest palindromic substring', () => {
     // expect(manachers('ababa')).toBe('ababa');
     // expect(manachers('ccc')).toBe('ccc');
     // expect(manachers('hsaaaracecaroo')).toBe('racecar');

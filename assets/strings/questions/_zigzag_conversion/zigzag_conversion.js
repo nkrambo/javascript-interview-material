@@ -40,7 +40,7 @@
 
 function convert(s, numRows) {
   let result = '';
-  const chars = s.split('');
+  const chars = s.spltest('');
   const arrs = [];
 
   for (let i = 0; i < numRows; i += 1) {

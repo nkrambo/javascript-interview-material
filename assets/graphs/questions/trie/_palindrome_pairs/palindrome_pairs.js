@@ -207,7 +207,7 @@
 // *
 // * Solution:
 // *
-// * Simple helper to reverse a string. We could use the split('').reverse().join()
+// * Simple helper to reverse a string. We could use the spltest('').reverse().join()
 // * approach, but we get a slightly better runtime writing our own method.
 // *
 // * Time: O(n)

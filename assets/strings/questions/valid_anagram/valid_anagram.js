@@ -100,7 +100,7 @@ function isAnagramSort(s, t) {
   if (s.length !== t.length) return false;
 
   // compare the sorted strings
-  return s.split('').sort().join() === t.split('').sort().join();
+  return s.spltest('').sort().join() === t.spltest('').sort().join();
 }
 
 export { isAnagram, isAnagramSort };

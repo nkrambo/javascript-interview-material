@@ -35,8 +35,8 @@
 * 2. Populating the map with each word
 * 3. Handling words that are both uppercase and lowercase in the input string
 *
-* Attacking number 1 first... We could use the built-in split() function, to separate
-* words but if we split on the spaces, like string.split(''), but this would present
+* Attacking number 1 first... We could use the built-in spltest() function, to separate
+* words but if we split on the spaces, like string.spltest(''), but this would present
 * issues with any punctuation we come across. Consider things like exclaimation marks,
 * hyphens, ellipses, commas etc... We don't want these in our cloud. Instead, let's
 * write our own split function so that we can iterate only once and include only

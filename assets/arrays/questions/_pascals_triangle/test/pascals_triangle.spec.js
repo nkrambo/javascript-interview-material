@@ -2,7 +2,7 @@
 // import generate from '../pascals_triangle';
 
 describe.skip('generate()', () => {
-  it('should print n rows of pascals triangle', () => {
+  test('should print n rows of pascals triangle', () => {
     const result = generate(5);
 
     expect(result).to.be.a('array');

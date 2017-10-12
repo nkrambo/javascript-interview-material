@@ -1,14 +1,11 @@
 
-import { expect } from 'chai';
 import Heap from '../heap';
 
 describe('Heap', () => {
   test('should construct a minimum heap by default', () => {
     const heap = new Heap();
 
-    expect(heap.heap).to.be.a('array');
-    expect(heap.compare).to.be.a('function');
-    expect(heap.isEmpty()).to.be.true;
+    expect(heap.isEmpty()).toBeTruthy();
 
     heap.add(6);
     heap.add(3);
@@ -16,11 +13,11 @@ describe('Heap', () => {
     heap.add(11);
     heap.add(9);
 
-    expect(heap.isEmpty()).to.be.false;
-    expect(heap.heap.length).to.equal(5);
-    expect(heap.top()).to.equal(2);
+    expect(heap.isEmpty()).toBeFalsy();
+    expect(heap.heap.length).toBe(5);
+    expect(heap.top()).toBe(2);
 
-    expect(heap.extract()).to.equal(2);
-    expect(heap.top()).to.equal(3);
+    expect(heap.extract()).toBe(2);
+    expect(heap.top()).toBe(3);
   });
 });

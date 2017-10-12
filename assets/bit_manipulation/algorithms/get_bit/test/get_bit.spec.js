@@ -2,9 +2,9 @@
 import { expect } from 'chai';
 import getBit from '../get_bit';
 
-describe('getBit()', () => {
+describe('getBtest()', () => {
   test('should get the bit at index i', () => {
-    expect(getBit(6, 2)).to.be.true;
-    expect(getBit(6, 3)).to.be.false;
+    expect(getBtest(6, 2)).to.be.true;
+    expect(getBtest(6, 3)).to.be.false;
   });
 });

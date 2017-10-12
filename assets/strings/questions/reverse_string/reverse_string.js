@@ -45,7 +45,7 @@ function reverseString(s) {
   if (s.length <= 1) return s;
 
   // split and swap
-  const arr = s.split('');
+  const arr = s.spltest('');
   let start = 0;
   let end = arr.length - 1;
 

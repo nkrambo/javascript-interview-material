@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import bellmanFord from '../bellman_ford';
 import Graph from '../../../data_structures/graph/graph';
 
@@ -54,19 +53,18 @@ describe('bellmanFord()', () => {
   test('should return the shortest path for all nodes from source', () => {
     const result = bellmanFord(source, weighted);
 
-    expect(result).to.be.a('array');
-    expect(result.length).to.equal(4);
+    expect(result.length).toBe(4);
 
-    expect(result[0].node).to.equal('A');
-    expect(result[0].cost).to.equal(0);
+    expect(result[0].node).toBe('A');
+    expect(result[0].cost).toBe(0);
 
-    expect(result[1].node).to.equal('B');
-    expect(result[1].cost).to.equal(-6);
+    expect(result[1].node).toBe('B');
+    expect(result[1].cost).toBe(-6);
 
-    expect(result[2].node).to.equal('C');
-    expect(result[2].cost).to.equal(2);
+    expect(result[2].node).toBe('C');
+    expect(result[2].cost).toBe(2);
 
-    expect(result[3].node).to.equal('D');
-    expect(result[3].cost).to.equal(-7);
+    expect(result[3].node).toBe('D');
+    expect(result[3].cost).toBe(-7);
   });
 });

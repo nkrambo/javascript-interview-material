@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import BinaryTree from '../binary_tree';
 
 const bt = new BinaryTree();
@@ -11,11 +10,11 @@ bt.insert(1);
 
 describe('BinaryTree', () => {
   test('should create a binary tree with BFS insertions', () => {
-    expect(bt.root.value).to.equal(5);
-    expect(bt.root.left.value).to.equal(-3);
-    expect(bt.root.right.value).to.equal(6);
-    expect(bt.root.right.right).to.equal(null);
-    expect(bt.root.left.left.value).to.equal(0);
-    expect(bt.root.left.right.value).to.equal(1);
+    expect(bt.root.value).toBe(5);
+    expect(bt.root.left.value).toBe(-3);
+    expect(bt.root.right.value).toBe(6);
+    expect(bt.root.right.right).toBe(null);
+    expect(bt.root.left.left.value).toBe(0);
+    expect(bt.root.left.right.value).toBe(1);
   });
 });

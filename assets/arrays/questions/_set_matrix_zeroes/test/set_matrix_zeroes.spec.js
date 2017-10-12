@@ -16,7 +16,7 @@ describe.skip('setZeroes()', () => {
     // expect(setZeroes(matrix)).toEqual(zeroed);
   });
 
-  it('should return the same matrix if no zeros are passed in', () => {
+  test('should return the same matrix if no zeros are passed in', () => {
     // const noZero = [[1, 1],
     //                 [1, 1]];
     //
