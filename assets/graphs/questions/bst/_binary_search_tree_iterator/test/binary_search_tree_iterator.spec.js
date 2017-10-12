@@ -1,9 +1,8 @@
 
-
 // import BSTIterator from '../binary_search_tree_iterator';
-//
-// describe('BSTIterator()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('BSTIterator()', () => {
+  test('should', () => {
+
+  });
+});

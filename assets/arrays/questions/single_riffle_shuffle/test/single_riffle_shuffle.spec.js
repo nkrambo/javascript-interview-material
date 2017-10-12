@@ -52,10 +52,10 @@ describe('isSingleRiffle()', () => {
   const riffledDeck = riffle(shuffled); // riffle shuffle
 
   test('should return true if shuffledDeck is a single riffle', () => {
-    expect(isSingleRiffle(riffledDeck.slice(0, 26), riffledDeck.slice(26), riffledDeck)).to.be.true;
+    expect(isSingleRiffle(riffledDeck.slice(0, 26), riffledDeck.slice(26), riffledDeck)).toBeTruthy();
   });
 
   test('should return false if shuffledDeck is not a single riffle', () => {
-    expect(isSingleRiffle(shuffle(shuffled.slice(0, 26)), shuffled.slice(26), shuffled)).to.be.false;
+    expect(isSingleRiffle(shuffle(shuffled.slice(0, 26)), shuffled.slice(26), shuffled)).toBeFalsy();
   });
 });

@@ -1,9 +1,8 @@
-//
 
 // import cloneGraph from '../clone_graph';
-//
-// describe('cloneGraph()', () => {
-//   test('should', () => {
-//
-//   });
-// });
+
+describe.skip('cloneGraph()', () => {
+  test('should', () => {
+
+  });
+});

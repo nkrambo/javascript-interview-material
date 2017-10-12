@@ -1,22 +1,21 @@
 
-
 import buildOrder from '../build_order';
 
 describe('buildOrder()', () => {
   test('should return the correct build order of projects', () => {
     const projects = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
-    const deps = [['C', 'F'],
-                  ['B', 'F'],
-                  ['A', 'F'],
-                  ['A', 'C'],
-                  ['A', 'B'],
-                  ['E', 'B'],
-                  ['E', 'A'],
-                  ['G', 'D']];
+    const deps = [
+      ['C', 'F'],
+      ['B', 'F'],
+      ['A', 'F'],
+      ['A', 'C'],
+      ['A', 'B'],
+      ['E', 'B'],
+      ['E', 'A'],
+      ['G', 'D']];
 
     const build = buildOrder(projects, deps);
 
-    expect(build).to.be.a('array');
     expect(build.length).toBe(7);
 
     expect(build[0]).toBe('D');
@@ -30,10 +29,11 @@ describe('buildOrder()', () => {
 
   test('should return an error if graph is not a DAG', () => {
     const projects = ['A', 'B', 'C'];
-    const deps = [['B', 'A'],
-                  ['C', 'B'],
-                  ['A', 'C']];
+    const deps = [
+      ['B', 'A'],
+      ['C', 'B'],
+      ['A', 'C']];
 
-    expect(() => { buildOrder(projects, deps); }).to.throw(Error);
+    expect(() => { buildOrder(projects, deps); }).toThrow(Error);
   });
 });

@@ -1,5 +1,4 @@
 
-
 import MillionGazillion from '../million_gazillion';
 
 describe('MillionGazillion', () => {
@@ -7,10 +6,10 @@ describe('MillionGazillion', () => {
   dict.checkOrAdd('test');
 
   test('should add in new word', () => {
-    expect(Object.prototype.hasOwnProperty.call(dict.root, 't')).to.be.true;
+    expect(Object.prototype.hasOwnProperty.call(dict.root, 't')).toBeTruthy();
   });
 
   test('should return false if a word exists', () => {
-    expect(dict.checkOrAdd('test')).to.be.false;
+    expect(dict.checkOrAdd('test')).toBeFalsy();
   });
 });

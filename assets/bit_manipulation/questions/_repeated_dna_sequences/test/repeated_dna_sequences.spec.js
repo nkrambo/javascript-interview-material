@@ -4,6 +4,6 @@
 //
 // describe('findRepeatedDnaSequences()', () => {
 //   test('should return an array of repeated DNA strings', () => {
-//     expect(findRepeatedDnaSequences('AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT')).to.deep.equal(['AAAAACCCCC', 'CCCCCAAAAA']);
+//     expect(findRepeatedDnaSequences('AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT')).toEqual()(['AAAAACCCCC', 'CCCCCAAAAA']);
 //   });
 // });

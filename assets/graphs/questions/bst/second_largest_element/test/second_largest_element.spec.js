@@ -1,5 +1,4 @@
 
-
 import findSecondLargest from '../second_largest_element';
 import BinarySearchTree from '../../../../data_structures/bst/bst';
 
@@ -32,6 +31,6 @@ describe('findSecondLargest()', () => {
     const BST3 = new BinarySearchTree();
     BST3.insert(100);
 
-    expect(() => { findSecondLargest(BST3); }).to.throw(Error);
+    expect(() => { findSecondLargest(BST3); }).toThrow(Error);
   });
 });

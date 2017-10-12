@@ -1,5 +1,4 @@
 
-
 import BSTRandom from '../random_node';
 
 // overwrite the getRandomNode() to explicitly pass in index for testing
