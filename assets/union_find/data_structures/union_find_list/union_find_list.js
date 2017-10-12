@@ -1,7 +1,7 @@
 //
 // import LinkedList from '../../../';
 //
-// class UnionFind {
+// export default class UnionFind {
 //   constructor() {
 //
 //   }

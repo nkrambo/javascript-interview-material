@@ -1,9 +1,8 @@
-//
-// import { expect } from 'chai';
+
 // import reverseList from '../reverse_linked_list';
-//
-// describe('reverseList()', () => {
-//   it('should reverse a linked list', () => {
-//
-//   });
-// });
+
+describe.skip('reverseList()', () => {
+  test('should reverse a linked list', () => {
+
+  });
+});

@@ -1,13 +1,12 @@
-//
-// import { expect } from 'chai';
+
 // import isPalindrome from '../palindrome_linked_list';
-//
-// describe('isPalindrome()', () => {
-//   it('should return true if linked list is a plaindrome', () => {
-//
-//   });
-//
-//   it('should return false if linked list is NOT a plaindrome', () => {
-//
-//   });
-// });
+
+describe.skip('isPalindrome()', () => {
+  test('should return true if linked list is a plaindrome', () => {
+
+  });
+
+  test('should return false if linked list is NOT a plaindrome', () => {
+
+  });
+});

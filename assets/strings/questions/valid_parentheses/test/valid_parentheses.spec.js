@@ -4,11 +4,11 @@ import isValid from '../valid_parentheses';
 
 describe('isValid()', () => {
   test('should return true if all brackets are balanced', () => {
-    expect(isValid('{ [ ] ( ) }')).to.be.true;
+    expect(isValid('{ [ ] ( ) }')).toBeTruthy();
   });
 
   test('should return false if brackets are unbalanced', () => {
-    expect(isValid('{ [ ( ] ) }')).to.be.false;
-    expect(isValid('{ [ }')).to.be.false;
+    expect(isValid('{ [ ( ] ) }')).toBeFalsy();
+    expect(isValid('{ [ }')).toBeFalsy();
   });
 });

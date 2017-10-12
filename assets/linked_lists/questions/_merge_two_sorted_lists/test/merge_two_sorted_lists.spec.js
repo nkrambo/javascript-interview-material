@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import { mergeTwoListsIter, mergeTwoListsRecursive } from '../merge_two_sorted_lists';
 
 /**
@@ -26,9 +25,8 @@ describe('mergeTwoListsIter()', () => {
 
   test('should return the head of two merged sorted lists', () => {
     const merged = mergeTwoListsIter(l1, l2);
-    expect(merged).to.be.an('object');
-    expect(merged.val).to.equal(1);
-    expect(merged.next.next.next.val).to.equal(6);
+    expect(merged.val).toBe(1);
+    expect(merged.next.next.next.val).toBe(6);
   });
 });
 
@@ -43,8 +41,7 @@ describe('mergeTwoListsRecursive()', () => {
 
   test('should return the head of two merged sorted lists', () => {
     const merged = mergeTwoListsRecursive(l1, l2);
-    expect(merged).to.be.an('object');
-    expect(merged.val).to.equal(1);
-    expect(merged.next.next.next.val).to.equal(6);
+    expect(merged.val).toBe(1);
+    expect(merged.next.next.next.val).toBe(6);
   });
 });

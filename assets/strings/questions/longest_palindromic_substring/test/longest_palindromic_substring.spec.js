@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import {
   longestPalindromeBrute,
   isPalindrome,
@@ -9,55 +8,52 @@ import {
 
 describe('longestPalindromeBrute()', () => {
   test('should return the longest palindromic substring', () => {
-    expect(longestPalindromeBrute('babad')).to.be.oneOf(['bab', 'aba']);
-    expect(longestPalindromeBrute('ababa')).to.equal('ababa');
-    expect(longestPalindromeBrute('ccc')).to.equal('ccc');
-    expect(longestPalindromeBrute('hsaaaracecaroo')).to.equal('racecar');
-    expect(longestPalindromeBrute('cbbd')).to.equal('bb');
-    expect(longestPalindromeBrute('a')).to.equal('a');
-    expect(longestPalindromeBrute('dad')).to.equal('dad');
-    expect(longestPalindromeBrute('abcda')).to.equal('a');
+    expect(longestPalindromeBrute('ababa')).toBe('ababa');
+    expect(longestPalindromeBrute('ccc')).toBe('ccc');
+    expect(longestPalindromeBrute('hsaaaracecaroo')).toBe('racecar');
+    expect(longestPalindromeBrute('cbbd')).toBe('bb');
+    expect(longestPalindromeBrute('a')).toBe('a');
+    expect(longestPalindromeBrute('dad')).toBe('dad');
+    expect(longestPalindromeBrute('abcda')).toBe('a');
   });
 });
 
 describe('isPalindrome()', () => {
   test('should return true if string is a valid palindrome', () => {
-    expect(isPalindrome('aba', 0, 2)).to.be.true;
-    expect(isPalindrome('aaa', 0, 0)).to.be.true;
-    expect(isPalindrome('a', 0, 0)).to.be.true;
-    expect(isPalindrome('b', 0, 0)).to.be.true;
-    expect(isPalindrome('racecar', 0, 6)).to.be.true;
+    expect(isPalindrome('aba', 0, 2)).toBeTruthy();
+    expect(isPalindrome('aaa', 0, 0)).toBeTruthy();
+    expect(isPalindrome('a', 0, 0)).toBeTruthy();
+    expect(isPalindrome('b', 0, 0)).toBeTruthy();
+    expect(isPalindrome('racecar', 0, 6)).toBeTruthy();
   });
 
   test('should return false if string is NOT a valid palindrome', () => {
-    expect(isPalindrome('abc', 0, 2)).to.be.false;
-    expect(isPalindrome('ab', 0, 1)).to.be.false;
-    expect(isPalindrome('notapalindrome', 0, 13)).to.be.false;
+    expect(isPalindrome('abc', 0, 2)).toBeFalsy();
+    expect(isPalindrome('ab', 0, 1)).toBeFalsy();
+    expect(isPalindrome('notapalindrome', 0, 13)).toBeFalsy();
   });
 });
 
 describe('longestPalindromeDP()', () => {
   test('should return the longest palindromic substring', () => {
-    expect(longestPalindromeDP('babad')).to.be.oneOf(['bab', 'aba']);
-    expect(longestPalindromeDP('ababa')).to.equal('ababa');
-    expect(longestPalindromeDP('ccc')).to.equal('ccc');
-    expect(longestPalindromeDP('hsaaaracecaroo')).to.equal('racecar');
-    expect(longestPalindromeDP('cbbd')).to.equal('bb');
-    expect(longestPalindromeDP('a')).to.equal('a');
-    expect(longestPalindromeDP('dad')).to.equal('dad');
-    expect(longestPalindromeDP('abcda')).to.equal('a');
+    expect(longestPalindromeDP('ababa')).toBe('ababa');
+    expect(longestPalindromeDP('ccc')).toBe('ccc');
+    expect(longestPalindromeDP('hsaaaracecaroo')).toBe('racecar');
+    expect(longestPalindromeDP('cbbd')).toBe('bb');
+    expect(longestPalindromeDP('a')).toBe('a');
+    expect(longestPalindromeDP('dad')).toBe('dad');
+    expect(longestPalindromeDP('abcda')).toBe('a');
   });
 });
 
 describe('longestPalindrome()', () => {
   test('should return the longest palindromic substring', () => {
-    expect(longestPalindrome('babad')).to.be.oneOf(['bab', 'aba']);
-    expect(longestPalindrome('ababa')).to.equal('ababa');
-    expect(longestPalindrome('ccc')).to.equal('ccc');
-    expect(longestPalindrome('hsaaaracecaroo')).to.equal('racecar');
-    expect(longestPalindrome('cbbd')).to.equal('bb');
-    expect(longestPalindrome('a')).to.equal('a');
-    expect(longestPalindrome('dad')).to.equal('dad');
-    expect(longestPalindrome('abcda')).to.equal('a');
+    expect(longestPalindrome('ababa')).toBe('ababa');
+    expect(longestPalindrome('ccc')).toBe('ccc');
+    expect(longestPalindrome('hsaaaracecaroo')).toBe('racecar');
+    expect(longestPalindrome('cbbd')).toBe('bb');
+    expect(longestPalindrome('a')).toBe('a');
+    expect(longestPalindrome('dad')).toBe('dad');
+    expect(longestPalindrome('abcda')).toBe('a');
   });
 });

@@ -1,9 +1,8 @@
 
-import { expect } from 'chai';
-import convert from '../zigzag_conversion';
+// import convert from '../zigzag_conversion';
 
 describe('convert()', () => {
   test('should return a zigzagged string', () => {
-    expect(convert('PAYPALISHIRING', 3)).to.equal('PAHNAPLSIIGYIR');
+    // expect(convert('PAYPALISHIRING', 3)).toBe('PAHNAPLSIIGYIR');
   });
 });

@@ -4,34 +4,34 @@ import { isAnagram, isAnagramSort } from '../valid_anagram';
 
 describe('isAnagram()', () => {
   test('should return true for a permutation', () => {
-    expect(isAnagram('dog', 'god')).to.be.true;
-    expect(isAnagram('abcd', 'bdca')).to.be.true;
-    expect(isAnagram('cat', 'cat')).to.be.true;
+    expect(isAnagram('dog', 'god')).toBeTruthy();
+    expect(isAnagram('abcd', 'bdca')).toBeTruthy();
+    expect(isAnagram('cat', 'cat')).toBeTruthy();
   });
 
   test('should return false for strings of different length', () => {
-    expect(isAnagram('abcd', 'abc')).to.be.false;
+    expect(isAnagram('abcd', 'abc')).toBeFalsy();
   });
 
   test('should return false for non permutations of same length', () => {
-    expect(isAnagram('abcd', 'zqwe')).to.be.false;
-    expect(isAnagram('a', 'b')).to.be.false;
+    expect(isAnagram('abcd', 'zqwe')).toBeFalsy();
+    expect(isAnagram('a', 'b')).toBeFalsy();
   });
 });
 
 describe('isAnagramSort()', () => {
   test('should return true for a permutation', () => {
-    expect(isAnagramSort('dog', 'god')).to.be.true;
-    expect(isAnagramSort('abcd', 'bdca')).to.be.true;
-    expect(isAnagramSort('cat', 'cat')).to.be.true;
+    expect(isAnagramSort('dog', 'god')).toBeTruthy();
+    expect(isAnagramSort('abcd', 'bdca')).toBeTruthy();
+    expect(isAnagramSort('cat', 'cat')).toBeTruthy();
   });
 
   test('should return false for strings of different length', () => {
-    expect(isAnagramSort('abcd', 'abc')).to.be.false;
+    expect(isAnagramSort('abcd', 'abc')).toBeFalsy();
   });
 
   test('should return false for non permutations of same length', () => {
-    expect(isAnagramSort('abcd', 'zqwe')).to.be.false;
-    expect(isAnagramSort('a', 'b')).to.be.false;
+    expect(isAnagramSort('abcd', 'zqwe')).toBeFalsy();
+    expect(isAnagramSort('a', 'b')).toBeFalsy();
   });
 });

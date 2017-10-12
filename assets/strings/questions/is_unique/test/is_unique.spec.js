@@ -1,31 +1,30 @@
 
-import { expect } from 'chai';
 import { isUnique, isUniqueSort } from '../is_unique';
 
 describe('isUnique()', () => {
   test('should return true for a unique string', () => {
-    expect(isUnique('z')).to.be.true;
-    expect(isUnique('abc')).to.be.true;
-    expect(isUnique('abcdefg1234567!@#$%^&')).to.be.true;
-    expect(isUnique('1234567890')).to.be.true;
+    expect(isUnique('z')).toBeTruthy();
+    expect(isUnique('abc')).toBeTruthy();
+    expect(isUnique('abcdefg1234567!@#$%^&')).toBeTruthy();
+    expect(isUnique('1234567890')).toBeTruthy();
   });
 
   test('should return false for a non-unique string', () => {
-    expect(isUnique('abcc')).to.be.false;
-    expect(isUnique('11')).to.be.false;
+    expect(isUnique('abcc')).toBeFalsy();
+    expect(isUnique('11')).toBeFalsy();
   });
 });
 
 describe('isUniqueSort()', () => {
   test('should return true for a unique string', () => {
-    expect(isUniqueSort('z')).to.be.true;
-    expect(isUniqueSort('abc')).to.be.true;
-    expect(isUniqueSort('abcdefg1234567!@#$%^&')).to.be.true;
-    expect(isUniqueSort('1234567890')).to.be.true;
+    expect(isUniqueSort('z')).toBeTruthy();
+    expect(isUniqueSort('abc')).toBeTruthy();
+    expect(isUniqueSort('abcdefg1234567!@#$%^&')).toBeTruthy();
+    expect(isUniqueSort('1234567890')).toBeTruthy();
   });
 
   test('should return false for a non-unique string', () => {
-    expect(isUniqueSort('abcc')).to.be.false;
-    expect(isUniqueSort('11')).to.be.false;
+    expect(isUniqueSort('abcc')).toBeFalsy();
+    expect(isUniqueSort('11')).toBeFalsy();
   });
 });

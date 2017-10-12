@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import kthToLast from '../kth_to_last';
 import LinkedList from '../../../data_structures/singly_linked_list/singly_linked_list';
 
@@ -13,6 +12,6 @@ describe('kthToLast()', () => {
     list.add('Angel Food', 0);
 
     const kth = kthToLast(2, list.head);
-    expect(kth.value).to.equal('Devil\'s Food');
+    expect(kth.value).toBe('Devil\'s Food');
   });
 });
