@@ -1,16 +1,14 @@
-//
-// import { expect } from 'chai';
+
 // import manachers from '../manachers';
-//
-// describe('manachers()', () => {
-//   it('should return the longest palindromic substring', () => {
-//     expect(manachers('babad')).to.be.oneOf(['bab', 'aba']);
-//     expect(manachers('ababa')).to.equal('ababa');
-//     expect(manachers('ccc')).to.equal('ccc');
-//     expect(manachers('hsaaaracecaroo')).to.equal('racecar');
-//     expect(manachers('cbbd')).to.equal('bb');
-//     expect(manachers('a')).to.equal('a');
-//     expect(manachers('dad')).to.equal('dad');
-//     expect(manachers('abcda')).to.equal('a');
-//   });
-// });
+
+describe.skip('manachers()', () => {
+  it('should return the longest palindromic substring', () => {
+    // expect(manachers('ababa')).toBe('ababa');
+    // expect(manachers('ccc')).toBe('ccc');
+    // expect(manachers('hsaaaracecaroo')).toBe('racecar');
+    // expect(manachers('cbbd')).toBe('bb');
+    // expect(manachers('a')).toBe('a');
+    // expect(manachers('dad')).toBe('dad');
+    // expect(manachers('abcda')).toBe('a');
+  });
+});

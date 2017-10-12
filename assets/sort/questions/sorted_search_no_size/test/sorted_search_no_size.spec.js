@@ -1,5 +1,4 @@
 
-import { expect } from 'chai';
 import indexAtListy from '../sorted_search_no_size';
 
 class Listy {
@@ -23,9 +22,9 @@ describe('indexAtListy()', () => {
     list.items.push(10);
     list.items.push(11);
 
-    expect(indexAtListy(list, 8)).to.equal(4);
-    expect(indexAtListy(list, 10)).to.equal(5);
-    expect(indexAtListy(list, 1)).to.equal(0);
+    expect(indexAtListy(list, 8)).toBe(4);
+    expect(indexAtListy(list, 10)).toBe(5);
+    expect(indexAtListy(list, 1)).toBe(0);
   });
 
   test('should return -1 if target does not exist', () => {
@@ -34,8 +33,8 @@ describe('indexAtListy()', () => {
     list.items.push(2);
     list.items.push(3);
 
-    expect(indexAtListy(list, 4)).to.equal(-1);
-    expect(indexAtListy(list, 0)).to.equal(-1);
-    expect(indexAtListy(list, 10)).to.equal(-1);
+    expect(indexAtListy(list, 4)).toBe(-1);
+    expect(indexAtListy(list, 0)).toBe(-1);
+    expect(indexAtListy(list, 10)).toBe(-1);
   });
 });
