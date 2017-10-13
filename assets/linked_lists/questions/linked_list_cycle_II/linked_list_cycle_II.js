@@ -30,17 +30,13 @@
 */
 
 /**
-* ListNode
+* Definition for singly-linked list.
 *
-* @constructor
-* @param {*} val
-* @return {object} returns a linked list node
+* function ListNode(val) {
+*   this.val = val;
+*   this.next = null;
+* }
 */
-
-function ListNode(val) {
-  this.val = val;
-  this.next = null;
-}
 
 /**
 * detectCycleSet()
@@ -67,24 +63,23 @@ function ListNode(val) {
 * @return {object} returns a node at beginning of loop, if one exists, else null
 */
 
-// function detectCycleSet(head) {
-//   const seen = new Set();
-//   let current = list.head;
-//
-//   while (current) {
-//     // found loop
-//     if (seen.has(current)) {
-//       return current;
-//     }
-//
-//     // otherwise, keep traversing
-//     seen.add(current);
-//     current = current.next;
-//   }
-//
-//   // no loop found
-//   return null;
-// }
+function detectCycleSet(head) {
+  const seen = new Set();
+
+  while (head !== null) {
+    // found loop
+    if (seen.has(head)) {
+      return head;
+    }
+
+    // otherwise, keep traversing
+    seen.add(head);
+    head = head.next;
+  }
+
+  // no loop found
+  return null;
+}
 
 /**
 * detectCycle()
@@ -176,22 +171,34 @@ function ListNode(val) {
 * @return {object} returns a node at beginning of loop, if one exists, else null
 */
 
-// function detectCycle(head) {
-//   // start both runners at the beginning
-//   let slow = list.head;
-//   let fast = list.head;
-//
-// // until we hit the end of the list
-//   while (fast && fast.next) {
-//     slow = slow.next;
-//     fast = fast.next.next;
-//
-//   // case: fast is about to "lap" slow
-//     if (fast === slow) return fast;
-//   }
-//
-//   // case: fast hit the end of the list
-//   return null;
-// }
+function detectCycle(head) {
+  // catch edge
+  if (head === null || head.next === null) return null;
 
-// export { detectCycleSet, detectCycle };
+  // hare and tortoise pointers
+  let slow = head;
+  let fast = head;
+  let isCycle = false;
+
+  // until we hit the end of the list
+  while (slow !== null && fast !== null) {
+    slow = slow.next;
+    if (fast.next === null) return null;
+    fast = fast.next.next;
+
+    if (slow === fast) { isCycle = true; break; }
+  }
+
+  if (!isCycle) return null;
+  slow = head;
+
+  while (slow !== fast) {
+    slow = slow.next;
+    fast = fast.next;
+  }
+
+  // could return either slow or fast
+  return slow;
+}
+
+export { detectCycleSet, detectCycle };
