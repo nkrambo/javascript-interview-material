@@ -893,7 +893,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>237</td>
-    <td><a href="../assets/search/questions/delete_node_in_a_linked_list/delete_node_in_a_linked_list.js">Delete Node in a Linked List</a></td>
+    <td><a href="../assets/linked_lists/questions/delete_node_in_a_linked_list/delete_node_in_a_linked_list.js">Delete Node in a Linked List</a></td>
   </tr>
   <tr>
     <td>238</td>
