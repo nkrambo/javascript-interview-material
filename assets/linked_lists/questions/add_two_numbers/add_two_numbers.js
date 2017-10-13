@@ -12,16 +12,16 @@
 *
 * Example 1:
 *
-* Input: (7 -> 1 -> 6) + (5 -> 9 -> 2). That is, 617 + 295
-* Output: 2 -> 1 -> 9. That is, 912.
+* Input: (7 → 1 → 6) + (5 → 9 → 2). That is, 617 + 295
+* Output: 2 → 1 → 9. That is, 912.
 *
 * Follow Up:
 * Suppose the digits are stored in forward order. Reapeat the above problem.
 *
 * Example 2:
 *
-* Input: (6 -> 1 -> 7) + (2 -> 9 -> 5). That is, 617 + 295.
-* Output: 9 -> 1 -> 2. That is, 912.
+* Input: (6 → 1 → 7) + (2 → 9 → 5). That is, 617 + 295.
+* Output: 9 → 1 → 2. That is, 912.
 *
 * You may assume the two numbers do not contain any leading zero, except the number
 * 0 itself.
@@ -98,9 +98,9 @@
 * complexity will be O(log n) as we need to return a new list, which will be about
 * half the nodes of (n).
 *
-* @param {object} l1 linked list node
-* @param {object} l2 linked list node
-* @return {number} returns the addition of list1 and list2
+* @param {ListNode} l1
+* @param {ListNode} l2
+* @return {ListNode}
 */
 
 function addTwoNumbers(l1, l2) {

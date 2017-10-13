@@ -30,38 +30,34 @@
 * (log n) in the worse case, where each element has a duplicate. That is, n/2 are
 * duplicate values.
 *
-* @param {object} list - unsorted linked list
+* @param {object} head - unsorted linked list
 * @return {object} returns the modified list with duplicate values removed
 */
 
-function removeDuplicates(list) {
-  // if only 1 item, there cannot be duplicates
-  if (list.length <= 1) return list;
-
+function removeDuplicates(head) {
   // hash for duplicates
   const seen = new Set();
 
   // traverse from head, ref prev with two pointer
   let previous = null;
-  let current = list.head;
+  let current = head;
 
   while (current !== null) {
     // found duplicate
-    if (seen.has(current.value)) {
+    if (seen.has(current.val)) {
       previous.next = current.next; // remove
-      list.length -= 1;
 
     // otherwise, add node to 'seen' hash
     // and update previous value
     } else {
-      seen.add(current.value);
+      seen.add(current.val);
       previous = current;
     }
 
     current = current.next;
   }
 
-  return list;
+  return head;
 }
 
 /**
@@ -84,11 +80,8 @@ function removeDuplicates(list) {
 * @return {object} returns the modified list with duplicate values removed
 */
 
-function removeDuplicatesNoBuffer(list) {
-  // if only 1 item, there cannot be duplicates
-  if (list.length <= 1) return list;
-
-  let current = list.head;
+function removeDuplicatesNoBuffer(head) {
+  let current = head;
 
   // iterate list for each 'current' node
   while (current !== null) {
@@ -97,9 +90,8 @@ function removeDuplicatesNoBuffer(list) {
     // look at all subsequent nodes for duplicates
     while (runner.next !== null) {
       // found duplicate
-      if (runner.next.value === current.value) {
+      if (runner.next.val === current.val) {
         runner.next = runner.next.next; // remove
-        list.length -= 1;
 
       // keep traversing
       } else {
@@ -110,7 +102,7 @@ function removeDuplicatesNoBuffer(list) {
     current = current.next;
   }
 
-  return list;
+  return head;
 }
 
 export { removeDuplicates, removeDuplicatesNoBuffer };

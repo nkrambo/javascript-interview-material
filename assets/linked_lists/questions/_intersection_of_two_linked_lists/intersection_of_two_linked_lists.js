@@ -29,20 +29,6 @@
 */
 
 /**
-* ListNode
-*
-* @constructor
-* @param {*} val
-* @return {object} returns a linked list node
-*/
-
-function ListNode(val) {
-  this.val = val;
-  this.next = null;
-}
-
-
-/**
 * getIntersectionNode()
 *
 * Solution:
@@ -67,10 +53,32 @@ function ListNode(val) {
 * We should be careful here not to inadvertently draw a special case by making
 * the linked lists the same length.
 *
-* How would we detect if two lists intersect? One approach would be to use a hash
-* table and just throw all the linked list nodes into there. We would need to be
-* careful to reference the linked lists by their memory allocation, not by their
-* value.
+* How would we detect if two lists intersect?
+*
+* The brute force approach would be to, for each node a(i) in list A, traverse
+* the entire list B and check if any node in list B coincides with a(i).
+*
+* This would give us:
+*
+* Time complexity : O(mn).
+* Space complexity : O(1).
+*
+* That's not a very good time complexity.
+*
+* Another approach would be to use a hash table and just throw all the linked list
+* nodes into there. We traverse list A and store the address/reference to each
+* node in a hash set. Then check every node b(i) in list B: if b(i) appears in the
+* hash set, then b(i) is the intersection node.
+*
+* We would need to be careful to reference the linked lists by their memory allocation,
+* not by their value.
+*
+* This would give us:
+*
+* Time complexity : O(m+n).
+* Space complexity : O(m) or O(n)
+*
+* We can do better than that.
 *
 * There's an easier way though. Observe that two intersecting linked lists will
 * always have the same last node. Therefore, we can just traverse to the end of
@@ -120,55 +128,98 @@ function ListNode(val) {
 *
 * Where A and B are the lengths of the linked lists.
 *
-* @param {object} headA linked list node
-* @param {object} headB linked list node
-* @return {object} returns the intersecting node of list 1 and list 2, otherwise null.
+* @param {ListNode} headA
+* @param {ListNode} headB
+* @return {ListNode}
 */
 
-// function getIntersectionNode(headA, headB) {
-//   if (headA === null || headB === null) return null;
+function getIntersectionNode(headA, headB) {
+  if (headA === null || headB === null) return null;
+
+  // if tails do not match, no intersection
+  if (getTail(headA) !== getTail(headB)) return null;
+
+  const aLength = getLength(headA);
+  const bLength = getLength(headB);
+
+  // set pointers to start of each list
+  let shorter = aLength < bLength ? headA : headB;
+  let longer = aLength < bLength ? headB : headA;
+
+  // advance the pointer for the longer list by diff in sizes
+  longer = getKthNode(longer, Math.abs(aLength - bLength));
+
+  // move pointers until you have a collision
+  while (shorter !== longer) {
+    shorter = shorter.next;
+    longer = longer.next;
+  }
+
+  // return either one
+  return longer;
+}
+
+function getKthNode(list, k) {
+  let current = list;
+  let i = 0;
+
+  while (i < k) {
+    current = current.next;
+    i += 1;
+  }
+
+  return current;
+}
+
+function getTail(head) {
+  if (head === null) return null;
+
+  let current = head;
+  while (current.next !== null) {
+    current = current.next;
+  }
+
+  return current;
+}
+
+function getLength(head) {
+  if (head === null) return null;
+
+  let count = 0;
+  let current = head;
+  while (current.next !== null) {
+    count += 1;
+    current = current.next;
+  }
+
+  return count;
+}
+
+// ListNode *p1 = headA;
+// ListNode *p2 = headB;
 //
-//   // if tails do not match, no intersection
-//   if (getTail(headA) !== getTail(headB)) return null;
+// if (p1 == NULL || p2 == NULL) return NULL;
 //
-//   // set pointers to start of each list
-//   let shorter = headA.length < headB.length ? headA.head : headB.head;
-//   let longer = headA.length < headB.length ? headB.head : headA.head;
+// while (p1 != NULL && p2 != NULL && p1 != p2) {
+//     p1 = p1->next;
+//     p2 = p2->next;
 //
-//   // advance the pointer for the longer list by diff in sizes
-//   longer = getKthNode(longer, Math.abs(headA.length - headB.length));
+//     //
+//     // Any time they collide or reach end together without colliding
+//     // then return any one of the pointers.
+//     //
+//     if (p1 == p2) return p1;
 //
-//   // move pointers until you have a collision
-//   while (shorter !== longer) {
-//     shorter = shorter.next;
-//     longer = longer.next;
-//   }
-//
-//   // return either one
-//   return longer;
+//     //
+//     // If one of them reaches the end earlier then reuse it
+//     // by moving it to the beginning of other list.
+//     // Once both of them go through reassigning,
+//     // they will be equidistant from the collision point.
+//     //
+//     if (p1 == NULL) p1 = headB;
+//     if (p2 == NULL) p2 = headA;
 // }
 //
-// function getKthNode(list, k) {
-//   let current = list;
-//   let i = 0;
-//
-//   while (i < k) {
-//     current = current.next;
-//     i += 1;
-//   }
-//
-//   return current;
-// }
-//
-// function getTail(list) {
-//   if (list === null) return null;
-//
-//   let current = list.head;
-//   while (current.next !== null) {
-//     current = current.next;
-//   }
-//
-//   return current;
-// }
-//
-// export default getIntersectionNode;
+// return p1;
+
+export { getIntersectionNode };

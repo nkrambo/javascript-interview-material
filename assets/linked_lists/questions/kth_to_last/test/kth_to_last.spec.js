@@ -1,17 +1,16 @@
 
 import kthToLast from '../kth_to_last';
-import LinkedList from '../../../data_structures/singly_linked_list/singly_linked_list';
+import { ListNode, addNode } from '../../../data_structures/list_node/list_node';
 
 describe('kthToLast()', () => {
   test('should return the kth to last node', () => {
-    const list = new LinkedList();
-    list.add('Eccles', 0);
-    list.add('Devil\'s Food', 0);
-    list.add('Cheese', 0);
-    list.add('Bundt', 0);
-    list.add('Angel Food', 0);
+    const list = new ListNode(1);
+    addNode(list, 2);
+    addNode(list, 3);
+    addNode(list, 4);
+    addNode(list, 5);
 
-    const kth = kthToLast(2, list.head);
-    expect(kth.value).toBe('Devil\'s Food');
+    const kth = kthToLast(2, list);
+    expect(kth.val).toBe(4);
   });
 });

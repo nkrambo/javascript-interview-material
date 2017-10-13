@@ -1,28 +1,15 @@
 
 import deleteNode from '../delete_node_in_a_linked_list';
-
-/**
-* ListNode
-*
-* @constructor
-* @param {*} val
-* @return {object} returns a linked list node
-*/
-
-function ListNode(val) {
-  this.val = val;
-  this.next = null;
-}
+import { ListNode, addNode } from '../../../data_structures/list_node/list_node';
 
 describe('deleteNode()', () => {
   // 1 → 2 → 3
   const list = new ListNode(1);
-  list.next = new ListNode(2);
-  list.next.next = new ListNode(3);
+  addNode(list, 2);
+  addNode(list, 3);
 
   // remove two
-  const two = list.next;
-  deleteNode(two);
+  deleteNode(list.next);
 
   // 1 → 3
   test('should', () => {
