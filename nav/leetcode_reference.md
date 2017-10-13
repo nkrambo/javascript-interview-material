@@ -648,7 +648,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>160</td>
-    <td><a href="../assets/linked_lists/questions/_intersection_of_two_linked_lists/intersection_of_two_linked_lists.js">Intersection of Two Linked Lists</a></td>
+    <td><a href="../assets/linked_lists/questions/intersection_of_two_linked_lists/intersection_of_two_linked_lists.js">Intersection of Two Linked Lists</a></td>
   </tr>
   <tr>
     <td>161</td>

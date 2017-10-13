@@ -29,6 +29,15 @@
 */
 
 /**
+* Definition for singly-linked list.
+*
+* function ListNode(val) {
+*   this.val = val;
+*   this.next = null;
+* }
+*/
+
+/**
 * getIntersectionNode()
 *
 * Solution:
@@ -159,8 +168,8 @@ function getIntersectionNode(headA, headB) {
   return longer;
 }
 
-function getKthNode(list, k) {
-  let current = list;
+function getKthNode(head, k) {
+  let current = head;
   let i = 0;
 
   while (i < k) {
@@ -185,7 +194,7 @@ function getTail(head) {
 function getLength(head) {
   if (head === null) return null;
 
-  let count = 0;
+  let count = 1; // count the root node
   let current = head;
   while (current.next !== null) {
     count += 1;
@@ -195,31 +204,60 @@ function getLength(head) {
   return count;
 }
 
-// ListNode *p1 = headA;
-// ListNode *p2 = headB;
-//
-// if (p1 == NULL || p2 == NULL) return NULL;
-//
-// while (p1 != NULL && p2 != NULL && p1 != p2) {
-//     p1 = p1->next;
-//     p2 = p2->next;
-//
-//     //
-//     // Any time they collide or reach end together without colliding
-//     // then return any one of the pointers.
-//     //
-//     if (p1 == p2) return p1;
-//
-//     //
-//     // If one of them reaches the end earlier then reuse it
-//     // by moving it to the beginning of other list.
-//     // Once both of them go through reassigning,
-//     // they will be equidistant from the collision point.
-//     //
-//     if (p1 == NULL) p1 = headB;
-//     if (p2 == NULL) p2 = headA;
-// }
-//
-// return p1;
+/**
+* getIntersectionNodePointers()
+*
+* Solution:
+*
+* The above answer is pretty good, but it's quite a bit of code.
+*
+* There is actually an approach that doesn't need to pre-process the lists to get
+* the difference in length.
+*
+* Actually we don't care about the "value" of difference, we just want to make
+* sure two pointers reach the intersection node at the same time.
+*
+* We can use two iterations to do that.
+*
+* In the first iteration, we will reset the pointer of one linkedlist to the head
+* of another linkedlist after it reaches the tail node.
+*
+* In the second iteration, we will move two pointers until they point to the
+* same node. Our operations in the first iteration will help us counteract the difference.
+*
+* So... if two lists intersect, the meeting point in second iteration must
+* be the intersection point. If the two lists have no intersection at all,
+* then the * meeting pointer in second iteration must be the tail node of both
+* lists, which is null.
+*
+* Time: O(1)
+* Space: O(1)
+*
+* @param {ListNode} headA
+* @param {ListNode} headB
+* @return {ListNode}
+*/
 
-export { getIntersectionNode };
+function getIntersectionNodePointers(headA, headB) {
+  let p1 = headA;
+  let p2 = headB;
+
+  if (p1 === null || p2 === null) return null;
+
+  while (p1 !== null && p2 !== null && p1 !== p2) {
+    p1 = p1.next;
+    p2 = p2.next;
+
+    // any time pointers collide or reach end together without colliding, then return any one of the pointers.
+    if (p1 === p2) return p1;
+
+    // 1. if one of them reaches the end earlier then reuse it by moving it to the beginning of other list.
+    // 2. once both of them go through reassigning, they will be equidistant from the collision point.
+    if (p1 === null) p1 = headB;
+    if (p2 === null) p2 = headA;
+  }
+
+  return p1;
+}
+
+export { getIntersectionNode, getIntersectionNodePointers };
