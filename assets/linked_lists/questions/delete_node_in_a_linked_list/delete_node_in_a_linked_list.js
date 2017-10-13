@@ -8,23 +8,9 @@
 * Write a function to delete a node (except the tail) in a singly linked list,
 * given only access to that node.
 *
-* Supposed the linked list is 1 -> 2 -> 3 -> 4 and you are given the third node
-* with value 3, the linked list should become 1 -> 2 -> 4 after calling your function.
+* Supposed the linked list is 1 → 2 → 3 → 4 and you are given the third node
+* with value 3, the linked list should become 1 → 2 → 4 after calling your function.
 */
-
-/**
-* ListNode
-*
-* @constructor
-* @param {*} val
-* @return {object} returns a linked list node
-*/
-
-function ListNode(val) {
-  this.val = val;
-  this.next = null;
-}
-
 
 /**
 * deleteNode()
@@ -37,6 +23,14 @@ function ListNode(val) {
 * When you think about how we normally 'delete' a node from a linked-list, we
 * just change the previous node's pointer to skip the node we want to delete.
 *
+* For example:
+*
+* If we want to delete node (3), we point (2) → (4)
+*
+*        _ _ _ _
+*       |       ↓
+*   1 → 2 → 3 → 4 → 5 → NULL
+*
 * But, in this case, we don't even have access to the previous node either.
 *
 * So what we do is modify the current node instead of deleting it.
@@ -44,6 +38,16 @@ function ListNode(val) {
 * We take the value and next from the input node's next node and copy them into
 * the input node. Now the input node's previous node effectively skips the input
 * node's old value! Pretty easy!
+*
+* It looks like so:
+*
+* If we are given node (3) to delete, we replace it's value with the node that
+* comes after it, that is (4) and then set it's next to point 2 nodes down, (5).
+*
+*             (val)
+*            _ _ _ _
+*           |   ↓   ↓ (next)
+*   1 → 2 → 3 → 4 → 5 → NULL
 *
 * A couple of things to consider.
 *
@@ -84,24 +88,26 @@ function ListNode(val) {
 * Time: O(1)
 * Space: O(1)
 *
-* @param {object} node list node to be deleted
-* @return {void} modify node in-place
+* Time and space complexity are both O(1).
+*
+* @param {ListNode} node
+* @return {void} Do not return anything, modify node in-place instead.
 */
 
-// function deleteNode(node) {
-//   // get the input node's next node, the one we want to skip to
-//   const nextNode = node.next;
-//
-//   if (nextNode) {
-//     // replace the input node's value and pointer with the next
-//     // node's value and pointer. the previous node now effectively
-//     // skips over the input node
-//     node.value = nextNode.value;
-//     node.next = nextNode.next;
-//   } else {
-//     // eep, we're trying to delete the last node!
-//     throw new Error('Can\'t delete the last node with this method!');
-//   }
-// }
-//
-// export default deleteNode;
+function deleteNode(node) {
+  // get the input node's next node, the one we want to skip to
+  const nextNode = node.next;
+
+  if (nextNode) {
+    // replace the input node's value and pointer with the next
+    // node's value and pointer. the previous node now effectively
+    // skips over the input node
+    node.val = nextNode.val;
+    node.next = nextNode.next;
+  } else {
+    // eep, we're trying to delete the last node!
+    throw new Error('Can\'t delete the last node with this method!');
+  }
+}
+
+export default deleteNode;

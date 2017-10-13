@@ -27,6 +27,6 @@ describe('reverseBetween()', () => {
     const reversed = reverseBetween(list, 2, 4);
 
     expect(reversed.val).toBe(1);
-    expect(reversed.next.next.val).toBe(4);
+    expect(reversed.next.val).toBe(4);
   });
 });
