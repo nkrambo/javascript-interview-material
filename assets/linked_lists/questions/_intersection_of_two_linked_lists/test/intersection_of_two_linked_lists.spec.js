@@ -12,19 +12,24 @@ describe('getIntersectionNode()', () => {
     *             4 → 6
     */
 
-    // const listA = new ListNode(3);
+    const listA = new ListNode(3);
+    addNode(listA, 1);
+    addNode(listA, 5);
+    addNode(listA, 9);
+    addNode(listA, 7);
+    addNode(listA, 2);
+    addNode(listA, 1);
 
-    // listA.next = new ListNode(1);
-    // listA.next.next = new ListNode(5);
-    // listA.next.next.next = new ListNode(9);
-    // listA.next.next.next.next = new ListNode(7);
-    // listA.next.next = new ListNode(2);
-    // listA.next.next = new ListNode(1);
+    const listB = new ListNode(4);
+    addNode(listB, 6);
 
-    // const listB = new ListNode(4);
-    // listB.next = new ListNode(6);
-    //
-    // expect(getIntersectionNode(listA, listB)).
+    // point B(6) → A(7), intersection
+    listB.next.next = listA.next.next.next.next;
+
+    // return intersection
+    const intersection = getIntersectionNode(listA, listB);
+    expect(intersection.val).toBe(7);
+    expect(intersection.next.val).toBe(2);
   });
 
   test('should return null if there is no intersection', () => {
