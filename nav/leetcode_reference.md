@@ -339,7 +339,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>83</td>
-    <td><a href="../assets/linked_lists/questions/_remove_duplicates_from_sorted_list/remove_duplicates_from_sorted_list.js">Remove Duplicates from Sorted List</a></td>
+    <td><a href="../assets/linked_lists/questions/remove_duplicates_from_sorted_list/remove_duplicates_from_sorted_list.js">Remove Duplicates from Sorted List</a></td>
   </tr>
   <tr>
     <td>84</td>
