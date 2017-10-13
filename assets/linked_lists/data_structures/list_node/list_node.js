@@ -57,4 +57,15 @@ function getLength(head) {
   return count;
 }
 
-export { ListNode, addNode, getLength };
+function getTail(head) {
+  if (head === null) return null;
+
+  let current = head;
+  while (current.next !== null) {
+    current = current.next;
+  }
+
+  return current;
+}
+
+export { ListNode, addNode, getLength, getTail };

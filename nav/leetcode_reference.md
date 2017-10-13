@@ -572,7 +572,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>141</td>
-    <td><a href="../assets/linked_lists/questions/_linked_list_cycle/linked_list_cycle.js">Linked List Cycle</a></td>
+    <td><a href="../assets/linked_lists/questions/linked_list_cycle/linked_list_cycle.js">Linked List Cycle</a></td>
   </tr>
   <tr>
     <td>142</td>

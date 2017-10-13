@@ -230,8 +230,10 @@ function getLength(head) {
 * then the * meeting pointer in second iteration must be the tail node of both
 * lists, which is null.
 *
-* Time: O(1)
+* Time: O(A + B)
 * Space: O(1)
+*
+* Where A and B are the lengths of the linked lists.
 *
 * @param {ListNode} headA
 * @param {ListNode} headB

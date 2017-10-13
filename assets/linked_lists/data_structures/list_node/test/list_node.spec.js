@@ -1,5 +1,5 @@
 
-import { ListNode, addNode, getLength } from '../list_node';
+import { ListNode, addNode, getLength, getTail } from '../list_node';
 
 describe('ListNode', () => {
   test('should create a linked list node', () => {
@@ -25,5 +25,15 @@ describe('getLength', () => {
     addNode(list, 2);
     addNode(list, 3);
     expect(getLength(list)).toBe(3);
+  });
+});
+
+describe('getTail', () => {
+  test('should return the tail node of a linked list', () => {
+    const list = new ListNode(1);
+    addNode(list, 2);
+    addNode(list, 3);
+    const tail = getTail(list);
+    expect(tail.val).toBe(3);
   });
 });
