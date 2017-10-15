@@ -19,10 +19,11 @@
 ### Graphs and Trees
 
 - [AVL Tree](../assets/graphs/data_structures/_avl_tree/avl_tree.js)
+- [Red Black Tree](../assets/graphs/data_structures/_red_black_tree/red_black_tree.js)
+- [Scapegoat Tree](../assets/graphs/data_structures/_scapegoat/scapegoat.js)
 - [B-Tree](../assets/graphs/data_structures/_b_tree/b_tree.js)
 - [Fenwick Tree](../assets/graphs/data_structures/_fenwick_tree/fenwick_tree.js)
 - [K-D Tree](../assets/graphs/data_structures/_k_dimensional_tree/k_dimensional_tree.js)
-- [Red Black Tree](../assets/graphs/data_structures/_red_black_tree/red_black_tree.js)
 - [Segment Tree](../assets/graphs/data_structures/_segment_tree/segment_tree.js)
 - [Splay Tree](../assets/graphs/data_structures/_splay_tree/splay_tree.js)
 - [Suffix Array](../assets/graphs/data_structures/_suffix_array/suffix_array.js)
@@ -36,4 +37,3 @@
 - [Tree](../assets/graphs/data_structures/tree/tree.js)
 - [Bloom Filter](../assets/graphs/data_structures/_bloom_filter/bloom_filter.js)
 - [Inverted Index](../assets/graphs/data_structures/_inverted_index/inverted_index.js)
-
