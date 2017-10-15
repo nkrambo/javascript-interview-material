@@ -21,6 +21,7 @@
 - [AVL Tree](../assets/graphs/data_structures/_avl_tree/avl_tree.js)
 - [Red Black Tree](../assets/graphs/data_structures/_red_black_tree/red_black_tree.js)
 - [Scapegoat Tree](../assets/graphs/data_structures/_scapegoat/scapegoat.js)
+- [2-4 Trees](../assets/graphs/data_structures/_2_4_Tree/2_4_tree.js)
 - [B-Tree](../assets/graphs/data_structures/_b_tree/b_tree.js)
 - [Fenwick Tree](../assets/graphs/data_structures/_fenwick_tree/fenwick_tree.js)
 - [K-D Tree](../assets/graphs/data_structures/_k_dimensional_tree/k_dimensional_tree.js)

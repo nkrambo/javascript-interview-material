@@ -64,7 +64,7 @@ class Heap {
     this.changeKey(this.heap.length - 1, value);
   }
 
- /**
+  /**
   * Changes the key.
   * Complexity: O(log N).
   *
