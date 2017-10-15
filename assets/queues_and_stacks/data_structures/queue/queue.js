@@ -10,6 +10,14 @@
 * the same thing, as long as items can are added and removed from opposite sides.
 * As in a doubly-linked list only.
 *
+* Usually in Javascript we don't need to create an abstract queue data structure
+* and can instead use a simple array object.
+*
+* We can achieve the FIFO properties with the .push() and .shift() methods. Or,
+* enqueue and dequeue, respectively.
+*
+*      shift(0) ← [1, 2, 3] ← push(4)
+*
 * Key Operations:
 *
 * enqueue:  O(1)

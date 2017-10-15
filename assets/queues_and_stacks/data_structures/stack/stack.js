@@ -13,6 +13,17 @@
 * items to the stack and another process removing them from the end–
 * prioritizing items added most recently.
 *
+* Usually in Javascript we don't need to create an abstract stack data structure
+* and can instead use a simple array object.
+*
+* We can achieve the LIFO properties with the .push() and .pop() methods.
+*
+*                  push(4)
+*                ↙
+*      [1, 2, 3]
+*                ↘
+*                  pop(4)
+*
 * Key Operations:
 *
 * pop:  O(1)

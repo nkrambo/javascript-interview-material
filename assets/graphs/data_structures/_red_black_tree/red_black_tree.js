@@ -66,7 +66,7 @@
 *                 B
 *
 * Remeber that red-black trees are just a modified BST, so we have mostly the same
-* operations but we to retain extra information on the color of the node, and also
+* operations but we to additional information on the color of the node, and also to
 * define some helper functions to quickly access the color of a node(grandparent's
 * other child) as well as see details and manipulate it's color.
 *
@@ -80,7 +80,7 @@
 * 2. INSERT
 *
 * Insertion into the tree starts as a normal insertion, where it finds the correct
-* place to insert it into the tree.
+* place to insert.
 *
 * The new node will always start off as a red node, but it must be recolored based
 * on the rules of a red and black tree. Specifically, there are 5 cases which must
@@ -117,6 +117,14 @@
 *
 * Similar to insertion, there are multiple cases to be examined when removing a node.
 *
+* Base case:
+*
+* We have a base case called once when starting to remove values, and is not
+* included in any recursive calls. If the removed node is red, or the child is red,
+* then paint the child red and remove the node because no rules will be violated
+* when it is removed.
+*
+* All subsequent cases therefore are guaranteed that the removed node is black.
 *
 * 1. If the removed node is the root, then remove the value and ensure that it is black.
 *
@@ -151,6 +159,8 @@
 *   node to the path which the removed node was on, and retained the original color
 *   of the parent, ensuring all properties were retained.
 */
+
+// https://medium.com/@julianknodt/red-black-trees-in-javascript-c20eec1d5d1c
 
 class RedBlackTree {
   constructor() {
