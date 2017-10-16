@@ -1,4 +1,6 @@
 
+import { ListNode } from '../../data_structures/list_node/list_node';
+
 /**
 * Remove Duplicates from Sorted List II
 *
@@ -20,17 +22,13 @@
 */
 
 /**
-* ListNode
+* Definition for singly-linked list.
 *
-* @constructor
-* @param {*} val
-* @return {object} returns a linked list node
+* function ListNode(val) {
+*   this.val = val;
+*   this.next = null;
+* }
 */
-
-function ListNode(val) {
-  this.val = val;
-  this.next = null;
-}
 
 /**
 * deleteDuplicates()

@@ -83,7 +83,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>19</td>
-    <td><a href="../assets/linked_lists/questions/_remove_nth_node_from_end_of_list/remove_nth_node_from_end_of_list.js">Remove Nth Node From End of List</a></td>
+    <td><a href="../assets/linked_lists/questions/remove_nth_node_from_end_of_list/remove_nth_node_from_end_of_list.js">Remove Nth Node From End of List</a></td>
   </tr>
   <tr>
     <td>20</td>

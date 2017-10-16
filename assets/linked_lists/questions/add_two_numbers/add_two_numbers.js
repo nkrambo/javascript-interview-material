@@ -1,4 +1,6 @@
 
+import { ListNode } from '../../data_structures/list_node/list_node';
+
 /**
 * Add Two Numbers
 *
@@ -26,6 +28,9 @@
 * You may assume the two numbers do not contain any leading zero, except the number
 * 0 itself.
 *
+*/
+
+/**
 * Definition for singly-linked list:
 *
 * function ListNode(val) {
@@ -132,19 +137,6 @@ function addTwoNumbers(l1, l2) {
   }
 
   return sentinel.next;
-}
-
-/**
-* ListNode
-*
-* @constructor
-* @param {*} val
-* @return {object} returns a linked list node
-*/
-
-function ListNode(val) {
-  this.val = val;
-  this.next = null;
 }
 
 export default addTwoNumbers;
