@@ -164,6 +164,11 @@ function removeNthFromEnd(head, n) {
 *       |
 *     head
 *
+* Time: O(n)
+* Space: O(1)
+*
+* The algorithm makes one traversal of the list of n nodes.
+*
 * @param {ListNode} head
 * @param {number} n
 * @return {ListNode}
