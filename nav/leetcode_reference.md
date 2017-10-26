@@ -147,7 +147,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>35</td>
-    <td><a href="../assets/search/questions/_search_insert_position/search_insert_position.js">Search Insert Position</a></td>
+    <td><a href="../assets/search/questions/search_insert_position/search_insert_position.js">Search Insert Position</a></td>
   </tr>
   <tr>
     <td>36</td>
