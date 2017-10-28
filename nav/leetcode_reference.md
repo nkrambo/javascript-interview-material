@@ -383,7 +383,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>94</td>
-    <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_inorder_traversal/binary_tree_inorder_traversal.js">Binary Tree In-Order Traversal</a></td>
+    <td><a href="../assets/graphs/questions/binary_tree/binary_tree_inorder_traversal/binary_tree_inorder_traversal.js">Binary Tree In-Order Traversal</a></td>
   </tr>
   <tr>
     <td>95</td>

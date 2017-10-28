@@ -9,6 +9,25 @@
 *
 * For this problem, a height-balanced binary tree is defined as a binary tree in
 * which the depth of the two subtrees of every node never differ by more than 1.
+*
+*             un-balanced
+*
+*                  4
+*               ↙     ↘
+*             2         7
+*           ↙  ↘      ↙
+*         1     3    5
+*                      ↘
+*                        6
+*
+*
+*               balanced
+*
+*                  4
+*               ↙     ↘
+*             2         7
+*           ↙  ↘      ↙
+*         1     3    6
 */
 
 /**
@@ -21,7 +40,7 @@
 */
 
 /**
-* Is balanced
+* isBalanced()
 *
 * Solution:
 *
@@ -59,8 +78,8 @@
 * the rightmost node, nodes will hold half of the nn total nodes in the tree.
 * Half n is O(n), so our worst case space cost is O(n).
 *
-* @param {object} root tree node
-* @return {boolean} Returns true if the tree is balanced, otherwise returns false
+* @param {TreeNode} root
+* @return {boolean}
 */
 
 function isBalanced(root) {
@@ -106,4 +125,71 @@ function isBalanced(root) {
   return true;
 }
 
-export default isBalanced;
+// function isBalanced(root) {
+//   const stack = [root];
+//
+//   while (stack.length) {
+//     const node = stack.pop();
+//
+//   }
+//           stack, node, last, depths = [], root, None, {}
+//           while stack or node:
+//               if node:
+//                   stack.append(node)
+//                   node = node.left
+//               else:
+//                   node = stack[-1]
+//                   if not node.right or last == node.right:
+//                       node = stack.pop()
+//                       left, right  = depths.get(node.left, 0), depths.get(node.right, 0)
+//                       if abs(left - right) > 1: return False
+//                       depths[node] = 1 + max(left, right)
+//                       last = node
+//                       node = None
+//                   else:
+//                       node = node.right
+//           return True
+// }
+
+/**
+* isBalancedRecursive()
+*
+* Solution:
+*
+* This method is also based on DFS. We return the height of the current node in
+* DFS recursion. When the sub tree of the current node (inclusive) is balanced,
+* the function dfsHeight() returns a non-negative value as the height. Otherwise,
+* -1 is returned.
+*
+* According to the leftHeight and rightHeight of the two children, the parent node
+* could check if the sub tree is balanced, and decides its return value.
+*
+* Time: O(n)
+* Space: O(n)
+*
+* In this bottom up approach, each node in the tree only need to be accessed once.
+* Thus the time complexity is O(n).
+*
+* @param {TreeNode} root
+* @return {boolean}
+*/
+
+function isBalancedRecursive(root) {
+  return dfsHeight(root) !== -1;
+}
+
+function dfsHeight(root) {
+  if (root === null) return 0;
+
+  const leftHeight = dfsHeight(root.left);
+  if (leftHeight === -1) return -1;
+
+  const rightHeight = dfsHeight(root.right);
+  if (rightHeight === -1) return -1;
+
+  if (Math.abs(leftHeight - rightHeight) > 1) return -1;
+
+  return Math.max(leftHeight, rightHeight) + 1;
+}
+
+export { isBalanced, isBalancedRecursive };
