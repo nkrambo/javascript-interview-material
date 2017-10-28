@@ -584,7 +584,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>144</td>
-    <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_preorder_traversal/binary_tree_preorder_traversal.js">Binary Tree Preorder Traversal</a></td>
+    <td><a href="../assets/graphs/questions/binary_tree/binary_tree_preorder_traversal/binary_tree_preorder_traversal.js">Binary Tree Preorder Traversal</a></td>
   </tr>
   <tr>
     <td>145</td>

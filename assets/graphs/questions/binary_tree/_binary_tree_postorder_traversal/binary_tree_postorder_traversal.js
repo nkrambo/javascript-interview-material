@@ -43,8 +43,8 @@
 * @return {number[]}
 */
 
-// function postorderTraversal(root) {
-//
-// }
-//
-// export default postorderTraversal;
+function postorderTraversal(root) {
+
+}
+
+export default postorderTraversal;

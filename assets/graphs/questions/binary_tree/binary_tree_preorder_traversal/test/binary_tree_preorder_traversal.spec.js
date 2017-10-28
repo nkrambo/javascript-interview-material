@@ -1,17 +1,17 @@
 
-import { inorderTraversal, inorderTraversalRecurse } from '../binary_tree_inorder_traversal';
+import { preorderTraversal, preorderTraversalRecurse } from '../binary_tree_preorder_traversal';
 import { TreeNode } from '../../../../data_structures/tree_node/tree_node';
 
-describe('inorderTraversal()', () => {
+describe('preorderTraversal()', () => {
   /*
   *                4
-  *             ↙     ↘              (left, root, right)
-  *           2         6           [1, 2, 3, 4, 5, 6, 7]
+  *             ↙     ↘              (root, left, right)
+  *           2         6           [4, 2, 1, 3, 6, 5, 7]
   *        ↙   ↘       ↙   ↘
   *      1       3   5       7
   */
 
-  test('should the in-order values from a binary tree', () => {
+  test('should return the pre-order values', () => {
     // root
     const root = new TreeNode(4);
 
@@ -25,20 +25,20 @@ describe('inorderTraversal()', () => {
     root.right.left = new TreeNode(5);
     root.right.right = new TreeNode(7);
 
-    expect(inorderTraversal(root)).toEqual([1, 2, 3, 4, 5, 6, 7]);
+    expect(preorderTraversal(root)).toEqual([4, 2, 1, 3, 6, 5, 7]);
   });
 });
 
-describe('inorderTraversalRecurse()', () => {
+describe('preorderTraversalRecurse()', () => {
   /*
   *                4
-  *             ↙     ↘                (left to right)
-  *           2         6           [1, 2, 3, 4, 5, 6, 7]
+  *             ↙     ↘              (root, left, right)
+  *           2         6           [4, 2, 1, 3, 6, 5, 7]
   *        ↙   ↘       ↙   ↘
   *      1       3   5       7
   */
 
-  test('should the in-order values from a binary tree', () => {
+  test('should return the pre-order values', () => {
     // root
     const root = new TreeNode(4);
 
@@ -52,6 +52,6 @@ describe('inorderTraversalRecurse()', () => {
     root.right.left = new TreeNode(5);
     root.right.right = new TreeNode(7);
 
-    expect(inorderTraversalRecurse(root)).toEqual([1, 2, 3, 4, 5, 6, 7]);
+    expect(preorderTraversalRecurse(root)).toEqual([4, 2, 1, 3, 6, 5, 7]);
   });
 });
