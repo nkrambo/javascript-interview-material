@@ -588,7 +588,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>145</td>
-    <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_postorder_traversal/binary_tree_postorder_traversal.js">Binary Tree Postorder Traversal</a></td>
+    <td><a href="../assets/graphs/questions/binary_tree/binary_tree_postorder_traversal/binary_tree_postorder_traversal.js">Binary Tree Postorder Traversal</a></td>
   </tr>
   <tr>
     <td>146</td>
