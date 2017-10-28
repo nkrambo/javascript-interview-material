@@ -63,19 +63,19 @@
 * @return {object} returns the same tree node but inverted
 */
 
-// function invertTreeRecursive(root) {
-//   // base
-//   if (root === null) return null;
-//
-//   const right = invertTreeRecursive(root.right);
-//   const left = invertTreeRecursive(root.left);
-//
-//   // invert nodes
-//   root.left = right;
-//   root.right = left;
-//
-//   return root;
-// }
+function invertTreeRecursive(root) {
+  // base
+  if (root === null) return null;
+
+  const right = invertTreeRecursive(root.right);
+  const left = invertTreeRecursive(root.left);
+
+  // invert nodes
+  root.left = right;
+  root.right = left;
+
+  return root;
+}
 
 /**
 * invertTree()
@@ -107,25 +107,25 @@
 * @return {object} returns the same tree node but inverted
 */
 
-// function invertTree(root) {
-//   if (root === null) return null;
-//   const queue = [root];
-//
-//   while (queue.length) {
-//     // dequeue
-//     const current = queue.shift();
-//
-//     // invert nodes
-//     const temp = current.left;
-//     current.left = current.right;
-//     current.right = temp;
-//
-//     // queue up nodes
-//     if (current.left !== null) queue.push(current.left);
-//     if (current.right !== null) queue.push(current.right);
-//   }
-//
-//   return root;
-// }
-//
-// export { invertTreeRecursive, invertTree };
+function invertTree(root) {
+  if (root === null) return null;
+  const queue = [root];
+
+  while (queue.length) {
+    // dequeue
+    const current = queue.shift();
+
+    // invert nodes
+    const temp = current.left;
+    current.left = current.right;
+    current.right = temp;
+
+    // queue up nodes
+    if (current.left !== null) queue.push(current.left);
+    if (current.right !== null) queue.push(current.right);
+  }
+
+  return root;
+}
+
+export { invertTreeRecursive, invertTree };

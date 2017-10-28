@@ -186,7 +186,7 @@ function maxSubArrayHelper(nums, n) {
 * this algorithm can be viewed as a simple/trivial example of dynamic programming.
 *
 * Lets take the example:
-* {-2, -3, 4, -1, -2, 1, 5, -3}
+* [-2, -3, 4, -1, -2, 1, 5, -3]
 *
 * maxSoFar = maxEndingHere = 0
 *

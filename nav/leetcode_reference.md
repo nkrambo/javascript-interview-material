@@ -869,7 +869,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>226</td>
-    <td><a href="../assets/graphs/questions/binary_tree/_invert_binary_tree/invert_binary_tree.js">Invert Binary Tree</a></td>
+    <td><a href="../assets/graphs/questions/binary_tree/invert_binary_tree/invert_binary_tree.js">Invert Binary Tree</a></td>
   </tr>
   <tr>
     <td>230</td>
