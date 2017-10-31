@@ -42,8 +42,20 @@
 * @return {boolean}
 */
 
-// function hasPathSum(root, sum) {
-//
-// };
-//
-// export default hasPathSum;
+function hasPathSum(root, sum) {
+  // dfs
+  const stack = [];
+  let node = root;
+
+  while (stack.length || node !== null) {
+    // traverse left
+    if (node.left !== null) {
+      stack.push(node);
+      node = node.left;
+    } else {
+      node = stack.pop();
+    }
+  }
+}
+
+export default hasPathSum;

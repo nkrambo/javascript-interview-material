@@ -80,7 +80,7 @@ function inorderTraversal(root) {
       stack.push(node);
       node = node.left;
 
-    // otherwise, current visit node and push right
+    // otherwise, visit current node and push right
     } else {
       node = stack.pop();
       order.push(node.val);
