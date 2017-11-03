@@ -411,7 +411,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>101</td>
-    <td><a href="../assets/graphs/questions/binary_tree/_symmetric_tree/symmetric_tree.js">Symmetric Tree</a></td>
+    <td><a href="../assets/graphs/questions/binary_tree/symmetric_tree/symmetric_tree.js">Symmetric Tree</a></td>
   </tr>
   <tr>
     <td>102</td>

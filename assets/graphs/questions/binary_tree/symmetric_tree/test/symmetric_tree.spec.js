@@ -25,7 +25,7 @@ describe('isSymmetricRecurse()', () => {
     root.right.left = new TreeNode(4);
     root.right.right = new TreeNode(3);
 
-    isSymmetricRecurse(root).toBeTruthy();
+    expect(isSymmetricRecurse(root)).toBeTruthy();
   });
 
   test('should return false if a binary tree is NOT symmetric around its center', () => {
@@ -48,7 +48,7 @@ describe('isSymmetricRecurse()', () => {
     root.right.left = new TreeNode(3);
     root.right.right = new TreeNode(3);
 
-    isSymmetricRecurse(root).toBeFalsy();
+    expect(isSymmetricRecurse(root)).toBeFalsy();
   });
 });
 
@@ -75,7 +75,7 @@ describe('isSymmetricIterative()', () => {
     root.right.left = new TreeNode(4);
     root.right.right = new TreeNode(3);
 
-    isSymmetricIterative(root).toBeTruthy();
+    expect(isSymmetricIterative(root)).toBeTruthy();
   });
 
   test('should return false if a binary tree is NOT symmetric around its center', () => {
@@ -98,6 +98,6 @@ describe('isSymmetricIterative()', () => {
     root.right.left = new TreeNode(3);
     root.right.right = new TreeNode(3);
 
-    isSymmetricIterative(root).toBeFalsy();
+    expect(isSymmetricIterative(root)).toBeFalsy();
   });
 });
