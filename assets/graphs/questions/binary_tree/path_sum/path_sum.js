@@ -39,16 +39,25 @@
 *
 * We use a recursive solution for this.
 *
-* The idea is simple. We recurse down the tree and substract the current node val
+* The idea is simple. We recurse down the tree and substract the current node value
 * from the sum at each level. If we hit a leaf node and the sum is 0, then we have
-* found a valid sum path, root to leaf, and return true.
+* found a valid sum path, root-to-leaf, and return true.
 *
-* If we hit a leaf node and the sum does not equal 0 then we have not.
+* If we hit a leaf node and the sum does NOT equal 0 then we have not, so we keep
+* searching other paths.
 *
 * https://www.youtube.com/watch?v=Jg4E4KZstFE
 *
 * Time: O(n)
-* Space: O(n)
+* Space: O(log n)
+*
+* As soon as we find a valid sum path, we return true, so it's possible to only
+* search the most left root-to-leaf path and return. But, in the worst case, we'll
+* visit every node in the tree for a false case or for a valid path sum on the
+* far right root-to-leaf path.
+*
+* We're using a recursive solution. We make a recursive call every level deep we
+* go in the tree. In the worst case, this will be O(log n).
 *
 * @param {TreeNode} root
 * @param {number} sum
