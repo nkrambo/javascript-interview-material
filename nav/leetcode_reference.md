@@ -1137,7 +1137,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>437</td>
-    <td><a href="../assets/graphs/questions/binary_tree/_path_sum_III/path_sum_III.js">Path Sum III</a></td>
+    <td><a href="../assets/graphs/questions/binary_tree/path_sum_III/path_sum_III.js">Path Sum III</a></td>
   </tr>
   <tr>
     <td>445</td>
