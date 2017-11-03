@@ -456,7 +456,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>112</td>
-    <td><a href="../assets/graphs/questions/binary_tree/_path_sum/path_sum.js">Path Sum</a></td>
+    <td><a href="../assets/graphs/questions/binary_tree/path_sum/path_sum.js">Path Sum</a></td>
   </tr>
   <tr>
     <td>113</td>
