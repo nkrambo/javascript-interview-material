@@ -423,7 +423,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>104</td>
-    <td><a href="../assets/graphs/questions/binary_tree/_maximum_depth_of_binary_tree/maximum_depth_of_binary_tree.js">Maximum Depth of Binary Tree</a></td>
+    <td><a href="../assets/graphs/questions/binary_tree/maximum_depth_of_binary_tree/maximum_depth_of_binary_tree.js">Maximum Depth of Binary Tree</a></td>
   </tr>
   <tr>
     <td>105</td>
@@ -452,7 +452,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>111</td>
-    <td><a href="../assets/graphs/questions/binary_tree/_minimum_depth_of_binary_tree/minimum_depth_of_binary_tree.js">Minimum Depth of Binary Tree</a></td>
+    <td><a href="../assets/graphs/questions/binary_tree/minimum_depth_of_binary_tree/minimum_depth_of_binary_tree.js">Minimum Depth of Binary Tree</a></td>
   </tr>
   <tr>
     <td>112</td>
