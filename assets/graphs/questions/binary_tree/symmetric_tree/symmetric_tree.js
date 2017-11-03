@@ -77,7 +77,7 @@ function isSymmetricRecurse(root) {
 }
 
 function helper(t1, t2) {
-  // base 1 - hit leaf nodes of both mirror trees
+  // base 1 - hit leaf nodes of both mirror trees, must have fell through alright
   if (!t1 && !t2) return true;
 
   // base 2 - if only one is a leaf node, then the trees must not mirror

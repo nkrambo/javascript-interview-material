@@ -407,7 +407,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>100</td>
-    <td><a href="../assets/graphs/questions/binary_tree/_same_tree/same_tree.js">Same Tree</a></td>
+    <td><a href="../assets/graphs/questions/binary_tree/same_tree/same_tree.js">Same Tree</a></td>
   </tr>
   <tr>
     <td>101</td>
