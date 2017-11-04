@@ -37,7 +37,7 @@
 */
 
 /**
-* levelOrder()
+* levelOrderTwoQueues()
 *
 * Solution:
 *
@@ -57,6 +57,25 @@
 *
 * The big difference here is that BFS uses a queue instead of a stack.
 *
+* A level by level traversal is almost trivial, but to then handle each level
+* is a little trickier. When we travese by level using a queue, we shifts nodes
+* off the queue in a single sequence. How do we then distinguish between when a
+* level starts or finishes?
+*
+* There's 3 approaces to this:
+*
+* 1. Use 2 queues
+* 2. Use 1 queue and a delimiter
+* 3. Use 1 queue and a count
+*
+* We'll go over each of these.
+*
+* https://www.youtube.com/watch?v=7uG0gLDbhsI&t=658s
+*
+* First, using 2 queues.
+*
+* This one is pretty straight forward.
+*
 * Time: O(n)
 * Space: O(n)
 *
@@ -64,68 +83,80 @@
 * @return {number[][]}
 */
 
-// function levelOrder(root) {
-//   const order = [];
-//   const queue = [];
-//
-//   // check for null input
-//   if (root !== null) {
-//     queue.push(root);
-//   }
-//
-//   while (queue.length) {
-//     const level = queue.length;
-//     const current = queue.shift();
-//     const subArray = [];
-//
-//     for (let i = 0; i < level; i += 1) {
-//       if (current.left !== null) {
-//         queue.push(current.left);
-//       }
-//
-//       if (current.right !== null) {
-//         queue.push(current.right);
-//       }
-//
-//       subArray.push(current.val);
-//     }
-//
-//     order.push(subArray);
-//   }
-//
-//   return order;
-// }
+function levelOrderTwoQueues(root) {
+  // check empty input
+  if (!root) return [];
 
-function levelOrder(root) {
-  const order = [];
-  const queue = [];
+  const levels = [];
 
-  // check for null input
-  if (root !== null) {
-    queue.push(root);
-  }
+  // two queues
+  const q1 = [root]; // start with the first
+  const q2 = [];
 
-  while (queue.length) {
-    const level = queue.length;
-    const current = queue.shift();
-    const subArray = [];
+  while (q1.length || q2.length) {
+    let level = [];
 
-    for (let i = 0; i < level; i += 1) {
-      if (current.left !== null) {
-        queue.push(current.left);
-      }
-
-      if (current.right !== null) {
-        queue.push(current.right);
-      }
-
-      subArray.push(current.val);
+    while (q1.length) {
+      const node = q1.shift();
+      level.push(node.val);
+      if (node.left) q2.push(node.left);
+      if (node.right) q2.push(node.right);
     }
 
-    order.push(subArray);
+    // push level from q1
+    // clear out level for q2
+    levels.push(level);
+    level = [];
+
+    while (q2.length) {
+      const node = q2.shift();
+      level.push(node.val);
+      if (node.left) q1.push(node.left);
+      if (node.right) q1.push(node.right);
+    }
+
+    // push level from q2
+    // but...don't push an empty array
+    if (level.length) {
+      levels.push(level);
+    }
   }
 
-  return order;
+  return levels;
 }
 
-export default levelOrder;
+/**
+* levelOrderDelimiter()
+*
+* Solution:
+*
+*
+* Time: O(n)
+* Space: O(n)
+*
+* @param {TreeNode} root
+* @return {number[][]}
+*/
+
+function levelOrderDelimiter(root) {
+
+}
+
+/**
+* levelOrderCount()
+*
+* Solution:
+*
+*
+* Time: O(n)
+* Space: O(n)
+*
+* @param {TreeNode} root
+* @return {number[][]}
+*/
+
+function levelOrderCount(root) {
+
+}
+
+export { levelOrderTwoQueues, levelOrderDelimiter, levelOrderCount };
