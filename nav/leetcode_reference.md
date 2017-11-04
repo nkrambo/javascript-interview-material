@@ -435,7 +435,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>107</td>
-    <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_level_order_traversal_II/binary_tree_level_order_traversal_II.js">Binary Tree Level Order Traversal II</a></td>
+    <td><a href="../assets/graphs/questions/binary_tree/binary_tree_level_order_traversal_II/binary_tree_level_order_traversal_II.js">Binary Tree Level Order Traversal II</a></td>
   </tr>
   <tr>
     <td>108</td>

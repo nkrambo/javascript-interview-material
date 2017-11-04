@@ -3,14 +3,15 @@ import { levelOrderTwoQueues, levelOrderDelimiter, levelOrderCount } from '../bi
 import { TreeNode } from '../../../../data_structures/tree_node/tree_node';
 
 describe('levelOrderTwoQueues()', () => {
-  /*
-  *                4
-  *             ↙     ↘
-  *           2         6           [[4], [2, 6], [1, 3, 5, 7]]
-  *        ↙   ↘       ↙   ↘
-  *      1       3   5       7
-  */
   test('should return a level order of values, as sub arrays', () => {
+    /*
+    *                4
+    *             ↙     ↘
+    *           2         6           [[4], [2, 6], [1, 3, 5, 7]]
+    *        ↙   ↘       ↙   ↘
+    *      1       3   5       7
+    */
+
     // root
     const root = new TreeNode(4);
 
@@ -29,14 +30,15 @@ describe('levelOrderTwoQueues()', () => {
 });
 
 describe('levelOrderDelimiter()', () => {
-  /*
-  *                4
-  *             ↙     ↘
-  *           2         6           [[4], [2, 6], [1, 3, 5, 7]]
-  *        ↙   ↘       ↙   ↘
-  *      1       3   5       7
-  */
   test('should return a level order of values, as sub arrays', () => {
+    /*
+    *                4
+    *             ↙     ↘
+    *           2         6           [[4], [2, 6], [1, 3, 5, 7]]
+    *        ↙   ↘       ↙   ↘
+    *      1       3   5       7
+    */
+
     // root
     const root = new TreeNode(4);
 
@@ -55,14 +57,15 @@ describe('levelOrderDelimiter()', () => {
 });
 
 describe('levelOrderCount()', () => {
-  /*
-  *                4
-  *             ↙     ↘
-  *           2         6           [[4], [2, 6], [1, 3, 5, 7]]
-  *        ↙   ↘       ↙   ↘
-  *      1       3   5       7
-  */
   test('should return a level order of values, as sub arrays', () => {
+    /*
+    *                4
+    *             ↙     ↘
+    *           2         6           [[4], [2, 6], [1, 3, 5, 7]]
+    *        ↙   ↘       ↙   ↘
+    *      1       3   5       7
+    */
+
     // root
     const root = new TreeNode(4);
 
