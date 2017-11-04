@@ -419,7 +419,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>103</td>
-    <td><a href="../assets/graphs/questions/binary_tree/_binary_tree_zigzag_level_order_traversal/binary_tree_zigzag_level_order_traversal.js">Binary Tree Zigzag Level Order Traversal</a></td>
+    <td><a href="../assets/graphs/questions/binary_tree/binary_tree_zigzag_level_order_traversal/binary_tree_zigzag_level_order_traversal.js">Binary Tree Zigzag Level Order Traversal</a></td>
   </tr>
   <tr>
     <td>104</td>
