@@ -68,7 +68,7 @@
 */
 
 function isPalindrome(s) {
-  // edge case, short circut
+  // edge case, short circuit
   if (s.length <= 1) return true;
 
   // regex for alpha-numeric
@@ -85,11 +85,10 @@ function isPalindrome(s) {
       right -= 1;
 
     // otherwise, compare current chars, but we must lowercase
-    } else if (s[left].toLowerCase() !== s[right].toLowerCase()) {
-      return false;
-
-    // must be matching, keep moving inward
     } else {
+      if (s[left].toLowerCase() !== s[right].toLowerCase()) return false;
+
+      // must be matching, keep moving inward
       left += 1;
       right -= 1;
     }
