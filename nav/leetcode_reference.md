@@ -508,7 +508,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>125</td>
-    <td><a href="../assets/strings/questions/_valid_palindrome/valid_palindrome.js">Valid Palindrome</a></td>
+    <td><a href="../assets/strings/questions/valid_palindrome/valid_palindrome.js">Valid Palindrome</a></td>
   </tr>
   <tr>
     <td>126</td>
