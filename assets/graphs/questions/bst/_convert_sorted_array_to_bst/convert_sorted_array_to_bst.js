@@ -39,9 +39,7 @@
 * will become our left subtree, and the right half of the array will become the
 * right subtree.
 *
-* One way to implement this is to use a recursive process. Our insertNode()
-* method is passed a subsection of the array and returns the root of a minimal
-* tree for that array.
+* One way to implement this is to use a recursive process.
 *
 * The algorithm is as follows:
 *
@@ -56,35 +54,87 @@
 * We need to grab every index out of nums and insert into a new BST, so both our
 * time and space complexities will be O(n).
 *
-* @param {array} nums sorted (increasing) unique integers
-* @return {object} returns a minimal binary search tree created from nums
+* @param {number[]} nums
+* @return {TreeNode}
 */
 
-// function sortedArrayToBST(nums) {
-//   // new tree
-//   const BST = new BinarySearchTree();
-//
-//   // recursive insert
-//   insertNode(BST, nums, 0, nums.length - 1);
-//
-//   return BST;
-// }
-//
-// function insertNode(tree, nums, left, right) {
-//   // base case
-//   if (right < left) return null;
-//
-//   // calculate middle index
-//   const mid = Math.floor((left + right) / 2);
-//
-//   // insert
-//   tree.insert(nums[mid]);
-//
-//   // recurse
-//   insertNode(tree, nums, left, mid - 1);
-//   insertNode(tree, nums, mid + 1, right);
-//
-//   return null;
-// }
-//
-// export default sortedArrayToBST;
+import { TreeNode } from '../../../data_structures/tree_node/tree_node';
+
+function sortedArrayToBST(nums) {
+  // catch edge case
+  if (!nums.length) return null;
+
+  // recursive insert
+  const head = helper(nums, 0, nums.length - 1);
+
+  return head;
+}
+
+function helper(nums, left, right) {
+  // base case
+  if (left > right) return null;
+
+  // calculate middle index, new node
+  const mid = Math.floor((left + right) / 2);
+  const node = new TreeNode(nums[mid]);
+
+  // recurse
+  node.left = helper(nums, left, mid - 1);
+  node.right = helper(nums, mid + 1, right);
+
+  return node;
+}
+
+/**
+* sortedArrayToBSTIter()
+*
+* Solution:
+*
+* We can also solve this iteratively.
+*
+* Time: O(n)
+* Space: O(n)
+*
+* @param {number[]} nums
+* @return {TreeNode}
+*/
+
+function sortedArrayToBSTIter(nums) {
+  // catch edge case
+  if (!nums.length) return null;
+
+  // 0 placeholder
+  const head = new TreeNode(0);
+
+  // 3 stacks
+  const nodes = [head];
+  const leftIndex = [0];
+  const rightIndex = [nums.length - 1];
+
+  while (nodes.length) {
+    const node = nodes.pop();
+    const left = leftIndex.pop();
+    const right = rightIndex.pop();
+
+    const mid = Math.floor((left + right) / 2);
+    node.val = nums[mid];
+
+    if (left <= mid - 1) {
+      node.left = new TreeNode(0);
+      nodes.push(node.left);
+      leftIndex.push(left);
+      rightIndex.push(mid - 1);
+    }
+
+    if (mid + 1 <= right) {
+      node.right = new TreeNode(0);
+      nodes.push(node.right);
+      leftIndex.push(mid + 1);
+      rightIndex.push(right);
+    }
+  }
+
+  return head;
+}
+
+export { sortedArrayToBST, sortedArrayToBSTIter };

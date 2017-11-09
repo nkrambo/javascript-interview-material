@@ -39,8 +39,10 @@
 * @return {TreeNode}
 */
 
+// import { TreeNode } from '../../../../data_structures/tree_node/tree_node';
+//
 // function sortedListToBST(head) {
-//
+//   // basically a binary search
 // }
-//
-// export default sortedListToBST;
+
+export default sortedListToBST;
