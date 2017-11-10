@@ -496,7 +496,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>122</td>
-    <td><a href="../assets/greedy/questions/_best_time_to_buy_and_sell_stock_II/best_time_to_buy_and_sell_stock_II.js">Best Time to Buy and Sell Stock II</a></td>
+    <td><a href="../assets/greedy/questions/best_time_to_buy_and_sell_stock_II/best_time_to_buy_and_sell_stock_II.js">Best Time to Buy and Sell Stock II</a></td>
   </tr>
   <tr>
     <td>123</td>

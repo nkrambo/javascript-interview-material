@@ -15,16 +15,27 @@
 */
 
 /**
-* maxProftest()
+* maxProfit()
 *
 * Solution:
+*
+* This is actully pretty straight forward. We just check to see if the next price
+* is greater than our current price, if it is, then we sell and add to our running
+* total profit.
 *
 * @param {number[]} prices
 * @return {number}
 */
 
-function maxProftest(prices) {
+function maxProfit(prices) {
+  let total = 0;
+  for (let i = 0; i < prices.length - 1; i += 1) {
+    if (prices[i + 1] > prices[i]) {
+      total += prices[i + 1] - prices[i];
+    }
+  }
 
+  return total;
 }
 
 export default maxProfit;
