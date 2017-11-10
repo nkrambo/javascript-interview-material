@@ -480,7 +480,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>118</td>
-    <td><a href="../assets/arrays/questions/_pascals_triangle/pascals_triangle.js">Pascals Triangle</a></td>
+    <td><a href="../assets/arrays/questions/pascals_triangle/pascals_triangle.js">Pascals Triangle</a></td>
   </tr>
   <tr>
     <td>119</td>
