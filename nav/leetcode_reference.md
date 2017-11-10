@@ -439,7 +439,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>108</td>
-    <td><a href="../assets/graphs/questions/bst/_convert_sorted_array_to_bst/convert_sorted_array_to_bst.js">Convert Sorted Array to Binary Search Tree</a></td>
+    <td><a href="../assets/graphs/questions/bst/convert_sorted_array_to_bst/convert_sorted_array_to_bst.js">Convert Sorted Array to Binary Search Tree</a></td>
   </tr>
   <tr>
     <td>109</td>

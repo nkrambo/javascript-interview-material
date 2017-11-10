@@ -43,13 +43,15 @@
 *
 * The algorithm is as follows:
 *
-* 1. Insert into the tree the middle element of the array.
-* 2. Insert (into the left subtree) the left subarray elements.
-* 3. Insert (into the right subtree) the right subarray elements.
-* 4. Recurse
+* 1) Get the Middle of the array and make it root.
+* 2) Recursively do same for left half and right half.
+*      a) Get the middle of left half and make it left child of the root
+*         created in step 1.
+*      b) Get the middle of right half and make it right child of the
+*         root created in step 1.
 *
 * Time: O(n)
-* Space: O(1)
+* Space: O(n)
 *
 * We need to grab every index out of nums and insert into a new BST, so both our
 * time and space complexities will be O(n).
@@ -91,6 +93,11 @@ function helper(nums, left, right) {
 * Solution:
 *
 * We can also solve this iteratively.
+*
+* It is very similar to doing a tree pre-order traversal, we use three stacks:
+*
+* 1) nodes - stores the node we're going to process next
+* 2) leftIndex and rightIndex store the range where this node needs to read from the nums.
 *
 * Time: O(n)
 * Space: O(n)
