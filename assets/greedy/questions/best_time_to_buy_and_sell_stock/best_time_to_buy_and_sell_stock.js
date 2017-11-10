@@ -28,12 +28,94 @@
 */
 
 /**
-* maxProftest()
+* maxProfitBrute()
+*
+* Solution:
+*
+* We need to find out the maximum difference (which will be the maximum profit)
+* between two numbers in the given array. Also, the second number (selling price)
+* must be larger than the first one (buying price).
+*
+* In formal terms, we need to find max(prices[j] − prices[i]), for every i
+* and j such that j > i.
+*
+* Time: O(n^2)
+* Space: O(1)
+*
+* We get a quadratic time complexity. We can do much better than this. We can
+* actually do this in O(n).
+*
+* @param {number[]} prices
+* @return {number}
+*/
+
+function maxProfitBrute(prices) {
+  let maxProfit = 0;
+
+  for (let i = 0; i < prices.length - 1; i += 1) {
+    for (let j = i + 1; j < prices.length; j += 1) {
+      const profit = prices[j] - prices[i];
+      maxProfit = Math.max(maxProfit, profit);
+    }
+  }
+
+  return maxProfit;
+}
+
+/**
+* maxProfit()
 *
 * Solution:
 *
 * We'll greedily walk through the array to track the max profit and lowest
 * price so far.
+*
+* Say the given array is:
+*
+* [7, 1, 5, 3, 6, 4]
+*
+* If we plot the numbers of the given array on a graph, we get:
+*
+*
+*  (price)
+*
+*     ^
+*     |
+*     |
+*   8 +
+*     |
+*     |
+*   7 +      +
+*     |      |
+*     |      |                         (PEAK)
+*   6 +      |                           +
+*     |      |                           |
+*     |      |                           |
+*   5 +      |             +             |
+*     |      |             |             |
+*     |      |             |             |
+*   4 +      |             |             |      +
+*     |      |             |             |      |
+*     |      |             |             |      |
+*   3 +      |             |      +      |      |
+*     |      |             |      |      |      |
+*     |      |   (VALLEY)  |      |      |      |
+*   2 +      |      +      |      |      |      |
+*     |      |      |      |      |      |      |
+*     |      |      |      |      |      |      |
+*   1 +      |      |      |      |      |      |
+*     |      |      |      |      |      |      |
+*     |      |      |      |      |      |      |
+*     +------+------+------+------+------+------+------+--->
+*     0      1      2      3      4      5      6      7
+*
+*                            (days)
+*
+*
+* The points of interest are the peaks and valleys in the given graph. We need to
+* find the largest peak following the smallest valley. We can maintain two variables,
+* minprice and maxprofit corresponding to the smallest valley and maximum profit
+* (maximum difference between selling price and minprice) obtained so far respectively.
 *
 * For every price, we check if:
 *
@@ -61,7 +143,7 @@ function maxProfit(prices) {
   // we'll greedily update minPrice and maxProfit, so we initialize
   // them to the first price and the first possible profit
   let minPrice = prices[0];
-  let currentMaxProfit = prices[1] - prices[0];
+  let maxProfit = prices[1] - prices[0];
 
   // start at the second (index 1) time
   // we can't sell at the first time, since we must buy first,
@@ -77,15 +159,15 @@ function maxProfit(prices) {
     const potentialProfit = currentPrice - minPrice;
 
     // update currentMaxProfit if we can do better
-    currentMaxProfit = Math.max(currentMaxProfit, potentialProfit);
+    maxProfit = Math.max(maxProfit, potentialProfit);
 
     // update minPrice so it's always
     // the lowest price we've seen so far
     minPrice = Math.min(minPrice, currentPrice);
   }
 
-  // return 0, if profit margin is 0
-  return currentMaxProfit > 0 ? currentMaxProfit : 0;
+  // return 0, if profit margin is negative
+  return maxProfit > 0 ? maxProfit : 0;
 }
 
-export default maxProfit;
+export { maxProfitBrute, maxProfit };
