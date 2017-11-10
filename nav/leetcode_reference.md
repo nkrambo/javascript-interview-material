@@ -283,7 +283,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>69</td>
-    <td><a href="../assets/search/questions/_sqrt(x)/sqrt.js">Sqrt(x)</a></td>
+    <td><a href="../assets/search/questions/sqrt(x)/sqrt.js">Sqrt(x)</a></td>
   </tr>
   <tr>
     <td>70</td>

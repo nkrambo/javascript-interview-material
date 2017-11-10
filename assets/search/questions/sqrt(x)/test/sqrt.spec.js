@@ -10,7 +10,7 @@ describe('mySqrt()', () => {
   });
 });
 
-describe.skip('mySqrtBit()', () => {
+describe('mySqrtBit()', () => {
   test('should return the square root', () => {
     expect(mySqrtBit(1)).toBe(1);
     expect(mySqrtBit(4)).toBe(2);
