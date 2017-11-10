@@ -1,25 +1,23 @@
 
 /**
-* Pascals Triangle
+* Pascals Triangle II
 *
 * Tags: Array,
-* Leetcode: 118
+* Leetcode: 119
 *
-* Given numRows, generate the first numRows of Pascal's triangle.
+* Given an index k, return the kth row of the Pascal's triangle.
 *
-* For example, given numRows = 5,
+* For example, given k = 3,
 *
-* Return:
+* Return [1, 3 , 3, 1].
 *
-* [[1],
-*  [1, 1],
-*  [1, 2, 1],
-*  [1, 3, 3, 1],
-*  [1, 4, 6, 4, 1]]
+* Note:
+*
+* Could you optimize your algorithm to use only O(k) extra space?
 */
 
 /**
-* generate()
+* getRow()
 *
 * Solution:
 *
@@ -57,36 +55,32 @@
 * of each row. If we didn't do this, we wouldn't be abble to grab values for T[r-1][c-1]
 * as they wouldn't exist.
 *
-* Time: O(n^2)
-* Space: O(n^2)
-*
-* @param {number} numRows number of lines of Pascal's
-* @return {array | number [][]} of arrays n lines long
+* @param {number} rowIndex
+* @return {number[]}
 */
 
-function generate(numRows) {
-  // set initial triangle
-  const result = [[1], [1, 1]];
+function getRow(rowIndex) {
+  const T = [[1], [1, 1]];
 
-  // catch edges
-  if (numRows === 0) return [];
-  if (numRows === 1) return [[1]];
-  if (numRows === 2) return result;
+  // catch edge cases
+  if (rowIndex === 0) return [1];
+  if (rowIndex === 1) return [1, 1];
 
   // start from 3rd row
-  for (let row = 2; row < numRows; row += 1) {
+  for (let row = 2; row <= rowIndex; row += 1) {
     // add row with initial 1
-    result[row] = [1];
+    T[row] = [1];
 
     // we have to iterate in-between the first and last 1's
     for (let col = 1; col <= row - 1; col += 1) {
-      result[row][col] = result[row - 1][col] + result[row - 1][col - 1];
+      T[row][col] = T[row - 1][col] + T[row - 1][col - 1];
       // add next value as 1, will get over-written unless last
-      result[row].push(1);
+      T[row].push(1);
     }
   }
 
-  return result;
+  // return the kth row
+  return T[rowIndex];
 }
 
-export default generate;
+export default getRow;
