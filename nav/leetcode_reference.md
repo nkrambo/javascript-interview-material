@@ -239,7 +239,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>58</td>
-    <td><a href="../assets/strings/questions/_length_of_last_word/length_of_last_word.js">Length of Last Word</a></td>
+    <td><a href="../assets/strings/questions/length_of_last_word/length_of_last_word.js">Length of Last Word</a></td>
   </tr>
   <tr>
     <td>59</td>
