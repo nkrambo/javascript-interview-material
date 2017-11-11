@@ -275,7 +275,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>67</td>
-    <td><a href="../assets/strings/questions/_add_binary/add_binary.js">Add Binary</a></td>
+    <td><a href="../assets/strings/questions/add_binary/add_binary.js">Add Binary</a></td>
   </tr>
   <tr>
     <td>68</td>
