@@ -287,7 +287,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>70</td>
-    <td><a href="../assets/dynamic_programming/questions/_climbing_stairs/climbing_stairs.js">Climbing Stairs</a></td>
+    <td><a href="../assets/dynamic_programming/questions/climbing_stairs/climbing_stairs.js">Climbing Stairs</a></td>
   </tr>
   <tr>
     <td>71</td>
