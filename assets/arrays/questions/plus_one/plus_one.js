@@ -32,15 +32,17 @@
 * except we are simply adding 1.
 *
 * The rules of long addition say to start with the least significant number and
-* add 1 to it, if it creates a carry, then we move left and add 1 that column too
-* until there are no carries to resolve.
+* add 1 to it, if it creates a carry, then we move left and add 1 to that column
+* too, until there are no carries to resolve.
 *
 * To achieve this, we'll traverse the input from right (least significant) to
 * left (most significant). If the current value is less than 9 we simply add 1
 * and return, otherwise we zero out and carry the 1 and repeat.
 *
-* This will cover most use cases. It won't coever the cases where the most
-* significant value is > 9 and so are the right values, like [9] or [9, 9] or [9, 9, 9]
+* This will cover most use cases. It won't cover the cases where the most
+* significant value is 9 and so are the right values, like [9] or [9, 9] or [9, 9, 9]
+*
+* We catch these cases separately when they fall through our for ... loop.
 *
 * Time: O(n)
 * Space: O(1)
