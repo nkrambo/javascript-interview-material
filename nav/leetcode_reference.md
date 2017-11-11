@@ -271,7 +271,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>66</td>
-    <td><a href="../assets/arrays/questions/_plus_one/plus_one.js">Plus One</a></td>
+    <td><a href="../assets/arrays/questions/plus_one/plus_one.js">Plus One</a></td>
   </tr>
   <tr>
     <td>67</td>
