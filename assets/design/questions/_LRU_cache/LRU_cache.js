@@ -40,37 +40,136 @@
 *
 * Solution:
 *
+* What is the Least Recently Used (LRU) cache?
+*
+* It is a cache replacement policy that discards the least recently used items first.
+*
+* This algorithm requires keeping track of what was used when, which is expensive
+* if one wants to make sure the algorithm always discards the least recently used item.
+*
+* General implementations of this technique require keeping "age bits" for cache-lines
+* and track the "Least Recently Used" cache-line based on age-bits. In such an
+* implementation, every time a cache-line is used, the age of all other cache-lines changes.
+*
+* LRU is actually a family of caching algorithms with members including 2Q and LRU/K.
+*
+* The access sequence for the below example is A B C D E D F.
+*
+* Once A B C D gets installed in the blocks with sequence numbers (Increment 1 for
+* each new Access) and when E is accessed, it is a miss and it needs to be installed
+* in one of the blocks. According to the LRU Algorithm, since A has the lowest Rank(A(0)),
+* E will replace A.
+*
+*
+*   +--------+--------+--------+--------+
+*   |  A(0)  |        |        |        |   // PUT A
+*   +--------+--------+--------+--------+
+*
+*                     ↓
+*
+*   +--------+--------+--------+--------+
+*   |  A(0)  |  B(1)  |        |        |   // PUT B
+*   +--------+--------+--------+--------+
+*
+*                     ↓
+*
+*   +--------+--------+--------+--------+
+*   |  A(0)  |  B(1)  |  C(2)  |        |   // PUT C
+*   +--------+--------+--------+--------+
+*
+*                     ↓
+*
+*   +--------+--------+--------+--------+
+*   |  A(0)  |  B(1)  |  C(2)  |  D(3)  |   // PUT D
+*   +--------+--------+--------+--------+
+*
+*                     ↓
+*
+*   +--------+--------+--------+--------+
+*   |  E(4)  |  B(1)  |  C(2)  |  D(3)  |   // PUT E, A lowest rank, so gets replaced
+*   +--------+--------+--------+--------+
+*
+*                     ↓
+*
+*   +--------+--------+--------+--------+
+*   |  E(4)  |  B(1)  |  C(2)  |  D(5)  |   // GET D, update rank
+*   +--------+--------+--------+--------+
+*
+*                     ↓
+*
+*   +--------+--------+--------+--------+
+*   |  E(4)  |  B(1)  |  C(2)  |  D(5)  |   // PUT F, B lowest rank, so gets replaced
+*   +--------+--------+--------+--------+
 */
 
 /**
 * @param {number} capacity
 */
-// var LRUCache = function(capacity) {
-//
-// };
 
-/**
-* @param {number} key
-* @return {number}
-*/
-// LRUCache.prototype.get = function(key) {
-//
-// };
+class LRUCache {
+  constructor(capacity = 10000) {
+    // map of key → items
+    this.items = new Map();
 
-/**
-* @param {number} key
-* @param {number} value
-* @return {void}
-*/
-// LRUCache.prototype.put = function(key, value) {
-//
-// };
+    // list of nodes
+    this.ordering = new LinkedList();
 
-/**
-* Your LRUCache object will be instantiated and called as such:
-* var obj = Object.create(LRUCache).createNew(capacity)
-* var param_1 = obj.get(key)
-* obj.put(key,value)
-*/
+    // set capacity
+    this.capacity = capacity;
+  }
 
-// export default LRUCache;
+  /**
+  * @param {number} key
+  * @return {number}
+  */
+  get(key) {
+    if (this.items.has(key)) {
+      const item = this.items.get(key);
+      this.promote(item);
+      return item.val;
+    }
+
+    return null;
+  }
+
+  /**
+  * @param {number} key
+  * @param {number} value
+  * @return {void}
+  */
+  put(key, value) {
+    // var item;
+
+    // set existing item
+    if (this.items.has(key)) {
+      const item = this.items.get(key);
+      item.value = value;
+      this.promote(item);
+
+    // set new item
+    } else {
+      // make space if necessary
+      if (this.full()) this.prune();
+
+      item = new LRUCacheItem(val, key);
+      item.node = this._ordering.unshift(item);
+      this._items[key] = item;
+    }
+  }
+
+  /**
+  * @return {boolean}
+  */
+  isFull() {
+    return this.items.size() >= this.capacity;
+  }
+
+  /**
+  * @return {void}
+  */
+  prune() {
+    this.items.delete(this.ordering.pop());
+  }
+}
+
+export default LRUCache;

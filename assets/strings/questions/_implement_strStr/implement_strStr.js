@@ -26,7 +26,13 @@
 */
 
 // function strStr(haystack, needle) {
-//
+//   for (let i = 0; i < haystack.length; i += 1) {
+//     for (let j = 0; i < haystack.length; j === 1) {
+//       if (j === needle.length) return i;
+//       if (i + j === haystack.length) return -1;
+//       if (needle.charAt(j) !== haystack.charAt(i + j)) break;
+//     }
+//   }
 // }
 //
 // export default strStr;
