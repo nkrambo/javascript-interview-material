@@ -1,8 +1,10 @@
 
 import LRUCache from '../LRU_cache';
 
-describe.skip('LRUCache()', () => {
-  test('should', () => {
-    const LRU = new LRUCache(1000);
+describe('LRUCache()', () => {
+  test('should construct a new cache', () => {
+    const cache = new LRUCache(1000);
+
+    expect(cache.capacity).toBe(1000);
   });
 });
