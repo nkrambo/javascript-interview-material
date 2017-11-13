@@ -102,17 +102,17 @@
 *   +--------+--------+--------+--------+
 */
 
-/**
-* @param {number} capacity
-*/
-
 class LRUCache {
+  /**
+  * @constructor
+  * @param {number} capacity
+  */
   constructor(capacity = 10000) {
     // map of key → items
     this.items = new Map();
 
     // list of nodes
-    this.ordering = new LinkedList();
+    this.ordering = new DoublyLinkedList();
 
     // set capacity
     this.capacity = capacity;
@@ -129,7 +129,8 @@ class LRUCache {
       return item.val;
     }
 
-    return null;
+    // not found
+    return -1;
   }
 
   /**
@@ -138,8 +139,6 @@ class LRUCache {
   * @return {void}
   */
   put(key, value) {
-    // var item;
-
     // set existing item
     if (this.items.has(key)) {
       const item = this.items.get(key);
@@ -151,9 +150,10 @@ class LRUCache {
       // make space if necessary
       if (this.full()) this.prune();
 
-      item = new LRUCacheItem(val, key);
-      item.node = this._ordering.unshift(item);
-      this._items[key] = item;
+      // insert new item
+      const newItem = new LRUCacheItem(value, key);
+      newItem.node = this.ordering.add(newItem);
+      this.items.set(newItem);
     }
   }
 
@@ -169,6 +169,22 @@ class LRUCache {
   */
   prune() {
     this.items.delete(this.ordering.pop());
+  }
+
+  /**
+  * @param {object} item
+  * @return {void}
+  */
+  promote(item) {
+    this.ordering.moveToFront(item.node);
+  }
+}
+
+class LRUCacheItem {
+  constructor(value, key) {
+    this.value = value === undefined ? null : value;
+    this.key = key === undefined ? null : key;
+    this.node = null;
   }
 }
 
