@@ -4,7 +4,7 @@
 ### Linked Lists
 
 - [Singly Linked List](../assets/linked_lists/data_structures/singly_linked_list/singly_linked_list.js)
-- [Doubly Linked List](../assets/linked_lists/data_structures/_doubly_linked_list/doubly_linked_list.js)
+- [Doubly Linked List](../assets/linked_lists/data_structures/doubly_linked_list/doubly_linked_list.js)
 
 ### Stacks and Queues
 

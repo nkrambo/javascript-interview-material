@@ -189,3 +189,65 @@ class LRUCacheItem {
 }
 
 export default LRUCache;
+
+
+// class DoublyLinkedList {
+//   constructor() {
+//     this.head = null;
+//     this.tail = null;
+//   }
+//
+//
+//
+//   // Move a node to the front of the List
+//   moveToFront(node) {
+//     if (node === this.tail) {
+//       this.pop();
+//     } else if (node === this.head) {
+//       return;
+//     } else {
+//       node.delete();
+//     }
+//
+//     node.prev = node.next = null;
+//
+//     // Don't delegate to shift, since we want to keep the same
+//     // object.
+//
+//     // Empty list
+//     if (this.head === null && this.tail === null) {
+//       this.head = this.tail = node;
+//     // At least one node.
+//     } else {
+//       this.head.prev = node;
+//       node.next = this.head;
+//       this.head = node;
+//     }
+//   }
+//
+//   // Move a node to the end of the List
+//   moveToEnd(node) {
+//     if (node === this.head) {
+//       this.shift();
+//     } else if (node === this.tail) {
+//       return;
+//     } else {
+//       node.delete();
+//     }
+//
+//     // Don't delegate to push, since we want to keep the same
+//     // object.
+//
+//     node.prev = node.next = null;
+//
+//     // Empty list
+//     if (this.head === null && this.tail === null) {
+//       this.head = this.tail = node;
+//     // At least one node.
+//     } else {
+//       this.tail.next = node;
+//       node.prev = this.tail;
+//       this.tail = node;
+//     }
+//   }
+// }
