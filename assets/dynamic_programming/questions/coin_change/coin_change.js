@@ -100,36 +100,36 @@
 * @return {number} returns the minimum number of coins require to make total
 */
 
-// function coinChange(coins, amount) {
-//   const cols = total + 1;                // add 1 for 0s column
-//   const rows = coins.length + 1; // add 1 for Infinity row
-//
-//   // build matrix, 0s by default
-//   const matrix = [];
-//   for (let i = 0; i < rows; i += 1) {
-//     matrix[i] = new Array(cols).fill(0);
-//   }
-//
-//   // add Infinity row
-//   matrix[0].fill(Infinity);
-//
-//   // solve sub-problems
-//   for (let i = 1; i < rows; i += 1) {
-//     for (let j = 1; j < cols; j += 1) {
-//
-//       // if the total is less than the current denomination, take the top
-//       if (j < coins[i-1]) {
-//         matrix[i][j] = matrix[i-1][j];
-//
-//       // otherwise, check if we can do better than
-//       // the top with the current and difference results
-//       } else {
-//         matrix[i][j] = Math.min(matrix[i-1][j], matrix[i][j-coins[i-1]] + 1);
-//       }
-//     }
-//   }
-//
-//   return matrix[rows-1][cols-1];
-// }
-//
-// export default coinChange
+function coinChange(coins, amount) {
+  const cols = amount + 1; // add 1 for 0s column
+  const rows = coins.length + 1; // add 1 for Infinity row
+
+  // build matrix, 0s by default
+  const matrix = [];
+  for (let i = 0; i < rows; i += 1) {
+    matrix[i] = new Array(cols).fill(0);
+  }
+
+  // add Infinity row
+  matrix[0].fill(Infinity);
+
+  // solve sub-problems
+  for (let i = 1; i < rows; i += 1) {
+    for (let j = 1; j < cols; j += 1) {
+      // if the total is less than the current denomination, take the top
+      if (j < coins[i - 1]) {
+        matrix[i][j] = matrix[i - 1][j];
+
+      // otherwise, check if we can do better than
+      // the top with the current and difference results
+      } else {
+        matrix[i][j] = Math.min(matrix[i - 1][j], matrix[i][j - coins[i - 1]] + 1);
+      }
+    }
+  }
+
+  // return -1 if the amount cannot be made up
+  return matrix[rows - 1][cols - 1] > amount ? -1 : matrix[rows - 1][cols - 1];
+}
+
+export default coinChange;

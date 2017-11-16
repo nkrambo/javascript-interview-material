@@ -997,7 +997,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>322</td>
-    <td><a href="../assets/dynamic_programming/questions/_coin_change/coin_change.js">Coin Change</a></td>
+    <td><a href="../assets/dynamic_programming/questions/coin_change/coin_change.js">Coin Change</a></td>
   </tr>
   <tr>
     <td>323</td>
