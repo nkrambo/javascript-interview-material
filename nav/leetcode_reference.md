@@ -427,7 +427,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>105</td>
-    <td><a href="../assets/graphs/questions/binary_tree/_construct_binary_tree_from_preorder_and_inorder_traversal/construct_binary_tree_from_preorder_and_inorder_traversal.js">Construct Binary Tree from Preorder and Inorder Traversal</a></td>
+    <td><a href="../assets/graphs/questions/binary_tree/construct_binary_tree_from_preorder_and_inorder_traversal/construct_binary_tree_from_preorder_and_inorder_traversal.js">Construct Binary Tree from Preorder and Inorder Traversal</a></td>
   </tr>
   <tr>
     <td>106</td>
