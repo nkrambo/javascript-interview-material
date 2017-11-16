@@ -130,7 +130,7 @@ class LRUCache {
     if (this.items.has(key)) {
       const item = this.items.get(key);
       this.promote(item);
-      return item.val;
+      return item.value;
     }
 
     // not found
@@ -152,11 +152,11 @@ class LRUCache {
     // set new item
     } else {
       // make space if necessary
-      if (this.full()) this.prune();
+      if (this.isFull()) this.prune();
 
       // insert new item
-      const newItem = new LRUCacheItem(value, key);
-      newItem.node = this.ordering.add(newItem);
+      const newItem = new LRUCacheItem(key, value);
+      newItem.node = this.ordering.unshift(newItem);
       this.items.set(newItem);
     }
   }
@@ -165,7 +165,7 @@ class LRUCache {
   * @return {boolean}
   */
   isFull() {
-    return this.items.size() >= this.capacity;
+    return this.items.size >= this.capacity;
   }
 
   /**
@@ -185,9 +185,14 @@ class LRUCache {
 }
 
 class LRUCacheItem {
-  constructor(value, key) {
-    this.value = value === undefined ? null : value;
-    this.key = key === undefined ? null : key;
+  /**
+  * @constructor
+  * @param {any} key
+  * @param {any} value
+  */
+  constructor(key = null, value = null) {
+    this.key = key;
+    this.value = value;
     this.node = null;
   }
 }
@@ -252,4 +257,4 @@ class OrderList extends DoublyLinkedList {
   }
 }
 
-export default LRUCache;
+export { LRUCache, LRUCacheItem, OrderList };
