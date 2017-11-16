@@ -800,7 +800,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>198</td>
-    <td><a href="../assets/dynamic_programming/questions/_house_robber/house_robber.js">House Robber</a></td>
+    <td><a href="../assets/dynamic_programming/questions/house_robber/house_robber.js">House Robber</a></td>
   </tr>
   <tr>
     <td>199</td>

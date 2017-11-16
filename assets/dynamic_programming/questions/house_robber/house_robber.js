@@ -78,18 +78,18 @@
 * @param {array} nums amount of cash available in each home on street
 * @return {number} returns the maximum amount of cash without alerting police
 */
-//
-// function rob(nums) {
-//   let prevMax = 0;
-//   let currentMax = 0;
-//
-//   homes.forEach((home) => {
-//     const temp = currentMax;
-//     currentMax = Math.max((prevMax + home), currentMax);
-//     prevMax = temp;
-//   });
-//
-//   return currentMax;
-// }
-//
-// export default rob;
+
+function rob(nums) {
+  let prevMax = 0;
+  let currentMax = 0;
+
+  nums.forEach((num) => {
+    const temp = currentMax;
+    currentMax = Math.max((prevMax + num), currentMax);
+    prevMax = temp;
+  });
+
+  return currentMax;
+}
+
+export default rob;
