@@ -104,7 +104,85 @@ import { DoublyLinkedList } from '../../../linked_lists/data_structures/doubly_l
 *   +--------+--------+--------+--------+
 *
 * https://en.wikipedia.org/wiki/Cache_replacement_policies#LRU
+* https://www.youtube.com/watch?v=R5ON3iwx78M
 */
+
+class LRUCacheItem {
+  /**
+  * @constructor
+  * @param {any} key
+  * @param {any} value
+  */
+  constructor(key = null, value = null) {
+    this.key = key;
+    this.value = value;
+    this.node = null;
+  }
+}
+
+class OrderList extends DoublyLinkedList {
+  /**
+  * Move a node to the front of the list
+  *
+  * @param {object} node
+  * @return {void} modifies list
+  */
+  moveToFront(node) {
+    if (node === this.tail) {
+      this.pop();
+    } else if (node === this.head) {
+      return;
+    } else {
+      node.delete();
+    }
+
+    node.prev = null;
+    node.next = null;
+
+    // empty
+    if (!this.head && !this.tail) {
+      this.head = node;
+      this.tail = node;
+
+    // at least one node.
+    } else {
+      this.head.prev = node;
+      node.next = this.head;
+      this.head = node;
+    }
+  }
+
+  /**
+  * Move a node to the end of the list
+  *
+  * @param {object} node
+  * @return {void} modifies list
+  */
+  moveToEnd(node) {
+    if (node === this.head) {
+      this.shift();
+    } else if (node === this.tail) {
+      return;
+    } else {
+      node.delete();
+    }
+
+    node.prev = null;
+    node.next = null;
+
+    // epmty
+    if (!this.head && !this.tail) {
+      this.head = node;
+      this.tail = node;
+
+    // at least one node
+    } else {
+      this.tail.next = node;
+      node.prev = this.tail;
+      this.tail = node;
+    }
+  }
+}
 
 class LRUCache {
   /**
@@ -123,8 +201,10 @@ class LRUCache {
   }
 
   /**
-  * @param {number} key
-  * @return {number}
+  * GET a cache item by key
+  *
+  * @param {any} key
+  * @return {any|-1}
   */
   get(key) {
     if (this.items.has(key)) {
@@ -138,8 +218,10 @@ class LRUCache {
   }
 
   /**
-  * @param {number} key
-  * @param {number} value
+  * PUT a cache item by key and value
+  *
+  * @param {any} key
+  * @param {any} value
   * @return {void}
   */
   put(key, value) {
@@ -162,6 +244,8 @@ class LRUCache {
   }
 
   /**
+  * Check capacity against cache size
+  *
   * @return {boolean}
   */
   isFull() {
@@ -169,6 +253,8 @@ class LRUCache {
   }
 
   /**
+  * Delete cache item
+  *
   * @return {void}
   */
   prune() {
@@ -176,84 +262,13 @@ class LRUCache {
   }
 
   /**
+  * Move cache item to front
+  *
   * @param {object} item
   * @return {void}
   */
   promote(item) {
     this.ordering.moveToFront(item.node);
-  }
-}
-
-class LRUCacheItem {
-  /**
-  * @constructor
-  * @param {any} key
-  * @param {any} value
-  */
-  constructor(key = null, value = null) {
-    this.key = key;
-    this.value = value;
-    this.node = null;
-  }
-}
-
-class OrderList extends DoublyLinkedList {
-  // move a node to the front of the List
-  moveToFront(node) {
-    if (node === this.tail) {
-      this.pop();
-    } else if (node === this.head) {
-      return;
-    } else {
-      node.delete();
-    }
-
-    node.prev = null;
-    node.next = null;
-
-    // Don't delegate to shift, since we want to keep the same
-    // object.
-
-    // Empty list
-    if (!this.head && !this.tail) {
-      this.head = node;
-      this.tail = node;
-
-    // at least one node.
-    } else {
-      this.head.prev = node;
-      node.next = this.head;
-      this.head = node;
-    }
-  }
-
-  // Move a node to the end of the List
-  moveToEnd(node) {
-    if (node === this.head) {
-      this.shift();
-    } else if (node === this.tail) {
-      return;
-    } else {
-      node.delete();
-    }
-
-    // Don't delegate to push, since we want to keep the same
-    // object.
-
-    node.prev = null;
-    node.next = null;
-
-    // Empty list
-    if (!this.head && !this.tail) {
-      this.head = node;
-      this.tail = node;
-
-    // At least one node.
-    } else {
-      this.tail.next = node;
-      node.prev = this.tail;
-      this.tail = node;
-    }
   }
 }
 
