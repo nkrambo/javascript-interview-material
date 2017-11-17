@@ -957,7 +957,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>300</td>
-    <td><a href="../assets/dynamic_programming/questions/_longest_increasing_subsequence/longest_increasing_subsequence.js">Longest Increasing Subsequence</a></td>
+    <td><a href="../assets/dynamic_programming/questions/longest_increasing_subsequence/longest_increasing_subsequence.js">Longest Increasing Subsequence</a></td>
   </tr>
   <tr>
     <td>304</td>
