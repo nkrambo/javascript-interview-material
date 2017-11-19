@@ -22,7 +22,7 @@
 */
 
 /**
-* lengthOfLIS()
+* lengthOfLISBrute()
 *
 * Solution:
 *

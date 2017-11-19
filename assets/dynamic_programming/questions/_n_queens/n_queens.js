@@ -56,10 +56,13 @@
 /**
 * Solution:
 *
+* https://www.youtube.com/watch?v=xouin83ebxE&t=933s
+* https://www.youtube.com/watch?v=0DeznFqrgAI
+*
 * Time: O(1)
 * Space: O(1)
 *
-* @param {number} n number of rows and columns on a NxN chess board
+* @param {number} n number of rows and columns on a N x N chess board
 * @return {array} returns all distinct solutions to the n-queens puzzle
 */
 
