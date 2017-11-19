@@ -263,7 +263,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>64</td>
-    <td><a href="../assets/dynamic_programming/questions/_minimum_path_sum/minimum_path_sum.js">Minimum Path Sum</a></td>
+    <td><a href="../assets/dynamic_programming/questions/minimum_path_sum/minimum_path_sum.js">Minimum Path Sum</a></td>
   </tr>
   <tr>
     <td>65</td>

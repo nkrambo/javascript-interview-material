@@ -61,7 +61,7 @@ function helper(grid, i, j) {
 * We use an extra matrix dp of the same size as the original matrix. In this
 * matrix, dp(i, j) represents the minimum sum of the path from the index (i, j)
 * to the bottom rightmost element. We start by initializing the bottom rightmost
-* element of dpdp as the last element of the given matrix. Then for each element
+* element of dp as the last element of the given matrix. Then for each element
 * starting from the bottom right, we traverse backwards and fill in the matrix
 * with the required minimum sums. Now, we need to note that at every element, we
 * can move either rightwards or downwards. Therefore, for filling in the minimum
@@ -90,24 +90,26 @@ function minPathSum(grid) {
   // step over backwards
   for (let i = grid.length - 1; i >= 0; i -= 1) {
     for (let j = grid[0].length - 1; j >= 0; j -= 1) {
-      // if it's the bottom right, insert grid bottom right value to seed our dp
+      // we're at the bottom boundary, min cost is current + cell to the right
       if (i === grid.length - 1 && j !== grid[0].length - 1) {
         dp[i][j] = grid[i][j] + dp[i][j + 1];
 
-      //
+      // we're at the right boundary, min cost is current + cell below
       } else if (j === grid[0].length - 1 && i !== grid.length - 1) {
         dp[i][j] = grid[i][j] + dp[i + 1][j];
 
-      // if we're inbounds, take the min of the right and down
+      // we're inbounds, take the min of the right and down
       } else if (j !== grid[0].length - 1 && i !== grid.length - 1) {
         dp[i][j] = grid[i][j] + Math.min(dp[i + 1][j], dp[i][j + 1]);
 
-      //
+      // must be the bottom right, seed our dp
       } else {
         dp[i][j] = grid[i][j];
       }
     }
   }
+
+  // return the first value, the toatal min cost
   return dp[0][0];
 }
 
