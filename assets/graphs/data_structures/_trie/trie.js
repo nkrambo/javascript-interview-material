@@ -69,119 +69,118 @@
 * Where n is the length of the word.
 */
 
-// class Trie {
-//   constructor() {
-//     this.root = {};
-//     this.words = [];
-//   }
+class Trie {
+  constructor() {
+    this.root = {};
+    this.words = [];
+  }
+
+  /**
+  * insert word
+  *
+  * @param {string} word
+  * @return {void}
+  */
+  insert(word) {
+    let current = this.root;
+
+    // work downwards through the trie, adding nodes as needed,
+    // and keeping track of whether we add any nodes.
+    for (let char of word) {
+      // if we don't have current char
+      if (!current.hasOwnProperty(char)) {
+        current[char] = {};
+      }
+
+      // traverse
+      current = current[char];
+    }
+
+    // explicitly mark the end of a word
+    if (!current.hasOwnProperty('*')) {
+      current['*'] = {};
+      this.words.push(word);
+    }
+  }
+
+  /**
+  * remove word
+  *
+  * @param {string} word
+  * @return {void}
+  */
+
+  remove(word) {
+
+  }
+
+//   if (index == word.length()) {
+//        //when end of word is reached only delete if currrent.endOfWord is true.
+//        if (!current.endOfWord) {
+//            return false;
+//        }
+//        current.endOfWord = false;
+//        //if current has no other mapping then return true
+//        return current.children.size() == 0;
+//    }
+//    char ch = word.charAt(index);
+//    TrieNode node = current.children.get(ch);
+//    if (node == null) {
+//        return false;
+//    }
+//    boolean shouldDeleteCurrentNode = delete(node, word, index + 1);
 //
-//   /**
-//   * insert()
-//   *
-//   * @param {string} word to insert
-//   * @return {void}
-//   */
-//
-//   insert(word) {
-//     let current = this.root;
-//
-//     // work downwards through the trie, adding nodes as needed,
-//     // and keeping track of whether we add any nodes.
-//     for (let char of word) {
-//       // if we don't have current char
-//       if (!current.hasOwnProperty(char)) {
-//         current[char] = {};
-//       }
-//
-//       // traverse
-//       current = current[char];
-//     }
-//
-//     // explicitly mark the end of a word
-//     if (!current.hasOwnProperty('*')) {
-//       current['*'] = {};
-//       this.words.push(word);
-//     }
-//   }
-//
-//   /**
-//   * remove()
-//   *
-//   * @param {string} word to remove
-//   * @return {void}
-//   */
-//
-//   remove(word) {
-//
-//   }
-//
-// //   if (index == word.length()) {
-// //        //when end of word is reached only delete if currrent.endOfWord is true.
-// //        if (!current.endOfWord) {
-// //            return false;
-// //        }
-// //        current.endOfWord = false;
-// //        //if current has no other mapping then return true
-// //        return current.children.size() == 0;
-// //    }
-// //    char ch = word.charAt(index);
-// //    TrieNode node = current.children.get(ch);
-// //    if (node == null) {
-// //        return false;
-// //    }
-// //    boolean shouldDeleteCurrentNode = delete(node, word, index + 1);
-// //
-// //    //if true is returned then delete the mapping of character and trienode reference from map.
-// //    if (shouldDeleteCurrentNode) {
-// //        current.children.remove(ch);
-// //        //return true if no mappings are left in the map.
-// //        return current.children.size() == 0;
-// //    }
-// //    return false;
-// // }
-//
-//   /**
-//   * search()
-//   *
-//   * @param {string} word to search
-//   * @return {boolean} returns true if exists, otherwise false
-//   */
-//
-//   search(word) {
-//     let current = this.root;
-//
-//     for (let char of word) {
-//       // char not found
-//       if (!current.hasOwnProperty(char)) return false;
-//
-//       // keep traversing
-//       current = current[char];
-//     }
-//
-//     // check for end of word
-//     return current.hasOwnProperty('*');
-//   }
-//
-//   /**
-//   * startsWith()
-//   *
-//   * @param {string} prefix to check
-//   * @return {boolean} returns true a word exists with prefix
-//   */
-//
-//   startsWith(prefix) {
-//
-//   }
-//
-//   /**
-//   * getWords()
-//   *
-//   * @return {array} of all words
-//   */
-//
-//   getWords() {
-//     return this.words;
-//   }
+//    //if true is returned then delete the mapping of character and trienode reference from map.
+//    if (shouldDeleteCurrentNode) {
+//        current.children.remove(ch);
+//        //return true if no mappings are left in the map.
+//        return current.children.size() == 0;
+//    }
+//    return false;
 // }
-//
-// export default Trie;
+
+  /**
+  * check for a word
+  *
+  * @param {string} word
+  * @return {boolean} returns true if exists, otherwise false
+  */
+
+  search(word) {
+    let current = this.root;
+
+    for (let char of word) {
+      // char not found
+      if (!current.hasOwnProperty(char)) return false;
+
+      // keep traversing
+      current = current[char];
+    }
+
+    // check for end of word
+    return current.hasOwnProperty('*');
+  }
+
+  /**
+  * check for a prefix
+  *
+  * @param {string} prefix
+  * @return {boolean} returns true a word exists with prefix
+  */
+
+  startsWith(prefix) {
+
+  }
+
+  /**
+  * getWords()
+  *
+  * @return {array} of all words
+  */
+
+  getWords() {
+    return this.words;
+  }
+}
+
+export default Trie;
