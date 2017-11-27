@@ -64,7 +64,7 @@ function isUnique(str) {
 * Then we step over the string and check to see if we have any duplicate
 * characters by comparing one iteration with the previous.
 *
-* Although the spltest() and sort() methods are convenient, these puts our
+* Although the split() and sort() methods are convenient, these puts our
 * runtime at O(n log n), which is not ideal.
 *
 * Time: O(n log n)

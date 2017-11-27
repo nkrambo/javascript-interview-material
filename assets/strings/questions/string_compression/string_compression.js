@@ -41,11 +41,11 @@
 */
 
 function stringCompress(str) {
-  let compressed = '';
-  let charCount = 1;
-
   // cannot compress a string of length 2
   if (str.length <= 2) return str;
+
+  let compressed = '';
+  let charCount = 1;
 
   for (let i = 0; i < str.length; i += 1) {
     if (str[i] === str[i + 1]) {

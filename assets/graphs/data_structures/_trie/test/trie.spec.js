@@ -1,7 +1,7 @@
 
 import Trie from '../trie';
 
-describe('Trie', () => {
+describe.skip('Trie', () => {
   test('should construct a new Trie class', () => {
     const test = new Trie();
     expect(typeof test).toBe('object');

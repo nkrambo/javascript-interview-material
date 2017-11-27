@@ -9,7 +9,7 @@
 *
 * Note:
 *
-* You may assume the string contains only lowercase alphabets.
+* You may assume the string contains only lowercase alphabetical characters.
 *
 * Follow up:
 *

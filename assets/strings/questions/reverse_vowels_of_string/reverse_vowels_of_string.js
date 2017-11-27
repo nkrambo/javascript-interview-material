@@ -48,7 +48,7 @@
 
 function reverseVowels(s) {
   // edge case
-  if (s.length < 1) return s;
+  if (s.length <= 1) return s;
 
   // store vowel values
   const vowels = new Set(['a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U']);

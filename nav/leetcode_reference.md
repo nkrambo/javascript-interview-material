@@ -31,7 +31,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>6</td>
-    <td><a href="../assets/strings/questions/_zigzag_conversion/zigzag_conversion.js">ZigZag Conversion</a></td>
+    <td><a href="../assets/strings/questions/zigzag_conversion/zigzag_conversion.js">ZigZag Conversion</a></td>
   </tr>
   <tr>
     <td>7</td>

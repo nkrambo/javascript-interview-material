@@ -32,8 +32,8 @@
 *
 * Solution:
 *
-* We can brute force this one by check all the substrings one by one to see if it
-* has no duplicate character.
+* We can brute force this one by checking all the substrings one by one to see
+* if it has no duplicate character.
 *
 * Suppose we have a helper function allUnique(s) which will return true if the
 * characters in the substring are all unique, otherwise false. We can iterate through
@@ -120,8 +120,8 @@ function allUnique(s, start, end) {
 * start and end indices, i.e. (i, j) (left-closed, right-open). A sliding window
 * is a window that "slides" its two boundaries to a certain direction.
 *
-* For example, if we slide (i, j) to the right by 1 element, then it becomes (i + 1, j + 1)
-* (left-closed, right-open).
+* For example, if we slide (i, j) to the right by 1 element, then it becomes
+* (i + 1, j + 1) (left-closed, right-open).
 *
 * Back to our problem. We use Map to store the characters in current window
 * (i, j), j === i initially. Then we slide the index j to the right. If it is not
@@ -151,11 +151,13 @@ function longestSubstring(s) {
   while (i < s.length && j < s.length) {
     // try to extend the range [i, j]
     if (!slidingWindow.has(s.charAt(j))) {
-      slidingWindow.add(s.charAt(j++));
+      slidingWindow.add(s.charAt(j));
+      j += 1;
       max = Math.max(max, j - i);
-
+    // j is already counted, move window
     } else {
-      slidingWindow.delete(s.charAt(i++));
+      slidingWindow.delete(s.charAt(i));
+      i += 1;
     }
   }
 
