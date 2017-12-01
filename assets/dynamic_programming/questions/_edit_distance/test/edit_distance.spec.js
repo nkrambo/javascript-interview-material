@@ -1,8 +1,8 @@
 
-// import minDistance from '../edit_distance';
+import minDistance from '../edit_distance';
 
-describe.skip('minDistance()', () => {
-  test('should', () => {
+describe('minDistance()', () => {
+  test('should return the minimum number of steps to convert word1 to word2', () => {
 
   });
 });

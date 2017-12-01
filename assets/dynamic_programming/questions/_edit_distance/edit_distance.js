@@ -20,16 +20,18 @@
 *
 * Solution:
 *
+* https://www.youtube.com/watch?v=We3YDTzNXEk
+*
 * Time: O(1)
 * Space: O(1)
 *
 * @param {string} word1
 * @param {string} word2
-* @return {number} returns the minmum number edits
+* @return {number}
 */
 
-// function minDistance(word1, word2) {
-//
-// }
-//
-// export default minDistance;
+function minDistance(word1, word2) {
+
+}
+
+export default minDistance;
