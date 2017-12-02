@@ -1164,6 +1164,10 @@ are local test cases as well.
     <td><a href="../assets/union_find/questions/_friend_circles/friend_circles.js">Friend Circles</a></td>
   </tr>
   <tr>
+    <td>567</td>
+    <td><a href="../assets/strings/questions/permutation_in_string/permutation_in_string.js">Permutation in String</a></td>
+  </tr>
+  <tr>
     <td>572</td>
     <td><a href="../assets/graphs/questions/binary_tree/_subtree_of_another_tree/subtree_of_another_tree.js">Subtree of Another Tree</a></td>
   </tr>
