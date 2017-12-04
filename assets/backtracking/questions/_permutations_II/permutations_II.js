@@ -24,6 +24,7 @@
 *
 * Solution:
 *
+* http://www.geeksforgeeks.org/print-all-permutations-of-a-string-with-duplicates-allowed-in-input-string/
 *
 * Time: O(1)
 * Space: O(1)

@@ -199,7 +199,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>48</td>
-    <td><a href="../assets/arrays/questions/_rotate_image/rotate_image.js">Rotate Image</a></td>
+    <td><a href="../assets/arrays/questions/rotate_image/rotate_image.js">Rotate Image</a></td>
   </tr>
   <tr>
     <td>49</td>
