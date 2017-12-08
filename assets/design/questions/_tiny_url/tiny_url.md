@@ -35,4 +35,4 @@ Questions:
 11. What API would you provide to a third-party developer?
 12. If you can enable caching, what would you cache and what's the expiry time?
 
-<img src="/marty.jpg" />
+<img src="/marty.png />
