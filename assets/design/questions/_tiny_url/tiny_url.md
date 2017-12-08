@@ -34,3 +34,5 @@ Questions:
 10. Keep URLs forever or prune, pros/cons? How we do pruning?
 11. What API would you provide to a third-party developer?
 12. If you can enable caching, what would you cache and what's the expiry time?
+
+<img src="/marty.jpg" />
