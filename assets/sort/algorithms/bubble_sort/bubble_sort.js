@@ -22,6 +22,7 @@
 * Bubble sort is not a practical sorting algorithm, it has the worst run-time of
 * any of the common sorting algorithms. Due to its simplicity, bubble sort is often
 * used to introduce the concept of an algorithm but is not used practically.
+*
 * Selection sort is another simple sorting algorithm that falls into the same
 * category.
 *

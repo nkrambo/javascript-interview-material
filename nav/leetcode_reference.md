@@ -600,7 +600,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>148</td>
-    <td><a href="../assets/linked_lists/questions/_sort_list/sort_list.js">Sort List</a></td>
+    <td><a href="../assets/linked_lists/questions/sort_list/sort_list.js">Sort List</a></td>
   </tr>
   <tr>
     <td>149</td>

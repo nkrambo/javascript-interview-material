@@ -5,6 +5,7 @@
 * Tags: Sorting, Divide and Conquer, Recursive, Top-Down
 *
 * Merge sort is an efficient, general-purpose, comparison-based sorting algorithm.
+*
 * It is less efficient than Quick Sort.
 *
 * Javascript has access to Array.prototype.sort(), which runs in O(n log n), which
@@ -44,9 +45,12 @@ function mergeSort(array) {
 
   // grab the middle element, lean right if even
   const middle = Math.floor(array.length / 2);
+
+  // divide: recurse left and right
   const left = mergeSort(array.slice(0, middle));
   const right = mergeSort(array.slice(middle));
 
+  // conquer: merge together in sorted order
   return merge(left, right);
 }
 
@@ -64,10 +68,12 @@ function mergeSort(array) {
 function merge(left, right) {
   const result = [];
 
+  // insert into result in sorted order (left - right)
   while (left.length > 0 && right.length > 0) {
     result.push(left[0] < right[0] ? left.shift() : right.shift());
   }
 
+  // catch if there is any, left over, 'odd' value and append it
   return result.concat(left.length ? left : right);
 }
 
