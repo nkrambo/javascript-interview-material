@@ -22,6 +22,7 @@
 * If there is more than one mode, return any of the modes.
 *
 * Solution:
+*
 * Our first thought might be to throw our temperatures into an array or linked
 * list as they come in. With this method, getting the maxTemp and minTemp would
 * take O(n) time. It would also cost us O(n) space. But we can do better.
@@ -95,11 +96,12 @@ class TempTracker {
       throw new RangeError('TempTracker.insert(temp): temp is outside range (0 - 110)');
     }
 
-    // min and max
+    // min
     if (this.minTemp === null || temp < this.minTemp) {
       this.minTemp = temp;
     }
 
+    // max
     if (this.maxTemp === null || temp > this.maxTemp) {
       this.maxTemp = temp;
     }

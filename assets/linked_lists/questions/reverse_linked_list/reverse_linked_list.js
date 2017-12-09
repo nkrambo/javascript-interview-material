@@ -27,7 +27,7 @@
 *
 * Solution:
 *
-* Assume that we have linked list 1 → 2 → 3 → Ø, we would like to change it to Ø ← 1 ← 2 ← 3.
+* Assume that we have linked list 1 → 2 → 3 → 0, we would like to change it to 0 ← 1 ← 2 ← 3.
 *
 * Our first thought might be to build our reversed list 'from the beginning',
 * starting with the head of the final reversed linked list.

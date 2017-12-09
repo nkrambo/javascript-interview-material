@@ -30,6 +30,7 @@
 *
 * Time: O(n^2)
 * Space: O(1)
+*
 * Where n is the number of items to be sorted
 *
 * Selection sort is inefficient on large lists, and generally performs worse than

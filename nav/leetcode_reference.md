@@ -103,7 +103,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>24</td>
-    <td><a href="../assets/linked_lists/questions/_swap_nodes_in_pairs/swap_nodes_in_pairs.js">Swap Nodes in Pairs</a></td>
+    <td><a href="../assets/linked_lists/questions/swap_nodes_in_pairs/swap_nodes_in_pairs.js">Swap Nodes in Pairs</a></td>
   </tr>
   <tr>
     <td>25</td>

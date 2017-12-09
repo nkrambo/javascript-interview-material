@@ -92,7 +92,7 @@ function hasCycleSet(head) {
 * Time: O(n)
 * Space: O(1)
 *
-* Let us denote nn as the total number of nodes in the linked list. To analyze its
+* Let us denote n as the total number of nodes in the linked list. To analyze its
 * time complexity, we consider the following two cases separately.
 *
 * 1. List has no cycle:

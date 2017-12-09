@@ -190,6 +190,7 @@ function detectCycle(head) {
   }
 
   if (!isCycle) return null;
+
   slow = head;
 
   while (slow !== fast) {
