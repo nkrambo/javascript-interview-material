@@ -1,18 +1,6 @@
 
 import reverseBetween from '../reverse_linked_list_II';
-
-/**
-* ListNode
-*
-* @constructor
-* @param {*} val
-* @return {object} returns a linked list node
-*/
-
-function ListNode(val) {
-  this.val = val;
-  this.next = null;
-}
+import { ListNode } from '../../../data_structures/list_node/list_node';
 
 // Given: 1 → 2 → 3 → 4 → 5 → NULL, 2, 4
 // Return: 1 → 4 → 3 → 2 → 5 → NULL

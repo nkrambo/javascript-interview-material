@@ -1,4 +1,6 @@
 
+import { ListNode } from '../../data_structures/list_node/list_node';
+
 /**
 * Reverse Linked List II
 *
@@ -19,26 +21,16 @@
 */
 
 /**
-* ListNode
-*
-* @constructor
-* @param {*} val
-* @return {object} returns a linked list node
-*/
-
-function ListNode(val) {
-  this.val = val;
-  this.next = null;
-}
-
-/**
 * reverseBetween()
 *
 * Solution:
 *
+* We use the same technique as reversing an entire list, expect this time, we
+* need to lean on a sentinel and also move pointers to handle just reversing a
+* sublist and fitting it correctly into the input list.
 *
-* Time: O(1)
-* Space: O(1)
+* Time: O(n)
+* Space: O(n)
 *
 * @param {ListNode} head
 * @param {number} m
@@ -74,7 +66,6 @@ function reverseBetween(head, m, n) {
 
   // first reversing: sentinel → 1 - 3 - 2 - 4 - 5; pre = 1, start = 2, then = 4
   // second reversing: sentinel → 1 - 4 - 3 - 2 - 5; pre = 1, start = 2, then = 5 (finish)
-
   return sentinel.next;
 }
 

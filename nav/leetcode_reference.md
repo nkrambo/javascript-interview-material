@@ -251,7 +251,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>61</td>
-    <td><a href="../assets/linked_lists/questions/_rotate_list/rotate_list.js">Rotate List</a></td>
+    <td><a href="../assets/linked_lists/questions/rotate_list/rotate_list.js">Rotate List</a></td>
   </tr>
   <tr>
     <td>62</td>
@@ -375,7 +375,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>92</td>
-    <td><a href="../assets/linked_lists/questions/_reverse_linked_list_II/reverse_linked_list_II.js">Reverse Linked List II</a></td>
+    <td><a href="../assets/linked_lists/questions/reverse_linked_list_II/reverse_linked_list_II.js">Reverse Linked List II</a></td>
   </tr>
   <tr>
     <td>93</td>
