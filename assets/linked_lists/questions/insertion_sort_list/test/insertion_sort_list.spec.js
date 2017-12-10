@@ -1,26 +1,14 @@
 
 import insertionSortList from '../insertion_sort_list';
-
-/**
-* ListNode
-*
-* @constructor
-* @param {*} val
-* @return {object} returns a linked list node
-*/
-
-function ListNode(val) {
-  this.val = val;
-  this.next = null;
-}
+import { ListNode, addNode } from '../../../data_structures/list_node/list_node';
 
 describe('insertionSortList()', () => {
-  const list = new ListNode(3);
-  list.next = new ListNode(4);
-  list.next.next = new ListNode(1);
-  list.next.next.next = new ListNode(2);
-
   test('should sort a linked list via insertion sort', () => {
+    const list = new ListNode(3);
+    addNode(list, 4);
+    addNode(list, 1);
+    addNode(list, 2);
+
     const sortedList = insertionSortList(list);
     expect(sortedList.val).toBe(1);
     expect(sortedList.next.val).toBe(2);
