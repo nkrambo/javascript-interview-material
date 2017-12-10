@@ -20,6 +20,7 @@
 * Output: false
 *
 * Follow up:
+*
 * Could you do it in O(n) time and O(1) space?
 */
 
@@ -64,37 +65,37 @@
 * Time: O(n)
 * Space: O(1)
 *
-* @param {object} head linked list node
-* @return {boolean} returns true if list is a palindrome, otherwise returns false
+* @param {ListNode} head
+* @return {boolean}
 */
 
-// function isPalindrome(head) {
-//   let slow = list.head;
-//   let fast = list.head;
-//   const stack = [];
-//
-//   // push elements from first half into the stack. If we know the length of the list
-//   // we could just use a for loop instead of the runner.
-//   while (fast !== null && fast.next !== null) {
-//     stack.push(slow.value);
-//     slow = slow.next;
-//     fast = fast.next.next;
-//   }
-//
-//   // has odd number of elements
-//   if (fast !== null) {
-//     slow = slow.next;
-//   }
-//
-//   while (slow !== null) {
-//     const top = stack.pop();
-//
-//     // if values are different then it's not a palindrome
-//     if (top !== slow.value) return false;
-//     slow = slow.next;
-//   }
-//
-//   return true;
-// }
-//
-// export default isPalindrome;
+function isPalindrome(head) {
+  let slow = head;
+  let fast = head;
+  const stack = [];
+
+  // push elements from first half into the stack. If we know the length of the list
+  // we could just use a for loop instead of the runner.
+  while (fast !== null && fast.next !== null) {
+    stack.push(slow.val);
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  // has odd number of elements
+  if (fast !== null) {
+    slow = slow.next;
+  }
+
+  while (slow !== null) {
+    const top = stack.pop();
+
+    // if values are different then it's not a palindrome
+    if (top !== slow.val) return false;
+    slow = slow.next;
+  }
+
+  return true;
+}
+
+export default isPalindrome;

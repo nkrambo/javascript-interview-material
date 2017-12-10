@@ -885,7 +885,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>234</td>
-    <td><a href="../assets/linked_lists/questions/_palindrome_linked_list/palindrome_linked_list.js">Palindrome Linked List</a></td>
+    <td><a href="../assets/linked_lists/questions/palindrome_linked_list/palindrome_linked_list.js">Palindrome Linked List</a></td>
   </tr>
   <tr>
     <td>236</td>
