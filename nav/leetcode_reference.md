@@ -91,7 +91,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>21</td>
-    <td><a href="../assets/linked_lists/questions/_merge_two_sorted_lists/merge_two_sorted_lists.js">Merge Two Sorted Lists</a></td>
+    <td><a href="../assets/linked_lists/questions/merge_two_sorted_lists/merge_two_sorted_lists.js">Merge Two Sorted Lists</a></td>
   </tr>
   <tr>
     <td>22</td>

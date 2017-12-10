@@ -1,4 +1,6 @@
 
+import { ListNode } from '../../data_structures/list_node/list_node';
+
 /**
 * Merge Two Sorted Lists
 *
@@ -10,20 +12,7 @@
 */
 
 /**
-* ListNode
-*
-* @constructor
-* @param {*} val
-* @return {object} returns a linked list node
-*/
-
-function ListNode(val) {
-  this.val = val;
-  this.next = null;
-}
-
-/**
-* mergeTwoListsIter()
+* mergeTwoLists()
 *
 * Solution:
 *
@@ -55,64 +44,33 @@ function ListNode(val) {
 * @return {ListNode}
 */
 
-function mergeTwoListsIter(l1, l2) {
+function mergeTwoLists(l1, l2) {
   // create a new list root node, set current pointer
-  let sentinel = new ListNode(0);
-  let cur = sentinel;
+  const sentinel = new ListNode(0);
+  let curr = sentinel;
 
   // compare pairs of values in both lists
   while (l1 && l2) {
     // if l1 value is less than the l2, take it and bump l1
     if (l1.val < l2.val) {
-      cur.next = l1;
+      curr.next = l1;
       l1 = l1.next;
 
     // otherwise, take l2 value and bump along l2
     } else {
-      cur.next = l2;
+      curr.next = l2;
       l2 = l2.next;
     }
 
     // move new list along
-    cur = cur.next;
+    curr = curr.next;
   }
 
   // when we run out of pairs, grab append any remaining
-  cur.next = l1 || l2;
+  curr.next = l1 || l2;
 
   // ignore sentinel 0 value
   return sentinel.next;
 }
 
-/**
-* mergeTwoListsRecursive()
-*
-* Solution:
-*
-*
-*
-* Time: O(1)
-* Space: O(1)
-*
-* @param {ListNode} l1
-* @param {ListNode} l2
-* @return {ListNode}
-*/
-
-function mergeTwoListsRecursive(l1, l2) {
-  // base case
-  if (!l1 || !l2) {
-    return l1 || l2;
-  }
-
-  if (l1.val < l2.val) {
-    l1.next = mergeTwoListsRecursive(l1.next, l2);
-    return l1;
-
-  } else {
-    l2.next = mergeTwoListsRecursive(l1, l2.next);
-    return l2;
-  }
-}
-
-export { mergeTwoListsIter, mergeTwoListsRecursive };
+export default mergeTwoLists;
