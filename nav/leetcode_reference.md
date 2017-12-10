@@ -560,7 +560,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>138</td>
-    <td><a href="../assets/linked_lists/questions/_copy_list_with_random_pointer/copy_list_with_random_pointer.js">Copy List with Random Pointer</a></td>
+    <td><a href="../assets/linked_lists/questions/copy_list_with_random_pointer/copy_list_with_random_pointer.js">Copy List with Random Pointer</a></td>
   </tr>
   <tr>
     <td>139</td>
