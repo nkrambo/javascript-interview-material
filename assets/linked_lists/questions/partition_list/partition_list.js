@@ -1,4 +1,6 @@
 
+import { ListNode } from '../../data_structures/list_node/list_node';
+
 /**
 * Partition List
 *
@@ -45,40 +47,43 @@
 * Both our space and time complexities are O(n), where n is the number of elements
 * in the list of the passed in head node.
 *
-* @param {object} head linked list head node
-* @param {integer} x value to partition list at
-* @return {object} returns the head node of partitioned list
+* @param {ListNode} head
+* @param {number} x
+* @return {ListNode}
 */
-//
-// function partition(head, x) {
-//   let head = list.head;
-//   let tail = list.head;
-//   let current = list.head;
-//
-//   // step over all list items
-//   while (current !== null) {
-//     const next = current.next; // cache next
-//
-//     // check value against pivot
-//     if (current.value < pivot) {
-//       // insert node at head
-//       current.next = head;
-//       head = current;
-//
-//     // otherwise, insert at tail
-//     } else {
-//       tail.next = current;
-//       tail = current;
-//     }
-//
-//     // keep stepping
-//     current = next;
-//   }
-//
-//   // set our final tail node.next to null
-//   tail.next = null;
-//
-//   return head;
-// }
-//
-// export default partition;
+
+function partition(head, x) {
+  // dummy heads of the 1st and 2nd queues
+  const sen1 = new ListNode(0);
+  const sen2 = new ListNode(0);
+
+  // current tails of the two queues;
+  let curr1 = sen1;
+  let curr2 = sen2;
+
+  // step over all list items
+  while (head !== null) {
+    // check value against pivot
+    if (head.val < x) {
+      // insert node at head
+      curr1.next = head;
+      curr1 = head;
+
+    // otherwise, insert at tail
+    } else {
+      curr2.next = head;
+      curr2 = head;
+    }
+
+    // keep stepping
+    head = head.next;
+  }
+
+  // set our final tail node.next to null, avoid cycle in linked list
+  curr2.next = null;
+  curr1.next = sen2.next;
+
+  return sen1.next;
+}
+
+export default partition;

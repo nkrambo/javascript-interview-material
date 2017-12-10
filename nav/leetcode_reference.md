@@ -351,7 +351,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>86</td>
-    <td><a href="../assets/linked_lists/questions/_partition_list/partition_list.js">Partition List</a></td>
+    <td><a href="../assets/linked_lists/questions/partition_list/partition_list.js">Partition List</a></td>
   </tr>
   <tr>
     <td>87</td>
