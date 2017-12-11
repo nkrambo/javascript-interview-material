@@ -32,8 +32,8 @@
 * @return {object} returns the head list node of the merge lists
 */
 
-// function mergeKLists(lists) {
-//
-// }
-//
-// export default mergeKLists;
+function mergeKLists(lists) {
+
+}
+
+export default mergeKLists;
