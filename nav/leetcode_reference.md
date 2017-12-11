@@ -67,7 +67,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>15</td>
-    <td><a href="../assets/arrays/questions/_3sum/3sum.js">3Sum</a></td>
+    <td><a href="../assets/arrays/questions/3sum/3sum.js">3Sum</a></td>
   </tr>
   <tr>
     <td>16</td>

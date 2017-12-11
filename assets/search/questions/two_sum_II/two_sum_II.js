@@ -48,6 +48,8 @@
 * algorithm, we will keep moving the larger index to its left until we reach the
 * solution.
 *
+* If this sounds familiar, well, it's kinda like binary search.
+*
 * Time: O(n)
 * Space: O(1)
 *
