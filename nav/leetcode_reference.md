@@ -676,7 +676,7 @@ are local test cases as well.
   </tr>
   <tr>
     <td>167</td>
-    <td><a href="../assets/search/questions/_two_sum_II/two_sum_II.js">Two Sum II - Input Array is Sorted</a></td>
+    <td><a href="../assets/search/questions/two_sum_II/two_sum_II.js">Two Sum II - Input Array is Sorted</a></td>
   </tr>
   <tr>
     <td>168</td>
