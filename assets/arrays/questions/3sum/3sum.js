@@ -119,6 +119,14 @@ function threeSumBrute(nums) {
 *
 * Remember, that solving a sorted 2sum is kind of like a binary search.
 *
+* The tricky part in this solution is avoiding duplicate values. We need to check
+* in two instances. When we are iterating i, which is the sum (anchor) value, we
+* keep moving right while the next value is the same.
+*
+* And we do the same for the 'left' and 'right' sum to, values. While the next
+* values are the same, we keep moving right and left (inward), until we find the
+* next unique values.
+*
 * For array problems, sorting the array first may significantly simplify the problem.
 *
 * https://www.youtube.com/watch?v=-AMHUdZc9ss

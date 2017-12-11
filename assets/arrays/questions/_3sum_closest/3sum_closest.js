@@ -20,17 +20,19 @@
 *
 * Solution:
 *
+* http://blog.gainlo.co/index.php/2016/07/19/3sum/
 *
 * Time: O(1)
 * Space: O(1)
 *
-* @param {array} nums of positive and negative integers
-* @param {number} target value to get closest to
-* @return {number} returns the sum of the nums values that are closest to target
+* @param {number[]} nums
+* @param {number} target
+* @return {number}
 */
 
-// function threeSumClosest(nums, target) {
-//
-// }
-//
-// export default threeSumClosest;
+function threeSumClosest(nums, target) {
+  // shart-circuit
+  if (nums.length <= 2) return null;
+}
+
+export default threeSumClosest;
