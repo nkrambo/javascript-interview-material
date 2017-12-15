@@ -103,12 +103,40 @@
 * Time: O(1)
 * Space: O(1)
 *
-* @param {array} board matrix NxN of positive integers, 1 - 9
-* @return {boolean} returns true if board is a valid sudoku, otherwise false
+* @param {character[][]} board
+* @return {boolean}
 */
 
-// function isValidSudoku(board) {
-//
-// }
-//
-// export default isValidSudoku;
+function isValidSudoku(board) {
+
+  for (let row = 0; row < board.length; row += 1) {
+    // rows
+    if (!validSet(row)) return false;
+
+    // cols
+    for (let col = 0; col < row.length; col += 1) {
+      
+    }
+  }
+
+
+  // subs 3x3
+}
+
+function validSet(nums) {
+  const seen = new Set();
+
+  for (let i = 0; i < nums.length; i += 1) {
+    // blank cell
+    if (nums[i] === '.') continue;
+
+    // we've already got this number
+    if (seen.has(nums[i])) return false;
+
+    seen.add(nums[i]);
+  }
+
+  return true;
+}
+
+export default isValidSudoku;
