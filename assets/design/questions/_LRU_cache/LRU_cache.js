@@ -151,37 +151,6 @@ class OrderList extends DoublyLinkedList {
       this.head = node;
     }
   }
-
-  /**
-  * Move a node to the end of the list
-  *
-  * @param {object} node
-  * @return {void} modifies list
-  */
-  moveToEnd(node) {
-    if (node === this.head) {
-      this.shift();
-    } else if (node === this.tail) {
-      return;
-    } else {
-      node.delete();
-    }
-
-    node.prev = null;
-    node.next = null;
-
-    // epmty
-    if (!this.head && !this.tail) {
-      this.head = node;
-      this.tail = node;
-
-    // at least one node
-    } else {
-      this.tail.next = node;
-      node.prev = this.tail;
-      this.tail = node;
-    }
-  }
 }
 
 class LRUCache {
@@ -239,7 +208,7 @@ class LRUCache {
       // insert new item
       const newItem = new LRUCacheItem(key, value);
       newItem.node = this.ordering.unshift(newItem);
-      this.items.set(newItem);
+      this.items.set(key, newItem);
     }
   }
 
@@ -258,7 +227,7 @@ class LRUCache {
   * @return {void}
   */
   prune() {
-    this.items.delete(this.ordering.pop());
+    this.items.delete(this.ordering.pop().key);
   }
 
   /**
