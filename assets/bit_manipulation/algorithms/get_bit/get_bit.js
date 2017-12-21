@@ -36,7 +36,7 @@
 *
 * @param {number} num 32-bit number
 * @param {number} i 32-bit number
-* @return {number} Returns a 32-bit number
+* @return {boolean} Returns a 32-bit number
 */
 
 function getBit(num, i) {

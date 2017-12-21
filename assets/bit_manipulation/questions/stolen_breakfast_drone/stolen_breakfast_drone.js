@@ -38,12 +38,12 @@
 * Our machine stores integers as binary numbers using bits. So maybe we can use
 * a bitwise operator to help us solve this.
 *
-* We’re seeing every integer twice, except one. We need a bitwise operation that
+* We're seeing every integer twice, except one. We need a bitwise operation that
 * would let the second occurrence of an integer cancel out the first.
 *
 * If so, we could start with a variable uniqueDeliveryId set to 0 and run some
 * bitwise operation with that variable and each number in our array. If duplicate
-* integers cancel each other out, then we’d only be left with the unique integer
+* integers cancel each other out, then we'd only be left with the unique integer
 * at the end!
 *
 * We can XOR all the integers in the array. We start with a variable uniqueDeliveryId
