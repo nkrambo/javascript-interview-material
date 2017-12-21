@@ -39,7 +39,7 @@
 * edge has a latency cost associated with it.
 *
 * An undirected graph. Each node represents a node on a network and each edge is
-* weighted with latency costs. For example, the path A → F → G has a latency cost of 5
+* weighted with latency costs. For example, the path A → F → G has a latency cost of 5 (2 + 3)
 *
 *         (2)   (3)
 *       A –– B ––––– C
@@ -54,9 +54,79 @@
 * There are different ways of representing a graph, each of them with its own
 * advantages and disadvantages.
 *
-* Here are the main 2 implementations:
+* Here are the main 3 implementations:
 *
-* 1. Adjacency List:
+* 1. Edge List:
+*
+* One simple way to represent a graph is just a list, or array, of edges, which
+* we call an edge list. To represent an edge, we just have an array of two vertex
+* numbers, or an array of objects containing the vertex numbers of the vertices
+* that the edges are incident on. If edges have weights, add either a third element
+* to the array or more information to the object, giving the edge's weight. Since
+* each edge contains just two or three numbers, the total space for an edge list
+* is O(e).
+*
+* Take the following graph:
+*
+*     A – B ––––  C
+*     |   |     / |
+*     F – G - H - I
+*         |       |
+*         K       L
+*
+* We could represent that as:
+*
+* [
+*   ['A', 'B'],
+*   ['A', 'F'],
+*   ['B', 'C'],
+*   ['B', 'G'],
+*   ['C', 'I'],
+*   ['C', 'H'],
+*   ['F', 'G'],
+*   ['G', 'H'],
+*   ['G', 'K'],
+*   ['H', 'I'],
+*   ['I', 'L'],
+* ]
+*
+* Again, if we wanted to add some weight or cost to the edge we could configure
+* a third value for every edge, like so: ['A', 'B', 7], where 7 represents the cost.
+*
+* Also, note that we have single character string values here but a node value can
+* really be any type of value.
+*
+* Notice who we are careful not to duplicate edges either. As we traverse our graph
+* and define the edges, we only add those not already defined previously. For example,
+* when we get to node (F), we only add the [F, G] edge as we already defined [A, F],
+* which is technically also [F, A], as these are non-directional.
+*
+* Edge lists are simple, but if we want to find whether the graph contains a particular
+* edge, we have to search through the edge list. If the edges appear in the edge
+* list in no particular order, that's a linear search through E, edges.
+*
+* In practice, these representations are probably the least common.
+*/
+
+/**
+*
+* 2. Adjacency Matrix:
+*
+* Data are stored in a two-dimensional matrix, in which the rows represent source
+* vertices and columns represent destination vertices. The data on the edges and
+* vertices must be stored externally.
+*
+* Key Operations: vertex (v), edge (e)
+*
+* insert node:  O(v^2)
+* insert edge:  O(1)
+* find:         O(1)
+* space:        O(v^2)
+*/
+
+/**
+*
+* 3. Adjacency List:
 *
 * For every vertex a list of adjacent vertices is stored. This can be viewed as
 * storing the list of edges. This data structure allows the storage of additional
@@ -161,20 +231,5 @@ class Graph {
     startNode.edges.push(endNode);
   }
 }
-
-/**
-* 2. Adjacency Matrix:
-*
-* Data are stored in a two-dimensional matrix, in which the rows represent source
-* vertices and columns represent destination vertices. The data on the edges and
-* vertices must be stored externally.
-*
-* Key Operations: vertex (v), edge (e)
-*
-* insert node:  O(v^2)
-* insert edge:  O(1)
-* find:         O(1)
-* space:        O(v^2)
-*/
 
 export default Graph;
