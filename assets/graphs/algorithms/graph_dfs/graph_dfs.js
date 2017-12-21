@@ -81,15 +81,18 @@ function dfs(root) {
   return order;
 }
 
-function dfsRecursive(graph, root) {
+function dfsRecursive(order = [], root) {
   root.marked = true;
+  order.push(root.value);
 
   root.edges.forEach((e) => {
     if (!e.marked) {
       e.marked = true;
-      dfsRecursive(graph, e);
+      dfsRecursive(order, e);
     }
   });
+
+  return order;
 }
 
 export { dfs, dfsRecursive };
