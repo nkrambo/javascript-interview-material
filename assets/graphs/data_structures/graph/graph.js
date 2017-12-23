@@ -96,10 +96,10 @@
 * Also, note that we have single character string values here but a node value can
 * really be any type of value.
 *
-* Notice who we are careful not to duplicate edges either. As we traverse our graph
+* Notice how we are careful not to duplicate edges either. As we traverse our graph
 * and define the edges, we only add those not already defined previously. For example,
-* when we get to node (F), we only add the [F, G] edge as we already defined [A, F],
-* which is technically also [F, A], as these are non-directional.
+* when we get to node (F), we only add the ['F', 'G'] edge as we already defined ['A', 'F'],
+* which is technically also ['F', 'A'], as these are non-directional.
 *
 * Edge lists are simple, but if we want to find whether the graph contains a particular
 * edge, we have to search through the edge list. If the edges appear in the edge
@@ -112,9 +112,10 @@
 *
 * 2. Adjacency Matrix:
 *
-* Data are stored in a two-dimensional matrix, in which the rows represent source
-* vertices and columns represent destination vertices. The data on the edges and
-* vertices must be stored externally.
+* To obtain the adjacency matrix of the graph, we first label the rows and columns
+* with the corresponding ordered vertices. If there exists an edge between two vertices
+* and, then their corresponding cell in the matrix will be assigned. If there
+* does not exist an edge, then the cell will be assigned the value.
 *
 * Key Operations: vertex (v), edge (e)
 *
@@ -122,7 +123,22 @@
 * insert edge:  O(1)
 * find:         O(1)
 * space:        O(v^2)
+*
+* Say we have the following graph:
+*
+*     B –––– A – C
+*            | / |
+*            E   D
+*
+* The adjacency matrix for the graph above is thus:
 */
+
+//     A  B  C  D  E
+//  A [0, 1, 1, 0, 1]
+//  B [1, 0, 0, 0, 0]
+//  C [1, 1, 0, 1, 1]
+//  D [0, 1, 1, 0, 0]
+//  E [1, 1, 1, 0, 0]
 
 /**
 *
