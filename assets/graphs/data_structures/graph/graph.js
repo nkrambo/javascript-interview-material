@@ -117,6 +117,10 @@
 * and, then their corresponding cell in the matrix will be assigned. If there
 * does not exist an edge, then the cell will be assigned the value.
 *
+* If a graph has a high density, that is many edges, then a adjacency matrix may
+* help save memory. Otherwise, if a graph is sparse that is few edges, then an
+* adjacency list could be better for space.
+*
 * Key Operations: vertex (v), edge (e)
 *
 * insert node:  O(v^2)
@@ -194,6 +198,8 @@
 * transitive dependencies in a node_modules folder, the internet itself is a
 * graph of webpages connected together by links.
 *
+* Note: This is a DG implementation. When we insert an edge we have a 'start'
+* and and 'end' node.
 */
 
 class Graph {
@@ -202,7 +208,7 @@ class Graph {
   }
 
   /**
-  * insert()
+  * insertNode()
   *
   * @param {*} value
   * @return {void}
@@ -216,7 +222,28 @@ class Graph {
   }
 
   /**
-  * find()
+  * removeNode()
+  *
+  * @param {*} value
+  * @return {void}
+  */
+
+  removeNode(value) {
+
+  }
+
+  /**
+  * getNodes()
+  *
+  * @return {array} values only
+  */
+
+  getNodes() {
+    return this.nodes.map((n) => n.value);
+  }
+
+  /**
+  * findNode()
   *
   * @param {*} value
   * @return {object}
@@ -228,6 +255,8 @@ class Graph {
 
   /**
   * insertEdge()
+  *
+  * This is a directed graph implementation. 'start' and 'end'
   *
   * @param {*} start
   * @param {*} end
@@ -246,6 +275,14 @@ class Graph {
     // push edge
     startNode.edges.push(endNode);
   }
+
+  /**
+  * removeEdge()
+  *
+  * @param {*} start
+  * @param {*} end
+  * @return {void}
+  */
 }
 
 export default Graph;
