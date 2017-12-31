@@ -231,13 +231,7 @@ class Graph {
 
   removeNode(value) {
     const found = this.nodes.findIndex((n) => n.value === value);
-
-    if (found !== -1) {
-      return this.nodes.splice(found, 1);
-    }
-
-    // not found
-    return null;
+    return found !== -1 ? this.nodes.splice(found, 1) : null;
   }
 
   /**
@@ -251,7 +245,7 @@ class Graph {
   }
 
   /**
-  * getedges()
+  * getEdges()
   *
   * @return {array}
   */
@@ -290,9 +284,8 @@ class Graph {
       throw new Error('Both nodes need to exist');
     }
 
-    this.edges.push([startNode.value, endNode.value]);
-
     // push edge
+    this.edges.push([startNode.value, endNode.value]); // all edges
     startNode.edges.push(endNode);
   }
 }

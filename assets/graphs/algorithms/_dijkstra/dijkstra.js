@@ -141,7 +141,7 @@
 
 import Heap from '../../data_structures/heap/heap';
 
-function singleSource(source, graph) {
+function dijkstra(source, graph) {
   const minHeap = new Heap((a, b) => b.cost - a.cost);  // minHeap with custom cost comparison
   const costs = new Map();                              // stores least cost from root to every node
   const parents = new Map();                            // stores parent of every node in least cost
@@ -196,63 +196,4 @@ function singleSource(source, graph) {
   return results;
 }
 
-/*
-* uniformCostSearch()
-*
-* Uniform Cost Search (UCF) is a variant of Dijkstra's original algorithm. UCF is
-* Dijkstra's Algorithm which is focused on finding a single shortest path from a
-* 'start' node to an 'goal' node.
-*
-* Step 4: Calculate our final path
-*
-* Once we hit our finish node, we know that we can build our shortest path to
-* return.
-*
-* Our final path will be A -> C -> B -> D
-*                          2    3    1 = 6 minutes in total.
-*
-* We'll return an object with a path array, holding the node values, and we'll
-* attach a 'totalCost' property too.
-*/
-
-// function uniformCostSearch(start, goal) {
-//   const minHeap = new Heap((a, b) => b.cost - a.cost);
-//   const seen = new Map();
-//
-//   minHeap.add({
-//     node: start,
-//     cost: 0,
-//   });
-//
-//   while (!minHeap.isEmpty()) {
-//     const { node } = minHeap.extract();
-//
-//     if (node === goal) {
-//       return 'Found!'
-//       // return solution
-//     }
-//
-//     seen.set(node);
-//     node.edges.forEach((e) => {
-//       const endNode = e.endNode;
-//       const heapedNode = minHeap.getCollection().filter((n) => n.node === endNode);
-//
-//       if (!seen.has(endNode) || heapedNode.length > 0) {
-//         minHeap.add({
-//           node: endNode,
-//           cost: e.cost,
-//         });
-//       } else if (heapedNode.cost > e.cost) {
-//         node = endNode;
-//       }
-//     });
-//   }
-//
-//   return new Error('Path does not exist.');
-// }
-
-// function uniformCostSearch(start, goal) {}
-//
-// export { uniformCostSearch, singleSource };
-
-export default singleSource;
+export default dijkstra;
