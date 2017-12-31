@@ -142,14 +142,23 @@
 import Heap from '../../data_structures/heap/heap';
 
 function dijkstra(source, graph) {
-  const minHeap = new Heap((a, b) => b.cost - a.cost);  // minHeap with custom cost comparison
-  const costs = new Map();                              // stores least cost from root to every node
-  const parents = new Map();                            // stores parent of every node in least cost
+  // minHeap with custom cost comparison
+  const minHeap = new Heap((a, b) => b.cost - a.cost);
+
+  // stores least cost from root to every node
+  const costs = new Map();
+
+  // stores parent of every node in least cost
+  const parents = new Map();
+
   const seen = new Set();
   const results = [];
 
-  costs.set(source, 0); // set source cost
-  minHeap.add({         // push source onto heap
+  // set source cost
+  costs.set(source, 0);
+
+  // push source onto heap
+  minHeap.add({
     node: source,
     cost: 0,
   });

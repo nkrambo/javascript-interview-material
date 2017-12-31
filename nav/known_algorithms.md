@@ -24,7 +24,7 @@
 
 ### Graphs
 
-- [Dijkstra's Shortest Path](../assets/graphs/algorithms/_dijkstra/dijkstra.js)
+- [Dijkstra's Shortest Path](../assets/graphs/algorithms/dijkstra/dijkstra.js)
 - [Bellman Ford's Shortest Path](../assets/graphs/algorithms/bellman_ford/bellman_ford.js)
 - [a*](../assets/graphs/algorithms/_a*/a*.js)
 - [Kruskals](../assets/graphs/algorithms/_kruskals/kruskals.js)
