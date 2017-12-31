@@ -205,6 +205,7 @@
 class Graph {
   constructor() {
     this.nodes = [];
+    this.edges = [];
   }
 
   /**
@@ -229,7 +230,14 @@ class Graph {
   */
 
   removeNode(value) {
+    const found = this.nodes.findIndex((n) => n.value === value);
 
+    if (found !== -1) {
+      return this.nodes.splice(found, 1);
+    }
+
+    // not found
+    return null;
   }
 
   /**
@@ -240,6 +248,16 @@ class Graph {
 
   getNodes() {
     return this.nodes.map((n) => n.value);
+  }
+
+  /**
+  * getedges()
+  *
+  * @return {array}
+  */
+
+  getEdges() {
+    return this.edges;
   }
 
   /**
@@ -272,17 +290,11 @@ class Graph {
       throw new Error('Both nodes need to exist');
     }
 
+    this.edges.push([startNode.value, endNode.value]);
+
     // push edge
     startNode.edges.push(endNode);
   }
-
-  /**
-  * removeEdge()
-  *
-  * @param {*} start
-  * @param {*} end
-  * @return {void}
-  */
 }
 
 export default Graph;
