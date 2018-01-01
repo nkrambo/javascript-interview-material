@@ -1,4 +1,6 @@
 
+import Heap from '../../data_structures/heap/heap';
+
 /**
 * Dijkstra's Algorithm (Uniform Cost Search (UCF))
 *
@@ -83,7 +85,7 @@
 * Step 2: Update the costs of the neighbors of the cheapest node we picked.
 *
 * Calculate how long it takes to get to all of node C's neighbors by following an
-* edge from C. If we follow C -> B, we find a shorter path to node B than what we
+* edge from C. If we follow C → B, we find a shorter path to node B than what we
 * used to have. Previously, our route to B was 6 minutes, now it's 5 minutes if
 * we go A -> C -> B. So we'll update B's cost to 5 minutes.
 *
@@ -104,7 +106,7 @@
 *
 * We find the node that takes the least amount of time to get to again. We're done
 * with node C, so node B has the next smallest time estimate. We update the costs
-* for B's neighbours and we can see that B -> D is 1 minutes. So we can update
+* for B's neighbours and we can see that B → D is 1 minutes. So we can update
 * our cost to D to 6 minutes!
 *
 * Node | Time
@@ -121,25 +123,15 @@
 * are discovered. This maintains a smaller priority queue in practice, speeding
 * up the queue operations.
 *
-* This first function is the 'single source' variety of the algorithm, which is the
-* original version. It takes a graph and a source node and returns the shortest
-* path from the source node to every other node. One note, the original version
-* did not actuall use a minHeap data structure, which we do. This helps us squeeze
-* some performance out of the algorithm as we get O(log n) extractions from the heap.
-*
-* singleSource()
-*
 * Time: O(n log e)
 * Space: O(n)
 *
 * Where (n) is the number of nodes and (e) is the number of edges.
 *
-* @param {object} source node
-* @param {class} graph class that contains source
-* @return {array} returns an array
+* @param {object} source
+* @param {class} graph
+* @return {array}
 */
-
-import Heap from '../../data_structures/heap/heap';
 
 function dijkstra(source, graph) {
   // minHeap with custom cost comparison

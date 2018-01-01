@@ -2,7 +2,7 @@
 /**
 * Path Exists
 *
-* We can check if a path exists between nodes in a DAG bu using a BFS and returning
+* We can check if a path exists between nodes in a DAG by using a BFS and returning
 * true as soon as we encounter our 'end' node, otherwise we return false.
 *
 * Time: O(V * E)
