@@ -16,7 +16,7 @@ import Heap from '../../data_structures/heap/heap';
 * route between two nodes. This is where Dijkstra's algorithm comes in.
 *
 * With weighted edges we can see that our previous route (3 edges, weight 14) is
-* now not the fastest. Our fastest route now is A -> F -> D -> E -> C, which
+* now not the fastest. Our fastest route now is A → F → D → E → C, which
 * is a total of 4 edges but a weight of 5, almost 3 times faster.
 *
 *         8       6
@@ -87,7 +87,7 @@ import Heap from '../../data_structures/heap/heap';
 * Calculate how long it takes to get to all of node C's neighbors by following an
 * edge from C. If we follow C → B, we find a shorter path to node B than what we
 * used to have. Previously, our route to B was 6 minutes, now it's 5 minutes if
-* we go A -> C -> B. So we'll update B's cost to 5 minutes.
+* we go A → C → B. So we'll update B's cost to 5 minutes.
 *
 * We also found a shorter time to D, our destination node. Following the neighbors
 * of C we can see that it takes 7 minutes to get to D. So we update this cost from
@@ -135,32 +135,26 @@ import Heap from '../../data_structures/heap/heap';
 
 function dijkstra(source, graph) {
   // minHeap with custom cost comparison
-  const minHeap = new Heap((a, b) => b.cost - a.cost);
-
   // stores least cost from root to every node
+  const minHeap = new Heap((a, b) => b.cost - a.cost);
   const costs = new Map();
-
-  // stores parent of every node in least cost
-  const parents = new Map();
-
   const seen = new Set();
   const results = [];
 
   // set source cost
   costs.set(source, 0);
 
+  // set all unknown costs
+  graph.nodes.forEach((n) => {
+    if (n !== source) {
+      costs.set(n, Infinity);
+    }
+  });
+
   // push source onto heap
   minHeap.add({
     node: source,
     cost: 0,
-  });
-
-  // set all unknown costs and parents
-  graph.nodes.forEach((n) => {
-    if (n !== source) {
-      costs.set(n, Infinity);
-      parents.set(n, null);
-    }
   });
 
   // main loop, empty our heap
@@ -174,7 +168,6 @@ function dijkstra(source, graph) {
 
       if (altCost < costs.get(edgeNode)) {
         costs.set(edgeNode, altCost);
-        parents.set(edgeNode, node);
 
         if (!seen.has(edgeNode)) {
           minHeap.add({
