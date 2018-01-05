@@ -29,7 +29,7 @@
 - [a*](../assets/graphs/algorithms/_a*/a*.js)
 - [Kruskals](../assets/graphs/algorithms/_kruskals/kruskals.js)
 - [Prims](../assets/graphs/algorithms/_prims/prims.js)
-- [Topological Sort](../assets/graphs/algorithms/_topological_sort/topological_sort.js)
+- [Topological Sort](../assets/graphs/algorithms/topological_sort/topological_sort.js)
 - [Floyd Warshall](../assets/graphs/algorithms/_floyd_warshall/floyd_warshall.js)
 - [Tarjans](../assets/graphs/algorithms/_tarjans/tarjans.js)
 - [Binary Tree Traversal](../assets/graphs/algorithms/binary_tree_traversal/binary_tree_traversal.js)

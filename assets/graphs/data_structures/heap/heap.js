@@ -61,7 +61,7 @@ class Heap {
 
   add(value) {
     this.heap.push(value);
-    this.changeKey(this.heap.length - 1, value);
+    this.changeKey(this.heap.length - 1);
   }
 
   /**
