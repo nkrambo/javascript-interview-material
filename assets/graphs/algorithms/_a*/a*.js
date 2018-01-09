@@ -7,7 +7,7 @@
 /**
 * aStar
 *
-* @param {object} param description
+* @param {object} param
 * @return {object} returns an something
 */
 
