@@ -1,8 +1,8 @@
 
-import exist from '../exist';
+// import exist from '../word_seach';
 
-describe('exist()', () => {
-  test('should', () => {
+describe.skip('exist()', () => {
+  test('should find if a  word exists in a 2D board', () => {
 
   });
 });

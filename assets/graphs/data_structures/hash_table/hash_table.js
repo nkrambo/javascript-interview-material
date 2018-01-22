@@ -25,7 +25,7 @@
 *
 * As the load factor increases, collisions are more likely to occur. As more and
 * more collisions occur, performance degrades. In the absolute worst case, a hash
-* table with only 1 bucket, the hash table behaves like a linked list with  search,
+* table with only 1 bucket, the hash table behaves like a linked list with search,
 * insertion, and deletion times.
 *
 * https://brilliant.org/wiki/hash-tables/?subtopic=types-and-data-structures&chapter=hash-based-data-structures
