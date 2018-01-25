@@ -47,9 +47,10 @@ class ScapeGoat {
       node.parent.right = node;
     }
 
-    node.left = null;
-    node.right = null;
+    // bump size
     this.size += 1;
+
+    // find scapegoat
     const scapegoat = this.findScapegoat(node);
     if (scapegoat === null) return;
     const temp = this.rebalance(scapegoat);
@@ -57,7 +58,7 @@ class ScapeGoat {
     // assign the correct pointers to and from scapegoat
     scapegoat.left = temp.left;
     scapegoat.right = temp.right;
-    scapegoat.value = temp.key;
+    scapegoat.value = temp.value;
     scapegoat.left.parent = scapegoat;
     scapegoat.right.parent = scapegoat;
   }
@@ -86,33 +87,34 @@ class ScapeGoat {
   }
 
   rebalance(root) {
-    function flatten(node, nodes) {
-      // base case, hit leaf
-      if (node === null) return;
-
-      // recurse, in-order DFS
-      flatten(node.left, nodes);
-      nodes.push(node);
-      flatten(node.right, nodes);
-    }
-
-    // binary search
-    function buildTreeFromSortedList(nodes, start, end) {
-      // base case
-      if (start > end) return null;
-
-      const mid = Math.ceil(start + ((end - start) / 2));
-      const node = Node(nodes[mid].value);
-
-      node.left = buildTreeFromSortedList(nodes, start, mid - 1);
-      node.right = buildTreeFromSortedList(nodes, mid + 1, end);
-
-      return node;
-    }
-
     const nodes = [];
-    flatten(root, nodes);
-    return buildTreeFromSortedList(nodes, 0, nodes.length - 1);
+    this.flatten(root, nodes);
+    return this.buildTreeFromSortedList(nodes, 0, nodes.length - 1);
+  }
+
+  // binary search
+  buildTreeFromSortedList(nodes, start, end) {
+    // base case
+    if (start > end) return null;
+
+    const mid = Math.ceil(start + ((end - start) / 2));
+    const node = new Node(nodes[mid].value);
+
+    node.left = this.buildTreeFromSortedList(nodes, start, mid - 1);
+    node.right = this.buildTreeFromSortedList(nodes, mid + 1, end);
+
+    return node;
+  }
+
+  // flatten into list
+  flatten(node, nodes) {
+    // base case, hit leaf
+    if (node === null) return;
+
+    // recurse, in-order DFS
+    this.flatten(node.left, nodes);
+    nodes.push(node);
+    this.flatten(node.right, nodes);
   }
 
   delete(value) {}
