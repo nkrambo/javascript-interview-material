@@ -69,7 +69,7 @@ function merge(left, right) {
   const result = [];
 
   // insert into result in sorted order (left - right)
-  while (left.length > 0 && right.length > 0) {
+  while (left.length && right.length) {
     result.push(left[0] < right[0] ? left.shift() : right.shift());
   }
 
