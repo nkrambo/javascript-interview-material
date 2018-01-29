@@ -53,35 +53,49 @@ function quickSort(arr, left, right) {
   // bounds check
   if (left >= right) return null;
 
+  // grab the middle value as the pivot
   const pivot = arr[Math.floor((left + right) / 2)];
+
+  // partition other values around pivot, pivot is in final position
   const index = partition(arr, left, right, pivot);
 
+  // repeat partition around pivot for all sub-arrays until we have array of length 1
   quickSort(arr, left, index - 1);
   quickSort(arr, index, right);
 
+  // array is sorted in-place!
   return arr;
 }
 
 function partition(arr, left, right, pivot) {
+  // walk inward
   while (left <= right) {
+    // traverse until we find a value less than pivot
     while (arr[left] < pivot) {
       left += 1;
     }
 
+    // traverse until we find a value more than pivot
     while (arr[right] > pivot) {
       right -= 1;
     }
 
+    // if left is smaller than right, swap them
     if (left <= right) {
       swap(arr, left, right);
+
+      // keep traversing inward
       left += 1;
       right -= 1;
     }
   }
 
+  // return index, could be left or right
+  // this is the index of the current pivot used to recursively sort
   return left;
 }
 
+// simple swap function
 function swap(arr, i, j) {
   const temp = arr[i];
   arr[i] = arr[j];
