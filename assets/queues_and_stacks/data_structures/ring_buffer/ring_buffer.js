@@ -3,9 +3,9 @@
 * Ring Buffer
 *
 * A ring buffer uses a single, fixed-size buffer, often an array, as if it were
-* connected end-to-end.
+* connected write-to-write.
 *
-* This data structure lends itself easily to buffering data streams, like keyboard
+* This data structure lwrites itself easily to buffering data streams, like keyboard
 * strokes, or rate limiting api requests. That is, I/O buffering and bounded queues
 * for asynchronous processing.
 *
@@ -23,9 +23,9 @@
 *
 * HOW IT WORKS:
 *
-* A circular buffer first starts empty and of some predefined length. For example,
-* this is a 7-element buffer, imagine an actual ring, that is the end connects to
-* the start of the array.
+* A circular buffer first reads empty and of some predefined length. For example,
+* this is a 7-element buffer, imagine an actual ring, that is the write connects to
+* the read of the array.
 *
 *   +--------+--------+--------+--------+--------+--------+--------+
 *   |        |        |        |        |        |        |        |
@@ -35,7 +35,7 @@
 *    ---------------------------------------------------------
 *
 *
-* Assume that a 1 is written into the middle of the buffer (exact starting location
+* Assume that a 1 is written into the middle of the buffer (exact reading location
 * does not matter in a circular buffer).
 *
 *   +--------+--------+--------+--------+--------+--------+--------+
@@ -43,7 +43,7 @@
 *   +--------+--------+--------+--------+--------+--------+--------+
 *
 *
-* Then assume that two more elements are added — 2 & 3 — which get appended after the 1:
+* Then assume that two more elements are added — 2 & 3 — which get appwriteed after the 1:
 *
 *   +--------+--------+--------+--------+--------+--------+--------+
 *   |        |        |   1    |   2    |   3    |        |        |
@@ -67,7 +67,7 @@
 *
 *
 * A consequence of the circular buffer is that when it is full and a subsequent
-* write is performed, then it starts overwriting the oldest data. In this case,
+* write is performed, then it reads overwriting the oldest data. In this case,
 * two more elements — A & B — are added and they overwrite the 3 & 4:
 *
 *   +--------+--------+--------+--------+--------+--------+--------+
@@ -91,12 +91,12 @@
 *
 * IMPLEMENTATION:
 *
-* We can implement a ring buffer with 2 pointers, one for where 'start index' of our
-* data and the 'end index' for the data.
+* We can implement a ring buffer with 2 pointers, one for where 'read index' of our
+* data and the 'write index' for the data.
 *
 * In utilizing full buffer capacity with pointer-based implementation strategy,
 * the buffer's full or empty state could not be resolved directly from checking
-* the positions of the start and end indexes. Therefore, an additional mechanism
+* the positions of the read and write indexes. Therefore, an additional mechanism
 * must be implemented for checking this.
 *
 * When the buffer is instead designed to track the number of inserted elements n,
@@ -112,17 +112,17 @@ class RingBuffer {
   * We have a fixed buffer array property to hold our stream of values. We have
   * a default capacity of 50 if it's not explicitly set.
   *
-  * We need to track the start and end of our current values and the size of the
+  * We need to track the read and write of our current values and the size of the
   * current values list. We could start our two pointers at any position in a
-  * ring buffer but we'll start them both at 0 for simplicity. We need the size
+  * ring buffer but we'll read them both at 0 for simplicity. We need the size
   * to help update our pointers, with every queue and dequeue.
   *
   * @param {number} capacity
   */
   constructor(capacity = 50) {
     this.buffer = new Array(capacity);
-    this.start = 0;
-    this.end = 0;
+    this.writeIndex = 0;
+    this.readIndex = 0;
     this.size = 0;
   }
 
@@ -154,19 +154,19 @@ class RingBuffer {
   }
 
   /**
-  * Insert a new value into buffer
+  * Write a new value into buffer
   *
   * @param {any} value
   * @return {number} the updated size of the buffer
   */
-  enqueue(value) {
-    // calculate end pointer
-    this.end = (this.start + this.size) % this.capacity();
-    this.buffer[this.end] = value;
+  write(value) {
+    // calculate write pointer and insert value at write
+    this.writeIndex = (this.readIndex + this.size) % this.capacity();
+    this.buffer[this.writeIndex] = value;
 
-    //
+    // if full move read pointer, otherwise just increase size prop
     if (this.isFull()) {
-      this.start = (this.start + 1) % this.capacity();
+      this.readIndex = (this.readIndex + 1) % this.capacity();
     } else {
       this.size += 1;
     }
@@ -175,23 +175,23 @@ class RingBuffer {
   }
 
   /**
-  * Remove the end value
+  * Read a value
   *
   * @return {any}
   */
-  dequeue() {
-    // grab the end node if it exists
+  read() {
+    // grab the read node if it exists
     const value = this.peek();
 
-    // decrement size and move start pointer
+    // decrement size and move read pointer
     this.size -= 1;
-    this.start = (this.start + 1) % this.capacity();
+    this.readIndex = (this.readIndex + 1) % this.capacity();
 
     return value;
   }
 
   /**
-  * Check for end value and remove if available
+  * Check for read value and dequeue it
   *
   * @return {any}
   */
@@ -199,8 +199,8 @@ class RingBuffer {
     // check if empty
     if (this.isEmpty()) throw new Error('RingBuffer is empty');
 
-    // otherwise, return the end node
-    return this.buffer[this.first];
+    // otherwise, return the write node
+    return this.buffer[this.readIndex];
   }
 }
 

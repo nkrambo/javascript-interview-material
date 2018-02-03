@@ -13,14 +13,14 @@ describe('RingBuffer', () => {
 
   test('isEmpty should return false if buffer is NOT empty', () => {
     const buffer = new RingBuffer();
-    buffer.enqueue(5);
+    buffer.write(5);
     expect(buffer.isEmpty()).toBeFalsy();
   });
 
   test('isFull should return true if buffer is full', () => {
     const buffer = new RingBuffer(2);
-    buffer.enqueue(1);
-    buffer.enqueue(2);
+    buffer.write(1);
+    buffer.write(2);
     expect(buffer.isFull()).toBeTruthy();
   });
 
@@ -29,17 +29,17 @@ describe('RingBuffer', () => {
     expect(buffer.isFull()).toBeFalsy();
   });
 
-  test('should enqueue a value', () => {
+  test('should write a value', () => {
     const buffer = new RingBuffer();
-    buffer.enqueue(1);
+    buffer.write(1);
     expect(buffer.buffer[0]).toEqual(1);
   });
 
-  test('should dequeue a value', () => {
+  test('should read a value', () => {
     const buffer = new RingBuffer();
-    buffer.enqueue(1);
+    buffer.write(1);
     expect(buffer.isEmpty()).toBeFalsy();
-    buffer.dequeue();
+    buffer.read();
     expect(buffer.isEmpty()).toBeTruthy();
   });
 
