@@ -164,7 +164,10 @@
     <td><a href="../assets/design/questions/_file_system/file_system.js">File System</a></td>
   </tr>
   <tr>
-    <td><a href="../assets/design/questions/_hash_table/hash_table.js">Hash Table</a></td>
+    <td><a href="../assets/design/questions/LRU_cache/LRU_cache.js">Least Recently Used Cache (LRU)</a></td>
+  </tr>
+  <tr>
+    <td><a href="../assets/design/questions/event_emiiter/event_emiiter.js">Event Emitter</a></td>
   </tr>
   <tr>
     <td><a href="../assets/design/questions/_jigsaw/jigsaw.js">Jigsaw</a></td>

@@ -46,25 +46,11 @@ describe('LRUCache', () => {
   });
 });
 
-// describe('LRUCacheItem', () => {
-//   test('should construct a new cache item', () => {
-//     const cacheItem = new LRUCacheItem(1, 2);
-//     expect(cacheItem.key).toBe(1);
-//     expect(cacheItem.value).toBe(2);
-//     expect(cacheItem.node).toBeNull();
-//   });
-// });
-//
-// describe('OrderList', () => {
-//   test('should construct a new order list', () => {
-//     const ordering = new OrderList();
-//
-//     expect(ordering.head).toBeNull();
-//     expect(ordering.tail).toBeNull();
-//     expect(ordering.length).toBe(0);
-//   });
-//
-//   // test('should move a node to start of the list', () => {});
-//   //
-//   // test('should move a node to the end of the list', () => {});
-// });
+describe('LRUCacheItem', () => {
+  test('should construct a new cache item', () => {
+    const cacheItem = new LRUCacheItem(1, 2);
+    expect(cacheItem.key).toBe(1);
+    expect(cacheItem.value).toBe(2);
+    expect(cacheItem.node).toBeNull();
+  });
+});
