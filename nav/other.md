@@ -188,3 +188,14 @@
     <td><a href="../assets/design/questions/_ring_buffer/ring_buffer.js">Ring Buffer</a></td>
   </tr>
 </table>
+
+### Misc
+
+<table>
+  <tr>
+    <td>Title</td>
+  </tr>
+  <tr>
+    <td><a href="../assets/misc/questions/flatten_array/flatten_array.js">Flatten Mixed K-Dimensional Array</a></td>
+  </tr>
+</table>
