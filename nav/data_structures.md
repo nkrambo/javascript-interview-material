@@ -10,6 +10,7 @@
 
 - [Queue](../assets/queues_and_stacks/data_structures/queue/queue.js)
 - [Stack](../assets/queues_and_stacks/data_structures/stack/stack.js)
+- [Ring Buffer](../assets/queues_and_stacks/data_structures/ring_buffer/ring_buffer.js)
 
 ### Union Find (Disjoint Set)
 
