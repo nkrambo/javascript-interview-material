@@ -196,6 +196,6 @@
     <td>Title</td>
   </tr>
   <tr>
-    <td><a href="../assets/misc/questions/flatten_array/flatten_array.js">Flatten Mixed K-Dimensional Array</a></td>
+    <td><a href="../assets/misc/flatten_array/flatten_array.js">Flatten Mixed K-Dimensional Array</a></td>
   </tr>
 </table>

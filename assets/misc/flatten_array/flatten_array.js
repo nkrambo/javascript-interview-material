@@ -23,6 +23,33 @@
 * the flatten function until we reach a value that is NOT an array.
 */
 
-export default function flatten(arr) {
+function flatten(arr) {
   return arr.reduce((acc, curr) => acc.concat(!Array.isArray(curr) ? curr : flatten(curr)), []);
 }
+
+/**
+* Flatten a 2D array
+*
+* We easily do this using the ES6 spread operator with the concat method.
+*/
+
+const flatten2D = (arr) => [].concat(...arr);
+
+/**
+* Flatten a 2D array
+*
+* We can also simply do this by nested iteration.
+*/
+
+function flattenIterative(arr) {
+  const results = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    for (let j = 0; j < arr[i].length; j += 1) {
+      results.push(arr[i][j]);
+    }
+  }
+
+  return results;
+}
+
+export { flatten, flatten2D, flattenIterative };
