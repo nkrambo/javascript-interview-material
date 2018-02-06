@@ -28,6 +28,24 @@ function flatten(arr) {
 }
 
 /**
+* What if we wanted to flatten a mixed value, k-dimensional array but exclude
+* objects in the results?
+*
+* It's basically the same as before except we type check for an object and skip
+* it by return the prev value.
+*/
+
+function flattenExclude(arr) {
+  return arr.reduce((acc, curr) => {
+    // if object, return prev value
+    if (Object.prototype.toString.call(curr) === '[object Object]') return acc;
+
+    // otherwise, flatten as normal
+    return acc.concat(!Array.isArray(curr) ? curr : flattenExclude(curr));
+  }, []);
+}
+
+/**
 * Flatten a 2D array
 *
 * We easily do this using the ES6 spread operator with the concat method.
@@ -52,4 +70,4 @@ function flattenIterative(arr) {
   return results;
 }
 
-export { flatten, flatten2D, flattenIterative };
+export { flatten, flattenExclude, flatten2D, flattenIterative };
