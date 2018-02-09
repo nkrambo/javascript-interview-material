@@ -21,7 +21,10 @@
 * What's the difference between debounce and throttle?
 *
 * Throttling a function makes sure it's called at regular intervals. Debouncing
-* will mean it is called at the end (or start) of a bunch of events.
+* will mean it is called at the end (or start) of a bunch of events. That is,
+* debouncing enforces that a function not be called again until a certain amount
+* of time has passed without it being called. As in "execute this function only
+* if 100 milliseconds have passed without it being called.
 *
 * For example:
 *
@@ -32,6 +35,7 @@
 * TIME ---------------------------------------------------------------- TIME
 *
 *                                                                      | debounce
+*
 *
 *       |      |       |       |       |       |       |       |       | throttle (200ms)
 *
@@ -107,24 +111,19 @@
 
 /**
 * @param {function} fn
-* @param {number} time
+* @param {number} delay
 * @return {function}
 */
 
-const debounce = (fn, time) => { // wrapper
-  let timeout; // undefined
+const debounce = (fn, delay) => {
+  let timeout; // track the delay period
 
-  // closure
-  // use ...rest parameter, we could have used the automatically created arguments variable too
+  // do not use arrow function, won't have 'this'
   return function (...rest) { // eslint-disable-line
-    // set context, pass in arguments
-    const functionCall = () => fn.apply(this, rest);
-
-    // clear timeoutID if it exists
-    clearTimeout(timeout);
-
-    // returns the timeoutID, to use in the clearTimeout
-    timeout = setTimeout(functionCall, time);
+    const context = this;
+    const args = rest;
+    clearTimeout(timeout); // clear timeoutID if it exists
+    timeout = setTimeout(() => fn.apply(context, args), delay); // returns the timeoutID, to use in the clearTimeout
   };
 };
 

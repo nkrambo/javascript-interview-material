@@ -1,7 +1,7 @@
 
-import debounce from '../debounce';
+// import debounce from '../debounce';
 
-describe('debounce', () => {
+describe.skip('debounce', () => {
   test('should', () => {
 
   });

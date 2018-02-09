@@ -196,6 +196,9 @@
     <td>Title</td>
   </tr>
   <tr>
-    <td><a href="../assets/misc/flatten_array/flatten_array.js">Flatten Mixed K-Dimensional Array</a></td>
+    <td><a href="../assets/misc/flatten_array/flatten_array.js">Flatten Array</a></td>
+    <td><a href="../assets/misc/debounce/debounce.js">Debounce</a></td>
+    <td><a href="../assets/misc/throttle/throttle.js">Throttle</a></td>
+    <td><a href="../assets/misc/event_delegation/event_delegation.md">Event Delegation</a></td>
   </tr>
 </table>
