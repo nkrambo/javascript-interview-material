@@ -18,9 +18,33 @@
 * a debounce function will wait until the last time the function is called and then
 * fire after a predetermined amount of time or once the event firing becomes inactive.
 *
+* What's the difference between debounce and throttle?
+*
+* Throttling a function makes sure it's called at regular intervals. Debouncing
+* will mean it is called at the end (or start) of a bunch of events.
+*
+* For example:
+*
+* Let's say we're handling the mousemove event, over a timeframe of 2 seconds
+*
+*
+*                            mousemove (2 seconds)
+* TIME ---------------------------------------------------------------- TIME
+*
+*                                                                      | debounce
+*
+*       |      |       |       |       |       |       |       |       | throttle (200ms)
+*
+*
+* Debounce, we'll fire once at the END of the event and AFTER, it's configured
+* wait time. That's why this is used on things like seach input keyup events.
+*
+* Throttle is called at at regular intervals, which is why it's good for perhaps
+* the resize event or similar.
+*
 * Let's go through this step by step:
 *
-* 1. Create a wrapper function with two arguments: a callback and an integer for
+* 1. Create a wrapper function with two arguments: a callback, an integer for
 *    the timeout — this will hold the state of the timeout. Note that the wrapper
 *    function will only be called once, when the wrapper function is referenced.
 *
@@ -29,9 +53,9 @@
 *
 * 3. Return a function - this will be called every time the function is called.
 *    Make sure that the function returned is not an arrow function, as you will
-*    lose context.
+*    lose context. We pass in arguments with the ...rest parameter.
 *
-* 4. Apply this context to callback function, and attach arguments.
+* 4. Apply this context to callback function, and attach rest arguments.
 *
 * 5. clearTimeout if timeout exists.
 *
@@ -48,7 +72,7 @@
 * }, 1000));
 *
 * The first argument being passed is the event handler, and the second is the amount
-* of time in milliseconds that we would consider an element “inactive” after the
+* of time in milliseconds that we would consider an element "inactive" after the
 * last event is fired.
 *
 * Explanation:
@@ -58,7 +82,7 @@
 *
 * The returned function will take the arguments that the event handler should get
 * even if they aren't explicitly declared in the function declaration. Just use
-* the arguments variable that is automatically created when inside a function.
+* the ...rest parameter that we pass in, we could also use the arguments variable.
 *
 * fn.apply is very handy, and is perfect for this situation as we won't always
 * know how many arguments are being provided, therefore we can send the full object
@@ -70,6 +94,15 @@
 * We must declare the timeout variable, because if we don't pass a variable into
 * clearTimeout, then it will globally clear timeouts, and we wouldn't want to interfere
 * in the global scope so as to avoid unwanted side-effects.
+*
+* The returned timeoutID is a positive integer value which identifies the timer
+* created by the call to setTimeout(); this value can be passed to clearTimeout()
+* to cancel the timeout.
+*
+* It may be helpful to be aware that setTimeout() and setInterval() share the same
+* pool of IDs, and that clearTimeout() and clearInterval() can technically be used
+* interchangeably. For clarity, however, you should try to always match them to
+* avoid confusion when maintaining your code.
 */
 
 /**
@@ -78,14 +111,19 @@
 * @return {function}
 */
 
-const debounce = (fn, time) => {
-  let timeout;
+const debounce = (fn, time) => { // wrapper
+  let timeout; // undefined
 
   // closure
-  return () => {
-    const functionCall = () => fn.apply(this, arguments);
+  // use ...rest parameter, we could have used the automatically created arguments variable too
+  return function (...rest) { // eslint-disable-line
+    // set context, pass in arguments
+    const functionCall = () => fn.apply(this, rest);
 
+    // clear timeoutID if it exists
     clearTimeout(timeout);
+
+    // returns the timeoutID, to use in the clearTimeout
     timeout = setTimeout(functionCall, time);
   };
 };
