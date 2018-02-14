@@ -81,8 +81,6 @@ const nodeX = getSymmetricNode(root1, root2, node1);
 
 console.log(nodeX === node2); // true
 
-
-
 // https://stackoverflow.com/questions/19779438/dom-tree-traversal
 
 // https://javascript.info/dom-navigation
