@@ -4,23 +4,23 @@
 *
 * emitter = new Emitter();
 *
-* 1. Support subscribing to events.
+* 1. Support listening to events.
 *
-* sub = emitter.subscribe('event_name', callback);
-* sub2 = emitter.subscribe('event_name', callback2);
+* listen = emitter.addListener('event_type', callback);
+* listen2 = emitter.addListener('event_type', callback2);
 *
 * 2. Support emitting events.
 *
 * This particular example should lead to the `callback` above being invoked with
-* `foo` and `bar` as parameters. emitter.emit('event_name', foo, bar);
+* `foo` and `bar` as parameters. emitter.emit('event_type', foo, bar);
 *
-* 3. Support unsubscribing existing subscriptions by releasing them.
+* 3. Support unsubscribing existing listeners by removing them.
 *
-* sub.release(); // `sub` is the reference returned by `subscribe` above
+* listen.remove(); // `listen` is the reference returned by `listen` above
 *
 * There is a lot of different implementations for different purposes of the Event
 * Emitter pattern, but the basic idea is to provide a framework for managing events
-* and to be able subscribes to them.
+* and to be able listen to them.
 *
 * The event emitter uses the so called "observer pattern".
 *
@@ -38,17 +38,30 @@
 *
 * The following Emitter class would allow implementations such as the following:
 *
+* const token = emitter.addListener('change', (...args) => {
+*   console.log(...args);
+* });
+*
+* emitter.emit('change', 10); // 10 is logged
+* token.remove();
+* emitter.emit('change', 10); // nothing is logged
+*
+* https://github.com/facebook/emitter
+*
+* A more practical example:
+*
 * let input = document.querySelector('input[type="text"]');
 * let button = document.querySelector('button');
 * let h1 = document.querySelector('h1');
-* let emitter = new EventEmitter();
 *
-* emitter.subscribe('event:name-changed', data => {
+* let emitter = new Emitter();
+*
+* emitter.addListener('name-changed', data => {
 *   h1.innerHTML = `Your name is: ${data.name}`;
 * });
 *
 * button.addEventListener('click', () => {
-*   emitter.emit('event:name-changed', {name: input.value});
+*   emitter.emit('name-changed', { name: input.value });
 * });
 */
 
@@ -64,32 +77,62 @@ class Emitter {
   }
 
   /**
-  * Subscribe to events.
+  * Listen to events.
   *
   * If no one already registers the event we need to do this at the first time by
-  * setting the key as the event name and initialize it with an empty array, then
+  * setting the key as the event type and initialize it with an empty array, then
   * we push to this array the function that we want to execute when someone emits
   * the event.
   *
-  * @param {string} eventName
+  * @param {string} eventType
   * @param {function} fn
   */
-  subscribe(eventName, fn) {
+  addListener(eventType, fn) {
     // check if this is the first registration of this event type
     // if not, create a new queue to hold our subscriptions, ie, callbacks
-    if (!this.events[eventName]) {
-      this.events[eventName] = [];
+    if (!this.events[eventType]) {
+      this.events[eventType] = [];
     }
 
-    // subscribe our callback
-    this.events[eventName].push(fn);
+    // register our callback
+    this.events[eventType].push(fn);
 
     // We need a way to unregister those functions when we don't need them anymore
     // because if you don’t do this, you will have a memory leak.
     // check for event registration, then splice it out
     return {
-      release: () => this.events[eventName] && this.events[eventName].splice(this.events[eventName].indexOf(fn), 1),
+      remove: () => this.events[eventType] && this.events[eventType].splice(this.events[eventType].indexOf(fn), 1),
     };
+  }
+
+  /**
+  * Removes all of the registered listeners
+  *
+  * @param {string} eventType
+  */
+  removeAllSubscriptions(eventType) {
+    const event = this.events[eventType];
+
+    if (event) {
+      event.length = 0; // empty
+    } else {
+      throw new Error('Event type not registered');
+    }
+  }
+
+  /**
+  * Returns an array of listeners that are currently registered for the given event.
+  *
+  * @param {string} eventType
+  * @return {array}
+  */
+  listeners(eventType) {
+    const event = this.events[eventType];
+    if (event) {
+      return this.events[eventType];
+    }
+
+    throw new Error('Event type not registered');
   }
 
   /**
@@ -100,11 +143,11 @@ class Emitter {
   * we are looping over the functions that we register in the subscribe method and
   * call them with the arguments. Note: we use ES6 ...rest parameter.
   *
-  * @param {string} eventName
+  * @param {string} eventType
   * @param {any} args
   */
-  emit(eventName, ...args) {
-    const event = this.events[eventName];
+  emit(eventType, ...args) {
+    const event = this.events[eventType];
 
     // If we have the event registered, we must have at least one subscription,
     // call that function with the data passed in.
@@ -112,6 +155,8 @@ class Emitter {
       event.forEach((fn) => {
         fn.call(null, ...args);
       });
+    } else {
+      throw new Error('Event type not registered');
     }
   }
 }

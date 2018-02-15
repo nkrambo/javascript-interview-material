@@ -8,22 +8,22 @@ describe('Emitter', () => {
 
   test('should subscibe to event', () => {
     const emitter = new Emitter();
-    emitter.subscribe('click', () => {});
+    emitter.addListener('click', () => {});
     expect(emitter.events).toHaveProperty('click');
   });
 
   test('should unsubscibe from event', () => {
     const emitter = new Emitter();
-    const sub = emitter.subscribe('click', () => {});
+    const sub = emitter.addListener('click', () => {});
     expect(emitter.events).toHaveProperty('click');
-    sub.release();
+    sub.remove();
     expect(emitter.events.click).toEqual([]);
   });
 
   test('should emit event', () => {
     const emitter = new Emitter();
     const cb = jest.fn();
-    emitter.subscribe('click', cb);
+    emitter.addListener('click', cb);
     emitter.emit('click');
     expect(cb).toHaveBeenCalled();
   });
