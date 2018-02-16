@@ -28,8 +28,21 @@
 *     <div></div>
 *   </div>
 * </div>
+*/
+
+
+/**
+* Solution 1
 *
+* The idea with this solution is to travel upward from our provided node to the
+* root and create a path, an array of indices. Once we have this, we can then use
+* this path to travel from root2 downward to find the symmetric node.
 *
+* We decompose this problem into 3 smaller functions to solve it.
+*
+* getPath - supplied node to root
+* getNodeByPath - second tree root to symmetric node
+* getChildren - helper that transforms childNodes collection to array
 */
 
 // This function returns a real array of Nodes, so we can use methonds like "indexOf".
@@ -41,14 +54,14 @@ function getChildren(node) {
 // This function returns an array of indices from given node to the root
 function getPath(root, node) {
   const path = [];
-  let curElement = node;
+  let current = node;
 
   // This is important as if a node is null or doesn't have a parent
   // there is no need of searching further
-  while (curElement !== root && curElement && curElement.parentNode) {
-    const index = getChildren(curElement.parentNode).indexOf(curElement);
+  while (current !== root) {
+    const index = getChildren(current.parentNode).indexOf(current);
     path.push(index);
-    curElement = curElement.parentNode;
+    current = current.parentNode; // keep traversing upwards
   }
 
   return path;
@@ -56,9 +69,9 @@ function getPath(root, node) {
 
 // Popping all values from the array of indices we go to the symmetrical node
 function getNodeByPath(root, originalPath) {
-  const path = [].concat(originalPath);
-  let element = root;
+  const path = originalPath.slice();
 
+  let element = root;
   while (path.length) {
     element = getChildren(element)[path.pop()];
   }
@@ -72,17 +85,20 @@ function getSymmetricNode(root1, root2, node) {
   return getNodeByPath(root2, path);
 }
 
-const root1 = document.getElementById('root1');
-const root2 = document.getElementById('root2');
-const node1 = document.getElementById('node1');
-const node2 = document.getElementById('node2');
+/**
+* Solution 2
+*
+* We can also achieve this using recursion.
+*/
 
-const nodeX = getSymmetricNode(root1, root2, node1);
+function findDomNodeInTree(rootA, rootB, targetNode) {
+  // base case: found target
+  if (rootA === targetNode) return rootB;
 
-console.log(nodeX === node2); // true
+  let nodeB = null;
+  for (let i = 0; i < rootA.childNodes.length && nodeB === null; i += 1) {
+    nodeB = findDomNodeInTree(rootA.childNodes[i], rootB.childNodes[i], targetNode);
+  }
 
-// https://stackoverflow.com/questions/19779438/dom-tree-traversal
-
-// https://javascript.info/dom-navigation
-
-// https://www.gitbook.com/book/timurcatakli/technical-interview-preparation-v2/details
+  return nodeB;
+}
