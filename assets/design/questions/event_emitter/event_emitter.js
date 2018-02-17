@@ -63,6 +63,23 @@
 * button.addEventListener('click', () => {
 *   emitter.emit('name-changed', { name: input.value });
 * });
+*
+* Another example:
+*
+* The angular router module let's us subscribe to events that it emits, like route
+* change etc... We can subscribe to these and do things like send off Google Analytics
+* views and such, remember ... SPA and all.
+*
+* // register
+* emitter.subscribe('route: change', (data) => {
+*   console.log(`User changed view from ${data.from} to ${data.to}`);
+*   // GA('send', 'pageview);
+* });
+*
+* emitter.emit('route: change', {
+*   from: 'home',
+*   to: 'contact-us'
+* });
 */
 
 class Emitter {
@@ -101,7 +118,7 @@ class Emitter {
     // because if you don’t do this, you will have a memory leak.
     // check for event registration, then splice it out
     return {
-      remove: () => this.events[eventType] && this.events[eventType].splice(this.events[eventType].indexOf(fn), 1),
+      remove: () => this.events[eventType] && this.events[eventType].splice(this.events[eventType].indexOf(fn), 1), // this mutates, we could slice events then splice?
     };
   }
 
