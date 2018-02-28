@@ -87,4 +87,57 @@ function maxArea(height) {
   return maxarea;
 }
 
+// BRUTE FORCE
+//
+// Initialize ans = 0
+// Iterate the array from left to right:
+// Initialize max_left = 0 and max_right = 0
+// Iterate from the current element to the beginning of array updating: max_left=max(max_left, height[j])
+// Iterate from the current element to the end of array updating: max_right=max(max_right, height[j])
+// Add min(max_left,max_right)−height[i] to ans
+
+// "maxLeft: 1, maxRight: 3, height: 1"
+// "Answer: 0"
+// "maxLeft: 1, maxRight: 3, height: 0"
+// "Answer: 1"
+// "maxLeft: 2, maxRight: 3, height: 2"
+// "Answer: 1"
+// "maxLeft: 2, maxRight: 3, height: 1"
+// "Answer: 2"
+// "maxLeft: 2, maxRight: 3, height: 0"
+// "Answer: 4"
+// "maxLeft: 2, maxRight: 3, height: 1"
+// "Answer: 5"
+// "maxLeft: 3, maxRight: 3, height: 3"
+// "Answer: 5"
+// "maxLeft: 3, maxRight: 2, height: 2"
+// "Answer: 5"
+// "maxLeft: 3, maxRight: 2, height: 1"
+// "Answer: 6"
+// "maxLeft: 3, maxRight: 2, height: 2"
+// "Answer: 6"
+
+// var trap = function(height) {
+//     let answer = 0;
+
+//     for (let i = 1; i < height.length - 1; i += 1) {
+//         let maxLeft = 0;
+//         let maxRight = 0;
+
+//         // search the left part for max bar size
+//         for (let j = i; j >= 0; j -= 1) {
+//             maxLeft = Math.max(maxLeft, height[j]);
+//         }
+
+//         // search the right part for max bar size
+//         for (let j = i; j < height.length; j += 1) {
+//             maxRight = Math.max(maxRight, height[j]);
+//         }
+
+//         answer += Math.min(maxLeft, maxRight) - height[i];
+//     }
+
+//     return answer;
+// };
+
 export default maxArea;
