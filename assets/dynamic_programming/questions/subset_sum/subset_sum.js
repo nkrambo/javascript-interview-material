@@ -8,7 +8,7 @@
 * in this set whose sum is same as total.
 *
 * Example:
-* Input: [2, 3, 7, 8, 10], 11
+* Input: [2, 3, 7, 8, 10], 10
 * Output: True [7, 3]
 *
 * Example:
@@ -96,6 +96,8 @@
 *     } else {
 *       T[i][j] = T[i-1][j-1] || T[i-1][j-nums[i]]
 *     }
+*
+* https://www.geeksforgeeks.org/dynamic-programming-subset-sum-problem/
 *
 * Time: O(n * k)
 * Space: O(n * k)
