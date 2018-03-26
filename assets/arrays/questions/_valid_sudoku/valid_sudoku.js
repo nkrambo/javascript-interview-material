@@ -108,7 +108,6 @@
 */
 
 function isValidSudoku(board) {
-
   for (let row = 0; row < board.length; row += 1) {
     // rows
     if (!validSet(row)) return false;

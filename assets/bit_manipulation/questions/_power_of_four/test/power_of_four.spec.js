@@ -4,5 +4,5 @@
 describe.skip('isPowerOfFour()', () => {
   test('should', () => {
 
-  })
+  });
 });

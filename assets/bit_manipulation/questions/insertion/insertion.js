@@ -44,13 +44,13 @@
 */
 
 function insertion(n, m, i, j) {
-  const allOnes = ~0;              // sequence of all 1s
+  const allOnes = ~0; // sequence of all 1s
   const left = allOnes << (j + 1); // 1s before position j, then 0s.          left = 11100000
-  const right = ((1 << i) - 1);    // 1s after position i.                    right = 00000011
-  const mask = left | right;       // all 1s, except for 0s between i and j.  mask = 11100011
+  const right = ((1 << i) - 1); // 1s after position i.                    right = 00000011
+  const mask = left | right; // all 1s, except for 0s between i and j.  mask = 11100011
 
-  const nCleared = n & mask;       // clear bits j though i.
-  const mShifted = m << i;         // move m into correct position
+  const nCleared = n & mask; // clear bits j though i.
+  const mShifted = m << i; // move m into correct position
 
   // OR them, and we're done!
   return nCleared | mShifted;

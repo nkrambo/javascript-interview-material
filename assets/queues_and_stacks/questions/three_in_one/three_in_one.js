@@ -50,7 +50,6 @@
 */
 
 class ThreeInOne {
-
   /**
   * All stacks use a single array to store values.
   * We track lengths of stacks in separate array.

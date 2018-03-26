@@ -88,7 +88,7 @@
 function longestCommonSubStr(s1, s2) {
   let count = 0;
   const cols = s1.length + 1; // add 1 to represent 0 valued col for DP
-  const rows = s2.length + 1;  // add 1 to represent 0 valued row for DP
+  const rows = s2.length + 1; // add 1 to represent 0 valued row for DP
 
   // build matrix, fill with 0s by default
   const matrix = [];

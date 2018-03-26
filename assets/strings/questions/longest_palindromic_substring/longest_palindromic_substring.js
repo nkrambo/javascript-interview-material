@@ -197,7 +197,7 @@ function isPalindrome(s, left, right) {
 
 function longestPalindromeDP(s) {
   let palindromeBeginsAt = 0; // index where the longest palindrome begins
-  let maxLength = 1;          // length of the longest palindrome
+  let maxLength = 1; // length of the longest palindrome
 
   // build boolean matrix of NxN
   const matrix = [];

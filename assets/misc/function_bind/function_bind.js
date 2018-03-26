@@ -23,11 +23,11 @@
 *
 */
 
-var bind = function(func, context) {
-  var previousArgs = Array.prototype.slice.call(arguments, 2);
+const bind = function (func, context) {
+  const previousArgs = Array.prototype.slice.call(arguments, 2);
 
-  return function() {
-    var args = Array.prototype.slice.call(arguments);
+  return function () {
+    let args = Array.prototype.slice.call(arguments);
     args = previousArgs.concat(args);
 
     return func.apply(context, args);
@@ -59,12 +59,12 @@ var bind = function(func, context) {
 *
 */
 
-Function.prototype.bind = function(context) {
-  var previousArgs = Array.prototype.slice.call(arguments, 1);
-  var func = this;
+Function.prototype.bind = function (context) {
+  const previousArgs = Array.prototype.slice.call(arguments, 1);
+  const func = this;
 
   return function () {
-    var args = Array.prototype.slice.call(arguments);
+    let args = Array.prototype.slice.call(arguments);
     args = previousArgs.concat(args);
 
     return func.apply(context, args);

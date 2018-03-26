@@ -29,7 +29,7 @@
 * Initialize your data structure here.
 */
 // var TwoSum = function() {
-// 
+//
 // };
 
 /**

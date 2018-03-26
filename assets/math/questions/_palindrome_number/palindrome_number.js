@@ -41,8 +41,8 @@ function isPalindrome1(x) {
   let i = 0;
   let j = x.length - 1;
 
-  while(i < j) {
-    if (x[i] !== x[j]) return false
+  while (i < j) {
+    if (x[i] !== x[j]) return false;
 
     i += 1;
     j -= 1;
@@ -60,11 +60,12 @@ function isPalindrome2(x) {
   // e.g 600 the divider should be 100 at maximum
   // e.g. 90 the divider should be 10 at maximum
   // e.g. 1 the divider should be a 1 at maximum
-  while (parseInt(x/div) >= 10) {
+  while (parseInt(x / div) >= 10) {
     div *= 10;
   }
 
-  let left, right;
+  let left,
+    right;
 
   // when div === 1 it means the digit only has one value to examine
   // e.g. 121 -> only 2 is left for examine which can be ignore
@@ -78,7 +79,7 @@ function isPalindrome2(x) {
       return false;
     }
 
-    x = x % div; // remove the left most digit
+    x %= div; // remove the left most digit
     x = parseInt(x / 10); // remove the right most digit
     div /= 100;
   }

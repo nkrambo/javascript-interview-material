@@ -167,7 +167,7 @@ class RedBlackTree {
     this.root = null;
     this.color = {
       RED,
-      BLACK
+      BLACK,
     };
   }
 
@@ -179,10 +179,10 @@ class RedBlackTree {
    * @param {Object} value Value.
    */
 
-   insert(key, value) {
-     this._root = this._put(key, value, this._root);
-     this._root.setColor(this_colors.BLACK);
-   };
+  insert(key, value) {
+    this._root = this._put(key, value, this._root);
+    this._root.setColor(this_colors.BLACK);
+  }
 
   // /**
   //  * Returns true or false depending on whether
@@ -198,7 +198,6 @@ class RedBlackTree {
   //   if (!node) return false;
   //   return node.isRed();
   // };
-
 }
 
 export default RedBlackTree;

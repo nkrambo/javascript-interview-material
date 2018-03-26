@@ -78,9 +78,9 @@
 */
 
 function merge(nums1, m, nums2, n) {
-  let i = m - 1;      // last index of A
-  let j = n - 1;      // last index of B
-  let k = m + n - 1;  // last index of new merged array
+  let i = m - 1; // last index of A
+  let j = n - 1; // last index of B
+  let k = m + n - 1; // last index of new merged array
 
   // rename for convienience
   const A = nums1;
@@ -88,7 +88,6 @@ function merge(nums1, m, nums2, n) {
 
   // while we have 'evenly matched' elements in both A and B, pairs of elements
   while (i >= 0 && j >= 0) {
-
     // if A is greater than B, take A and place in new index
     if (A[i] > B[j]) {
       A[k--] = A[i--];

@@ -1,5 +1,5 @@
 
-import Graph from '../../../data_structures/graph/graph'
+import Graph from '../../../data_structures/graph/graph';
 import kahnSort from '../topological_sort';
 
 describe('kahnSort()', () => {

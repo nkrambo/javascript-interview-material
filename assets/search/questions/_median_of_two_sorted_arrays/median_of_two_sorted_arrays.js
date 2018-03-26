@@ -78,11 +78,11 @@ function findMedianSortedArrays(nums1, nums2) {
 
   let iMin = 0;
   let iMax = m;
-  let halfLen = (m + n + 1) / 2;
+  const halfLen = (m + n + 1) / 2;
 
   while (iMin <= iMax) {
-    let i = (iMin + iMax) / 2;
-    let j = halfLen - i;
+    const i = (iMin + iMax) / 2;
+    const j = halfLen - i;
 
     // i is too small, must increase it
     if (i < m && nums2[j - 1] > nums1[i]) {
@@ -97,10 +97,8 @@ function findMedianSortedArrays(nums1, nums2) {
       let maxOfLeft;
       if (i === 0) {
         maxOfLeft = nums2[j - 1];
-
       } else if (j === 0) {
         maxOfLeft = nums1[i - 1];
-
       } else {
         maxOfLeft = Math.max(nums1[i - 1], nums2[j - 1]);
       }
@@ -110,10 +108,8 @@ function findMedianSortedArrays(nums1, nums2) {
       let minOfRight;
       if (i === m) {
         minOfRight = nums2[j];
-
       } else if (j === n) {
         minOfRight = nums1[i];
-
       } else {
         minOfRight = Math.min(nums1[i], nums2[j]);
       }

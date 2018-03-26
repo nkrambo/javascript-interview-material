@@ -110,8 +110,8 @@
 */
 
 function subsetSum(nums, total) {
-  const cols = total + 1;           // plus 1 for 0 valued col
-  const rows = nums.length + 1;     // plus 1 for 0 valued row
+  const cols = total + 1; // plus 1 for 0 valued col
+  const rows = nums.length + 1; // plus 1 for 0 valued row
 
   // build matrix
   const matrix = [];

@@ -66,9 +66,9 @@ function fib(n) {
   // we'll be building the fibonacci series from the bottom up
   // so we'll need to track the previous 2 numbers at each step
 
-  let prevPrev = 0;  // 0th fibonacci
-  let prev = 1;      // 1st fibonacci
-  let current;       // Declare current
+  let prevPrev = 0; // 0th fibonacci
+  let prev = 1; // 1st fibonacci
+  let current; // Declare current
 
   for (let x = 1; x < n; x += 1) {
     // To get nth fibonacci ... do n - 1 iterations.

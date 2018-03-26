@@ -7,6 +7,6 @@ describe.skip('isHappy()', () => {
   });
 
   test('should return false if a number is NOT happy', () => {
-    
+
   });
 });

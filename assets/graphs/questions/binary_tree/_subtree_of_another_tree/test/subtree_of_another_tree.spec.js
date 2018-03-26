@@ -1,5 +1,5 @@
 
-// 
+//
 // import { isSubtree, isSubtreeAlt } from '../subtree_of_another_tree';
 
 describe('isSubtree()', () => {

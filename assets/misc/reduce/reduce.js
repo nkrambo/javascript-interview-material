@@ -50,14 +50,14 @@ function serialiseIds(data) {
 
   while (queue.length) {
     const item = queue.shift();
-    const {id, items} = item;
+    const { id, items } = item;
     response.push(id);
     if (!items) {
       continue;
     }
     items.forEach((subItem) =>
-      queue.push(subItem))
-  };
+      queue.push(subItem));
+  }
 
   return response;
 }
@@ -103,9 +103,9 @@ function Dog(name) {
   this.name = name;
 
   return {
-    bark: function() {
+    bark() {
       console.log(`${name} says woof!`);
-    }
+    },
   };
 }
 
@@ -194,7 +194,6 @@ function peopleWorking(arr) {
     if (starts[i] < ends[0]) { // peek
       count += 1;
       results.push([starts[i], count]);
-
     } else if (starts[i] === ends[0]) {
       if (results[results.length - 1] === [starts[i], count]) continue;
       results.push([starts[i], count]);

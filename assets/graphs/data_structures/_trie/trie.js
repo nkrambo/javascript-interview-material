@@ -86,7 +86,7 @@ class Trie {
 
     // work downwards through the trie, adding nodes as needed,
     // and keeping track of whether we add any nodes.
-    for (let char of word) {
+    for (const char of word) {
       // if we don't have current char
       if (!current.hasOwnProperty(char)) {
         current[char] = {};
@@ -114,30 +114,30 @@ class Trie {
 
   }
 
-//   if (index == word.length()) {
-//        //when end of word is reached only delete if currrent.endOfWord is true.
-//        if (!current.endOfWord) {
-//            return false;
-//        }
-//        current.endOfWord = false;
-//        //if current has no other mapping then return true
-//        return current.children.size() == 0;
-//    }
-//    char ch = word.charAt(index);
-//    TrieNode node = current.children.get(ch);
-//    if (node == null) {
-//        return false;
-//    }
-//    boolean shouldDeleteCurrentNode = delete(node, word, index + 1);
-//
-//    //if true is returned then delete the mapping of character and trienode reference from map.
-//    if (shouldDeleteCurrentNode) {
-//        current.children.remove(ch);
-//        //return true if no mappings are left in the map.
-//        return current.children.size() == 0;
-//    }
-//    return false;
-// }
+  //   if (index == word.length()) {
+  //        //when end of word is reached only delete if currrent.endOfWord is true.
+  //        if (!current.endOfWord) {
+  //            return false;
+  //        }
+  //        current.endOfWord = false;
+  //        //if current has no other mapping then return true
+  //        return current.children.size() == 0;
+  //    }
+  //    char ch = word.charAt(index);
+  //    TrieNode node = current.children.get(ch);
+  //    if (node == null) {
+  //        return false;
+  //    }
+  //    boolean shouldDeleteCurrentNode = delete(node, word, index + 1);
+  //
+  //    //if true is returned then delete the mapping of character and trienode reference from map.
+  //    if (shouldDeleteCurrentNode) {
+  //        current.children.remove(ch);
+  //        //return true if no mappings are left in the map.
+  //        return current.children.size() == 0;
+  //    }
+  //    return false;
+  // }
 
   /**
   * check for a word
@@ -149,7 +149,7 @@ class Trie {
   search(word) {
     let current = this.root;
 
-    for (let char of word) {
+    for (const char of word) {
       // char not found
       if (!current.hasOwnProperty(char)) return false;
 

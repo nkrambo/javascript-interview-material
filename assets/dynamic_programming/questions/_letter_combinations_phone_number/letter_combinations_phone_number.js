@@ -103,7 +103,7 @@ function letterCombinationsBT(digits) {
   // catch edge
   if (!digits.length) return combos;
 
-  let local = '';
+  const local = '';
 
   // map our digits to strings
   const buttons = new Map();

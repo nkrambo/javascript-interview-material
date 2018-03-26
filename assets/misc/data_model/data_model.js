@@ -15,23 +15,23 @@
 // https://addyosmani.com/resources/essentialjsdesignpatterns/book/#detailmvc
 
 
-class Model {
-  constructor() {
-
-  }
-
-  // get
-
-  // set
-}
-
-
-var myObject: {
-  _properties: {},
-  get name () {
-    return this._properties.name;
-  },
-  set name (value) {
-    this._properties.name = value;
-  }
-}
+// class Model {
+//   constructor() {
+//
+//   }
+//
+//   // get
+//
+//   // set
+// }
+//
+//
+// var myObject: {
+//   _properties: {},
+//   get name () {
+//     return this._properties.name;
+//   },
+//   set name (value) {
+//     this._properties.name = value;
+//   }
+// }

@@ -28,7 +28,7 @@ class PeekingIterator implements Iterator {
   }
 
   next() {
-    let cache = this.temp;
+    const cache = this.temp;
     if (this.iter.hasNext()) {
       this.temp = this.iter.next();
     } else {
